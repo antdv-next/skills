@@ -1,0 +1,25 @@
+# 使用 iconfont.cn
+
+## Description (zh-CN)
+
+对于使用 [iconfont.cn](http://iconfont.cn/) 的用户，通过设置 `createFromIconfontCN` 方法参数对象中的 `scriptUrl` 字段， 即可轻松地使用已有项目中的图标。
+
+## Source
+
+```vue
+<script setup lang="ts">
+import { createFromIconfontCN } from '@antdv-next/icons'
+
+const IconFont = createFromIconfontCN({
+  scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
+})
+</script>
+
+<template>
+  <a-space>
+    <IconFont type="icon-tuichu" />
+    <IconFont type="icon-facebook" style="color: '#1877F2'" />
+    <IconFont type="icon-twitter" />
+  </a-space>
+</template>
+```

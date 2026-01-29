@@ -1,4 +1,4 @@
-# antdv-next-skills
+# Antdv Next Skills
 
 Agent skills for Antdv Next component library development.
 

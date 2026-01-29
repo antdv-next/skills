@@ -2,7 +2,7 @@
 
 ## Description (zh-CN)
 
-按钮组合使用时，推荐使用 1 个主操作 + n 个次操作，3 个以上操作时把更多操作放到 [Dropdown](/components/dropdown-cn/#dropdown-demo-dropdown-button) 中组合使用。
+按钮组合使用时，推荐使用 1 个主操作 + n 个次操作，3 个以上操作时把更多操作放到 [Dropdown](../../dropdown/docs.md/#dropdown-demo-dropdown-button) 中组合使用。
 
 ## Source
 

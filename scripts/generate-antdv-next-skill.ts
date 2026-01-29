@@ -119,10 +119,66 @@ function extractDemoTags(markdown: string): Array<{ src: string; title: string }
   return matches
 }
 
-function rewriteDocs(markdown: string): string {
+function rewriteInternalLinks(content: string, currentPath: string, referencesDir: string): string {
+  const currentDir = path.dirname(currentPath)
+  const vueDocsRoot = path.join(referencesDir, 'docs', 'vue')
+  const componentsRoot = path.join(referencesDir, 'components')
+
+  let output = content
+  output = output.replace(/\/docs\/vue\/([a-z0-9-]+)\b/g, (_match, slug: string) => {
+    const target = path.join(vueDocsRoot, `${slug}.md`)
+    return toPosix(path.relative(currentDir, target))
+  })
+  output = output.replace(/\/components\/([a-z0-9-]+)(?=[#/?)]|$)/gi, (_match, slug: string) => {
+    let normalized = slug.toLowerCase()
+    if (normalized.endsWith('-cn') || normalized.endsWith('-en')) {
+      normalized = normalized.replace(/-(cn|en)$/, '')
+    }
+    const target = path.join(componentsRoot, normalized, 'docs.md')
+    return toPosix(path.relative(currentDir, target))
+  })
+  return output
+}
+
+function rewriteDocs(markdown: string, currentPath: string, referencesDir: string): string {
   let output = markdown
-  output = output.replace(/<demo-group[^>]*>/g, '\n\n## Demos\n\n')
-  output = output.replace(/<\/demo-group>/g, '\n')
+  const frontmatterMatch = output.match(/^---\n([\s\S]*?)\n---\n/)
+  if (frontmatterMatch) {
+    const frontmatterRaw = frontmatterMatch[1]
+    const frontmatterLines = frontmatterRaw.split(/\r?\n/)
+    const kept: string[] = []
+    const keepKeys = new Set(['title', 'subtitle', 'description'])
+    for (const line of frontmatterLines) {
+      if (/^\s+/.test(line)) continue
+      const trimmed = line.trim()
+      if (!trimmed || trimmed.startsWith('#')) continue
+      const key = trimmed.split(':')[0]?.trim()
+      if (key && keepKeys.has(key)) {
+        kept.push(line)
+      }
+    }
+    const rebuilt = ['---', ...kept, '---', ''].join('\n')
+    output = rebuilt + output.slice(frontmatterMatch[0].length)
+  }
+
+  output = rewriteInternalLinks(output, currentPath, referencesDir)
+
+  const hasDemoGroup = /<demo-group\b/.test(output)
+  if (hasDemoGroup) {
+    const examplesHeadingRegex = /##\s*[^\n]*\{#examples\}/g
+    let insertHeading = true
+    if (examplesHeadingRegex.test(output)) {
+      output = output.replace(examplesHeadingRegex, '## Demos')
+      insertHeading = false
+    }
+    const tableHeader = '| Demo | Path |\n| --- | --- |\n'
+    output = output.replace(
+      /<demo-group[^>]*>/g,
+      insertHeading ? `\n\n## Demos\n\n${tableHeader}` : `\n\n${tableHeader}`,
+    )
+    output = output.replace(/<\/demo-group>/g, '\n')
+  }
+  output = output.replace(/^[ \t]+<demo\b/gm, '<demo')
   output = output.replace(
     /<demo\b[^>]*\bsrc="([^"]+)"[^>]*>([\s\S]*?)<\/demo>/g,
     (_match, rawSrc: string, rawTitle: string) => {
@@ -130,9 +186,23 @@ function rewriteDocs(markdown: string): string {
       const demoSrc = normalizeDemoSrc(String(rawSrc || ''))
       const demoMarkdown = demoSrc.replace(/\.vue$/, '.md')
       const label = title || path.posix.basename(demoMarkdown, '.md')
-      return `- ${label}: ${demoMarkdown}`
+      return `| ${label} | ${demoMarkdown} |`
     },
   )
+  output = output.replace(/^(#{2,6}[^\n{]+)\s*\{#[^}]+\}\s*$/gm, '$1')
+  output = output.replace(
+    /^#{2,3}[^\n]*(\{#design-token\}|design token|主题变量)[^\n]*\n[\s\S]*?(?=^#{2,3}\s|\n#\s|$)/gim,
+    '',
+  )
+  output = output.replace(/^.*<ComponentTokenTable[^>]*>.*\n?/gm, '')
+  output = output.replace(/^.*(customize-theme|Design Token|主题变量).*\n?/gim, '')
+  output = output.replace(/^.*semantic-dom.*\n?/gim, '')
+  output = output.replace(
+    /^#{2,3}[^\n]*\{#semantic-dom\}[^\n]*\n[\s\S]*?(?=^#{2,3}\s|\n#\s|$)/gim,
+    '',
+  )
+  output = output.replace(/\| --- \| --- \|\n\n\|/g, '| --- | --- |\n|')
+  output = output.replace(/\n{3,}/g, '\n\n')
   return output.trimEnd() + '\n'
 }
 
@@ -158,6 +228,8 @@ function buildDemoMarkdown(
   vueSource: string,
   docBlocks: Array<{ lang: string; content: string }>,
   preferredLang: 'en-US' | 'zh-CN',
+  currentPath: string,
+  referencesDir: string,
 ): string {
   const lines: string[] = []
   lines.push(`# ${title}`)
@@ -177,7 +249,11 @@ function buildDemoMarkdown(
   lines.push(stripDocsBlocks(vueSource).trimEnd())
   lines.push('```')
   lines.push('')
-  return lines.join('\n')
+  let result = lines.join('\n')
+  result = rewriteInternalLinks(result, currentPath, referencesDir)
+  result = result.replace(/^.*semantic-dom.*\n?/gim, '')
+  result = result.replace(/\n{3,}/g, '\n\n').trimEnd() + '\n'
+  return result
 }
 
 async function main() {
@@ -192,9 +268,11 @@ async function main() {
   const outputRoot = path.resolve(args.out ?? 'skills/antdv-next')
   const referencesDir = path.join(outputRoot, 'references')
   const componentsOutDir = path.join(referencesDir, 'components')
+  const docsOutDir = path.join(referencesDir, 'docs', 'vue')
   const preferredLang = normalizeLang(args.lang)
 
   const componentsRoot = path.join(repoRoot, 'playground', 'src', 'pages', 'components')
+  const docsRoot = path.join(repoRoot, 'playground', 'src', 'pages', 'docs', 'vue')
   if (!(await pathExists(componentsRoot))) {
     console.error(`Missing components directory: ${componentsRoot}`)
     process.exit(1)
@@ -202,6 +280,8 @@ async function main() {
 
   await fs.rm(componentsOutDir, { recursive: true, force: true })
   await fs.mkdir(componentsOutDir, { recursive: true })
+  await fs.rm(docsOutDir, { recursive: true, force: true })
+  await fs.mkdir(docsOutDir, { recursive: true })
   await fs.rm(path.join(referencesDir, 'components-index.json'), { force: true })
   await fs.rm(path.join(referencesDir, 'components-index.md'), { force: true })
 
@@ -229,6 +309,29 @@ async function main() {
   }
 
   const components: ComponentEntry[] = []
+  const vueDocs: Array<{ name: string; file: string }> = []
+
+  if (await pathExists(docsRoot)) {
+    const docEntries = await fs.readdir(docsRoot, { withFileTypes: true })
+    const docSuffix = `.${preferredLang}.md`
+    const excluded = new Set(['llms', 'skills', 'contributing', 'awesome', 'introduce'])
+    for (const entry of docEntries) {
+      if (!entry.isFile()) continue
+      if (!entry.name.endsWith(docSuffix)) continue
+      const baseName = entry.name.replace(docSuffix, '')
+      if (excluded.has(baseName)) continue
+      const sourcePath = path.join(docsRoot, entry.name)
+      const outPath = path.join(docsOutDir, `${baseName}.md`)
+      const content = await fs.readFile(sourcePath, 'utf8')
+      const rewritten = rewriteDocs(content, outPath, referencesDir)
+      await fs.writeFile(outPath, rewritten, 'utf8')
+      vueDocs.push({
+        name: baseName,
+        file: toPosix(path.relative(referencesDir, outPath)),
+      })
+    }
+    vueDocs.sort((a, b) => a.name.localeCompare(b.name))
+  }
 
   for (const componentName of componentDirs) {
     const componentPath = path.join(componentsRoot, componentName)
@@ -264,11 +367,8 @@ async function main() {
     let zhOut: string | null = null
 
     if (hasDoc) {
-      const rewritten = rewriteDocs(docContent)
-      const outPath = path.join(
-        componentOutRoot,
-        preferredLang === 'zh-CN' ? 'index.zh-CN.md' : 'index.en-US.md',
-      )
+      const outPath = path.join(componentOutRoot, 'docs.md')
+      const rewritten = rewriteDocs(docContent, outPath, referencesDir)
       await fs.writeFile(outPath, rewritten, 'utf8')
       if (preferredLang === 'zh-CN') {
         zhOut = toPosix(path.relative(referencesDir, outPath))
@@ -280,23 +380,7 @@ async function main() {
     const demos: DemoEntry[] = []
 
     if (hasDemoDir) {
-      const demoFiles = await listFiles(demoDir, '.vue')
-      demoFiles.sort((a, b) => a.localeCompare(b))
-
-      const remaining = new Set(demoFiles.map((file) => normalizeDemoSrc(toPosix(path.relative(componentPath, file)))))
-
-      const ordered: string[] = []
       for (const demoSrc of demoOrder) {
-        if (remaining.has(demoSrc)) {
-          ordered.push(demoSrc)
-          remaining.delete(demoSrc)
-        }
-      }
-
-      const leftover = Array.from(remaining).sort((a, b) => a.localeCompare(b))
-      ordered.push(...leftover)
-
-      for (const demoSrc of ordered) {
         const demoFile = path.join(componentPath, demoSrc)
         if (!(await pathExists(demoFile))) continue
         const vueSource = await fs.readFile(demoFile, 'utf8')
@@ -306,7 +390,7 @@ async function main() {
         const title = titles.en || titles.zh || demoName
         const demoOutPath = path.join(componentOutRoot, 'demo', `${demoName}.md`)
         await fs.mkdir(path.dirname(demoOutPath), { recursive: true })
-        const demoMarkdown = buildDemoMarkdown(title, vueSource, docsBlocks, preferredLang)
+        const demoMarkdown = buildDemoMarkdown(title, vueSource, docsBlocks, preferredLang, demoOutPath, referencesDir)
         await fs.writeFile(demoOutPath, demoMarkdown, 'utf8')
 
         demos.push({
@@ -362,18 +446,30 @@ async function main() {
     '',
     'Docs and demos are copied into `references/` for offline use.',
     '',
-    '## Components',
+    '## Vue Docs',
     '',
-    '| Component | Doc | Demos |',
-    '| --- | --- | --- |',
+    '| Doc | Path |',
+    '| --- | --- |',
   ]
 
+  if (vueDocs.length === 0) {
+    skillLines.push('| none | - |')
+  } else {
+    for (const doc of vueDocs) {
+      skillLines.push(`| ${doc.name} | ${doc.file} |`)
+    }
+  }
+
+  skillLines.push('')
+  skillLines.push('## Components')
+  skillLines.push('')
+  skillLines.push('| Component | Doc | Demos |')
+  skillLines.push('| --- | --- | --- |')
   for (const component of components) {
     const docPath = component.docs.en ?? component.docs.zh ?? 'none'
     const demosPath = component.demos.length > 0 ? `components/${component.name}/demo/` : 'none'
     skillLines.push(`| ${component.name} | ${docPath} | ${demosPath} |`)
   }
-
   skillLines.push('')
   skillLines.push('## Generate / Update')
   skillLines.push('')

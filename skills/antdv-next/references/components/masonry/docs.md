@@ -1,0 +1,65 @@
+---
+subtitle: 瀑布流
+title: Masonry
+---
+
+瀑布流布局组件，用于展示不同高度的内容。
+
+## 何时使用 
+- 展示不规则高度的图片或卡片时
+- 需要按照列数均匀分布内容时
+- 需要响应式调整列数时
+
+## Demos
+
+| Demo | Path |
+| --- | --- |
+| 基础用法 | demo/basic.md |
+| 响应式 | demo/responsive.md |
+| 图片 | demo/image.md |
+| 动态更新 | demo/dynamic.md |
+| 自定义语义结构的样式和类 | demo/style-class.md |
+
+## API
+
+通用属性参考：[通用属性](../../docs/vue/common-props.md)
+
+### 属性 
+| 属性 | 说明 | 类型 | 默认值 | 版本 |
+| --- | --- | --- | --- | --- |
+| columns | 列数，可以是固定值或响应式配置 | number \| &#123; xs?: number; sm?: number; md?: number; lg?: number; xl?: number; xxl?: number &#125; | `3` | - |
+| fresh | 是否持续监听子项尺寸变化 | boolean | `false` | - |
+| gutter | 间距，可以是固定值、响应式配置或水平垂直间距配置 | [Gap](#gap) \| [[Gap](#gap), [Gap](#gap)] | `0` | - |
+| items | 瀑布流项 | [MasonryItem](#masonryitem)[] | - | - |
+| itemRender | 自定义项渲染 | (item: MasonryItem) =&gt; VueNode | - | - |
+
+### 事件 
+| 事件 | 说明 | 类型 | 版本 |
+| --- | --- | --- | --- |
+| layoutChange | 列排序回调 | (sortInfo: &#123; key: Key; column: number &#125;[]) =&gt; void | - |
+
+### 插槽 
+| 插槽 | 说明 | 类型 | 版本 |
+| --- | --- | --- | --- |
+| itemRender | 自定义项渲染插槽 | (itemInfo: MasonryItem & &#123; index: number &#125;) =&gt; VueNode | - |
+
+## 类型 
+### MasonryItem
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| key | 唯一标识 | string \| number | - |
+| height | 高度 | number | - |
+| column | 自定义所在列 | number | - |
+| data | 自定义存储数据 | T | - |
+| children | 自定义展示内容，相对 `itemRender` 具有更高优先级 | VueNode | - |
+
+### Gap
+
+Gap 是项之间的间距，可以是固定值，也可以是响应式配置。
+
+```ts
+type Gap = undefined | number | Partial<Record<'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl', number>>
+```
+
+## Semantic DOM

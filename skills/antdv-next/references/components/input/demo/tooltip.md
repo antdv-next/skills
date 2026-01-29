@@ -2,7 +2,7 @@
 
 ## Description (zh-CN)
 
-结合 [Tooltip](/components/tooltip-cn) 组件，实现一个数值输入框，方便内容超长时的全量展现。
+结合 [Tooltip](../../tooltip/docs.md) 组件，实现一个数值输入框，方便内容超长时的全量展现。
 
 ## Source
 

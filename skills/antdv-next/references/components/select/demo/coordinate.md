@@ -2,7 +2,7 @@
 
 ## Description (zh-CN)
 
-省市联动是典型的例子，展示了如何协调选择。推荐使用 [Cascader](/components/cascader) 组件。
+省市联动是典型的例子，展示了如何协调选择。推荐使用 [Cascader](../../cascader/docs.md) 组件。
 
 ## Source
 

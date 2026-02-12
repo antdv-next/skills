@@ -10,6 +10,9 @@ Agent skills for Antdv Next component library development.
 
 ```bash
 npx skills add antdv-next/skills
+
+# Update skills
+npx skills update antdv-next/skills
 ```
 
 ## Usage

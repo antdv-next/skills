@@ -11,6 +11,10 @@
 
 ```bash
 npx skills add antdv-next/skills
+
+
+# 更新 skills
+npx skills update antdv-next/skills
 ```
 
 ## 使用

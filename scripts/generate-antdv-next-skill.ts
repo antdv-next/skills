@@ -24,6 +24,24 @@ type ComponentEntry = {
   demos: DemoEntry[]
 }
 
+type SemanticEntry = {
+  key: string
+  component: string
+  variant: string | null
+  sourceDemo: string
+  semantics: Record<string, any>
+  leafCount: number
+}
+
+type SemanticArtifacts = {
+  markdownFile: string | null
+  jsonFile: string | null
+  totalEntries: number
+  totalComponents: number
+  totalLeaves: number
+  byComponent: Record<string, { keys: string[]; leafCount: number }>
+}
+
 type Args = {
   repo?: string
   out?: string
@@ -94,6 +112,10 @@ function formatDateISO(date: Date): string {
   return date.toISOString().slice(0, 10)
 }
 
+function formatDateTimeISO(date: Date): string {
+  return date.toISOString()
+}
+
 function normalizeLang(input?: string): 'en-US' | 'zh-CN' {
   if (!input) return 'en-US'
   const normalized = input.toLowerCase()
@@ -104,6 +126,397 @@ function normalizeLang(input?: string): 'en-US' | 'zh-CN' {
 function normalizeDemoSrc(src: string): string {
   const cleaned = src.replace(/^[.][/]/, '').split('?')[0]
   return cleaned.replace(/\\/g, '/')
+}
+
+function toCamelCase(value: string): string {
+  return value.replace(/-([a-z])/g, (_match, letter: string) => letter.toUpperCase())
+}
+
+function buildNestedStructure(flatSemantics: Record<string, string>) {
+  const result: Record<string, any> = {}
+  const nestedKeys = new Set<string>()
+
+  for (const key of Object.keys(flatSemantics)) {
+    if (key.includes('.')) {
+      nestedKeys.add(key.split('.')[0]!)
+    }
+  }
+
+  for (const [key, value] of Object.entries(flatSemantics)) {
+    if (key.includes('.')) {
+      const parts = key.split('.')
+      let current = result
+      for (let i = 0; i < parts.length - 1; i += 1) {
+        const part = parts[i]!
+        if (!current[part] || typeof current[part] === 'string') {
+          current[part] = {}
+        }
+        current = current[part]
+      }
+      current[parts[parts.length - 1]!] = value
+      continue
+    }
+
+    if (!nestedKeys.has(key)) {
+      result[key] = value
+      continue
+    }
+
+    if (!result[key]) {
+      result[key] = {}
+    }
+  }
+
+  return result
+}
+
+function generateMarkdownStructure(obj: Record<string, any>, indent = 0): string {
+  let result = ''
+  for (const [key, value] of Object.entries(obj)) {
+    const indentStr = '  '.repeat(indent)
+    if (typeof value === 'string') {
+      result += `${indentStr}- \`${key}\`: ${value}\n`
+    } else {
+      result += `${indentStr}- \`${key}\`:\n`
+      result += generateMarkdownStructure(value, indent + 1)
+    }
+  }
+  return result
+}
+
+function countSemanticLeaves(input: Record<string, any>): number {
+  let count = 0
+  for (const value of Object.values(input)) {
+    if (typeof value === 'string') {
+      count += 1
+      continue
+    }
+    if (value && typeof value === 'object') {
+      count += countSemanticLeaves(value)
+    }
+  }
+  return count
+}
+
+function sortObjectDeep<T>(value: T): T {
+  if (Array.isArray(value)) {
+    return value.map((item) => sortObjectDeep(item)) as T
+  }
+  if (!value || typeof value !== 'object') {
+    return value
+  }
+  const sorted = Object.keys(value as Record<string, unknown>)
+    .sort((a, b) => a.localeCompare(b))
+    .reduce<Record<string, unknown>>((acc, key) => {
+      acc[key] = sortObjectDeep((value as Record<string, unknown>)[key])
+      return acc
+    }, {})
+  return sorted as T
+}
+
+function extractLocaleInfo(content: string): { cn: string; en: string } | null {
+  const cnMatch = content.match(/cn:\s*\{([\s\S]*?)\}\s*,\s*en\s*:/)
+  const enMatch = content.match(/en:\s*\{([\s\S]*?)\}\s*[,}]/)
+  if (!cnMatch && !enMatch) {
+    return null
+  }
+  return {
+    cn: cnMatch?.[1] ?? '',
+    en: enMatch?.[1] ?? '',
+  }
+}
+
+function extractFlatSemantics(localeContent: string): Record<string, string> {
+  const flat: Record<string, string> = {}
+  const matches = localeContent.matchAll(/['"]?([^'":\s]+)['"]?\s*:\s*['"]([^'"]+)['"],?/g)
+  for (const match of matches) {
+    const key = match[1]
+    const value = match[2]
+    if (key && value) {
+      flat[key] = value
+    }
+  }
+  return flat
+}
+
+async function resolveLocalImportFile(fromFile: string, importPath: string): Promise<string | null> {
+  const basePath = path.resolve(path.dirname(fromFile), importPath)
+  const candidates = [
+    basePath,
+    `${basePath}.ts`,
+    `${basePath}.tsx`,
+    `${basePath}.js`,
+    `${basePath}.jsx`,
+    path.join(basePath, 'index.ts'),
+    path.join(basePath, 'index.tsx'),
+    path.join(basePath, 'index.js'),
+    path.join(basePath, 'index.jsx'),
+  ]
+
+  for (const candidate of candidates) {
+    if (await pathExists(candidate)) {
+      return candidate
+    }
+  }
+
+  return null
+}
+
+async function loadLocaleSourceContent(docPath: string, content: string) {
+  const inlineLocaleInfo = extractLocaleInfo(content)
+  if (inlineLocaleInfo) {
+    return { localeInfo: inlineLocaleInfo }
+  }
+
+  const importMatch = content.match(/import\s+\{\s*locales\s*\}\s+from\s+['"]([^'"]+)['"]/)
+  const importPath = importMatch?.[1]
+  if (!importPath || !importPath.startsWith('.')) {
+    return null
+  }
+
+  const localeFilePath = await resolveLocalImportFile(docPath, importPath)
+  if (!localeFilePath) {
+    return null
+  }
+
+  const localeFileContent = await fs.readFile(localeFilePath, 'utf8')
+  const localeInfo = extractLocaleInfo(localeFileContent)
+  if (!localeInfo) {
+    return null
+  }
+
+  return { localeInfo }
+}
+
+function extractSemanticNameLocaleKeyPairs(content: string): Array<{ name: string; localeKey: string }> {
+  const pairs: Array<{ name: string; localeKey: string }> = []
+  const matches = content.matchAll(/\{\s*name\s*:\s*['"]([^'"]+)['"]\s*,\s*desc\s*:\s*t\(\s*['"]([^'"]+)['"]\s*\)[\s\S]*?\}/g)
+  for (const match of matches) {
+    const name = match[1]
+    const localeKey = match[2]
+    if (!name || !localeKey) continue
+    pairs.push({ name, localeKey })
+  }
+  return pairs
+}
+
+function pickSemanticEntries(
+  localeSemantics: Record<string, string>,
+  semanticPairs: Array<{ name: string; localeKey: string }>,
+): Record<string, string> {
+  if (semanticPairs.length === 0) {
+    return localeSemantics
+  }
+
+  return semanticPairs.reduce<Record<string, string>>((acc, pair) => {
+    const desc = localeSemantics[pair.localeKey]
+    if (desc) {
+      acc[pair.name] = desc
+    }
+    return acc
+  }, {})
+}
+
+function renderSemanticMarkdown(
+  entries: SemanticEntry[],
+  preferredLang: 'en-US' | 'zh-CN',
+): string {
+  const zh = preferredLang === 'zh-CN'
+  const lines: string[] = []
+  lines.push(zh ? '# Antdv Next 组件语义化结构化描述' : '# Antdv Next Component Semantic Structured Descriptions')
+  lines.push('')
+  lines.push(
+    zh
+      ? '本文档从组件 `_semantic` 示例中提取语义化 DOM 描述，并整理为便于 AI 识别的结构化信息。'
+      : 'This document extracts semantic DOM descriptions from component `_semantic` demos and formats them into AI-friendly structured data.',
+  )
+  lines.push('')
+  lines.push(`> ${zh ? '语义条目总数' : 'Total semantic entries'}: ${entries.length}`)
+  lines.push(`> ${zh ? '包含语义描述的组件数' : 'Components with semantic descriptions'}: ${new Set(entries.map((item) => item.component)).size}`)
+  lines.push('')
+  lines.push('## Component List')
+  lines.push('')
+
+  const sorted = [...entries].sort((a, b) => a.key.localeCompare(b.key))
+  for (const entry of sorted) {
+    lines.push(`### ${entry.key}`)
+    lines.push('')
+    lines.push(`- ${zh ? '组件' : 'Component'}: \`${entry.component}\``)
+    if (entry.variant) {
+      lines.push(`- ${zh ? '变体' : 'Variant'}: \`${entry.variant}\``)
+    }
+    lines.push(`- ${zh ? '语义节点数' : 'Semantic nodes'}: ${entry.leafCount}`)
+    lines.push(`- ${zh ? '来源示例' : 'Source demo'}: \`${entry.sourceDemo}\``)
+    lines.push('')
+    lines.push(generateMarkdownStructure(entry.semantics).trimEnd())
+    lines.push('')
+  }
+
+  return lines.join('\n').replace(/\n{3,}/g, '\n\n').trimEnd() + '\n'
+}
+
+const semanticConvertMap: Record<string, string> = {
+  'badge:ribbon': 'ribbon',
+  'floatButton:group': 'floatButtonGroup',
+  'input:input': 'input',
+  'input:otp': 'otp',
+  'input:search': 'inputSearch',
+  'input:textarea': 'textArea',
+}
+
+function resolveSemanticKey(componentName: string, fileName: string): { key: string; variant: string | null } {
+  let semanticKey = toCamelCase(componentName)
+  let variant: string | null = null
+
+  if (fileName !== '_semantic') {
+    variant = fileName.replace(/^_semantic[-_]?/, '') || null
+    if (variant) {
+      semanticKey = `${semanticKey}:${variant}`
+    }
+  }
+
+  semanticKey = semanticConvertMap[semanticKey] ?? semanticKey
+  return { key: semanticKey, variant }
+}
+
+async function collectSemanticEntries(
+  repoRoot: string,
+  componentsRoot: string,
+  preferredLang: 'en-US' | 'zh-CN',
+): Promise<SemanticEntry[]> {
+  const semanticExts = ['.vue', '.tsx', '.ts', '.jsx', '.js']
+  const allFiles = (
+    await Promise.all(semanticExts.map((ext) => listFiles(componentsRoot, ext)))
+  ).flat()
+  const semanticFiles = [...new Set(allFiles)]
+    .filter((file) => /^_semantic[-_]?.*\.(vue|tsx|ts|js|jsx)$/.test(path.basename(file)))
+    .sort((a, b) => a.localeCompare(b))
+
+  const entries: SemanticEntry[] = []
+  for (const docPath of semanticFiles) {
+    try {
+      const content = await fs.readFile(docPath, 'utf8')
+      const componentName = path.basename(path.dirname(path.dirname(docPath)))
+      const ext = path.extname(docPath)
+      const fileName = path.basename(docPath, ext)
+      const { key, variant } = resolveSemanticKey(componentName, fileName)
+
+      const localeSource = await loadLocaleSourceContent(docPath, content)
+      if (!localeSource) continue
+
+      const semanticPairs = extractSemanticNameLocaleKeyPairs(content)
+      const localeContent = preferredLang === 'zh-CN' ? localeSource.localeInfo.cn : localeSource.localeInfo.en
+      const flat = pickSemanticEntries(extractFlatSemantics(localeContent), semanticPairs)
+      if (Object.keys(flat).length === 0) continue
+
+      const semantics = buildNestedStructure(flat)
+      entries.push({
+        key,
+        component: componentName,
+        variant,
+        sourceDemo: toPosix(path.relative(repoRoot, docPath)),
+        semantics,
+        leafCount: countSemanticLeaves(semantics),
+      })
+    } catch (error) {
+      console.error(`Failed to extract semantic info from ${docPath}:`, error)
+    }
+  }
+
+  return entries
+}
+
+async function generateSemanticArtifacts(
+  repoRoot: string,
+  referencesDir: string,
+  componentsRoot: string,
+  preferredLang: 'en-US' | 'zh-CN',
+): Promise<SemanticArtifacts> {
+  const entries = await collectSemanticEntries(repoRoot, componentsRoot, preferredLang)
+  if (entries.length === 0) {
+    return {
+      markdownFile: null,
+      jsonFile: null,
+      totalEntries: 0,
+      totalComponents: 0,
+      totalLeaves: 0,
+      byComponent: {},
+    }
+  }
+
+  const sortedEntries = [...entries].sort((a, b) => a.key.localeCompare(b.key))
+  const byComponent: Record<string, { keys: string[]; leafCount: number }> = {}
+  for (const entry of sortedEntries) {
+    if (!byComponent[entry.component]) {
+      byComponent[entry.component] = { keys: [], leafCount: 0 }
+    }
+    byComponent[entry.component]!.keys.push(entry.key)
+    byComponent[entry.component]!.leafCount += entry.leafCount
+  }
+  for (const info of Object.values(byComponent)) {
+    info.keys.sort((a, b) => a.localeCompare(b))
+  }
+
+  await fs.mkdir(referencesDir, { recursive: true })
+
+  const markdownPath = path.join(referencesDir, 'llms-semantic.md')
+  const jsonPath = path.join(referencesDir, 'llms-semantic.json')
+
+  const markdown = renderSemanticMarkdown(sortedEntries, preferredLang)
+  await fs.writeFile(markdownPath, markdown, 'utf8')
+
+  const json = sortObjectDeep({
+    version: 1,
+    language: preferredLang,
+    generatedAt: formatDateTimeISO(new Date()),
+    source: {
+      repo: toPosix(path.relative(process.cwd(), repoRoot) || '.'),
+      componentsDir: toPosix(path.relative(repoRoot, componentsRoot)),
+    },
+    totals: {
+      entries: sortedEntries.length,
+      components: Object.keys(byComponent).length,
+      semanticNodes: sortedEntries.reduce((sum, item) => sum + item.leafCount, 0),
+    },
+    componentIndex: byComponent,
+    entries: sortedEntries.map((entry) => ({
+      key: entry.key,
+      component: entry.component,
+      variant: entry.variant,
+      sourceDemo: entry.sourceDemo,
+      leafCount: entry.leafCount,
+      semantics: entry.semantics,
+    })),
+  })
+  await fs.writeFile(jsonPath, `${JSON.stringify(json, null, 2)}\n`, 'utf8')
+
+  return {
+    markdownFile: toPosix(path.relative(referencesDir, markdownPath)),
+    jsonFile: toPosix(path.relative(referencesDir, jsonPath)),
+    totalEntries: sortedEntries.length,
+    totalComponents: Object.keys(byComponent).length,
+    totalLeaves: sortedEntries.reduce((sum, item) => sum + item.leafCount, 0),
+    byComponent,
+  }
+}
+
+async function resolvePagesSourceDirs(repoRoot: string): Promise<{ componentsRoot: string; docsRoot: string; pagesRoot: string }> {
+  const candidatePagesRoots = [
+    path.join(repoRoot, 'docs', 'src', 'pages'),
+    path.join(repoRoot, 'playground', 'src', 'pages'),
+  ]
+
+  for (const pagesRoot of candidatePagesRoots) {
+    const componentsRoot = path.join(pagesRoot, 'components')
+    const docsRoot = path.join(pagesRoot, 'docs', 'vue')
+    if (await pathExists(componentsRoot)) {
+      return { componentsRoot, docsRoot, pagesRoot }
+    }
+  }
+
+  throw new Error(
+    `Unable to locate docs source pages. Checked: ${candidatePagesRoots.map((p) => toPosix(p)).join(', ')}`,
+  )
 }
 
 function extractDemoTags(markdown: string): Array<{ src: string; title: string }> {
@@ -271,12 +684,7 @@ async function main() {
   const docsOutDir = path.join(referencesDir, 'docs', 'vue')
   const preferredLang = normalizeLang(args.lang)
 
-  const componentsRoot = path.join(repoRoot, 'playground', 'src', 'pages', 'components')
-  const docsRoot = path.join(repoRoot, 'playground', 'src', 'pages', 'docs', 'vue')
-  if (!(await pathExists(componentsRoot))) {
-    console.error(`Missing components directory: ${componentsRoot}`)
-    process.exit(1)
-  }
+  const { componentsRoot, docsRoot, pagesRoot } = await resolvePagesSourceDirs(repoRoot)
 
   await fs.rm(componentsOutDir, { recursive: true, force: true })
   await fs.mkdir(componentsOutDir, { recursive: true })
@@ -284,6 +692,8 @@ async function main() {
   await fs.mkdir(docsOutDir, { recursive: true })
   await fs.rm(path.join(referencesDir, 'components-index.json'), { force: true })
   await fs.rm(path.join(referencesDir, 'components-index.md'), { force: true })
+  await fs.rm(path.join(referencesDir, 'llms-semantic.md'), { force: true })
+  await fs.rm(path.join(referencesDir, 'llms-semantic.json'), { force: true })
 
   const repoDisplayPath = (() => {
     const relative = toPosix(path.relative(cwd, repoRoot))
@@ -310,6 +720,7 @@ async function main() {
 
   const components: ComponentEntry[] = []
   const vueDocs: Array<{ name: string; file: string }> = []
+  const semanticArtifacts = await generateSemanticArtifacts(repoRoot, referencesDir, componentsRoot, preferredLang)
 
   if (await pathExists(docsRoot)) {
     const docEntries = await fs.readdir(docsRoot, { withFileTypes: true })
@@ -423,6 +834,10 @@ async function main() {
     `- Git SHA: \`${gitSha ?? 'unknown'}\``,
     `- Generated: ${formatDateISO(generatedAt)}`,
     `- Language: ${preferredLang}`,
+    `- Source Pages Root: \`${toPosix(path.relative(repoRoot, pagesRoot))}\``,
+    `- Semantic Structured Entries: ${semanticArtifacts.totalEntries}`,
+    `- Semantic Components: ${semanticArtifacts.totalComponents}`,
+    `- Semantic Nodes: ${semanticArtifacts.totalLeaves}`,
     '',
   ]
   await fs.writeFile(generationPath, generationLines.join('\n'), 'utf8')
@@ -440,7 +855,7 @@ async function main() {
     '',
     '# Antdv Next',
     '',
-    `> The skill is based on Antdv Next playground docs and demos, generated at ${formatDateISO(generatedAt)}.`,
+    `> The skill is based on Antdv Next docs and demos, generated at ${formatDateISO(generatedAt)}.`,
     '',
     `Language: ${preferredLang}`,
     '',
@@ -461,14 +876,31 @@ async function main() {
   }
 
   skillLines.push('')
+  skillLines.push('## AI Structured References')
+  skillLines.push('')
+  skillLines.push('| Type | Path | Notes |')
+  skillLines.push('| --- | --- | --- |')
+  if (semanticArtifacts.jsonFile) {
+    skillLines.push(`| Semantic JSON | ${semanticArtifacts.jsonFile} | Structured semantic DOM descriptions extracted from \`_semantic\` demos |`)
+  } else {
+    skillLines.push('| Semantic JSON | none | No semantic descriptions found |')
+  }
+  if (semanticArtifacts.markdownFile) {
+    skillLines.push(`| Semantic Markdown | ${semanticArtifacts.markdownFile} | Human-readable semantic structure summary |`)
+  } else {
+    skillLines.push('| Semantic Markdown | none | No semantic descriptions found |')
+  }
+  skillLines.push('')
   skillLines.push('## Components')
   skillLines.push('')
-  skillLines.push('| Component | Doc | Demos |')
-  skillLines.push('| --- | --- | --- |')
+  skillLines.push('| Component | Doc | Demos | Semantic |')
+  skillLines.push('| --- | --- | --- | --- |')
   for (const component of components) {
     const docPath = component.docs.en ?? component.docs.zh ?? 'none'
     const demosPath = component.demos.length > 0 ? `components/${component.name}/demo/` : 'none'
-    skillLines.push(`| ${component.name} | ${docPath} | ${demosPath} |`)
+    const semanticInfo = semanticArtifacts.byComponent[component.name]
+    const semanticCell = semanticInfo ? `${semanticInfo.keys.length} entries` : 'none'
+    skillLines.push(`| ${component.name} | ${docPath} | ${demosPath} | ${semanticCell} |`)
   }
   skillLines.push('')
   skillLines.push('## Generate / Update')
@@ -481,6 +913,9 @@ async function main() {
   await fs.writeFile(skillPath, skillLines.join('\n'), 'utf8')
 
   console.log(`Generated ${components.length} components.`)
+  if (semanticArtifacts.jsonFile || semanticArtifacts.markdownFile) {
+    console.log(`Semantic structured references: ${semanticArtifacts.totalEntries} entries (${semanticArtifacts.totalLeaves} nodes).`)
+  }
   console.log(`- ${toPosix(generationPath)}`)
   console.log(`- ${toPosix(skillPath)}`)
 }

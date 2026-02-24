@@ -63,3 +63,5 @@ type Gap = undefined | number | Partial<Record<'xs' | 'sm' | 'md' | 'lg' | 'xl' 
 ```
 
 ## Semantic DOM
+
+| _semantic | demo/_semantic.md |

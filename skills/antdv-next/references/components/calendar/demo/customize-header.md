@@ -9,12 +9,14 @@
 ```vue
 <script setup lang="ts">
 import type { Dayjs } from 'dayjs'
+import { theme } from 'antdv-next'
 import dayjs from 'dayjs'
 import dayLocaleData from 'dayjs/plugin/localeData'
 import 'dayjs/locale/zh-cn'
 
 dayjs.extend(dayLocaleData)
 
+const { token } = theme.useToken()
 function getYearOptions(value: Dayjs) {
   const year = value.year()
 
@@ -38,7 +40,7 @@ function getMonthOptions(value: Dayjs) {
 </script>
 
 <template>
-  <div class="wrapperStyle">
+  <div class="wrapStyle">
     <a-calendar :fullscreen="false">
       <template #headerRender="{ value, type, onChange, onTypeChange }">
         <div style="padding: 8px;">
@@ -76,9 +78,9 @@ function getMonthOptions(value: Dayjs) {
 </template>
 
 <style scoped>
-.wrapperStyle {
+.wrapStyle {
   width: 300px;
-  border: 1px solid rgb(240, 240, 240);
+  border: 1px solid v-bind('token.colorBorder');
   border-radius: 8px;
 }
 </style>

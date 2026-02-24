@@ -52,11 +52,5 @@ description: 用于页面和区块的加载中状态。
 
   你可以自定义全局默认 Spin 的元素。
 
-## Semantic DOM 
-| Name | Description |
-| --- | --- |
-| root | 根元素 |
-| wrapper | 内嵌加载的容器 |
-| mask | 全屏遮罩层 |
-| indicator | 指示符 |
-| tip | 描述文案 |
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |

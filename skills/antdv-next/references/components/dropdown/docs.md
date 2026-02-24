@@ -43,7 +43,7 @@ description: 向下弹出的列表。
 | menu | 菜单配置项 | MenuProps & &#123; activeKey?: VcMenuProps['activeKey'], onClick?: MenuEmits['click'] &#125; | - | - |
 | autoFocus | 打开后自动聚焦首个菜单项 | boolean | - | - |
 | arrow | 下拉框箭头是否显示，可配置 `pointAtCenter` | boolean \| DropdownArrowOptions | false | - |
-| trigger | 触发下拉的行为，移动端不支持 hover | ('click' \| 'hover' \| 'contextMenu')[] | ['hover'] | - |
+| trigger | 触发下拉的行为，移动端不支持 hover | ('click' \| 'hover' \| 'contextmenu')[] | ['hover'] | - |
 | popupRender | 自定义弹出框内容 | (menu: VueNode) =&gt; VueNode | - | - |
 | open | 菜单是否显示 | boolean | - | - |
 | disabled | 菜单是否禁用 | boolean | - | - |
@@ -77,13 +77,7 @@ Dropdown 会透传 Menu 的插槽（例如 `labelRender`）。
 请确保 `Dropdown` 的子元素能接受 `mouseenter`、`mouseleave`、`focus`、`click` 事件。
 
 ## 语义化 DOM 
-| 名称 | 说明 |
-| --- | --- |
-| root | 下拉菜单容器 |
-| item | 菜单项 |
-| itemTitle | 菜单项标题 |
-| itemIcon | 菜单项图标 |
-| itemContent | 菜单项内容 |
+| _semantic | demo/_semantic.md |
 
 ## FAQ
 

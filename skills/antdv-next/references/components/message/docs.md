@@ -95,12 +95,8 @@ message.config({
 | classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | ArgsClassNamesType | - | - |
 | styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | ArgsStylesType | - | - |
 
-## Semantic DOM 
-| 名称 | 说明 |
-| --- | --- |
-| root | 根元素 |
-| icon | 图标 |
-| content | 内容 |
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |
 
 ## FAQ
 

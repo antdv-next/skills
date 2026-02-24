@@ -48,3 +48,6 @@ description: 展示多个只读字段的组合。
 | extra | 描述列表的操作区域，显示在右上方 | () =&gt; any | - |
 | labelRender | - | RenderDescriptionsItem | - |
 | contentRender | - | RenderDescriptionsItem | - |
+
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |

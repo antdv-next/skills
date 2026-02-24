@@ -10,10 +10,12 @@
 <script setup lang="ts">
 import type { CalendarProps } from 'antdv-next'
 import type { Dayjs } from 'dayjs'
+import { theme } from 'antdv-next'
 import dayjs from 'dayjs'
 import { HolidayUtil, Lunar } from 'lunar-typescript'
 import { ref } from 'vue'
 
+const { token } = theme.useToken()
 const selectDate = ref<Dayjs>(dayjs())
 const panelDate = ref<Dayjs>(dayjs())
 function getYearLabel(year: number) {
@@ -140,7 +142,7 @@ function onSelect(value, selectInfo) {
 <style scoped>
 .wrapper {
   width: 450px;
-  border: 1px solid #f0f0f0;
+  border: 1px solid v-bind('token.colorBorder');
   border-radius: 4px;
   padding: 5px;
 }
@@ -176,13 +178,13 @@ function onSelect(value, selectInfo) {
   background: #1677ff;
   opacity: 0.8;
 }
-.current .lunar {
+/* .current .lunar {
   color: #fff;
   opacity: 0.9;
 }
 .current .weekend {
   color: #fff;
-}
+} */
 .today::before {
   border: 1px solid #1677ff;
 }
@@ -191,8 +193,11 @@ function onSelect(value, selectInfo) {
   z-index: 1;
 }
 .lunar {
-  color: rgba(0, 0, 0, 0.45);
+  color: v-bind('token.colorTextDescription');
   font-size: 12px;
+}
+.current .lunar {
+  color: v-bind('token.colorText');
 }
 .weekend {
   color: #ff4d4f;

@@ -35,6 +35,9 @@ const gap = computed(() => {
   return {
     offset: offsetValue,
     radius: radius.value,
+  } as {
+    offset: number | [number, number]
+    radius: number
   }
 })
 </script>

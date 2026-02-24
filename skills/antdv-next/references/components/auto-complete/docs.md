@@ -49,7 +49,7 @@ description: 输入框自动完成功能。
 | showSearch | 搜索配置 | boolean \| [SearchConfig](#showsearch) | true | - |
 | size | 控件大小 | `large` \| `middle` \| `small` | - | - |
 | status | 设置校验状态 | `error` \| `warning` | - | - |
-| value | 指定当前选中的条目 | string | - | - |
+| value | 指定当前选中的条目，支持 `v-model:value` | string | - | - |
 | variant | 形态变体 | `outlined` \| `borderless` \| `filled` \| `underlined` | `outlined` | - |
 | virtual | 设置 false 时关闭虚拟滚动 | boolean | true | - |
 
@@ -73,7 +73,8 @@ description: 输入框自动完成功能。
 | filterOption | 是否根据输入项进行筛选。当其为一个函数时，会接收 `inputValue` `option` 两个参数，当 `option` 符合筛选条件时，应返回 true，反之则返回 false | boolean \| (inputValue: string, option?: Option) =&gt; boolean | true | - |
 | onSearch | 搜索补全项的时候调用 | (value: string) =&gt; void | - | - |
 
-## Semantic DOM
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |
 
 ## FAQ
 

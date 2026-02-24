@@ -46,6 +46,7 @@ description: 通过鼠标或键盘，输入范围内的数值。
 | styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | InputNumberStylesType | - | - |
 | controls | 是否显示增减按钮，也可设置自定义箭头图标 | boolean \| &#123; upIcon?: VueNode, downIcon?: VueNode &#125; | - | - |
 | type | - | 'number' \| 'text' | - | - |
+| step | 每次改变步数，可以为小数 | 'number' \| 'string' | 1 | - |
 
 ### 事件 
 | 事件 | 说明 | 类型 | 版本 |
@@ -54,7 +55,7 @@ description: 通过鼠标或键盘，输入范围内的数值。
 | update:value | - | (value: any) =&gt; void | - |
 | input | - | (text: string) =&gt; void | - |
 | pressEnter | 按下回车的回调 | (e: KeyboardEvent) =&gt; void | - |
-| step | 每次改变步数，可以为小数 | (value: any, info: InputNumberStepContext) =&gt; void | - |
+| step | `@step`点击上下箭头、键盘、滚轮的回调 | (value: any, info: InputNumberStepContext) =&gt; void | - |
 | mousedown | - | (e: MouseEvent) =&gt; void | - |
 | click | - | (e: MouseEvent) =&gt; void | - |
 | mouseup | - | (e: MouseEvent) =&gt; void | - |
@@ -77,3 +78,6 @@ description: 通过鼠标或键盘，输入范围内的数值。
 | suffix | 带有后缀图标的 input | () =&gt; any | - |
 | addonBefore | 带标签的 input，设置前置标签，请使用 Space.Compact 替换 | () =&gt; any | - |
 | addonAfter | 带标签的 input，设置后置标签，请使用 Space.Compact 替换 | () =&gt; any | - |
+
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |

@@ -37,10 +37,4 @@ description: 区隔内容的分割线。
 | vertical | 是否垂直，和 orientation 同时配置以 orientation 优先 | boolean | false |
 
 ## 语义化 DOM 结构 
-容器元素及其各个子元素的类名和 style。
-
-| 名称 | 说明 |
-| --- | --- |
-| root | 根元素 |
-| content | 内容元素（标题） |
-| rail | 分割线元素 |
+| _semantic | demo/_semantic.md |

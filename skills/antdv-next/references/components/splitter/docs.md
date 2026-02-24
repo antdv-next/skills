@@ -21,7 +21,7 @@ description: 分割面板用于隔离内容。
 | 布局组合 | demo/group.md |
 | 尺寸混合 | demo/size-mix.md |
 | 延迟渲染 | demo/lazy.md |
-| 嵌套在 Tabs 中 | demo/nested-in-tabs.md |
+| 双击重置 | demo/reset.md |
 | 自定义语义结构的样式和类 | demo/style-class.md |
 
 ## API
@@ -66,4 +66,5 @@ description: 分割面板用于隔离内容。
 | resizable | 是否启用拉伸 | boolean | true | - |
 | size | 受控面板大小，支持像素和百分比 | number \| string | - | - |
 
-## Semantic DOM
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |

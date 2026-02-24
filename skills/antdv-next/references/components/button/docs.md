@@ -83,7 +83,8 @@ description: 按钮用于开始一个即时操作。
 
 > type PresetColors = 'blue' | 'purple' | 'cyan' | 'green' | 'magenta' | 'pink' | 'red' | 'orange' | 'yellow' | 'volcano' | 'geekblue' | 'lime' | 'gold';
 
-## Semantic DOM
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |
 
 ## FAQ
 

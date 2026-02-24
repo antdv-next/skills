@@ -13,6 +13,7 @@ description: 输入或选择时间的控件。
 | --- | --- |
 | 基本 | demo/basic.md |
 | 受控组件 | demo/value.md |
+| 值格式化 | demo/value-format.md |
 | 三种大小 | demo/size.md |
 | 选择确认 | demo/need-confirm.md |
 | 禁用 | demo/disabled.md |
@@ -42,6 +43,7 @@ description: 输入或选择时间的控件。
 | disabled | 禁用全部操作 | boolean | false |  |
 | disabledTime | 不可选择的时间 | [DisabledTime](#disabledtime) | - | 4.19.0 |
 | format | 展示的时间格式 | string | `HH:mm:ss` |  |
+| valueFormat | 设置绑定值的格式。设置后 `value`、`defaultValue`、`v-model:value` 可使用格式化字符串，`change` 返回同格式字符串。示例：[值格式化](#time-picker-demo-value-format) | string | - |  |
 | getPopupContainer | 定义浮层的容器，默认为 body 上新建 div | function(trigger) | - |  |
 | hideDisabledOptions | 隐藏禁止选择的选项 | boolean | false |  |
 | hourStep | 小时选项间隔 | number | 1 |  |
@@ -62,7 +64,7 @@ description: 输入或选择时间的控件。
 | status | 设置校验状态 | 'error' \| 'warning' | - | 4.19.0 |
 | suffixIcon | 自定义的选择框后缀图标 | VueNode | - |  |
 | use12Hours | 使用 12 小时制，为 true 时 `format` 默认为 `h:mm:ss a` | boolean | false |  |
-| value | 当前时间 | [dayjs](http://day.js.org/) | - |  |
+| value | 当前时间，支持 `v-model:value` | [dayjs](http://day.js.org/) | - |  |
 | variant | 形态变体 | `outlined` \| `borderless` \| `filled` \| `underlined` | `outlined` | 5.13.0 \| `underlined`: 5.24.0 |
 | onChange | 时间发生变化的回调 | function(time: dayjs, timeString: string): void | - |  |
 | onOpenChange | 面板打开/关闭时的回调 | (open: boolean) => void | - |  |
@@ -113,9 +115,8 @@ type RangeDisabledTime = (
 }
 ```
 
-## Semantic DOM
-
-<code src="./demo/_semantic.tsx" simplify="true"></code>
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |
 
 ## FAQ
 

@@ -124,14 +124,8 @@ notification.config({
 | maxCount | 最大显示数，超过限制时，最早的消息会被自动关闭 | number | - | - |
 | props | 透传至通知 `div` 的 props，支持 `data-testid`、`aria-*` 或 `role` | DivProps | - | - |
 
-## Semantic DOM 
-| 名称 | 说明 |
-| --- | --- |
-| root | 根元素 |
-| title | 标题 |
-| description | 描述 |
-| actions | 操作区域 |
-| icon | 图标 |
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |
 
 ## FAQ
 

@@ -96,3 +96,6 @@ description: 通用卡片容器。
 | avatar | 头像 | () =&gt; any | - |
 | title | 标题 | () =&gt; any | - |
 | description | 描述 | () =&gt; any | - |
+
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |

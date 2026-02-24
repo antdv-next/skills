@@ -53,7 +53,9 @@ description: 能够将文本转换生成二维码的组件，支持自定义配�
 | 插槽 | 说明 | 类型 | 版本 |
 | --- | --- | --- | --- |
 | statusRender | 自定义状态渲染器 | (info: StatusRenderInfo) =&gt; any | - |
-## Semantic DOM
+
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |
 
 ## FAQ
 

@@ -112,8 +112,4 @@ const items: BreadcrumbProps['items'] = [
 ```
 
 ## 语义化 DOM 
-| 属性 | 说明 | 版本 |
-| --- | --- | --- |
-| root | 根元素，包含文字颜色、字体大小、图标尺寸等基础样式，内部使用 flex 布局的有序列表 | - |
-| item | Item 元素，包含文字颜色、链接的颜色变化、悬浮效果、内边距、圆角、高度、外边距等样式 | - |
-| separator | 分隔符元素，包含分隔符的外边距和颜色样式 | - |
+| _semantic | demo/_semantic.md |

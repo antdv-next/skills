@@ -37,7 +37,7 @@ description: 悬浮于页面上方的按钮。
 | shape | 设置包含的 FloatButton 按钮形状 | `circle` \| `square` | `circle` | - |
 | trigger | 触发方式（有触发方式为菜单模式） | `click` \| `hover` | - | - |
 | open | 受控展开，需配合 trigger 一起使用 | boolean | - | - |
-| closeIcon | 自定义关闭按钮 | VueNode | `&lt;CloseOutlined /&gt;` | - |
+| closeIcon | 自定义关闭按钮 | VueNode | `<CloseOutlined />` | - |
 | placement | 自定义菜单弹出位置 | `top` \| `left` \| `right` \| `bottom` | `top` | - |
 
 #### 事件 
@@ -101,4 +101,11 @@ description: 悬浮于页面上方的按钮。
 | --- | --- | --- | --- |
 | click | 点击按钮的回调函数 | () =&gt; void | - |
 
-## Semantic DOM
+## 语义化 DOM 
+### FloatButton
+
+| _semantic | demo/_semantic.md |
+
+### FloatButtonGroup
+
+| _semantic_group | demo/_semantic_group.md |

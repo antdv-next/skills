@@ -75,4 +75,5 @@ description: 展示统计数值。
 | suffix | 设置数值的后缀 | () =&gt; VueNode | - |
 | title | 数值的标题 | () =&gt; VueNode | - |
 
-## Semantic DOM
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |

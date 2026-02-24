@@ -75,7 +75,7 @@ description: 树型选择控件。
 | treeLine | 是否展示线条样式，请参考 [Tree - showLine](../tree/docs.md#tree-demo-line) | boolean \| object | false | - |
 | treeLoadedKeys | （受控）已经加载的节点，需要配合 `loadData` 使用 | Key[] | [] | - |
 | treeNodeLabelProp | 作为显示的 prop 设置 | string | `title` | - |
-| value | 指定当前选中的条目 | string \| string[] | - | - |
+| value | 指定当前选中的条目，支持 `v-model:value` | string \| string[] | - | - |
 | virtual | 设置 false 时关闭虚拟滚动 | boolean | true | - |
 | bordered | 已废弃。请使用 `variant` | boolean | - | - |
 | showArrow | 已废弃，设置 `suffixIcon` 为 null 可隐藏 | boolean | - | - |
@@ -128,21 +128,8 @@ description: 树型选择控件。
 | title | 树节点显示的内容 | VueNode | `---` | - |
 | value | 默认根据此属性值进行筛选（其值在整个树范围内唯一） | Key | - | - |
 
-## Semantic DOM 
-| 名称 | 说明 |
-| --- | --- |
-| root | 根元素 |
-| prefix | 前缀元素 |
-| input | 输入元素 |
-| suffix | 后缀元素 |
-| content | 多选容器 |
-| placeholder | 占位符元素 |
-| item | 选中项 |
-| itemContent | 选中项内容 |
-| itemRemove | 选中项移除按钮 |
-| popup.root | 弹出层根元素 |
-| popup.item | 弹出层列表项 |
-| popup.itemTitle | 弹出层列表项标题 |
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |
 
 ## FAQ
 

@@ -62,14 +62,8 @@ Popconfirm 还支持 Popover 的所有属性，详见 [Popover](../popover/docs.
 | okText | 确认按钮文字 | () =&gt; any | - |
 | cancelText | 取消按钮文字 | () =&gt; any | - |
 
-## Semantic DOM 
-| 名称 | 说明 |
-| --- | --- |
-| root | 根元素 |
-| container | 弹出内容容器 |
-| arrow | 箭头元素 |
-| title | 标题元素 |
-| content | 描述元素 |
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |
 
 ## FAQ
 

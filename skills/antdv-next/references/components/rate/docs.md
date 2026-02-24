@@ -40,7 +40,7 @@ description: 用于对事物进行评分操作。
 | size | 星星尺寸 | 'small' \| 'middle' \| 'large' | 'middle' |  |
 | style | 自定义样式对象 | CSSProperties | - |  |
 | tooltips | 自定义每项的提示信息 | [TooltipProps](../tooltip/docs.md#api)[\] \| string\[] | - |  |
-| value | 当前数，受控值 | number | - |  |
+| value | 当前数，受控值，支持 `v-model:value` | number | - |  |
 
 ### 事件 
 | 事件 | 说明 | 类型 | 版本 |

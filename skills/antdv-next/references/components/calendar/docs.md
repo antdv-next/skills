@@ -41,7 +41,7 @@ description: 按照日历形式展示数据的容器。
 | cellRender | 自定义单元格的内容 | (date: DateType, info: any) =&gt; VueNode | - | - |
 | fullCellRender | 自定义单元格的内容 | (date: DateType, info: any) =&gt; VueNode | - | - |
 | headerRender | 自定义头部内容 | HeaderRender&lt;DateType&gt; | - | - |
-| value | 展示日期 | DateType | - | - |
+| value | 展示日期，支持 `v-model:value` | DateType | - | - |
 | defaultValue | 默认展示的日期 | DateType | - | - |
 | mode | 初始模式 | CalendarMode | `month` | - |
 | fullscreen | 是否全屏显示 | boolean | true | - |
@@ -65,3 +65,6 @@ description: 按照日历形式展示数据的容器。
 | cellRender | 自定义单元格的内容 | (ctx: &#123; date: AnyObject, info: any &#125;) =&gt; any | - |
 | fullCellRender | 自定义单元格的内容 | (ctx: &#123; date: AnyObject, info: any &#125;) =&gt; any | - |
 | headerRender | 自定义头部内容 | (config: &#123; value: AnyObject, type: CalendarMode, onChange: (date: AnyObject) =&gt; void, onTypeChange: (type: CalendarMode) =&gt; void &#125;) =&gt; any | - |
+
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |

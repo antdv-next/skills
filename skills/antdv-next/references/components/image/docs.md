@@ -66,7 +66,7 @@ description: 可预览的图片。
 | cover | 自定义预览遮罩 | VNode \| [CoverConfig](#coverconfig) | - | - |
 | getContainer | 指定预览挂载的节点，但依旧为全屏展示，false 为挂载在当前位置 | string \| HTMLElement \| (() => HTMLElement) \| false | - | - |
 | imageRender | 自定义预览内容 | (originalNode: VNode, info: { transform: [TransformType](#transformtype), image: [ImgInfo](#imginfo) }) => VNode | - | - |
-| mask | 预览遮罩效果 | boolean \| { enabled?: boolean, blur?: boolean } | true | - |
+| mask | 预览遮罩效果 | boolean \| \{ enabled?: boolean, blur?: boolean \} | true | - |
 | maxScale | 最大缩放倍数 | number | 50 | - |
 | minScale | 最小缩放倍数 | number | 1 | - |
 | movable | 是否可移动 | boolean | true | - |
@@ -95,7 +95,7 @@ description: 可预览的图片。
 | current | 当前预览图的 index | number | - | - |
 | getContainer | 指定预览挂载的节点，但依旧为全屏展示，false 为挂载在当前位置 | string \| HTMLElement \| (() => HTMLElement) \| false | - | - |
 | imageRender | 自定义预览内容 | (originalNode: VNode, info: { transform: [TransformType](#transformtype), image: [ImgInfo](#imginfo), current: number }) => VNode | - | - |
-| mask | 预览遮罩效果 | boolean \| { enabled?: boolean, blur?: boolean } | true | - |
+| mask | 预览遮罩效果 | boolean \| \{ enabled?: boolean, blur?: boolean \} | true | - |
 | minScale | 最小缩放倍数 | number | 1 | - |
 | maxScale | 最大放大倍数 | number | 50 | - |
 | movable | 是否可移动 | boolean | true | - |
@@ -190,4 +190,5 @@ interface CoverConfig {
 };
 ```
 
-## Semantic DOM
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |

@@ -93,12 +93,8 @@ description: 简单的文字提示气泡框。
 </template>
 ```
 
-## Semantic DOM 
-| 名称 | 说明 |
-| --- | --- |
-| root | 根元素 |
-| container | 提示内容容器 |
-| arrow | 箭头元素 |
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |
 
 ## FAQ
 

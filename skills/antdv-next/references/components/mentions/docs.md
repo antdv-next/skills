@@ -59,3 +59,6 @@ description: 用于在输入中提及某人或某事。
 | --- | --- | --- | --- |
 | suffix | - | () =&gt; any | - |
 | labelRender | - | (ctx: &#123; option: MentionsOptionProps, index: number &#125;) =&gt; any | - |
+
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |

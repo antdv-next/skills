@@ -63,7 +63,7 @@ const value = ref()
 #### Props 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
-| checked | 指定当前是否选中 | boolean | false | - |
+| checked | 指定当前是否选中，支持 `v-model:checked` | boolean | false | - |
 | disabled | 禁用 Radio | boolean | false | - |
 | value | 根据 value 进行比较，判断是否选中 | any | - | - |
 
@@ -88,7 +88,7 @@ const value = ref()
 | optionType | 用于设置 Radio `options` 类型 | `default` \| `button` | `default` | - |
 | orientation | 排列方向 | `horizontal` \| `vertical` | `horizontal` | - |
 | size | 大小，只对按钮样式生效 | `large` \| `middle` \| `small` | - | - |
-| value | 用于设置当前选中的值 | any | - | - |
+| value | 用于设置当前选中的值，支持 `v-model:value` | any | - | - |
 | vertical | 值为 true，Radio Group 为垂直方向。与 `orientation` 同时存在，以 `orientation` 优先 | boolean | false | - |
 
 #### Events 
@@ -117,4 +117,5 @@ const value = ref()
 | onChange | 当 Radio Group 的值发送改变时触发 | `(e: CheckboxChangeEvent) => void;` | - | - |
 | required | 指定 Radio 选项是否必填 | `boolean` | `false` | - |
 
-## Semantic DOM
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |

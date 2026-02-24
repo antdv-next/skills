@@ -28,7 +28,7 @@ description: 用于分步引导用户了解产品功能的气泡组件。
 | 属性 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
 | steps | 引导步骤配置 | TourStepItem[\] | - | - |
-| open | 打开引导 | boolean | false | - |
+| open | 打开引导，支持 `v-model:open` | boolean | false | - |
 | current | 当前处于哪一步 | number | - | - |
 | arrow | 是否显示箭头，包含是否指向元素中心的配置 | boolean \| &#123; pointAtCenter: boolean &#125; | true | - |
 | closeIcon | 自定义关闭按钮 | VueNode | true | - |
@@ -81,17 +81,5 @@ description: 用于分步引导用户了解产品功能的气泡组件。
 | prevButtonProps | 上一步按钮的属性 | &#123; children?: VueNode; onClick?: () =&gt; void; class?: string; style?: CSSProperties &#125; | - | - |
 | scrollIntoViewOptions | 是否支持当前元素滚动到视窗内，也可传入配置指定滚动视窗的相关参数，默认跟随 Tour 的 `scrollIntoViewOptions` 属性 | boolean \| ScrollIntoViewOptions | true | - |
 
-## Semantic DOM 
-| 名称 | 说明 |
-| --- | --- |
-| root | 根元素 |
-| cover | 封面元素 |
-| mask | 蒙层元素 |
-| section | 卡片内容区 |
-| footer | 底部区域 |
-| actions | 操作区域 |
-| indicators | 指示器容器 |
-| indicator | 指示器项 |
-| header | 头部区域 |
-| title | 标题 |
-| description | 描述 |
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |

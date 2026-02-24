@@ -10,6 +10,9 @@
 <script setup lang="ts">
 import type { CalendarProps } from 'antdv-next'
 import type { Dayjs } from 'dayjs'
+import { theme } from 'antdv-next'
+
+const { token } = theme.useToken()
 
 function onPanelChange(value: Dayjs, mode: CalendarProps<Dayjs>['mode']) {
   console.log(value.format('YYYY-MM-DD'), mode)
@@ -25,7 +28,7 @@ function onPanelChange(value: Dayjs, mode: CalendarProps<Dayjs>['mode']) {
 <style scoped>
 .wrapStyle {
   width: 300px;
-  border: 1px solid rgb(240, 240, 240);
+  border: 1px solid v-bind('token.colorBorder');
   border-radius: 8px;
 }
 </style>

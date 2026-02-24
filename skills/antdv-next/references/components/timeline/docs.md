@@ -65,4 +65,5 @@ description: 垂直展示的时间流信息。
 | pending | 是否为待定状态 | boolean | false | - |
 | position | 自定义节点位置 | `left` \| `right` | - | - |
 
-## Semantic DOM
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |

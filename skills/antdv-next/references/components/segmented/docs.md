@@ -40,7 +40,7 @@ description: 用于展示多个选项并允许用户选择其中单个选项。
 | orientation | 排列方向 | `horizontal` \| `vertical` | `horizontal` | - |
 | size | 控件尺寸 | `large` \| `middle` \| `small` | `middle` | - |
 | vertical | 排列方向，与 `orientation` 同时存在，以 `orientation` 优先 | boolean | `false` | - |
-| value | 当前选中的值 | string \| number | - | - |
+| value | 当前选中的值，支持 `v-model:value` | string \| number | - | - |
 | shape | 形状 | `default` \| `round` | `default` | - |
 | name | Segmented 下所有 `input[type="radio"]` 的 `name` 属性。若未设置，则将回退到随机生成的名称 | string | - | - |
 
@@ -70,4 +70,5 @@ description: 用于展示多个选项并允许用户选择其中单个选项。
 | tooltip | 分段项的工具提示 | string \| [TooltipProps](../tooltip#api) | - | - |
 | value | 分段项的值 | string \| number | - | - |
 
-## Semantic DOM
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |

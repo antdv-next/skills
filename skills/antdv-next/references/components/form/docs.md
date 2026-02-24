@@ -134,7 +134,7 @@ const formRef = ref<FormInstance>()
 | colon | 配合 `label` 使用，是否显示 `:` | boolean | true | - |
 | extra | 额外提示信息 | VueNode | - | - |
 | help | 提示信息，不配置则按校验规则生成 | VueNode | - | - |
-| hasFeedback | 配合 `validateStatus` 展示状态图标 | boolean \| { icons: FeedbackIcons } | false | - |
+| hasFeedback | 配合 `validateStatus` 展示状态图标 | boolean \| \{ icons: FeedbackIcons \} | false | - |
 | validateStatus | 校验状态 | ValidateStatus | - | - |
 | required | 是否显示必选样式 | boolean | false | - |
 | rules | 校验规则 | Rule[] | - | - |
@@ -145,7 +145,7 @@ const formRef = ref<FormInstance>()
 | id | 设置 `label` 的 `htmlFor` | string | - | - |
 | hidden | 是否隐藏 Form.Item（依然收集与校验） | boolean | false | - |
 | messageVariables | 校验文案变量 | Record&lt;string, string&gt; | - | - |
-| tooltip | 配置提示信息 | VueNode \| TooltipProps & { icon: VueNode } | - | - |
+| tooltip | 配置提示信息 | VueNode \| TooltipProps & \{ icon: VueNode \} | - | - |
 | layout | 表单项布局 | `horizontal` \| `vertical` | - | - |
 | rootClass | 根容器类名 | string | - | - |
 | prefixCls | 组件前缀类名 | string | - | - |
@@ -182,8 +182,4 @@ ConfigProvider 也支持统一配置校验文案：
 > 注意：Vue 版本没有 `Form.List`，可以使用 `v-for` + 响应式数组实现动态表单项。
 
 ## 语义化 DOM 
-| 名称 | 说明 |
-| --- | --- |
-| root | 根元素 |
-| label | 标签元素 |
-| content | 内容元素 |
+| _semantic | demo/_semantic.md |

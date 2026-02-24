@@ -94,23 +94,23 @@ description: 协助进行页面级整体布局。
 ### LayoutSider
 
 #### 属性 
-| 参数 | 说明 | 类型                                            | 默认值 |
-| --- | --- |-----------------------------------------------| --- |
-| breakpoint | 触发响应式布局的[断点](../grid/docs.md#col) | `xs` \| `sm` \| `md` \| `lg` \| `xl` \| `xxl` | - |
-| collapsed | 当前收起状态 | boolean                                       | - |
-| collapsedWidth | 收缩宽度，设置为 0 会出现特殊 trigger | number                                        | 80 |
-| collapsible | 是否可收起 | boolean                                       | false |
-| reverseArrow | 翻转折叠提示箭头的方向，当 Sider 在右边时可以使用 | boolean                                       | false |
-| theme | 主题颜色 | `light` \| `dark`                             | `dark` |
-| trigger | 自定义 trigger，设置为 null 时隐藏 trigger | VueNode                                       | - |
-| width | 宽度 | number \| string                              | 200 |
-| zeroWidthTriggerStyle | 指定当 `collapsedWidth` 为 0 时出现的特殊 trigger 的样式 | object                                        | - |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| --- | --- | --- | --- | --- |
+| breakpoint | 触发响应式布局的[断点](../grid/docs.md#col) | `xs` \| `sm` \| `md` \| `lg` \| `xl` \| `xxl` \| `xxxl` | - | xxxl: 1.0.3 |
+| collapsed | 当前收起状态 | boolean | - |  |
+| collapsedWidth | 收缩宽度，设置为 0 会出现特殊 trigger | number | 80 |  |
+| collapsible | 是否可收起 | boolean | false |  |
+| reverseArrow | 翻转折叠提示箭头的方向，当 Sider 在右边时可以使用 | boolean | false |  |
+| theme | 主题颜色 | `light` \| `dark` | `dark` |  |
+| trigger | 自定义 trigger，设置为 null 时隐藏 trigger | ReactNode | - |  |
+| width | 宽度 | number \| string | 200 |  |
+| zeroWidthTriggerStyle | 指定当 `collapsedWidth` 为 0 时出现的特殊 trigger 的样式 | object | - |  |
 
 #### 事件 
 | 参数         | 说明 | 类型                         | 默认值 |
 |------------| --- |----------------------------| --- |
-| breakpoint | 触发响应式布局[断点](../grid/docs.md#api)时的回调 | (broken) =\&gt; &#123;&#125;          | - |
-| collapse   | 展开-收起时的回调函数，有点击 trigger 以及响应式反馈两种方式可以触发 | (collapsed, type) =\&gt; &#123;&#125; | - |
+| breakpoint | 触发响应式布局[断点](../grid/docs.md#api)时的回调 | (broken: boolean) => void          | - |
+| collapse   | 展开-收起时的回调函数，有点击 trigger 以及响应式反馈两种方式可以触发 | (collapsed: boolean, type: string) => void | - |
 
 #### 插槽 
 | 名称    | 说明           | 参数 |

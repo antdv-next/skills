@@ -51,3 +51,13 @@ description: 图标右上角的圆形徽标数字。
 | --- | --- | --- | --- |
 | count | 展示的数字，大于 overflowCount 时显示为 `$&#123;overflowCount&#125;+`，为 0 时隐藏 | () =&gt; any | - |
 | text | 在设置了 `status` 的前提下有效，设置状态点的文本 | () =&gt; any | - |
+
+## 语义化 DOM
+
+### Badge
+
+| _semantic | demo/_semantic.md |
+
+### BadgeRibbon
+
+| _semantic_ribbon | demo/_semantic_ribbon.md |

@@ -86,11 +86,11 @@ description: 下拉选择器。
 | showSearch | 配置是否可搜索 | boolean \| Object | 单选为 false，多选为 true | - |
 | size | 选择框大小 | `large` \| `middle` \| `small` | - | - |
 | status | 设置校验状态 | 'error' \| 'warning' | - | - |
-| suffixIcon | 自定义的选择框后缀图标。以防止图标被用于其他交互，替换的图标默认不会响应展开、收缩事件，可以通过添加 `pointer-events: none` 样式透传 | VueNode | `&lt;DownOutlined /&gt;` | - |
+| suffixIcon | 自定义的选择框后缀图标。以防止图标被用于其他交互，替换的图标默认不会响应展开、收缩事件，可以通过添加 `pointer-events: none` 样式透传 | VueNode | `<DownOutlined />` | - |
 | tagRender | 自定义 tag 内容 render，仅在 `mode` 为 `multiple` 或 `tags` 时生效 | (props) =&gt; VueNode | - | - |
 | labelRender | 自定义当前选中的 label 内容 render | (props: LabelInValueType) =&gt; VueNode | - | - |
 | tokenSeparators | 自动分词的分隔符，仅在 `mode="tags"` 时生效 | string[] | - | - |
-| value | 指定当前选中的条目，多选时为数组 | string \| string[] \| number \| number[] | - | - |
+| value | 指定当前选中的条目，多选时为数组，支持 `v-model:value` | string \| string[] \| number \| number[] | - | - |
 | variant | 形态变体 | `outlined` \| `borderless` \| `filled` \| `underlined` | `outlined` | - |
 | virtual | 设置 false 时关闭虚拟滚动 | boolean | true | - |
 
@@ -157,18 +157,7 @@ description: 下拉选择器。
 | title | title 属性 | string | - | - |
 
 ## 语义化 DOM 
-| 语义 | 描述 | 版本 |
-| --- | --- | --- |
-| root | 根元素 | - |
-| prefix | 前缀元素 | - |
-| content | 多选容器 | - |
-| placeholder | 占位符元素 | - |
-| clear | 清除按钮 | - |
-| input | 输入元素 | - |
-| suffix | 后缀元素 | - |
-| popup.root | 弹出层根元素 | - |
-| popup.list | 弹出层列表 | - |
-| popup.listItem | 弹出层列表项 | - |
+| _semantic | demo/_semantic.md |
 
 ## FAQ
 

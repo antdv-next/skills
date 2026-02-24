@@ -48,10 +48,10 @@
       </a-button>
     </a-flex>
     <a-flex gap="small">
-      <a-button type="primary" href="https://ant.design/index-cn">
+      <a-button type="primary" href="https://antdv-next.com/index-cn">
         Href Primary
       </a-button>
-      <a-button type="primary" href="https://ant.design/index-cn" disabled>
+      <a-button type="primary" href="https://antdv-next.com/index-cn" disabled>
         Href Primary(disabled)
       </a-button>
     </a-flex>

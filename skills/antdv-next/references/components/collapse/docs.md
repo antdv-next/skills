@@ -91,11 +91,5 @@ description: 可以折叠/展开的内容区域。
 | label | 面板标题 | VueNode | - | - |
 | showArrow | 是否展示当前面板上的箭头（为 false 时，collapsible 不能设为 icon） | boolean | true |  |
 
-## Semantic DOM 
-| 名称 | 说明 |
-| --- | --- |
-| root | 根元素 |
-| header | 标题栏 |
-| title | 标题 |
-| body | 内容区域 |
-| icon | 图标 |
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |

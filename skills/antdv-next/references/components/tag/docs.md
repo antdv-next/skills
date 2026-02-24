@@ -77,11 +77,12 @@ description: 进行标记和分类的小标签。
 | multiple | 多选模式 | boolean | false | - |
 | options | 选项列表 | Array&lt;&#123; label: VueNode; value: string \| number &#125; \| string \| number&gt; | - | - |
 | styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | Record&lt;SemanticDOM, CSSProperties&gt; | - | - |
-| value | 选中值 | string \| number \| Array&lt;string \| number&gt; \| null | - | - |
+| value | 选中值，支持 `v-model:value` | string \| number \| Array&lt;string \| number&gt; \| null | - | - |
 
 #### 事件 
 | 事件 | 说明 | 类型 | 版本 |
 | --- | --- | --- | --- |
 | change | 点击标签时触发的回调 | (value: string \| number \| Array&lt;string \| number&gt; \| null) =&gt; void | - |
 
-## Semantic DOM
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |

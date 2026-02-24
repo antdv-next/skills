@@ -61,7 +61,7 @@ description: 级联选择框。
 | showSearch | 在选择框中显示搜索框 | boolean \| [Object](#showsearch) | false | - |
 | size | 输入框大小 | `large` \| `middle` \| `small` | - | - |
 | status | 设置校验状态 | 'error' \| 'warning' | - | - |
-| value | 指定选中项 | string\[] \| number\[] | - | - |
+| value | 指定选中项，支持 `v-model:value` | string\[] \| number\[] | - | - |
 | variant | 形态变体 | `outlined` \| `borderless` \| `filled` \| `underlined` | `outlined` | - |
 
 ### 事件 
@@ -122,4 +122,4 @@ interface Option {
 
 > 注意，如果需要获得中国省市区数据，可以参考 [china-division](https://gist.github.com/afc163/7582f35654fd03d5be7009444345ea17)。
 
-## Semantic DOM
+| _semantic | demo/_semantic.md |

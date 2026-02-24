@@ -39,29 +39,33 @@ description: 在需要等待加载内容的位置提供一个占位图形组合�
 | classes | 用于自定义组件内部各语义化结构的 class | SkeletonClassNamesType | - | - |
 | styles | 用于自定义组件内部各语义化结构的行内 style | SkeletonStylesType | - | - |
 
-### SkeletonAvatarProps
+### SkeletonAvatar
 
+#### 属性 
 | 属性 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
 | active | 是否展示动画效果，仅在单独使用头像骨架时生效 | boolean | false | - |
 | shape | 指定头像的形状 | `circle` \| `square` | `circle` | - |
 | size | 设置头像占位图的大小 | number \| `large` \| `small` \| `default` | `default` | - |
 
-### SkeletonTitleProps
+### SkeletonTitle
 
+#### 属性 
 | 属性 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
 | width | 设置标题占位图的宽度 | number \| string | - | - |
 
-### SkeletonParagraphProps
+### SkeletonParagraph
 
+#### 属性 
 | 属性 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
 | rows | 设置段落占位图的行数 | number | - | - |
 | width | 设置段落占位图的宽度，若为数组时则为对应的每行宽度，反之则是最后一行的宽度 | number \| string \| Array&lt;number \| string&gt; | - | - |
 
-### Skeleton.Avatar
+### SkeletonAvatar
 
+#### 属性 
 | 属性 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
 | active | 是否展示动画效果 | boolean | false | - |
@@ -70,8 +74,9 @@ description: 在需要等待加载内容的位置提供一个占位图形组合�
 | classes | 用于自定义组件内部各语义化结构的 class | SkeletonClassNamesType | - | - |
 | styles | 用于自定义组件内部各语义化结构的行内 style | SkeletonStylesType | - | - |
 
-### Skeleton.Button
+### SkeletonButton
 
+#### 属性 
 | 属性 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
 | active | 是否展示动画效果 | boolean | false | - |
@@ -81,8 +86,9 @@ description: 在需要等待加载内容的位置提供一个占位图形组合�
 | classes | 用于自定义组件内部各语义化结构的 class | SkeletonClassNamesType | - | - |
 | styles | 用于自定义组件内部各语义化结构的行内 style | SkeletonStylesType | - | - |
 
-### Skeleton.Input
+### SkeletonInput
 
+#### 属性 
 | 属性 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
 | active | 是否展示动画效果 | boolean | false | - |
@@ -90,18 +96,23 @@ description: 在需要等待加载内容的位置提供一个占位图形组合�
 | classes | 用于自定义组件内部各语义化结构的 class | SkeletonClassNamesType | - | - |
 | styles | 用于自定义组件内部各语义化结构的行内 style | SkeletonStylesType | - | - |
 
-### Skeleton.Image
+### SkeletonImage
 
+#### 属性 
 | 属性 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
 | active | 是否展示动画效果 | boolean | false | - |
 | classes | 用于自定义组件内部各语义化结构的 class | SkeletonClassNamesType | - | - |
 | styles | 用于自定义组件内部各语义化结构的行内 style | SkeletonStylesType | - | - |
 
-### Skeleton.Node
+### SkeletonNode
 
+#### 属性 
 | 属性 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
 | active | 是否展示动画效果 | boolean | false | - |
 | classes | 用于自定义组件内部各语义化结构的 class | SkeletonClassNamesType | - | - |
 | styles | 用于自定义组件内部各语义化结构的行内 style | SkeletonStylesType | - | - |
+
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |

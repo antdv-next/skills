@@ -22,6 +22,7 @@ description: 用于选择颜色。
 | 自定义触发器 | demo/trigger.md |
 | 自定义触发事件 | demo/trigger-event.md |
 | 颜色编码 | demo/format.md |
+| 值格式化 | demo/value-format.md |
 | 预设颜色 | demo/presets.md |
 | 自定义面板 | demo/panel-render.md |
 | 自定义语义结构的样式和类 | demo/style-class.md |
@@ -43,10 +44,10 @@ description: 用于选择颜色。
 | disabled | 禁用颜色选择器 | boolean | false | - |
 | disabledAlpha | 禁用透明度 | boolean | false | - |
 | disabledFormat | 禁用选择颜色格式 | boolean | false | - |
-| format | 颜色格式 | ColorFormatType | - | - |
+| format | 颜色格式，支持 `v-model:format` | ColorFormatType | - | - |
 | getPopupContainer | 指定弹层挂载的节点 | (triggerNode: HTMLElement) => HTMLElement | - | - |
 | mode | 选择器模式，用于配置单色与渐变 | ModeType \| ModeType[] | `single` | - |
-| open | 是否显示弹出窗口 | boolean | - | - |
+| open | 是否显示弹出窗口，支持 `v-model:open` | boolean | - | - |
 | placement | 弹出窗口的位置 | TriggerPlacement | `bottomLeft` | - |
 | presets | 预设的颜色 | [PresetsItem](#presetsitem)[] | - | - |
 | panelRender | 自定义渲染面板 | (params: &#123; panel: any, extra: &#123; components: &#123; Picker: any, Presets: any &#125; &#125; &#125;) => any | - | - |
@@ -55,7 +56,8 @@ description: 用于选择颜色。
 | size | 设置触发器大小 | SizeType | `middle` | - |
 | styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | ColorPickerStylesType | - | - |
 | trigger | 颜色选择器的触发模式 | TriggerType | `click` | - |
-| value | 颜色的值 | [ColorValueType](#colorvaluetype) | - | - |
+| valueFormat | 设置颜色值的输出格式，支持 `hex`、`rgb`、`hsb`。设置后 `v-model:value` 返回对应格式的字符串。示例：[值格式化](#color-picker-demo-value-format) | ColorFormatType | - | - |
+| value | 颜色的值，支持 `v-model:value` | [ColorValueType](#colorvaluetype) | - | - |
 
 ### 事件 
 | 事件 | 说明 | 类型 | 版本 |
@@ -107,11 +109,8 @@ interface PresetsItem {
 | toRgb | 转换成 `rgb` 对象 | () => &#123; r: number, g: number, b: number, a: number &#125; | - |
 | toRgbString | 转换成 `rgb` 格式颜色字符串，返回格式如：`rgb(22, 119, 255)` | () => string | - |
 
-## 语义化结构 
-| 名称 | 说明 |
-| --- | --- |
-| root | 触发器容器，包含边框样式、过渡动画、尺寸控制等样式，显示颜色块和文本内容 |
-| popup.root | 弹出面板根容器，包含背景色、阴影效果、色彩选择面板、滑块控制和预设颜色等样式 |
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |
 
 ## FAQ
 

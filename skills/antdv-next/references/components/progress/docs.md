@@ -81,11 +81,5 @@ description: 展示操作的当前进度。
 | gapPosition | 已废弃，请使用 `gapPlacement` 替换 | GapPosition | `bottom` | - |
 | strokeWidth | 仪表盘进度条线的宽度，单位是进度条画布宽度的百分比 | number | 6 | - |
 
-## Semantic DOM 
-| 名称 | 说明 |
-| --- | --- |
-| root | 根元素 |
-| body | 内容区域 |
-| rail | 轨道 |
-| track | 进度条 |
-| indicator | 指示器 |
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |

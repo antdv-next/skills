@@ -40,7 +40,7 @@ Antdv Next 依次提供了三级选项卡，分别用于不同的场景。
 
 | 属性 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
-| activeKey | 当前激活 tab 面板的 key | string | - | - |
+| activeKey | 当前激活 tab 面板的 key，支持 `v-model:active-key` | string | - | - |
 | addIcon | 自定义添加按钮，设置 `type="editable-card"` 时有效 | VueNode | `<PlusOutlined />` | - |
 | animated | 是否使用动画切换 Tabs | boolean \| { inkBar: boolean, tabPane: boolean } | { inkBar: true, tabPane: false } | - |
 | centered | 标签居中展示 | boolean | false | - |
@@ -106,12 +106,5 @@ Antdv Next 依次提供了三级选项卡，分别用于不同的场景。
 | --- | --- | --- | --- |
 | nativeElement | 根节点 | any | - |
 
-## 语义化结构 
-| 名称 | 说明 |
-| --- | --- |
-| root | 根元素，包含布局、方向等基础样式 |
-| header | 头部元素，控制导航布局与边框样式 |
-| item | 标签项元素，包含间距、颜色、交互状态样式 |
-| indicator | 指示器元素，用于激活状态展示 |
-| content | 内容区域元素，用于面板布局 |
-| popup | 折叠菜单弹出层 |
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |

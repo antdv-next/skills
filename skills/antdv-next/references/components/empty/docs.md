@@ -67,11 +67,6 @@ description: 空状态时的展示占位图。
 </style>
 
 ## 语义化结构 
-| 名称 | 说明 |
-| --- | --- |
-| root | 根元素 |
-| image | 图片区域 |
-| description | 描述区域 |
-| footer | 底部操作区域 |
+| _semantic | demo/_semantic.md |
 
 ## 设计变量

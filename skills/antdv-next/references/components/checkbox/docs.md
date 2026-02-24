@@ -26,9 +26,12 @@ description: 收集用户的多项选择。
 #### 属性 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
-| checked | 指定当前是否选中 | boolean | false | - |
+| checked | 指定当前是否选中，支持 `v-model:checked` | string \| number \| boolean \| object | false | - |
+| checkedValue | 选中时的值 | string \| number \| boolean \| object | true | - |
+| defaultChecked | 初始是否选中 | string \| number \| boolean \| object | false | - |
 | disabled | 失效状态 | boolean | false | - |
 | indeterminate | 设置 indeterminate 状态，只负责样式控制 | boolean | false | - |
+| unCheckedValue | 非选中时的值 | string \| number \| boolean \| object | false | - |
 
 #### 事件 
 | 事件 | 说明 | 类型 | 版本 |
@@ -45,7 +48,7 @@ description: 收集用户的多项选择。
 | options | 指定可选项 | string\[] \| number\[] \| Option\[] | \[] | - |
 | disabled | 整组失效 | boolean | false | - |
 | name | CheckboxGroup 下所有 `input[type="checkbox"]` 的 `name` 属性 | string | - | - |
-| value | 指定选中的选项 | (string \| number \| boolean)\[] | \[] | - |
+| value | 指定选中的选项，支持 `v-model:value` | (string \| number \| boolean)\[] | \[] | - |
 | labelRender | - | (params: &#123; item: CheckboxOptionType, index: number &#125;) =&gt; any | - | - |
 
 #### 事件 
@@ -57,3 +60,6 @@ description: 收集用户的多项选择。
 | 插槽 | 说明 | 类型 | 版本 |
 | --- | --- | --- | --- |
 | labelRender | - | (params: &#123; item: CheckboxOptionType, index: number &#125;) =&gt; any | - |
+
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |

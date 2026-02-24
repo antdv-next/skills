@@ -61,7 +61,7 @@ description: 展示一个对话框，提供标题、内容区、操作区。
 | okButtonProps | ok 按钮 props | ButtonProps | - | - |
 | okText | 确认按钮文字 | VueNode | `确定` | - |
 | okType | 确认按钮类型 | LegacyButtonType | `primary` | - |
-| open | 对话框是否可见 | boolean | false | - |
+| open | 对话框是否可见，支持 `v-model:open` | boolean | false | - |
 | rootClass | 根容器 class | string | - | - |
 | rootStyle | 根容器样式 | CSSProperties | - | - |
 | styles | 用于自定义 Modal 组件内部各语义化结构的行内 style，支持对象或函数 | ModalStylesType | - | - |
@@ -124,8 +124,8 @@ description: 展示一个对话框，提供标题、内容区、操作区。
 | getContainer | 指定 Modal 挂载的 HTML 节点，false 为挂载在当前 dom | string \| HTMLElement \| (() => HTMLElement) \| false | document.body | - |
 | icon | 自定义图标 | VueNode | &lt;ExclamationCircleFilled /> | - |
 | keyboard | 是否支持键盘 esc 关闭 | boolean | true | - |
-| mask | 遮罩效果 | MaskType | true | - |
-| maskClosable | 点击蒙层是否允许关闭 | boolean | false | - |
+| mask | 遮罩效果 | boolean \| `{enabled?: boolean, blur?: boolean, closable?: boolean, closable?: true}` | true |  |
+| ~~maskClosable~~ | 点击蒙层是否允许关闭 | boolean | false |  |
 | okButtonProps | ok 按钮 props | ButtonProps | - | - |
 | okText | 确认按钮文字 | string | `确定` | - |
 | okType | 确认按钮类型 | LegacyButtonType | `primary` | - |
@@ -201,17 +201,8 @@ onMounted(() => {
 const confirmed = await modal.confirm({ ...options })
 ```
 
-## 语义化结构 
-| 名称 | 说明 |
-| --- | --- |
-| root | 根节点 |
-| mask | 遮罩层 |
-| wrapper | 外层容器 |
-| container | 弹层容器 |
-| header | 头部 |
-| title | 标题 |
-| body | 内容区 |
-| footer | 底部 |
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |
 
 ## FAQ
 

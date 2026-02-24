@@ -67,11 +67,4 @@ description: 警告提示，展现需要关注的信息。
 | action      | 自定义操作项 | () =&gt; any | 4.9.0 |
 
 ## 语义化 DOM 
-| 名称 | 说明 |
-| --- | --- |
-| root | 根元素 |
-| icon | 图标元素 |
-| section | 内容容器 |
-| title | 标题元素 |
-| description | 描述元素 |
-| actions | 操作区域 |
+| _semantic | demo/_semantic.md |

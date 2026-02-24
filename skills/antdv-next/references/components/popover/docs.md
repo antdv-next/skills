@@ -50,14 +50,8 @@ Popover 还支持 Tooltip 的所有属性，详见 [Tooltip](../tooltip/docs.md#
 ## 注意 
 请确保 `Popover` 的子元素能接受 `mouseenter`、`mouseleave`、`focus`、`click` 事件。
 
-## Semantic DOM 
-| 名称 | 说明 |
-| --- | --- |
-| root | 根元素 |
-| container | 内容容器 |
-| arrow | 箭头元素 |
-| title | 标题元素 |
-| content | 内容元素 |
+## 语义化 DOM 
+| _semantic | demo/_semantic.md |
 
 ## FAQ
 

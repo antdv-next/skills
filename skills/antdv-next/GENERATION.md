@@ -1,6 +1,10 @@
 # Generation Info
 
 - Source: `repos/antdv-next`
-- Git SHA: `dd0168ec736d238d5ac8ee0fc58aebbfcbd33d98`
-- Generated: 2026-02-12
+- Git SHA: `d7fa6e1041c652daf1624b607c1b72151c9a0be3`
+- Generated: 2026-02-24
 - Language: zh-CN
+- Source Pages Root: `docs/src/pages`
+- Semantic Structured Entries: 63
+- Semantic Components: 57
+- Semantic Nodes: 354

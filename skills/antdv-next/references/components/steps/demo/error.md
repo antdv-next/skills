@@ -12,15 +12,15 @@ const content = 'This is a content'
 const items = [
   {
     title: 'Finished',
-    description: content,
+    content,
   },
   {
     title: 'In Process',
-    description: content,
+    content,
   },
   {
     title: 'Waiting',
-    description: content,
+    content,
   },
 ]
 </script>

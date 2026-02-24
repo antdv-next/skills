@@ -1,8 +1,8 @@
-# 自定义文字格式
+# Custom text format
 
-## Description (zh-CN)
+## Description (en-US)
 
-`format` 属性指定格式。
+You can set a custom text by setting the `format` prop.
 
 ## Source
 

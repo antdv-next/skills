@@ -1,8 +1,8 @@
-# 箭头展示
+# Arrow
 
-## Description (zh-CN)
+## Description (en-US)
 
-支持显示、隐藏以及将箭头保持居中定位。
+Support show, hide or keep arrow in the center.
 
 ## Source
 

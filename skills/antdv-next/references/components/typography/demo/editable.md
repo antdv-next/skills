@@ -1,8 +1,8 @@
-# 可编辑
+# Editable
 
-## Description (zh-CN)
+## Description (en-US)
 
-提供可编辑的交互能力。
+Makes Typography editable.
 
 ## Source
 

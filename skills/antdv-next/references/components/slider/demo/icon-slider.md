@@ -1,8 +1,8 @@
-# 带 icon 的滑块
+# Slider with icon
 
-## Description (zh-CN)
+## Description (en-US)
 
-滑块左右可以设置图标来表达业务含义。
+You can add an icon beside the slider to make it meaningful.
 
 ## Source
 

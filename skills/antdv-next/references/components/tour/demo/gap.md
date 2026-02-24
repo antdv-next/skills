@@ -1,8 +1,8 @@
-# 自定义高亮区域的样式
+# Custom highlighted area style
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `gap` 参数来控制高亮区域的边距和圆角。
+Using `gap` to control the radius of highlight area and the offset between highlight area and the element.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 简洁卡片
+# Simple card
 
-## Description (zh-CN)
+## Description (en-US)
 
-只包含内容区域。
+A simple card only containing a content area.
 
 ## Source
 

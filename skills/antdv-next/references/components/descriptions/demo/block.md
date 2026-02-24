@@ -1,8 +1,8 @@
-# 整行
+# row
 
-## Description (zh-CN)
+## Description (en-US)
 
-整行的展示。
+Display of the entire line.
 
 ## Source
 

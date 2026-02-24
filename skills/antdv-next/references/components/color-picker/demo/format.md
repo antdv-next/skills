@@ -1,8 +1,8 @@
-# 颜色编码
+# Color Format
 
-## Description (zh-CN)
+## Description (en-US)
 
-编码格式，支持 `HEX`、`HSB`、`RGB`。
+Encoding formats, support `HEX`, `HSB`, `RGB`.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 弹窗表单
+# Form in Modal to Create
 
-## Description (zh-CN)
+## Description (en-US)
 
-在弹窗中使用表单。
+Use form inside modal.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 响应式
+# Responsive
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过设置 `columns` 和 `gutter` 属性为响应式配置对象，实现不同屏幕尺寸下的瀑布流布局。
+Achieve responsive masonry layout for different screen sizes by setting `columns` and `gutter` properties to responsive configuration objects.
 
 ## Source
 

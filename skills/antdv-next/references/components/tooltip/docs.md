@@ -1,110 +1,115 @@
 ---
 title: Tooltip
-subtitle: 文字提示
-description: 简单的文字提示气泡框。
+description: Simple text popup box.
 ---
 
-## 何时使用 
-- 鼠标移入则显示提示，移出消失，气泡浮层不承载复杂文本和操作。
-- 可用来代替系统默认的 `title` 提示，提供一个 `按钮/文字/操作` 的文案解释。
+## When To Use 
+- The tip is shown on mouse enter, and is hidden on mouse leave. The Tooltip doesn't support complex text or operations.
+- To provide an explanation of a `button/text/operation`. It's often used instead of the html `title` attribute.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本 | demo/basic.md |
-| 平滑过渡 | demo/smooth-transition.md |
-| 位置 | demo/placement.md |
-| 箭头展示 | demo/arrow.md |
-| 贴边偏移 | demo/shift.md |
-| 多彩文字提示 | demo/colorful.md |
-| 禁用 | demo/disabled.md |
-| 自定义子组件 | demo/wrap-custom-component.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
+| Basic | demo/basic.md |
+| Smooth Transition | demo/smooth-transition.md |
+| Placement | demo/placement.md |
+| Arrow | demo/arrow.md |
+| Auto Shift | demo/shift.md |
+| Colorful Tooltip | demo/colorful.md |
+| Disabled | demo/disabled.md |
+| Disabled children | demo/disabled-children.md |
+| Wrap custom component | demo/wrap-custom-component.md |
+| Custom semantic dom styling | demo/style-class.md |
 
 ## API
 
-### 属性 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+### Props
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+Common props ref：[Common props](../../docs/vue/common-props.md)
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| align | 浮层对齐方式配置 | AlignType | - | - |
-| arrow | 支持显示、隐藏以及将箭头保持居中定位 | boolean \| &#123; pointAtCenter?: boolean &#125; | - | - |
-| autoAdjustOverflow | 气泡框不可见时自动调整位置 | boolean \| AdjustOverflow | - | - |
-| color | 设置背景颜色，使用该属性后内部文字颜色将自适应 | LiteralUnion&lt;PresetColorType&gt; | - | - |
-| open | 是否显示 | boolean | - | - |
-| defaultOpen | 默认是否显示 | boolean | false | - |
-| getPopupContainer | 浮层渲染父节点 | (triggerNode: HTMLElement) =&gt; HTMLElement | - | - |
-| destroyOnHidden | 隐藏后是否销毁 | boolean | - | - |
-| zIndex | 设置浮层 z-index | number | - | - |
-| placement | 气泡框位置 | TooltipPlacement | top | - |
-| trigger | 触发行为 | ActionType \| ActionType[] | - | - |
-| fresh | 在隐藏状态也更新内容 | boolean | - | - |
-| mouseEnterDelay | 鼠标移入后显示延时，单位秒 | number | 0.1 | - |
-| mouseLeaveDelay | 鼠标移出后隐藏延时，单位秒 | number | 0.1 | - |
-| classes | 语义化结构 class，支持对象或函数 | TooltipClassNamesType | - | - |
-| styles | 语义化结构 style，支持对象或函数 | TooltipStylesType | - | - |
-| getTooltipContainer | `getPopupContainer` 的兼容别名 | (node: HTMLElement) =&gt; HTMLElement | - | - |
-| motion | 浮层动画配置 | VcTooltipProps['motion'] | - | - |
-| afterOpenChange | 显隐变化后的回调 | (open: boolean) =&gt; void | - | - |
-| builtinPlacements | 内置位置配置 | typeof Placements | - | - |
-| title | 提示文字 | VueNode | - | - |
-| overlay | `title` 的兼容别名 | VueNode | - | - |
-| openClass | 气泡显示时附加在子元素上的 class | string | - | - |
-| unique | 在 `AUniqueProvider`/ConfigProvider 中启用唯一显示 | boolean | - | - |
+| align | Popup alignment config | AlignType | - | - |
+| arrow | Show, hide or keep arrow in the center | boolean \| &#123; pointAtCenter?: boolean &#125; | - | - |
+| autoAdjustOverflow | Auto adjust placement when tooltip is invisible | boolean \| AdjustOverflow | - | - |
+| color | The background color. After using this attribute, the internal text color will adapt automatically | LiteralUnion&lt;PresetColorType&gt; | - | - |
+| open | Whether tooltip is visible | boolean | - | - |
+| defaultOpen | Initial open state | boolean | false | - |
+| getPopupContainer | Specify container for tooltip | (triggerNode: HTMLElement) =&gt; HTMLElement | - | - |
+| destroyOnHidden | Destroy tooltip when hidden | boolean | - | - |
+| zIndex | Set z-index of tooltip | number | - | - |
+| placement | Tooltip placement | TooltipPlacement | top | - |
+| trigger | Trigger action | ActionType \| ActionType[] | - | - |
+| fresh | Update content even when tooltip is hidden | boolean | - | - |
+| mouseEnterDelay | Delay in seconds before showing tooltip | number | 0.1 | - |
+| mouseLeaveDelay | Delay in seconds before hiding tooltip | number | 0.1 | - |
+| classes | Semantic DOM class. Supports object or function | TooltipClassNamesType | - | - |
+| styles | Semantic DOM style. Supports object or function | TooltipStylesType | - | - |
+| getTooltipContainer | Legacy alias of `getPopupContainer` | (node: HTMLElement) =&gt; HTMLElement | - | - |
+| motion | Popup motion config | VcTooltipProps['motion'] | - | - |
+| afterOpenChange | Callback after visibility change | (open: boolean) =&gt; void | - | - |
+| builtinPlacements | Built-in placement config | typeof Placements | - | - |
+| title | The text shown in the tooltip | VueNode | - | - |
+| overlay | Legacy alias of `title` | VueNode | - | - |
+| openClass | Class added to child when tooltip is open | string | - | - |
+| unique | Enable unique display inside `AUniqueProvider`/ConfigProvider | boolean | - | - |
 
-### 事件 
-| 事件 | 说明 | 类型 | 版本 |
-| --- | --- | --- | --- |
-| openChange | 显隐变化时回调 | (open: boolean) =&gt; void | - |
-| update:open | 显隐变化时触发 | (open: boolean) =&gt; void | - |
+### Events
 
-### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| title | 提示文字 | () =&gt; any | - |
+| openChange | Callback when tooltip visibility changes | (open: boolean) =&gt; void | - |
+| update:open | Emit when tooltip visibility changes | (open: boolean) =&gt; void | - |
 
-### 方法 
-| 方法 | 说明 | 类型 | 版本 |
+### Slots
+
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| forcePopupAlign | 已废弃 | VoidFunction | - |
-| forceAlign | 强制重新对齐 | VoidFunction | - |
-| nativeElement | 包裹的 DOM 元素，子元素不支持 ref 时可能不可用 | HTMLElement | - |
-| popupElement | 浮层 DOM 元素 | HTMLDivElement | - |
+| title | The text shown in the tooltip | () =&gt; any | - |
+
+### Methods
+
+| Method | Description | Type | Version |
+| --- | --- | --- | --- |
+| forcePopupAlign | Deprecated | VoidFunction | - |
+| forceAlign | Force popup realign | VoidFunction | - |
+| nativeElement | Wrapped dom element. Not promise valid if child not support ref | HTMLElement | - |
+| popupElement | Popup dom element | HTMLDivElement | - |
 
 ### ConfigProvider - tooltip.unique 
-可以通过 ConfigProvider 全局配置 Tooltip 的唯一性显示。当 `unique` 设置为 `true` 时，同一时间 ConfigProvider 下的 Tooltip 只会显示一个，提供更好的用户体验和平滑的过渡效果。
+You can configure global unique display for Tooltip through ConfigProvider. When `unique` is set to `true`, only one Tooltip under the ConfigProvider will be displayed at the same time, providing better user experience and smooth transition effects.
 
-注意：配置后 `getPopupContainer`、`arrow` 等属性将会失效。
+Note: After configuration, properties like `getPopupContainer`, `arrow` etc. will be ignored.
 
 ```vue
 <template>
   <a-config-provider :tooltip="{ unique: true }">
     <a-space>
-      <a-tooltip title="第一个提示">
-        <a-button>按钮 1</a-button>
+      <a-tooltip title="First tooltip">
+        <a-button>Button 1</a-button>
       </a-tooltip>
-      <a-tooltip title="第二个提示">
-        <a-button>按钮 2</a-button>
+      <a-tooltip title="Second tooltip">
+        <a-button>Button 2</a-button>
       </a-tooltip>
     </a-space>
   </a-config-provider>
 </template>
 ```
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |
 
 ## FAQ
 
-### 为何有时候 HOC 组件无法生效？ 
-请确保 `Tooltip` 的子元素能接受 `mouseenter`、`mouseleave`、`pointerenter`、`pointerleave`、`focus`、`click` 事件。
+### Why doesn't HOC work sometimes? 
+Please ensure that the child elements of `Tooltip` can accept `mouseenter`, `mouseleave`, `pointerenter`, `pointerleave`, `focus`, `click` events.
 
-请查看 https://github.com/ant-design/ant-design/issues/15909
+Please refer to https://github.com/ant-design/ant-design/issues/15909
 
-### 为何 Tooltip 的内容在关闭时不会更新？ 
-Tooltip 默认在关闭时会缓存内容，以防止内容更新时出现闪烁：
+### Why Tooltip not update content when close? 
+Tooltip will cache content when it is closed to avoid flicker when content is updated:
 
 ```vue
 <a-tooltip :open="user" :title="user?.name" />
@@ -114,7 +119,7 @@ Tooltip 默认在关闭时会缓存内容，以防止内容更新时出现闪烁
 <img alt="no blink" height="50" src="https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*KVx7QLOYwVsAAAAAAAAAAAAADrJ8AQ/original" />
 </div>
 
-如果需要在关闭时也更新内容，可以设置 `fresh` 属性（例如 [#44830](https://github.com/ant-design/ant-design/issues/44830) 中的场景）：
+If need update content when close, you can set `fresh` property ([#44830](https://github.com/ant-design/ant-design/issues/44830)):
 
 ```vue
 <a-tooltip :open="user" :title="user?.name" fresh />

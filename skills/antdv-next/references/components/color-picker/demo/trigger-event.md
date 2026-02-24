@@ -1,8 +1,8 @@
-# 自定义触发事件
+# Custom Trigger Event
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义颜色面板的触发事件，提供 `click` 和 `hover` 两个选项。
+Triggers event for customizing color panels, provide options `click` and `hover`.
 
 ## Source
 

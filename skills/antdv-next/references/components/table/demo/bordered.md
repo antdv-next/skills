@@ -1,8 +1,8 @@
-# 带边框
+# Bordered
 
-## Description (zh-CN)
+## Description (en-US)
 
-添加表格边框线，页头和页脚。
+Add border, title and footer for table.
 
 ## Source
 

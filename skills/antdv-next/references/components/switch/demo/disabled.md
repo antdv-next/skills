@@ -1,8 +1,8 @@
-# 不可用
+# Disabled
 
-## Description (zh-CN)
+## Description (en-US)
 
-Switch 失效状态。
+Disabled state of `Switch`.
 
 ## Source
 

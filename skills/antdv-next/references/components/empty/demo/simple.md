@@ -1,8 +1,8 @@
-# 选择图片
+# Choose image
 
-## Description (zh-CN)
+## Description (en-US)
 
-选择内置图片。
+Choose built-in image.
 
 ## Source
 

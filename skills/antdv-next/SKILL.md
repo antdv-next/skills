@@ -11,7 +11,7 @@ metadata:
 
 > The skill is based on Antdv Next docs and demos, generated at 2026-02-24.
 
-Language: zh-CN
+Language: en-US
 
 Docs and demos are copied into `references/` for offline use.
 
@@ -113,5 +113,5 @@ Docs and demos are copied into `references/` for offline use.
 ## Generate / Update
 
 ```bash
-esno scripts/generate-antdv-next-skill.ts --repo repos/antdv-next --lang zh
+esno scripts/generate-antdv-next-skill.ts --repo repos/antdv-next --lang en
 ```

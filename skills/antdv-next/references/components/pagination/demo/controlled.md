@@ -1,8 +1,8 @@
-# 受控
+# Controlled
 
-## Description (zh-CN)
+## Description (en-US)
 
-受控制的页码。
+Controlled page number.
 
 ## Source
 

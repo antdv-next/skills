@@ -1,8 +1,8 @@
-# 自定义头部
+# Customize Header
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义日历头部内容。
+Customize Calendar header content.
 
 ## Source
 

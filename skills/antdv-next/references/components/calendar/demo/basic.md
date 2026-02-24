@@ -1,8 +1,8 @@
-# 基本
+# Basic
 
-## Description (zh-CN)
+## Description (en-US)
 
-一个通用的日历面板，支持年/月切换。
+A basic calendar component with Year/Month switch.
 
 ## Source
 

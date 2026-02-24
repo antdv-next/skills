@@ -1,8 +1,8 @@
-# 选择与操作
+# Selection Operations
 
-## Description (zh-CN)
+## Description (en-US)
 
-选择后进行操作，完成后清空选择，通过 `rowSelection.selectedRowKeys` 来控制选中项。
+To perform operations and clear selections after selecting some rows, use `rowSelection.selectedRowKeys` to control selected rows.
 
 ## Source
 

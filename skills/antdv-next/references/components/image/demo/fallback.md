@@ -1,8 +1,8 @@
-# 容错处理
+# Fault tolerant
 
-## Description (zh-CN)
+## Description (en-US)
 
-加载失败显示图像占位符。
+Load failed to display image placeholder.
 
 ## Source
 

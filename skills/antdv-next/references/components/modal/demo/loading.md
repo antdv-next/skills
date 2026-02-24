@@ -1,8 +1,8 @@
-# 加载中
+# Loading
 
-## Description (zh-CN)
+## Description (en-US)
 
-设置对话框加载状态。
+Set the loading status of Modal.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 徽标数
+# badge
 
-## Description (zh-CN)
+## Description (en-US)
 
-右上角附带圆形徽标数字的悬浮按钮。
+FloatButton with Badge.
 
 ## Source
 

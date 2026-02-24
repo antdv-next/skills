@@ -1,8 +1,8 @@
-# 位置
+# Placement
 
-## Description (zh-CN)
+## Description (en-US)
 
-位置有十二个方向。
+There are 12 `placement` options available.
 
 ## Source
 

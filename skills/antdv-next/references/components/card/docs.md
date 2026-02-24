@@ -1,101 +1,100 @@
 ---
 title: Card
-subtitle: 卡片
-description: 通用卡片容器。
+description: A container for displaying information.
 ---
 
-## 何时使用 
-最基础的卡片容器，可承载文字、列表、图片、段落，常用于后台概览页面。
+## When To Use 
+A card can be used to display content related to a single subject. The content can consist of multiple elements of varying types and sizes.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 典型卡片 | demo/basic.md |
-| 无边框 | demo/border-less.md |
-| 简洁卡片 | demo/simple.md |
-| 更灵活的内容展示 | demo/flexible-content.md |
-| 栅格卡片 | demo/in-column.md |
-| 预加载的卡片 | demo/loading.md |
-| 网格型内嵌卡片 | demo/grid-card.md |
-| 内部卡片 | demo/inner.md |
-| 带页签的卡片 | demo/tabs.md |
-| 支持更多内容配置 | demo/meta.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
+| Basic card片 | demo/basic.md |
+| No border | demo/border-less.md |
+| Simple card | demo/simple.md |
+| Customized content | demo/flexible-content.md |
+| Card in column | demo/in-column.md |
+| Loading card | demo/loading.md |
+| Grid card | demo/grid-card.md |
+| Inner card | demo/inner.md |
+| With tabs | demo/tabs.md |
+| Support more content configuration | demo/meta.md |
+| Custom semantic dom styling | demo/style-class.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
 ### Card
 
-#### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| title | 卡片标题 | VueNode | - | - |
-| extra | 卡片右上角的操作区域 | VueNode | - | - |
-| bordered | 是否有边框, 请使用 `variant` 替换 | boolean | true | - |
+| title | Card title | VueNode | - | - |
+| extra | Content to render in the top-right corner of the card | VueNode | - | - |
+| bordered | Toggles rendering of the border around the card, please use `variant` instead | boolean | true | - |
 | headStyle | Deprecated. | CSSProperties | - | - |
 | bodyStyle | Deprecated. | CSSProperties | - | - |
-| loading | 当卡片内容还在加载中时，可以用 loading 展示一个占位 | boolean | false | - |
-| hoverable | 鼠标移过时可浮起 | boolean | false | - |
+| loading | Shows a loading indicator while the contents of the card are being fetched | boolean | false | - |
+| hoverable | Lift up when hovering card | boolean | false | - |
 | id | - | string | - | - |
-| size | card 的尺寸 | CardSize | `default` | - |
-| type | 卡片类型，可设置为 `inner` 或 不设置 | CardType | - | - |
-| cover | 卡片封面 | VueNode | - | - |
-| actions | 卡片操作组，位置在卡片底部 | VueNode[] | - | - |
-| tabList | 页签标题列表 | CardTabListType[] | - | - |
-| tabBarExtraContent | tab bar 上额外的元素 | VueNode \| &#123; [key: string]: VueNode &#125; | - | - |
-| activeTabKey | 当前激活页签的 key | string | - | - |
-| defaultActiveTabKey | 初始化选中页签的 key，如果没有设置 activeTabKey | string | `第一个页签的 key` | - |
-| tabProps | [Tabs](../tabs/docs.md#tabs) | Record&lt;string, any&gt; | - | - |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | CardClassNamesType | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | CardStylesType | - | - |
-| variant | 形态变体 | 'borderless' \| 'outlined' | `outlined` | - |
+| size | Size of card | CardSize | `default` | - |
+| type | Card style type, can be set to `inner` or not set | CardType | - | - |
+| cover | Card cover | VueNode | - | - |
+| actions | The action list, shows at the bottom of the Card | VueNode[] | - | - |
+| tabList | List of TabPane's head | CardTabListType[] | - | - |
+| tabBarExtraContent | Extra content in tab bar | VueNode \| &#123; [key: string]: VueNode &#125; | - | - |
+| activeTabKey | Current TabPane's key | string | - | - |
+| defaultActiveTabKey | Initial active TabPane's key, if `activeTabKey` is not set | string | `The key of first tab` | - |
+| tabProps | [Tabs](../tabs/docs.md/#tabs) | Record&lt;string, any&gt; | - | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function. | CardClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | CardStylesType | - | - |
+| variant | Variants of Card | 'borderless' \| 'outlined' | `outlined` | - |
 
-#### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+#### Events 
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| tabChange | 页签切换的回调 | (key: string) =&gt; void | - |
+| tabChange | Callback when tab is switched | (key: string) =&gt; void | - |
 | update:activeTabKey | - | (key: string) =&gt; void | - |
 
-#### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+#### Slots 
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| title | 卡片标题 | () =&gt; any | - |
-| extra | 卡片右上角的操作区域 | () =&gt; any | - |
-| cover | 卡片封面 | () =&gt; any | - |
-| actions | 卡片操作组，位置在卡片底部 | () =&gt; any | - |
+| title | Card title | () =&gt; any | - |
+| extra | Content to render in the top-right corner of the card | () =&gt; any | - |
+| cover | Card cover | () =&gt; any | - |
+| actions | The action list, shows at the bottom of the Card | () =&gt; any | - |
 | tabContentRender | - | TabsSlots['contentRender'] | - |
 | tabLabelRender | - | TabsSlots['labelRender'] | - |
-| tabBarExtraContent | tab bar 上额外的元素 | () =&gt; any | - |
+| tabBarExtraContent | Extra content in tab bar | () =&gt; any | - |
 
 ### CardGrid
 
-#### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
 | prefixCls | - | string | - | - |
-| hoverable | 鼠标移过时可浮起 | boolean | false | - |
+| hoverable | Lift up when hovering card | boolean | false | - |
 
 ### CardMeta
 
-#### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
 | prefixCls | - | string | - | - |
 | avatar | - | VueNode | - | - |
-| title | 卡片标题 | VueNode | - | - |
+| title | Card title | VueNode | - | - |
 | description | - | VueNode | - | - |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | CardMetaClassNamesType | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | CardMetaStylesType | - | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function. | CardMetaClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | CardMetaStylesType | - | - |
 
-#### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+#### Slots 
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| avatar | 头像 | () =&gt; any | - |
-| title | 标题 | () =&gt; any | - |
-| description | 描述 | () =&gt; any | - |
+| avatar | Avatar | () =&gt; any | - |
+| title | Title | () =&gt; any | - |
+| description | Description | () =&gt; any | - |
 
-## 语义化 DOM 
+## Semantic DOM 
 | _semantic | demo/_semantic.md |

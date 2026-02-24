@@ -1,8 +1,8 @@
-# 箭头指向
+# Arrow pointing at the center
 
-## Description (zh-CN)
+## Description (en-US)
 
-设置 `arrow` 并指定 `pointAtCenter: true` 后，箭头将指向目标元素的中心。
+Set `arrow` with `pointAtCenter: true`, the arrow will point to the center of the target element.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 自定义 onClick 事件
+# Customize the onClick event
 
-## Description (zh-CN)
+## Description (en-US)
 
-点击锚点不记录历史。
+Clicking on an anchor does not record history.
 
 ## Source
 

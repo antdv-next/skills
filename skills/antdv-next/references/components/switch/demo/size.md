@@ -1,8 +1,8 @@
-# 两种大小
+# Two sizes
 
-## Description (zh-CN)
+## Description (en-US)
 
-`size="small"` 表示小号开关。
+`size="small"` represents a small sized switch.
 
 ## Source
 

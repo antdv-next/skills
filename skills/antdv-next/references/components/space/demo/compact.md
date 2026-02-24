@@ -1,8 +1,8 @@
-# 紧凑布局组合
+# Compact Mode for form component
 
-## Description (zh-CN)
+## Description (en-US)
 
-紧凑布局组件，适合用于输入框、选择器等组件的组合。
+Compact layout component, suitable for combining input boxes, selectors and other components.
 
 ## Source
 

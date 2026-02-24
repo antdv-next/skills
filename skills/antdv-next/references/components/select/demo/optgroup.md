@@ -1,8 +1,8 @@
-# 分组
+# Option Group
 
-## Description (zh-CN)
+## Description (en-US)
 
-用 `OptGroup` 进行选项分组。
+Using `OptGroup` to group the options.
 
 ## Source
 

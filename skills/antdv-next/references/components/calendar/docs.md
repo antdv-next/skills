@@ -1,70 +1,73 @@
 ---
 title: Calendar
-subtitle: 日历
-description: 按照日历形式展示数据的容器。
+description: A container that displays data in calendar form.
 ---
 
-## 何时使用 
-当数据是日期或按照日期划分时，例如日程、课表、价格日历等，农历等。目前支持年/月切换。
+## When To Use 
+When data is in the form of dates, such as schedules, timetables, prices calendar, lunar calendar. This component also supports Year/Month switch.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本 | demo/basic.md |
-| 通知事项日历 | demo/notice-calendar.md |
-| 卡片模式 | demo/card.md |
-| 选择功能 | demo/select.md |
-| 农历日历 | demo/lunar.md |
-| 周数 | demo/week.md |
-| 自定义头部 | demo/customize-header.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
+| Basic | demo/basic.md |
+| Notice Calendar | demo/notice-calendar.md |
+| Card | demo/card.md |
+| Selectable Calendar | demo/select.md |
+| Lunar Calendar | demo/lunar.md |
+| Show Week | demo/week.md |
+| Customize Header | demo/customize-header.md |
+| Custom semantic dom styling | demo/style-class.md |
 
 ## API
 
-### 属性 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+### Props
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+Common props ref：[Common props](../../docs/vue/common-props.md)
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
 | prefixCls | - | string | - | - |
 | rootClass | - | string | - | - |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | CalendarClassNamesType&lt;DateType&gt; | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | CalendarStylesType&lt;DateType&gt; | - | - |
-| locale | 国际化配置 | typeof enUS | [(默认配置)](https://github.com/ant-design/ant-design/blob/master../date-picker/docs.md/locale/example.json) | - |
-| validRange | 设置可以显示的日期 | [DateType, DateType] | - | - |
-| disabledDate | 不可选择的日期，参数为当前 `value`，注意使用时[不要直接修改](https://github.com/ant-design/ant-design/issues/30987) | (date: DateType) =&gt; boolean | - | - |
-| dateFullCellRender | 自定义渲染日期单元格，返回内容覆盖单元格，&gt;= 5.4.0 请用 `fullCellRender` | (date: DateType) =&gt; VueNode | - | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function. | CalendarClassNamesType&lt;DateType&gt; | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | CalendarStylesType&lt;DateType&gt; | - | - |
+| locale | The calendar's locale | typeof enUS | [(default)](https://github.com/ant-design/ant-design/blob/master../date-picker/docs.md/locale/example.json) | - |
+| validRange | To set valid range | [DateType, DateType] | - | - |
+| disabledDate | Function that specifies the dates that cannot be selected, `currentDate` is same dayjs object as `value` prop which you [shouldn't mutate it](https://github.com/ant-design/ant-design/issues/30987) | (date: DateType) =&gt; boolean | - | - |
+| dateFullCellRender | Customize the display of the date cell, the returned content will override the cell | (date: DateType) =&gt; VueNode | - | - |
 | dateCellRender | Deprecated. | (date: DateType) =&gt; VueNode | - | - |
 | monthFullCellRender | Deprecated. | (date: DateType) =&gt; VueNode | - | - |
 | monthCellRender | Deprecated. | (date: DateType) =&gt; VueNode | - | - |
-| cellRender | 自定义单元格的内容 | (date: DateType, info: any) =&gt; VueNode | - | - |
-| fullCellRender | 自定义单元格的内容 | (date: DateType, info: any) =&gt; VueNode | - | - |
-| headerRender | 自定义头部内容 | HeaderRender&lt;DateType&gt; | - | - |
-| value | 展示日期，支持 `v-model:value` | DateType | - | - |
-| defaultValue | 默认展示的日期 | DateType | - | - |
-| mode | 初始模式 | CalendarMode | `month` | - |
-| fullscreen | 是否全屏显示 | boolean | true | - |
-| showWeek | 是否显示周数列 | boolean | false | - |
+| cellRender | Customize cell content | (date: DateType, info: any) =&gt; VueNode | - | - |
+| fullCellRender | Customize cell content | (date: DateType, info: any) =&gt; VueNode | - | - |
+| headerRender | Render custom header in panel | HeaderRender&lt;DateType&gt; | - | - |
+| value | The current selected date, support `v-model:value` | DateType | - | - |
+| defaultValue | The date selected by default | DateType | - | - |
+| mode | The display mode of the calendar | CalendarMode | `month` | - |
+| fullscreen | Whether to display in full-screen | boolean | true | - |
+| showWeek | Whether to display week number | boolean | false | - |
 
-### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+### Events
+
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| change | 日期变化回调 | (date: DateType) =&gt; void | - |
+| change | Callback for when date changes | (date: DateType) =&gt; void | - |
 | update:value | - | (date: DateType) =&gt; void | - |
-| panelChange | 日期面板变化回调 | (date: DateType, mode: CalendarMode) =&gt; void | - |
-| select | 选择日期回调，包含来源信息 | (date: DateType, selectInfo: SelectInfo) =&gt; void | - |
+| panelChange | Callback for when panel changes | (date: DateType, mode: CalendarMode) =&gt; void | - |
+| select | Callback for when a date is selected, include source info | (date: DateType, selectInfo: SelectInfo) =&gt; void | - |
 
-### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+### Slots
+
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| dateFullCellRender | 自定义渲染日期单元格，返回内容覆盖单元格，&gt;= 5.4.0 请用 `fullCellRender` | (ctx: &#123; date: AnyObject &#125;) =&gt; any | - |
+| dateFullCellRender | Customize the display of the date cell, the returned content will override the cell | (ctx: &#123; date: AnyObject &#125;) =&gt; any | - |
 | dateCellRender | - | (ctx: &#123; date: AnyObject &#125;) =&gt; any | - |
 | monthFullCellRender | - | (ctx: &#123; date: AnyObject &#125;) =&gt; any | - |
 | monthCellRender | - | (ctx: &#123; date: AnyObject &#125;) =&gt; any | - |
-| cellRender | 自定义单元格的内容 | (ctx: &#123; date: AnyObject, info: any &#125;) =&gt; any | - |
-| fullCellRender | 自定义单元格的内容 | (ctx: &#123; date: AnyObject, info: any &#125;) =&gt; any | - |
-| headerRender | 自定义头部内容 | (config: &#123; value: AnyObject, type: CalendarMode, onChange: (date: AnyObject) =&gt; void, onTypeChange: (type: CalendarMode) =&gt; void &#125;) =&gt; any | - |
+| cellRender | Customize cell content | (ctx: &#123; date: AnyObject, info: any &#125;) =&gt; any | - |
+| fullCellRender | Customize cell content | (ctx: &#123; date: AnyObject, info: any &#125;) =&gt; any | - |
+| headerRender | Render custom header in panel | (config: &#123; value: AnyObject, type: CalendarMode, onChange: (date: AnyObject) =&gt; void, onTypeChange: (type: CalendarMode) =&gt; void &#125;) =&gt; any | - |
 
-## 语义化 DOM 
+## Semantic DOM 
+
 | _semantic | demo/_semantic.md |

@@ -1,8 +1,8 @@
-# 校验触发时机
+# Validate Trigger
 
-## Description (zh-CN)
+## Description (en-US)
 
-配置字段触发校验的时机。
+Configure validate trigger timing for fields.
 
 ## Source
 

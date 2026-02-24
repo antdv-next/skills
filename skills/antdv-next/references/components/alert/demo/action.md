@@ -1,8 +1,8 @@
-# 自定义操作
+# Custom action
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以在右上角自定义操作项。
+Custom action.
 
 ## Source
 

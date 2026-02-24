@@ -1,8 +1,8 @@
-# 形态变体
+# Variants
 
-## Description (zh-CN)
+## Description (en-US)
 
-Select 的多种形态，有四种变体：`outlined` `filled` `borderless` 和 `underlined`。
+Variants of Select, there are four variants: `outlined` `filled` `borderless` and `underlined`.
 
 ## Source
 

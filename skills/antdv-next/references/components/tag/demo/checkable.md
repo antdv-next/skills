@@ -1,8 +1,8 @@
-# 可选择标签
+# Checkable
 
-## Description (zh-CN)
+## Description (en-US)
 
-可通过 `CheckableTag` 实现类似 Checkbox 的效果，点击切换选中效果。而 `CheckableTagGroup` 则提供了类似 `CheckboxGroup` 或 `RadioGroup` 的功能。
+`CheckableTag` works like Checkbox, click it to toggle checked state. `CheckableTagGroup` provides function that is similar to `CheckboxGroup` or `RadioGroup`.
 
 ## Source
 

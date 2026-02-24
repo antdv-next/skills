@@ -1,8 +1,8 @@
-# 范围选择器
+# Range Picker
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过设置 `picker` 属性，指定范围选择器类型。
+Set range picker type by `picker` prop.
 
 ## Source
 

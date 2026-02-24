@@ -1,8 +1,8 @@
-# 进度条
+# Progress bar
 
-## Description (zh-CN)
+## Description (en-US)
 
-标准的进度条。
+A standard progress bar.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 自定义时间轴点
+# Custom
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以设置为图标或其他自定义元素。
+Set a node as an icon or other custom element.
 
 ## Source
 

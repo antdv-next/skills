@@ -1,8 +1,8 @@
-# 面板式步骤
+# Panel Steps
 
-## Description (zh-CN)
+## Description (en-US)
 
-面板类型的步骤条。
+Panel style steps.
 
 ## Source
 

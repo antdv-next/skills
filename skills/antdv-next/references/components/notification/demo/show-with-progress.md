@@ -1,8 +1,8 @@
-# 显示进度条
+# Show with progress
 
-## Description (zh-CN)
+## Description (en-US)
 
-显示自动关闭通知框的进度条。
+Show progress bar for auto-closing notification.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 基本用法
+# Basic Usage
 
-## Description (zh-CN)
+## Description (en-US)
 
-一个简单的 loading 状态。
+A simple loading status.
 
 ## Source
 

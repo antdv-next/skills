@@ -1,8 +1,8 @@
-# 窄屏表格
+# Narrow Table
 
-## Description (zh-CN)
+## Description (en-US)
 
-两种紧凑型的列表，小型列表只用于对话框内。
+There are two compacted table sizes: `middle` and `small`. The `small` size is used in Modals only.
 
 ## Source
 

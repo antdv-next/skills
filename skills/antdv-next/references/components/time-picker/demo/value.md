@@ -1,8 +1,8 @@
-# 受控组件
+# Under Control
 
-## Description (zh-CN)
+## Description (en-US)
 
-value 和 onChange 需要配合使用。
+`value` and `onChange` should be used together,
 
 ## Source
 

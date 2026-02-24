@@ -1,8 +1,8 @@
-# 顶部-侧边布局
+# Header-Sider
 
-## Description (zh-CN)
+## Description (en-US)
 
-拥有顶部导航及侧边栏的页面，多用于展示类网站。
+Both the top navigation and the sidebar, commonly used in documentation site.
 
 ## Source
 

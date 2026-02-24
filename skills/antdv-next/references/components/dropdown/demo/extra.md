@@ -1,8 +1,8 @@
-# 额外节点
+# Extra node
 
-## Description (zh-CN)
+## Description (en-US)
 
-带有快捷方式的下拉菜单。
+The dropdown menu with shortcut.
 
 ## Source
 

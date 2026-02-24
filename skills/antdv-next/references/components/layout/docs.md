@@ -1,70 +1,69 @@
 ---
 title: Layout
-subtitle: 布局
-description: 协助进行页面级整体布局。
+description: Handling the overall layout of a page.
 ---
 
-## 设计规则
+## Specification
 
-### 尺寸
+### Size
 
-一级导航项偏左靠近 logo 放置，辅助菜单偏右放置。
+The first level navigation is left aligned near a logo, and the secondary menu is right aligned.
 
-- 顶部导航（大部分系统）：一级导航高度 `64px`，二级导航 `48px`。
-- 顶部导航（展示类页面）：一级导航高度 `80px`，二级导航 `56px`。
-- 顶部导航高度的范围计算公式为：`48+8n`。
-- 侧边导航宽度的范围计算公式：`200+8n`。
+- Top Navigation: the height of the first level navigation is `64px`, and the second level navigation is `48px`.
+- Top Navigation (for landing pages): the height of the first level navigation is `80px`, and the second level navigation is `56px`.
+- Calculation formula of a top navigation: `48+8n`.
+- Calculation formula of an aside navigation: `200+8n`.
 
-### 交互
+### Interaction rules
 
-- 一级导航和末级的导航需要在可视化的层面被强调出来；
-- 当前项应该在呈现上优先级最高；
-- 当导航收起的时候，当前项的样式自动赋予给它的上一个层级；
-- 左侧导航栏的收放交互同时支持手风琴和全展开的样式，根据业务的要求进行适当的选择。
+- The first level navigation and the last level navigation should be distinguishable by visualization;
+- The current item should have the highest priority of visualization;
+- When the current navigation item is collapsed, the style of the current navigation item is applied to its parent level;
+- The left side navigation bar has support for both the accordion and expanding styles; you can choose the one that fits your case the best.
 
-### 视觉
+## Visualization rules
 
-导航样式上需要根据信息层级合理的选择样式：
+Style of a navigation should conform to its level.
 
-- **大色块强调**
+- **Emphasis by colorblock**
 
-  建议用于底色为深色系时，当前页面父级的导航项。
+  When the background color is a deep color, you can use this pattern for the parent level navigation item of the current page.
 
-- **高亮火柴棍**
+- **The highlight match stick**
 
-  当导航栏底色为浅色系时使用，可用于当前页面对应导航项，建议尽量在导航路径的最终项使用。
+  When the background color is a light color, you can use this pattern for the current page navigation item; we recommend using it for the last item of the navigation path.
 
-- **字体高亮变色**
+- **Highlighted font**
 
-  从可视化层面，字体高亮的视觉强化力度低于大色块，通常在当前项的上一级使用。
+  From the visualization aspect, a highlighted font is stronger than colorblock; this pattern is often used for the parent level of the current item.
 
-- **字体放大**
+- **Enlarge the size of the font**
 
-  `12px`、`14px` 是导航的标准字号，14 号字体用在一、二级导航中。字号可以考虑导航项的等级做相应选择。
+  `12px`, `14px` is a standard font size of navigation's, `14px` is used for the first and the second level of the navigation. You can choose an appropriate font size regarding the level of your navigation.
 
-## 组件概述
+## Component Overview
 
-- `Layout`：布局容器，其下可嵌套 `Header` `Sider` `Content` `Footer` 或 `Layout` 本身，可以放在任何父容器中。
-- `Header`：顶部布局，自带默认样式，其下可嵌套任何元素，只能放在 `Layout` 中。
-- `Sider`：侧边栏，自带默认样式及基本功能，其下可嵌套任何元素，只能放在 `Layout` 中。
-- `Content`：内容部分，自带默认样式，其下可嵌套任何元素，只能放在 `Layout` 中。
-- `Footer`：底部布局，自带默认样式，其下可嵌套任何元素，只能放在 `Layout` 中。
+- `Layout`: The layout wrapper, in which `Header` `Sider` `Content` `Footer` or `Layout` itself can be nested, and can be placed in any parent container.
+- `Header`: The top layout with the default style, in which any element can be nested, and must be placed in `Layout`.
+- `Sider`: The sidebar with default style and basic functions, in which any element can be nested, and must be placed in `Layout`.
+- `Content`: The content layout with the default style, in which any element can be nested, and must be placed in `Layout`.
+- `Footer`: The bottom layout with the default style, in which any element can be nested, and must be placed in `Layout`.
 
-> 注意：采用 flex 布局实现，请注意[浏览器兼容性](http://caniuse.com/#search=flex)问题。
+> Based on `flex layout`, please pay attention to the [compatibility](http://caniuse.com/#search=flex).
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本结构 | demo/basic.md |
-| 上中下布局 | demo/top.md |
-| 顶部-侧边布局 | demo/top-side.md |
-| 顶部-侧边布局-通栏 | demo/top-side-2.md |
-| 侧边布局 | demo/side.md |
-| 自定义触发器 | demo/custom-trigger.md |
-| 响应式布局 | demo/responsive.md |
-| 固定头部 | demo/fixed.md |
-| 固定侧边栏 | demo/fixed-sider.md |
+| Basic Structure | demo/basic.md |
+| Header-Content-Footer | demo/top.md |
+| Header-Sider | demo/top-side.md |
+| Header Sider 2 | demo/top-side-2.md |
+| Sider | demo/side.md |
+| Custom trigger | demo/custom-trigger.md |
+| Responsive | demo/responsive.md |
+| Fixed Header | demo/fixed.md |
+| Fixed Sider | demo/fixed-sider.md |
 
 ## API
 
@@ -82,43 +81,41 @@ description: 协助进行页面级整体布局。
 
 ### Layout
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
-布局容器。
+The wrapper.
 
-#### 属性 
-| 参数 | 说明 | 类型 | 默认值 |
+#### Props 
+| Property | Description | Type | Default |
 | --- | --- | --- | --- |
-| hasSider | 表示子元素里有 Sider，一般不用指定。可用于服务端渲染时避免样式闪动 | boolean | - |
+| hasSider | Whether contain Sider in children, don't have to assign it normally. Useful in ssr avoid style flickering | boolean | - |
 
 ### LayoutSider
 
-#### 属性 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+The sidebar.
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| breakpoint | 触发响应式布局的[断点](../grid/docs.md#col) | `xs` \| `sm` \| `md` \| `lg` \| `xl` \| `xxl` \| `xxxl` | - | xxxl: 1.0.3 |
-| collapsed | 当前收起状态 | boolean | - |  |
-| collapsedWidth | 收缩宽度，设置为 0 会出现特殊 trigger | number | 80 |  |
-| collapsible | 是否可收起 | boolean | false |  |
-| reverseArrow | 翻转折叠提示箭头的方向，当 Sider 在右边时可以使用 | boolean | false |  |
-| theme | 主题颜色 | `light` \| `dark` | `dark` |  |
-| trigger | 自定义 trigger，设置为 null 时隐藏 trigger | ReactNode | - |  |
-| width | 宽度 | number \| string | 200 |  |
-| zeroWidthTriggerStyle | 指定当 `collapsedWidth` 为 0 时出现的特殊 trigger 的样式 | object | - |  |
+| breakpoint | [Breakpoints](../grid/docs.md/#col) of the responsive layout | `xs` \| `sm` \| `md` \| `lg` \| `xl` \| `xxl` \| `xxxl` | - | xxxl: 1.0.3 |
+| collapsed | To set the current status | boolean | - |  |
+| collapsedWidth | Width of the collapsed sidebar, by setting to 0 a special trigger will appear | number | 80 |  |
+| collapsible | Whether can be collapsed | boolean | false |  |
+| reverseArrow | Reverse direction of arrow, for a sider that expands from the right | boolean | false |  |
+| theme | Color theme of the sidebar | `light` \| `dark` | `dark` |  |
+| trigger | Specify the customized trigger, set to null to hide the trigger | ReactNode | - |  |
+| width | Width of the sidebar | number \| string | 200 |  |
+| zeroWidthTriggerStyle | To customize the styles of the special trigger that appears when `collapsedWidth` is 0 | object | - |  |
 
-#### 事件 
-| 参数         | 说明 | 类型                         | 默认值 |
-|------------| --- |----------------------------| --- |
-| breakpoint | 触发响应式布局[断点](../grid/docs.md#api)时的回调 | (broken: boolean) => void          | - |
-| collapse   | 展开-收起时的回调函数，有点击 trigger 以及响应式反馈两种方式可以触发 | (collapsed: boolean, type: string) => void | - |
+#### Events 
+| Property | Description | Type | Default |
+| --- | --- | --- | --- |
+| breakpoint | The callback function, executed when [breakpoints](../grid/docs.md/#api) changed | (broken: boolean) => void | - |
+| collapse | The callback function, executed by clicking the trigger or activating the responsive layout | (collapsed: boolean, type: string) => void | - |
 
-#### 插槽 
-| 名称    | 说明           | 参数 |
-|-------|--------------|----|
-| trigger | 自定义 trigger，设置为 null 时隐藏 trigger       | -  |
+## Types
 
-## 类型 
-### breakpoint width
+### Breakpoint width
 
 ```ts
 const breakpointWidth = {
@@ -128,5 +125,6 @@ const breakpointWidth = {
   lg: '992px',
   xl: '1200px',
   xxl: '1600px',
+  xxxl: '1920px',
 }
 ```

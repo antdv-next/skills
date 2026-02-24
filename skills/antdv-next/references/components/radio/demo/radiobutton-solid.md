@@ -1,8 +1,8 @@
-# 填底的按钮样式
+# Solid radio button
 
-## Description (zh-CN)
+## Description (en-US)
 
-实色填底的单选按钮样式。
+Solid radio button style.
 
 ## Source
 

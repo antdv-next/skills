@@ -1,8 +1,8 @@
-# 标题组件
+# Title Component
 
-## Description (zh-CN)
+## Description (en-US)
 
-展示不同级别的标题。
+Display title in different levels.
 
 ## Source
 

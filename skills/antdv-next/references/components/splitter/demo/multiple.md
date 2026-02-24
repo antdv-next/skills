@@ -1,8 +1,8 @@
-# 多面板
+# Multiple
 
-## Description (zh-CN)
+## Description (en-US)
 
-多个面板分割。
+Multiple panels split.
 
 ## Source
 

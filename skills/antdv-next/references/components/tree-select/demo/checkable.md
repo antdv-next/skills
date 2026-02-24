@@ -1,8 +1,8 @@
-# 可勾选
+# Checkable
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用勾选框实现多选功能。
+Multiple and checkable.
 
 ## Source
 

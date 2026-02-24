@@ -1,8 +1,8 @@
-# Hooks 配置
+# Hooks config
 
-## Description (zh-CN)
+## Description (en-US)
 
-对 `message`、`notification` 进行配置。。
+Config for `message`, `notification`.
 
 ## Source
 

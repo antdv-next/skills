@@ -1,8 +1,8 @@
-# 自定义渲染
+# Custom Render
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义渲染每一个 Segmented Item。
+Custom each Segmented Item.
 
 ## Source
 

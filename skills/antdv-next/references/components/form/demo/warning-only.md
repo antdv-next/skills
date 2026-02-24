@@ -1,8 +1,8 @@
-# 非阻塞规则
+# No block rule
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 warningOnly 规则展示非阻塞提示。
+Use warningOnly rules without blocking submit.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 路径前缀
+# Path Prefix
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用嵌套路径为字段命名。
+Use nested paths for field names.
 
 ## Source
 

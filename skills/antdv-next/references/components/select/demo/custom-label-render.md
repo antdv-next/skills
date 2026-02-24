@@ -1,8 +1,8 @@
-# 自定义选中 label
+# Custom Selected Label Render
 
-## Description (zh-CN)
+## Description (en-US)
 
-允许自定义当前选中标签的渲染，可用于值回填但相应选项缺失，不想直接渲染值的情况。
+Allows custom rendering of the currently selected label, which can be used for value backfill but the corresponding option is missing and does not want to directly render the value.
 
 ## Source
 

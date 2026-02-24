@@ -1,8 +1,8 @@
-# 分隔符
+# Configuring the Separator
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `separator=">"` 可以自定义分隔符。
+The separator can be customized by setting the separator property: `separator=">"`.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 自定义校验展示
+# Customized Validation
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义校验状态展示。
+Custom validation status display.
 
 ## Source
 

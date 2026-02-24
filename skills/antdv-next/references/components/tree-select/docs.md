@@ -1,146 +1,145 @@
 ---
 title: TreeSelect
-subtitle: 树选择
-description: 树型选择控件。
+description: Tree selection control.
 ---
 
-## 何时使用 
-类似 Select 的选择控件，可选择的数据结构是一个树形结构时，可以使用 TreeSelect，例如公司层级、学科系统、分类目录等等。
+## When To Use 
+`TreeSelect` is similar to `Select`, but the values are provided in a tree like structure. Any data whose entries are defined in a hierarchical manner is fit to use this control. Examples of such case may include a corporate hierarchy, a directory structure, and so on.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本 | demo/basic.md |
-| 多选 | demo/multiple.md |
-| 从数据直接生成 | demo/treeData.md |
-| 可勾选 | demo/checkable.md |
-| 异步加载 | demo/async.md |
-| 线性样式 | demo/treeLine.md |
-| 弹出位置 | demo/placement.md |
-| 形态变体 | demo/variant.md |
-| 状态 | demo/status.md |
-| 最大选中数量 | demo/maxCount.md |
-| 最大选中数量不生效 | demo/maxCountNoEffect.md |
-| 前后缀 | demo/suffix.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
+| Basic | demo/basic.md |
+| Multiple Selection | demo/multiple.md |
+| Generate from tree data | demo/treeData.md |
+| Checkable | demo/checkable.md |
+| Asynchronous loading | demo/async.md |
+| Show Tree Line | demo/treeLine.md |
+| Placement | demo/placement.md |
+| Variants | demo/variant.md |
+| Status | demo/status.md |
+| Max Count | demo/maxCount.md |
+| Max Count no effect | demo/maxCountNoEffect.md |
+| Prefix and Suffix | demo/suffix.md |
+| Custom semantic dom styling | demo/style-class.md |
 
 ## API
 
-### 属性 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+### TreeSelect Props 
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| allowClear | 显示清除按钮 | boolean \| &#123; clearIcon?: VueNode &#125; | false | - |
-| rootClass | 根节点 class | string | - | - |
-| defaultOpen | 是否默认展开下拉菜单 | boolean | - | - |
-| defaultValue | 指定默认选中的条目 | string \| string[] | - | - |
-| disabled | 是否禁用 | boolean | false | - |
-| popupMatchSelectWidth | 下拉菜单和选择器同宽。默认将设置 `min-width`，当值小于选择框宽度时会被忽略。false 时会关闭虚拟滚动 | boolean \| number | true | - |
-| popupRender | 自定义下拉框内容 | (menu: VueNode) =&gt; VueNode | - | - |
-| fieldNames | 自定义节点 label、value、children 的字段 | object | &#123; label: `label`, value: `value`, children: `children` &#125; | - |
-| getPopupContainer | 菜单渲染父节点。默认渲染到 body 上，如果你遇到菜单滚动定位问题，试试修改为滚动的区域，并相对其定位。[示例](https://codepen.io/afc163/pen/zEjNOy?editors=0010) | (triggerNode: HTMLElement) =&gt; HTMLElement | () =&gt; document.body | - |
-| labelInValue | 是否把每个选项的 label 包装到 value 中，会把 value 类型从 `string` 变为 &#123; value: string, label: VueNode, halfChecked: boolean &#125; 的格式 | boolean | false | - |
-| listHeight | 设置弹窗滚动高度 | number | 256 | - |
-| loadData | 异步加载数据 | (node: DataNode) =&gt; Promise&lt;void&gt; | - | - |
-| maxTagCount | 最多显示多少个 tag，响应式模式会对性能产生损耗 | number \| 'responsive' | - | - |
-| maxCount | 指定可选中的最多 items 数量，仅在 `multiple=true` 时生效。如果此时 (`showCheckedStrategy = 'SHOW_ALL'` 且未开启 `treeCheckStrictly`)，或使用 `showCheckedStrategy = 'SHOW_PARENT'`，则 maxCount 无效。 | number | - | - |
-| maxTagPlaceholder | 隐藏 tag 时显示的内容 | VueNode \| ((omittedValues: LabeledValue[]) =&gt; VueNode) | - | - |
-| maxTagTextLength | 最大显示的 tag 文本长度 | number | - | - |
-| multiple | 支持多选（当设置 treeCheckable 时自动变为 true） | boolean | false | - |
-| notFoundContent | 当下拉列表为空时显示的内容 | VueNode | `Not Found` | - |
-| open | 是否展开下拉菜单 | boolean | - | - |
-| placeholder | 选择框默认文字 | string | - | - |
-| placement | 选择框弹出的位置 | `bottomLeft` \| `bottomRight` \| `topLeft` \| `topRight` | bottomLeft | - |
-| prefix | 自定义前缀 | VueNode | - | - |
-| showCheckedStrategy | 配置 `treeCheckable` 时，定义选中项回填的方式。`TreeSelect.SHOW_ALL`: 显示所有选中节点（包括父节点）；`TreeSelect.SHOW_PARENT`: 只显示父节点（当父节点下所有子节点都选中时）；默认只显示子节点 | `TreeSelect.SHOW_ALL` \| `TreeSelect.SHOW_PARENT` \| `TreeSelect.SHOW_CHILD` | `TreeSelect.SHOW_CHILD` | - |
-| showSearch | 是否支持搜索框 | boolean \| [Object](#showsearch) | 单选：false \| 多选：true | - |
-| size | 选择框大小 | `large` \| `middle` \| `small` | - | - |
-| status | 设置校验状态 | 'error' \| 'warning' | - | - |
-| variant | 形态变体 | `outlined` \| `borderless` \| `filled` \| `underlined` | `outlined` | - |
-| suffixIcon | 自定义的选择框后缀图标 | VueNode | `&lt;DownOutlined /&gt;` | - |
-| switcherIcon | 自定义树节点的展开/折叠图标 | VueNode \| ((props: AntTreeNodeProps) =&gt; VueNode) | - | - |
-| tagRender | 自定义 tag 内容，多选时生效 | (props: any) =&gt; VueNode | - | - |
-| treeCheckable | 显示 Checkbox | boolean | false | - |
-| treeCheckStrictly | `checkable` 状态下节点选择完全受控（父子节点选中状态不再关联），会使得 `labelInValue` 强制为 true | boolean | false | - |
-| treeData | treeNodes 数据，如果设置则不需要手动构造 TreeNode 节点（value 在整个树范围内唯一） | array&lt;&#123;value, title, children, [disabled, disableCheckbox, selectable, checkable]&#125;&gt; | [] | - |
-| treeDataSimpleMode | 使用简单格式的 treeData，具体设置参考可设置的类型 (此时 treeData 应变为这样的数据结构: [&#123;id:1, pId:0, value:'1', title:"test1",...&#125;,...]， `pId` 是父节点的 id) | boolean \| object&lt;&#123; id: string, pId: string, rootPId: string &#125;&gt; | false | - |
-| treeTitleRender | 自定义渲染节点 | (nodeData) =&gt; VueNode | - | - |
-| treeDefaultExpandAll | 默认展开所有树节点 | boolean | false | - |
-| treeDefaultExpandedKeys | 默认展开的树节点 | string[] | - | - |
-| treeExpandAction | 点击节点 title 时的展开逻辑，可选：false \| `click` \| `doubleClick` | string \| boolean | false | - |
-| treeExpandedKeys | 设置展开的树节点 | string[] | - | - |
-| treeIcon | 是否展示 TreeNode title 前的图标，没有默认样式，如设置为 true，需要自行定义图标相关样式 | boolean | false | - |
-| treeLine | 是否展示线条样式，请参考 [Tree - showLine](../tree/docs.md#tree-demo-line) | boolean \| object | false | - |
-| treeLoadedKeys | （受控）已经加载的节点，需要配合 `loadData` 使用 | Key[] | [] | - |
-| treeNodeLabelProp | 作为显示的 prop 设置 | string | `title` | - |
-| value | 指定当前选中的条目，支持 `v-model:value` | string \| string[] | - | - |
-| virtual | 设置 false 时关闭虚拟滚动 | boolean | true | - |
-| bordered | 已废弃。请使用 `variant` | boolean | - | - |
-| showArrow | 已废弃，设置 `suffixIcon` 为 null 可隐藏 | boolean | - | - |
+| allowClear | Show clear button | boolean \| &#123; clearIcon?: VueNode &#125; | false | - |
+| defaultOpen | Initial open state of dropdown | boolean | - | - |
+| defaultValue | To set the initial selected treeNode(s) | string \| string[] | - | - |
+| disabled | Disabled or not | boolean | false | - |
+| popupMatchSelectWidth | Determine whether the popup menu and the select input are the same width. Default set `min-width` same as input. Will ignore when value less than select width. `false` will disable virtual scroll | boolean \| number | true | - |
+| popupRender | Customize dropdown content | (menu: VueNode) =&gt; VueNode | - | - |
+| fieldNames | Customize node label, value, children field name | object | &#123; label: `label`, value: `value`, children: `children` &#125; | - |
+| getPopupContainer | To set the container of the dropdown menu | (triggerNode: HTMLElement) =&gt; HTMLElement | () =&gt; document.body | - |
+| labelInValue | Whether to embed label in value, turn the format of value from `string` to &#123; value: string, label: VueNode, halfChecked: boolean &#125; | boolean | false | - |
+| listHeight | Config popup height | number | 256 | - |
+| loadData | Load data asynchronously | (node: DataNode) =&gt; Promise&lt;void&gt; | - | - |
+| maxTagCount | Max tag count to show. `responsive` will cost render performance | number \| 'responsive' | - | - |
+| maxCount | The maximum number of items that can be selected. Only takes effect when `multiple=true`. If (`showCheckedStrategy = 'SHOW_ALL'` and `treeCheckStrictly` is disabled) or `showCheckedStrategy = 'SHOW_PARENT'` is used, `maxCount` will not take effect. | number | - | - |
+| maxTagPlaceholder | Placeholder for not showing tags | VueNode \| ((omittedValues: LabeledValue[]) =&gt; VueNode) | - | - |
+| maxTagTextLength | Max tag text length to show | number | - | - |
+| multiple | Support multiple or not, will be `true` when enable `treeCheckable` | boolean | false | - |
+| notFoundContent | Specify content to show when no result matches | VueNode | `Not Found` | - |
+| open | Controlled open state of dropdown | boolean | - | - |
+| placeholder | Placeholder of the select input | string | - | - |
+| placement | The position where the selection box pops up | `bottomLeft` \| `bottomRight` \| `topLeft` \| `topRight` | `bottomLeft` | - |
+| prefix | The custom prefix | VueNode | - | - |
+| showCheckedStrategy | The way show selected item in box when `treeCheckable` set. **Default:** just show child nodes. **`TreeSelect.SHOW_ALL`:** show all checked treeNodes (include parent treeNode). **`TreeSelect.SHOW_PARENT`:** show checked treeNodes (just show parent treeNode) | `TreeSelect.SHOW_ALL` \| `TreeSelect.SHOW_PARENT` \| `TreeSelect.SHOW_CHILD` | `TreeSelect.SHOW_CHILD` | - |
+| showSearch | Support search or not | boolean \| [Object](#showsearch) | single: false \| multiple: true | - |
+| size | To set the size of the select input | `large` \| `middle` \| `small` | - | - |
+| status | Set validation status | `error` \| `warning` | - | - |
+| variant | Variants of selector | `outlined` \| `borderless` \| `filled` \| `underlined` | `outlined` | - |
+| suffixIcon | The custom suffix icon | VueNode | `&lt;DownOutlined /&gt;` | - |
+| switcherIcon | Customize collapse/expand icon of tree node | VueNode \| ((props: AntTreeNodeProps) =&gt; VueNode) | - | - |
+| tagRender | Customize tag render when `multiple` | (props: any) =&gt; VueNode | - | - |
+| treeCheckable | Whether to show checkbox on the treeNodes | boolean | false | - |
+| treeCheckStrictly | Whether to check nodes precisely (in the `checkable` mode), means parent and child nodes are not associated, and it will make `labelInValue` be true | boolean | false | - |
+| treeData | Data of the treeNodes, manual construction work is no longer needed if this property has been set(ensure the Uniqueness of each value) | array&lt;&#123; value, title, children, [disabled, disableCheckbox, selectable, checkable] &#125;&gt; | [] | - |
+| treeDataSimpleMode | Enable simple mode of treeData. Changes the `treeData` schema to: [&#123;id:1, pId:0, value:'1', title:"test1",...&#125;,...] where pId is parent node's id). It is possible to replace the default `id` and `pId` keys by providing object to `treeDataSimpleMode` | boolean \| object&lt;&#123; id: string, pId: string, rootPId: string &#125;&gt; | false | - |
+| treeTitleRender | Customize tree node title render | (nodeData: DataNode) =&gt; VueNode | - | - |
+| treeDefaultExpandAll | Whether to expand all treeNodes by default | boolean | false | - |
+| treeDefaultExpandedKeys | Default expanded treeNodes | string[] | - | - |
+| treeExpandAction | Tree title open logic when click, optional: false \| `click` \| `doubleClick` | string \| boolean | false | - |
+| treeExpandedKeys | Set expanded keys | string[] | - | - |
+| treeIcon | Shows the icon before a TreeNode's title | boolean | false | - |
+| treeLine | Show the line. Ref [Tree - showLine](../tree/docs.md/#tree-demo-line) | boolean \| object | false | - |
+| treeLoadedKeys | (Controlled) Set loaded tree nodes, work with `loadData` only | string[] | [] | - |
+| treeNodeLabelProp | Will render as content of select | string | `title` | - |
+| value | To set the current selected treeNode(s), support `v-model:value` | string \| string[] | - | - |
+| virtual | Disable virtual scroll when set to false | boolean | true | - |
+| bordered | Deprecated. Use `variant` instead | boolean | - | - |
+| showArrow | Deprecated. Set `suffixIcon` to null to hide | boolean | - | - |
 
-### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+### Events 
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| change | 选中树节点时调用此函数 | function(value, label, extra) | - |
-| openChange | 展开下拉菜单的回调 | (open: boolean) =&gt; void | - |
-| select | 被选中时调用 | function(value, node, extra) | - |
-| treeExpand | 展示节点时调用 | function(expandedKeys) | - |
-| popupScroll | 下拉列表滚动时的回调 | (event: UIEvent) =&gt; void | - |
+| change | A callback function, can be executed when selected treeNodes or input value change | function(value, label, extra) | - |
+| openChange | Callback when dropdown open state changes | (open: boolean) =&gt; void | - |
+| select | A callback function, can be executed when you select a treeNode | function(value, node, extra) | - |
+| treeExpand | A callback function, can be executed when treeNode expanded | function(expandedKeys) | - |
+| popupScroll | Called when dropdown scrolls | (event: UIEvent) =&gt; void | - |
 
-### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+### Slots 
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| suffixIcon | 自定义的选择框后缀图标 | () =&gt; any | - |
-| tagRender | 自定义 tag 内容，多选时生效 | (props: any) =&gt; any | - |
-| notFoundContent | 当下拉列表为空时显示的内容 | () =&gt; any | - |
-| switcherIcon | 自定义树节点的展开/折叠图标 | () =&gt; any | - |
-| treeTitleRender | 自定义渲染节点 | (nodeData: DataNode) =&gt; any | - |
+| suffixIcon | The custom suffix icon | () =&gt; any | - |
+| tagRender | Customize tag render when `multiple` | (props: any) =&gt; any | - |
+| notFoundContent | Specify content to show when no result matches | () =&gt; any | - |
+| switcherIcon | Customize collapse/expand icon of tree node | () =&gt; any | - |
+| treeTitleRender | Customize tree node title render | (nodeData: DataNode) =&gt; any | - |
 
-### 方法 
-| 名称 | 描述 | 版本 |
+### Methods 
+| Name | Description | Version |
 | --- | --- | --- |
-| blur() | 移除焦点 | - |
-| focus() | 获取焦点 | - |
+| blur() | Remove focus | - |
+| focus() | Get focus | - |
 
-## 类型 
+## Types 
 ### showSearch 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| autoClearSearchValue | 当多选模式下值被选择，自动清空搜索框 | boolean | true | - |
-| filterTreeNode | 是否根据输入项进行筛选，默认用 treeNodeFilterProp 的值作为要筛选的 TreeNode 的属性值 | boolean \| function(inputValue: string, treeNode: TreeNode) (函数需要返回 bool 值) | function | - |
-| searchValue | 搜索框的值，可以通过 `onSearch` 获取用户输入 | string | - | - |
-| treeNodeFilterProp | 输入项过滤对应的 treeNode 属性 | string | `value` | - |
-| onSearch | 文本框值变化时的回调 | (value: string) =&gt; void | - | - |
+| autoClearSearchValue | If auto clear search input value when multiple select is selected/deselected | boolean | true | - |
+| filterTreeNode | Whether to filter treeNodes by input value | boolean \| (inputValue: string, treeNode: DataNode) =&gt; boolean | function | - |
+| searchValue | Work with `onSearch` to make search value controlled | string | - | - |
+| treeNodeFilterProp | Will be used for filtering if `filterTreeNode` returns true | string | `value` | - |
+| onSearch | A callback function, can be executed when the search input changes | (value: string) =&gt; void | - | - |
 
-### TreeNode 属性 
-> 建议使用 `treeData` 来代替 `TreeNode`，免去手动构造的麻烦。
+### TreeNode Props 
+> We recommend you to use `treeData` rather than `TreeNode`, to avoid the trouble of manual construction.
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| checkable | 当树为 Checkbox 时，设置独立节点是否展示 Checkbox | boolean | - | - |
-| disableCheckbox | 禁掉 Checkbox | boolean | false | - |
-| disabled | 是否禁用 | boolean | false | - |
-| isLeaf | 是否是叶子节点 | boolean | false | - |
-| key | 此项必须设置（除非使用 `treeDataSimpleMode`），其值在整个树范围内唯一 | Key | - | - |
-| selectable | 是否可选 | boolean | true | - |
-| title | 树节点显示的内容 | VueNode | `---` | - |
-| value | 默认根据此属性值进行筛选（其值在整个树范围内唯一） | Key | - | - |
+| checkable | When Tree is checkable, set TreeNode display Checkbox or not | boolean | - | - |
+| disableCheckbox | Disables the checkbox of the treeNode | boolean | false | - |
+| disabled | Disabled or not | boolean | false | - |
+| isLeaf | Leaf node or not | boolean | false | - |
+| key | Required property (unless using `treeDataSimpleMode`), should be unique in the tree | Key | - | - |
+| selectable | Whether can be selected | boolean | true | - |
+| title | Content showed on the treeNodes | VueNode | `---` | - |
+| value | Will be treated as `treeNodeFilterProp` by default, should be unique in the tree | Key | - | - |
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |
 
 ## FAQ
 
-### onChange 时如何获得父节点信息？ 
-从性能角度考虑，我们默认不透出父节点信息。你可以这样获得：<https://codesandbox.io/s/get-parent-node-in-onchange-eb1608>
+### How to get parent node in onChange? 
+We don't provide this since performance consideration. You can get by this way: <https://codesandbox.io/s/get-parent-node-in-onchange-eb1608>
 
-### 自定义 Option 样式导致滚动异常怎么办？ 
-请参考 Select 的 [FAQ](../select/docs.md)。
+### Why sometimes customize Option cause scroll break? 
+You can ref Select [FAQ](../select/docs.md).
 
-### 为何在搜索时 `loadData` 不会触发展开？ 
-在早期版本中，搜索时会触发 `loadData`。但我们收到反馈，输入时会阻塞网络，因此改为搜索不触发 `loadData`。你仍然可以通过 `filterTreeNode` 处理异步加载逻辑：
+### Why `loadData` not trigger when searching? 
+In earlier version, `loadData` will be triggered when searching. But we got feedback that it will block network when inputting. So we change it to not trigger `loadData` when searching. But you can still handle async logic by `filterTreeNode`:
 
 ```html
 <a-tree-select
@@ -156,5 +155,5 @@ description: 树型选择控件。
 />
 ```
 
-### 为何弹出框不能横向滚动？ 
-关闭虚拟滚动即可，因为开启虚拟滚动时无法准确测量完整列表的 `scrollWidth`。
+### Why can't popup scroll horizontally? 
+Just turn off virtual scrolling, because the `scrollWidth` of the complete list cannot be accurately measured when virtual scrolling is turned on.

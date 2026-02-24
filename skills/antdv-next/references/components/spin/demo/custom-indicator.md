@@ -1,8 +1,8 @@
-# 自定义指示符
+# Custom spinning indicator
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用自定义指示符。
+Use custom loading indicator.
 
 ## Source
 

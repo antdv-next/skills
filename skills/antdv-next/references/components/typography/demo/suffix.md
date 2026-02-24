@@ -1,8 +1,8 @@
-# 后缀
+# suffix
 
-## Description (zh-CN)
+## Description (en-US)
 
-添加后缀的省略。
+Add suffix ellipsis support.
 
 ## Source
 

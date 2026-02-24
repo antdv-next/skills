@@ -1,8 +1,8 @@
-# 登录表单
+# Login Form
 
-## Description (zh-CN)
+## Description (en-US)
 
-登录表单示例。
+Login form example.
 
 ## Source
 

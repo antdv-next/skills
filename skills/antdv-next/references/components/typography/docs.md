@@ -1,164 +1,159 @@
 ---
 title: Typography
-subtitle: 排版
-description: 文本的基本格式。
+description: Basic text writing, including headings, body text, lists, and more.
 ---
 
-## 何时使用 
-- 当需要展示标题、段落、列表内容时使用，如文章/博客/日志的文本样式。
-- 当需要一列基于文本的基础操作时，如拷贝/省略/可编辑。
+## When To Use 
+- When you need to display a title or paragraph contents in Articles/Blogs/Notes.
+- When you need copyable/editable/ellipsis texts.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本 | demo/basic.md |
-| 标题组件 | demo/title.md |
-| 文本与超链接组件 | demo/text.md |
-| 可编辑 | demo/editable.md |
-| 可复制 | demo/copyable.md |
-| 省略号 | demo/ellipsis.md |
-| 受控省略展开/收起 | demo/ellipsis-controlled.md |
-| 省略中间 | demo/ellipsis-middle.md |
-| 后缀 | demo/suffix.md |
+| Basic | demo/basic.md |
+| Title Component | demo/title.md |
+| Text and Link Component | demo/text.md |
+| Editable | demo/editable.md |
+| Copyable | demo/copyable.md |
+| Ellipsis | demo/ellipsis.md |
+| Controlled ellipsis expand/collapse | demo/ellipsis-controlled.md |
+| Ellipsis from middle | demo/ellipsis-middle.md |
+| suffix | demo/suffix.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
-### Typography
-
-#### 属性 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+### Typography 
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| direction | 方向控制 | 'ltr' \| 'rtl' | - | - |
+| direction | Direction control | 'ltr' \| 'rtl' | - | - |
 
-### TypographyText
-
-#### 属性 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+### Typography.Text 
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| code | 添加代码样式 | boolean | false |  |
-| copyable | 是否可拷贝，为对象时可进行各种自定义 | boolean \| [copyable](#copyable) | false |  |
-| delete | 添加删除线样式 | boolean | false |  |
-| disabled | 禁用文本 | boolean | false |  |
-| editable | 是否可编辑，为对象时可对编辑进行控制 | boolean \| [editable](#editable) | false |  |
-| ellipsis | 自动溢出省略，为对象时可设置省略行数、是否可展开、添加后缀等 | boolean \| [ellipsis](#ellipsis) | false |  |
-| level | 重要程度，相当于 `h1`、`h2`、`h3`、`h4`、`h5` | number: 1, 2, 3, 4, 5 | 1 |  |
-| mark | 添加标记样式 | boolean | false |  |
-| italic | 是否斜体 | boolean | false |  |
-| type | 文本类型 | `secondary` \| `success` \| `warning` \| `danger` | - | |
-| underline | 添加下划线样式 | boolean | false |  |
+| code | Code style | boolean | false | - |
+| copyable | Whether to be copyable, customize it via setting an object | boolean \| [copyable](#copyable) | false | - |
+| delete | Deleted line style | boolean | false | - |
+| disabled | Disabled content | boolean | false | - |
+| editable | If editable. Can control edit state when is object | boolean \| [editable](#editable) | false | - |
+| ellipsis | Display ellipsis when text overflows, can't configure expandable, rows and onExpand by using object. Diff with Typography.Paragraph, Text do not have 100% width style which means it will fix width on the first ellipsis. If you want to have responsive ellipsis, please set width manually | boolean \| [Omit&lt;ellipsis, 'expandable' \| 'rows' \| 'onExpand'&gt;](#ellipsis) | false | - |
+| keyboard | Keyboard style | boolean | false | - |
+| mark | Marked style | boolean | false | - |
+| strong | Bold style | boolean | false | - |
+| italic | Italic style | boolean | false | - |
+| type | Content type | `secondary` \| `success` \| `warning` \| `danger` | - | - |
+| underline | Underlined style | boolean | false | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function. | TypographyClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | TypographyStylesType | - | - |
 
-#### 事件 
-| 事件 | 说明 | 类型 |
-| --- | --- | --- |
-| click | 点击时的回调 | (event: MouseEvent) =&gt; void |
-
-### TypographyTitle
-
-#### 属性 
-| 参数 | 说明 | 类型 | 默认值 |
+#### Events 
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| code | 添加代码样式 | boolean | false |
-| copyable | 是否可拷贝，为对象时可进行各种自定义 | boolean \| [copyable](#copyable) | false |
-| delete | 添加删除线样式 | boolean | false |
-| disabled | 禁用文本 | boolean | false |
-| editable | 是否可编辑，为对象时可对编辑进行控制 | boolean \| [editable](#editable) | false |
-| ellipsis | 自动溢出省略，为对象时可设置省略行数、是否可展开、添加后缀等 | boolean \| [ellipsis](#ellipsis) | false |
-| level | 重要程度，相当于 `h1`、`h2`、`h3`、`h4`、`h5` | number: 1, 2, 3, 4, 5 | 1 |
-| mark | 添加标记样式 | boolean | false |
-| italic | 是否斜体 | boolean | false |
-| type | 文本类型 | `secondary` \| `success` \| `warning` \| `danger` | - |
-| underline | 添加下划线样式 | boolean | false |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | TypographyClassNamesType | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | TypographyStylesType | - |
+| click | Set the handler to handle click event | (event: MouseEvent) =&gt; void | - |
 
-#### 事件 
-| 事件 | 说明 | 类型 |
-| --- | --- | --- |
-| click | 点击时的回调 | (event: MouseEvent) =&gt; void |
+### Typography.Title 
+#### Props 
+| Property | Description | Type | Default | Version |
+| --- | --- | --- | --- | --- |
+| code | Code style | boolean | false | - |
+| copyable | Whether to be copyable, customize it via setting an object | boolean \| [copyable](#copyable) | false | - |
+| delete | Deleted line style | boolean | false | - |
+| disabled | Disabled content | boolean | false | - |
+| editable | If editable. Can control edit state when is object | boolean \| [editable](#editable) | false | - |
+| ellipsis | Display ellipsis when text overflows, can configure rows and expandable by using object | boolean \| [ellipsis](#ellipsis) | false | - |
+| level | Set content importance. Match with `h1`, `h2`, `h3`, `h4`, `h5` | number: 1, 2, 3, 4, 5 | 1 | - |
+| mark | Marked style | boolean | false | - |
+| italic | Italic style | boolean | false | - |
+| type | Content type | `secondary` \| `success` \| `warning` \| `danger` | - | - |
+| underline | Underlined style | boolean | false | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function. | TypographyClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | TypographyStylesType | - | - |
 
-### TypographyParagraph
-
-#### 属性 
-| 参数 | 说明 | 类型 | 默认值 |
+#### Events 
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| code | 添加代码样式 | boolean | false |
-| copyable | 是否可拷贝，为对象时可进行各种自定义 | boolean \| [copyable](#copyable) | false |
-| delete | 添加删除线样式 | boolean | false |
-| disabled | 禁用文本 | boolean | false |
-| editable | 是否可编辑，为对象时可对编辑进行控制 | boolean \| [editable](#editable) | false |
-| ellipsis | 自动溢出省略，为对象时可设置省略行数、是否可展开、添加后缀等 | boolean \| [ellipsis](#ellipsis) | false |
-| mark | 添加标记样式 | boolean | false |
-| strong | 是否加粗 | boolean | false |
-| italic | 是否斜体 | boolean | false |
-| type | 文本类型 | `secondary` \| `success` \| `warning` \| `danger` | - |
-| underline | 添加下划线样式 | boolean | false |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | TypographyClassNamesType | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | TypographyStylesType | - |
+| click | Set the handler to handle click event | (event: MouseEvent) =&gt; void | - |
 
-#### 事件 
-| 事件 | 说明 | 类型 |
-| --- | --- | --- |
-| click | 点击时的回调 | (event: MouseEvent) =&gt; void |
-| copy | 拷贝成功的回调函数 | (event: MouseEvent) =&gt; void |
+### Typography.Paragraph 
+#### Props 
+| Property | Description | Type | Default | Version |
+| --- | --- | --- | --- | --- |
+| code | Code style | boolean | false | - |
+| copyable | Whether to be copyable, customize it via setting an object | boolean \| [copyable](#copyable) | false | - |
+| delete | Deleted line style | boolean | false | - |
+| disabled | Disabled content | boolean | false | - |
+| editable | If editable. Can control edit state when is object | boolean \| [editable](#editable) | false | - |
+| ellipsis | Display ellipsis when text overflows, can configure rows and expandable by using object | boolean \| [ellipsis](#ellipsis) | false | - |
+| mark | Marked style | boolean | false | - |
+| strong | Bold style | boolean | false | - |
+| italic | Italic style | boolean | false | - |
+| type | Content type | `secondary` \| `success` \| `warning` \| `danger` | - | - |
+| underline | Underlined style | boolean | false | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function. | TypographyClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | TypographyStylesType | - | - |
 
-## 类型 
-### copyable
-
-| 参数 | 说明 | 类型 | 默认值 |
+#### Events 
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| format | 剪切板数据的 Mime Type | 'text/plain' \| 'text/html' | - |
-| icon | 自定义拷贝图标：\[默认图标, 拷贝后的图标] | \[VueNode, VueNode] | - |
-| text | 拷贝到剪切板里的文本 | string | - |
-| tooltips | 自定义提示文案，为 false 时隐藏文案 | \[VueNode, VueNode] | \[`复制`, `复制成功`] |
-| tabIndex | 自定义复制按钮的 tabIndex | number | 0 |
+| click | Set the handler to handle click event | (event: MouseEvent) =&gt; void | - |
+| copy | Called when copied text | (event: MouseEvent) =&gt; void | - |
 
-#### 事件
+## Types 
+### copyable 
+| Property | Description | Type | Default | Version |
+| --- | --- | --- | --- | --- |
+| format | The Mime Type of the text | 'text/plain' \| 'text/html' | - | - |
+| icon | Custom copy icon: \[copyIcon, copiedIcon] | \[VueNode, VueNode] | - | - |
+| text | The text to copy | string | - | - |
+| tooltips | Custom tooltip text, hide when it is false | \[VueNode, VueNode] | \[`Copy`, `Copied`] | - |
+| tabIndex | Set tabIndex of the copy button | number | 0 | - |
 
-| 事件 | 说明 | 类型 |
-| --- | --- | --- |
-| copy | 拷贝成功的回调函数 | (event: MouseEvent) =&gt; void |
+#### Events
 
-### editable
-
-| 参数 | 说明 | 类型 | 默认值 |
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| autoSize | `autoSize` 属性的 textarea | boolean \| &#123; minRows: number, maxRows: number &#125; | - |
-| editing | 控制是否是编辑中状态 | boolean | false |
-| icon | 自定义编辑图标 | VueNode | &lt;EditOutlined /&gt; |
-| maxlength | 编辑中文本域最大长度 | number | - |
-| tooltip | 自定义提示文本，为 false 时关闭 | VueNode | `编辑` |
-| text | 显式地指定编辑文案，为空时将隐式地使用 children | string | - |
-| triggerType | 编辑模式触发器类型，图标、文本或者两者都设置（不设置图标作为触发器时它会隐藏） | Array&lt;`icon`\|`text`&gt; | \[`icon`] |
-| enterIcon | 在编辑段中自定义"enter"图标（传递"null"将删除图标） | VueNode | `&lt;EnterOutlined /&gt;` |
-| tabIndex | 自定义编辑按钮的 tabIndex | number | 0 |
+| copy | Called when copied text | (event: MouseEvent) =&gt; void | - |
 
-#### 事件
+### editable 
+| Property | Description | Type | Default | Version |
+| --- | --- | --- | --- | --- |
+| autoSize | `autoSize` attribute of textarea | boolean \| &#123; minRows: number, maxRows: number &#125; | - | - |
+| editing | Whether to be editable | boolean | false | - |
+| icon | Custom editable icon | VueNode | &lt;EditOutlined /&gt; | - |
+| maxlength | `maxLength` attribute of textarea | number | - | - |
+| tooltip | Custom tooltip text, hide when it is false | VueNode | `Edit` | - |
+| text | Edit text, specify the editing content instead of using the children implicitly | string | - | - |
+| triggerType | Edit mode trigger - icon, text or both (not specifying icon as trigger hides it) | Array&lt;`icon`\|`text`&gt; | \[`icon`] | - |
+| enterIcon | Custom "enter" icon in the edit field (passing `null` removes the icon) | VueNode | `&lt;EnterOutlined /&gt;` | - |
+| tabIndex | Set tabIndex of the edit button | number | 0 | - |
 
-| 事件 | 说明 | 类型 |
-| --- | --- | --- |
-| change | 文本域编辑时触发 | (value: string) =&gt; void |
-| cancel | 按 ESC 退出编辑状态时触发 | () =&gt; void |
-| start | 进入编辑中状态时触发 | () =&gt; void |
-| end | 按 ENTER 结束编辑状态时触发 | () =&gt; void |
+#### Events
 
-### ellipsis
-
-| 参数 | 说明 | 类型 | 默认值 |
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| expandable | 是否可展开 | boolean \| 'collapsible' | - |
-| rows | 最多显示的行数 | number | - |
-| suffix | 自定义省略内容后缀 | string | - |
-| symbol | 自定义展开描述文案 | VueNode \| ((expanded: boolean) =&gt; VueNode) | `展开` `收起` |
-| tooltip | 省略时，展示提示信息 | VueNode \| [TooltipProps](../tooltip/docs.md/#api) | - |
-| defaultExpanded | 默认展开或收起 | boolean | - |
-| expanded | 展开或收起 | boolean | - |
+| change | Called when input at textarea | (value: string) =&gt; void | - |
+| cancel | Called when type ESC to exit editable state | () =&gt; void | - |
+| start | Called when enter editable state | () =&gt; void | - |
+| end | Called when type ENTER to exit editable state | () =&gt; void | - |
 
-#### 事件
+### ellipsis 
+| Property | Description | Type | Default | Version |
+| --- | --- | --- | --- | --- |
+| expandable | Whether to be expandable | boolean \| 'collapsible' | - | - |
+| rows | Max rows of content | number | - | - |
+| suffix | Suffix of ellipsis content | string | - | - |
+| symbol | Custom description of ellipsis | VueNode \| ((expanded: boolean) =&gt; VueNode) | `Expand` `Collapse` | - |
+| tooltip | Show tooltip when ellipsis | VueNode \| [TooltipProps](../tooltip/docs.md/#api) | - | - |
+| defaultExpanded | Default expand or collapse | boolean | - | - |
+| expanded | Expand or Collapse | boolean | - | - |
 
-| 事件 | 说明 | 类型 |
-| --- | --- | --- |
-| ellipsis | 触发省略时的回调 | (ellipsis: boolean) =&gt; void |
-| expand | 点击展开或收起时的回调 | (event: MouseEvent, info: &#123; expanded: boolean &#125;) =&gt; void |
+#### Events
+
+| Event | Description | Type | Version |
+| --- | --- | --- | --- |
+| ellipsis | Called when enter or leave ellipsis state | (ellipsis: boolean) =&gt; void | - |
+| expand | Called when expand content | (event: MouseEvent, info: &#123; expanded: boolean &#125;) =&gt; void | - |

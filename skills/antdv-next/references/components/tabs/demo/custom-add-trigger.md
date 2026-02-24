@@ -1,8 +1,8 @@
-# 自定义新增页签触发器
+# Customized trigger of new tab
 
-## Description (zh-CN)
+## Description (en-US)
 
-隐藏默认的页签增加图标，给自定义触发器绑定事件。
+Hide default plus icon, and bind event for customized trigger.
 
 ## Source
 

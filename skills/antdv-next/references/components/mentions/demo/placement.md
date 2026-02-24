@@ -1,8 +1,8 @@
-# 向上展开
+# Placement
 
-## Description (zh-CN)
+## Description (en-US)
 
-向上展开建议。
+Change the suggestions placement.
 
 ## Source
 

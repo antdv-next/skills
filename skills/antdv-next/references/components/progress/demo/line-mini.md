@@ -1,8 +1,8 @@
-# 小型进度条
+# Mini size progress bar
 
-## Description (zh-CN)
+## Description (en-US)
 
-适合放在较狭窄的区域内。
+Appropriate for a narrow area.
 
 ## Source
 

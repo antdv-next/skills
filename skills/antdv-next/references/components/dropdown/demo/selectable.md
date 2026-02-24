@@ -1,8 +1,8 @@
-# 菜单可选选择
+# Selectable Menu
 
-## Description (zh-CN)
+## Description (en-US)
 
-添加 `menu` 中的 `selectable` 属性可以开启选择能力。
+Configure the `selectable` property in `menu` to enable selectable ability.
 
 ## Source
 

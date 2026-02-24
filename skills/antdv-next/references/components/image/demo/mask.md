@@ -1,8 +1,8 @@
-# 预览遮罩
+# preview mask
 
-## Description (zh-CN)
+## Description (en-US)
 
-遮罩效果，默认 `blur`。
+mask effect, default `blur`.
 
 ## Source
 

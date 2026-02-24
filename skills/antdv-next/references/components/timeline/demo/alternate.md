@@ -1,8 +1,8 @@
-# 交替展现
+# Alternate
 
-## Description (zh-CN)
+## Description (en-US)
 
-内容在时间轴两侧轮流出现。
+Alternate timeline.
 
 ## Source
 

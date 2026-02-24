@@ -1,38 +1,42 @@
 ---
-title: Flex
-subtitle: 弹性布局
-description: 用于对齐的弹性布局容器。
+title: Empty
+description: Empty state placeholder.
 ---
 
-## 何时使用 
-- 适合设置元素之间的间距。
-- 适合设置各种水平、垂直对齐方式。
+## When To Use
 
-### 与 Space 组件的区别 
-- Space 为内联元素提供间距，其本身会为每一个子元素添加包裹元素用于内联对齐。适用于行、列中多个子元素的等距排列。
-- Flex 为块级元素提供间距，其本身不会添加包裹元素。适用于垂直或水平方向上的子元素布局，并提供了更多的灵活性和控制能力。
+- Good for setting spacing between elements.
+- Suitable for setting various horizontal and vertical alignments.
+
+### Difference with Space component
+
+- Space is used to set the spacing between inline elements. It will add a wrapper element for each child element for inline alignment. Suitable for equidistant arrangement of multiple child elements in rows and columns.
+- Flex is used to set the layout of block-level elements. It does not add a wrapper element. Suitable for layout of child elements in vertical or horizontal direction, and provides more flexibility and control.
+
+## Examples
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本布局 | demo/basic.md |
-| 对齐方式 | demo/align.md |
-| 设置间隙 | demo/gap.md |
-| 自动换行 | demo/wrap.md |
-| 组合使用 | demo/combination.md |
+| basic | demo/basic.md |
+| align | demo/align.md |
+| gap | demo/gap.md |
+| wrap | demo/wrap.md |
+| combination | demo/combination.md |
 
 ## API
 
-### 属性 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+### Props
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+Common props ref：[Common props](../../docs/vue/common-props.md)
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| vertical | flex 主轴的方向是否垂直，使用 `flex-direction: column` | boolean | `false` | - |
-| wrap | 设置元素单行显示还是多行显示 | boolean \| CSSProperties['flexWrap'] | nowrap | boolean: 5.17.0 |
-| justify | 设置元素在主轴方向上的对齐方式 | CSSProperties['justifyContent'] | normal | - |
-| align | 设置元素在交叉轴方向上的对齐方式 | CSSProperties['alignItems'] | normal | - |
-| flex | flex CSS 简写属性 | CSSProperties['flex'] | normal | - |
-| gap | 设置网格之间的间隙 | CSSProperties['gap'] \| SizeType | - | - |
-| component | 自定义元素类型 | any | `div` | - |
+| vertical | Is direction of the flex vertical, use `flex-direction: column` | boolean | `false` | - |
+| wrap | Set whether the element is displayed in a single line or in multiple lines | boolean \| CSSProperties['flexWrap'] | nowrap | boolean: 5.17.0 |
+| justify | Sets the alignment of elements in the direction of the main axis | CSSProperties['justifyContent'] | normal | - |
+| align | Sets the alignment of elements in the direction of the cross axis | CSSProperties['alignItems'] | normal | - |
+| flex | flex CSS shorthand properties | CSSProperties['flex'] | normal | - |
+| gap | Sets the gap between grids | CSSProperties['gap'] \| SizeType | - | - |
+| component | custom element type | any | `div` | - |

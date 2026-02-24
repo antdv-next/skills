@@ -1,8 +1,8 @@
-# 可折叠触发区域
+# Collapsible
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `collapsible` 属性，可以设置面板的可折叠触发区域。
+Specify the trigger area of collapsible by `collapsible`.
 
 ## Source
 

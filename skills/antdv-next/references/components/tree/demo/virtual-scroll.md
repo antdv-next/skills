@@ -1,8 +1,8 @@
-# 虚拟滚动
+# Virtual scroll
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `height` 属性则切换为虚拟滚动。
+Use virtual list through `height` prop.
 
 ## Source
 

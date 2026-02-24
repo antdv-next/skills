@@ -1,8 +1,8 @@
-# 搜索框
+# Search Box
 
-## Description (zh-CN)
+## Description (en-US)
 
-搜索和远程数据结合。
+Search with remote data.
 
 ## Source
 

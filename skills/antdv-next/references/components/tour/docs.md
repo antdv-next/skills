@@ -1,85 +1,90 @@
 ---
 title: Tour
-subtitle: 漫游式引导
-description: 用于分步引导用户了解产品功能的气泡组件。
+description: A popup component for guiding users through a product.
 ---
 
-## 何时使用 
-常用于引导用户了解产品功能。
+## When To Use 
+Use when you want to guide users through a product.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本 | demo/basic.md |
-| 非模态 | demo/non-modal.md |
-| 位置 | demo/placement.md |
-| 自定义遮罩样式 | demo/mask.md |
-| 自定义指示器 | demo/indicator.md |
-| 自定义操作按钮 | demo/actions-render.md |
-| 自定义高亮区域的样式 | demo/gap.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
+| Basic | demo/basic.md |
+| Non-modal | demo/non-modal.md |
+| Placement | demo/placement.md |
+| Custom mask style | demo/mask.md |
+| Custom indicator | demo/indicator.md |
+| Custom action | demo/actions-render.md |
+| Custom highlighted area style | demo/gap.md |
+| Custom semantic dom styling | demo/style-class.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Comon props](../../docs/vue/common-props.md)
 
-### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+### Props
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| steps | 引导步骤配置 | TourStepItem[\] | - | - |
-| open | 打开引导，支持 `v-model:open` | boolean | false | - |
-| current | 当前处于哪一步 | number | - | - |
-| arrow | 是否显示箭头，包含是否指向元素中心的配置 | boolean \| &#123; pointAtCenter: boolean &#125; | true | - |
-| closeIcon | 自定义关闭按钮 | VueNode | true | - |
-| disabledInteraction | 禁用高亮区域交互 | boolean | false | - |
-| gap | 控制高亮区域的圆角边框和显示间距 | &#123; offset?: number \| [number, number]; radius?: number &#125; | &#123; offset: 6, radius: 2 &#125; | - |
-| placement | 引导卡片相对于目标元素的位置 | `center` `left` `leftTop` `leftBottom` `right` `rightTop` `rightBottom` `top` `topLeft` `topRight` `bottom` `bottomLeft` `bottomRight` | `bottom` | - |
-| mask | 是否启用蒙层，也可传入配置改变蒙层样式和填充色 | boolean \| &#123; style?: CSSProperties; color?: string &#125; | true | - |
-| type | 类型，影响底色与文字颜色 | 'default' \| 'primary' | `default` | - |
-| scrollIntoViewOptions | 是否支持当前元素滚动到视窗内，也可传入配置指定滚动视窗的相关参数 | boolean \| ScrollIntoViewOptions | true | - |
-| indicatorsRender | 自定义指示器 | (current: number, total: number) =&gt; VueNode | - | - |
-| actionsRender | 自定义操作按钮 | (originNode: VueNode, info: &#123; current: number, total: number &#125;) =&gt; VueNode | - | - |
-| zIndex | Tour 的层级 | number | 1001 | - |
-| getPopupContainer | 设置 Tour 浮层的渲染节点，默认是 body | (node: HTMLElement) =&gt; HTMLElement | () =&gt; document.body | - |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | TourClassNamesType | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | TourStylesType | - | - |
+| steps | Tour steps | TourStepItem[\] | - | - |
+| open | Open tour, support `v-model:open` | boolean | false | - |
+| current | What is the current step | number | - | - |
+| arrow | Whether to show the arrow, including the configuration whether to point to the center of the element | boolean \| &#123; pointAtCenter: boolean &#125; | true | - |
+| closeIcon | Customize close icon | VueNode | true | - |
+| disabledInteraction | Disable interaction on highlighted area | boolean | false | - |
+| gap | Control the radius of the highlighted area and the offset between highlighted area and the element | &#123; offset?: number \| [number, number]; radius?: number &#125; | &#123; offset: 6, radius: 2 &#125; | - |
+| placement | Position of the guide card relative to the target element | `center` `left` `leftTop` `leftBottom` `right` `rightTop` `rightBottom` `top` `topLeft` `topRight` `bottom` `bottomLeft` `bottomRight` | `bottom` | - |
+| mask | Whether to enable masking, change mask style and fill color by pass custom props | boolean \| &#123; style?: CSSProperties; color?: string &#125; | true | - |
+| type | Type, affects the background color and text color | 'default' \| 'primary' | `default` | - |
+| scrollIntoViewOptions | support pass custom scrollIntoView options | boolean \| ScrollIntoViewOptions | true | - |
+| indicatorsRender | Custom indicator | (current: number, total: number) =&gt; VueNode | - | - |
+| actionsRender | Custom action | (originNode: VueNode, info: &#123; current: number, total: number &#125;) =&gt; VueNode | - | - |
+| zIndex | Tour zIndex | number | 1001 | - |
+| getPopupContainer | Set the rendering node of Tour floating layer | (node: HTMLElement) =&gt; HTMLElement | () =&gt; document.body | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function. | TourClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | TourStylesType | - | - |
+| rootClass | Root container class | string | - | - |
+| prefixCls | - | string | - | - |
 
-### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+### Events
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| change | 步骤改变时的回调，current 为当前的步骤 | (current: number) =&gt; void | - |
-| close | 关闭引导时的回调函数 | (current: number) =&gt; void | - |
-| finish | 引导完成时的回调 | () =&gt; void | - |
+| change | Callback when the step changes. Current is the previous step | (current: number) =&gt; void | - |
+| close | Callback function on shutdown | (current: number) =&gt; void | - |
+| finish | Callback when tour is finished | () =&gt; void | - |
 
-### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+### Slots
+
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| actionsRender | 自定义操作按钮 | (originNode: any, info: &#123; current: number, total: number &#125;) =&gt; any | - |
-| indicatorsRender | 自定义指示器 | (current: number, total: number) =&gt; any | - |
-| nextButton | 自定义下一步按钮 | (params: &#123; current: number, isFirst: boolean, isLast: boolean &#125;) =&gt; any | - |
-| prevButton | 自定义上一步按钮 | (params: &#123; current: number, isFirst: boolean, isLast: boolean &#125;) =&gt; any | - |
-| coverRender | 自定义步骤封面 | (params: &#123; step: TourStepItem, index: number &#125;) =&gt; any | - |
-| titleRender | 自定义步骤标题 | (params: &#123; step: TourStepItem, index: number &#125;) =&gt; any | - |
-| descriptionRender | 自定义步骤描述 | (params: &#123; step: TourStepItem, index: number &#125;) =&gt; any | - |
+| actionsRender | Custom action | (originNode: any, info: &#123; current: number, total: number &#125;) =&gt; any | - |
+| indicatorsRender | Custom indicator | (current: number, total: number) =&gt; any | - |
+| nextButton | Customize next button | (params: &#123; current: number, isFirst: boolean, isLast: boolean &#125;) =&gt; any | - |
+| prevButton | Customize previous button | (params: &#123; current: number, isFirst: boolean, isLast: boolean &#125;) =&gt; any | - |
+| coverRender | Customize step cover | (params: &#123; step: TourStepItem, index: number &#125;) =&gt; any | - |
+| titleRender | Customize step title | (params: &#123; step: TourStepItem, index: number &#125;) =&gt; any | - |
+| descriptionRender | Customize step description | (params: &#123; step: TourStepItem, index: number &#125;) =&gt; any | - |
 
-## 类型 
+## Types
+
 ### TourStepItem
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| target | 获取引导卡片指向的元素，为空时居中于屏幕 | HTMLElement \| (() =&gt; HTMLElement) \| null | - | - |
-| arrow | 是否显示箭头，包含是否指向元素中心的配置 | boolean \| &#123; pointAtCenter: boolean &#125; | true | - |
-| closeIcon | 自定义关闭按钮 | VueNode | true | - |
-| cover | 展示的图片或者视频 | VueNode | - | - |
-| title | 标题 | VueNode | - | - |
-| description | 主要描述部分 | VueNode | - | - |
-| placement | 引导卡片相对于目标元素的位置 | `center` `left` `leftTop` `leftBottom` `right` `rightTop` `rightBottom` `top` `topLeft` `topRight` `bottom` `bottomLeft` `bottomRight` | `bottom` | - |
-| mask | 是否启用蒙层，也可传入配置改变蒙层样式和填充色，默认跟随 Tour 的 `mask` 属性 | boolean \| &#123; style?: CSSProperties; color?: string &#125; | true | - |
-| type | 类型，影响底色与文字颜色 | 'default' \| 'primary' | `default` | - |
-| nextButtonProps | 下一步按钮的属性 | &#123; children?: VueNode; onClick?: () =&gt; void; class?: string; style?: CSSProperties &#125; | - | - |
-| prevButtonProps | 上一步按钮的属性 | &#123; children?: VueNode; onClick?: () =&gt; void; class?: string; style?: CSSProperties &#125; | - | - |
-| scrollIntoViewOptions | 是否支持当前元素滚动到视窗内，也可传入配置指定滚动视窗的相关参数，默认跟随 Tour 的 `scrollIntoViewOptions` 属性 | boolean \| ScrollIntoViewOptions | true | - |
+| target | Get the element the guide card points to. Empty makes it show in center of screen | HTMLElement \| (() =&gt; HTMLElement) \| null | - | - |
+| arrow | Whether to show the arrow, including the configuration whether to point to the center of the element | boolean \| &#123; pointAtCenter: boolean &#125; | true | - |
+| closeIcon | Customize close icon | VueNode | true | - |
+| cover | Displayed pictures or videos | VueNode | - | - |
+| title | Title | VueNode | - | - |
+| description | Description | VueNode | - | - |
+| placement | Position of the guide card relative to the target element | `center` `left` `leftTop` `leftBottom` `right` `rightTop` `rightBottom` `top` `topLeft` `topRight` `bottom` `bottomLeft` `bottomRight` | `bottom` | - |
+| mask | Whether to enable masking, change mask style and fill color by pass custom props, the default follows the `mask` property of Tour | boolean \| &#123; style?: CSSProperties; color?: string &#125; | true | - |
+| type | Type, affects the background color and text color | 'default' \| 'primary' | `default` | - |
+| nextButtonProps | Properties of the Next button | &#123; children?: VueNode; onClick?: () =&gt; void; class?: string; style?: CSSProperties &#125; | - | - |
+| prevButtonProps | Properties of the previous button | &#123; children?: VueNode; onClick?: () =&gt; void; class?: string; style?: CSSProperties &#125; | - | - |
+| scrollIntoViewOptions | support pass custom scrollIntoView options, the default follows the `scrollIntoViewOptions` property of Tour | boolean \| ScrollIntoViewOptions | true | - |
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |

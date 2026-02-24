@@ -1,70 +1,70 @@
 ---
 title: Splitter
-subtitle: 分割面板
-description: 分割面板用于隔离内容。
+description: Split panels to isolate content.
 ---
 
-## 何时使用
+## When To Use
 
-提供可拖动的分割面板，用于创建复杂的多列或多行布局。
+Provide a draggable split panel for creating complex multi-column or multi-row layouts.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基础用法 | demo/size.md |
-| 垂直 | demo/vertical.md |
-| 受控模式 | demo/control.md |
-| 可折叠 | demo/collapsible.md |
-| 折叠图标 | demo/collapsibleIcon.md |
-| 多面板 | demo/multiple.md |
-| 布局组合 | demo/group.md |
-| 尺寸混合 | demo/size-mix.md |
-| 延迟渲染 | demo/lazy.md |
-| 双击重置 | demo/reset.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
+| Basic | demo/size.md |
+| Vertical | demo/vertical.md |
+| Controlled | demo/control.md |
+| Collapsible | demo/collapsible.md |
+| Collapsible Icon | demo/collapsibleIcon.md |
+| Multiple | demo/multiple.md |
+| Layout Group | demo/group.md |
+| Size Mix | demo/size-mix.md |
+| Lazy | demo/lazy.md |
+| Double-clicked reset | demo/reset.md |
+| Custom semantic dom styling | demo/style-class.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
 ### Splitter
 
-#### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| collapsibleIcon | 自定义折叠图标 | &#123; start?: VueNode; end?: VueNode &#125; | - | 6.0.0 |
-| draggerIcon | 自定义拖拽图标 | VueNode | - | 6.0.0 |
-| lazy | 延迟渲染模式 | boolean | false | 5.23.0 |
-| orientation | 布局方向 | `vertical` \| `horizontal` | `horizontal` | - |
-| vertical | 排列方向，与 `orientation` 同时存在，以 `orientation` 优先 | boolean | false | - |
+| collapsibleIcon | Custom collapsible icon | &#123; start?: VueNode; end?: VueNode &#125; | - | 6.0.0 |
+| draggerIcon | Custom dragger icon | VueNode | - | 6.0.0 |
+| lazy | Lazy rendering mode | boolean | false | 5.23.0 |
+| orientation | Layout direction | `vertical` \| `horizontal` | `horizontal` | - |
+| vertical | Orientation, Simultaneously existing with `orientation`, `orientation` takes priority | boolean | false | - |
 
-#### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+#### Events 
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| collapse | 展开-收起时回调 | (collapsed: boolean[], sizes: number[]) =&gt; void | 5.28.0 |
-| resize | 面板大小变化回调 | (sizes: number[]) =&gt; void | - |
-| resizeEnd | 拖拽结束回调 | (sizes: number[]) =&gt; void | - |
-| resizeStart | 开始拖拽之前回调 | (sizes: number[]) =&gt; void | - |
+| collapse | Callback when expanding or collapsing | (collapsed: boolean[], sizes: number[]) =&gt; void | 5.28.0 |
+| resize | Panel size change callback | (sizes: number[]) =&gt; void | - |
+| resizeEnd | Drag end callback | (sizes: number[]) =&gt; void | - |
+| resizeStart | Callback before dragging starts | (sizes: number[]) =&gt; void | - |
 
-#### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+#### Slots 
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| collapsibleIconEnd | 自定义折叠结束图标 | () =&gt; VueNode | - |
-| collapsibleIconStart | 自定义折叠开始图标 | () =&gt; VueNode | - |
-| draggerIcon | 自定义拖拽图标 | () =&gt; VueNode | 6.0.0 |
+| collapsibleIconEnd | Custom collapsible end icon | () =&gt; VueNode | - |
+| collapsibleIconStart | Custom collapsible start icon | () =&gt; VueNode | - |
+| draggerIcon | Custom dragger icon | () =&gt; VueNode | 6.0.0 |
 
 ### SplitterPanel
 
-#### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| collapsible | 启用折叠 | boolean \| &#123; start?: boolean; end?: boolean; showCollapsibleIcon?: boolean \| 'auto' &#125; | false | 5.28.0 |
-| defaultSize | 面板初始大小，支持像素和百分比 | number \| string | - | - |
-| max | 最大阈值，支持像素和百分比 | number \| string | - | - |
-| min | 最小阈值，支持像素和百分比 | number \| string | - | - |
-| resizable | 是否启用拉伸 | boolean | true | - |
-| size | 受控面板大小，支持像素和百分比 | number \| string | - | - |
+| collapsible | Enable collapsible | boolean \| &#123; start?: boolean; end?: boolean; showCollapsibleIcon?: boolean \| 'auto' &#125; | false | 5.28.0 |
+| defaultSize | Initial panel size, supports px and percentage | number \| string | - | - |
+| max | Maximum threshold, supports px and percentage | number \| string | - | - |
+| min | Minimum threshold, supports px and percentage | number \| string | - | - |
+| resizable | Whether to enable resize | boolean | true | - |
+| size | Controlled panel size, supports px and percentage | number \| string | - | - |
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |

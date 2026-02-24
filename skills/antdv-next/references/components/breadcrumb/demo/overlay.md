@@ -1,8 +1,8 @@
-# 带下拉菜单的面包屑
+# Bread crumbs with drop down menu
 
-## Description (zh-CN)
+## Description (en-US)
 
-面包屑支持下拉菜单。
+Breadcrumbs support drop down menu.
 
 ## Source
 

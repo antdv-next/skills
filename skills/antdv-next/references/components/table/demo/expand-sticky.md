@@ -1,8 +1,8 @@
-# 展开与粘性表头
+# Expand Sticky
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `expandedRowOffset` 自定义展开子表格偏移列数
+Use `expandedRowOffset` to customize the offset of the expanded sub-table columns index
 
 ## Source
 

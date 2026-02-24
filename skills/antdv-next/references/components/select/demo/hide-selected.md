@@ -1,8 +1,8 @@
-# 隐藏已选择选项
+# Hide Already Selected
 
-## Description (zh-CN)
+## Description (en-US)
 
-隐藏下拉列表中已选择的选项。
+Hide already selected options in the dropdown.
 
 ## Source
 

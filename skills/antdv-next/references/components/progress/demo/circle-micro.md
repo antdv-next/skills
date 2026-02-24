@@ -1,8 +1,8 @@
-# 响应式进度圈
+# Responsive circular progress bar
 
-## Description (zh-CN)
+## Description (en-US)
 
-响应式的圈形进度，当 `size` 小于等于 20 的时候，进度信息将不会显示在进度圈里面，而是以 Tooltip 的形式显示。
+Responsive circular progress bar. When `size` is smaller than 20, progress information will be displayed in Tooltip.
 
 ## Source
 

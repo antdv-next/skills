@@ -1,8 +1,8 @@
-# 前后缀
+# Prefix and Suffix
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义前缀 `prefix` 和后缀图标 `suffixIcon`。
+Custom `prefix` and `suffixIcon`.
 
 ## Source
 

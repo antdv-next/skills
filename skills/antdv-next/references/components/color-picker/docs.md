@@ -1,82 +1,85 @@
 ---
 title: ColorPicker
-subtitle: 颜色选择器
-description: 用于选择颜色。
+description: Used for color selection.
 ---
 
-## 何时使用 
-当用户需要自定义颜色选择的时候使用。
+## When To Use 
+Used when the user needs to make a customized color selection.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本使用 | demo/basic.md |
-| 触发器尺寸大小 | demo/size.md |
-| 受控模式 | demo/controlled.md |
-| 渐变色 | demo/line-gradient.md |
-| 渲染触发器文本 | demo/text-render.md |
-| 禁用 | demo/disabled.md |
-| 禁用透明度 | demo/disabled-alpha.md |
-| 清除颜色 | demo/allow-clear.md |
-| 自定义触发器 | demo/trigger.md |
-| 自定义触发事件 | demo/trigger-event.md |
-| 颜色编码 | demo/format.md |
-| 值格式化 | demo/value-format.md |
-| 预设颜色 | demo/presets.md |
-| 自定义面板 | demo/panel-render.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
+| Basic Usage | demo/basic.md |
+| Trigger size | demo/size.md |
+| controlled mode | demo/controlled.md |
+| Line Gradient | demo/line-gradient.md |
+| Rendering Trigger Text | demo/text-render.md |
+| Disable | demo/disabled.md |
+| Disabled Alpha | demo/disabled-alpha.md |
+| Clear Color | demo/allow-clear.md |
+| Custom Trigger | demo/trigger.md |
+| Custom Trigger Event | demo/trigger-event.md |
+| Color Format | demo/format.md |
+| Value Format | demo/value-format.md |
+| Preset Colors | demo/presets.md |
+| Custom Render Panel | demo/panel-render.md |
+| Custom semantic dom styling | demo/style-class.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
-### 属性 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+### Props
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| allowClear | 允许清除选择的颜色 | boolean | false | - |
-| arrow | 配置弹出的箭头 | boolean \| &#123; pointAtCenter: boolean &#125; | true | - |
-| autoAdjustOverflow | 弹窗不可见时自动调整位置 | boolean \| AdjustOverflow | - | - |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | ColorPickerClassNamesType | - | - |
-| defaultFormat | 颜色格式默认的值 | ColorFormatType | `hex` | - |
-| defaultValue | 颜色默认的值 | [ColorValueType](#colorvaluetype) | - | - |
-| destroyOnHidden | 关闭后是否销毁弹窗 | boolean | false | - |
-| disabled | 禁用颜色选择器 | boolean | false | - |
-| disabledAlpha | 禁用透明度 | boolean | false | - |
-| disabledFormat | 禁用选择颜色格式 | boolean | false | - |
-| format | 颜色格式，支持 `v-model:format` | ColorFormatType | - | - |
-| getPopupContainer | 指定弹层挂载的节点 | (triggerNode: HTMLElement) => HTMLElement | - | - |
-| mode | 选择器模式，用于配置单色与渐变 | ModeType \| ModeType[] | `single` | - |
-| open | 是否显示弹出窗口，支持 `v-model:open` | boolean | - | - |
-| placement | 弹出窗口的位置 | TriggerPlacement | `bottomLeft` | - |
-| presets | 预设的颜色 | [PresetsItem](#presetsitem)[] | - | - |
-| panelRender | 自定义渲染面板 | (params: &#123; panel: any, extra: &#123; components: &#123; Picker: any, Presets: any &#125; &#125; &#125;) => any | - | - |
-| rootClass | 根容器 class | string | - | - |
-| showText | 显示颜色文本 | boolean \| ((params: &#123; color: Color &#125;) => any) | false | - |
-| size | 设置触发器大小 | SizeType | `middle` | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | ColorPickerStylesType | - | - |
-| trigger | 颜色选择器的触发模式 | TriggerType | `click` | - |
-| valueFormat | 设置颜色值的输出格式，支持 `hex`、`rgb`、`hsb`。设置后 `v-model:value` 返回对应格式的字符串。示例：[值格式化](#color-picker-demo-value-format) | ColorFormatType | - | - |
-| value | 颜色的值，支持 `v-model:value` | [ColorValueType](#colorvaluetype) | - | - |
+| allowClear | Allow clearing color selected | boolean | false | - |
+| arrow | Configuration for popup arrow | boolean \| &#123; pointAtCenter: boolean &#125; | true | - |
+| autoAdjustOverflow | Auto adjust placement when popup is invisible | boolean \| AdjustOverflow | - | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function. | ColorPickerClassNamesType | - | - |
+| defaultFormat | Default format of color | ColorFormatType | `hex` | - |
+| defaultValue | Default value of color | [ColorValueType](#colorvaluetype) | - | - |
+| destroyOnHidden | Whether destroy dom when close | boolean | false | - |
+| disabled | Disable ColorPicker | boolean | false | - |
+| disabledAlpha | Disable Alpha | boolean | false | - |
+| disabledFormat | Disable format of color | boolean | false | - |
+| format | Format of color, support `v-model:format` | ColorFormatType | - | - |
+| getPopupContainer | Specify container for popup | (triggerNode: HTMLElement) => HTMLElement | - | - |
+| mode | Configure single or gradient color | ModeType \| ModeType[] | `single` | - |
+| open | Whether to show popup, support `v-model:open` | boolean | - | - |
+| placement | Placement of popup | TriggerPlacement | `bottomLeft` | - |
+| presets | Preset colors | [PresetsItem](#presetsitem)[] | - | - |
+| panelRender | Custom Render Panel | (params: &#123; panel: any, extra: &#123; components: &#123; Picker: any, Presets: any &#125; &#125; &#125;) => any | - | - |
+| rootClass | Root container class | string | - | - |
+| showText | Show color text | boolean \| ((params: &#123; color: Color &#125;) => any) | false | - |
+| size | Setting the trigger size | SizeType | `middle` | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | ColorPickerStylesType | - | - |
+| trigger | ColorPicker trigger mode | TriggerType | `click` | - |
+| valueFormat | Set the output format of color value, supporting `hex`, `rgb`, and `hsb`. After setting, `v-model:value` returns strings in the selected format. Demo: [Value Format](#color-picker-demo-value-format) | ColorFormatType | - | - |
+| value | Value of color, support `v-model:value` | [ColorValueType](#colorvaluetype) | - | - |
 
-### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+### Events
+
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| change | 颜色变化的回调 | (value: Color, css: string) => void | - |
-| clear | 清除的回调 | () => void | - |
-| changeComplete | 颜色选择完成的回调 | (value: Color) => void | - |
-| openChange | 当 `open` 被改变时的回调 | (open: boolean) => void | - |
-| formatChange | 颜色格式变化的回调 | (format?: ColorFormatType) => void | - |
+| change | Callback when `value` is changed | (value: Color, css: string) => void | - |
+| clear | Called when clear | () => void | - |
+| changeComplete | Called when color pick ends | (value: Color) => void | - |
+| openChange | Callback when `open` is changed | (open: boolean) => void | - |
+| formatChange | Callback when `format` is changed | (format?: ColorFormatType) => void | - |
 
-### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+### Slots
+
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| default | 触发器内容 | () => any | - |
-| panelRender | 自定义渲染面板 | (params: &#123; panel: any, extra: &#123; components: &#123; Picker: any, Presets: any &#125; &#125; &#125;) => any | - |
-| showText | 自定义文字渲染 | (params: &#123; color: Color &#125;) => any | - |
+| default | Trigger content | () => any | - |
+| panelRender | Custom Render Panel | (params: &#123; panel: any, extra: &#123; components: &#123; Picker: any, Presets: any &#125; &#125; &#125;) => any | - |
+| showText | Custom text rendering | (params: &#123; color: Color &#125;) => any | - |
 
-## 类型 
-### ColorValueType
+## Types
+
+#### ColorValueType
 
 ```ts
 type ColorValueType
@@ -86,7 +89,7 @@ type ColorValueType
     | null
 ```
 
-### PresetsItem
+#### PresetsItem
 
 ```ts
 interface PresetsItem {
@@ -99,20 +102,21 @@ interface PresetsItem {
 
 ### Color
 
-| 参数 | 说明 | 类型 | 版本 |
+| Property | Description | Type | Version |
 | --- | --- | --- | --- |
-| toCssString | 转换成 CSS 支持的格式 | () => string | - |
-| toHex | 转换成 `hex` 格式字符，返回格式如：`1677ff` | () => string | - |
-| toHexString | 转换成 `hex` 格式颜色字符串，返回格式如：`#1677ff` | () => string | - |
-| toHsb | 转换成 `hsb` 对象 | () => &#123; h: number, s: number, b: number, a: number &#125; | - |
-| toHsbString | 转换成 `hsb` 格式颜色字符串，返回格式如：`hsb(215, 91%, 100%)` | () => string | - |
-| toRgb | 转换成 `rgb` 对象 | () => &#123; r: number, g: number, b: number, a: number &#125; | - |
-| toRgbString | 转换成 `rgb` 格式颜色字符串，返回格式如：`rgb(22, 119, 255)` | () => string | - |
+| toCssString | Convert to CSS support format | () => string | - |
+| toHex | Convert to `hex` format characters, the return type like: `1677ff` | () => string | - |
+| toHexString | Convert to `hex` format color string, the return type like: `#1677ff` | () => string | - |
+| toHsb | Convert to `hsb` object | () => &#123; h: number, s: number, b: number, a: number &#125; | - |
+| toHsbString | Convert to `hsb` format color string, the return type like: `hsb(215, 91%, 100%)` | () => string | - |
+| toRgb | Convert to `rgb` object | () => &#123; r: number, g: number, b: number, a: number &#125; | - |
+| toRgbString | Convert to `rgb` format color string, the return type like: `rgb(22, 119, 255)` | () => string | - |
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |
 
 ## FAQ
 
-### 关于颜色赋值的问题 
-颜色选择器的值同时支持字符串色值和选择器生成的 `Color` 对象，但由于不同格式的颜色字符串互相转换会有精度误差问题，所以受控场景推荐使用选择器生成的 `Color` 对象来进行赋值操作，这样可以避免精度问题，保证取值是精准的，选择器也可以按照预期工作。
+### Questions about color assignment 
+The value of the color selector supports both string color values and selector-generated `Color` objects. However, since there is a precision error when converting color strings of different formats to each other, it is recommended to use selector-generated `Color` objects for assignment operations in controlled scenarios, so that the precision problem can be avoided and the values are guaranteed to be accurate and the selector can work as expected.

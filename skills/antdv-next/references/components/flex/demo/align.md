@@ -1,8 +1,8 @@
-# 对齐方式
+# align
 
-## Description (zh-CN)
+## Description (en-US)
 
-设置对齐方式。
+Set align.
 
 ## Source
 

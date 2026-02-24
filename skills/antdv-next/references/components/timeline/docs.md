@@ -1,69 +1,71 @@
 ---
 title: Timeline
-subtitle: 时间轴
-description: 垂直展示的时间流信息。
+description: Vertical display timeline.
 ---
 
-## 何时使用 
-- 当有一系列信息需要按时间排列（升序或降序）时。
-- 当需要用时间轴来进行视觉连接时。
+## When To Use 
+- When a series of information needs to be ordered by time (ascending or descending).
+- When you need a timeline to make a visual connection.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本用法 | demo/basic.md |
-| 变体样式 | demo/variant.md |
-| 等待及排序 | demo/pending.md |
-| 交替展现 | demo/alternate.md |
-| 水平布局 | demo/horizontal.md |
-| 自定义时间轴点 | demo/custom.md |
-| 另一侧时间轴点 | demo/end.md |
-| 标题 | demo/title.md |
-| 标题占比 | demo/title-span.md |
-| 自定义语义化自定义 | demo/style-class.md |
-| 语义化结构 | demo/semantic.md |
+| Basic | demo/basic.md |
+| Alternate | demo/alternate.md |
+| Custom | demo/custom.md |
+| Pending | demo/pending.md |
+| Label | demo/title.md |
+| Variant | demo/variant.md |
+| Right Alternate | demo/end.md |
+| Horizontal | demo/horizontal.md |
+| Title Offset | demo/title-span.md |
+| Semantic Sample | demo/semantic.md |
+| Custom semantic dom styling | demo/style-class.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+### Props
 
-### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+Common props ref：[Common props](../../docs/vue/common-props.md)
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | Record&lt;SemanticDOM, string&gt; | - | - |
-| items | 选项配置 | TimelineItemProps[] | - | - |
-| mode | 通过设置 `mode` 可以改变时间轴和内容的相对位置 | `left` \| `alternate` \| `right` | - | - |
-| pending | 指定最后一个幽灵节点是否存在或内容，请使用 `item.loading` 代替 | VueNode | false | - |
-| pendingDot | 当最后一个幽灵节点存在時，指定其时间图点，请使用 `item.icon` 代替 | VueNode | &lt;LoadingOutlined /&gt; | - |
-| reverse | 节点排序 | boolean | false | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | Record&lt;SemanticDOM, CSSProperties&gt; | - | - |
-| dotRender | 自定义时间轴点渲染函数 | (params: &#123; item: TimelineItemProps, index: number &#125;) =&gt; VueNode | - | - |
-| labelRender | 自定义时间轴标签渲染函数 | (params: &#123; item: TimelineItemProps, index: number &#125;) =&gt; VueNode | - | - |
-| contentRender | 自定义时间轴内容渲染函数 | (params: &#123; item: TimelineItemProps, index: number &#125;) =&gt; VueNode | - | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function | Record&lt;SemanticDOM, string&gt; | - | - |
+| items | Each node of timeline | TimelineItemProps[] | - | - |
+| mode | By sending `alternate` the timeline will distribute the nodes to the left and right | `left` \| `alternate` \| `right` | - | - |
+| pending | Set the last ghost node's existence or its content. Use `item.loading` instead | VueNode | false | - |
+| pendingDot | Set the dot of the last ghost node when pending is true. Use `item.icon` instead | VueNode | &lt;LoadingOutlined /&gt; | - |
+| reverse | Whether reverse nodes or not | boolean | false | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function | Record&lt;SemanticDOM, CSSProperties&gt; | - | - |
+| dotRender | Custom rendering function for timeline dot | (params: &#123; item: TimelineItemProps, index: number &#125;) =&gt; VueNode | - | - |
+| labelRender | Custom rendering function for timeline label | (params: &#123; item: TimelineItemProps, index: number &#125;) =&gt; VueNode | - | - |
+| contentRender | Custom rendering function for timeline content | (params: &#123; item: TimelineItemProps, index: number &#125;) =&gt; VueNode | - | - |
 
-### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+### Slots
+
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| pending | 指定最后一个幽灵节点是否存在或内容 | () =&gt; VueNode | - |
-| pendingDot | 当最后一个幽灵节点存在時，指定其时间图点 | () =&gt; VueNode | - |
-| dotRender | 自定义时间轴点渲染函数 | (params: &#123; item: TimelineItemProps, index: number &#125;) =&gt; VueNode | - |
-| labelRender | 自定义时间轴标签渲染函数 | (params: &#123; item: TimelineItemProps, index: number &#125;) =&gt; VueNode | - |
-| contentRender | 自定义时间轴内容渲染函数 | (params: &#123; item: TimelineItemProps, index: number &#125;) =&gt; VueNode | - |
+| pending | Set the last ghost node's existence or its content | () =&gt; VueNode | - |
+| pendingDot | Set the dot of the last ghost node when pending is true | () =&gt; VueNode | - |
+| dotRender | Custom rendering function for timeline dot | (params: &#123; item: TimelineItemProps, index: number &#125;) =&gt; VueNode | - |
+| labelRender | Custom rendering function for timeline label | (params: &#123; item: TimelineItemProps, index: number &#125;) =&gt; VueNode | - |
+| contentRender | Custom rendering function for timeline content | (params: &#123; item: TimelineItemProps, index: number &#125;) =&gt; VueNode | - |
 
-## 类型 
+## Types
+
 ### TimelineItem
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| children | 设置内容 | VueNode | - | - |
-| color | 指定圆圈颜色 `blue`、`red`、`green`、`gray`，或自定义的色值 | string | `blue` | - |
-| dot | 自定义时间轴点 | VueNode | - | - |
-| key | 该项的唯一标识 | Key | - | - |
-| label | 设置标签 | VueNode | - | - |
-| loading | 设置加载状态 | boolean | false | - |
-| pending | 是否为待定状态 | boolean | false | - |
-| position | 自定义节点位置 | `left` \| `right` | - | - |
+| children | Set the content | VueNode | - | - |
+| color | Set the circle's color to `blue`, `red`, `green`, `gray` or other custom colors | string | `blue` | - |
+| dot | Customize timeline dot | VueNode | - | - |
+| key | Unique key for this item | Key | - | - |
+| label | Set the label | VueNode | - | - |
+| loading | Set loading state | boolean | false | - |
+| pending | Whether this item is pending | boolean | false | - |
+| position | Customize node position | `left` \| `right` | - | - |
 
-## 语义化 DOM 
+## Semantic DOM 
 | _semantic | demo/_semantic.md |

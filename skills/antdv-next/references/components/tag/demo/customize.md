@@ -1,8 +1,8 @@
-# 自定义关闭按钮
+# Customize close
 
-## Description (zh-CN)
+## Description (en-US)
 
-可用 `closeIcon` 自定义关闭按钮。
+The close icon can be customized using `closeIcon`.
 
 ## Source
 

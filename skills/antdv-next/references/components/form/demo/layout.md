@@ -1,8 +1,8 @@
-# 表单布局
+# Form Layout
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过切换布局展示表单的三种排列方式。
+Switch between horizontal, vertical, and inline layouts.
 
 ## Source
 

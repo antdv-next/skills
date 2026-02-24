@@ -1,8 +1,8 @@
-# 适应文本高度的文本域
+# Autosizing the height to fit the content
 
-## Description (zh-CN)
+## Description (en-US)
 
-`autoSize` 属性适用于 `textarea` 节点，并且只有高度会自动变化。另外 `autoSize` 可以设定为一个对象，指定最小行数和最大行数。
+`autoSize` prop for a `textarea` type of `Input` makes the height to automatically adjust based on the content. An option object can be provided to `autoSize` to specify the minimum and maximum number of lines the textarea will automatically adjust.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 垂直菜单
+# Vertical menu
 
-## Description (zh-CN)
+## Description (en-US)
 
-子菜单是弹出的形式。
+Submenus open as pop-ups.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 预设颜色
+# Preset Colors
 
-## Description (zh-CN)
+## Description (en-US)
 
-设置颜色选择器的预设颜色。
+Set the presets color of the color picker.
 
 ## Source
 

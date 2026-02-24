@@ -1,8 +1,8 @@
-# 主题
+# Theme
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `theme` 修改主题。
+Modify theme by `theme` prop.
 
 ## Source
 

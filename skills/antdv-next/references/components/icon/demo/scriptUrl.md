@@ -1,8 +1,8 @@
-# 使用 iconfont.cn 的多个资源
+# Multiple resources from iconfont.cn
 
-## Description (zh-CN)
+## Description (en-US)
 
-`scriptUrl` 可引用多个资源，用户可灵活的管理 [iconfont.cn](http://iconfont.cn/) 图标。如果资源的图标出现重名，会按照数组顺序进行覆盖。
+You can use `scriptUrl`  to manage icons in one icon from multiple [iconfont.cn](http://iconfont.cn/) resources. If an icon with a duplicate name is in resources, it will be overridden in array order.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 紧凑模式
+# Compact Style
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 Space.Compact 创建紧凑模式，更多请查看 [Space.Compact](../../space/docs.md#spacecompact) 文档。
+Use Space.Compact create compact style, See the [Space.Compact](../../space/docs.md#spacecompact) documentation for more.
 
 ## Source
 

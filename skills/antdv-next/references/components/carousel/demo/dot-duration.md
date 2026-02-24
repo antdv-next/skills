@@ -1,8 +1,8 @@
-# 进度条
+# Progress of dots
 
-## Description (zh-CN)
+## Description (en-US)
 
-展示指示点的进度。
+Show progress of dots.
 
 ## Source
 

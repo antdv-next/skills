@@ -1,87 +1,97 @@
 ---
 title: AutoComplete
-subtitle: 自动完成
-description: 输入框自动完成功能。
+description: Autocomplete function of input field.
 ---
 
-## 何时使用 
-- 需要一个输入框而不是选择器。
-- 需要输入建议/辅助提示。
+## When To Use 
+- When you need an input box instead of a selector.
+- When you need input suggestions or helping text.
 
-和 Select 的区别是：
+The differences with Select are:
 
-- AutoComplete 是一个带提示的文本输入框，用户可以自由输入，关键词是辅助**输入**。
-- Select 是在限定的可选项中进行选择，关键词是**选择**。
+- AutoComplete is an input box with text hints, and users can type freely. The keyword is aiding **input**.
+- Select is selecting among given choices. The keyword is **select**.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本使用 | demo/basic.md |
-| 自定义选项 | demo/options.md |
-| 自定义输入组件 | demo/custom.md |
-| 不区分大小写 | demo/non-case-sensitive.md |
-| 查询模式 - 确定类目 | demo/certain-category.md |
-| 查询模式 - 不确定类目 | demo/uncertain-category.md |
-| 自定义状态 | demo/status.md |
-| 多种形态 | demo/variant.md |
-| 自定义清除按钮 | demo/allowClear.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
+| Basic Usage | demo/basic.md |
+| Customized Options | demo/options.md |
+| Custom Input Component | demo/custom.md |
+| Non-case-sensitive AutoComplete | demo/non-case-sensitive.md |
+| Lookup-Patterns - Certain Category | demo/certain-category.md |
+| Lookup-Patterns - Uncertain Category | demo/uncertain-category.md |
+| Status | demo/status.md |
+| Variants | demo/variant.md |
+| Customize clear button | demo/allowClear.md |
+| Custom semantic dom styling | demo/style-class.md |
 
 ## API
 
-### 属性 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+Common props ref：[Common props](../../docs/vue/common-props.md)
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| allowClear | 支持清除 | boolean \| &#123; clearIcon?: VueNode &#125; | false | - |
-| backfill | 使用键盘选择选项的时候把选中项回填到输入框中 | boolean | false | - |
-| defaultActiveFirstOption | 是否默认高亮第一个选项 | boolean | true | - |
-| disabled | 是否禁用 | boolean | false | - |
-| getPopupContainer | 菜单渲染父节点。默认渲染到 body 上，如果你遇到菜单滚动定位问题，试试修改为滚动的区域，并相对其定位 | (triggerNode: HTMLElement) =&gt; HTMLElement | () =&gt; document.body | - |
-| notFoundContent | 当下拉列表为空时显示的内容 | VueNode | - | - |
-| open | 是否展开下拉菜单 | boolean | - | - |
-| options | 数据化配置选项内容，相比 jsx 定义会获得更好的渲染性能 | &#123; label: VueNode; value: string &#125;[] | - | - |
-| placeholder | 输入框提示 | string | - | - |
-| popupMatchSelectWidth | 下拉菜单和选择器同宽。默认将设置 `min-width`，当值小于选择框宽度时会被忽略。false 时会关闭虚拟滚动 | boolean \| number | true | - |
-| popupRender | 自定义下拉框内容 | (menu: VueNode) =&gt; VueNode | - | - |
-| showSearch | 搜索配置 | boolean \| [SearchConfig](#showsearch) | true | - |
-| size | 控件大小 | `large` \| `middle` \| `small` | - | - |
-| status | 设置校验状态 | `error` \| `warning` | - | - |
-| value | 指定当前选中的条目，支持 `v-model:value` | string | - | - |
-| variant | 形态变体 | `outlined` \| `borderless` \| `filled` \| `underlined` | `outlined` | - |
-| virtual | 设置 false 时关闭虚拟滚动 | boolean | true | - |
+| allowClear | Show clear button | boolean \| &#123; clearIcon?: VueNode &#125; | false | - |
+| backfill | If backfill selected item the input when using keyboard | boolean | false | - |
+| defaultActiveFirstOption | Whether active first option by default | boolean | true | - |
+| disabled | Whether disabled select | boolean | false | - |
+| getPopupContainer | Parent node of the dropdown. Default to body, if you encountered positioning problems during scroll, try changing to the scrollable area and position relative to it | (triggerNode: HTMLElement) =&gt; HTMLElement | () =&gt; document.body | - |
+| notFoundContent | Specify content to show when no result matches | VueNode | - | - |
+| open | Controlled open state of dropdown | boolean | - | - |
+| options | Select options. Will get better perf than jsx definition | &#123; label: VueNode; value: string &#125;[] | - | - |
+| placeholder | The placeholder of input | string | - | - |
+| popupMatchSelectWidth | Determine whether the dropdown menu and the select input are the same width. Default set `min-width` same as input. Will ignore when value less than select width. `false` will disable virtual scroll | boolean \| number | true | - |
+| popupRender | Customize dropdown content | (menu: VueNode) =&gt; VueNode | - | - |
+| showSearch | Search configuration | boolean \| [SearchConfig](#showsearch) | true | - |
+| size | The size of the input box | `large` \| `middle` \| `small` | - | - |
+| status | Set validation status | `error` \| `warning` | - | - |
+| value | Selected option, support `v-model:value` | string | - | - |
+| variant | Variants of input | `outlined` \| `borderless` \| `filled` \| `underlined` | `outlined` | - |
+| virtual | Disable virtual scroll when set to false | boolean | true | - |
 
-### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+### Events
+
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| blur | 失去焦点时的回调 | (e: FocusEvent) =&gt; void | - |
-| change | 选中 option，或 input 的 value 变化时，调用此函数 | (value: string) =&gt; void | - |
-| clear | 清除内容时的回调 | () =&gt; void | - |
-| focus | 获得焦点时的回调 | (e: FocusEvent) =&gt; void | - |
-| inputKeydown | 按键按下时回调 | (e: KeyboardEvent) =&gt; void | - |
-| openChange | 展开下拉菜单的回调 | (open: boolean) =&gt; void | - |
-| popupScroll | 下拉列表滚动时的回调 | (e: UIEvent) =&gt; void | - |
-| search | 搜索补全项的时候调用 | (value: string) =&gt; void | - |
-| select | 被选中时调用，参数为选中项的 value 值 | (value: string, option: Option) =&gt; void | - |
+| blur | Called when blur | (e: FocusEvent) =&gt; void | - |
+| change | Called when selecting an option or changing input value | (value: string) =&gt; void | - |
+| clear | Called when clear | () =&gt; void | - |
+| focus | Called when focus | (e: FocusEvent) =&gt; void | - |
+| inputKeydown | Called when key pressed | (e: KeyboardEvent) =&gt; void | - |
+| openChange | Called when dropdown open | (open: boolean) =&gt; void | - |
+| popupScroll | Called when dropdown scrolls | (e: UIEvent) =&gt; void | - |
+| search | Called when searching items | (value: string) =&gt; void | - |
+| select | Called when an option is selected, the params are option's value (or key) and option instance | (value: string, option: Option) =&gt; void | - |
 
-## 类型 
-### showSearch 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+### Slots
+
+| Slot | Description | Type | Version |
+| --- | --- | --- | --- |
+| default | Customize input element | () =&gt; VueNode | - |
+
+## Types
+
+### showSearch
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| filterOption | 是否根据输入项进行筛选。当其为一个函数时，会接收 `inputValue` `option` 两个参数，当 `option` 符合筛选条件时，应返回 true，反之则返回 false | boolean \| (inputValue: string, option?: Option) =&gt; boolean | true | - |
-| onSearch | 搜索补全项的时候调用 | (value: string) =&gt; void | - | - |
+| filterOption | If true, filter options by input, if function, filter options against it. The function will receive two arguments, `inputValue` and `option`, if the function returns true, the option will be included in the filtered set; Otherwise, it will be excluded | boolean \| (inputValue: string, option?: Option) =&gt; boolean | true | - |
+| onSearch | Called when searching items | (value: string) =&gt; void | - | - |
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |
 
 ## FAQ
 
-### 为何受控状态下使用 onSearch 无法输入中文？ 
-请使用 `onChange` 进行受控管理。`onSearch` 触发于搜索输入，与 `onChange` 时机不同。此外，点击选项时也不会触发 `onSearch` 事件。
+### Why doesn't the text composition system work well with onSearch in controlled mode? 
+Please use `onChange` to manage control state. `onSearch` is used for searching input which is not the same as `onChange`. Besides, clicking on the option will not trigger the `onSearch` event.
 
-相关 issue：[#18230](https://github.com/ant-design/ant-design/issues/18230) [#17916](https://github.com/ant-design/ant-design/issues/17916)
+Related issue: [#18230](https://github.com/ant-design/ant-design/issues/18230) [#17916](https://github.com/ant-design/ant-design/issues/17916)
 
-### 为何 options 为空时，受控 open 展开不会显示下拉菜单？ 
-AutoComplete 组件本质上是 Input 输入框的一种扩展，当 `options` 为空时，显示空文本会让用户误以为该组件不可操作，实际上它仍然可以进行文本输入操作。因此，为了避免给用户带来困惑，当 `options` 为空时，`open` 属性为 `true` 也不会展示下拉菜单，需要与 `options` 属性配合使用。
+### Why won't a controlled open AutoComplete display a drop-down menu when options are empty? 
+The AutoComplete component is essentially an extension of the Input form element. When the `options` property is empty, displaying empty text could mislead the user into believing the component is not operational, when in fact they are still able to input text. To avoid confusion, the `open` property will not display the drop-down menu when set to `true` and in combination with an empty `options` property. The `open` property must be used in conjunction with the `options` property.

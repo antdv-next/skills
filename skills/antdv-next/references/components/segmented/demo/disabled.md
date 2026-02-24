@@ -1,8 +1,8 @@
-# 不可用
+# Disabled
 
-## Description (zh-CN)
+## Description (en-US)
 
-Segmented 不可用。
+Disabled Segmented.
 
 ## Source
 

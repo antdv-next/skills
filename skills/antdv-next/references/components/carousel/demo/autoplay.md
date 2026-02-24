@@ -1,8 +1,8 @@
-# 自动切换
+# Scroll automatically
 
-## Description (zh-CN)
+## Description (en-US)
 
-定时切换下一张。
+Timing of scrolling to the next card/picture.
 
 ## Source
 

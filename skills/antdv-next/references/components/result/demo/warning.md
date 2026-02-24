@@ -1,8 +1,8 @@
 # Warning
 
-## Description (zh-CN)
+## Description (en-US)
 
-警告类型的结果。
+The result of the warning.
 
 ## Source
 

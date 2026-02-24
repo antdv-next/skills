@@ -1,8 +1,8 @@
-# 居中
+# Centered
 
-## Description (zh-CN)
+## Description (en-US)
 
-标签居中展示。
+Centered tabs.
 
 ## Source
 

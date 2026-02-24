@@ -1,8 +1,8 @@
-# 危险按钮
+# Danger Buttons
 
-## Description (zh-CN)
+## Description (en-US)
 
-在 4.0 之后，危险成为一种按钮属性而不是按钮类型。
+The `danger` is a property of buttons after antd 4.0.
 
 ## Source
 

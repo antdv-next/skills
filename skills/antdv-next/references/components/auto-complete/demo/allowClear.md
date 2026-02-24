@@ -1,8 +1,8 @@
-# 自定义清除按钮
+# Customize clear button
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义清除按钮
+Customize clear button
 
 ## Source
 

@@ -1,8 +1,8 @@
-# Radio.Group 组合 - 配置方式
+# Radio.Group group - optional
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过配置 `options` 参数来渲染单选框。也可通过 `optionType` 参数来设置 Radio 类型。
+Render radios by configuring `options`. Radio type can also be set through the `optionType` parameter.
 
 ## Source
 

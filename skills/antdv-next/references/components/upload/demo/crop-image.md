@@ -1,8 +1,8 @@
-# 上传前裁切图片
+# Crop image before uploading
 
-## Description (zh-CN)
+## Description (en-US)
 
-配合 [antd-img-crop](https://github.com/nanxiaobei/antd-img-crop) 实现上传前裁切图片。
+Use [antd-img-crop](https://github.com/nanxiaobei/antd-img-crop) to crop image before uploading.
 
 ## Source
 

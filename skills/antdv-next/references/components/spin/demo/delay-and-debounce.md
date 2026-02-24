@@ -1,8 +1,8 @@
-# 延迟
+# Delay
 
-## Description (zh-CN)
+## Description (en-US)
 
-延迟显示 loading 效果。当 spinning 状态在 `delay` 时间内结束，则不显示 loading 状态。
+Specifies a delay for loading state. If `spinning` ends during delay, loading status won't appear.
 
 ## Source
 

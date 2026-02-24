@@ -1,8 +1,8 @@
-# 自定义 Icon 图标
+# Customize icon
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义提示 `icon`。
+Set `icon` props to customize the icon.
 
 ## Source
 

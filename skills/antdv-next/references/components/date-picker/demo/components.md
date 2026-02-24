@@ -1,8 +1,8 @@
-# 定制面板
+# Customize Panel
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `components` 替换对应面板。
+Replace panel with `components`.
 
 ## Source
 

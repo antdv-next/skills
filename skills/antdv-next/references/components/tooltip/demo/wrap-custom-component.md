@@ -1,8 +1,8 @@
-# 自定义子组件
+# Wrap custom component
 
-## Description (zh-CN)
+## Description (en-US)
 
-与自定义组件一起使用.
+Use with a custom component.
 
 ## Source
 

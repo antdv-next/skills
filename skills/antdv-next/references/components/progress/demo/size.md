@@ -1,8 +1,8 @@
-# 尺寸
+# Progress size
 
-## Description (zh-CN)
+## Description (en-US)
 
-进度条尺寸。
+The size of progress.
 
 ## Source
 

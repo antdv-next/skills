@@ -1,109 +1,113 @@
 ---
 title: Transfer
-subtitle: 穿梭框
-description: 双栏穿梭选择框。
+description: Double column transfer choice box.
 ---
 
-## 何时使用 
-- 需要在多个可选项中进行多选时。
-- 比起 Select 和 TreeSelect，穿梭框占据更大的空间，可以展示可选项的更多信息。
+## When To Use 
+- It is a select control essentially which can be use for selecting multiple items.
+- Transfer can display more information for items and take up more space.
 
-穿梭选择框用直观的方式在两栏中移动元素，完成选择行为。
+Transfer the elements between two columns in an intuitive and efficient way.
 
-选择一个或以上的选项后，点击对应的方向键，可以把选中的选项移动到另一栏。其中，左边一栏为 `source`，右边一栏为 `target`，API 的设计也反映了这两个概念。
+One or more elements can be selected from either column, one click on the proper `direction` button, and the transfer is done. The left column is considered the `source` and the right column is considered the `target`. As you can see in the API description, these names are reflected in.
 
-> 注意：穿梭框组件只支持受控使用，不支持非受控模式。
+> Notice: Transfer is a controlled component, uncontrolled mode is not supported.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本用法 | demo/basic.md |
-| 单向样式 | demo/oneWay.md |
-| 带搜索框 | demo/search.md |
-| 高级用法 | demo/advanced.md |
-| 自定义渲染 | demo/custom-item.md |
-| 自定义操作 | demo/actions.md |
-| 分页 | demo/large-data.md |
-| 树形穿梭框 | demo/tree-transfer.md |
-| 状态 | demo/status.md |
-| 语义化样式 | demo/style-class.md |
-| 自定义全选文案 | demo/custom-select-all-labels.md |
+| Basic | demo/basic.md |
+| One Way | demo/oneWay.md |
+| Search | demo/search.md |
+| Advanced | demo/advanced.md |
+| Custom datasource | demo/custom-item.md |
+| Custom Actions | demo/actions.md |
+| Pagination | demo/large-data.md |
+| Tree Transfer | demo/tree-transfer.md |
+| Status | demo/status.md |
+| Custom semantic dom styling | demo/style-class.md |
+| Custom Select All Labels | demo/custom-select-all-labels.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
-### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+### Props
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| actions | 操作文案集合，顺序从上至下。当为字符串数组时使用默认的按钮，当为 VueNode 数组时直接使用自定义元素 | VueNode[] | [`>`, `<`] | 6.0.0 |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | TransferClassNamesType | - | - |
-| dataSource | 数据源，其中的数据将会被渲染到左边一栏中，`targetKeys` 中指定的除外 | TransferItem[] | [] | - |
-| disabled | 是否禁用 | boolean | false | - |
-| filterOption | 根据搜索内容进行筛选，接收 `inputValue` `option` `direction` 三个参数，当 `option` 符合筛选条件时，应返回 true，反之则返回 false | (inputValue: string, option: TransferItem, direction: `left` \| `right`) =&gt; boolean | - | - |
-| footer | 底部渲染函数 | (props: TransferListProps, direction: `left` \| `right`) =&gt; VueNode | - | - |
-| locale | 各种语言 | TransferLocale | - | - |
-| oneWay | 展示为单向样式 | boolean | false | - |
-| pagination | 使用分页样式，自定义渲染列表下无效 | boolean \| &#123; pageSize: number; simple: boolean; showSizeChanger?: boolean; showLessItems?: boolean &#125; | false | - |
-| render | 每行数据渲染函数，该函数的入参为 `dataSource` 中的项，返回值为 VueNode。或者返回一个普通对象，其中 `label` 字段为 VueNode，`value` 字段为 title | (record: TransferItem) =&gt; VueNode | - | - |
-| rowKey | 数据列的主键 | (record: TransferItem) =&gt; string | - | - |
-| selectAllLabels | 自定义顶部多选框标题的集合 | (VueNode \| (info: &#123; selectedCount: number; totalCount: number &#125;) =&gt; VueNode)[] | - | - |
-| selectedKeys | 设置哪些项应该被选中，支持 `v-model:selected-keys` | string[] | [] | - |
-| selectionsIcon | 自定义下拉菜单图标 | VueNode | - | - |
-| showSearch | 是否显示搜索框，或可对两侧搜索框进行配置 | boolean \| &#123; placeholder?: string; defaultValue?: string &#125; | false | - |
-| showSelectAll | 是否展示全选勾选框 | boolean | true | - |
-| status | 设置校验状态 | `error` \| `warning` | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | TransferStylesType | - | - |
-| targetKeys | 显示在右侧框数据的 key 集合，支持 `v-model:target-keys` | string[] | [] | - |
-| titles | 标题集合，顺序从左至右 | VueNode[] | - | - |
+| actions | A set of operations that are sorted from top to bottom. When an array of strings is provided, default buttons will be used; when an array of VueNode is provided, custom elements will be used | VueNode[] | [`>`, `<`] | 6.0.0 |
+| classes | Customize class for each semantic structure inside the component. Supports object or function | TransferClassNamesType | - | - |
+| dataSource | Used for setting the source data. The elements that are part of this array will be present the left column. Except the elements whose keys are included in `targetKeys` prop | TransferItem[] | [] | - |
+| disabled | Whether disabled transfer | boolean | false | - |
+| filterOption | A function to determine whether an item should show in search result list, only works when searching | (inputValue: string, option: TransferItem, direction: `left` \| `right`) =&gt; boolean | - | - |
+| footer | A function used for rendering the footer | (props: TransferListProps, direction: `left` \| `right`) =&gt; VueNode | - | - |
+| locale | The i18n text including filter, empty text, item unit, etc | TransferLocale | - | - |
+| oneWay | Display as single direction style | boolean | false | - |
+| pagination | Use pagination. Not work in render props | boolean \| &#123; pageSize: number; simple: boolean; showSizeChanger?: boolean; showLessItems?: boolean &#125; | false | - |
+| render | The function to generate the item shown on a column. Based on an record (element of the dataSource array), this function should return a VueNode which is generated from that record. Also, it can return a plain object with `value` and `label`, `label` is a VueNode and `value` is for title | (record: TransferItem) =&gt; VueNode | - | - |
+| rowKey | Specify the key that will be used for uniquely identify each element | (record: TransferItem) =&gt; string | - | - |
+| selectAllLabels | A set of customized labels for select all checkboxes on the header | (VueNode \| (info: &#123; selectedCount: number; totalCount: number &#125;) =&gt; VueNode)[] | - | - |
+| selectedKeys | A set of keys of selected items, support `v-model:selected-keys` | string[] | [] | - |
+| selectionsIcon | Custom dropdown icon | VueNode | - | - |
+| showSearch | If included, a search box is shown on each column | boolean \| &#123; placeholder?: string; defaultValue?: string &#125; | false | - |
+| showSelectAll | Show select all checkbox on the header | boolean | true | - |
+| status | Set validation status | `error` \| `warning` | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function | TransferStylesType | - | - |
+| targetKeys | A set of keys of elements that are listed on the right column, support `v-model:target-keys` | string[] | [] | - |
+| titles | A set of titles that are sorted from left to right | VueNode[] | - | - |
 
-### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+### Events
+
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| change | 选项在两栏之间转移时的回调函数 | (targetKeys: string[], direction: `left` \| `right`, moveKeys: string[]) =&gt; void | - |
-| scroll | 选项列表滚动时的回调函数 | (direction: `left` \| `right`, event: Event) =&gt; void | - |
-| search | 搜索框内容时改变时的回调函数 | (direction: `left` \| `right`, value: string) =&gt; void | - |
-| selectChange | 选中项发生改变时的回调函数 | (sourceSelectedKeys: string[], targetSelectedKeys: string[]) =&gt; void | - |
+| change | A callback function that is executed when the transfer between columns is complete | (targetKeys: string[], direction: `left` \| `right`, moveKeys: string[]) =&gt; void | - |
+| scroll | A callback function which is executed when scroll options list | (direction: `left` \| `right`, event: Event) =&gt; void | - |
+| search | A callback function which is executed when search field are changed | (direction: `left` \| `right`, value: string) =&gt; void | - |
+| selectChange | A callback function which is executed when selected items are changed | (sourceSelectedKeys: string[], targetSelectedKeys: string[]) =&gt; void | - |
 
-### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+### Slots
+
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| actions | 自定义操作按钮 | (direction: `left` \| `right`) =&gt; VueNode | - |
-| footer | 自定义底部 | (props: TransferListProps, direction: `left` \| `right`) =&gt; VueNode | - |
-| render | 自定义渲染项 | (item: TransferItem) =&gt; VueNode | - |
-| notFoundContent | 自定义空内容 | (direction: `left` \| `right`) =&gt; VueNode | - |
-| selectAllLabels | 自定义全选标签 | (info: &#123; selectedCount: number; totalCount: number; direction: `left` \| `right` &#125;) =&gt; VueNode | - |
+| actions | Custom operation buttons | (direction: `left` \| `right`) =&gt; VueNode | - |
+| footer | Custom footer | (props: TransferListProps, direction: `left` \| `right`) =&gt; VueNode | - |
+| render | Custom item render | (item: TransferItem) =&gt; VueNode | - |
+| notFoundContent | Custom empty content | (direction: `left` \| `right`) =&gt; VueNode | - |
+| selectAllLabels | Custom select all label | (info: &#123; selectedCount: number; totalCount: number; direction: `left` \| `right` &#125;) =&gt; VueNode | - |
 
-## 类型 
+## Types
+
 ### Render Props
 
-Transfer 支持接收 `children` 自定义渲染列表，并返回以下参数：
+Transfer accept `children` to customize render list, using follow props:
 
-| 参数 | 说明 | 类型 | 版本 |
+| Property | Description | Type | Version |
 | --- | --- | --- | --- |
-| direction | 渲染列表的方向 | `left` \| `right` | - |
-| disabled | 是否禁用列表 | boolean | - |
-| filteredItems | 过滤后的数据 | TransferItem[] | - |
-| selectedKeys | 选中的条目 | string[] | - |
-| onItemSelect | 勾选条目 | (key: string, selected: boolean) =&gt; void | - |
-| onItemSelectAll | 勾选一组条目 | (keys: string[], selected: boolean) =&gt; void | - |
+| direction | List render direction | `left` \| `right` | - |
+| disabled | Disable list or not | boolean | - |
+| filteredItems | Filtered items | TransferItem[] | - |
+| selectedKeys | Selected items | string[] | - |
+| onItemSelect | Select item | (key: string, selected: boolean) =&gt; void | - |
+| onItemSelectAll | Select a group of items | (keys: string[], selected: boolean) =&gt; void | - |
 
-## 注意
+## Warning
 
-按照 Vue 的规范，所有的组件数组必须绑定 key。在 Transfer 中，`dataSource` 里的数据值需要指定 `key` 值。对于 `dataSource` 默认将每列数据的 `key` 属性作为唯一的标识。
+According the standard of Vue, the key should always be supplied directly to the elements in the array. In Transfer, the keys should be set on the elements included in `dataSource` array. By default, `key` property is used as an unique identifier.
 
-如果你的数据没有这个属性，务必使用 `rowKey` 来指定数据列的主键。
+If there's no `key` in your data, you should use `rowKey` to specify the key that will be used for uniquely identify each element.
 
 ```vue
-<!-- 比如你的数据主键是 uid -->
+<!--  eg. your primary key is `uid` -->
 <a-transfer :row-key="(record) => record.uid" />
 ```
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |
 
 ## FAQ
 
-### 怎样让 Transfer 穿梭框列表支持异步数据加载 
-为了保持页码同步，在勾选时可以不移除选项而以禁用代替。
+### How to support fetch and present data from a remote server in Transfer column. 
+In order to keep the page number synchronized, you can disable columns you checked without removing the option.

@@ -1,8 +1,8 @@
-# 大小
+# Size
 
-## Description (zh-CN)
+## Description (en-US)
 
-不同大小的级联选择器。
+Cascade selection box of different sizes.
 
 ## Source
 

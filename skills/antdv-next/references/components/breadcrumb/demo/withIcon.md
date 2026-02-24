@@ -1,8 +1,8 @@
-# 带有图标的
+# With an Icon
 
-## Description (zh-CN)
+## Description (en-US)
 
-图标放在文字前面。
+The icon should be placed in front of the text.
 
 ## Source
 

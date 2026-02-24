@@ -1,8 +1,8 @@
-# 垂直
+# Vertical
 
-## Description (zh-CN)
+## Description (en-US)
 
-垂直分割面板。
+Vertical split panel.
 
 ## Source
 

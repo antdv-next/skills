@@ -1,8 +1,8 @@
-# Button 紧凑布局
+# Button Compact Mode
 
-## Description (zh-CN)
+## Description (en-US)
 
-紧凑按钮组。
+Compact button group.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 复杂的组合
+# Complex combination
 
-## Description (zh-CN)
+## Description (en-US)
 
-更复杂的组合。
+Complex combination with avatar and multiple paragraphs.
 
 ## Source
 

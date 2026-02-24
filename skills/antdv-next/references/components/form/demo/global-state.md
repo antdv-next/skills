@@ -1,8 +1,8 @@
-# 外层状态联动
+# Store Form Data into Upper Component
 
-## Description (zh-CN)
+## Description (en-US)
 
-将表单数据同步到外层状态。
+Store form data in outer reactive state.
 
 ## Source
 

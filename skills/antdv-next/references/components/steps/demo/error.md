@@ -1,8 +1,8 @@
-# 步骤运行错误
+# Error Status
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 Steps 的 `status` 属性来指定当前步骤的状态。
+By using `status` of `Steps`, you can specify the state for current step.
 
 ## Source
 

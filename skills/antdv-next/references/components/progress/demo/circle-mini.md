@@ -1,8 +1,8 @@
-# 小型进度圈
+# Mini size circular progress bar
 
-## Description (zh-CN)
+## Description (en-US)
 
-小一号的圈形进度。
+A smaller circular progress bar.
 
 ## Source
 

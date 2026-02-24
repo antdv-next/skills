@@ -1,8 +1,8 @@
-# 动态展示
+# Dynamic
 
-## Description (zh-CN)
+## Description (en-US)
 
-会动的进度条才是好进度条。
+A dynamic progress bar is better.
 
 ## Source
 

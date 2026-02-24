@@ -1,107 +1,106 @@
 ---
 title: Form
-subtitle: 表单
-description: 高性能表单控件，自带数据域管理。包含数据录入、校验以及对应样式。
+description: High-performance form component with data domain management. Includes data entry, validation, and corresponding styles.
 ---
 
-## 何时使用 
-- 需要创建实例或收集信息时。
-- 需要对字段进行规则校验时。
+## When To Use 
+- When you need to create an instance or collect information.
+- When you need to validate fields in certain rules.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基础用法 | demo/basic.md |
-| 表单方法 | demo/control-hooks.md |
-| 表单布局 | demo/layout.md |
-| 混合布局 | demo/layout-multiple.md |
-| 禁用表单 | demo/disabled.md |
-| 表单变体 | demo/variant.md |
-| 必选样式 | demo/required-mark.md |
-| 表单尺寸 | demo/size.md |
-| label 换行 | demo/layout-can-wrap.md |
-| 非阻塞规则 | demo/warning-only.md |
-| 监听字段 | demo/useWatch.md |
-| 校验触发时机 | demo/validate-trigger.md |
-| 仅校验 | demo/validate-only.md |
-| 路径前缀 | demo/form-item-path.md |
-| 动态表单项 | demo/dynamic-form-item.md |
-| 动态嵌套表单项 | demo/dynamic-form-items.md |
-| 复杂动态表单项 | demo/dynamic-form-items-complex.md |
-| 嵌套字段 | demo/nest-messages.md |
-| 复杂表单控件 | demo/complex-form-control.md |
-| 自定义表单控件 | demo/customized-form-controls.md |
-| 外层状态联动 | demo/global-state.md |
-| 多表单协作 | demo/form-context.md |
-| 内联登录 | demo/inline-login.md |
-| 登录表单 | demo/login.md |
-| 注册表单 | demo/register.md |
-| 高级搜索 | demo/advanced-search.md |
-| 弹窗表单 | demo/form-in-modal.md |
-| 时间相关控件 | demo/time-related-controls.md |
-| 手动处理表单数据 | demo/without-form-create.md |
-| 自定义校验展示 | demo/validate-static.md |
-| 动态规则 | demo/dynamic-rule.md |
-| 字段依赖 | demo/form-dependencies.md |
-| 值转换 | demo/getValueProps-normalize.md |
-| 滑动到错误字段 | demo/validate-scroll-to-field.md |
-| 其他表单控件 | demo/validate-other.md |
-| 自定义语义结构样式 | demo/style-class.md |
+| Basic Usage | demo/basic.md |
+| Form methods | demo/control-hooks.md |
+| Form Layout | demo/layout.md |
+| Form mix layout | demo/layout-multiple.md |
+| Form disabled | demo/disabled.md |
+| Form variants | demo/variant.md |
+| Required style | demo/required-mark.md |
+| Form size | demo/size.md |
+| label can wrap | demo/layout-can-wrap.md |
+| No block rule | demo/warning-only.md |
+| Watch Hooks | demo/useWatch.md |
+| Validate Trigger | demo/validate-trigger.md |
+| Validate Only | demo/validate-only.md |
+| Path Prefix | demo/form-item-path.md |
+| Dynamic Form Item | demo/dynamic-form-item.md |
+| Dynamic Form nest Items | demo/dynamic-form-items.md |
+| Complex Dynamic Form Item | demo/dynamic-form-items-complex.md |
+| Nest | demo/nest-messages.md |
+| complex form control | demo/complex-form-control.md |
+| Customized Form Controls | demo/customized-form-controls.md |
+| Store Form Data into Upper Component | demo/global-state.md |
+| Control between forms | demo/form-context.md |
+| Inline Login Form | demo/inline-login.md |
+| Login Form | demo/login.md |
+| Registration | demo/register.md |
+| Advanced search | demo/advanced-search.md |
+| Form in Modal to Create | demo/form-in-modal.md |
+| Time-related Controls | demo/time-related-controls.md |
+| Handle Form Data Manually | demo/without-form-create.md |
+| Customized Validation | demo/validate-static.md |
+| Dynamic Rules | demo/dynamic-rule.md |
+| Dependencies | demo/form-dependencies.md |
+| getValueProps + normalize | demo/getValueProps-normalize.md |
+| Slide to error field | demo/validate-scroll-to-field.md |
+| Other Form Controls | demo/validate-other.md |
+| Custom semantic dom styling | demo/style-class.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
 ### Form
 
-### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | FormClassNamesType | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | FormStylesType | - | - |
-| colon | 配置 Form.Item 的 `colon` 的默认值。表示是否显示 label 后面的冒号 (只有在属性 layout 为 horizontal 时有效) | boolean | true | - |
-| name | 表单名称，会作为表单字段 `id` 前缀使用 | string | - | - |
-| layout | 表单布局 | FormLayout | `horizontal` | - |
-| labelAlign | label 标签的文本对齐方式 | FormLabelAlign | `right` | - |
-| labelWrap | label 标签的文本换行方式 | boolean | false | - |
-| labelCol | label 标签布局，同 `Col` 组件，设置 `span` `offset` 值，如 `{span: 3, offset: 12}` 或 `sm: {span: 3, offset: 12}` | ColProps | - | - |
-| wrapperCol | 需要为输入控件设置布局样式时，使用该属性，用法同 labelCol | ColProps | - | - |
-| feedbackIcons | 当 `Form.Item` 有 `hasFeedback` 属性时可以自定义图标 | FeedbackIcons | - | - |
-| size | 设置字段组件的尺寸（仅限 antd 组件） | SizeType | - | - |
-| disabled | 设置表单组件禁用，仅对 antd 组件有效 | boolean | false | - |
-| scrollToFirstError | 提交失败自动滚动到第一个错误字段 | ScrollFocusOptions \| boolean | false | - |
-| requiredMark | 必选样式，可以切换为必选或者可选展示样式。此为 Form 配置，Form.Item 无法单独配置 | RequiredMark | true | - |
-| variant | 表单内控件变体 | Variant | `outlined` | - |
-| validateMessages | 验证提示模板，说明[见下](#validatemessages) | ValidateMessages | - | - |
-| model | 表单数据 | Record&lt;string, any&gt; | - | - |
-| rules | 表单规则 | Record&lt;string, Rule[]&gt; | - | - |
-| validateTrigger | 统一设置字段触发验证的时机 | string \| string[] \| false | `change` | - |
-| preserve | 当字段被删除时保留字段值。你可以通过 `getFieldsValue(true)` 来获取保留字段值 | boolean | true | - |
-| clearOnDestroy | 当表单被卸载时清空表单值 | boolean | false | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function. | FormClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | FormStylesType | - | - |
+| colon | Configure the default value of `colon` for Form.Item. Indicates whether the colon after the label is displayed (only effective when prop layout is horizontal) | boolean | true | - |
+| name | Form name. Will be the prefix of Field `id` | string | - | - |
+| layout | Form layout | FormLayout | `horizontal` | - |
+| labelAlign | The text align of label of all items | FormLabelAlign | `right` | - |
+| labelWrap | whether label can be wrap | boolean | false | - |
+| labelCol | Label layout, like `Col` component. Set `span` `offset` value like `{span: 3, offset: 12}` or `sm: {span: 3, offset: 12}` | ColProps | - | - |
+| wrapperCol | The layout for input controls, same as `labelCol` | ColProps | - | - |
+| feedbackIcons | Can be passed custom icons while `Form.Item` element has `hasFeedback` | FeedbackIcons | - | - |
+| size | Set field component size (antd components only) | SizeType | - | - |
+| disabled | Set form component disable, only available for antd components | boolean | false | - |
+| scrollToFirstError | Auto scroll to first failed field when submit | ScrollFocusOptions \| boolean | false | - |
+| requiredMark | Required mark style. Can use required mark or optional mark. You can not config to single Form.Item since this is a Form level config | RequiredMark | true | - |
+| variant | Variant of components inside form | Variant | `outlined` | - |
+| validateMessages | Validation prompt template, description [see below](#validatemessages) | ValidateMessages | - | - |
+| model | Form model | Record&lt;string, any&gt; | - | - |
+| rules | Form rules | Record&lt;string, Rule[]&gt; | - | - |
+| validateTrigger | Config field validate trigger | string \| string[] \| false | `change` | - |
+| preserve | Keep field value even when field removed. You can get the preserve field value by `getFieldsValue(true)` | boolean | true | - |
+| clearOnDestroy | Clear form values when the form is uninstalled | boolean | false | - |
 | validateOnRuleChange | - | boolean | - | - |
-| rootClass | 根容器类名 | string | - | - |
-| prefixCls | 组件前缀类名 | string | - | - |
+| rootClass | Root container class | string | - | - |
+| prefixCls | Prefix class name | string | - | - |
 
-### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+### Events 
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| finish | 提交表单且数据验证成功后回调事件 | (values: Record&lt;string, any&gt;) =&gt; void | - |
-| finishFailed | 提交表单且数据验证失败后回调事件 | (errorInfo: ValidateErrorEntity) =&gt; void | - |
+| finish | Trigger after submitting the form and verifying data successfully | (values: Record&lt;string, any&gt;) =&gt; void | - |
+| finishFailed | Trigger after submitting the form and verifying data failed | (errorInfo: ValidateErrorEntity) =&gt; void | - |
 | submit | - | (e: Event) =&gt; void | - |
 | reset | - | (e: Event) =&gt; void | - |
 | validate | - | (name: InternalNamePath, status: boolean, errors: any[] \| null) =&gt; void | - |
-| valuesChange | 字段值更新时触发回调事件 | (changedValues: Record&lt;string, any&gt;, values: Record&lt;string, any&gt;) =&gt; void | - |
-| fieldsChange | 字段更新时触发回调事件 | (changedFields: FieldData[], allFields: FieldData[]) =&gt; void | - |
+| valuesChange | Trigger when value updated | (changedValues: Record&lt;string, any&gt;, values: Record&lt;string, any&gt;) =&gt; void | - |
+| fieldsChange | Trigger when field updated | (changedFields: FieldData[], allFields: FieldData[]) =&gt; void | - |
 
-### 方法 
+### Methods 
 ```ts
 import { FormInstance } from 'antdv-next'
 
 const formRef = ref<FormInstance>()
 ```
 
-| 方法 | 说明 | 类型 | 版本 |
+| Method | Description | Type | Version |
 | --- | --- | --- | --- |
 | getFieldValue | - | (name: NamePath) =&gt; StoreValue | - |
 | getFieldsValue | - | (nameList?: NamePath[] \| true) =&gt; Record&lt;string, any&gt; | - |
@@ -124,36 +123,37 @@ const formRef = ref<FormInstance>()
 
 ### FormItem 
 #### Props 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| name | 字段名 | NamePath | - | - |
-| label | 标签文本 | VueNode | - | - |
-| labelAlign | label 标签的文本对齐方式 | FormLabelAlign | `right` | - |
-| labelCol | label 标签布局，同 `Col` 组件 | ColProps | - | - |
-| wrapperCol | 需要为输入控件设置布局样式时，使用该属性，用法同 labelCol | ColProps | - | - |
-| colon | 配合 `label` 使用，是否显示 `:` | boolean | true | - |
-| extra | 额外提示信息 | VueNode | - | - |
-| help | 提示信息，不配置则按校验规则生成 | VueNode | - | - |
-| hasFeedback | 配合 `validateStatus` 展示状态图标 | boolean \| \{ icons: FeedbackIcons \} | false | - |
-| validateStatus | 校验状态 | ValidateStatus | - | - |
-| required | 是否显示必选样式 | boolean | false | - |
-| rules | 校验规则 | Rule[] | - | - |
-| validateTrigger | 触发校验的时机 | string \| string[] \| false | `change` | - |
-| validateDebounce | 延迟校验时间（毫秒） | number | - | - |
-| validateFirst | 是否在第一个规则失败后停止 | boolean \| `parallel` | false | - |
-| noStyle | 为 `true` 时不带样式，仅作为字段控制 | boolean | false | - |
-| id | 设置 `label` 的 `htmlFor` | string | - | - |
-| hidden | 是否隐藏 Form.Item（依然收集与校验） | boolean | false | - |
-| messageVariables | 校验文案变量 | Record&lt;string, string&gt; | - | - |
-| tooltip | 配置提示信息 | VueNode \| TooltipProps & \{ icon: VueNode \} | - | - |
-| layout | 表单项布局 | `horizontal` \| `vertical` | - | - |
-| rootClass | 根容器类名 | string | - | - |
-| prefixCls | 组件前缀类名 | string | - | - |
+| name | Field name | NamePath | - | - |
+| label | Label text | VueNode | - | - |
+| labelAlign | The text align of label | FormLabelAlign | `right` | - |
+| labelCol | The layout of label. If both Form and Form.Item exists, use Item first | ColProps | - | - |
+| wrapperCol | The layout for input controls, same as `labelCol` | ColProps | - | - |
+| colon | Used with `label`, whether to display `:` after label text | boolean | true | - |
+| extra | The extra prompt message | VueNode | - | - |
+| help | The prompt message. If not provided, the prompt message will be generated by the validation rule | VueNode | - | - |
+| hasFeedback | Display validation status icon | boolean \| \{ icons: FeedbackIcons \} | false | - |
+| validateStatus | The validation status | ValidateStatus | - | - |
+| required | Display required style. It will be generated by the validation rule | boolean | false | - |
+| rules | Rules for field validation | Rule[] | - | - |
+| validateTrigger | When to validate the value of children node | string \| string[] \| false | `change` | - |
+| validateDebounce | Delay milliseconds to start validation | number | - | - |
+| validateFirst | Whether stop validate on first rule of error for this field. Will parallel validate when `parallel` configured | boolean \| `parallel` | false | - |
+| noStyle | No style for `true`, used as a pure field control | boolean | false | - |
+| id | Set sub label `htmlFor` | string | - | - |
+| hidden | Whether to hide Form.Item (still collect and validate value) | boolean | false | - |
+| messageVariables | The default validate field info | Record&lt;string, string&gt; | - | - |
+| tooltip | Config tooltip info | VueNode \| TooltipProps & \{ icon: VueNode \} | - | - |
+| layout | Form item layout | `horizontal` \| `vertical` | - | - |
+| rootClass | Root container class | string | - | - |
+| prefixCls | Prefix class name | string | - | - |
 
-### Types
+## Types
 
-#### validateMessages 
-Form 提供默认校验提示文案，你可以通过 `validateMessages` 自定义模板：
+### validateMessages
+
+Form provides default validation error messages. You can modify the template by configuring `validateMessages` property:
 
 ```ts
 const validateMessages = {
@@ -169,7 +169,7 @@ const validateMessages = {
 </template>
 ```
 
-ConfigProvider 也支持统一配置校验文案：
+ConfigProvider also provides a global configuration scheme that allows for uniform configuration error notification templates.
 
 ```vue
 <template>
@@ -179,7 +179,7 @@ ConfigProvider 也支持统一配置校验文案：
 </template>
 ```
 
-> 注意：Vue 版本没有 `Form.List`，可以使用 `v-for` + 响应式数组实现动态表单项。
+> Note: Vue version does not provide `Form.List`. You can use `v-for` with reactive arrays to build dynamic form items.
 
-## 语义化 DOM 
+## Semantic DOM 
 | _semantic | demo/_semantic.md |

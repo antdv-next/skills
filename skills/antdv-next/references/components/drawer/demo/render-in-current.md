@@ -1,12 +1,12 @@
-# 渲染在当前容器
+# Render in current dom
 
-## Description (zh-CN)
+## Description (en-US)
 
-渲染在当前 dom 里。自定义容器，查看 `getContainer`。
+Render in current dom. custom container, check `getContainer`.
 
-> 注意：在 v5 中 `style` 与 `className` 迁移至 Drawer 面板上与 Modal 保持一致，原 `style` 与 `className` 替换为 `rootStyle` 与 `rootClass`。
+> Note: `style` and `className` props are moved to Drawer panel in v5 which is aligned with Modal component. Original `style` and `className` props are replaced by `rootStyle` and `rootClass`.
 
-> 当 `getContainer` 返回 DOM 节点时，需要手动设置 `rootStyle` 为 `{ position: 'absolute' }`。
+> When `getContainer` returns a DOM node, you need to manually set `rootStyle` to `{ position: 'absolute' }`.
 
 ## Source
 

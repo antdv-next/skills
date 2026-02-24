@@ -1,8 +1,8 @@
-# 响应式 maxTagCount
+# Responsive maxTagCount
 
-## Description (zh-CN)
+## Description (en-US)
 
-多选下自动收缩标签的响应式场景。不建议在大型表单场景下使用，因为响应式计算有性能消耗。
+Auto collapse to tag with responsive case. Not recommend use in large form case since responsive calculation has a perf cost.
 
 ## Source
 

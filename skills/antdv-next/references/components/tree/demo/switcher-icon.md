@@ -1,8 +1,8 @@
-# 自定义展开/折叠图标
+# Customize collapse/expand icon
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义展开/折叠图标。
+customize collapse/expand icon of tree node
 
 ## Source
 

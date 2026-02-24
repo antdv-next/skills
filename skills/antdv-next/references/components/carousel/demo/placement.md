@@ -1,8 +1,8 @@
-# 位置
+# Position
 
-## Description (zh-CN)
+## Description (en-US)
 
-位置有 4 个方向。
+There are 4 position options available.
 
 ## Source
 

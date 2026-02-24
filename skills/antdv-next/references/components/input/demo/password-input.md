@@ -1,8 +1,8 @@
-# 密码框
+# Password box
 
-## Description (zh-CN)
+## Description (en-US)
 
-密码框。
+Input type of password.
 
 ## Source
 

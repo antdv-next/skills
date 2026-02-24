@@ -1,8 +1,8 @@
-# 双击重置
+# Double-clicked reset
 
-## Description (zh-CN)
+## Description (en-US)
 
-双击拖拽条 Splitter.Panel 重置为默认大小。
+Double-click the dragger to reset the Splitter.Panel to its default size.
 
 ## Source
 

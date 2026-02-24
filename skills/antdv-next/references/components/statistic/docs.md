@@ -1,79 +1,78 @@
 ---
 title: Statistic
-subtitle: 统计数值
-description: 展示统计数值。
+description: Display statistic number.
 ---
 
-## 何时使用 
-- 当需要突出某个或某组数字时。
-- 当需要展示带描述的统计类数据时使用。
+## When To Use 
+- When want to highlight some data.
+- When want to display statistic data with description.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本 | demo/basic.md |
-| 单位 | demo/unit.md |
-| 在卡片中使用 | demo/card.md |
-| 计时器 | demo/timer.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
+| Basic | demo/basic.md |
+| Unit | demo/unit.md |
+| In Card | demo/card.md |
+| Timer | demo/timer.md |
+| Custom semantic dom styling | demo/style-class.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
 ### Statistic
 
-#### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| classes | 用于自定义 Statistic 组件内部各语义化结构的 class，支持对象或函数 | StatisticClassNamesType | - | - |
-| decimalSeparator | 设置小数点 | string | `.` | - |
-| formatter | 自定义数值展示 | (value: number \| string) =&gt; VueNode | - | - |
-| groupSeparator | 设置千分位标识符 | string | `,` | - |
-| loading | 数值是否加载中 | boolean | false | - |
-| precision | 数值精度 | number | - | - |
-| prefix | 设置数值的前缀 | VueNode | - | - |
-| styles | 用于自定义 Statistic 组件内部各语义化结构的行内 style，支持对象或函数 | StatisticStylesType | - | - |
-| suffix | 设置数值的后缀 | VueNode | - | - |
-| title | 数值的标题 | VueNode | - | - |
-| value | 数值内容 | string \| number | - | - |
-| valueStyle | 设置数值区域的样式 | CSSProperties | - | - |
+| classes | Customize class for each semantic structure inside the Statistic component. Supports object or function | StatisticClassNamesType | - | - |
+| decimalSeparator | The decimal separator | string | `.` | - |
+| formatter | Customize value display logic | (value: number \| string) =&gt; VueNode | - | - |
+| groupSeparator | Group separator | string | `,` | - |
+| loading | Loading status of Statistic | boolean | false | - |
+| precision | The precision of input value | number | - | - |
+| prefix | The prefix node of value | VueNode | - | - |
+| styles | Customize inline style for each semantic structure inside the Statistic component. Supports object or function | StatisticStylesType | - | - |
+| suffix | The suffix node of value | VueNode | - | - |
+| title | Display title | VueNode | - | - |
+| value | Display value | string \| number | - | - |
+| valueStyle | Set value section style | CSSProperties | - | - |
 
-#### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+#### Slots 
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| formatter | 自定义数值展示 | (value: number \| string) =&gt; VueNode | - |
-| prefix | 设置数值的前缀 | () =&gt; VueNode | - |
-| suffix | 设置数值的后缀 | () =&gt; VueNode | - |
-| title | 数值的标题 | () =&gt; VueNode | - |
+| formatter | Customize value display logic | (value: number \| string) =&gt; VueNode | - |
+| prefix | The prefix node of value | () =&gt; VueNode | - |
+| suffix | The suffix node of value | () =&gt; VueNode | - |
+| title | Display title | () =&gt; VueNode | - |
 
 ### Statistic.Timer
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | StatisticClassNamesType | - | - |
-| format | 格式化倒计时展示，参考 [dayjs](https://day.js.org/) | string | `HH:mm:ss` | - |
-| prefix | 设置数值的前缀 | VueNode | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | StatisticStylesType | - | - |
-| suffix | 设置数值的后缀 | VueNode | - | - |
-| title | 数值的标题 | VueNode | - | - |
-| type | 计时类型，正计时或者倒计时 | `countdown` \| `countup` | - | - |
-| value | 目标时间 | number | - | - |
-| valueStyle | 设置数值区域的样式 | CSSProperties | - | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function | StatisticClassNamesType | - | - |
+| format | Format as [dayjs](https://day.js.org/) | string | `HH:mm:ss` | - |
+| prefix | The prefix node of value | VueNode | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function | StatisticStylesType | - | - |
+| suffix | The suffix node of value | VueNode | - | - |
+| title | Display title | VueNode | - | - |
+| type | Timer type, countdown or countup | `countdown` \| `countup` | - | - |
+| value | Set target time | number | - | - |
+| valueStyle | Set value section style | CSSProperties | - | - |
 
-#### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+#### Events 
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| change | 倒计时时间变化时触发 | (value: number) =&gt; void | - |
-| finish | 倒计时完成时触发，指定为 `countup` 此属性不生效 | () =&gt; void | - |
+| change | Trigger when time's changing | (value: number) =&gt; void | - |
+| finish | Trigger when time's up, only to be called when type is `countdown` | () =&gt; void | - |
 
-#### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+#### Slots 
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| prefix | 设置数值的前缀 | () =&gt; VueNode | - |
-| suffix | 设置数值的后缀 | () =&gt; VueNode | - |
-| title | 数值的标题 | () =&gt; VueNode | - |
+| prefix | The prefix node of value | () =&gt; VueNode | - |
+| suffix | The suffix node of value | () =&gt; VueNode | - |
+| title | Display title | () =&gt; VueNode | - |
 
-## 语义化 DOM 
+## Semantic DOM 
 | _semantic | demo/_semantic.md |

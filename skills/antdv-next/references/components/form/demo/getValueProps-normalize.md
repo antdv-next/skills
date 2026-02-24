@@ -1,8 +1,8 @@
-# 值转换
+# getValueProps + normalize
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用计算属性进行值转换。
+Transform values with computed getters/setters.
 
 ## Source
 

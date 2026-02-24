@@ -1,8 +1,8 @@
-# 带有参数的
+# With Params
 
-## Description (zh-CN)
+## Description (en-US)
 
-带有路由参数的。
+With route params.
 
 ## Source
 

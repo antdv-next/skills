@@ -1,8 +1,8 @@
-# 含有气泡卡片的悬浮按钮
+# FloatButton with tooltip
 
-## Description (zh-CN)
+## Description (en-US)
 
-设置 tooltip 属性，即可开启气泡卡片。
+Setting the `tooltip` property shows the FloatButton with a tooltip.
 
 ## Source
 

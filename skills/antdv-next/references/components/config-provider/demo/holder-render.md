@@ -1,8 +1,8 @@
-# 静态方法
+# Static function
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `holderRender` 给 `message` 、`modal` 、`notification` 静态方法设置 `Provider`
+Use `holderRender` to set the `Provider` for the static methods `message`,`modal`,`notification`.
 
 ## Source
 

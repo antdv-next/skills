@@ -1,8 +1,8 @@
-# 简洁
+# Simple mode
 
-## Description (zh-CN)
+## Description (en-US)
 
-简单的翻页。
+Simple mode.
 
 ## Source
 

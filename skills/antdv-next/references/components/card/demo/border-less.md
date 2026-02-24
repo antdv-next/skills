@@ -1,8 +1,8 @@
-# 无边框
+# No border
 
-## Description (zh-CN)
+## Description (en-US)
 
-在灰色背景上使用无边框的卡片。
+A borderless card on a gray background.
 
 ## Source
 

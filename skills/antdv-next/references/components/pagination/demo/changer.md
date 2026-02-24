@@ -1,8 +1,8 @@
-# 改变
+# Changer
 
-## Description (zh-CN)
+## Description (en-US)
 
-改变每页显示条目数。
+Change `pageSize`.
 
 ## Source
 

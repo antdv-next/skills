@@ -1,8 +1,8 @@
-# 时间相关控件
+# Time-related Controls
 
-## Description (zh-CN)
+## Description (en-US)
 
-时间相关控件校验与提交。
+Time-related controls with validation and submit.
 
 ## Source
 

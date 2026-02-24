@@ -1,8 +1,8 @@
-# 图标
+# Icon
 
-## Description (zh-CN)
+## Description (en-US)
 
-可口的图标让信息类型更加醒目。
+A relevant icon will make information clearer and more friendly.
 
 ## Source
 

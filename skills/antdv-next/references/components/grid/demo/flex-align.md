@@ -1,8 +1,8 @@
-# 对齐
+# Alignment
 
-## Description (zh-CN)
+## Description (en-US)
 
-子元素垂直对齐。
+Child elements vertically aligned.
 
 ## Source
 

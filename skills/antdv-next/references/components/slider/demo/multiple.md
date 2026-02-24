@@ -1,8 +1,8 @@
-# 多点组合
+# Multiple Handles
 
-## Description (zh-CN)
+## Description (en-US)
 
-范围多个点组合。
+Multiple handles combination.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 动态
+# Dynamic
 
-## Description (zh-CN)
+## Description (en-US)
 
-展示动态变化的效果。
+The count will be animated as it changes.
 
 ## Source
 

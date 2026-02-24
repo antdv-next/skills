@@ -1,8 +1,8 @@
-# 固定侧边栏
+# Fixed Sider
 
-## Description (zh-CN)
+## Description (en-US)
 
-当内容较长时，使用固定侧边栏可以提供更好的体验。
+When dealing with long content, a sticky sider can provide a better user experience.
 
 ## Source
 

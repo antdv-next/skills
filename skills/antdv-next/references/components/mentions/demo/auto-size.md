@@ -1,8 +1,8 @@
-# 自动大小
+# autoSize
 
-## Description (zh-CN)
+## Description (en-US)
 
-自适应内容高度。
+Height autoSize.
 
 ## Source
 

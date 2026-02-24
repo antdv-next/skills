@@ -1,8 +1,8 @@
-# 导航步骤
+# Navigation Steps
 
-## Description (zh-CN)
+## Description (en-US)
 
-导航类型的步骤条。
+Navigation steps.
 
 ## Source
 

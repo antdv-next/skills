@@ -1,8 +1,8 @@
-# 基本
+# Basic
 
-## Description (zh-CN)
+## Description (en-US)
 
-最简单的用法，适用于简短的警告提示。
+The simplest usage for short messages.
 
 ## Source
 

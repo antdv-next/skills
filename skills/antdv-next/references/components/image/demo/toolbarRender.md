@@ -1,8 +1,8 @@
-# 自定义工具栏
+# Custom toolbar render
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以自定义工具栏并添加下载原图或翻转旋转后图片的按钮。
+You can customize the toolbar and add a button for downloading the original image or downloading the flipped and rotated image.
 
 ## Source
 

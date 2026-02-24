@@ -1,8 +1,8 @@
-# 动态增减节点
+# Dynamic edit nodes
 
-## Description (zh-CN)
+## Description (en-US)
 
-点击添加节点，拖出或者按键删除节点。
+Click to add a node, drag out or press the key to delete the node.
 
 ## Source
 

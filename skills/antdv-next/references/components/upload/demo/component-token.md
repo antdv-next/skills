@@ -1,6 +1,6 @@
-# 组件 Token
+# Component Token
 
-## Description (zh-CN)
+## Description (en-US)
 
 Component Token Debug.
 

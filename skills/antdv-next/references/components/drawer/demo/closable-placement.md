@@ -1,8 +1,8 @@
-# 关闭按钮位置
+# Closable placement
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义抽屉的关闭按钮位置，放到右侧，默认为左侧。
+Drawer with closable placement, customize the close placement to the `end`, defaults to `start`.
 
 ## Source
 

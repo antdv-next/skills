@@ -1,118 +1,118 @@
 ---
 title: Skeleton
-subtitle: 骨架屏
-description: 在需要等待加载内容的位置提供一个占位图形组合。
+description: Provide a placeholder while you wait for content to load, or to visualize content that doesn't exist yet.
 ---
 
-## 何时使用 
-- 网络较慢，需要长时间等待加载处理的情况下。
-- 图文信息内容较多的列表/卡片中。
-- 只在第一次加载数据的时候使用。
-- 可以被 Spin 完全代替，但是在可用的场景下可以比 Spin 提供更好的视觉效果和用户体验。
+## When To Use 
+- When a resource needs long time to load.
+- When the component contains lots of information, such as List or Card.
+- Only works when loading data for the first time.
+- Could be replaced by Spin in any situation, but can provide a better user experience.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本 | demo/basic.md |
-| 复杂的组合 | demo/complex.md |
-| 动画效果 | demo/active.md |
-| 按钮/头像/输入框/图像/自定义节点 | demo/element.md |
-| 包含子组件 | demo/children.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
+| Basic | demo/basic.md |
+| Complex combination | demo/complex.md |
+| Active Animation | demo/active.md |
+| Button/Avatar/Input/Image/Node | demo/element.md |
+| Contains sub component | demo/children.md |
+| Custom semantic dom styling | demo/style-class.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
 ### Skeleton
 
-#### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| active | 是否展示动画效果 | boolean | false | - |
-| avatar | 是否显示头像占位图 | boolean \| [SkeletonAvatarProps](#skeletonavatarprops) | false | - |
-| loading | 为 true 时，显示占位图。反之则直接展示子组件 | boolean | - | - |
-| paragraph | 是否显示段落占位图 | boolean \| [SkeletonParagraphProps](#skeletonparagraphprops) | true | - |
-| round | 为 true 时，段落和标题显示圆角 | boolean | false | - |
-| title | 是否显示标题占位图 | boolean \| [SkeletonTitleProps](#skeletontitleprops) | true | - |
-| classes | 用于自定义组件内部各语义化结构的 class | SkeletonClassNamesType | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style | SkeletonStylesType | - | - |
+| active | Show animation effect | boolean | false | - |
+| avatar | Show avatar placeholder | boolean \| [SkeletonAvatarProps](#skeletonavatarprops) | false | - |
+| loading | Display the skeleton when true | boolean | - | - |
+| paragraph | Show paragraph placeholder | boolean \| [SkeletonParagraphProps](#skeletonparagraphprops) | true | - |
+| round | Show paragraph and title radius when true | boolean | false | - |
+| title | Show title placeholder | boolean \| [SkeletonTitleProps](#skeletontitleprops) | true | - |
+| classes | Customize class for each semantic structure inside the component | SkeletonClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component | SkeletonStylesType | - | - |
 
 ### SkeletonAvatar
 
-#### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| active | 是否展示动画效果，仅在单独使用头像骨架时生效 | boolean | false | - |
-| shape | 指定头像的形状 | `circle` \| `square` | `circle` | - |
-| size | 设置头像占位图的大小 | number \| `large` \| `small` \| `default` | `default` | - |
+| active | Show animation effect, only valid when used avatar independently | boolean | false | - |
+| shape | Set the shape of avatar | `circle` \| `square` | `circle` | - |
+| size | Set the size of avatar | number \| `large` \| `small` \| `default` | `default` | - |
 
 ### SkeletonTitle
 
-#### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| width | 设置标题占位图的宽度 | number \| string | - | - |
+| width | Set the width of title | number \| string | - | - |
 
 ### SkeletonParagraph
 
-#### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| rows | 设置段落占位图的行数 | number | - | - |
-| width | 设置段落占位图的宽度，若为数组时则为对应的每行宽度，反之则是最后一行的宽度 | number \| string \| Array&lt;number \| string&gt; | - | - |
+| rows | Set the row count of paragraph | number | - | - |
+| width | Set the width of paragraph. When width is an Array, it can set the width of each row. Otherwise only set the last row width | number \| string \| Array&lt;number \| string&gt; | - | - |
 
 ### SkeletonAvatar
 
-#### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| active | 是否展示动画效果 | boolean | false | - |
-| shape | 指定头像的形状 | `circle` \| `square` | `circle` | - |
-| size | 设置头像占位图的大小 | number \| `large` \| `small` \| `default` | `default` | - |
-| classes | 用于自定义组件内部各语义化结构的 class | SkeletonClassNamesType | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style | SkeletonStylesType | - | - |
+| active | Show animation effect | boolean | false | - |
+| shape | Set the shape of avatar | `circle` \| `square` | `circle` | - |
+| size | Set the size of avatar | number \| `large` \| `small` \| `default` | `default` | - |
+| classes | Customize class for each semantic structure inside the component | SkeletonClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component | SkeletonStylesType | - | - |
 
 ### SkeletonButton
 
-#### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| active | 是否展示动画效果 | boolean | false | - |
-| block | 将按钮宽度调整为其父宽度的选项 | boolean | false | - |
-| shape | 指定按钮的形状 | `circle` \| `round` \| `square` \| `default` | - | - |
-| size | 设置按钮的大小 | `large` \| `small` \| `default` | - | - |
-| classes | 用于自定义组件内部各语义化结构的 class | SkeletonClassNamesType | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style | SkeletonStylesType | - | - |
+| active | Show animation effect | boolean | false | - |
+| block | Option to fit button width to its parent width | boolean | false | - |
+| shape | Set the shape of button | `circle` \| `round` \| `square` \| `default` | - | - |
+| size | Set the size of button | `large` \| `small` \| `default` | - | - |
+| classes | Customize class for each semantic structure inside the component | SkeletonClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component | SkeletonStylesType | - | - |
 
 ### SkeletonInput
 
-#### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| active | 是否展示动画效果 | boolean | false | - |
-| size | 设置输入框的大小 | `large` \| `small` \| `default` | - | - |
-| classes | 用于自定义组件内部各语义化结构的 class | SkeletonClassNamesType | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style | SkeletonStylesType | - | - |
+| active | Show animation effect | boolean | false | - |
+| size | Set the size of input | `large` \| `small` \| `default` | - | - |
+| classes | Customize class for each semantic structure inside the component | SkeletonClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component | SkeletonStylesType | - | - |
 
 ### SkeletonImage
 
-#### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| active | 是否展示动画效果 | boolean | false | - |
-| classes | 用于自定义组件内部各语义化结构的 class | SkeletonClassNamesType | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style | SkeletonStylesType | - | - |
+| active | Show animation effect | boolean | false | - |
+| classes | Customize class for each semantic structure inside the component | SkeletonClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component | SkeletonStylesType | - | - |
 
 ### SkeletonNode
 
-#### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| active | 是否展示动画效果 | boolean | false | - |
-| classes | 用于自定义组件内部各语义化结构的 class | SkeletonClassNamesType | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style | SkeletonStylesType | - | - |
+| active | Show animation effect | boolean | false | - |
+| classes | Customize class for each semantic structure inside the component | SkeletonClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component | SkeletonStylesType | - | - |
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |

@@ -1,8 +1,8 @@
-# 垂直方向紧凑布局
+# Vertical Compact Mode
 
-## Description (zh-CN)
+## Description (en-US)
 
-垂直紧凑按钮组。
+Vertical compact button group.
 
 ## Source
 

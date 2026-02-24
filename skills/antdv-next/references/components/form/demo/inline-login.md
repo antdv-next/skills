@@ -1,8 +1,8 @@
-# 内联登录
+# Inline Login Form
 
-## Description (zh-CN)
+## Description (en-US)
 
-内联登录表单。
+Inline login form.
 
 ## Source
 

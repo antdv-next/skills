@@ -1,8 +1,8 @@
-# 受控的预览
+# Controlled Preview
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以使预览受控。
+You can make preview controlled.
 
 ## Source
 

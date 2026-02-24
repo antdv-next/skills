@@ -1,8 +1,8 @@
-# 值格式化
+# Value Format
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `valueFormat` 指定时间值的格式。设置后，`v-model:value` 可以直接使用字符串值。
+Use `valueFormat` to define the time value format. With it, `v-model:value` can directly use string values.
 
 ## Source
 

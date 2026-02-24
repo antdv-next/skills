@@ -1,39 +1,43 @@
 ---
-subtitle: 图标
-description: 语义化的矢量图形。
 title: Icon
+description: Semantic vector graphics.
 ---
 
-## 使用方法 
-使用图标组件，你需要安装 [@antdv-next/icons](https://www.npmjs.com/package/@antdv-next/icons) 图标组件包：
+## How to use
+
+Before using icons, you need to install the [@antdv-next/icons](https://www.npmjs.com/package/@antdv-next/icons) package:
 
 <InstallDependencies npm='npm install @antdv-next/icons' yarn='yarn add @antdv-next/icons' pnpm='pnpm install @antdv-next/icons' bun='bun add @antdv-next/icons'></InstallDependencies>
 
-## 图标列表 
+## List of icons
+
 <IconSearch></IconSearch>
+
+## Examples
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本用法 | demo/basic.md |
-| 多色图标 | demo/two-tone.md |
-| 自定义图标 | demo/custom.md |
-| 使用 iconfont.cn | demo/iconfont.md |
-| 使用 iconfont.cn 的多个资源 | demo/scriptUrl.md |
+| Basic | demo/basic.md |
+| Two-tone icon and colorful icon | demo/two-tone.md |
+| Custom Icon | demo/custom.md |
+| Use iconfont.cn | demo/iconfont.md |
+| Multiple resources from iconfont.cn | demo/scriptUrl.md |
 
 ## API
 
-### 通用图标 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| class | 设置图标的样式名 | string | - | |
-| rotate | 图标旋转角度（IE9 无效） | number | - | |
-| spin | 是否有旋转动画 | boolean | false | |
-| style | 设置图标的样式，例如 `fontSize` 和 `color` | CSSProperties | - | |
-| twoToneColor | 仅适用双色图标。设置双色图标的主要颜色，支持设置十六进制颜色字符串 | string \| string[] | - | |
+### Common Icon
 
-其中我们提供了三种主题的图标，不同主题的 Icon 组件名为图标名加主题做为后缀。
+| Property | Description | Type | Default | Version |
+| --- | --- | --- | --- | --- |
+| className | The className of Icon | string | - | |
+| rotate | Rotate by n degrees (not working in IE9) | number | - | |
+| spin | Rotate icon with animation | boolean | false | |
+| style | The style properties of icon, like `fontSize` and `color` | CSSProperties | - | |
+| twoToneColor | Only supports the two-tone icon. Specify the primary color | string (hex color) | - | |
+
+We still have three different themes for icons, icon component name is the icon name suffixed by the theme name.
 
 ```vue
 <script setup>
@@ -47,35 +51,38 @@ import { StarFilled, StarOutlined, StarTwoTone } from '@antdv-next/icons'
 </template>
 ```
 
-### 自定义 Icon 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+### Custom Icon
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| component | 控制如何渲染图标，通常是一个渲染根标签为 `<svg>` 的 React 组件 | ComponentType&lt;CustomIconComponentProps> | - | |
-| rotate | 图标旋转角度（IE9 无效） | number | - | |
-| spin | 是否有旋转动画 | boolean | false | |
-| style | 设置图标的样式，例如 `fontSize` 和 `color` | CSSProperties | - | |
+| component | The component used for the root node | ComponentType&lt;CustomIconComponentProps> | - | |
+| rotate | Rotate degrees (not working in IE9) | number | - | |
+| spin | Rotate icon with animation | boolean | false | |
+| style | The style properties of icon, like `fontSize` and `color` | CSSProperties | - | |
 
-### 关于 SVG 图标 
-- 完全离线化使用，不需要从 CDN 下载字体文件，图标不会因为网络问题呈现方块，也无需字体文件本地部署。
-- 在低端设备上 SVG 有更好的清晰度。
-- 支持多色图标。
-- 对于内建图标的更换可以提供更多 API，而不需要进行样式覆盖。
+### About SVG icons
 
-更多讨论可参考：[#10353](https://github.com/ant-design/ant-design/issues/10353)。
+- Complete offline usage of icons, without dependency on a CDN-hosted font icon file (No more empty square during downloading and no need to deploy icon font files locally either!)
+- Much more display accuracy on lower-resolution screens
+- The ability to choose icon color
+- No need to change built-in icons with overriding styles by providing more props in component
 
-所有的图标都会以 `<svg>` 标签渲染，可以使用 `style` 和 `class` 设置图标的大小和单色图标的颜色。例如：
+More discussion of SVG icon reference at [#10353](https://github.com/ant-design/ant-design/issues/10353).
+
+All the icons will render to `<svg>`. You can still set `style` and `class` for size and color of icons.
 
 ```vue
 <script lang="ts" setup>
-    import { MessageOutlined } from '@antdv-next/icons'
+  import { MessageOutlined } from '@antdv-next/icons'
 </script>
 <template>
-    <MessageOutlined style="fontSize: 16px; color: #08c" />
+  <MessageOutlined style="fontSize: 16px; color: #08c" />
 </template>
 ```
 
-### 双色图标主色 
-对于双色图标，可以通过使用 `getTwoToneColor()` 和 `setTwoToneColor(colorString)` 来全局设置图标主色。
+### Set TwoTone Color
+
+When using the two-tone icons, you can use the static methods `getTwoToneColor()` and `setTwoToneColor(colorString)` to specify the primary color.
 
 ```jsx
 import { getTwoToneColor, setTwoToneColor } from '@antdv-next/icons'
@@ -84,8 +91,11 @@ setTwoToneColor('#eb2f96')
 getTwoToneColor() // #eb2f96
 ```
 
-### 自定义 font 图标 
-我们提供了一个 `createFromIconfontCN` 方法，方便开发者调用在 [iconfont.cn](http://iconfont.cn/) 上自行管理的图标。
+### Custom Font Icon
+
+We added a `createFromIconfontCN` function to help developer use their own icons deployed at [iconfont.cn](http://iconfont.cn/) in a convenient way.
+
+> This method is specified for [iconfont.cn](http://iconfont.cn/).
 
 ```js
 import { createFromIconfontCN } from '@antdv-next/icons'
@@ -95,21 +105,22 @@ const MyIcon = createFromIconfontCN({
 })
 ```
 
-其本质上是创建了一个使用 `<use>` 标签来渲染图标的组件。
+It creates a component that uses SVG sprites in essence.
 
-options 的配置项如下：
+The following options are available:
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| extraCommonProps | 给所有的 `svg` 图标 `<Icon />` 组件设置额外的属性 | { \[key: string]: any } | {} | |
-| scriptUrl | [iconfont.cn](http://iconfont.cn/) 项目在线生成的 js 地址 | string \| string\[] | - | |
+| extraCommonProps | Define extra properties to the component | { \[key: string]: any } | {} | |
+| scriptUrl | The URL generated by [iconfont.cn](http://iconfont.cn/) project | string \| string\[] | - | |
 
-在 `scriptUrl` 都设置有效的情况下，组件在渲染前会自动引入 [iconfont.cn](http://iconfont.cn/) 项目中的图标符号集，无需手动引入。
+The property `scriptUrl` should be set to import the SVG sprite symbols.
 
-见 [iconfont.cn 使用帮助](http://iconfont.cn/help/detail?spm=a313x.7781069.1998910419.15&helptype=code) 查看如何生成 js 地址。
+See [iconfont.cn documents](http://iconfont.cn/help/detail?spm=a313x.7781069.1998910419.15&helptype=code) to learn about how to generate `scriptUrl`.
 
-### 自定义 SVG 图标 
-如果使用 `webpack`，可以通过配置 [@svgr/webpack](https://www.npmjs.com/package/@svgr/webpack) 来将 `svg` 图标作为 `vue` 组件导入。`@svgr/webpack` 的 `options` 选项请参阅 [svgr 文档](https://github.com/smooth-code/svgr#options)。
+### Custom SVG Icon
+
+You can import SVG icon as a vue component by using `webpack` and [`@svgr/webpack`](https://www.npmjs.com/package/@svgr/webpack). `@svgr/webpack`'s `options` [reference](https://github.com/smooth-code/svgr#options).
 
 ```js
 // webpack.config.js
@@ -131,29 +142,29 @@ module.exports = {
 }
 ```
 
-`Icon` 中的 `component` 组件的接受的属性如下：
+The following properties are available for the component:
 
-| 字段      | 说明                    | 类型             | 只读值         | 版本 |
-| --------- | ----------------------- | ---------------- | -------------- | ---- |
-| class     | 计算后的 `svg` 类名     | string           | -              |      |
-| fill      | `svg` 元素填充的颜色    | string           | `currentColor` |      |
-| height    | `svg` 元素高度          | string \| number | `1em`          |      |
-| style     | 计算后的 `svg` 元素样式 | CSSProperties    | -              |      |
-| width     | `svg` 元素宽度          | string \| number | `1em`          |      |
+| Property | Description | Type | Readonly | Version |
+| --- | --- | --- | --- | --- |
+| class | The computed class name of the `svg` element | string | - | |
+| fill | Define the color used to paint the `svg` element | string | `currentColor` | |
+| height | The height of the `svg` element | string \| number | `1em` | |
+| style | The computed style of the `svg` element | CSSProperties | - | |
+| width | The width of the `svg` element | string \| number | `1em` | |
 
 ## FAQ
 
-### 为什么有时 icon 注入的样式会引起全局样式异常？
-相关 issue：[#54391](https://github.com/ant-design/ant-design/issues/54391)
+### Why does icon style sometimes cause global style error? 
+Related issue: [#54391](https://github.com/ant-design/ant-design/issues/54391)
 
-启用 `layer` 时，icon 的样式可能会使 `@layer antd` 优先级降低，并导致所有组件样式异常。
+When enable `layer`, icon style may deprioritize `@layer antd` and cause all components to be styled abnormally.
 
-这个问题可以通过以下两步解决：
+This problem can be resolved by two steps below:
 
-1. 使用 `@antdv-next/icons` 配合 `@antdv-next`。
-2. 停止使用 `message`, `Modal` 和 `notification` 的静态方法，改为使用 hooks 版本或 App 提供的实例。
+1. use `@antdv-next/icons` with `@antdv-next`.
+2. stop to use static methods of `message`, `Modal` and `notification`. use hooks version or `App` provided instance.
 
-如果无法避免使用静态方法，可以在 App 组件下立刻使用任一一个 icon 组件，以规避静态方法对样式的影响。
+If you must use static methods, you can put any of icon components just under `App`, what helps to avoid style impact caused by static methods.
 
 ```diff
 <a-style-provider layer>

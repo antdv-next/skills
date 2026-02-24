@@ -1,8 +1,8 @@
-# 自定义
+# Customize
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义描述与操作区域。
+Customize description and extra content.
 
 ## Source
 

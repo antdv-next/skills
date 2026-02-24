@@ -1,8 +1,8 @@
-# 网格型内嵌卡片
+# Grid card
 
-## Description (zh-CN)
+## Description (en-US)
 
-一种常见的卡片内容区隔模式。
+Grid style card content.
 
 ## Source
 

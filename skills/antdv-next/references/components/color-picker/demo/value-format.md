@@ -1,8 +1,8 @@
-# 值格式化
+# Value Format
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `valueFormat` 指定颜色值的输出类型，支持 `hex`、`rgb` 和 `hsb`。
+Use `valueFormat` to define the output value type of color, supporting `hex`, `rgb`, and `hsb`.
 
 ## Source
 

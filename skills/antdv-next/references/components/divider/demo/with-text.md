@@ -1,8 +1,8 @@
-# 带文字的分割线
+# Divider with title
 
-## Description (zh-CN)
+## Description (en-US)
 
-分割线中带有文字，可以用 `title-placement` 指定文字位置。
+Divider with inner text, use `title-placement` to align it.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 带图标的步骤条
+# With icon
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过设置 `items` 的 `icon` 属性，可以启用自定义图标。
+You can use your own custom icons by setting the property `icon` for `items`.
 
 ## Source
 

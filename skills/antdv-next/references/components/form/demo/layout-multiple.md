@@ -1,8 +1,8 @@
-# 混合布局
+# Form mix layout
 
-## Description (zh-CN)
+## Description (en-US)
 
-混合使用水平与垂直布局。
+Mix horizontal and vertical layouts in one page.
 
 ## Source
 

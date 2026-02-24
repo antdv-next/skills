@@ -1,8 +1,8 @@
-# 文字和图标
+# Text & icon
 
-## Description (zh-CN)
+## Description (en-US)
 
-带有文字和图标。
+With text and icon.
 
 ## Source
 

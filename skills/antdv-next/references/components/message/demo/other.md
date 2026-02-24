@@ -1,8 +1,8 @@
-# 其他类型
+# Other types of message
 
-## Description (zh-CN)
+## Description (en-US)
 
-包括成功、失败、警告。
+Messages of success, error and warning types.
 
 ## Source
 

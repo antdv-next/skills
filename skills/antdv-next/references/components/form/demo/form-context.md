@@ -1,8 +1,8 @@
-# 多表单协作
+# Control between forms
 
-## Description (zh-CN)
+## Description (en-US)
 
-多表单协作示例。
+Coordinate data between multiple forms.
 
 ## Source
 

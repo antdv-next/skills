@@ -1,8 +1,8 @@
-# 按钮图标
+# Icon
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以通过 `icon`属性/插槽添加图标。
+You can add an icon using the `icon`/`slot` property.
 
 ## Source
 

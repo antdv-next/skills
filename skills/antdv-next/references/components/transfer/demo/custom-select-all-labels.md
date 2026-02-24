@@ -1,8 +1,8 @@
-# 自定义全选文案
+# Custom Select All Labels
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义穿梭框全选按钮的文字。
+Custom the labels for select all checkboxes.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 分割文字使用正文样式
+# Text without heading style
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `plain` 可以设置为更轻量的分割文字样式。
+You can use `plain` prop to set a lighter style of text.
 
 ## Source
 

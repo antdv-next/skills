@@ -1,8 +1,8 @@
-# 键盘行为
+# Keyboard
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `keyboard` 属性可以控制键盘行为。
+Control keyboard behavior by `keyboard`.
 
 ## Source
 

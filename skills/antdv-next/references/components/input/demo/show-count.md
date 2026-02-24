@@ -1,8 +1,8 @@
-# 带字数提示
+# With character counting
 
-## Description (zh-CN)
+## Description (en-US)
 
-展示字数提示。
+Show character counting.
 
 ## Source
 

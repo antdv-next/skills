@@ -1,8 +1,8 @@
-# 垂直带边框的
+# Vertical border
 
-## Description (zh-CN)
+## Description (en-US)
 
-垂直带边框和背景颜色的列表。
+Descriptions with border and background color.
 
 ## Source
 

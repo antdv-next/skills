@@ -1,8 +1,8 @@
-# 动态表单项
+# Dynamic Form Item
 
-## Description (zh-CN)
+## Description (en-US)
 
-动态增减表单项。
+Add and remove form items dynamically.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 可点击
+# Clickable
 
-## Description (zh-CN)
+## Description (en-US)
 
-用 a 标签进行包裹即可。
+The badge can be wrapped with `a` tag to make it linkable.
 
 ## Source
 

@@ -1,70 +1,70 @@
 ---
 title: Alert
-subtitle: 警告提示
-description: 警告提示，展现需要关注的信息。
+description: Display warning messages that require attention.
 ---
 
-## 何时使用 
-- 当需要向用户显示警告信息时。
-- 当需要一个可由用户关闭的持久静态容器时。
+## When To Use 
+- When you need to show alert messages to users.
+- When you need a persistent static container which is closable by user actions.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本 | demo/basic.md |
-| 更多类型 | demo/style.md |
-| 可关闭 | demo/closable.md |
-| 含辅助性文字 | demo/description.md |
-| 图标 | demo/icon.md |
-| 顶部公告 | demo/banner.md |
-| 轮播公告 | demo/loop-banner.md |
-| 平滑卸载 | demo/smooth-closed.md |
-| 自定义图标 | demo/custom-icon.md |
-| 自定义操作 | demo/action.md |
-| 组件 Token | demo/component-token.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
+| Basic | demo/basic.md |
+| More types | demo/style.md |
+| Closable | demo/closable.md |
+| Description | demo/description.md |
+| Icon | demo/icon.md |
+| Banner | demo/banner.md |
+| Loop Banner | demo/loop-banner.md |
+| Smoothly Unmount | demo/smooth-closed.md |
+| Custom Icon | demo/custom-icon.md |
+| Custom action | demo/action.md |
+| Component Token | demo/component-token.md |
+| Custom semantic dom styling | demo/style-class.md |
 
 ## API
 
-### 属性 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+### Props 
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| type | 指定警告提示的样式，有四种选择 `success`、`info`、`warning`、`error` | 'success' \| 'info' \| 'warning' \| 'error' | `info`，`banner` 模式下默认值为 `warning` | - |
-| closable | 可关闭配置，&gt;=5.15.0: 支持 `aria-*` | ClosableType | `false` | - |
-| title | 警告提示内容 | VueNode | - | - |
-| message | 警告提示内容，请使用 `title` 替换 | VueNode | - | - |
-| description | 警告提示的辅助性文字介绍 | VueNode | - | - |
-| afterClose | 关闭动画结束后触发的回调函数，请使用 `closable.afterClose` 替换 | () =&gt; void | - | - |
-| showIcon | 是否显示辅助图标 | boolean | false，`banner` 模式下默认值为 true | - |
+| type | Type of Alert styles, options: `success`, `info`, `warning`, `error` | 'success' \| 'info' \| 'warning' \| 'error' | `info`, in `banner` mode default is `warning` | - |
+| closable | The config of closable, &gt;=5.15.0: support `aria-*` | ClosableType | `false` | - |
+| title | Content of Alert | VueNode | - | - |
+| message | Content of Alert, please use `title` instead | VueNode | - | - |
+| description | Additional content of Alert | VueNode | - | - |
+| afterClose | Called when close animation is finished, please use `closable.afterClose` instead | () =&gt; void | - | - |
+| showIcon | Whether to show icon | boolean | false, in `banner` mode default is true | - |
 | role | https://www.w3.org/TR/2014/REC-html5-20141028/dom.html#aria-role-attribute | string | - | - |
-| classes | 自定义组件内部各语义化结构的类名。支持对象或函数 | AlertClassNamesType | - | - |
-| styles | 自定义组件内部各语义化结构的内联样式。支持对象或函数 | AlertStylesType | - | - |
-| banner | 是否用作顶部公告 | boolean | false | - |
-| icon | 自定义图标，`showIcon` 为 true 时有效 | VueNode | - | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function | AlertClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function | AlertStylesType | - | - |
+| banner | Whether to show as banner | boolean | false | - |
+| icon | Custom icon, effective when `showIcon` is true | VueNode | - | - |
 | closeIcon | - | VueNode | - | - |
-| action | 自定义操作项 | VueNode | - | 4.9.0 |
+| action | The action of Alert | VueNode | - | 4.9.0 |
 | id | - | string | - | - |
 
-### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+### Events 
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
 | close | Callback when close Alert | (e: any) =&gt; any | - |
 | mouseenter | - | (e: any) =&gt; any | - |
 | mouseleave | - | (e: any) =&gt; any | - |
 | click | - | (e: any) =&gt; any | - |
 
-### 插槽 
-| 插槽          | 说明 | 类型 | 版本 |
+### Slots 
+| Slot        | Description | Type | Version |
 |-------------| --- | --- | --- |
-| message     | 警告提示内容，请使用 `title` 替换 | () =&gt; any | - |
-| title       | 警告提示内容 | () =&gt; any | - |
-| description | 警告提示的辅助性文字介绍 | () =&gt; any | - |
-| icon        | 自定义图标，`showIcon` 为 true 时有效 | () =&gt; any | - |
+| message     | Content of Alert, please use `title` instead | () =&gt; any | - |
+| title       | Content of Alert| () =&gt; any | - |
+| description | Additional content of Alert | () =&gt; any | - |
+| icon        | Custom icon, effective when `showIcon` is true | () =&gt; any | - |
 | closeIcon   | - | () =&gt; any | - |
-| action      | 自定义操作项 | () =&gt; any | 4.9.0 |
+| action      | The action of Alert | () =&gt; any | 4.9.0 |
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |

@@ -1,8 +1,8 @@
-# 水平分割线
+# Horizontal
 
-## Description (zh-CN)
+## Description (en-US)
 
-默认为水平分割线，可在中间加入文字。
+Divider is horizontal by default. You can add text within Divider.
 
 ## Source
 

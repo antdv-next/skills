@@ -1,8 +1,8 @@
-# 基本用法
+# Basic Usage
 
-## Description (zh-CN)
+## Description (en-US)
 
-相邻组件水平间距。
+Horizontal spacing between adjacent components.
 
 ## Source
 

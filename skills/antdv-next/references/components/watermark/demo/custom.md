@@ -1,8 +1,8 @@
-# 自定义配置
+# Custom configuration
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过自定义参数配置预览水印效果。
+Preview the watermark effect by configuring custom parameters.
 
 ## Source
 

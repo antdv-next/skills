@@ -1,8 +1,8 @@
-# 高级搜索
+# Advanced search
 
-## Description (zh-CN)
+## Description (en-US)
 
-可展开的高级搜索表单。
+Advanced search form with expand/collapse.
 
 ## Source
 

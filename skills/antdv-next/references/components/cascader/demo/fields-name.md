@@ -1,8 +1,8 @@
-# 自定义字段名
+# Custom Field Names
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义字段名。
+Custom field names.
 
 ## Source
 

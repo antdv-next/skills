@@ -1,8 +1,8 @@
-# 基本
+# Basic
 
-## Description (zh-CN)
+## Description (en-US)
 
-最简单的下拉菜单。
+The most basic dropdown menu.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 缎带
+# Ribbon
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用缎带型的徽标。
+Use ribbon badge.
 
 ## Source
 

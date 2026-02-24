@@ -1,8 +1,8 @@
-# 禁用标签
+# Disabled
 
-## Description (zh-CN)
+## Description (en-US)
 
-设置 `disabled` 属性后，标签将不可用。
+Set the `disabled` property to make the tag unusable.
 
 ## Source
 

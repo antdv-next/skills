@@ -1,8 +1,8 @@
-# 基本用法
+# Basic
 
-## Description (zh-CN)
+## Description (en-US)
 
-获取 `message`、`notification`、`modal` 实例。
+Get instance for `message`, `notification`, `modal`.
 
 ## Source
 

@@ -1,10 +1,10 @@
-# 缩起内嵌菜单
+# Collapsed inline menu
 
-## Description (zh-CN)
+## Description (en-US)
 
-内嵌菜单可以被缩起/展开。
+Inline menu could be collapsed.
 
-你可以在 [Layout](../../layout/docs.md/#layout-demo-side) 里查看侧边布局结合的完整示例。
+Here is [a complete demo](../../layout/docs.md/#layout-demo-side) with sider layout.
 
 ## Source
 

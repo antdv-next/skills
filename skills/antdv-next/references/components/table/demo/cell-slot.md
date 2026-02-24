@@ -1,8 +1,8 @@
-# 表头与单元格插槽
+# Header & Body Cell Slots
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 headerCell 与 bodyCell 插槽自定义表头和单元格内容。
+Customize header and body cells via the headerCell and bodyCell slots.
 
 ## Source
 

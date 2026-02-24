@@ -1,32 +1,31 @@
 ---
 title: Message
-subtitle: 全局提示
-description: 全局展示操作反馈信息。
+description: Display global messages as feedback in response to user operations.
 ---
 
-## 何时使用 
-- 可提供成功、警告和错误等反馈信息。
-- 顶部居中显示并自动消失，是一种不打断用户操作的轻量级提示方式。
+## When To Use 
+- To provide feedback such as success, warning, error etc.
+- A message is displayed at top and center and will be dismissed automatically, as a non-interrupting light-weighted prompt.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| Hooks 用法（推荐） | demo/hooks.md |
-| 其他类型 | demo/other.md |
-| 自定义时长 | demo/duration.md |
-| 加载中 | demo/loading.md |
-| Promise 接口 | demo/thenable.md |
-| 自定义样式 | demo/custom-style.md |
-| 自定义语义化结构样式 | demo/style-class.md |
-| 更新消息内容 | demo/update.md |
-| 静态方法（不推荐） | demo/info.md |
+| Hooks usage (recommended) | demo/hooks.md |
+| Other types of message | demo/other.md |
+| Customize duration | demo/duration.md |
+| Message with loading indicator | demo/loading.md |
+| Promise interface | demo/thenable.md |
+| Customized style | demo/custom-style.md |
+| Custom semantic dom styling | demo/style-class.md |
+| Update Message Content | demo/update.md |
+| Static method (deprecated) | demo/info.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
-### 静态方法 
+### Static Methods 
 - `message.success(content, [duration], onClose)`
 - `message.error(content, [duration], onClose)`
 - `message.info(content, [duration], onClose)`
@@ -37,39 +36,39 @@ description: 全局展示操作反馈信息。
 - `message.config(options)`
 - `message.useMessage(config)`
 
-### 参数 
-| 参数 | 说明 | 类型 | 默认值 |
+### Arguments 
+| Argument | Description | Type | Default |
 | --- | --- | --- | --- |
-| content | 提示内容 | VueNode \| ArgsProps | - |
-| duration | 自动关闭的延时，单位秒。设为 0 时不自动关闭 | number | 3 |
-| onClose | 关闭时触发的回调函数 | () =&gt; void | - |
+| content | The content of the message | VueNode \| ArgsProps | - |
+| duration | Time(seconds) before auto-dismiss, don't dismiss if set to 0 | number | 3 |
+| onClose | Specify a function that will be called when the message is closed | () =&gt; void | - |
 
-组件同时提供 Promise 接口：
+`afterClose` can be called in thenable interface:
 
 - `message[level](content, [duration]).then(afterClose)`
 - `message[level](content, [duration], onClose).then(afterClose)`
 
-其中 `message[level]` 是组件已经提供的静态方法。`then` 接口返回值是 Promise。
+where `level` refers one static methods of `message`. The result of `then` method will be a Promise.
 
 ### Config 
-`config` 对象属性如下：
+The properties of `config` are as follows:
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| class | 自定义 CSS class | string | - | - |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | ArgsClassNamesType | - | - |
-| content | 提示内容 | VueNode | - | - |
-| duration | 自动关闭的延时，单位秒。设为 0 时不自动关闭 | number | 3 | - |
-| icon | 自定义图标 | VueNode | - | - |
-| pauseOnHover | 悬停时是否暂停计时器 | boolean | true | - |
-| key | 当前提示的唯一标志 | Key | - | - |
-| style | 自定义内联样式 | CSSProperties | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | ArgsStylesType | - | - |
-| type | 通知类型 | NoticeType | - | - |
-| onClick | 点击 message 时触发的回调函数 | (e: MouseEvent) =&gt; void | - | - |
-| onClose | 关闭时触发的回调函数 | () =&gt; void | - | - |
+| class | Customized CSS class | string | - | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function. | ArgsClassNamesType | - | - |
+| content | The content of the message | VueNode | - | - |
+| duration | Time(seconds) before auto-dismiss, don't dismiss if set to 0 | number | 3 | - |
+| icon | Customized Icon | VueNode | - | - |
+| pauseOnHover | Keep the timer running or not on hover | boolean | true | - |
+| key | The unique identifier of the Message | Key | - | - |
+| style | Customized inline style | CSSProperties | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | ArgsStylesType | - | - |
+| type | Notice type | NoticeType | - | - |
+| onClick | Specify a function that will be called when the message is clicked | (e: MouseEvent) =&gt; void | - | - |
+| onClose | Specify a function that will be called when the message is closed | () =&gt; void | - | - |
 
-### 全局配置 
+### Global configuration 
 `message.config(options)`
 
 ```js
@@ -82,26 +81,27 @@ message.config({
 })
 ```
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| Argument | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| duration | 默认自动关闭延时，单位秒 | number | 3 | - |
-| getContainer | 配置渲染节点的输出位置，但依旧为全屏展示 | () =&gt; HTMLElement \| ShadowRoot | () =&gt; document.body | - |
-| maxCount | 最大显示数，超过限制时，最早的消息会被自动关闭 | number | - | - |
-| prefixCls | 消息节点的 class 前缀 | string | `ant-message` | - |
-| rtl | 是否开启 RTL 模式 | boolean | false | - |
-| top | 消息距离顶部的位置 | string \| number | 8 | - |
-| transitionName | 动画名称 | string | - | - |
-| pauseOnHover | 悬停时是否暂停计时器 | boolean | true | - |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | ArgsClassNamesType | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | ArgsStylesType | - | - |
+| duration | Time before auto-dismiss, in seconds | number | 3 | - |
+| getContainer | Return the mount node for Message, but still display at fullScreen | () =&gt; HTMLElement \| ShadowRoot | () =&gt; document.body | - |
+| maxCount | Max message show, drop oldest if exceed limit | number | - | - |
+| prefixCls | The prefix class name of message node | string | `ant-message` | - |
+| rtl | Whether to enable RTL mode | boolean | false | - |
+| top | Distance from top | string \| number | 8 | - |
+| transitionName | Animation name | string | - | - |
+| pauseOnHover | Keep the timer running or not on hover | boolean | true | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function. | ArgsClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | ArgsStylesType | - | - |
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |
 
 ## FAQ
 
-### 为什么 message 不能获取 ConfigProvider 的 `locale/prefixCls/theme` 等配置？ 
-直接调用 message 方法会创建新的实例，无法继承当前上下文。需要上下文信息时，请使用 `message.useMessage` 获取 `api` 和 `ContextHolder` 并渲染到组件树中：
+### Why I can not access context, ConfigProvider `locale/prefixCls/theme` in message? 
+Calling `message` methods will render a new instance which does not inherit the current context. When you need context info, use `message.useMessage` to get `api` and `ContextHolder`, then render it inside your component tree:
 
 ```vue
 <script setup>
@@ -115,9 +115,9 @@ const [api, ContextHolder] = message.useMessage()
 </template>
 ```
 
-**注意：** 通过 hooks 创建的 `ContextHolder` 必须插入到子元素节点中才会生效，当你不需要上下文信息时请直接调用静态方法。
+**Note:** You must insert `ContextHolder` into your children with hooks. You can use static methods if you do not need context connection.
 
-> 可通过 [App 包裹组件](../app/docs.md) 简化 `useMessage` 等方法需要手动植入 ContextHolder 的问题。
+> [App Package Component](../app/docs.md) can be used to simplify `useMessage` and other methods that need to manually implant ContextHolder.
 
-### 静态方法如何设置 prefixCls？ 
-你可以通过 [`ConfigProvider.config`](../config-provider/docs.md#configproviderconfig-4130) 进行设置。
+### How to set static methods prefixCls? 
+You can config with [`ConfigProvider.config`](../config-provider/docs.md#configproviderconfig-4130).

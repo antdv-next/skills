@@ -1,8 +1,8 @@
-# 自定义指示器
+# Custom indicator
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义指示器。
+Custom indicator.
 
 ## Source
 

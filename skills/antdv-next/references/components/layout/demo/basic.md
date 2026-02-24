@@ -1,8 +1,8 @@
-# 基本结构
+# Basic Structure
 
-## Description (zh-CN)
+## Description (en-US)
 
-典型的页面布局。
+Classic page layouts.
 
 ## Source
 

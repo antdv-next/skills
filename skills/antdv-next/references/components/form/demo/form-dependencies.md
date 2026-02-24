@@ -1,8 +1,8 @@
-# 字段依赖
+# Dependencies
 
-## Description (zh-CN)
+## Description (en-US)
 
-字段之间的依赖校验。
+Validate fields based on other field values.
 
 ## Source
 

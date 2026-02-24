@@ -1,8 +1,8 @@
-# 更新消息内容
+# Update Message Content
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以通过唯一的 `key` 来更新内容。
+Update message content with unique `key`.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 自定义已选项
+# Custom render
 
-## Description (zh-CN)
+## Description (en-US)
 
-例如给最后一项加上邮编链接。
+For instance, add an external link after the selected value.
 
 ## Source
 

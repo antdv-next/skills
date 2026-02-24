@@ -1,8 +1,8 @@
-# 基本
+# Basic
 
-## Description (zh-CN)
+## Description (en-US)
 
-基础弹框。
+Basic modal.
 
 ## Source
 

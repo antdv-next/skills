@@ -1,8 +1,8 @@
-# 滑动到错误字段
+# Slide to error field
 
-## Description (zh-CN)
+## Description (en-US)
 
-校验失败时/手动滚动到错误字段。
+When validation fails or manually scroll to the error field.
 
 ## Source
 

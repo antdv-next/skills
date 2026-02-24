@@ -1,8 +1,8 @@
-# 变体样式
+# Variant
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `variant` 设置时间轴的样式。
+Use the `variant` to set the style of the timeline.
 
 ## Source
 

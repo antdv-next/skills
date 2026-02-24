@@ -1,8 +1,8 @@
-# 附加内容
+# Addon
 
-## Description (zh-CN)
+## Description (en-US)
 
-在 TimePicker 选择框底部显示自定义的内容。
+Render addon contents to time picker panel's bottom.
 
 ## Source
 

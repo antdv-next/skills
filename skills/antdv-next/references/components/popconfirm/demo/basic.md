@@ -1,8 +1,8 @@
-# 基本
+# Basic
 
-## Description (zh-CN)
+## Description (en-US)
 
-最简单的用法，支持确认标题和描述。
+The basic example supports the title and description props of confirmation.
 
 ## Source
 

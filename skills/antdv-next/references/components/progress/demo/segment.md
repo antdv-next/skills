@@ -1,8 +1,8 @@
-# 分段进度条
+# Progress bar with success segment
 
-## Description (zh-CN)
+## Description (en-US)
 
-分段展示进度，可以用于细化进度语义。
+Show several parts of progress with different status.
 
 ## Source
 

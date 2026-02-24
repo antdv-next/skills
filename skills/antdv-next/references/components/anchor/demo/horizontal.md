@@ -1,8 +1,8 @@
-# 横向 Anchor
+# Horizontal Anchor
 
-## Description (zh-CN)
+## Description (en-US)
 
-横向 Anchor。
+Horizontally aligned anchors
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 受控的 Checkbox
+# Controlled Checkbox
 
-## Description (zh-CN)
+## Description (en-US)
 
-联动 checkbox。
+Communicated with other components.
 
 ## Source
 

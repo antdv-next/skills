@@ -1,8 +1,15 @@
-# 动态配置
+# Dynamic Settings
 
-## Description (zh-CN)
+## Description (en-US)
 
-选择不同配置组合查看效果。
+Select different settings to see the result.
+
+<style>
+.table-demo-control-bar .ant-form-item {
+  margin-inline-end: 16px !important;
+  margin-bottom: 8px !important;
+}
+</style>
 
 ## Source
 

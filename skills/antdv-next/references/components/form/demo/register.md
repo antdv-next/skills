@@ -1,8 +1,8 @@
-# 注册表单
+# Registration
 
-## Description (zh-CN)
+## Description (en-US)
 
-注册表单示例。
+Registration form example.
 
 ## Source
 

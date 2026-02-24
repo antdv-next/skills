@@ -1,8 +1,8 @@
 # ConfigProvider
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 ConfigProvider 统一设置空状态。
+Use ConfigProvider to customize empty content.
 
 ## Source
 

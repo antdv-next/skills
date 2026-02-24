@@ -1,8 +1,8 @@
-# 自定义搜索
+# Custom Search
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `filterOption` 自定义搜索。
+Customize search using `filterOption`.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# Block 单选组合
+# Block Radio.Group
 
-## Description (zh-CN)
+## Description (en-US)
 
-`block` 属性将使 Radio.Group 撑满父容器。
+The `block` property will make a Radio.Group fit to its parent width.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 基本使用
+# Basic Usage
 
-## Description (zh-CN)
+## Description (en-US)
 
-最简单的使用方法。
+Basic Usage.
 
 ## Source
 

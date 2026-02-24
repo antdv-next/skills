@@ -1,104 +1,103 @@
 ---
 title: Modal
-subtitle: 对话框
-description: 展示一个对话框，提供标题、内容区、操作区。
+description: Display a modal dialog box, providing a title, content area, and action buttons.
 ---
 
-## 何时使用 
-需要用户处理事务，又不希望跳转页面以致打断工作流程时，可以使用 `Modal` 在当前页面正中打开一个浮层，承载相应的操作。
+## When To Use 
+When requiring users to interact with the application, but without jumping to a new page and interrupting the user's workflow, you can use `Modal` to create a new floating layer over the current page to get user feedback or display information.
 
-另外当需要一个简洁的确认框询问用户时，可以使用 [`App.useApp`](../app/docs.md/) 封装的语法糖方法。
+Additionally, if you need to show a simple confirmation dialog, you can use [`App.useApp`](../app/docs.md/) hooks.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本 | demo/basic.md |
-| 异步关闭 | demo/async.md |
-| 自定义页脚 | demo/footer.md |
-| 遮罩 | demo/mask.md |
-| 加载中 | demo/loading.md |
-| 自定义页脚渲染函数 | demo/footer-render.md |
-| 使用 hooks 获得上下文 | demo/hooks.md |
-| 国际化 | demo/locale.md |
-| 手动更新和移除 | demo/manual.md |
-| 自定义位置 | demo/position.md |
-| 自定义页脚按钮属性 | demo/button-props.md |
-| 自定义渲染对话框 | demo/modal-render.md |
-| 自定义模态的宽度 | demo/width.md |
-| 静态方法 | demo/static-info.md |
-| 静态确认对话框 | demo/confirm.md |
-| 销毁确认对话框 | demo/confirm-router.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
+| Basic | demo/basic.md |
+| Asynchronously close | demo/async.md |
+| Customized Footer | demo/footer.md |
+| mask | demo/mask.md |
+| Loading | demo/loading.md |
+| Customized Footer render function | demo/footer-render.md |
+| Use hooks to get context | demo/hooks.md |
+| Internationalization | demo/locale.md |
+| Manual to update destroy | demo/manual.md |
+| To customize the position of modal | demo/position.md |
+| Customize footer buttons props | demo/button-props.md |
+| Custom modal content render | demo/modal-render.md |
+| To customize the width of modal | demo/width.md |
+| Static Method | demo/static-info.md |
+| Static confirmation | demo/confirm.md |
+| destroy confirmation modal dialog | demo/confirm-router.md |
+| Custom semantic dom styling | demo/style-class.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
-### 属性 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+### Props
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| afterClose | Modal 完全关闭后的回调 | () => void | - | - |
-| afterOpenChange | 打开和关闭 Modal 时动画结束后的回调 | (open: boolean) => void | - | - |
-| cancelButtonProps | cancel 按钮 props | ButtonProps | - | - |
-| cancelText | 取消按钮文字 | VueNode | `取消` | - |
-| centered | 垂直居中展示 Modal | boolean | false | - |
-| classes | 用于自定义 Modal 组件内部各语义化结构的 class，支持对象或函数 | ModalClassNamesType | - | - |
-| closable | 是否显示右上角的关闭按钮 | boolean \| [ClosableType](#closabletype) | true | - |
-| closeIcon | 自定义关闭图标。设置为 `null` 或 `false` 时隐藏关闭按钮 | VueNode | &lt;CloseOutlined /> | - |
-| confirmLoading | 确定按钮 loading | boolean | false | - |
-| destroyOnHidden | 关闭时销毁 Modal 里的子元素 | boolean | false | - |
-| focusTriggerAfterClose | 对话框关闭后是否需要聚焦触发元素 | boolean | true | - |
-| footer | 底部内容，当不需要默认底部按钮时，可以设为 `footer={null}` | VueNode \| (params: { originNode: VueNode, extra: { OkBtn: any, CancelBtn: any } }) => any | (确定取消按钮) | - |
-| forceRender | 强制渲染 Modal | boolean | false | - |
-| getContainer | 指定 Modal 挂载的节点，但依旧为全屏展示，`false` 为挂载在当前位置 | string \| HTMLElement \| (() => HTMLElement) \| false | document.body | - |
-| keyboard | 是否支持键盘 esc 关闭 | boolean | true | - |
-| loading | 显示骨架屏 | boolean | false | - |
-| mask | 遮罩效果 | MaskType | true | - |
-| maskClosable | 点击蒙层是否允许关闭 | boolean | true | - |
-| modalRender | 自定义渲染对话框 | (node: any) => any | - | - |
-| mousePosition | 设置动画起点位置 | MousePosition | - | - |
-| okButtonProps | ok 按钮 props | ButtonProps | - | - |
-| okText | 确认按钮文字 | VueNode | `确定` | - |
-| okType | 确认按钮类型 | LegacyButtonType | `primary` | - |
-| open | 对话框是否可见，支持 `v-model:open` | boolean | false | - |
-| rootClass | 根容器 class | string | - | - |
-| rootStyle | 根容器样式 | CSSProperties | - | - |
-| styles | 用于自定义 Modal 组件内部各语义化结构的行内 style，支持对象或函数 | ModalStylesType | - | - |
-| title | 标题 | VueNode | - | - |
-| transitionName | 对话框过渡动效名称 | string | - | - |
-| maskTransitionName | 遮罩过渡动效名称 | string | - | - |
-| width | 宽度 | string \| number \| Partial<Record<Breakpoint, string \| number>> | 520 | - |
-| wrapClassName | 对话框外层容器的类名 | string | - | - |
-| wrapProps | 对话框外层容器属性 | Record<string, any> | - | - |
-| zIndex | 设置 Modal 的 `z-index` | number | 1000 | - |
+| afterClose | Specify a function that will be called when modal is closed completely | () => void | - | - |
+| afterOpenChange | Callback when the animation ends when Modal is turned on and off | (open: boolean) => void | - | - |
+| cancelButtonProps | The cancel button props | ButtonProps | - | - |
+| cancelText | Text of the Cancel button | VueNode | `Cancel` | - |
+| centered | Centered Modal | boolean | false | - |
+| classes | Customize class for each semantic structure inside the Modal component. Supports object or function. | ModalClassNamesType | - | - |
+| closable | Whether a close (x) button is visible on top right or not | boolean \| [ClosableType](#closabletype) | true | - |
+| closeIcon | Custom close icon. Close button will be hidden when setting to `null` or `false` | VueNode | &lt;CloseOutlined /> | - |
+| confirmLoading | Whether to apply loading visual effect for OK button or not | boolean | false | - |
+| destroyOnHidden | Whether to unmount child components on close | boolean | false | - |
+| focusTriggerAfterClose | Whether need to focus trigger element after dialog is closed | boolean | true | - |
+| footer | Footer content, set as `footer={null}` when you don't need default buttons | VueNode \| (params: { originNode: VueNode, extra: { OkBtn: any, CancelBtn: any } }) => any | (OK and Cancel buttons) | - |
+| forceRender | Force render Modal | boolean | false | - |
+| getContainer | The mounted node for Modal but still display at fullscreen | string \| HTMLElement \| (() => HTMLElement) \| false | document.body | - |
+| keyboard | Whether support press esc to close | boolean | true | - |
+| loading | Show the skeleton | boolean | false | - |
+| mask | Mask effect | boolean \| `{enabled?: boolean, blur?: boolean, closable?: boolean}` | true | mask.closable: 1.0.3 |
+| ~~maskClosable~~ | Whether to close the modal dialog when the mask (area outside the modal) is clicked | boolean | true |  |
+| modalRender | Custom modal content render | (node: any) => any | - | - |
+| mousePosition | Set animation start position | MousePosition | - | - |
+| okButtonProps | The ok button props | ButtonProps | - | - |
+| okText | Text of the OK button | VueNode | `OK` | - |
+| okType | Button `type` of the OK button | LegacyButtonType | `primary` | - |
+| open | Whether the modal dialog is visible or not, support `v-model:open` | boolean | false | - |
+| rootClass | Root container class | string | - | - |
+| rootStyle | Root container style | CSSProperties | - | - |
+| styles | Customize inline style for each semantic structure inside the Modal component. Supports object or function. | ModalStylesType | - | - |
+| title | The modal dialog's title | VueNode | - | - |
+| transitionName | Transition name of dialog | string | - | - |
+| maskTransitionName | Transition name of mask | string | - | - |
+| width | Width of the modal dialog | string \| number \| Partial<Record<Breakpoint, string \| number>> | 520 | - |
+| wrapClassName | The class name of the container of the modal dialog | string | - | - |
+| wrapProps | Wrapper element props | Record<string, any> | - | - |
+| zIndex | The `z-index` of the Modal | number | 1000 | - |
 
-### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+### Events 
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| ok | 点击确定回调 | (e: MouseEvent) => void | - |
-| cancel | 点击遮罩层或右上角叉或取消按钮的回调 | (e: MouseEvent) => void | - |
-| update:open | 对话框显隐变化 | (open: boolean) => void | - |
+| ok | Callback when the OK button is clicked | (e: MouseEvent) => void | - |
+| cancel | Callback when the mask, close button or Cancel button is clicked | (e: MouseEvent) => void | - |
 
-### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+### Slots 
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| default | 内容 | () => any | - |
-| title | 标题 | () => any | - |
-| footer | 底部内容 | (params: { originNode: VueNode, extra: { OkBtn: any, CancelBtn: any } }) => any | - |
-| okText | 确认按钮文字 | () => any | - |
-| cancelText | 取消按钮文字 | () => any | - |
-| closeIcon | 自定义关闭图标 | () => any | - |
-| modalRender | 自定义渲染内容 | (node: any) => any | - |
+| default | Modal content | () => any | - |
+| title | Title | () => any | - |
+| footer | Footer content | (params: { originNode: VueNode, extra: { OkBtn: any, CancelBtn: any } }) => any | - |
+| okText | OK button text | () => any | - |
+| cancelText | Cancel button text | () => any | - |
+| closeIcon | Custom close icon | () => any | - |
+| modalRender | Custom modal content render | (node: any) => any | - |
 
-### 注意
+### Note
 
-- `<a-modal />` 默认关闭后状态不会自动清空，如果希望每次打开都是新内容，请设置 `destroyOnHidden`。
-- `<a-modal />` 和 Form 一起配合使用时，设置 `destroyOnHidden` 也不会在 Modal 关闭时销毁表单字段数据，需要设置 `<a-form :preserve="false" />`。
-- `Modal.method()` RTL 模式仅支持 hooks 用法。
+- The state of Modal will be preserved at its component lifecycle by default, if you wish to open it with a brand new state every time, set `destroyOnHidden` on it.
+- If you use Form in Modal, and need to clear fields when closing, set `<a-form :preserve="false" />`.
+- `Modal.method()` RTL mode only supports hooks usage.
 
 ### Modal.method() 
-包括：
+There are five ways to display the information based on the content's nature:
 
 - `Modal.info`
 - `Modal.success`
@@ -106,59 +105,59 @@ description: 展示一个对话框，提供标题、内容区、操作区。
 - `Modal.warning`
 - `Modal.confirm`
 
-以上均为一个函数，参数为 object，具体属性如下：
+The items listed above are all functions, expecting a settings object as parameter. The properties of the object are follows:
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| afterClose | Modal 完全关闭后的回调 | () => void | - | - |
-| autoFocusButton | 指定自动获得焦点的按钮 | null \| `ok` \| `cancel` | `ok` | - |
-| cancelButtonProps | cancel 按钮 props | ButtonProps | - | - |
-| cancelText | 设置 Modal.confirm 取消按钮文字 | string | `取消` | - |
-| centered | 垂直居中展示 Modal | boolean | false | - |
-| class | 容器类名 | string | - | - |
-| rootClass | 根容器 class | string | - | - |
-| closable | 是否显示右上角的关闭按钮 | boolean \| [ClosableType](#closabletype) | false | - |
-| closeIcon | 自定义关闭图标 | VueNode | - | - |
-| content | 内容 | VueNode | - | - |
-| footer | 底部内容，当不需要默认底部按钮时，可以设为 `footer: null` | VueNode \| (params: { originNode: VueNode, extra: { OkBtn: any, CancelBtn: any } }) => any | - | - |
-| getContainer | 指定 Modal 挂载的 HTML 节点，false 为挂载在当前 dom | string \| HTMLElement \| (() => HTMLElement) \| false | document.body | - |
-| icon | 自定义图标 | VueNode | &lt;ExclamationCircleFilled /> | - |
-| keyboard | 是否支持键盘 esc 关闭 | boolean | true | - |
-| mask | 遮罩效果 | boolean \| `{enabled?: boolean, blur?: boolean, closable?: boolean, closable?: true}` | true |  |
-| ~~maskClosable~~ | 点击蒙层是否允许关闭 | boolean | false |  |
-| okButtonProps | ok 按钮 props | ButtonProps | - | - |
-| okText | 确认按钮文字 | string | `确定` | - |
-| okType | 确认按钮类型 | LegacyButtonType | `primary` | - |
-| style | 可用于设置浮层的样式，调整浮层位置等 | CSSProperties | - | - |
-| title | 标题 | VueNode | - | - |
-| type | 对话框类型 | `info` \| `success` \| `error` \| `warn` \| `warning` \| `confirm` | `confirm` | - |
-| width | 宽度 | string \| number | 416 | - |
-| wrapClassName | 对话框外层容器的类名 | string | - | - |
-| zIndex | 设置 Modal 的 `z-index` | number | 1000 | - |
-| onCancel | 点击取消回调，参数为关闭函数 | (close?: () => void) => void | - | - |
-| onOk | 点击确定回调，参数为关闭函数 | (close?: () => void) => void | - | - |
+| afterClose | Specify a function that will be called when modal is closed completely | () => void | - | - |
+| autoFocusButton | Specify which button to autofocus | null \| `ok` \| `cancel` | `ok` | - |
+| cancelButtonProps | The cancel button props | ButtonProps | - | - |
+| cancelText | Text of the Cancel button with Modal.confirm | string | `Cancel` | - |
+| centered | Centered Modal | boolean | false | - |
+| class | Container class | string | - | - |
+| rootClass | Root container class | string | - | - |
+| closable | Whether a close (x) button is visible on top right of the confirm dialog or not | boolean \| [ClosableType](#closabletype) | false | - |
+| closeIcon | Custom close icon | VueNode | - | - |
+| content | Content | VueNode | - | - |
+| footer | Footer content, set as `footer: null` when you don't need default buttons | VueNode \| (params: { originNode: VueNode, extra: { OkBtn: any, CancelBtn: any } }) => any | - | - |
+| getContainer | Return the mount node for Modal | string \| HTMLElement \| (() => HTMLElement) \| false | document.body | - |
+| icon | Custom icon | VueNode | &lt;ExclamationCircleFilled /> | - |
+| keyboard | Whether support press esc to close | boolean | true | - |
+| mask | Mask effect | MaskType | true | - |
+| maskClosable | Whether to close the modal dialog when the mask is clicked | boolean | false | - |
+| okButtonProps | The ok button props | ButtonProps | - | - |
+| okText | Text of the OK button | string | `OK` | - |
+| okType | Button `type` of the OK button | LegacyButtonType | `primary` | - |
+| style | Style of floating layer, typically used at least for adjusting the position | CSSProperties | - | - |
+| title | Title | VueNode | - | - |
+| type | Dialog type | `info` \| `success` \| `error` \| `warn` \| `warning` \| `confirm` | `confirm` | - |
+| width | Width of the modal dialog | string \| number | 416 | - |
+| wrapClassName | The class name of the container of the modal dialog | string | - | - |
+| zIndex | The `z-index` of the Modal | number | 1000 | - |
+| onCancel | Click to onCancel callback, the parameter is the closing function | (close?: () => void) => void | - | - |
+| onOk | Click to onOk callback, the parameter is the closing function | (close?: () => void) => void | - | - |
 
-以上函数调用后，会返回一个引用，可以通过该引用更新和关闭弹窗。
+All the `Modal.method`s will return a reference, and then we can update and close the modal dialog by the reference.
 
 ### ClosableType 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| afterClose | Modal 完全关闭后的回调 | () => void | - | - |
-| closeIcon | 自定义关闭图标 | VueNode | undefined | - |
-| disabled | 关闭图标是否禁用 | boolean | false | - |
-| onClose | 弹窗关闭即时调用 | () => void | undefined | - |
+| afterClose | Specify a function that will be called when modal is closed completely | () => void | - | - |
+| closeIcon | Custom close icon | VueNode | undefined | - |
+| disabled | Whether disabled close icon | boolean | false | - |
+| onClose | Trigger when modal close | () => void | undefined | - |
 
 ```ts
 const modal = Modal.info()
 
 modal.update({
-  title: '修改的标题',
-  content: '修改的内容',
+  title: 'Updated title',
+  content: 'Updated content',
 })
 
 modal.update(prevConfig => ({
   ...prevConfig,
-  title: `${prevConfig.title}（新）`,
+  title: `${prevConfig.title} (New)`,
 }))
 
 modal.destroy()
@@ -166,10 +165,10 @@ modal.destroy()
 
 - `Modal.destroyAll`
 
-使用 `Modal.destroyAll()` 可以销毁弹出的确认窗（即上述的 `Modal.info`、`Modal.success`、`Modal.error`、`Modal.warning`、`Modal.confirm`）。
+`Modal.destroyAll()` could destroy all confirmation modal dialogs. Usually, you can use it in router change event to destroy confirm modal dialog automatically.
 
 ### Modal.useModal() 
-当你需要使用 Context 时，可以通过 `Modal.useModal` 创建一个 `contextHolder` 插入子节点中。通过 hooks 创建的临时 Modal 将会得到 `contextHolder` 所在位置的所有上下文。创建的 `modal` 对象拥有与 `Modal.method` 相同的创建通知方法。
+When you need using Context, you can use `contextHolder` which created by `Modal.useModal` to insert into children. Modal created by hooks will get all the context where `contextHolder` are. Created `modal` has the same creating function with `Modal.method`.
 
 ```vue
 <script setup lang="ts">
@@ -191,23 +190,24 @@ onMounted(() => {
 </template>
 ```
 
-`modal.confirm` 返回方法：
+`modal.confirm` return method:
 
-- `destroy`：销毁当前窗口
-- `update`：更新当前窗口
-- `then`：Promise 链式调用，支持 `await` 操作（Hooks only）
+- `destroy`: Destroy current modal
+- `update`: Update current modal
+- `then`: (Hooks only) Promise chain call, support `await` operation
 
 ```ts
-const confirmed = await modal.confirm({ ...options })
+const confirmed = await modal.confirm({ ... })
 ```
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |
 
 ## FAQ
 
-### 为什么关闭后内容不更新？ 
-Modal 在关闭时会通过 memo 防止内容跳动，如果内容更新后没有生效，可以在 effect 中调用 `resetFields` 或者调整内容来源。
+### Why content not update when Modal closed? 
+Modal will use memo to avoid content jumping when closed. Also, if you use Form in Modal, you can reset `initialValues` by calling `resetFields` in effect.
 
-### 为什么 Modal.xxx 不能读取 Context？ 
-静态方法创建的实例没有上下文连接。当你需要使用 ConfigProvider 等上下文信息时，请使用 `Modal.useModal`。借助 `contextHolder` 可保证上下文正确传递。
+### Why I can not access context in Modal.xxx? 
+Modal static methods create an instance without context connection. When you need context info (like ConfigProvider context), you can use `Modal.useModal` to get `modal` instance and `contextHolder` node.

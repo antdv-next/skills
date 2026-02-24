@@ -1,8 +1,8 @@
-# 基本用法
+# Basic
 
-## Description (zh-CN)
+## Description (en-US)
 
-简单的 checkbox。
+Basic usage of checkbox.
 
 ## Source
 

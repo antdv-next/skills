@@ -1,8 +1,8 @@
-# 调整列宽
+# Resizable Column
 
-## Description (zh-CN)
+## Description (en-US)
 
-可调整列宽。
+Resizable column width.
 
 ## Source
 

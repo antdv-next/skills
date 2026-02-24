@@ -1,8 +1,8 @@
-# 带移除图标
+# With clear icon
 
-## Description (zh-CN)
+## Description (en-US)
 
-带移除图标的输入框，点击图标删除所有内容。
+Input box with the remove icon, click the icon to delete everything.
 
 ## Source
 

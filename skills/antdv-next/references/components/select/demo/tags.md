@@ -1,8 +1,8 @@
-# 标签
+# Tags
 
-## Description (zh-CN)
+## Description (en-US)
 
-用户可以从列表中选择标签或者输入自定义标签。
+Allow user to select tags from list or input custom tag.
 
 ## Source
 

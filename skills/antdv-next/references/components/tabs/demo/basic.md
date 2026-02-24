@@ -1,8 +1,8 @@
-# 基本
+# Basic
 
-## Description (zh-CN)
+## Description (en-US)
 
-默认选中第一项。
+Default activate first tab.
 
 ## Source
 

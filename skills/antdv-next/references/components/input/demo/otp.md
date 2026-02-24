@@ -1,8 +1,8 @@
-# 一次性密码框
+# OTP
 
-## Description (zh-CN)
+## Description (en-US)
 
-一次性密码输入框。
+One time password input.
 
 ## Source
 

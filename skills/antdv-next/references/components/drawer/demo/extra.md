@@ -1,8 +1,8 @@
-# 额外操作
+# Extra Actions
 
-## Description (zh-CN)
+## Description (en-US)
 
-在 Antdv Next 规范中，操作按钮建议放在抽屉的右上角，可以使用 `extra` 属性来实现。
+Extra actions should be placed at corner of drawer in Antdv Next, you can use `extra` prop for that.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 监听锚点链接改变
+# Listening for anchor link change
 
-## Description (zh-CN)
+## Description (en-US)
 
-监听锚点链接改变
+Listening for anchor link change.
 
 ## Source
 

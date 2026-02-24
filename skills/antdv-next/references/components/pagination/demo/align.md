@@ -1,8 +1,8 @@
-# 对齐
+# Align
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `align` 设置分页对齐方式。
+Set pagination alignment with `align`.
 
 ## Source
 

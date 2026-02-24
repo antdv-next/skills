@@ -1,8 +1,8 @@
-# 竖直方向的步骤条
+# Vertical
 
-## Description (zh-CN)
+## Description (en-US)
 
-简单的竖直方向的步骤条。
+A simple step bar in the vertical orientation.
 
 ## Source
 

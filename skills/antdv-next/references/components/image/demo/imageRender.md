@@ -1,8 +1,8 @@
-# 自定义预览内容
+# Custom preview render
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以自定义预览内容。
+You can customize the preview content.
 
 ## Source
 

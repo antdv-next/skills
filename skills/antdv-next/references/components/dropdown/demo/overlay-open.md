@@ -1,8 +1,8 @@
-# 菜单隐藏方式
+# The way of hiding menu
 
-## Description (zh-CN)
+## Description (en-US)
 
-默认是点击关闭菜单，可以关闭此功能。
+The default is to close the menu when you click on menu items, this feature can be turned off.
 
 ## Source
 

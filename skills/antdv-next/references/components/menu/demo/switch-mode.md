@@ -1,8 +1,8 @@
-# 切换菜单类型
+# Switch the menu type
 
-## Description (zh-CN)
+## Description (en-US)
 
-展示动态切换模式。
+Show the dynamic switching mode (between `inline` and `vertical`).
 
 ## Source
 

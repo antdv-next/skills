@@ -1,8 +1,8 @@
-# 聚焦
+# Focus
 
-## Description (zh-CN)
+## Description (en-US)
 
-聚焦额外配置属性。
+Focus with additional option.
 
 ## Source
 

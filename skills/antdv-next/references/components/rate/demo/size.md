@@ -1,8 +1,8 @@
-# 其它尺寸
+# Sizes
 
-## Description (zh-CN)
+## Description (en-US)
 
-三种尺寸。
+Three sizes.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 带搜索框
+# Select with search field
 
-## Description (zh-CN)
+## Description (en-US)
 
-展开后可搜索选项。
+Search the options while expanded.
 
 ## Source
 

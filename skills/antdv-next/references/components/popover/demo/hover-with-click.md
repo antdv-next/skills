@@ -1,8 +1,8 @@
-# 悬停点击弹出窗口
+# Hover with click popover
 
-## Description (zh-CN)
+## Description (en-US)
 
-以下示例显示如何创建可悬停和单击的弹出窗口。
+The following example shows how to create a popover which can be hovered and clicked.
 
 ## Source
 

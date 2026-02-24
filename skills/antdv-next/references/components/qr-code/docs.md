@@ -1,70 +1,75 @@
 ---
 title: QRCode
-subtitle: 二维码
-description: 能够将文本转换生成二维码的组件，支持自定义配色和 Logo 配置。
+description: Components that can convert text into QR codes, and support custom color and logo.
 ---
 
-## 何时使用 
-当需要将文本转换成为二维码时使用。
+## When To Use
 
-## Demos
+Used when the text needs to be converted into a QR Code.
 
-| Demo | Path |
-| --- | --- |
-| 基本使用 | demo/base.md |
-| 带 Icon 的例子 | demo/icon.md |
-| 不同的状态 | demo/status.md |
-| 自定义状态渲染器 | demo/customStatusRender.md |
-| 自定义渲染类型 | demo/type.md |
-| 自定义尺寸 | demo/customSize.md |
-| 自定义颜色 | demo/customColor.md |
-| 下载二维码 | demo/download.md |
-| 纠错比例 | demo/errorLevel.md |
-| 高级用法 | demo/Popover.md |
-  <!-- | 自定义语义结构的样式和类 | demo/style-class.md | -->
+## Examples
+
+<!-- prettier-ignore -->
+| base | demo/base.md |
+| With Icon | demo/icon.md |
+| other status | demo/status.md |
+| custom status render | demo/customStatusRender.md |
+| Custom Render Type | demo/type.md |
+| Custom Size | demo/customSize.md |
+| Custom Color | demo/customColor.md |
+| Download QRCode | demo/download.md |
+| Error Level | demo/errorLevel.md |
+| Advanced Usage | demo/Popover.md |
+<!-- | Custom semantic dom styling | demo/style-class.md | -->
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+### Props
 
-### 属性 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+Common props ref：[Common props](../../docs/vue/common-props.md)
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| value | 扫描后的文本 | string \| string[] | - | - |
-| type | 渲染类型 | `canvas` \| `svg` | `canvas` | - |
-| icon | 二维码中图片的地址（目前只支持图片地址） | string | - | - |
-| size | 二维码大小 | number | 160 | - |
-| iconSize | 二维码中图片的大小 | number \| &#123; width: number; height: number &#125; | 40 | - |
-| color | 二维码颜色 | string | `#000` | - |
-| bgColor | 二维码背景颜色 | string | `transparent` | - |
-| marginSize | 留白（安静区）大小（单位为模块数），`0` 表示无留白 | number | `0` | - |
-| bordered | 是否有边框 | boolean | `true` | - |
-| errorLevel | 二维码纠错等级 | `'L'` \| `'M'` \| `'Q'` \| `'H'` | `'M'` | - |
-| boostLevel | 如果启用，自动提升纠错等级，结果的纠错级别可能会高于指定的纠错级别 | boolean | true | - |
-| status | 二维码状态 | `'active'` \| `'expired'` \| `'loading'` \| `'scanned'` | `'active'` | - |
-| statusRender | 自定义状态渲染器 | (info: StatusRenderInfo) =&gt; VueNode | - | - |
+| value | scanned text | string \| string[] | - | - |
+| type | render type | `canvas` \| `svg` | `canvas` | - |
+| icon | include image url (only image link are supported) | string | - | - |
+| size | QRCode size | number | 160 | - |
+| iconSize | include image size | number \| &#123; width: number; height: number &#125; | 40 | - |
+| color | QRCode Color | string | `#000` | - |
+| bgColor | QRCode Background Color | string | `transparent` | - |
+| marginSize | Quiet zone size (in modules). `0` means no margin | number | `0` | - |
+| bordered | Whether has border style | boolean | `true` | - |
+| errorLevel | Error Code Level | `'L'` \| `'M'` \| `'Q'` \| `'H'` | `'M'` | - |
+| boostLevel | If enabled, the Error Correction Level of the result may be higher than the specified Error Correction Level | boolean | true | - |
+| status | QRCode status | `'active'` \| `'expired'` \| `'loading'` \| `'scanned'` | `'active'` | - |
+| statusRender | custom status render | (info: StatusRenderInfo) =&gt; VueNode | - | - |
 
-### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+### Events
+
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| refresh | 刷新二维码 | () =&gt; void | - |
+| refresh | Refresh the QR code | () =&gt; void | - |
 
-### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+### Slots
+
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| statusRender | 自定义状态渲染器 | (info: StatusRenderInfo) =&gt; any | - |
+| statusRender | custom status render | (info: StatusRenderInfo) =&gt; any | - |
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |
 
 ## FAQ
 
-### 关于二维码纠错等级 
-纠错等级也叫纠错率，就是指二维码可以被遮挡后还能正常扫描，而这个能被遮挡的最大面积就是纠错率。
+### About QRCode ErrorLevel 
+The ErrorLevel means that the QR code can be scanned normally after being blocked, and the maximum area that can be blocked is the error correction rate.
 
-通常情况下二维码分为 4 个纠错级别：`L级` 可纠正约 `7%` 错误、`M级` 可纠正约 `15%` 错误、`Q级` 可纠正约 `25%` 错误、`H级` 可纠正约`30%` 错误。并不是所有位置都可以缺损，像最明显的三个角上的方框，直接影响初始定位。中间零散的部分是内容编码，可以容忍缺损。当二维码的内容编码携带信息比较少的时候，也就是链接比较短的时候，设置不同的纠错等级，生成的图片不会发生变化。
+Generally, the QR code is divided into 4 error correction levels: Level `L` can correct about `7%` errors, Level `M` can correct about `15%` errors, Level `Q` can correct about `25%` errors, and Level `H` can correct about `30%` errors. When the content encoding of the QR code carries less information, in other words, when the value link is short, set different error correction levels, and the generated image will not change.
 
-> 有关更多信息，可参阅相关资料：[https://www.qrcode.com/zh/about/error_correction](https://www.qrcode.com/zh/about/error_correction.html)
+> For more information, see the: [https://www.qrcode.com/en/about/error_correction](https://www.qrcode.com/en/about/error_correction.html)
 
-### ⚠️⚠️⚠️ 二维码无法扫描？ 
-若二维码无法扫码识别，可能是因为链接地址过长导致像素过于密集，可以通过 size 配置二维码更大，或者通过短链接服务等方式将链接变短。
+### ⚠️⚠️⚠️ Cannot scan the QR code? 
+If the QR code cannot be scanned for identification, it may be because the link address is too long, which leads to too dense pixels.
+
+You can configure the QR code to be larger through size, or shorten the link through short link services.

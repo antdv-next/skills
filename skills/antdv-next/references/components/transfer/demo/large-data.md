@@ -1,8 +1,8 @@
-# 分页
+# Pagination
 
-## Description (zh-CN)
+## Description (en-US)
 
-大数据下使用分页。
+Store a large amount of items with pagination.
 
 ## Source
 

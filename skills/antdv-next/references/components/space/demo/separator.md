@@ -1,8 +1,8 @@
-# 分隔符
+# Separator
 
-## Description (zh-CN)
+## Description (en-US)
 
-相邻组件分隔符。
+Separator between adjacent components.
 
 ## Source
 

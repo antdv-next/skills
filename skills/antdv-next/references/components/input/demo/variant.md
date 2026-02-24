@@ -1,8 +1,8 @@
-# 形态变体
+# Variants
 
-## Description (zh-CN)
+## Description (en-US)
 
-Input 形态变体，可选 `outlined` `filled` `borderless` `underlined` 四种形态。
+Variants of Input, there are four variants: `outlined` `filled` `borderless` and `underlined`.
 
 ## Source
 

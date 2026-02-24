@@ -1,46 +1,50 @@
 ---
 title: Empty
-subtitle: 空状态
-description: 空状态时的展示占位图。
+description: Empty state placeholder.
 ---
 
-## 何时使用 
-- 当目前没有数据时，用于显式的用户提示。
-- 初始化场景时的引导创建。
+## When To Use
+
+- When there is no data provided, display for friendly tips.
+- User tutorial to create something in a fresh new situation.
+
+## Examples
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基础用法 | demo/basic.md |
-| 选择图片 | demo/simple.md |
-| 自定义 | demo/customize.md |
+| Basic | demo/basic.md |
+| Choose image | demo/simple.md |
+| Customize | demo/customize.md |
 | ConfigProvider | demo/config-provider.md |
-| 自定义语义化结构样式 | demo/style-class.md |
-| 无描述 | demo/description.md |
+| Custom semantic dom styling | demo/style-class.md |
+| No description | demo/description.md |
 
 ## API
 
-### 属性 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+### Props
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | EmptyClassNamesType | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | EmptyStylesType | - | - |
-| image | 设置显示图片，为 string 时表示自定义图片地址。 | VueNode | `Empty.PRESENTED_IMAGE_DEFAULT` | - |
-| description | 自定义描述内容 | VueNode | - | - |
-| rootClass | 根元素 class | string | - | - |
-| prefixCls | 类名前缀 | string | - | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function. | EmptyClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | EmptyStylesType | - | - |
+| image | Customize image. Will treat as image url when string provided | VueNode | `Empty.PRESENTED_IMAGE_DEFAULT` | - |
+| description | Customize description | VueNode | - | - |
+| rootClass | Root container class | string | - | - |
+| prefixCls | Prefix class name | string | - | - |
 
-### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+### Slots
+
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| image | 设置显示图片，为 string 时表示自定义图片地址。 | () => any | - |
-| description | 自定义描述内容 | () => any | - |
-| default | 底部操作区域内容 | () => any | - |
+| image | Customize image. Will treat as image url when string provided | () => any | - |
+| description | Customize description | () => any | - |
+| default | Footer content | () => any | - |
 
-## 内置图片 
+## Built-in images 
 - Empty.PRESENTED_IMAGE_SIMPLE
 
   <div class="site-empty-buildIn-img site-empty-buildIn-simple"></div>
@@ -66,7 +70,6 @@ description: 空状态时的展示占位图。
   }
 </style>
 
-## 语义化结构 
-| _semantic | demo/_semantic.md |
+## Semantic DOM
 
-## 设计变量
+| _semantic | demo/_semantic.md |

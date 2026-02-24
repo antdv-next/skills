@@ -1,8 +1,8 @@
-# 设置锚点滚动偏移量
+# Set Anchor scroll offset
 
-## Description (zh-CN)
+## Description (en-US)
 
-锚点目标滚动到屏幕正中间。
+Anchor target scroll to screen center.
 
 ## Source
 

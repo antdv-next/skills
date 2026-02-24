@@ -1,8 +1,8 @@
-# 自定义进度条渐变色
+# Custom line gradient
 
-## Description (zh-CN)
+## Description (en-US)
 
-渐变色封装，`circle` 与 `dashboard` 设置渐变时 `strokeLinecap` 会被忽略。
+Gradient encapsulation, `circle` and `dashboard` will ignore `strokeLinecap` when setting gradient.
 
 ## Source
 

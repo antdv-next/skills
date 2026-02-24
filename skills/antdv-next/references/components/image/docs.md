@@ -1,109 +1,110 @@
 ---
 title: Image
-subtitle: 图片
-description: 可预览的图片。
+description: Preview-able image.
 ---
 
-## 何时使用 
-- 需要展示图片时使用。
-- 加载显示大图或加载失败时容错处理。
+## When To Use 
+- When you need to display pictures.
+- Display when loading a large image or fault tolerant handling when loading fail.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本用法 | demo/basic.md |
-| 容错处理 | demo/fallback.md |
-| 渐进加载 | demo/placeholder.md |
-| 多张图片预览 | demo/preview-group.md |
-| 相册模式 | demo/preview-group-visible.md |
-| 自定义预览图片 | demo/previewSrc.md |
-| 受控的预览 | demo/controlled-preview.md |
-| 自定义工具栏 | demo/toolbarRender.md |
-| 自定义预览内容 | demo/imageRender.md |
-| 预览遮罩 | demo/mask.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
-| 嵌套 | demo/nested.md |
+| Basic Usage | demo/basic.md |
+| Fault tolerant | demo/fallback.md |
+| Progressive Loading | demo/placeholder.md |
+| Multiple image preview | demo/preview-group.md |
+| Preview from one image | demo/preview-group-visible.md |
+| Custom preview image | demo/previewSrc.md |
+| Controlled Preview | demo/controlled-preview.md |
+| Custom toolbar render | demo/toolbarRender.md |
+| Custom preview render | demo/imageRender.md |
+| preview mask | demo/mask.md |
+| Custom semantic dom styling | demo/style-class.md |
+| nested | demo/nested.md |
 
 ## API
 
-### 属性
+### Props
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| preview | 预览参数，为 `false` 时禁用 | boolean \| PreviewConfig | true | - |
+| preview | Preview configuration; set to false to disable | boolean \| PreviewConfig | true | - |
 | wrapperStyle | Deprecated. | CSSProperties | - | - |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | ImageClassNamesType | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | ImageStylesType | - | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function. | ImageClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | ImageStylesType | - | - |
 | rootClass | - | string | - | - |
-| alt | 图像描述 | string | - | _ |
-| height | 图像高度 | string \| number | - | - |
-| src | 图片地址 | string | - | - |
-| width | 图像宽度 | string \| number | - | - |
+| alt | Image description | string | - | _ |
+| height | Image height | string \| number | - | - |
+| src | Image URL | string | - | - |
+| width | Image width | string \| number | - | - |
 
-其他属性见 [&lt;img>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Attributes)
+### Events
 
-### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| error | 加载错误回调 | NonNullable&lt;VcImageProps['onError']&gt; | - |
+| error | Callback when loading error occurs | NonNullable&lt;VcImageProps['onError']&gt; | - |
 | click | - | NonNullable&lt;VcImageProps['onClick']&gt; | - |
 
-### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+### Slots
+
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| fallback | 加载失败容错地址 | () =&gt; any | - |
-| placeholder | 加载占位，为 `true` 时使用默认占位 | () =&gt; any | - |
+| fallback | Fallback URL when load fails | () =&gt; any | - |
+| placeholder | Loading placeholder; if true, uses default placeholder | () =&gt; any | - |
+
+Other Property ref [&lt;img>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Attributes)
 
 ### PreviewType
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| actionsRender | 自定义工具栏渲染 | (originalNode: VNode, info: ToolbarRenderInfoType) => VNode | - | - |
-| closeIcon | 自定义关闭 Icon | VNode | - | - |
-| cover | 自定义预览遮罩 | VNode \| [CoverConfig](#coverconfig) | - | - |
-| getContainer | 指定预览挂载的节点，但依旧为全屏展示，false 为挂载在当前位置 | string \| HTMLElement \| (() => HTMLElement) \| false | - | - |
-| imageRender | 自定义预览内容 | (originalNode: VNode, info: { transform: [TransformType](#transformtype), image: [ImgInfo](#imginfo) }) => VNode | - | - |
-| mask | 预览遮罩效果 | boolean \| \{ enabled?: boolean, blur?: boolean \} | true | - |
-| maxScale | 最大缩放倍数 | number | 50 | - |
-| minScale | 最小缩放倍数 | number | 1 | - |
-| movable | 是否可移动 | boolean | true | - |
-| open | 是否显示预览 | boolean | - | - |
-| rootClassName | 预览图的根 DOM 类名，会同时作用在图片和预览层最外侧 | string | - | - |
-| scaleStep | `1 + scaleStep` 为缩放放大的每步倍数 | number | 0.5 | - |
-| src | 自定义预览 src | string | - | - |
-| onOpenChange | 预览打开状态变化的回调 | (visible: boolean) => void | - | - |
-| onTransform | 预览图 transform 变化的回调 | { transform: [TransformType](#transformtype), action: [TransformAction](#transformaction) } | - | - |
+| actionsRender | Custom toolbar render | (originalNode: VNode, info: ToolbarRenderInfoType) => VNode | - | - |
+| closeIcon | Custom close icon | VNode | - | - |
+| cover | Custom preview mask | VNode \| [CoverConfig](#coverconfig) | - | CoverConfig support after v6.0 |
+| getContainer | Specify container for preview mounting; still full screen; false mounts at current location | string \| HTMLElement \| (() => HTMLElement) \| false | - | - |
+| imageRender | Custom preview content | (originalNode: VNode, info: { transform: [TransformType](#transformtype), image: [ImgInfo](#imginfo) }) => VNode | - | - |
+| mask | preview mask effect | boolean \| \{ enabled?: boolean, blur?: boolean \} | true | - |
+| maxScale | Maximum zoom scale | number | 50 | - |
+| minScale | Minimum zoom scale | number | 1 | - |
+| movable | Whether it is movable | boolean | true | - |
+| open | Whether to display preview | boolean | - | - |
+| rootClassName | Root DOM class name for preview; applies to both image and preview wrapper | string | - | - |
+| scaleStep | Each step's zoom multiplier is 1 + scaleStep | number | 0.5 | - |
+| src | Custom preview src | string | - | - |
+| onOpenChange | Callback when preview open state changes | (visible: boolean) => void | - | - |
+| onTransform | Callback for preview transform changes | { transform: [TransformType](#transformtype), action: [TransformAction](#transformaction) } | - | - |
 
 ### PreviewGroup
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| fallback | 加载失败容错地址 | string | - | - |
-| items | 预览数组 | string[] \| { src: string, crossOrigin: string, ... }[] | - | - |
-| preview | 预览参数，为 `false` 时禁用 | boolean \| [PreviewGroupType](#previewgrouptype) | true | - |
+| fallback | Fallback URL for load error | string | - | - |
+| items | Array of preview items | string[] \| { src: string, crossOrigin: string, ... }[] | - | - |
+| preview | Preview configuration; disable by setting to false | boolean \| [PreviewGroupType](#previewgrouptype) | true | - |
 
 ### PreviewGroupType
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| actionsRender | 自定义工具栏渲染 | (originalNode: VNode, info: ToolbarRenderInfoType) => VNode | - | - |
-| closeIcon | 自定义关闭 Icon | VNode | - | - |
-| countRender | 自定义预览计数内容 | (current: number, total: number) => VNode | - | - |
-| current | 当前预览图的 index | number | - | - |
-| getContainer | 指定预览挂载的节点，但依旧为全屏展示，false 为挂载在当前位置 | string \| HTMLElement \| (() => HTMLElement) \| false | - | - |
-| imageRender | 自定义预览内容 | (originalNode: VNode, info: { transform: [TransformType](#transformtype), image: [ImgInfo](#imginfo), current: number }) => VNode | - | - |
-| mask | 预览遮罩效果 | boolean \| \{ enabled?: boolean, blur?: boolean \} | true | - |
-| minScale | 最小缩放倍数 | number | 1 | - |
-| maxScale | 最大放大倍数 | number | 50 | - |
-| movable | 是否可移动 | boolean | true | - |
-| open | 是否显示预览 | boolean | - | - |
-| scaleStep | `1 + scaleStep` 为缩放放大的每步倍数 | number | 0.5 | - |
-| onOpenChange | 预览打开状态变化回调，额外携带当前预览图索引 | (visible: boolean, info: { current: number }) => void | - | - |
-| onChange | 切换预览图的回调 | (current: number, prevCurrent: number) => void | - | - |
-| onTransform | 预览图 transform 变化的回调 | { transform: [TransformType](#transformtype), action: [TransformAction](#transformaction) } | - | - |
+| actionsRender | Custom toolbar render | (originalNode: VNode, info: ToolbarRenderInfoType) => VNode | - | - |
+| closeIcon | Custom close icon | VNode | - | - |
+| countRender | Custom preview count render | (current: number, total: number) => VNode | - | - |
+| current | Index of the current preview image | number | - | - |
+| getContainer | Specify container for preview mounting; still full screen; false mounts at current location | string \| HTMLElement \| (() => HTMLElement) \| false | - | - |
+| imageRender | Custom preview content | (originalNode: VNode, info: { transform: [TransformType](#transformtype), image: [ImgInfo](#imginfo), current: number }) => VNode | - | - |
+| mask | preview mask effect | boolean \| \{ enabled?: boolean, blur?: boolean \} | true | - |
+| minScale | Minimum zoom scale | number | 1 | - |
+| maxScale | Maximum zoom scale | number | 50 | - |
+| movable | Whether movable | boolean | true | - |
+| open | Whether to display preview | boolean | - | - |
+| scaleStep | Each step's zoom multiplier is 1 + scaleStep | number | 0.5 | - |
+| onOpenChange | Callback when preview open state changes, includes current preview index | (visible: boolean, info: { current: number }) => void | - | - |
+| onChange | Callback when changing preview image | (current: number, prevCurrent: number) => void | - | - |
+| onTransform | Callback for preview transform changes | { transform: [TransformType](#transformtype), action: [TransformAction](#transformaction) } | - | - |
 
 ## Interface
 
@@ -137,12 +138,11 @@ type TransformAction
     | 'doubleClick'
     | 'move'
     | 'dragRebound'
-    | 'reset'
 ```
 
 ### ToolbarRenderInfoType
 
-```typescript
+```ts
 {
   icons: {
     flipYIcon: VNode;
@@ -165,14 +165,13 @@ type TransformAction
   };
   transform: TransformType,
   current: number;
-  total: number;
   image: ImgInfo
 }
 ```
 
 ### ImgInfo
 
-```typescript
+```ts
 {
   url: string
   alt: string
@@ -183,12 +182,13 @@ type TransformAction
 
 ### CoverConfig
 
-```typescript
+```ts
 interface CoverConfig {
-  coverNode?: VNode // 自定义遮罩元素
-  placement?: 'top' | 'bottom' | 'center' // 设置预览遮罩显示的位置
+  coverNode?: VNode // The custom node of preview mask
+  placement?: 'top' | 'bottom' | 'center' // Set the position of the preview mask display.
 };
 ```
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |

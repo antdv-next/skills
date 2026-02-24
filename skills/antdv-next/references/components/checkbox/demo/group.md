@@ -1,8 +1,8 @@
-# Checkbox 组
+# Checkbox Group
 
-## Description (zh-CN)
+## Description (en-US)
 
-方便的从数组生成 Checkbox 组。
+Generate a group of checkboxes from an array.
 
 ## Source
 

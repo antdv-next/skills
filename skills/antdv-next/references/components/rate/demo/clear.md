@@ -1,8 +1,8 @@
-# 清除
+# Clear star
 
-## Description (zh-CN)
+## Description (en-US)
 
-支持允许或者禁用清除。
+Support set allow to clear star when click again.
 
 ## Source
 

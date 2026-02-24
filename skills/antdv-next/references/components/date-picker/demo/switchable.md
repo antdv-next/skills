@@ -1,8 +1,8 @@
-# 切换不同的选择器
+# Switchable picker
 
-## Description (zh-CN)
+## Description (en-US)
 
-提供选择器，自由切换不同类型的日期选择器，常用于日期筛选场合。
+Switch in different types of pickers by Select.
 
 ## Source
 

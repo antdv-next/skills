@@ -1,8 +1,8 @@
-# 自定义进度条样式
+# Customize Progress Bar
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `progress` 属性自定义进度条样式。
+Use `progress` for customize progress bar.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 更多
+# More
 
-## Description (zh-CN)
+## Description (en-US)
 
-更多分页。
+More pages.
 
 ## Source
 

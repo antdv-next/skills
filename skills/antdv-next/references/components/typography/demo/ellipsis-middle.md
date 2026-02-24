@@ -1,8 +1,8 @@
-# 省略中间
+# Ellipsis from middle
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `ellipsis={{ suffix: ... }}` 可以封装一个从中间省略内容的组件，适合于需要保留文本末位特征的内容。
+You can ellipsis content from middle by customize `ellipsis={{ suffix: ... }}`.
 
 ## Source
 

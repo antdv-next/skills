@@ -1,8 +1,8 @@
-# 切换箭头
+# Arrows for switching
 
-## Description (zh-CN)
+## Description (en-US)
 
-显示切换箭头。
+Show the arrows for switching.
 
 ## Source
 

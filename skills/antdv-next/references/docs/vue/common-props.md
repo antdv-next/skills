@@ -1,12 +1,12 @@
 ---
-title: 通用属性
+title: Common Props
 ---
 
-> Tips: 以下通用属性适用于 antdv-next 大部分组件，不支持的组件会单独说明。
+> Tips: The following generic properties apply to most antdv-next components; those not supported are described separately.
 
-| 参数        | 说明 | 类型 | 默认值 |
-|-----------| --- | --- | --- |
-| style     | 自定义样式 | CSSProperties | - |
-| class     | 自定义类名 | string | - |
-| rootClass | 添加在组件最外层的 className | string | - |
-| autoFocus | 自动获取焦点，仅对表单类、链接、交互容器等可聚焦元素生效 | boolean | false |
+| Property      | Description | Type | Default |
+|---------------| --- | --- | --- |
+| style         | The additional style | CSSProperties | - |
+| class         | The additional css class | string | - |
+| rootClass | ClassName on the root element | string | - |
+| autoFocus     | Auto focus when component mounted, only effective for focusable elements like forms, links, etc. | boolean | false |

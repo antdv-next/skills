@@ -1,8 +1,8 @@
-# 渐变按钮
+# Gradient Button
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 ConfigProvider 设置 `button.classes` 可以添加自定义样式,这里展示了如何为按钮添加渐变色效果。
+You can add custom styles by setting `button.classes` in ConfigProvider. This example shows how to add a gradient effect to buttons.
 
 ## Source
 

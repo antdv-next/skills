@@ -1,8 +1,8 @@
-# 面板嵌套
+# Nested panel
 
-## Description (zh-CN)
+## Description (en-US)
 
-嵌套折叠面板。
+`Collapse` is nested inside the `Collapse`.
 
 ## Source
 

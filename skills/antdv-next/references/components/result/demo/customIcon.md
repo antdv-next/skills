@@ -1,8 +1,8 @@
-# 自定义 icon
+# Custom icon
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义 icon。
+Custom icon.
 
 ## Source
 

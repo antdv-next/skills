@@ -1,8 +1,8 @@
-# 自定义渲染对话框
+# Custom modal content render
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义渲染对话框内容，可通过第三方库实现拖拽等能力。
+Custom modal content render. You can integrate drag libraries if needed.
 
 ## Source
 

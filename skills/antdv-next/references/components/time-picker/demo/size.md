@@ -1,8 +1,8 @@
-# 三种大小
+# Three Sizes
 
-## Description (zh-CN)
+## Description (en-US)
 
-三种大小的输入框，大的用在表单中，中的为默认。
+The input box comes in three sizes: large, middle and small. Large is used in the form, while the medium size is the default.
 
 ## Source
 

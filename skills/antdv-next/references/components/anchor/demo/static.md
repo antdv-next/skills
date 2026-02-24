@@ -1,8 +1,8 @@
-# 静态位置
+# Static Anchor
 
-## Description (zh-CN)
+## Description (en-US)
 
-不浮动，状态不随页面滚动变化。
+Do not change state when page is scrolling.
 
 ## Source
 

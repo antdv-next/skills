@@ -1,8 +1,8 @@
-# 等待及排序
+# Pending
 
-## Description (zh-CN)
+## Description (en-US)
 
-节点支持 `loading` 属性表示加载，`reverse` 属性用于控制节点排序。
+Node supports `loading` to indicate loading, and `reverse` property to control the order of nodes.
 
 ## Source
 

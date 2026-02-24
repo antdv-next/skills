@@ -1,8 +1,8 @@
-# 自定义页脚渲染函数
+# Customized Footer render function
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义页脚渲染函数，支持在原有基础上进行扩展。
+Customize the footer rendering function to support extensions on top of the original.
 
 ## Source
 

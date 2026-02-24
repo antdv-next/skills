@@ -1,8 +1,8 @@
-# 自定义交互图标和文件信息
+# Custom action icon and extra info
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `showUploadList` 设置列表交互图标和其他文件信息。
+Use `showUploadList` for custom action icons and extra information of files.
 
 ## Source
 

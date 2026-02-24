@@ -1,8 +1,8 @@
-# 垂直分割线
+# Vertical
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `orientation="vertical"` 设置为行内的垂直分割线。
+Use `orientation="vertical"` make it vertical.
 
 ## Source
 

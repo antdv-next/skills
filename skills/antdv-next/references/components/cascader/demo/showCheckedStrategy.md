@@ -1,8 +1,8 @@
-# 自定义回填方式
+# ShowCheckedStrategy
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过设置 `showCheckedStrategy` 选择回填方式。
+Shows a selected item in a box using `showCheckedStrategy`.
 
 ## Source
 

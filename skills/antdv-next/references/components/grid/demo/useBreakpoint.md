@@ -1,8 +1,8 @@
 # useBreakpoint Hook
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `useBreakpoint` Hook 实现个性化布局，其中 `xs` 仅当满足最小宽度时生效。
+Use the `useBreakpoint` hook to build personalized layouts. `xs` only takes effect when the screen matches the minimum width.
 
 ## Source
 

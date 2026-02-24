@@ -1,10 +1,10 @@
-# 获得选项的文本
+# Get value of selected item
 
-## Description (zh-CN)
+## Description (en-US)
 
-默认情况下 `onChange` 回调只能获取到 value，如需获取选中项的 label，可使用 `labelInValue` 属性。
+As a default behavior, the `onChange` callback can only get the `value` of the selected item. The `labelInValue` prop can be used to get the `label` property of the selected item.
 
-选中项的 label 会被包装到 value 中传递给 `onChange` 回调。
+The `label` of the selected item will be packed as an object for passing to the `onChange` callback.
 
 ## Source
 

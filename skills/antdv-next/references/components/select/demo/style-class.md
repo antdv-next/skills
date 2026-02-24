@@ -1,8 +1,8 @@
-# 自定义语义结构的样式和类
+# Custom semantic dom styling
 
-## Description (zh-CN)
+## Description (en-US)
 
-您可以通过 `classes` 和 `styles` 传入对象/函数来自定义 Select 的语义化 DOM 样式。
+You can customize the semantic dom style of Select by passing objects/functions through `classes` and `styles`.
 
 ## Source
 

@@ -1,56 +1,62 @@
 ---
 title: Spin
-subtitle: 加载中
-description: 用于页面和区块的加载中状态。
+description: Used for the loading status of a page or a block.
 ---
 
-## 何时使用 
-页面局部处于等待异步数据或正在渲染过程时，合适的加载动效会有效缓解用户的焦虑。
+## When To Use
+
+When part of the page is waiting for asynchronous data or during a rendering process, an appropriate loading animation can effectively alleviate users' inquietude.
+
+## Examples
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本用法 | demo/basic.md |
-| 各种大小 | demo/size.md |
-| 卡片加载中 | demo/nested.md |
-| 自定义描述文案 | demo/tip.md |
-| 延迟 | demo/delay-and-debounce.md |
-| 自定义指示符 | demo/custom-indicator.md |
-| 进度 | demo/percent.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
-| 全屏 | demo/fullscreen.md |
+| Basic Usage | demo/basic.md |
+| Size | demo/size.md |
+| Embedded mode | demo/nested.md |
+| Customized description | demo/tip.md |
+| Delay | demo/delay-and-debounce.md |
+| Custom spinning indicator | demo/custom-indicator.md |
+| Progress | demo/percent.md |
+| Custom semantic dom styling | demo/style-class.md |
+| Fullscreen | demo/fullscreen.md |
 
 ## API
 
-### 属性 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+### Props
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+Common props ref：[Common props](../../docs/vue/common-props.md)
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| spinning | 是否为加载中状态 | boolean | true | - |
-| size | 组件大小，可选值为 `small` `default` `large` | SpinSize | `default` | - |
-| tip | 当作为包裹元素时，可以自定义描述文案 | VueNode | - | - |
-| delay | 延迟显示加载效果的时间（防止闪烁） | number | - | - |
-| wrapperClassName | 包装器的类属性 | string | - | - |
-| indicator | 加载指示符 | VueNode | - | - |
-| fullscreen | 显示带有 `Spin` 组件的背景 | boolean | false | - |
-| percent | 展示进度，当设置 `percent="auto"` 时会预估一个永远不会停止的进度 | number \| 'auto' | - | - |
-| rootClass | 根容器类名 | string | - | - |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | SpinClassNamesType | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | SpinStylesType | - | - |
+| spinning | Whether Spin is visible | boolean | true | - |
+| size | The size of Spin, options: `small`, `default` and `large` | SpinSize | `default` | - |
+| tip | Customize description content when Spin has children | VueNode | - | - |
+| delay | Specifies a delay in milliseconds for loading state (prevent flush) | number | - | - |
+| wrapperClassName | The className of wrapper when Spin has children | string | - | - |
+| indicator | The node of the spinning indicator | VueNode | - | - |
+| fullscreen | Display a backdrop with the `Spin` component | boolean | false | - |
+| percent | The progress percentage, when set to `auto`, it will be an indeterminate progress | number \| 'auto' | - | - |
+| rootClass | Root container class | string | - | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function. | SpinClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | SpinStylesType | - | - |
 
-### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+### Slots
+
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| default | 包裹内容 | () =&gt; any | - |
-| indicator | 加载指示符 | () =&gt; any | - |
-| tip | 当作为包裹元素时，可以自定义描述文案 | () =&gt; any | - |
+| default | Content to wrap with Spin | () =&gt; any | - |
+| indicator | The node of the spinning indicator | () =&gt; any | - |
+| tip | Customize description content when Spin has children | () =&gt; any | - |
 
-### 静态方法 
+### Static Methods
+
 - `Spin.setDefaultIndicator(indicator: VueNode)`
 
-  你可以自定义全局默认 Spin 的元素。
+  You can define default spin element globally.
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |

@@ -1,8 +1,8 @@
-# 图标按钮
+# Icon
 
-## Description (zh-CN)
+## Description (en-US)
 
-你可以通过 `icon` 插槽为标签添加自定义图标
+You can add a custom icon to the tag via the `icon` slot.
 
 ## Source
 

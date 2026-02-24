@@ -1,8 +1,8 @@
-# 配合 Form 使用
+# With Form
 
-## Description (zh-CN)
+## Description (en-US)
 
-受控模式，例如配合 Form 使用。
+Controlled mode, for example, to work with `Form`.
 
 ## Source
 

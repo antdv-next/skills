@@ -1,8 +1,8 @@
-# 步骤进度圈
+# Circular progress bar with steps
 
-## Description (zh-CN)
+## Description (en-US)
 
-步骤进度圈，支持颜色分段展示，默认间隔为 2px。
+A circular progress bar that supports steps and color segments, default gap is 2px.
 
 ## Source
 

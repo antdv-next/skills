@@ -1,8 +1,8 @@
-# 动态规则
+# Dynamic Rules
 
-## Description (zh-CN)
+## Description (en-US)
 
-根据状态动态切换校验规则。
+Toggle validation rules dynamically.
 
 ## Source
 

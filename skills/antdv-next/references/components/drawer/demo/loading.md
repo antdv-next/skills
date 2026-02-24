@@ -1,8 +1,8 @@
-# 加载中
+# Loading
 
-## Description (zh-CN)
+## Description (en-US)
 
-设置抽屉加载状态。
+Set the loading status of Drawer.
 
 ## Source
 

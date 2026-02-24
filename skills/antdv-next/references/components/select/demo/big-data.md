@@ -1,8 +1,8 @@
-# 大数据
+# Big Data
 
-## Description (zh-CN)
+## Description (en-US)
 
-Select 使用[虚拟滚动](https://github.com/react-component/virtual-list)以获得更好的性能，设置 `:virtual="false"` 可关闭。
+Select use [virtual scroll](https://github.com/react-component/virtual-list) which get better performance, turn off it by setting `:virtual="false"`.
 
 ## Source
 

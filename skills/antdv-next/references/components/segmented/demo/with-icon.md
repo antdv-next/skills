@@ -1,8 +1,8 @@
-# 设置图标
+# With Icon
 
-## Description (zh-CN)
+## Description (en-US)
 
-给 Segmented Item 设置 Icon。
+Set icon for Segmented Item.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 必选样式
+# Required style
 
-## Description (zh-CN)
+## Description (en-US)
 
-必选样式展示。
+Display required mark styles.
 
 ## Source
 

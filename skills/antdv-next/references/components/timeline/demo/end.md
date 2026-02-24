@@ -1,8 +1,8 @@
-# 另一侧时间轴点
+# Right Alternate
 
-## Description (zh-CN)
+## Description (en-US)
 
-时间轴点可以在另一侧。
+End alternate timeline.
 
 ## Source
 

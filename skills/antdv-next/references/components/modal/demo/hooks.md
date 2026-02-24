@@ -1,8 +1,8 @@
-# 使用 hooks 获得上下文
+# Use hooks to get context
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `Modal.useModal` 创建支持读取 context 的 `contextHolder`。其中仅有 hooks 方法支持 Promise `await` 操作。
+Use `Modal.useModal` to get `contextHolder` with context accessible issue. Only hooks method support Promise `await` operation.
 
 ## Source
 

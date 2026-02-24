@@ -1,62 +1,66 @@
 ---
-subtitle: 瀑布流
 title: Masonry
+description: A masonry layout component for displaying content with different heights.
 ---
 
-瀑布流布局组件，用于展示不同高度的内容。
+## When To Use
 
-## 何时使用 
-- 展示不规则高度的图片或卡片时
-- 需要按照列数均匀分布内容时
-- 需要响应式调整列数时
+- When displaying images or cards with irregular heights.
+- When content needs to be evenly distributed in columns.
+- When column count needs to be responsive.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基础用法 | demo/basic.md |
-| 响应式 | demo/responsive.md |
-| 图片 | demo/image.md |
-| 动态更新 | demo/dynamic.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
+| Basic | demo/basic.md |
+| Responsive | demo/responsive.md |
+| Image | demo/image.md |
+| Dynamic | demo/dynamic.md |
+| Custom semantic dom styling | demo/style-class.md |
+| Fresh | demo/fresh.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
-### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+### Props
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| columns | 列数，可以是固定值或响应式配置 | number \| &#123; xs?: number; sm?: number; md?: number; lg?: number; xl?: number; xxl?: number &#125; | `3` | - |
-| fresh | 是否持续监听子项尺寸变化 | boolean | `false` | - |
-| gutter | 间距，可以是固定值、响应式配置或水平垂直间距配置 | [Gap](#gap) \| [[Gap](#gap), [Gap](#gap)] | `0` | - |
-| items | 瀑布流项 | [MasonryItem](#masonryitem)[] | - | - |
-| itemRender | 自定义项渲染 | (item: MasonryItem) =&gt; VueNode | - | - |
+| columns | Number of columns, can be a fixed value or a responsive configuration | number \| &#123; xs?: number; sm?: number; md?: number; lg?: number; xl?: number; xxl?: number &#125; | 3 | - |
+| fresh | Whether to continuously monitor the size changes of child items | boolean | false | - |
+| gutter | Spacing, can be a fixed value, responsive configuration, or a configuration for horizontal and vertical spacing | [Gap](#gap) \| [[Gap](#gap), [Gap](#gap)] | 0 | - |
+| items | Masonry items | [MasonryItem](#masonryitem)[] | - | - |
+| itemRender | Custom item rendering function | (item: MasonryItem) =&gt; VueNode | - | - |
 
-### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+### Events
+
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| layoutChange | 列排序回调 | (sortInfo: &#123; key: Key; column: number &#125;[]) =&gt; void | - |
+| layoutChange | Callback for column sorting changes | (sortInfo: &#123; key: Key; column: number &#125;[]) =&gt; void | - |
 
-### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+### Slots
+
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| itemRender | 自定义项渲染插槽 | (itemInfo: MasonryItem & &#123; index: number &#125;) =&gt; VueNode | - |
+| itemRender | Custom item rendering slot | (itemInfo: MasonryItem & &#123; index: number &#125;) =&gt; VueNode | - |
 
-## 类型 
+## Types
+
 ### MasonryItem
 
-| 参数 | 说明 | 类型 | 默认值 |
+| Parameter | Description | Type | Default Value |
 | --- | --- | --- | --- |
-| key | 唯一标识 | string \| number | - |
-| height | 高度 | number | - |
-| column | 自定义所在列 | number | - |
-| data | 自定义存储数据 | T | - |
-| children | 自定义展示内容，相对 `itemRender` 具有更高优先级 | VueNode | - |
+| key | Unique identifier for the item | string \| number | - |
+| height | Height of the item | number | - |
+| column | Specifies the column to which the item belongs | number | - |
+| data | Custom data storage | T | - |
+| children | Custom display content, takes precedence over `itemRender` | VueNode | - |
 
 ### Gap
 
-Gap 是项之间的间距，可以是固定值，也可以是响应式配置。
+`Gap` represents the spacing between items. It can either be a fixed value or a responsive configuration.
 
 ```ts
 type Gap = undefined | number | Partial<Record<'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl', number>>

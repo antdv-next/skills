@@ -1,8 +1,8 @@
-# 典型卡片
+# Basic card片
 
-## Description (zh-CN)
+## Description (en-US)
 
-包含标题、内容、操作区域。
+A basic card containing a title, content and an extra corner content. Supports two sizes: `default` and `small`.
 
 ## Source
 

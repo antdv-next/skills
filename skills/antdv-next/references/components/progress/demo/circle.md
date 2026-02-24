@@ -1,8 +1,8 @@
-# 进度圈
+# Circular progress bar
 
-## Description (zh-CN)
+## Description (en-US)
 
-圈形的进度。
+A circular progress bar.
 
 ## Source
 

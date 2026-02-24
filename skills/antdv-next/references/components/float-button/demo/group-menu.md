@@ -1,8 +1,8 @@
-# 菜单模式
+# Menu mode
 
-## Description (zh-CN)
+## Description (en-US)
 
-设置 `trigger` 属性即可开启菜单模式。提供 `hover` 和 `click` 两种触发方式。
+Open menu mode with `trigger`, which could be `hover` or `click`.
 
 ## Source
 

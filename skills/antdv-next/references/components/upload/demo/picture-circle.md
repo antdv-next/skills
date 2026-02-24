@@ -1,8 +1,8 @@
-# 圆形照片墙
+# Pictures with picture-circle type
 
-## Description (zh-CN)
+## Description (en-US)
 
-图片卡的替代显示。
+Alternative display for picture-card.
 
 ## Source
 

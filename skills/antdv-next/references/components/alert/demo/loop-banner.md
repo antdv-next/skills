@@ -1,8 +1,8 @@
-# 轮播公告
+# Loop Banner
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 CSS 动画实现轮播通知栏。
+Use CSS animation to create a loop banner.
 
 ## Source
 

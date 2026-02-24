@@ -1,8 +1,8 @@
-# 基本
+# Basic
 
-## Description (zh-CN)
+## Description (en-US)
 
-最简单的用法，浮层的大小由内容区域决定。
+The most basic example. The size of the floating layer depends on the contents region.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 鼠标滚轮
+# Wheel
 
-## Description (zh-CN)
+## Description (en-US)
 
-启用鼠标滚轮控制。
+Control with mouse wheel.
 
 ## Source
 

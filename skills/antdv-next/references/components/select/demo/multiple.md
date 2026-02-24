@@ -1,8 +1,8 @@
-# 多选
+# Multiple selection
 
-## Description (zh-CN)
+## Description (en-US)
 
-多选，从已有条目中选择。
+Multiple selection, selecting from existing items.
 
 ## Source
 

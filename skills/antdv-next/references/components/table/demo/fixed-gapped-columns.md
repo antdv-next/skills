@@ -1,8 +1,8 @@
-# 超宽固定列
+# Wide Fixed Columns
 
-## Description (zh-CN)
+## Description (en-US)
 
-混合固定列，滚动到一定距离进行堆叠，推荐配合 `bordered` 使用。
+Fixed column only when scroll some distance, and scroll to stack other columns. Recommend use with `bordered`.
 
 ## Source
 

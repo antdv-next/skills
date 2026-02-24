@@ -1,8 +1,8 @@
-# 自定义语义化结构样式
+# Custom semantic dom styling
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义语义化结构的样式和类。
+Custom semantic dom styling.
 
 ## Source
 

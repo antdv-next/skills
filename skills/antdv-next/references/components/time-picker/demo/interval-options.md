@@ -1,8 +1,8 @@
-# 步长选项
+# interval option
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以使用 `hourStep` `minuteStep` `secondStep` 按步长展示可选的时分秒。
+Show stepped options by `hourStep` `minuteStep` `secondStep`.
 
 ## Source
 

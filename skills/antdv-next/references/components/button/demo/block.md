@@ -1,8 +1,8 @@
-# Block 按钮
+# Block Button
 
-## Description (zh-CN)
+## Description (en-US)
 
-`block` 属性将使按钮适合其父宽度。
+The `block` property will make a button fit to its parent width.
 
 ## Source
 

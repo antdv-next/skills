@@ -1,8 +1,8 @@
-# 计时器
+# Timer
 
-## Description (zh-CN)
+## Description (en-US)
 
-计时器组件。
+Timer component.
 
 ## Source
 

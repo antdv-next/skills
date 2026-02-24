@@ -1,10 +1,8 @@
-# 栅格排序
+# Grid sort
 
-## Description (zh-CN)
+## Description (en-US)
 
-列排序。
-
-通过使用 `push` 和 `pull` 可以很容易地改变列的顺序。
+By using `push` and `pull`, you can easily change column order.
 
 ## Source
 

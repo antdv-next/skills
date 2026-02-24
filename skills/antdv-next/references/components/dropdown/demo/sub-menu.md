@@ -1,8 +1,8 @@
-# 多级菜单
+# Cascading menu
 
-## Description (zh-CN)
+## Description (en-US)
 
-传入的菜单里有多个层级。
+The menu has multiple levels.
 
 ## Source
 

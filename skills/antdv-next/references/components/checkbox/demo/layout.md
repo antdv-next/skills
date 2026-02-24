@@ -1,8 +1,8 @@
-# 布局
+# Use with Grid
 
-## Description (zh-CN)
+## Description (en-US)
 
-CheckboxGroup 内嵌 Checkbox 并与 Grid 组件一起使用，可以实现灵活的布局。
+We can use Checkbox and Grid in CheckboxGroup, to implement complex layout.
 
 ## Source
 

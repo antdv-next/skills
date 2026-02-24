@@ -1,23 +1,23 @@
 ---
-title: Nuxt支持
+title: Nuxt
 ---
 
-`@antdv-next/nuxt` 是 `antdv-next` 官方提供的 Nuxt 模块。
+`@antdv-next/nuxt` is the official Nuxt module for `antdv-next`.
 
-## 版本要求
+## Version Requirements
 
 - Nuxt >= 4.0.0
 - Vue >= 3.5.0
 - antdv-next >= 1.0.4
 - @antdv-next/icons >= 1.0.1
 
-## 安装
+## Installation
 
 ```shell
 npx nuxi@latest module add @antdv-next/nuxt
 ```
 
-或手动安装依赖：
+Or install dependencies manually:
 
 ```shell
 # via pnpm
@@ -30,7 +30,7 @@ npm i -D @antdv-next/nuxt antdv-next @antdv-next/icons
 yarn add -D @antdv-next/nuxt antdv-next @antdv-next/icons
 ```
 
-## 配置
+## Configuration
 
 ```ts
 export default defineNuxtConfig({
@@ -41,9 +41,9 @@ export default defineNuxtConfig({
 })
 ```
 
-模块的配置键是 `antd`。
+The module config key is `antd`.
 
-## 使用
+## Usage
 
 ```vue
 <template>
@@ -52,11 +52,11 @@ export default defineNuxtConfig({
 </template>
 ```
 
-默认情况下，组件会以 `A` 前缀注册，比如 `AButton`、`ATable`、`AQrcode`。
+By default, components are registered with prefix `A`, for example `AButton`, `ATable`, and `AQrcode`.
 
-## 样式
+## Styles
 
-引入基础重置样式：
+Add reset styles:
 
 ```ts
 export default defineNuxtConfig({
@@ -64,7 +64,7 @@ export default defineNuxtConfig({
 })
 ```
 
-如果你使用 zero-runtime 主题模式(推荐模式)，还需要引入：
+If you use zero-runtime theme mode (recommended), also include:
 
 ```ts
 export default defineNuxtConfig({
@@ -74,31 +74,32 @@ export default defineNuxtConfig({
   ],
 })
 ```
-:::warning 需要注意的是
-如果开启了 `nuxt devtools`，开发模式下的样式加载可能会变慢。  
-如果你遇到样式加载过慢或页面暂时无法正常点击的情况，请先尝试关闭 `nuxt devtools`或等待 `devtools` 加载完成后再操作。
 
-该问题不会影响正常预编译开发流程，也不会影响生产环境。
+:::warning Note
+
+If `nuxt devtools` is enabled, style loading in development may become slower. If you encounter slow style loading or temporarily unclickable UI, try disabling `nuxt devtools`, or wait until loading is finished in the console before interacting.
+
+This does not affect normal precompiled development flow, and it does not affect production builds.
 
 :::
 
-## 选项
+## Options
 
-| 选项 | 类型 | 默认值 | 说明 |
+| Option | Type | Default | Description |
 | --- | --- | --- | --- |
-| `icon` | `boolean` | `false` | 是否自动注册 `@antdv-next/icons` 图标组件。 |
-| `prefix` | `string` | `'A'` | 自动注册组件的统一前缀。 |
-| `include` | `ComponentName[]` | `undefined` | 仅注册列表中的组件，优先级高于 `exclude`。 |
-| `exclude` | `ComponentName[]` | `undefined` | 当未设置 `include` 时，排除列表中的组件。 |
-| `includeIcons` | `IconName[]` | `undefined` | 仅注册列表中的图标，优先级高于 `excludeIcons`。 |
-| `excludeIcons` | `IconName[]` | `undefined` | 当未设置 `includeIcons` 时，排除列表中的图标。 |
+| `icon` | `boolean` | `false` | Enable auto-registration for `@antdv-next/icons`. |
+| `prefix` | `string` | `'A'` | Prefix for all auto-registered components. |
+| `include` | `ComponentName[]` | `undefined` | Only register listed components. Higher priority than `exclude`. |
+| `exclude` | `ComponentName[]` | `undefined` | Exclude listed components when `include` is not set. |
+| `includeIcons` | `IconName[]` | `undefined` | Only register listed icons. Higher priority than `excludeIcons`. |
+| `excludeIcons` | `IconName[]` | `undefined` | Exclude listed icons when `includeIcons` is not set. |
 
-说明：
+Notes:
 
-- `includeIcons` 和 `excludeIcons` 仅在 `icon` 开启时生效。
-- `ComponentName` 和 `IconName` 类型可从模块类型定义中获取。
+- `includeIcons` and `excludeIcons` work only when `icon` is enabled.
+- `ComponentName` and `IconName` are exported from the module type definitions.
 
-## 完整示例
+## Full Example
 
 ```ts
 export default defineNuxtConfig({

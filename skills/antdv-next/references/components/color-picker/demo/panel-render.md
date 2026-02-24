@@ -1,8 +1,8 @@
-# 自定义面板
+# Custom Render Panel
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `panelRender` 自由控制面板的渲染。
+Rendering of the free control panel via `panelRender`.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 顶部导航
+# Top Navigation
 
-## Description (zh-CN)
+## Description (en-US)
 
-水平的顶部导航菜单。
+Horizontal top navigation menu.
 
 ## Source
 

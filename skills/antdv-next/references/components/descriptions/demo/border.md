@@ -1,8 +1,8 @@
-# 带边框的
+# border
 
-## Description (zh-CN)
+## Description (en-US)
 
-带边框和背景颜色列表。
+Descriptions with border and background color.
 
 ## Source
 

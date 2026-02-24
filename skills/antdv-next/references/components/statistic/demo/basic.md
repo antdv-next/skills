@@ -1,8 +1,8 @@
-# 基本
+# Basic
 
-## Description (zh-CN)
+## Description (en-US)
 
-简单的展示。
+Simplest Usage.
 
 ## Source
 

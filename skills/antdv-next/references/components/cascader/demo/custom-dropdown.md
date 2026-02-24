@@ -1,8 +1,8 @@
-# 扩展菜单
+# Custom dropdown
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `popupRender` 对下拉菜单进行自由扩展。
+Customize the dropdown menu via `popupRender`.
 
 ## Source
 

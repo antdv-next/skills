@@ -1,8 +1,8 @@
-# 在卡片中使用
+# In Card
 
-## Description (zh-CN)
+## Description (en-US)
 
-在卡片中展示统计数值。
+Display statistic data in Card.
 
 ## Source
 

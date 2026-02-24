@@ -1,8 +1,8 @@
-# 箭头展示
+# Arrow
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `arrow` 属性隐藏箭头。
+Hide arrow by `arrow`.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 仅校验
+# Validate Only
 
-## Description (zh-CN)
+## Description (en-US)
 
-仅校验，不更新校验状态。
+Validate only without triggering UI status updates.
 
 ## Source
 

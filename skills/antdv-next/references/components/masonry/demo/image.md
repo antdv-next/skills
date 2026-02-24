@@ -1,8 +1,8 @@
-# 图片
+# Image
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用瀑布流展示图片列表。
+Display image list using masonry layout.
 
 ## Source
 

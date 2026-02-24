@@ -1,15 +1,16 @@
 ---
 title: Table
-subtitle: 表格
-description: 展示行列数据。
+description: A table displays rows of data.
 ---
 
-## 何时使用 
-- 当有大量结构化的数据需要展现时；
-- 当需要对数据进行排序、搜索、分页、自定义操作等复杂行为时。
+## When To Use
 
-## 如何使用 
-指定表格的数据源 `dataSource` 为一个数组。
+- To display a collection of structured data.
+- To sort, search, paginate, filter data.
+
+## How To Use
+
+Specify `dataSource` of Table as an array of data.
 
 ```vue
 <script setup lang="ts">
@@ -56,86 +57,89 @@ const columns = [
 
 | Demo | Path |
 | --- | --- |
-| 基础用法 | demo/basic.md |
-| 带边框 | demo/bordered.md |
-| 异步数据 | demo/ajax.md |
-| 分页 | demo/pagination.md |
-| 尺寸 | demo/size.md |
-| 粘性表头 | demo/sticky.md |
-| 固定表头 | demo/fixed-header.md |
-| 固定列 | demo/fixed-columns.md |
-| 固定列与表头 | demo/fixed-columns-header.md |
-| 超宽固定列 | demo/fixed-gapped-columns.md |
-| 窄屏表格 | demo/narrow.md |
-| 响应式 | demo/responsive.md |
-| 分组表头 | demo/grouping-columns.md |
-| 合并单元格 | demo/colspan-rowspan.md |
-| 汇总行 | demo/summary.md |
-| 自定义空状态 | demo/custom-empty.md |
-| 自定义筛选 | demo/custom-filter-panel.md |
-| 筛选搜索 | demo/filter-search.md |
-| 树形筛选 | demo/filter-in-tree.md |
-| 排序与筛选 | demo/head.md |
-| 多列排序 | demo/multiple-sorter.md |
-| 列顺序 | demo/order-column.md |
-| 隐藏列 | demo/hidden-columns.md |
-| 拖动行排序 | demo/drag-sorting.md |
-| 拖动手柄排序 | demo/drag-sorting-handler.md |
-| 调整列宽 | demo/resizable-column.md |
-| 整行编辑 | demo/edit-row.md |
-| 单元格编辑 | demo/edit-cell.md |
-| 超出省略 | demo/ellipsis.md |
-| 自定义省略提示 | demo/ellipsis-custom-tooltip.md |
-| 可展开行 | demo/expand.md |
-| 展开与粘性表头 | demo/expand-sticky.md |
-| 嵌套表格 | demo/nested-table.md |
-| 树形数据 | demo/tree-data.md |
-| 行选择 | demo/row-selection.md |
-| 自定义选择 | demo/row-selection-custom.md |
-| 选择与操作 | demo/row-selection-and-operation.md |
-| 重置筛选 | demo/reset-filter.md |
-| 虚拟列表 | demo/virtual-list.md |
-| 自定义样式 | demo/style-class.md |
-| 动态配置 | demo/dynamic-settings.md |
-| 表头与单元格插槽 | demo/cell-slot.md |
+| Basic | demo/basic.md |
+| Bordered | demo/bordered.md |
+| Ajax | demo/ajax.md |
+| Pagination | demo/pagination.md |
+| Size | demo/size.md |
+| Sticky Header | demo/sticky.md |
+| Fixed Header | demo/fixed-header.md |
+| Fixed Columns | demo/fixed-columns.md |
+| Fixed Columns & Header | demo/fixed-columns-header.md |
+| Wide Fixed Columns | demo/fixed-gapped-columns.md |
+| Narrow Table | demo/narrow.md |
+| Responsive | demo/responsive.md |
+| Grouped Columns | demo/grouping-columns.md |
+| Rowspan & Colspan | demo/colspan-rowspan.md |
+| Summary | demo/summary.md |
+| Custom Empty | demo/custom-empty.md |
+| Custom Filter Panel | demo/custom-filter-panel.md |
+| Filter Search | demo/filter-search.md |
+| Tree Filter | demo/filter-in-tree.md |
+| Sorting & Filtering | demo/head.md |
+| Multiple Sorter | demo/multiple-sorter.md |
+| Order Columns | demo/order-column.md |
+| Hidden Columns | demo/hidden-columns.md |
+| Drag Row Sorting | demo/drag-sorting.md |
+| Drag Handle Sorting | demo/drag-sorting-handler.md |
+| Resizable Column | demo/resizable-column.md |
+| Edit Row | demo/edit-row.md |
+| Edit Cell | demo/edit-cell.md |
+| Ellipsis | demo/ellipsis.md |
+| Custom Ellipsis Tooltip | demo/ellipsis-custom-tooltip.md |
+| Expand | demo/expand.md |
+| Expand Sticky | demo/expand-sticky.md |
+| Nested Table | demo/nested-table.md |
+| Tree Data | demo/tree-data.md |
+| Row Selection | demo/row-selection.md |
+| Custom Selection | demo/row-selection-custom.md |
+| Selection Operations | demo/row-selection-and-operation.md |
+| Reset Filter | demo/reset-filter.md |
+| Virtual List | demo/virtual-list.md |
+| Style & Class | demo/style-class.md |
+| Dynamic Settings | demo/dynamic-settings.md |
+| Header & Body Cell Slots | demo/cell-slot.md |
 
 ## API
 
-### 属性 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+### Props
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+Common props ref：[Common props](../../docs/vue/common-props.md)
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | TableClassNamesType&lt;RecordType&gt; | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | TableStylesType&lt;RecordType&gt; | - | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function. | TableClassNamesType&lt;RecordType&gt; | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | TableStylesType&lt;RecordType&gt; | - | - |
 | dropdownPrefixCls | - | string | - | - |
-| dataSource | 数据数组 | VcTableProps&lt;RecordType&gt;['data'] | - | - |
-| columns | 表格列的配置描述，具体项见下表 | ColumnsType&lt;RecordType&gt; | - | - |
-| pagination | 分页器，参考[配置项](#pagination)或 [pagination](../pagination/docs.md) 文档，设为 false 时不展示和进行分页 | false \| TablePaginationConfig | - | - |
-| loading | 页面是否加载中 | boolean \| SpinProps | false | - |
-| size | 表格大小 | SizeType | `large` | - |
-| bordered | 是否展示外边框和列边框 | boolean | false | - |
-| locale | 默认文案设置，目前包括排序、过滤、空数据文案 | TableLocale | [默认值](https://github.com/ant-design/ant-design/blob/6dae4a7e18ad1ba193aedd5ab6867e1d823e2aa4../locale/docs.md/zh_CN.tsx#L20-L37) | - |
-| rowSelection | 表格行是否可选择，[配置项](#rowselection) | TableRowSelection&lt;RecordType&gt; | - | - |
-| getPopupContainer | 设置表格内各类浮层的渲染节点，如筛选菜单 | GetPopupContainer | () =&gt; TableHtmlElement | - |
-| scroll | 表格是否可滚动，也可以指定滚动区域的宽、高，[配置项](#scroll) | VcTableProps&lt;RecordType&gt;['scroll'] & &#123; scrollToFirstRowOnChange?: boolean &#125; | - | - |
-| sortDirections | 支持的排序方式，取值为 `ascend` `descend` | SortOrder[] | \[`ascend`, `descend`] | - |
-| showSorterTooltip | 表头是否显示下一次排序的 tooltip 提示。当参数类型为对象时，将被设置为 Tooltip 的属性 | boolean \| SorterTooltipProps | &#123; target: 'full-header' &#125; | 5.16.0 |
-| virtual | 支持虚拟列表 | boolean | - | 5.9.0 |
+| dataSource | Data record array to be displayed | VcTableProps&lt;RecordType&gt;['data'] | - | - |
+| columns | Columns of table | ColumnsType&lt;RecordType&gt; | - | - |
+| pagination | Config of pagination. You can ref table pagination [config](#pagination) or full [`pagination`](../pagination/docs.md/) document, hide it by setting it to `false` | false \| TablePaginationConfig | - | - |
+| loading | Loading status of table | boolean \| SpinProps | false | - |
+| size | Size of table | SizeType | `large` | - |
+| bordered | Whether to show all table borders | boolean | false | - |
+| locale | The i18n text including filter, sort, empty text, etc | TableLocale | [Default Value](https://github.com/ant-design/ant-design/blob/6dae4a7e18ad1ba193aedd5ab6867e1d823e2aa4../locale/docs.md/en_US.tsx#L19-L37) | - |
+| rowSelection | Row selection [config](#rowselection) | TableRowSelection&lt;RecordType&gt; | - | - |
+| getPopupContainer | The render container of dropdowns in table | GetPopupContainer | () =&gt; TableHtmlElement | - |
+| scroll | Whether the table can be scrollable, [config](#scroll) | VcTableProps&lt;RecordType&gt;['scroll'] & &#123; scrollToFirstRowOnChange?: boolean &#125; | - | - |
+| sortDirections | Supported sort way, could be `ascend`, `descend` | SortOrder[] | \[`ascend`, `descend`] | - |
+| showSorterTooltip | The header show next sorter direction tooltip. It will be set as the property of Tooltip if its type is object | boolean \| SorterTooltipProps | &#123; target: 'full-header' &#125; | 5.16.0 |
+| virtual | Support virtual list | boolean | - | 5.9.0 |
 
-### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+### Events
+
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| change | 分页、排序、筛选变化时触发 | (     pagination: TablePaginationConfig,     filters: Record&lt;string, FilterValue \| null&gt;,     sorter: SorterResult&lt;RecordType&gt; \| SorterResult&lt;RecordType&gt;[],     extra: TableCurrentDataSource&lt;RecordType&gt;,   ) =&gt; void | - |
+| change | Callback executed when pagination, filters or sorter is changed | (     pagination: TablePaginationConfig,     filters: Record&lt;string, FilterValue \| null&gt;,     sorter: SorterResult&lt;RecordType&gt; \| SorterResult&lt;RecordType&gt;[],     extra: TableCurrentDataSource&lt;RecordType&gt;,   ) =&gt; void | - |
 | update:expandedRowKeys | - | (keys: readonly Key[]) =&gt; void | - |
-| scroll | 表格是否可滚动，也可以指定滚动区域的宽、高，[配置项](#scroll) | NonNullable&lt;VcTableProps['onScroll']&gt; | - |
+| scroll | Whether the table can be scrollable, [config](#scroll) | NonNullable&lt;VcTableProps['onScroll']&gt; | - |
 
-### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+### Slots
+
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| title | 表格标题 | (data: readonly RecordType[]) =&gt; any | - |
-| footer | 表格尾部 | (data: readonly RecordType[]) =&gt; any | - |
-| summary | 总结栏 | (data: readonly RecordType[]) =&gt; any | - |
+| title | Table title renderer | (data: readonly RecordType[]) =&gt; any | - |
+| footer | Table footer renderer | (data: readonly RecordType[]) =&gt; any | - |
+| summary | Summary content | (data: readonly RecordType[]) =&gt; any | - |
 | emptyText | - | () =&gt; any | - |
 | expandIcon | - | (info: any) =&gt; any | - |
 | expandedRowRender | - | (ctx: &#123; record: RecordType, index: number, indent: number, expanded: boolean &#125;) =&gt; any | - |
@@ -144,5 +148,5 @@ const columns = [
 | filterDropdown | - | (ctx: FilterDropdownProps & &#123; column: ColumnType&lt;RecordType&gt; &#125;) =&gt; any | - |
 | filterIcon | - | (ctx: &#123; column: ColumnType&lt;RecordType&gt;, filtered: boolean &#125;) =&gt; any | - |
 
-## 语义化 DOM 
+## Semantic DOM 
 | _semantic | demo/_semantic.md |

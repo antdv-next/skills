@@ -1,8 +1,8 @@
-# 带 Icon 的例子
+# With Icon
 
-## Description (zh-CN)
+## Description (en-US)
 
-带 Icon 的二维码。
+QRCode with Icon.
 
 ## Source
 

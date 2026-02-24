@@ -1,8 +1,8 @@
-# 自定义字符
+# Customize character
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以使用 `(RateProps) => ReactNode` 的方式自定义每一个字符。
+Can customize each character using `(RateProps) => ReactNode`.
 
 ## Source
 

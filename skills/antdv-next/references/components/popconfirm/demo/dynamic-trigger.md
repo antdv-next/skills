@@ -1,8 +1,8 @@
-# 条件触发
+# Conditional trigger
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以判断是否需要弹出。
+Make it pop up under some conditions.
 
 ## Source
 

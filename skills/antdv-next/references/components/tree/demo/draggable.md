@@ -1,8 +1,8 @@
-# 拖动示例
+# draggable
 
-## Description (zh-CN)
+## Description (en-US)
 
-将节点拖拽到其他节点内部或前后。
+Drag treeNode to insert after the other treeNode or insert into the other parent TreeNode.
 
 ## Source
 

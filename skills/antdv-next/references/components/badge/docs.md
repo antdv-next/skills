@@ -1,58 +1,58 @@
 ---
 title: Badge
-subtitle: 徽标数
-description: 图标右上角的圆形徽标数字。
+description: Small numerical value or status descriptor for UI elements.
 ---
 
-## 何时使用 
-一般出现在通知图标或头像的右上角，用于显示需要处理的消息条数，通过醒目视觉形式吸引用户注意力。
+## When To Use 
+Badge normally appears in proximity to notifications or user avatars with eye-catching appeal, typically displaying unread messages count.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本 | demo/basic.md |
-| 独立使用 | demo/no-wrapper.md |
-| 封顶数字 | demo/overflow.md |
-| 讨嫌的小红点 | demo/dot.md |
-| 动态 | demo/change.md |
-| 可点击 | demo/link.md |
-| 位置偏移 | demo/offset.md |
-| 大小 | demo/size.md |
-| 状态点 | demo/status.md |
-| 多彩徽标 | demo/colorful.md |
-| 缎带 | demo/ribbon.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
-| 自定义标题 | demo/title.md |
+| Basic | demo/basic.md |
+| Standalone | demo/no-wrapper.md |
+| Overflow Count | demo/overflow.md |
+| Red badge | demo/dot.md |
+| Dynamic | demo/change.md |
+| Clickable | demo/link.md |
+| Offset | demo/offset.md |
+| Size | demo/size.md |
+| Status | demo/status.md |
+| Colorful Badge | demo/colorful.md |
+| Ribbon | demo/ribbon.md |
+| Custom semantic dom styling | demo/style-class.md |
+| Title | demo/title.md |
 
 ## API
 
-### 属性 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+### Props 
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| count | 展示的数字，大于 overflowCount 时显示为 `$&#123;overflowCount&#125;+`，为 0 时隐藏 | VueNode | - | - |
-| showZero | 当数值为 0 时，是否展示 Badge | boolean | false | - |
-| overflowCount | 展示封顶的数字值 | number | 99 | - |
-| dot | 不展示数字，只有一个小红点 | boolean | false | - |
+| count | Number to show in badge | VueNode | - | - |
+| showZero | Whether to show badge when `count` is zero | boolean | false | - |
+| overflowCount | Max count to show | number | 99 | - |
+| dot | Whether to display a red dot instead of `count` | boolean | false | - |
 | scrollNumberPrefixCls | - | string | - | - |
-| status | 设置 Badge 为状态点 | PresetStatusColorType | - | - |
-| color | 自定义小圆点的颜色 | LiteralUnion&lt;PresetColorKey&gt; | - | - |
-| text | 在设置了 `status` 的前提下有效，设置状态点的文本 | VueNode | - | - |
-| size | 在设置了 `count` 的前提下有效，设置小圆点的大小 | 'default' \| 'small' | - | - |
-| offset | 设置状态点的位置偏移 | [number \| string, number \| string] | - | - |
-| title | 设置鼠标放在状态点上时显示的文字 | string | - | - |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | BadgeClassNamesType | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | BadgeStylesType | - | - |
+| status | Set Badge as a status dot | PresetStatusColorType | - | - |
+| color | Customize Badge dot color | LiteralUnion&lt;PresetColorKey&gt; | - | - |
+| text | If `status` is set, `text` sets the display text of the status `dot` | VueNode | - | - |
+| size | If `count` is set, `size` sets the size of badge | 'default' \| 'small' | - | - |
+| offset | Set offset of the badge dot | [number \| string, number \| string] | - | - |
+| title | Text to show when hovering over the badge | string | - | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function. | BadgeClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | BadgeStylesType | - | - |
 
-### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+### Slots
+
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| count | 展示的数字，大于 overflowCount 时显示为 `$&#123;overflowCount&#125;+`，为 0 时隐藏 | () =&gt; any | - |
-| text | 在设置了 `status` 的前提下有效，设置状态点的文本 | () =&gt; any | - |
+| count | Number to show in badge | () =&gt; any | - |
+| text | If `status` is set, `text` sets the display text of the status `dot` | () =&gt; any | - |
 
-## 语义化 DOM
+## Semantic DOM
 
 ### Badge
 

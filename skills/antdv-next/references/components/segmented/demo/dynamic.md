@@ -1,8 +1,8 @@
-# 动态数据
+# Dynamic
 
-## Description (zh-CN)
+## Description (en-US)
 
-动态加载数据。
+Load options dynamically.
 
 ## Source
 

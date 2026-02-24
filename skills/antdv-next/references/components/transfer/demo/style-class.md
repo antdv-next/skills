@@ -1,8 +1,8 @@
-# 语义化样式
+# Custom semantic dom styling
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `classes` 和 `styles` 传入对象/函数可以自定义 Transfers 的语义化结构样式。
+You can customize the semantic dom style of Transfers by passing objects/functions through `classes` and `styles`.
 
 ## Source
 

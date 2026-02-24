@@ -1,8 +1,8 @@
-# 固定头部
+# Fixed Header
 
-## Description (zh-CN)
+## Description (en-US)
 
-一般用于固定顶部导航，方便页面切换。
+Sticky Header is generally used to fix the top navigation to facilitate page switching.
 
 ## Source
 

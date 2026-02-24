@@ -1,8 +1,8 @@
-# 垂直方向
+# Vertical Direction
 
-## Description (zh-CN)
+## Description (en-US)
 
-垂直方向。
+Make it vertical.
 
 ## Source
 

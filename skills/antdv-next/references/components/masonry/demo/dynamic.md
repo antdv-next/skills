@@ -1,8 +1,8 @@
-# 动态更新
+# Dynamic
 
-## Description (zh-CN)
+## Description (en-US)
 
-动态添加和删除项。通过 `layoutChange` 事件可以获取到每个项的列信息。
+Dynamically add and remove items. The `layoutChange` event provides column information for each item.
 
 ## Source
 

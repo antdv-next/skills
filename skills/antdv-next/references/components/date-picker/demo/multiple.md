@@ -1,8 +1,8 @@
-# 多选
+# Multiple
 
-## Description (zh-CN)
+## Description (en-US)
 
-多选，不支持 `showTime` 以及 `picker="time"`。
+Multiple selections. Does not support `showTime` and `picker="time"`.
 
 ## Source
 

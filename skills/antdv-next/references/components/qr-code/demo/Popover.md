@@ -1,8 +1,8 @@
-# 高级用法
+# Advanced Usage
 
-## Description (zh-CN)
+## Description (en-US)
 
-带气泡卡片的例子。
+With Popover.
 
 ## Source
 

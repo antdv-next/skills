@@ -1,8 +1,8 @@
-# 自定义模态的宽度
+# To customize the width of modal
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `width` 来设置模态对话框的宽度。
+Use `width` to set the width of the modal dialog.
 
 ## Source
 

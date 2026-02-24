@@ -1,8 +1,8 @@
-# 自定义图标
+# Customized icon
 
-## Description (zh-CN)
+## Description (en-US)
 
-图标可以被自定义。
+The icon can be customized to any VueNode.
 
 ## Source
 

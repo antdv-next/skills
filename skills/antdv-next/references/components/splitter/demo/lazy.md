@@ -1,8 +1,8 @@
-# 延迟渲染
+# Lazy
 
-## Description (zh-CN)
+## Description (en-US)
 
-延迟渲染模式，只有在鼠标移动时才会更新面板大小。适用于大型页面，避免频繁重渲染导致卡顿。
+Lazy rendering mode, only updates panel size when mouse moves. Suitable for large pages to avoid frequent re-rendering causing lag.
 
 ## Source
 

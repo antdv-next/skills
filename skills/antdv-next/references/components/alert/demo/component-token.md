@@ -1,8 +1,8 @@
-# 组件 Token
+# Component Token
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义组件 Token。
+Custom component token.
 
 ## Source
 

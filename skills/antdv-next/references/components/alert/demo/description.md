@@ -1,8 +1,8 @@
-# 含辅助性文字
+# Description
 
-## Description (zh-CN)
+## Description (en-US)
 
-含有辅助性文字介绍的警告提示。
+Additional description for alert message.
 
 ## Source
 

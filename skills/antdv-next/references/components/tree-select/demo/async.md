@@ -1,8 +1,8 @@
-# 异步加载
+# Asynchronous loading
 
-## Description (zh-CN)
+## Description (en-US)
 
-异步加载树节点。
+Asynchronous loading tree node.
 
 ## Source
 

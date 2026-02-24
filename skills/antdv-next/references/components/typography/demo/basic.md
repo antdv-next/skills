@@ -1,8 +1,8 @@
-# 基本
+# Basic
 
-## Description (zh-CN)
+## Description (en-US)
 
-展示文档样例。
+Display the document sample.
 
 ## Source
 

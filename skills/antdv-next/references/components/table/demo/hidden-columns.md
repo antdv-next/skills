@@ -1,8 +1,8 @@
-# 隐藏列
+# Hidden Columns
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `hidden` 隐藏列。
+Hide columns with `hidden`.
 
 ## Source
 

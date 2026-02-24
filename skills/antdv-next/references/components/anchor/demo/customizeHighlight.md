@@ -1,8 +1,8 @@
-# 自定义锚点高亮
+# Customize the anchor highlight
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义锚点高亮。
+Customize the anchor highlight.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 自动换行
+# Wrap
 
-## Description (zh-CN)
+## Description (en-US)
 
-自动换行。
+Auto wrap.
 
 ## Source
 

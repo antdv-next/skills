@@ -1,8 +1,8 @@
-# 形态变体
+# Variants
 
-## Description (zh-CN)
+## Description (en-US)
 
-Cascader 形态变体，可选 `outlined` `filled` `borderless` `underlined` 四种形态。
+Variants of Cascader, there are four variants: `outlined` `filled` `borderless` and `underlined`.
 
 ## Source
 

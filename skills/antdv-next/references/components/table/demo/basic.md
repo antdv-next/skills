@@ -1,8 +1,8 @@
-# 基础用法
+# Basic
 
-## Description (zh-CN)
+## Description (en-US)
 
-简单的表格，最后一列是各种操作。
+Simple table with actions.
 
 ## Source
 

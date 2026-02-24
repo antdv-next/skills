@@ -1,19 +1,18 @@
 ---
 title: App
-subtitle: 包裹组件
-description: 提供重置样式和提供消费上下文的默认环境。
+description: Application wrapper for some global usages.
 ---
 
-## 何时使用 
-- 提供可消费 provider/inject 的 `message.xxx`、`Modal.xxx`、`notification.xxx` 的静态方法，可以简化 useMessage 等方法需要手动植入 `contextHolder` 的问题。
-- 提供基于 `.ant-app` 的默认重置样式，解决原生元素没有 antd 规范样式的问题。
+## When To Use 
+- Provide reset styles based on `.ant-app` element.
+- You could use static methods of `message/notification/Modal` form `useApp` without writing `contextHolder` manually.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本用法 | demo/basic.md |
-| Hooks 配置 | demo/config.md |
+| Basic | demo/basic.md |
+| Hooks config | demo/config.md |
 
 ```html
 <!-- myPage.vue -->
@@ -83,13 +82,15 @@ description: 提供重置样式和提供消费上下文的默认环境。
 
 ```
 
-## 如何使用 
-### 基础用法 
-App 组件通过 `provide/inject` 提供上下文方法调用，因而 useApp 需要作为子组件才能使用，我们推荐在应用中顶层包裹 App。
+## How to use
 
-注意：App.useApp 必须在 App 之下方可使用。
+### Basic usage
 
-### 内嵌使用场景（如无必要，尽量不做嵌套）
+App provides upstream and downstream method calls through `provide/inject`, because useApp needs to be used as a subcomponent, we recommend encapsulating App at the top level in the application.
+
+Note: App.useApp must be available under App.
+
+#### Embedded usage scenarios (if not necessary, try not to do nesting)
 
 ```html
 <a-app>
@@ -100,7 +101,9 @@ App 组件通过 `provide/inject` 提供上下文方法调用，因而 useApp �
 </a-app>
 ```
 
-#### 与 ConfigProvider 先后顺序
+#### Sequence with ConfigProvider
+
+The App component can only use the token in the `ConfigProvider`, if you need to use the Token, the ConfigProvider and the App component must appear in pairs.
 
 ```html
 <a-config-provider theme="{{ ... }}">
@@ -110,16 +113,16 @@ App 组件通过 `provide/inject` 提供上下文方法调用，因而 useApp �
 
 ## API
 
-### 属性 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+### Property 
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| message | App 内 Message 的全局配置 | MessageConfig | - | |
-| notification | App 内 Notification 的全局配置 | NotificationConfig | - | |
-| component | 设置渲染元素，为 `false` 则不创建 DOM 节点 | any | div | |
+| message | Global config for Message | MessageConfig | - | |
+| notification | Global config for Notification | NotificationConfig | - | |
+| component | Config render element, if `false` will not create DOM node | any | div | |
 
 ## FAQ
 
-### CSS Var 在 `<a-app :component="false">` 内不起作用 
-请确保 App 的 `component` 是一个有效的 html 标签名，以便在启用 CSS 变量时有一个容器来承载 CSS 类名。如果不设置，则默认为 `div` 标签，如果设置为 `false`，则不会创建额外的 DOM 节点，也不会提供默认样式。
+### CSS Var doesn't work inside `<a-app :component="false">` 
+Make sure the App `component` is a valid html tag, so when you're turning on CSS variables, there's a container to hold the CSS class name. If not set, it defaults to the `div` tag. If set to `false`, no additional DOM nodes will be created, and no default styles will be provided.

@@ -1,8 +1,8 @@
-# 日期限定范围
+# Limit Date Range
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `minDate` 和 `maxDate` 限定日期范围。
+Limit the range of available dates by using `minDate` and `maxDate`.
 
 ## Source
 

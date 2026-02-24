@@ -1,8 +1,8 @@
-# 按钮样式
+# radio style
 
-## Description (zh-CN)
+## Description (en-US)
 
-按钮样式的单选组合。
+The combination of radio button style.
 
 ## Source
 

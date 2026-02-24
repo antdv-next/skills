@@ -1,8 +1,8 @@
-# 基本
+# Basic
 
-## Description (zh-CN)
+## Description (en-US)
 
-数字输入框。
+Numeric-only input box.
 
 ## Source
 

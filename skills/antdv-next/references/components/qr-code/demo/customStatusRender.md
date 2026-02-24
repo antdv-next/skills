@@ -1,8 +1,8 @@
-# 自定义状态渲染器
+# custom status render
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以通过 `statusRender` 的值控制二维码不同状态的渲染逻辑。
+You can control the rendering logic of the QR code in different states through the value of `statusRender`.
 
 ## Source
 

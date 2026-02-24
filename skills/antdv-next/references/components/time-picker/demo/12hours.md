@@ -1,8 +1,8 @@
-# 12 小时制
+# 12 hours
 
-## Description (zh-CN)
+## Description (en-US)
 
-12 小时制的时间选择器，默认的 format 为 `h:mm:ss a`。
+TimePicker of 12 hours format, with default format `h:mm:ss a`.
 
 ## Source
 

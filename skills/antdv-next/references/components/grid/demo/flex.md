@@ -1,10 +1,10 @@
-# 排版
+# Typesetting
 
-## Description (zh-CN)
+## Description (en-US)
 
-布局基础。
+Basic layout.
 
-子元素根据 `start`、`center`、`end`、`space-between`、`space-around` 和 `space-evenly` 在父节点内进行排版。
+Child elements are aligned in the parent by `start`, `center`, `end`, `space-between`, `space-around`, and `space-evenly`.
 
 ## Source
 

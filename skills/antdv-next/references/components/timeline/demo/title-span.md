@@ -1,8 +1,8 @@
-# 标题占比
+# Title Offset
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `titleSpan` 设置标题占比空间。
+Use `titleSpan` to set the title span space.
 
 ## Source
 

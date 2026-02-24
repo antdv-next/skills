@@ -1,8 +1,8 @@
-# 禁用表单
+# Form disabled
 
-## Description (zh-CN)
+## Description (en-US)
 
-表单整体禁用。
+Disable all controls in a form.
 
 ## Source
 

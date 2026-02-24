@@ -1,65 +1,64 @@
 ---
 title: Checkbox
-subtitle: 多选框
-description: 收集用户的多项选择。
+description: Collect user's choices.
 ---
 
-## 何时使用 
+## When To Use 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本用法 | demo/basic.md |
-| 失效 | demo/disabled.md |
-| 受控的 Checkbox | demo/controller.md |
-| Checkbox 组 | demo/group.md |
-| 全选 | demo/check-all.md |
-| 布局 | demo/layout.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
+| Basic | demo/basic.md |
+| Disabled | demo/disabled.md |
+| Controlled Checkbox | demo/controller.md |
+| Checkbox Group | demo/group.md |
+| Check all | demo/check-all.md |
+| Use with Grid | demo/layout.md |
+| Custom semantic dom styling | demo/style-class.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
 ### Checkbox
 
-#### 属性 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| checked | 指定当前是否选中，支持 `v-model:checked` | string \| number \| boolean \| object | false | - |
-| checkedValue | 选中时的值 | string \| number \| boolean \| object | true | - |
-| defaultChecked | 初始是否选中 | string \| number \| boolean \| object | false | - |
-| disabled | 失效状态 | boolean | false | - |
-| indeterminate | 设置 indeterminate 状态，只负责样式控制 | boolean | false | - |
-| unCheckedValue | 非选中时的值 | string \| number \| boolean \| object | false | - |
+| checked | Specifies whether the checkbox is selected, support `v-model:checked` | string \| number \| boolean \| object | false | - |
+| checkedValue | The value when checked | string \| number \| boolean \| object | true | - |
+| defaultChecked | Whether to set the initial state | string \| number \| boolean \| object | false | - |
+| disabled | If disable checkbox | boolean | false | - |
+| indeterminate | The indeterminate checked state of checkbox | boolean | false | - |
+| unCheckedValue | The value when unchecked | string \| number \| boolean \| object | false | - |
 
-#### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+#### Events 
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| change | 变化时的回调函数 | (e: CheckboxChangeEvent) =&gt; void | - |
-| focus | 获得焦点时的回调 | function() | - |
-| blur | 失去焦点时的回调 | function() | - |
+| change | The callback function that is triggered when the state changes | (e: CheckboxChangeEvent) =&gt; void | - |
+| focus | Called when entering the component | function() | - |
+| blur | Called when leaving the component | function() | - |
 
 ### CheckboxGroup
 
-#### 属性 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| options | 指定可选项 | string\[] \| number\[] \| Option\[] | \[] | - |
-| disabled | 整组失效 | boolean | false | - |
-| name | CheckboxGroup 下所有 `input[type="checkbox"]` 的 `name` 属性 | string | - | - |
-| value | 指定选中的选项，支持 `v-model:value` | (string \| number \| boolean)\[] | \[] | - |
+| options | Specifies options | string\[] \| number\[] \| Option\[] | \[] | - |
+| disabled | If disable all checkboxes | boolean | false | - |
+| name | The `name` property of all `input[type="checkbox"]` children | string | - | - |
+| value | Used for setting the currently selected value, support `v-model:value` | (string \| number \| boolean)\[] | \[] | - |
 | labelRender | - | (params: &#123; item: CheckboxOptionType, index: number &#125;) =&gt; any | - | - |
 
-#### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+#### Events 
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| change | 变化时的回调函数 | (checkedValue: T[]) =&gt; void | - |
+| change | The callback function that is triggered when the state changes | (checkedValue: T[]) =&gt; void | - |
 
-#### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+#### Slots 
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
 | labelRender | - | (params: &#123; item: CheckboxOptionType, index: number &#125;) =&gt; any | - |
 
-## 语义化 DOM 
+## Semantic DOM 
 | _semantic | demo/_semantic.md |

@@ -1,8 +1,8 @@
-# 国际化
+# Locale
 
-## Description (zh-CN)
+## Description (en-US)
 
-此处列出 Antv Next 中需要国际化支持的组件，你可以在演示里切换语言。
+Components which need localization support are listed here, you can toggle the language in the demo.
 
 ## Source
 

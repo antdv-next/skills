@@ -1,8 +1,8 @@
-# 多彩文字提示
+# Colorful Tooltip
 
-## Description (zh-CN)
+## Description (en-US)
 
-我们添加了多种预设色彩的文字提示样式，用作不同场景使用。
+We preset a series of colorful Tooltip styles for use in different situations.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 标签放置位置与进度
+# Title Placement and Progress
 
-## Description (zh-CN)
+## Description (en-US)
 
-为点状步骤条增加自定义展示。
+You can customize the display for Steps with progress dot style.
 
 ## Source
 

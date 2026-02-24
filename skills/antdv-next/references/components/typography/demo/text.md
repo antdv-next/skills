@@ -1,8 +1,8 @@
-# 文本与超链接组件
+# Text and Link Component
 
-## Description (zh-CN)
+## Description (en-US)
 
-内置不同样式的文本以及超链接组件。
+Provides multiple types of text and a link.
 
 ## Source
 

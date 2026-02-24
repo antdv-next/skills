@@ -1,8 +1,8 @@
-# 额外的页脚
+# Extra Footer
 
-## Description (zh-CN)
+## Description (en-US)
 
-在浮层中加入额外的页脚，以满足某些定制信息的需求。
+Render extra footer in panel for customized requirements.
 
 ## Source
 

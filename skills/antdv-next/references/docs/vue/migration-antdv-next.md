@@ -1,296 +1,296 @@
 ---
-title: 从 Ant Design Vue 迁移到 Antdv Next
+title: Migrating from Ant Design Vue to Antdv Next
 ---
 
-本文档将帮助你从`ant-design-vue`迁移到`antdv-next`。
+This document will help you migrate from `ant-design-vue` to `antdv-next`.
 
-`antdv-next`原本对`ant-design-vue`做了一些兼容处理，但是仍然存在部分的`api`无法直接兼容的情况。在升级前您需要确保您的环境满足新的要求。
+`antdv-next` originally implemented some compatibility measures for `ant-design-vue`, but there are still some `API` incompatibilities that cannot be directly adapted. Before upgrading, you need to ensure that your environment meets the new requirements.
 
-## 升级准备
+## Upgrade Preparation
 
-1. 请升级到最新的`ant-design-vue@4`的版本，以确保您使用的是最新的antdv的`api`。
-2. 建议升级vue3到`3.5.x`的版本。
+1. Please upgrade to the latest version of `ant-design-vue@4` to ensure you are using the latest antdv `API`.
+2. It is recommended to upgrade Vue 3 to version `3.5.x`.
 
 ```shell
 pnpm add antdv-next
 
-# 或
+# or
 npm install antdv-next
 
-# 或
+# or
 yarn add antdv-next
 ```
 
-## 有哪些不兼容的变化
+## What are the Incompatible Changes
 
-### @ant-design/icons-vue替换
+### Replacing @ant-design/icons-vue
 
--  ⚠️ **重要：**`@ant-design/icons-vue`本身是对`antdv-next`没有适配的，所以可能会导致切换主题和`layer`模式不生效，请确保安装并使用`@antdv-next/icons`。
+-  ⚠️ **Important:** `@ant-design/icons-vue` is not adapted for `antdv-next`, which may cause theme switching and `layer` mode to not work properly. Please ensure you install and use `@antdv-next/icons`.
 
 ```shell
 pnpm add @antdv-next/icons
-# 或
+# or
 npm install @antdv-next/icons
-# 或
+# or
 yarn add @antdv-next/icons
 ```
 
-### DOM结构调整
+### DOM Structure Adjustments
 
-- antdv-next对大量组件的DOM结构进行了升级优化，以提升可维护性和一致性。
-- 对于大多数正常使用`ant-design-vue`样式的项目，这不会产生太大的影响。
-- ⚠️ 如果你的项目中存在针对组件内部 DOM 节点的自定义样式（例如依赖特定选择器或层级结构），升级后可能需要手动检查并调整样式。
+- antdv-next has upgraded and optimized the DOM structure of many components to improve maintainability and consistency.
+- For most projects that normally use `ant-design-vue` styles, this will not have a significant impact.
+- ⚠️ If your project has custom styles targeting internal DOM nodes of components (such as relying on specific selectors or hierarchical structures), you may need to manually check and adjust styles after upgrading.
 
-### API调整
+### API Adjustments
 
-⚠️ 下列 API 已被标记为**废弃（Deprecated）**。尽管这些属性当前仍可使用，但控制台会提示弃用警告，并将在 2.0 中被移除。为保持代码的可维护性和兼容性，**建议尽快迁移到对应的替代属性**。
+⚠️ The following APIs have been marked as **Deprecated**. Although these properties can still be used currently, the console will show deprecation warnings, and they will be removed in 2.0. To maintain code maintainability and compatibility, **it is recommended to migrate to the corresponding replacement properties as soon as possible**.
 
 - `Alert`
-    - `closeText` 弃用，变为 `closable.closeIcon`。
-    - `message` 弃用，变为 `title`。
+    - `closeText` deprecated, changed to `closable.closeIcon`.
+    - `message` deprecated, changed to `title`.
 
 - `Anchor`
-    - `Anchor children` 弃用，变为 `items`。
+    - `Anchor children` deprecated, changed to `items`.
 
 - `AutoComplete`
-    - `dropdownMatchSelectWidth` 弃用，变为 `popupMatchSelectWidth`。
-    - `dropdownStyle` 弃用，变为 `styles.popup.root`。
-    - `dropdownClassName` 弃用，变为 `classes.popup.root`。
-    - `popupClassName` 弃用，变为 `classes.popup.root`。
-    - `dropdownRender` 弃用，变为 `popupRender`。
-    - `onDropdownVisibleChange` 弃用，变为 `onOpenChange`。
-    - `dataSource` 弃用，变为 `options`。
+    - `dropdownMatchSelectWidth` deprecated, changed to `popupMatchSelectWidth`.
+    - `dropdownStyle` deprecated, changed to `styles.popup.root`.
+    - `dropdownClassName` deprecated, changed to `classes.popup.root`.
+    - `popupClassName` deprecated, changed to `classes.popup.root`.
+    - `dropdownRender` deprecated, changed to `popupRender`.
+    - `onDropdownVisibleChange` deprecated, changed to `onOpenChange`.
+    - `dataSource` deprecated, changed to `options`.
 
 - `Avatar.Group`
-    - `maxCount` 弃用，变为 `:max="{count: number}"`。
-    - `maxStyle` 弃用，变为 `:max="{style: CSSProperties}"`。
-    - `maxPopoverPlacement` 弃用，变为 `:max="{popover: PopoverProps}"`。
-    - `maxPopoverTrigger` 弃用，变为 `:max="{popover: PopoverProps}"`。
+    - `maxCount` deprecated, changed to `:max="{count: number}"`.
+    - `maxStyle` deprecated, changed to `:max="{style: CSSProperties}"`.
+    - `maxPopoverPlacement` deprecated, changed to `:max="{popover: PopoverProps}"`.
+    - `maxPopoverTrigger` deprecated, changed to `:max="{popover: PopoverProps}"`.
 
 - `BackTop`
-    - `BackTop` 弃用，变为 `FloatButton.BackTop`。
+    - `BackTop` deprecated, changed to `FloatButton.BackTop`.
 
 - `Breadcrumb`
-    - `routes` 弃用，变为 `items`。
-    - `Breadcrumb.Item` 和 `Breadcrumb.Separator` 弃用，变为 `items`。
+    - `routes` deprecated, changed to `items`.
+    - `Breadcrumb.Item` and `Breadcrumb.Separator` deprecated, changed to `items`.
 
 - `Button.Group`
-    - `Button.Group` 弃用，变为 `Space.Compact`。
+    - `Button.Group` deprecated, changed to `Space.Compact`.
 
 - `Button`
-    - `iconPosition` 弃用，变为 `iconPlacement`。
+    - `iconPosition` deprecated, changed to `iconPlacement`.
 
 - `Calendar`
-    - `dateFullCellRender` 弃用，变为 `fullCellRender`。
-    - `dateCellRender` 弃用，变为 `cellRender`。
-    - `monthFullCellRender` 弃用，变为 `fullCellRender`。
-    - `monthCellRender` 弃用，变为 `cellRender`。
+    - `dateFullCellRender` deprecated, changed to `fullCellRender`.
+    - `dateCellRender` deprecated, changed to `cellRender`.
+    - `monthFullCellRender` deprecated, changed to `fullCellRender`.
+    - `monthCellRender` deprecated, changed to `cellRender`.
 
 - `Card`
-    - `headStyle` 弃用，变为 `styles.header`。
-    - `bodyStyle` 弃用，变为 `styles.body`。
-    - `bordered` 弃用，变为 `variant`。
+    - `headStyle` deprecated, changed to `styles.header`.
+    - `bodyStyle` deprecated, changed to `styles.body`.
+    - `bordered` deprecated, changed to `variant`.
 
 - `Carousel`
-    - `dotPosition` 弃用，变为 `dotPlacement`。
+    - `dotPosition` deprecated, changed to `dotPlacement`.
 
 - `Cascader`
-    - `dropdownClassName` 弃用，变为 `classes.popup.root`。
-    - `dropdownStyle` 弃用，变为 `styles.popup.root`。
-    - `dropdownRender` 弃用，变为 `popupRender`。
-    - `dropdownMenuColumnStyle` 弃用，变为 `popupMenuColumnStyle`。
-    - `onDropdownVisibleChange` 弃用，变为 `onOpenChange`。
-    - `onPopupVisibleChange` 弃用，变为 `onOpenChange`。
-    - `bordered` 弃用，变为 `variant`。
+    - `dropdownClassName` deprecated, changed to `classes.popup.root`.
+    - `dropdownStyle` deprecated, changed to `styles.popup.root`.
+    - `dropdownRender` deprecated, changed to `popupRender`.
+    - `dropdownMenuColumnStyle` deprecated, changed to `popupMenuColumnStyle`.
+    - `onDropdownVisibleChange` deprecated, changed to `onOpenChange`.
+    - `onPopupVisibleChange` deprecated, changed to `onOpenChange`.
+    - `bordered` deprecated, changed to `variant`.
 
 - `Collapse`
-    - `destroyInactivePanel` 弃用，变为 `destroyOnHidden`。
-    - `expandIconPosition` 弃用，变为 `expandIconPlacement`。
+    - `destroyInactivePanel` deprecated, changed to `destroyOnHidden`.
+    - `expandIconPosition` deprecated, changed to `expandIconPlacement`.
 
 - `Collapse.Panel`
-    - `disabled` 弃用，变为 `collapsible="disabled"`。
+    - `disabled` deprecated, changed to `collapsible="disabled"`.
 
 - `ConfigProvider`
-    - `dropdownMatchSelectWidth` 弃用，变为 `popupMatchSelectWidth`。
+    - `dropdownMatchSelectWidth` deprecated, changed to `popupMatchSelectWidth`.
 
 - `DatePicker.RangePicker`
-    - `dropdownClassName` 弃用，变为 `classes.popup.root`。
-    - `popupClassName` 弃用，变为 `classes.popup.root`。
-    - `popupStyle` 弃用，变为 `styles.popup.root`。
-    - `bordered` 弃用，变为 `variant`。
-    - `onSelect` 弃用，变为 `onCalendarChange`。
+    - `dropdownClassName` deprecated, changed to `classes.popup.root`.
+    - `popupClassName` deprecated, changed to `classes.popup.root`.
+    - `popupStyle` deprecated, changed to `styles.popup.root`.
+    - `bordered` deprecated, changed to `variant`.
+    - `onSelect` deprecated, changed to `onCalendarChange`.
 
 - `DatePicker`
-    - `dropdownClassName` 弃用，变为 `classes.popup.root`。
-    - `popupClassName` 弃用，变为 `classes.popup.root`。
-    - `popupStyle` 弃用，变为 `styles.popup.root`。
-    - `bordered` 弃用，变为 `variant`。
-    - `onSelect` 弃用，变为 `onCalendarChange`。
+    - `dropdownClassName` deprecated, changed to `classes.popup.root`.
+    - `popupClassName` deprecated, changed to `classes.popup.root`.
+    - `popupStyle` deprecated, changed to `styles.popup.root`.
+    - `bordered` deprecated, changed to `variant`.
+    - `onSelect` deprecated, changed to `onCalendarChange`.
 
 - `Descriptions`
-    - `labelStyle` 弃用，变为 `styles.label`。
-    - `contentStyle` 弃用，变为 `styles.content`。
+    - `labelStyle` deprecated, changed to `styles.label`.
+    - `contentStyle` deprecated, changed to `styles.content`.
 
 - `Divider`
-    - `type` 弃用，变为 `orientation`。
-    - `orientationMargin` 弃用，变为 `styles.content.margin`。
+    - `type` deprecated, changed to `orientation`.
+    - `orientationMargin` deprecated, changed to `styles.content.margin`.
 
 - `Drawer`
-    - `headerStyle` 弃用，变为 `styles.header`。
-    - `bodyStyle` 弃用，变为 `styles.body`。
-    - `footerStyle` 弃用，变为 `styles.footer`。
-    - `contentWrapperStyle` 弃用，变为 `styles.wrapper`。
-    - `maskStyle` 弃用，变为 `styles.mask`。
-    - `drawerStyle` 弃用，变为 `styles.section`。
-    - `destroyInactivePanel` 弃用，变为 `destroyOnHidden`。
-    - `width` 弃用，变为 `size`。
-    - `height` 弃用，变为 `size`。
+    - `headerStyle` deprecated, changed to `styles.header`.
+    - `bodyStyle` deprecated, changed to `styles.body`.
+    - `footerStyle` deprecated, changed to `styles.footer`.
+    - `contentWrapperStyle` deprecated, changed to `styles.wrapper`.
+    - `maskStyle` deprecated, changed to `styles.mask`.
+    - `drawerStyle` deprecated, changed to `styles.section`.
+    - `destroyInactivePanel` deprecated, changed to `destroyOnHidden`.
+    - `width` deprecated, changed to `size`.
+    - `height` deprecated, changed to `size`.
 
 - `Dropdown.Button`
-    - `Dropdown.Button` 弃用，变为 `Space.Compact + Dropdown + Button`。
+    - `Dropdown.Button` deprecated, changed to `Space.Compact + Dropdown + Button`.
 
 - `Dropdown`
-    - `dropdownRender` 弃用，变为 `popupRender`。
-    - `destroyPopupOnHide` 弃用，变为 `destroyOnHidden`。
-    - `overlayClassName` 弃用，变为 `classes.root`。
-    - `overlayStyle` 弃用，变为 `styles.root`。
-    - `placement: xxxCenter` 弃用，变为 `placement: xxx`。
+    - `dropdownRender` deprecated, changed to `popupRender`.
+    - `destroyPopupOnHide` deprecated, changed to `destroyOnHidden`.
+    - `overlayClassName` deprecated, changed to `classes.root`.
+    - `overlayStyle` deprecated, changed to `styles.root`.
+    - `placement: xxxCenter` deprecated, changed to `placement: xxx`.
 
 - `Empty`
-    - `imageStyle` 弃用，变为 `styles.image`。
+    - `imageStyle` deprecated, changed to `styles.image`.
 
 - `FloatButton`
-    - `description` 弃用，变为 `content`。
+    - `description` deprecated, changed to `content`.
 
 - `Image`
-    - `wrapperStyle` 弃用，变为 `styles.root`。
-    - `visible` 弃用，变为 `open`。
-    - `onVisibleChange` 弃用，变为 `onOpenChange`。
-    - `maskClassName` 弃用，变为 `classes.cover`。
-    - `rootClassName` 弃用，变为 `classes.root`。
-    - `toolbarRender` 弃用，变为 `actionsRender`。
+    - `wrapperStyle` deprecated, changed to `styles.root`.
+    - `visible` deprecated, changed to `open`.
+    - `onVisibleChange` deprecated, changed to `onOpenChange`.
+    - `maskClassName` deprecated, changed to `classes.cover`.
+    - `rootClassName` deprecated, changed to `classes.root`.
+    - `toolbarRender` deprecated, changed to `actionsRender`.
 
 - `Input.Group`
-    - `Input.Group` 弃用，变为 `Space.Compact`。
+    - `Input.Group` deprecated, changed to `Space.Compact`.
 
 - `InputNumber`
-    - `bordered` 弃用，变为 `variant`。
-    - `addonAfter` 弃用，变为 `Space.Compact`。
-    - `addonBefore` 弃用，变为 `Space.Compact`。
+    - `bordered` deprecated, changed to `variant`.
+    - `addonAfter` deprecated, changed to `Space.Compact`.
+    - `addonBefore` deprecated, changed to `Space.Compact`.
 
 - `Mentions`
-    - `Mentions.Option` 弃用，变为 `options`。
+    - `Mentions.Option` deprecated, changed to `options`.
 
 - `Menu`
-    - `children` 弃用，变为 `items`。
+    - `children` deprecated, changed to `items`.
 
 - `Modal`
-    - `bodyStyle` 弃用，变为 `styles.body`。
-    - `maskStyle` 弃用，变为 `styles.mask`。
-    - `destroyOnClose` 弃用，变为 `destroyOnHidden`。
+    - `bodyStyle` deprecated, changed to `styles.body`.
+    - `maskStyle` deprecated, changed to `styles.mask`.
+    - `destroyOnClose` deprecated, changed to `destroyOnHidden`.
 
 - `Notification`
-    - `btn` 弃用，变为 `actions`。
-    - `message` 弃用，变为 `title`。
+    - `btn` deprecated, changed to `actions`.
+    - `message` deprecated, changed to `title`.
 
 - `Progress`
-    - `strokeWidth` 弃用，变为 `size`。
-    - `width` 弃用，变为 `size`。
-    - `trailColor` 弃用，变为 `railColor`。
-    - `gapPosition` 弃用，变为 `gapPlacement`。
+    - `strokeWidth` deprecated, changed to `size`.
+    - `width` deprecated, changed to `size`.
+    - `trailColor` deprecated, changed to `railColor`.
+    - `gapPosition` deprecated, changed to `gapPlacement`.
 
 - `Select`
-    - `dropdownMatchSelectWidth` 弃用，变为 `popupMatchSelectWidth`。
-    - `dropdownStyle` 弃用，变为 `styles.popup.root`。
-    - `dropdownClassName` 弃用，变为 `classes.popup.root`。
-    - `popupClassName` 弃用，变为 `classes.popup.root`。
-    - `dropdownRender` 弃用，变为 `popupRender`。
-    - `onDropdownVisibleChange` 弃用，变为 `onOpenChange`。
-    - `bordered` 弃用，变为 `variant`。
+    - `dropdownMatchSelectWidth` deprecated, changed to `popupMatchSelectWidth`.
+    - `dropdownStyle` deprecated, changed to `styles.popup.root`.
+    - `dropdownClassName` deprecated, changed to `classes.popup.root`.
+    - `popupClassName` deprecated, changed to `classes.popup.root`.
+    - `dropdownRender` deprecated, changed to `popupRender`.
+    - `onDropdownVisibleChange` deprecated, changed to `onOpenChange`.
+    - `bordered` deprecated, changed to `variant`.
 
 - `Slider`
-    - `tooltipPrefixCls` 弃用，变为 `tooltip.prefixCls`。
-    - `getTooltipPopupContainer` 弃用，变为 `tooltip.getPopupContainer`。
-    - `tipFormatter` 弃用，变为 `tooltip.formatter`。
-    - `tooltipPlacement` 弃用，变为 `tooltip.placement`。
-    - `tooltipVisible` 弃用，变为 `tooltip.open`。
+    - `tooltipPrefixCls` deprecated, changed to `tooltip.prefixCls`.
+    - `getTooltipPopupContainer` deprecated, changed to `tooltip.getPopupContainer`.
+    - `tipFormatter` deprecated, changed to `tooltip.formatter`.
+    - `tooltipPlacement` deprecated, changed to `tooltip.placement`.
+    - `tooltipVisible` deprecated, changed to `tooltip.open`.
 
 - `Space.Compact`
-    - `direction` 弃用，变为 `orientation`。
+    - `direction` deprecated, changed to `orientation`.
 
 - `Space`
-    - `direction` 弃用，变为 `orientation`。
-    - `split` 弃用，变为 `separator`。
+    - `direction` deprecated, changed to `orientation`.
+    - `split` deprecated, changed to `separator`.
 
 - `Splitter`
-    - `layout` 弃用，变为 `orientation`。
+    - `layout` deprecated, changed to `orientation`.
 
 - `Countdown`
-    - `<a-statistic-countdown />` 弃用，变为 `<a-statistic-timer type="countdown" />`。
+    - `<a-statistic-countdown />` deprecated, changed to `<a-statistic-timer type="countdown" />`.
 
 - `Statistic`
-    - `valueStyle` 弃用，变为 `styles.content`。
+    - `valueStyle` deprecated, changed to `styles.content`.
 
 - `Steps`
-    - `labelPlacement` 弃用，变为 `titlePlacement`。
-    - `progressDot` 弃用，变为 `type="dot"`。
-    - `direction` 弃用，变为 `orientation`。
-    - `items.description` 弃用，变为 `items.content`。
+    - `labelPlacement` deprecated, changed to `titlePlacement`.
+    - `progressDot` deprecated, changed to `type="dot"`.
+    - `direction` deprecated, changed to `orientation`.
+    - `items.description` deprecated, changed to `items.content`.
 
 - `Table`
-    - `pagination.position` 弃用，变为 `pagination.placement`。
-    - `onSelectInvert` 弃用，变为 `onChange`。
-    - `filterDropdownOpen` 弃用，变为 `filterDropdownProps.open`。
-    - `onFilterDropdownOpenChange` 弃用，变为 `filterDropdownProps.onOpenChange`。
-    - `filterCheckall` 弃用，变为 `locale.filterCheckAll`。
+    - `pagination.position` deprecated, changed to `pagination.placement`.
+    - `onSelectInvert` deprecated, changed to `onChange`.
+    - `filterDropdownOpen` deprecated, changed to `filterDropdownProps.open`.
+    - `onFilterDropdownOpenChange` deprecated, changed to `filterDropdownProps.onOpenChange`.
+    - `filterCheckall` deprecated, changed to `locale.filterCheckAll`.
 
 - `Tabs`
-    - `popupClassName` 弃用，变为 `classes.popup`。
-    - `tabPosition` 弃用，变为 `tabPlacement`。
-    - `destroyInactiveTabPane` 弃用，变为 `destroyOnHidden`。
-    - `Tabs.TabPane` 弃用，变为 `items`。
+    - `popupClassName` deprecated, changed to `classes.popup`.
+    - `tabPosition` deprecated, changed to `tabPlacement`.
+    - `destroyInactiveTabPane` deprecated, changed to `destroyOnHidden`.
+    - `Tabs.TabPane` deprecated, changed to `items`.
 
 - `Tag`
-    - `bordered={false}` 弃用，变为 `variant="filled"`。
-    - `color="xxx-inverse"` 弃用，变为 `variant="solid"`。
+    - `bordered={false}` deprecated, changed to `variant="filled"`.
+    - `color="xxx-inverse"` deprecated, changed to `variant="solid"`.
 
 - `TimePicker`
-    - `addon` 弃用，变为 `renderExtraFooter`。
+    - `addon` deprecated, changed to `renderExtraFooter`.
 
 - `Timeline`
-    - `Timeline.Item` 弃用，变为 `items`。
-    - `pending` 弃用，变为 `items`。
-    - `pendingDot` 弃用，变为 `items`。
-    - `mode=left|right` 弃用，变为 `mode=start|end`。
+    - `Timeline.Item` deprecated, changed to `items`.
+    - `pending` deprecated, changed to `items`.
+    - `pendingDot` deprecated, changed to `items`.
+    - `mode=left|right` deprecated, changed to `mode=start|end`.
 
 - `Tooltip`
-    - `overlayStyle` 弃用，变为 `styles.root`。
-    - `overlayInnerStyle` 弃用，变为 `styles.container`。
-    - `overlayClassName` 弃用，变为 `classes.root`。
-    - `destroyTooltipOnHide` 弃用，变为 `destroyOnHidden`。
+    - `overlayStyle` deprecated, changed to `styles.root`.
+    - `overlayInnerStyle` deprecated, changed to `styles.container`.
+    - `overlayClassName` deprecated, changed to `classes.root`.
+    - `destroyTooltipOnHide` deprecated, changed to `destroyOnHidden`.
 
 - `Transfer`
-    - `listStyle` 弃用，变为 `styles.section`。
-    - `operationStyle` 弃用，变为 `styles.actions`。
-    - `operations` 弃用，变为 `actions`。
+    - `listStyle` deprecated, changed to `styles.section`.
+    - `operationStyle` deprecated, changed to `styles.actions`.
+    - `operations` deprecated, changed to `actions`.
 
 - `TreeSelect`
-    - `dropdownMatchSelectWidth` 弃用，变为 `popupMatchSelectWidth`。
-    - `dropdownStyle` 弃用，变为 `styles.popup.root`。
-    - `dropdownClassName` 弃用，变为 `classes.popup.root`。
-    - `popupClassName` 弃用，变为 `classes.popup.root`。
-    - `dropdownRender` 弃用，变为 `popupRender`。
-    - `onDropdownVisibleChange` 弃用，变为 `onOpenChange`。
-    - `bordered` 弃用，变为 `variant`。
+    - `dropdownMatchSelectWidth` deprecated, changed to `popupMatchSelectWidth`.
+    - `dropdownStyle` deprecated, changed to `styles.popup.root`.
+    - `dropdownClassName` deprecated, changed to `classes.popup.root`.
+    - `popupClassName` deprecated, changed to `classes.popup.root`.
+    - `dropdownRender` deprecated, changed to `popupRender`.
+    - `onDropdownVisibleChange` deprecated, changed to `onOpenChange`.
+    - `bordered` deprecated, changed to `variant`.
 
-### 弹层类组件（Modal、Drawer 等）
+### Overlay Components (Modal, Drawer, etc.)
 
-- 新增 `mask` 蒙层功能，并支持模糊效果。
-- 默认开启，可通过以下方式关闭模糊：
+- Added `mask` overlay functionality with blur effect support.
+- Enabled by default, can be disabled with the following configuration:
 
 ```vue
 <template>
-  <a-config-privider
+  <a-config-provider
     :modal="{
       mask: {
         blur: false,
@@ -304,13 +304,13 @@ yarn add @antdv-next/icons
   >
     <a-modal />
     <a-drawer />
-  </a-config-privider>
+  </a-config-provider>
 </template>
 ```
 
-### Tag margin 调整
+### Tag Margin Adjustment
 
-`antdv-next` 移除了 `Tag` 组件末尾的默认外边距（以前 Tag 末尾会额外留出一段 `margin-inline-end`）。如果你的布局或自定义样式依赖这一行为，请使用 `ConfigProvider` 的 `tag.styles` 进行补充：
+`antdv-next` removes the default margin at the end of the `Tag` component (previously, Tag had an additional `margin-inline-end` at the end). If your layout or custom styles depend on this behavior, please use the `tag.styles` option in `ConfigProvider` to supplement it:
 
 ```vue
 <template>
@@ -330,26 +330,26 @@ yarn add @antdv-next/icons
 </template>
 ```
 
-### Tooltip调整
+### Tooltip Adjustments
 
-插槽`overlay`已被移除，改为使用`popupRender`来代替。
+The `overlay` slot has been removed. Use `popupRender` instead.
 
-### Form 调整
+### Form Adjustments
 
-- 去掉了`a-form-rest`取消被动收集的组件，默认情况下我们不会主动收集`a-form-item`内的组件作为表单域，需要手动通过`name`属性指定。
+- Removed `a-form-rest` to cancel passive collection of components. By default, we do not actively collect components inside `a-form-item` as form fields, and you need to manually specify them through the `name` attribute.
 
-## 升级影响排查 Checklist
+## Upgrade Impact Investigation Checklist
 
-为了确保升级到 `antdv-next` 后项目正常运行，请参考以下检查清单逐项确认：
+To ensure that your project runs normally after upgrading to `antdv-next`, please refer to the following checklist and confirm each item:
 
-- **Vue 版本**：推荐采用`vue@3.5.x`。
-- **@ant-design/icons 升级**：确认 `@ant-design/icons` 版本已升级到 `@antdv-next/icons`，与 `antdv-next` 匹配。
-- **浏览器兼容性**：确认目标用户浏览器均为现代浏览器，且支持 CSS variables。
-- **自定义样式检查**：如果有针对组件内部 DOM 节点的 CSS 定制，验证在 `antdv-next` 下是否依然生效。
-- **弹层蒙层配置**：Modal、Drawer 等弹层是否需要关闭 `mask` 的模糊效果，如不需要可保持默认。
-- **构建工具配置**：确认升级后构建无报错，CSS 变量和 CSS-in-JS 能正常工作。
-- **控制台 warning**：运行应用并观察控制台，处理所有 `legacy API` 的提示。
+- **Vue Version**: It is recommended to use `vue@3.5.x`.
+- **@ant-design/icons Upgrade**: Confirm that the `@ant-design/icons` version has been upgraded to `@antdv-next/icons` to match `antdv-next`.
+- **Browser Compatibility**: Confirm that the target user browsers are modern browsers and support CSS variables.
+- **Custom Style Check**: If you have CSS customizations targeting internal DOM nodes of components, verify that they still work under `antdv-next`.
+- **Overlay Mask Configuration**: Check if Modal, Drawer, and other overlay components need to disable the `mask` blur effect. If not needed, keep the default.
+- **Build Tool Configuration**: Confirm that there are no errors after the upgrade build, and that CSS variables and CSS-in-JS work properly.
+- **Console Warnings**: Run the application and observe the console, handling all `legacy API` prompts.
 
-## 遇到问题
+## Encountering Issues
 
-如果您在升级过程中遇到问题，请到 [GitHub issues](https://github.com/antdv-next/antdv-next/issues/) 进行反馈。我们会尽快响应并在文档中完善相关说明。
+If you encounter problems during the upgrade process, please provide feedback on [GitHub issues](https://github.com/antdv-next/antdv-next/issues/). We will respond as soon as possible and improve the relevant documentation.

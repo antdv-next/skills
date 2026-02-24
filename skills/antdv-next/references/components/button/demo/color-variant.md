@@ -1,8 +1,8 @@
-# 颜色与变体
+# Color & Variant
 
-## Description (zh-CN)
+## Description (en-US)
 
-同时设置 `color` 和 `variant` 属性，可以衍生出更多的变体按钮。
+You can set the `color` and `variant` attributes at the same time can derive more variant buttons.
 
 ## Source
 

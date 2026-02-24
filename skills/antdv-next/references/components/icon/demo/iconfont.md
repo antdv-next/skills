@@ -1,8 +1,8 @@
-# 使用 iconfont.cn
+# Use iconfont.cn
 
-## Description (zh-CN)
+## Description (en-US)
 
-对于使用 [iconfont.cn](http://iconfont.cn/) 的用户，通过设置 `createFromIconfontCN` 方法参数对象中的 `scriptUrl` 字段， 即可轻松地使用已有项目中的图标。
+If you are using [iconfont.cn](http://iconfont.cn/), you can use the icons in your project gracefully.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 可折叠
+# Collapsible
 
-## Description (zh-CN)
+## Description (en-US)
 
-可折叠的面板。
+Collapsible panel.
 
 ## Source
 

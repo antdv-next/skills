@@ -1,8 +1,8 @@
-# 异步加载
+# Asynchronous loading
 
-## Description (zh-CN)
+## Description (en-US)
 
-匹配内容列表为异步返回时。
+async.
 
 ## Source
 

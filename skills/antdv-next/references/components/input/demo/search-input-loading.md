@@ -1,8 +1,8 @@
-# 搜索框 loading
+# Search box with loading
 
-## Description (zh-CN)
+## Description (en-US)
 
-用于 `onSearch` 的时候展示 `loading`。
+Search loading when onSearch.
 
 ## Source
 

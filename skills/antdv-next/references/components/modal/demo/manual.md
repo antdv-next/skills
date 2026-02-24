@@ -1,8 +1,8 @@
-# 手动更新和移除
+# Manual to update destroy
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过返回的 instance 手动更新和关闭对话框。
+Manually updating and destroying a modal through instance.
 
 ## Source
 

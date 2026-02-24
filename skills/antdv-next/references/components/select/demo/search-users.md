@@ -1,8 +1,8 @@
-# 搜索用户
+# Search and Select Users
 
-## Description (zh-CN)
+## Description (en-US)
 
-一个带有远程搜索、防抖、请求顺序控制和加载状态的多选示例。
+A complete multiple select sample with remote search, debounce fetch, ajax callback order flow, and loading state.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 不可用
+# Disabled
 
-## Description (zh-CN)
+## Description (en-US)
 
-点击按钮切换可用状态。
+Click the button to toggle between available and disabled states.
 
 ## Source
 

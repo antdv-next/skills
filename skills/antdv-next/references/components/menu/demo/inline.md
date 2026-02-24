@@ -1,8 +1,8 @@
-# 内嵌菜单
+# Inline menu
 
-## Description (zh-CN)
+## Description (en-US)
 
-垂直菜单，子菜单内嵌在菜单区域。
+Vertical menu with inline submenus.
 
 ## Source
 

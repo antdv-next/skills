@@ -1,822 +1,822 @@
-# Antdv Next 组件语义化结构化描述
+# Antdv Next Component Semantic Structured Descriptions
 
-本文档从组件 `_semantic` 示例中提取语义化 DOM 描述，并整理为便于 AI 识别的结构化信息。
+This document extracts semantic DOM descriptions from component `_semantic` demos and formats them into AI-friendly structured data.
 
-> 语义条目总数: 63
-> 包含语义描述的组件数: 57
+> Total semantic entries: 63
+> Components with semantic descriptions: 57
 
 ## Component List
 
 ### alert
 
-- 组件: `alert`
-- 语义节点数: 7
-- 来源示例: `docs/src/pages/components/alert/demo/_semantic.vue`
+- Component: `alert`
+- Semantic nodes: 7
+- Source demo: `docs/src/pages/components/alert/demo/_semantic.vue`
 
-- `root`: 根元素，包含边框、背景色、内边距、圆角、位置布局等警告提示框的基础样式
-- `icon`: 图标元素，包含图标的颜色、行高、外边距等样式，支持不同类型的状态图标
-- `section`: 内容元素，采用 flex 布局控制内容区域的排版和最小宽度
-- `title`: 标题元素，包含标题文字的颜色、字体等样式
-- `description`: 描述元素，包含描述文字的字体大小、行高等排版样式
-- `actions`: 操作组元素，包含操作按钮的布局和间距样式
-- `close`: 关闭按钮元素，包含按钮的基础样式
+- `root`: Root element with border, background, padding, border-radius, and positioning styles for the alert container
+- `icon`: Icon element with color, line-height, and margin styles, supporting different status icon types
+- `section`: Content element with flex layout controlling content area typography and minimum width
+- `title`: Title element with text color and font styling for the alert title
+- `description`: Description element with font-size and line-height styles for additional content
+- `actions`: Actions element with layout and spacing styles for action buttons
+- `close`: Close button element with basic button styling
 
 ### anchor
 
-- 组件: `anchor`
-- 语义节点数: 4
-- 来源示例: `docs/src/pages/components/anchor/demo/_semantic.vue`
+- Component: `anchor`
+- Semantic nodes: 4
+- Source demo: `docs/src/pages/components/anchor/demo/_semantic.vue`
 
-- `root`: 根元素，包含布局定位、内边距、边距、背景色等基础样式
-- `item`: 链接项元素，包含内边距、文字颜色、悬停状态、过渡动画等样式
-- `itemTitle`: 标题文字元素，包含字体样式、颜色变化、文本装饰、过渡效果等样式
-- `indicator`: 指示器元素，包含宽度、高度、背景色、位置变化、过渡动画等样式
+- `root`: Root element with layout positioning, padding, margin, background color and other basic styles
+- `item`: Link item element with padding, text color, hover states, transition animations and other styles
+- `itemTitle`: Title text element with font styles, color changes, text decoration, transition effects and other styles
+- `indicator`: Indicator element with width, height, background color, position changes, transition animations and other styles
 
 ### autoComplete
 
-- 组件: `auto-complete`
-- 语义节点数: 9
-- 来源示例: `docs/src/pages/components/auto-complete/demo/_semantic.vue`
+- Component: `auto-complete`
+- Semantic nodes: 9
+- Source demo: `docs/src/pages/components/auto-complete/demo/_semantic.vue`
 
-- `root`: 根元素，包含相对定位、行内 flex 布局、光标样式、过渡动画、边框等选择器容器的基础样式
-- `prefix`: 前缀元素，包含前缀内容的布局和样式
-- `input`: 输入框元素，包含搜索输入框的样式、光标控制、字体继承等搜索相关样式，去除了边框样式
-- `placeholder`: 占位符元素，包含占位符文本的字体样式和颜色
-- `content`: 多选容器，包含已选项的布局、间距、换行相关样式
-- `clear`: 清除按钮元素，包含清除按钮的布局、样式和交互效果
+- `root`: Root element with relative positioning, inline-flex layout, cursor styles, transitions, border and other basic selector container styles
+- `prefix`: Prefix element with layout and styling for prefix content
+- `input`: Input element with search input styling, cursor control, font inheritance and other search-related styles. Remove border styles
+- `placeholder`: Placeholder element with font styles and colors for placeholder text
+- `content`: Multiple selection container with layout, spacing, and wrapping styles for selected items
+- `clear`: Clear button element with layout, styling and interactive effects for clear button
 - `popup`:
-  - `root`: 弹出菜单元素，包含弹出层的定位、层级、背景、边框、阴影等弹出容器样式
-  - `list`: 弹出菜单列表元素，包含选项列表的布局、滚动、最大高度等列表容器样式
-  - `listItem`: 弹出菜单条目元素，包含选项项的内边距、悬浮效果、选中状态、禁用状态等选项交互样式
+  - `root`: Popup element with popup layer positioning, z-index, background, border, box-shadow and other popup container styles
+  - `list`: Popup list element with option list layout, scrolling, max-height and other list container styles
+  - `listItem`: Popup item element with option item padding, hover effects, selected states, disabled states and other option interactive styles
 
 ### badge
 
-- 组件: `badge`
-- 语义节点数: 2
-- 来源示例: `docs/src/pages/components/badge/demo/_semantic.vue`
+- Component: `badge`
+- Semantic nodes: 2
+- Source demo: `docs/src/pages/components/badge/demo/_semantic.vue`
 
-- `root`: 根元素，包含相对定位、行内块布局、适应内容宽度等基础布局样式
-- `indicator`: 指示器元素，包含定位、层级、尺寸、颜色、字体、文本对齐、背景、圆角、阴影、过渡动画等完整的徽标样式
+- `root`: Root element with relative positioning, inline-block display, and fit-content width for basic layout
+- `indicator`: Indicator element with positioning, z-index, dimensions, colors, fonts, text alignment, background, border-radius, box-shadow, and transition animations for complete badge styling
 
 ### breadcrumb
 
-- 组件: `breadcrumb`
-- 语义节点数: 3
-- 来源示例: `docs/src/pages/components/breadcrumb/demo/_semantic.vue`
+- Component: `breadcrumb`
+- Semantic nodes: 3
+- Source demo: `docs/src/pages/components/breadcrumb/demo/_semantic.vue`
 
-- `root`: 根元素，包含文字颜色、字体大小、图标尺寸等基础样式，内部使用 flex 布局的有序列表
-- `item`: Item 元素，包含文字颜色、链接的颜色变化、悬浮效果、内边距、圆角、高度、外边距等样式
-- `separator`: 分隔符元素，包含分隔符的外边距和颜色样式
+- `root`: Root element with text color, font size, icon size and other basic styles, using flex layout with ordered list
+- `item`: Item element with text color, link color transitions, hover effects, padding, border-radius, height, and margin styles
+- `separator`: Separator element with margin and color styles for the divider
 
 ### button
 
-- 组件: `button`
-- 语义节点数: 3
-- 来源示例: `docs/src/pages/components/button/demo/_semantic.vue`
+- Component: `button`
+- Semantic nodes: 3
+- Source demo: `docs/src/pages/components/button/demo/_semantic.vue`
 
-- `root`: 根元素，包含边框样式、背景色、内边距、圆角、阴影效果、过渡动画、光标样式、文字权重、对齐方式等完整的按钮外观样式
-- `icon`: 图标元素，包含图标的字体大小、颜色继承、SVG 样式重置等图标显示相关样式
-- `content`: 内容元素，包装按钮文本内容，控制文本的不换行显示、居中对齐、中文字符间距优化等文本排版样式
+- `root`: Root element with comprehensive button styling including border, background, padding, border-radius, box-shadow, transitions, cursor, font-weight, alignment, and layout properties
+- `icon`: Icon element with font-size, color inheritance, and SVG style reset for proper icon display
+- `content`: Content element that wraps button text with typography styles including nowrap, text-align center, and Chinese character spacing optimization
 
 ### calendar
 
-- 组件: `calendar`
-- 语义节点数: 5
-- 来源示例: `docs/src/pages/components/calendar/demo/_semantic.vue`
+- Component: `calendar`
+- Semantic nodes: 5
+- Source demo: `docs/src/pages/components/calendar/demo/_semantic.vue`
 
-- `root`: 根元素，包含日历组件的背景色、边框、圆角等基础样式和整体布局结构
-- `header`: 头部元素，包含年份选择器、月份选择器、模式切换器的布局和样式控制
-- `body`: 主体元素，包含日历表格的内边距、布局控制等样式，用于容纳日历网格
-- `content`: 内容元素，包含日历表格的宽度、高度等尺寸控制和表格样式
-- `item`: 条目元素，包含日历单元格的背景色、边框、悬停态、选中态等交互样式
+- `root`: Root element containing background, border, border-radius and overall layout structure of the calendar component
+- `header`: Header element with layout and style control for year selector, month selector and mode switcher
+- `body`: Body element with padding and layout control for the calendar table that contains the calendar grid
+- `content`: Content element with width, height and table styling control for the calendar table
+- `item`: Item element with background, border, hover state, selected state and other interactive styles for calendar cells
 
 ### card
 
-- 组件: `card`
-- 语义节点数: 7
-- 来源示例: `docs/src/pages/components/card/demo/_semantic.vue`
+- Component: `card`
+- Semantic nodes: 7
+- Source demo: `docs/src/pages/components/card/demo/_semantic.vue`
 
-- `root`: 卡片根元素，包含位置定位、背景色、边框、圆角、阴影、内边距等卡片容器的基础样式
-- `header`: 卡片头部区域，包含 flex 布局、最小高度、内边距、文字颜色、字体权重、字体大小、背景色、下边框、顶部圆角等样式
-- `title`: 卡片标题，包含行内块布局、flex 占比、文本省略等标题显示样式
-- `extra`: 卡片右上角的操作区域，包含额外内容的文字颜色和布局样式
-- `cover`: 标题封面，包含封面图片的显示和布局样式
-- `body`: 卡片内容区域，包含内边距、字体大小等内容展示的基础样式
-- `actions`: 卡片底部操作组，包含 flex 布局、列表样式重置、背景色、上边框、底部圆角等操作按钮容器样式
+- `root`: Card root element with positioning, background, border, border-radius, box-shadow, padding and other container styles
+- `header`: Card header area with flex layout, min-height, padding, text color, font-weight, font-size, background, bottom border and top border-radius
+- `title`: Card title with inline-block display, flex-grow, text ellipsis and other title display styles
+- `extra`: Card extra operation area in top-right corner with text color and layout styles for additional content
+- `cover`: Title cover with styles for cover image display and layout
+- `body`: Card content area with padding, font-size and other content display styles
+- `actions`: Card bottom action group with flex layout, list-style reset, background, top border and bottom border-radius for action buttons container
 
 ### cascader
 
-- 组件: `cascader`
-- 语义节点数: 6
-- 来源示例: `docs/src/pages/components/cascader/demo/_semantic.vue`
+- Component: `cascader`
+- Semantic nodes: 6
+- Source demo: `docs/src/pages/components/cascader/demo/_semantic.vue`
 
-- `root`: 根元素，设置行内flex布局、相对定位、内边距和边框样式
-- `prefix`: 前缀元素，包含前缀内容的布局和样式
-- `selector`: 选择器元素，设置内边距、flex布局和选中项显示样式
-- `suffix`: 后缀元素，包含后缀内容的布局和样式，如箭头图标等
-- `popup`: 弹出框元素，设置绝对定位、层级、背景色、圆角、阴影和下拉选项样式
-- `item`: 选项元素，设置内边距、背景色、悬停态和选中态样式
+- `root`: Root element, set inline flex layout, relative positioning, padding and border styles
+- `prefix`: Prefix element with layout and styling for prefix content
+- `selector`: Selector element, set padding, flex layout and selected item display styles
+- `suffix`: Suffix element with layout and styling for suffix content like arrow icon, etc.
+- `popup`: Popup element, set absolute positioning, z-index, background color, border radius, shadow and dropdown options styles
+- `item`: Option element, set padding, background color, hover state and selected state styles
 
 ### checkbox
 
-- 组件: `checkbox`
-- 语义节点数: 3
-- 来源示例: `docs/src/pages/components/checkbox/demo/_semantic.vue`
+- Component: `checkbox`
+- Semantic nodes: 3
+- Source demo: `docs/src/pages/components/checkbox/demo/_semantic.vue`
 
-- `root`: 根元素，包含行内 flex 布局、基线对齐、光标样式、重置样式等复选框容器的基础样式
-- `icon`: 选中框元素，包含尺寸、方向、背景色、边框、圆角、过渡动画，以及选中状态的勾选标记样式
-- `label`: 文本元素，包含文本的内边距和与复选框的间距样式
+- `root`: Root element with inline-flex layout, baseline alignment, cursor style, reset styles and other basic checkbox container styles
+- `icon`: Checkbox icon element with size, direction, background, border, border-radius, transitions, and checked state checkmark styles
+- `label`: Label text element with padding and spacing styles relative to the checkbox
 
 ### collapse
 
-- 组件: `collapse`
-- 语义节点数: 5
-- 来源示例: `docs/src/pages/components/collapse/demo/_semantic.vue`
+- Component: `collapse`
+- Semantic nodes: 5
+- Source demo: `docs/src/pages/components/collapse/demo/_semantic.vue`
 
-- `root`: 根元素，包含折叠面板的边框、圆角、背景色等容器样式，控制面板的整体布局和外观
-- `header`: 头部元素，包含flex布局、内边距、颜色、行高、光标样式、过渡动画等面板头部的交互和样式
-- `icon`: 图标元素，包含字体大小、过渡动画、旋转变换等展开收起箭头的样式和动效
-- `title`: 标题元素，包含flex自适应布局、右边距等标题文字的布局和排版样式
-- `body`: 内容元素，包含内边距、颜色、背景色等面板内容区域的展示样式
+- `root`: Root element with border, border-radius, background color and container styles that control the overall layout and appearance of collapse panels
+- `header`: Header element with flex layout, padding, color, line-height, cursor style, transition animations and other interactive styles for panel headers
+- `icon`: Icon element with font size, transition animations, rotation transforms and other styles and animations for expand/collapse arrows
+- `title`: Title element with flex auto layout and margin styles for title text layout and typography
+- `body`: Body element with padding, color, background color and other styles for panel content area display
 
 ### colorPicker
 
-- 组件: `color-picker`
-- 语义节点数: 5
-- 来源示例: `docs/src/pages/components/color-picker/demo/_semantic.vue`
+- Component: `color-picker`
+- Semantic nodes: 5
+- Source demo: `docs/src/pages/components/color-picker/demo/_semantic.vue`
 
-- `root`: 触发器容器，包含边框样式、过渡动画、尺寸控制等样式，显示颜色块和文本内容
-- `body`: 色块容器，包含底色、边框等样式
-- `content`: 色块颜色元素，包含实际选择的颜色样式
-- `description`: 描述文本内容，包含字体样式、颜色等样式
+- `root`: Trigger container with border styles, transition animations, size controls, displaying color block and text content
+- `body`: Color block container with background color, border styles
+- `content`: Color block element with actual selected color styles
+- `description`: Description text content with font styles and color
 - `popup`:
-  - `root`: 弹出面板根容器，包含背景色、阴影效果、色彩选择面板、滑块控制和预设颜色等样式
+  - `root`: Popup panel root container with background color, shadow effects, color selection panel, slider controls and preset colors
 
 ### datePicker
 
-- 组件: `date-picker`
-- 语义节点数: 11
-- 来源示例: `docs/src/pages/components/date-picker/demo/_semantic.vue`
+- Component: `date-picker`
+- Semantic nodes: 11
+- Source demo: `docs/src/pages/components/date-picker/demo/_semantic.vue`
 
-- `root`: 根元素，包含相对定位、行内flex布局、内边距、边框圆角、过渡动画等日期选择器容器的基础样式
-- `prefix`: 前缀元素，包含flex布局、右外边距等前缀内容的布局样式
-- `input`: 输入框元素，包含相对定位、宽度、颜色、字体、行高、过渡动画等输入框的核心交互样式
-- `suffix`: 后缀元素，包含flex布局、颜色、行高、指针事件、过渡动画等后缀内容的样式
+- `root`: Root element with relative positioning, inline-flex layout, padding, border-radius, transition animations and other basic styles for date picker container
+- `prefix`: Prefix element with flex layout and margin styles for prefix content layout
+- `input`: Input element with relative positioning, width, color, font, line-height, transition animations and other core interactive styles for input field
+- `suffix`: Suffix element with flex layout, color, line-height, pointer events, transition animations and other styles for suffix content
 - `popup`:
-  - `root`: 弹出框元素
-  - `container`: 容器元素，设置背景色、内边距、圆角、阴影、边框和内容展示样式
-  - `header`: 弹出框头部元素，包含导航按钮、月份年份选择器等头部控制区域的布局和样式
-  - `body`: 弹出框主体元素，包含日期面板表格的容器布局和样式
-  - `content`: 弹出框内容元素，包含日期表格的宽度、边框、单元格等内容展示样式
-  - `item`: 弹出框单项元素，包含日期单元格的尺寸、背景色、边框圆角、悬停态、选中态等交互样式
-  - `footer`: 弹出框底部元素，包含确认取消按钮、快捷选择等底部操作区域的布局样式
+  - `root`: Popup element
+  - `container`: Container element, set background color, padding, border radius, shadow, border and content display styles
+  - `header`: Popup header element with navigation buttons, month/year selectors and other header control area layout and styles
+  - `body`: Popup body element with container layout and styles for date panel table
+  - `content`: Popup content element with width, border, cell and other content display styles for date table
+  - `item`: Popup item element with size, background, border-radius, hover state, selected state and other interactive styles for date cells
+  - `footer`: Popup footer element with layout styles for bottom operation area including confirm/cancel buttons and shortcuts
 
 ### descriptions
 
-- 组件: `descriptions`
-- 语义节点数: 6
-- 来源示例: `docs/src/pages/components/descriptions/demo/_semantic.vue`
+- Component: `descriptions`
+- Semantic nodes: 6
+- Source demo: `docs/src/pages/components/descriptions/demo/_semantic.vue`
 
-- `root`: 根元素，包含描述列表容器的基础样式、重置样式、边框样式、布局方向等整体样式
-- `header`: 头部元素，包含flex布局、对齐方式、下边距等头部区域的布局和样式控制
-- `title`: 标题元素，包含文本省略、flex占比、颜色、字体权重、字体大小、行高等标题文字样式
-- `extra`: 额外内容元素，包含左边距、颜色、字体大小等额外操作区域的样式
-- `label`: 标签元素，包含颜色、字体权重、字体大小、行高、文本对齐、冒号样式等标签文字的样式
-- `content`: 内容元素，包含表格单元格布局、颜色、字体大小、行高、文字换行等内容展示样式
+- `root`: Root element with basic styles, reset styles, border styles, layout direction and other overall styles for description list container
+- `header`: Header element with flex layout, alignment, bottom margin and other layout and style controls for header area
+- `title`: Title element with text ellipsis, flex ratio, color, font weight, font size, line height and other title text styles
+- `extra`: Extra content element with left margin, color, font size and other styles for additional operation area
+- `label`: Label element with color, font weight, font size, line height, text align, colon styles and other label text styles
+- `content`: Content element with table cell layout, color, font size, line height, word break and other content display styles
 
 ### divider
 
-- 组件: `divider`
-- 语义节点数: 3
-- 来源示例: `docs/src/pages/components/divider/demo/_semantic.vue`
+- Component: `divider`
+- Semantic nodes: 3
+- Source demo: `docs/src/pages/components/divider/demo/_semantic.vue`
 
-- `root`: 根元素，包含边框顶部样式、分隔线样式等分割线容器的基础样式
-- `rail`: 背景条元素，包含边框顶部样式等分割线连接条的样式
-- `content`: 内容元素，包含行内块显示、内边距等分割线文本内容的样式
+- `root`: Root element with border-top style, divider styling and other basic divider container styles
+- `rail`: Background rail element with border-top style and other divider connection line styles
+- `content`: Content element with inline-block display, padding and other divider text content styles
 
 ### drawer
 
-- 组件: `drawer`
-- 语义节点数: 10
-- 来源示例: `docs/src/pages/components/drawer/demo/_semantic.vue`
+- Component: `drawer`
+- Semantic nodes: 10
+- Source demo: `docs/src/pages/components/drawer/demo/_semantic.vue`
 
-- `root`: 根元素，包含固定定位、层级控制、指针事件、颜色等抽屉容器的基础样式和布局控制
-- `mask`: 遮罩层元素，包含绝对定位、层级、背景色、指针事件等遮罩层的样式和交互控制
-- `section`: Drawer 容器元素，包含flex布局、宽高、溢出控制、背景色、指针事件等抽屉主体的样式
-- `header`: 头部元素，包含flex布局、对齐方式、内边距、字体大小、行高、下边框等头部区域的样式
-- `title`: 标题元素，包含flex占比、外边距、字体权重、字体大小、行高等标题文字的样式
-- `extra`: 额外元素，包含flex固定布局等额外操作内容的样式控制
-- `body`: 内容元素，包含flex占比、最小尺寸、内边距、溢出滚动等内容区域的展示和布局样式
-- `footer`: 底部元素，包含flex收缩、内边距、上边框等底部操作区域的样式
-- `dragger`: 拖拽元素，用于调整抽屉大小的拖拽手柄，包含绝对定位、背景透明、指针事件控制、hover状态样式、拖拽状态样式等
-- `close`: 关闭按钮元素，包含按钮的基础样式
+- `root`: Root element with fixed positioning, z-index control, pointer events, color and other basic styles and layout control for drawer container
+- `mask`: Mask element with absolute positioning, z-index, background color, pointer events and other mask layer styles and interaction controls
+- `section`: Drawer container element with flex layout, width/height, overflow control, background color, pointer events and other drawer body styles
+- `header`: Header element with flex layout, alignment, padding, font size, line height, bottom border and other header area styles
+- `title`: Title element with flex ratio, margin, font weight, font size, line height and other title text styles
+- `extra`: Extra element with flex fixed layout and other additional operation content style controls
+- `body`: Body element with flex ratio, minimum size, padding, overflow scroll and other content area display and layout styles
+- `footer`: Footer element with flex shrink, padding, top border and other bottom operation area styles
+- `dragger`: Dragger element used to resize the drawer, with absolute positioning, transparent background, pointer events control, hover state styles, and dragging state styles
+- `close`: Close button element with basic button styling
 
 ### dropdown
 
-- 组件: `dropdown`
-- 语义节点数: 5
-- 来源示例: `docs/src/pages/components/dropdown/demo/_semantic.vue`
+- Component: `dropdown`
+- Semantic nodes: 5
+- Source demo: `docs/src/pages/components/dropdown/demo/_semantic.vue`
 
-- `root`: dropdown 的根元素，设置定位、层级和容器样式
-- `itemTitle`: dropdown 选项的标题内容区域，设置布局和文字样式
-- `item`: dropdown 的单个选项元素，设置选项的交互状态和背景样式
-- `itemContent`: dropdown 选项的主要内容区域，设置内容布局和链接样式
-- `itemIcon`: dropdown 选项的图标区域，设置图标的尺寸和间距样式
+- `root`: Root element of dropdown, sets positioning, z-index and container styles
+- `itemTitle`: Title content area of dropdown option, sets layout and text styles
+- `item`: Individual dropdown option element, sets interaction states and background styles
+- `itemContent`: Main content area of dropdown option, sets content layout and link styles
+- `itemIcon`: Icon area of dropdown option, sets icon size and spacing styles
 
 ### empty
 
-- 组件: `empty`
-- 语义节点数: 4
-- 来源示例: `docs/src/pages/components/empty/demo/_semantic.vue`
+- Component: `empty`
+- Semantic nodes: 4
+- Source demo: `docs/src/pages/components/empty/demo/_semantic.vue`
 
-- `root`: 根元素，设置文本对齐、字体和行高样式
-- `image`: 图标元素，设置高度、透明度、边距和图片样式
-- `description`: 描述元素，设置文本颜色样式
-- `footer`: 底部元素，设置顶部边距和操作按钮样式
+- `root`: Root element, sets text alignment, font and line height styles
+- `image`: Image element, sets height, opacity, margin and image styles
+- `description`: Description element, sets text color styles
+- `footer`: Footer element, sets top margin and action button styles
 
 ### floatButton
 
-- 组件: `float-button`
-- 语义节点数: 3
-- 来源示例: `docs/src/pages/components/float-button/demo/_semantic.vue`
+- Component: `float-button`
+- Semantic nodes: 3
+- Source demo: `docs/src/pages/components/float-button/demo/_semantic.vue`
 
-- `root`: 根元素，设置悬浮按钮的基础样式、形状尺寸、类型主题、固定定位、层级、阴影、间距等容器样式
-- `icon`: 图标元素，设置按钮内图标的尺寸、颜色、行高、对齐等图标显示样式
-- `content`: 内容元素，设置按钮内文字内容的字体大小、颜色、对齐、换行等文本显示样式
+- `root`: Root element with float button base styles, shape size, type theme, fixed positioning, z-index, shadow, spacing and other container styles
+- `icon`: Icon element with button icon size, color, line height, alignment and other icon display styles
+- `content`: Content element with button text content font size, color, alignment, line wrap and other text display styles
 
 ### floatButtonGroup
 
-- 组件: `float-button`
-- 变体: `group`
-- 语义节点数: 8
-- 来源示例: `docs/src/pages/components/float-button/demo/_semantic_group.vue`
+- Component: `float-button`
+- Variant: `group`
+- Semantic nodes: 8
+- Source demo: `docs/src/pages/components/float-button/demo/_semantic_group.vue`
 
-- `root`: 根元素，设置悬浮按钮组的容器样式、固定定位、层级、内边距、间距、方向模式等组合布局样式
-- `list`: 列表元素，设置按钮组列表的Flex布局、圆角、阴影、动画过渡、垂直对齐等列表容器样式
-- `item`: 列表项元素，设置单个悬浮按钮的样式、尺寸、形状、类型、状态、图标内容等按钮基础样式
-- `itemIcon`: 列表项图标元素，设置悬浮按钮内图标的尺寸、颜色、对齐等图标显示样式
-- `itemContent`: 列表项内容元素，设置悬浮按钮内文字内容、徽标、描述等内容区域样式
-- `trigger`: 触发元素，设置菜单模式下触发按钮的样式、形状、图标、悬停态、展开收起状态等交互样式
-- `triggerIcon`: 触发图标元素，设置触发按钮内图标的样式、旋转动画、切换状态等图标交互样式
-- `triggerContent`: 触发内容元素，设置触发按钮内容区域的文字、标识、状态指示等内容样式
+- `root`: Root element with float button group container styles, fixed positioning, z-index, padding, gap, direction mode and other combined layout styles
+- `list`: List element with button group list flex layout, border radius, shadow, animation transition, vertical alignment and other list container styles
+- `item`: Item element with individual float button styles, size, shape, type, state, icon content and other button base styles
+- `itemIcon`: Item icon element with float button icon size, color, alignment and other icon display styles
+- `itemContent`: Item content element with float button text content, badge, description and other content area styles
+- `trigger`: Trigger element with menu mode trigger button styles, shape, icon, hover state, expand/collapse state and other interaction styles
+- `triggerIcon`: Trigger icon element with trigger button icon styles, rotation animation, toggle state and other icon interaction styles
+- `triggerContent`: Trigger content element with trigger button content area text, identifier, state indicator and other content styles
 
 ### form
 
-- 组件: `form`
-- 语义节点数: 3
-- 来源示例: `docs/src/pages/components/form/demo/_semantic.vue`
+- Component: `form`
+- Semantic nodes: 3
+- Source demo: `docs/src/pages/components/form/demo/_semantic.vue`
 
-- `root`: 根元素，包含表单项的底边距、垂直对齐、过渡动画、隐藏状态、错误警告状态等表单项容器的基础样式
-- `label`: 标签元素，包含 flex 布局、溢出隐藏、文本不换行、文本对齐、垂直对齐，以及标签的颜色、字体大小、高度、必填标记等标签显示样式
-- `content`: 内容元素，包含表单内容区域的布局、样式和控件容器的相关样式
+- `root`: Root element with form item margin-bottom, vertical-align, transitions, hidden states, error/warning states and other basic form item container styles
+- `label`: Label element with flex layout, overflow hidden, whitespace nowrap, text alignment, vertical alignment, plus label color, font size, height, required marks and other label display styles
+- `content`: Content element with form content area layout, styling and control container related styles
 
 ### image
 
-- 组件: `image`
-- 语义节点数: 8
-- 来源示例: `docs/src/pages/components/image/demo/_semantic.vue`
+- Component: `image`
+- Semantic nodes: 8
+- Source demo: `docs/src/pages/components/image/demo/_semantic.vue`
 
-- `root`: 根元素，设置相对定位和行内块布局样式
-- `image`: 图片元素，设置宽度、高度和垂直对齐样式
-- `cover`: 悬浮图片显示的提示元素，设置绝对定位、背景色、透明度和过渡动画样式
+- `root`: Root element, sets relative positioning and inline-block layout styles
+- `image`: Image element, sets width, height and vertical alignment styles
+- `cover`: Image hover display prompt element, sets absolute positioning, background color, opacity and transition animation styles
 - `popup`:
-  - `root`: 预览根元素，设置固定定位、层级和背景遮罩样式
-  - `mask`: 预览遮罩元素，设置绝对定位和半透明背景样式
-  - `body`: 预览内容元素，设置flex布局、居中对齐和指针事件样式
-  - `footer`: 预览页脚元素，设置绝对定位、居中布局和底部操作区域样式
-  - `actions`: 预览操作组元素，设置flex布局、背景色、圆角和操作按钮样式
+  - `root`: Preview root element, sets fixed positioning, z-index and background mask styles
+  - `mask`: Preview mask element, sets absolute positioning and semi-transparent background styles
+  - `body`: Preview body element, sets flex layout, center alignment and pointer event styles
+  - `footer`: Preview footer element, sets absolute positioning, center layout and bottom operation area styles
+  - `actions`: Preview actions group element, sets flex layout, background color, border radius and action button styles
 
 ### input
 
-- 组件: `input`
-- 语义节点数: 5
-- 来源示例: `docs/src/pages/components/input/demo/_semantic.vue`
+- Component: `input`
+- Semantic nodes: 5
+- Source demo: `docs/src/pages/components/input/demo/_semantic.vue`
 
-- `root`: 根元素，包含相对定位、行内块布局、宽度、最小宽度、内边距、颜色、字体、行高、圆角、过渡动画等输入框容器的基础样式
-- `prefix`: 前缀的包裹元素，包含前缀内容的布局和样式
-- `input`: 输入框元素，包含输入框的核心交互样式和文本输入相关的样式
-- `suffix`: 后缀的包裹元素，包含后缀内容的布局和样式
-- `count`: 文字计数元素，包含字符计数显示的字体和颜色样式
+- `root`: Root element with relative positioning, inline-block display, width, min-width, padding, colors, fonts, line-height, border-radius, transitions and other input container basic styles
+- `prefix`: Prefix wrapper element with layout and styling for prefix content
+- `input`: Input element with core interactive styles and text input related styling
+- `suffix`: Suffix wrapper element with layout and styling for suffix content
+- `count`: Character count element with font and color styles for count display
 
 ### input:password
 
-- 组件: `input`
-- 变体: `password`
-- 语义节点数: 5
-- 来源示例: `docs/src/pages/components/input/demo/_semantic-password.vue`
+- Component: `input`
+- Variant: `password`
+- Semantic nodes: 5
+- Source demo: `docs/src/pages/components/input/demo/_semantic-password.vue`
 
-- `root`: 根元素，包含相对定位、行内块布局、宽度、最小宽度、内边距、颜色、字体、行高、圆角、过渡动画等输入框容器的基础样式
-- `prefix`: 前缀的包裹元素，包含前缀内容的布局和样式
-- `input`: 输入框元素，包含输入框的核心交互样式和文本输入相关的样式
-- `suffix`: 后缀的包裹元素，包含后缀内容的布局和样式
-- `count`: 文字计数元素，包含字符计数显示的字体和颜色样式
+- `root`: Root element with relative positioning, inline-block display, width, min-width, padding, colors, fonts, line-height, border-radius, transitions and other input container basic styles
+- `prefix`: Prefix wrapper element with layout and styling for prefix content
+- `input`: Input element with core interactive styles and text input related styling
+- `suffix`: Suffix wrapper element with layout and styling for suffix content
+- `count`: Character count element with font and color styles for count display
 
 ### inputNumber
 
-- 组件: `input-number`
-- 语义节点数: 6
-- 来源示例: `docs/src/pages/components/input-number/demo/_semantic.vue`
+- Component: `input-number`
+- Semantic nodes: 6
+- Source demo: `docs/src/pages/components/input-number/demo/_semantic.vue`
 
-- `root`: 根元素，设置行内块布局、宽度、边框圆角和重置样式
-- `prefix`: 前缀的包裹元素，设置flex布局、对齐方式和右边距样式
-- `input`: 输入框元素，设置字体、行高、文本输入和交互样式
-- `suffix`: 后缀的包裹元素，设置flex布局、边距和过渡动画样式
-- `actions`: 操作元素，设置绝对定位、宽度、flex布局和数值调节按钮样式
-- `action`: 单个操作按钮元素，设置按钮的样式、悬浮效果和点击交互
+- `root`: Root element, sets inline-block layout, width, border radius and reset styles
+- `prefix`: Prefix wrapper element, sets flex layout, alignment and right margin styles
+- `input`: Input element, sets font, line height, text input and interaction styles
+- `suffix`: Suffix wrapper element, sets flex layout, margin and transition animation styles
+- `actions`: Actions element, sets absolute positioning, width, flex layout and number adjustment button styles
+- `action`: Single action button element, sets button styling, hover effects and click interactions
 
 ### inputSearch
 
-- 组件: `input`
-- 变体: `search`
-- 语义节点数: 8
-- 来源示例: `docs/src/pages/components/input/demo/_semantic-search.vue`
+- Component: `input`
+- Variant: `search`
+- Semantic nodes: 8
+- Source demo: `docs/src/pages/components/input/demo/_semantic-search.vue`
 
-- `root`: 根元素，包含相对定位、行内块布局、宽度、最小宽度、内边距、颜色、字体、行高、圆角、过渡动画等输入框容器的基础样式
-- `prefix`: 前缀的包裹元素，包含前缀内容的布局和样式
-- `input`: 输入框元素，包含输入框的核心交互样式和文本输入相关的样式
-- `suffix`: 后缀的包裹元素，包含后缀内容的布局和样式
-- `count`: 文字计数元素，包含字符计数显示的字体和颜色样式
+- `root`: Root element with relative positioning, inline-block display, width, min-width, padding, colors, fonts, line-height, border-radius, transitions and other input container basic styles
+- `prefix`: Prefix wrapper element with layout and styling for prefix content
+- `input`: Input element with core interactive styles and text input related styling
+- `suffix`: Suffix wrapper element with layout and styling for suffix content
+- `count`: Character count element with font and color styles for count display
 - `button`:
-  - `root`: 搜索按钮的根元素，设置按钮的样式、悬浮效果和点击交互
-  - `icon`: 搜索按钮的图标元素，设置图标的样式、悬浮效果和点击交互
-  - `content`: 搜索按钮的内容元素，设置文本的样式、悬浮效果和点击交互
+  - `root`: Search button root element with button styles, hover effects and click interactions
+  - `icon`: Search button icon element with icon styles, hover effects and click interactions
+  - `content`: Search button content element with text styles, hover effects and click interactions
 
 ### masonry
 
-- 组件: `masonry`
-- 语义节点数: 2
-- 来源示例: `docs/src/pages/components/masonry/demo/_semantic.vue`
+- Component: `masonry`
+- Semantic nodes: 2
+- Source demo: `docs/src/pages/components/masonry/demo/_semantic.vue`
 
-- `root`: 根元素，设置相对定位、flex布局和瀑布流容器样式
-- `item`: 条目元素，设置绝对定位、宽度计算、过渡动画和瀑布流项目样式
+- `root`: Root element, sets relative positioning, flex layout and masonry container styles
+- `item`: Item element, sets absolute positioning, width calculation, transition animation and masonry item styles
 
 ### mentions
 
-- 组件: `mentions`
-- 语义节点数: 4
-- 来源示例: `docs/src/pages/components/mentions/demo/_semantic.vue`
+- Component: `mentions`
+- Semantic nodes: 4
+- Source demo: `docs/src/pages/components/mentions/demo/_semantic.vue`
 
-- `root`: 根元素，设置行内flex布局、相对定位、内边距和边框样式
-- `textarea`: 文本域元素，设置字体、行高、文本输入和背景样式
-- `suffix`: 后缀元素，包含后缀内容的布局和样式，如清除按钮等
-- `popup`: 弹出框元素，设置绝对定位、层级、背景色、圆角、阴影和下拉选项样式
+- `root`: Root element, set inline flex layout, relative positioning, padding and border styles
+- `textarea`: Textarea element, set font, line height, text input and background styles
+- `suffix`: Suffix element with layout and styling for suffix content like clear button, etc.
+- `popup`: Popup element, set absolute positioning, z-index, background color, border radius, shadow and dropdown options styles
 
 ### menu
 
-- 组件: `menu`
-- 语义节点数: 12
-- 来源示例: `docs/src/pages/components/menu/demo/_semantic.vue`
+- Component: `menu`
+- Semantic nodes: 12
+- Source demo: `docs/src/pages/components/menu/demo/_semantic.vue`
 
-- `root`: 根元素，包含菜单容器的基础样式和布局
-- `item`: 条目元素，包含相对定位、块级显示、外边距、空白符处理、光标样式、过渡动画等菜单项的基础交互样式
-- `itemIcon`: 图标元素，包含最小宽度、字体大小、过渡动画、图标重置样式，以及与文本的间距控制
-- `itemContent`: 条目内容元素，包含菜单项内容的布局和排版样式
+- `root`: Root element with basic menu container styles and layout
+- `item`: Item element with relative positioning, block display, margins, whitespace handling, cursor styles, transitions and other basic interactive styles for menu items
+- `itemIcon`: Icon element with min-width, font-size, transitions, icon reset styles, and spacing control with text
+- `itemContent`: Item content element with layout and typography styles for menu item content
 - `subMenu`:
-  - `itemTitle`: 子菜单标题元素，包含子菜单标题的样式和交互效果
-  - `list`: 子菜单列表元素，包含子菜单列表的布局和容器样式
-  - `item`: 子菜单单项元素，包含子菜单项的样式和交互效果
-  - `itemIcon`: 子菜单条目图标元素，包含子菜单图标的尺寸和样式
-  - `itemContent`: 子菜单条目内容元素，包含子菜单内容的布局和排版
-- `itemTitle`: 菜单标题元素(horizontal 模式不生效)，包含标题文字的样式和布局
-- `list`: 菜单列表元素(horizontal 模式不生效)，包含菜单列表的布局和容器样式
-- `popup`: 弹出菜单(inline 模式不生效)，包含弹出层的定位、层级、背景等样式
+  - `itemTitle`: Submenu title element with submenu title styles and interactive effects
+  - `list`: Submenu list element with submenu list layout and container styles
+  - `item`: Submenu item element with submenu item styles and interactive effects
+  - `itemIcon`: Submenu item icon element with submenu icon size and styles
+  - `itemContent`: Submenu item content element with submenu content layout and typography
+- `itemTitle`: Item title element (no effect in horizontal mode) with title text styles and layout
+- `list`: Menu list element (no effect in horizontal mode) with menu list layout and container styles
+- `popup`: Popup menu element (no effect in inline mode) with popup layer positioning, z-index, background and other styles
 
 ### message
 
-- 组件: `message`
-- 语义节点数: 3
-- 来源示例: `docs/src/pages/components/message/demo/_semantic.vue`
+- Component: `message`
+- Semantic nodes: 3
+- Source demo: `docs/src/pages/components/message/demo/_semantic.vue`
 
-- `root`: 根元素，设置固定定位、层级、内边距、背景色、圆角、阴影和动画样式
-- `icon`: 图标元素，设置字体大小、右边距和状态颜色样式
-- `content`: 内容元素，设置行内块布局、文字颜色和内容展示样式
+- `root`: Root element, set fixed positioning, z-index, padding, background color, border radius, shadow and animation styles
+- `icon`: Icon element, set font size, right margin and status color styles
+- `content`: Content element, set inline block layout, text color and content display styles
 
 ### modal
 
-- 组件: `modal`
-- 语义节点数: 8
-- 来源示例: `docs/src/pages/components/modal/demo/_semantic.vue`
+- Component: `modal`
+- Semantic nodes: 8
+- Source demo: `docs/src/pages/components/modal/demo/_semantic.vue`
 
-- `root`: 根元素，包含相对定位、顶部位置、宽度、最大宽度、外边距、底部内边距等模态框容器的基础布局样式
-- `mask`: 遮罩层元素，包含固定定位、层级、背景色、动画过渡等遮罩层的样式
-- `container`: Modal 容器元素，包含相对定位、背景色、背景裁剪、边框、圆角、阴影、指针事件、内边距等模态框主体样式
-- `wrapper`: 包裹层元素，一般用于动画容器，包含动画和过渡效果的样式
-- `header`: 头部元素，包含头部内边距、下边框等头部区域样式
-- `title`: 标题元素，包含外边距、颜色、字体权重、字体大小、行高、文字换行等标题文字样式
-- `body`: 内容元素，包含内容区域的背景色、内边距等内容展示样式
-- `footer`: 底部元素，包含底部的背景色、内边距、上边框、圆角等底部区域样式
+- `root`: Root element with relative positioning, top position, width, max-width, margins, bottom padding and other basic layout styles for modal container
+- `mask`: Mask element with fixed positioning, z-index, background color, animation transitions and other mask layer styles
+- `container`: Modal container element with relative positioning, background, background-clip, border, border-radius, box-shadow, pointer-events, padding and other modal body styles
+- `wrapper`: Wrapper element used for motion container with animation and transition effect styles
+- `header`: Header element with padding, bottom border and other header area styles
+- `title`: Title element with margin, color, font-weight, font-size, line-height, word-wrap and other title text styles
+- `body`: Body element with content area background color, padding and other content display styles
+- `footer`: Footer element with footer background color, padding, top border, border-radius and other footer area styles
 
 ### notification
 
-- 组件: `notification`
-- 语义节点数: 5
-- 来源示例: `docs/src/pages/components/notification/demo/_semantic.vue`
+- Component: `notification`
+- Semantic nodes: 5
+- Source demo: `docs/src/pages/components/notification/demo/_semantic.vue`
 
-- `root`: 根元素，设置固定定位、层级、内边距、背景色、圆角、阴影和动画样式
-- `icon`: 图标元素，设置绝对定位、字体大小、行高和状态颜色样式
-- `title`: 标题元素，设置颜色、字体大小、行高和外边距样式
-- `description`: 描述元素，设置字体大小、颜色和外边距样式
-- `actions`: 操作组元素，设置右浮动、上边距和操作按钮布局样式
+- `root`: Root element, set fixed positioning, z-index, padding, background color, border radius, shadow and animation styles
+- `icon`: Icon element, set absolute positioning, font size, line height and status color styles
+- `title`: Title element, set color, font size, line height and margin styles
+- `description`: Description element, set font size, color and margin styles
+- `actions`: Actions element, set float right, top margin and action button layout styles
 
 ### otp
 
-- 组件: `input`
-- 变体: `otp`
-- 语义节点数: 3
-- 来源示例: `docs/src/pages/components/input/demo/_semantic-otp.vue`
+- Component: `input`
+- Variant: `otp`
+- Semantic nodes: 3
+- Source demo: `docs/src/pages/components/input/demo/_semantic-otp.vue`
 
-- `root`: 根元素，包含相对定位、行内块布局、宽度、最小宽度、内边距、颜色、字体、行高、圆角、过渡动画等输入框容器的基础样式
-- `input`: 输入框元素，包含输入框的核心交互样式和文本输入相关的样式
-- `separator`: 分隔符元素，设置OTP输入框之间的分隔符显示样式
+- `root`: Root element with relative positioning, inline-block display, width, min-width, padding, colors, fonts, line-height, border-radius, transitions and other input container basic styles
+- `input`: Input element with core interactive styles and text input related styling
+- `separator`: Separator element, set separator display styles between OTP input boxes
 
 ### pagination
 
-- 组件: `pagination`
-- 语义节点数: 2
-- 来源示例: `docs/src/pages/components/pagination/demo/_semantic.vue`
+- Component: `pagination`
+- Semantic nodes: 2
+- Source demo: `docs/src/pages/components/pagination/demo/_semantic.vue`
 
-- `root`: 根元素，设置flex布局、对齐方式、换行和列表样式
-- `item`: 页码元素，设置尺寸、内边距、边框、背景色、悬停态和激活态样式
+- `root`: Root element, set flex layout, alignment, flex wrap and list styles
+- `item`: Item element, set size, padding, border, background color, hover state and active state styles
 
 ### popconfirm
 
-- 组件: `popconfirm`
-- 语义节点数: 5
-- 来源示例: `docs/src/pages/components/popconfirm/demo/_semantic.vue`
+- Component: `popconfirm`
+- Semantic nodes: 5
+- Source demo: `docs/src/pages/components/popconfirm/demo/_semantic.vue`
 
-- `root`: 根元素，设置绝对定位、层级、变换原点、箭头指向和弹层容器样式
-- `container`: 容器元素，设置背景色、内边距、圆角、阴影、边框和内容展示样式
-- `title`: 标题元素，设置标题文本样式和间距
-- `content`: 描述元素，设置描述文本样式和布局
-- `arrow`: 箭头元素，设置宽高、位置、颜色和边框样式
+- `root`: Root element, set absolute positioning, z-index, transform origin, arrow direction and popover container styles
+- `container`: Container element, set background color, padding, border radius, shadow, border and content display styles
+- `title`: Title element, set title text styles and spacing
+- `content`: Description element, set content text styles and layout
+- `arrow`: Arrow element with width, height, position, color and border styles
 
 ### popover
 
-- 组件: `popover`
-- 语义节点数: 5
-- 来源示例: `docs/src/pages/components/popover/demo/_semantic.vue`
+- Component: `popover`
+- Semantic nodes: 5
+- Source demo: `docs/src/pages/components/popover/demo/_semantic.vue`
 
-- `root`: 根元素，设置绝对定位、层级、变换原点、箭头指向和弹层容器样式
-- `container`: 容器元素，设置背景色、内边距、圆角、阴影、边框和内容展示样式
-- `title`: 标题元素，设置标题文本样式和间距
-- `content`: 内容元素，设置内容文本样式和布局
-- `arrow`: 箭头元素，设置宽高、位置、颜色和边框样式
+- `root`: Root element, set absolute positioning, z-index, transform origin, arrow direction and popover container styles
+- `container`: Container element, set background color, padding, border radius, shadow, border and content display styles
+- `title`: Title element, set title text styles and spacing
+- `content`: Content element, set content text styles and layout
+- `arrow`: Arrow element with width, height, position, color and border styles
 
 ### progress
 
-- 组件: `progress`
-- 语义节点数: 5
-- 来源示例: `docs/src/pages/components/progress/demo/_semantic.vue`
+- Component: `progress`
+- Semantic nodes: 5
+- Source demo: `docs/src/pages/components/progress/demo/_semantic.vue`
 
-- `root`: 根元素，设置相对定位和基础容器样式
-- `body`: 主体元素，设置进度条的布局和尺寸样式
-- `rail`: 导轨元素，设置背景轨道的颜色和圆角样式，steps 模式下没有该元素
-- `track`: 轨迹元素，设置进度填充部分的颜色和过渡动画样式
-- `indicator`: 指示器元素，设置百分比文本或图标的位置和字体样式
+- `root`: Root element, set relative positioning and basic container styles
+- `body`: Body element, set progress bar layout and size styles
+- `rail`: Rail element, set background track color and border radius styles. Not exist in steps mode
+- `track`: Track element, set progress fill color and transition animation styles
+- `indicator`: Indicator element, set percentage text or icon position and font styles
 
 ### qrCode
 
-- 组件: `qr-code`
-- 语义节点数: 2
-- 来源示例: `docs/src/pages/components/qr-code/demo/_semantic.vue`
+- Component: `qr-code`
+- Semantic nodes: 2
+- Source demo: `docs/src/pages/components/qr-code/demo/_semantic.vue`
 
-- `root`: 根元素，设置flex布局、内边距、背景色、边框、圆角和相对定位样式
-- `cover`: 遮罩层元素，设置绝对定位、层级、背景色和加载状态覆盖样式
+- `root`: Root element, set flex layout, padding, background color, border, border radius and relative positioning styles
+- `cover`: Cover element, set absolute positioning, z-index, background color and loading state overlay styles
 
 ### radio
 
-- 组件: `radio`
-- 语义节点数: 3
-- 来源示例: `docs/src/pages/components/radio/demo/_semantic.vue`
+- Component: `radio`
+- Semantic nodes: 3
+- Source demo: `docs/src/pages/components/radio/demo/_semantic.vue`
 
-- `root`: 根元素，包含布局样式、鼠标样式、禁用状态文字颜色等基础容器样式
-- `icon`: 选中框元素，包含圆角样式、过渡动画、边框样式、悬停状态、焦点状态等交互样式
-- `label`: 文本元素，包含内边距、文字颜色、禁用状态、对齐方式等文本样式
+- `root`: Root element with layout styles, cursor styles, disabled text color and other basic container styles
+- `icon`: Icon element with border radius, transition animations, border styles, hover states, focus states and other interactive styles
+- `label`: Label element with padding, text color, disabled states, alignment and other text styles
 
 ### result
 
-- 组件: `result`
-- 语义节点数: 6
-- 来源示例: `docs/src/pages/components/result/demo/_semantic.vue`
+- Component: `result`
+- Semantic nodes: 6
+- Source demo: `docs/src/pages/components/result/demo/_semantic.vue`
 
-- `root`: 根元素，包含文本对齐、布局样式等基础容器样式
-- `icon`: 图标元素，包含外边距、文本对齐、字体大小、状态颜色等图标样式
-- `title`: 标题元素，包含字体大小、文字颜色、行高、对齐方式等文字样式
-- `subTitle`: 副标题元素，包含字体大小、文字颜色、行高等文字样式
-- `extra`: 操作区域元素，包含外边距、文本对齐、内部元素间距等布局样式
-- `body`: 内容元素，包含外边距、内边距、背景色等内容区域样式
+- `root`: Root element with text alignment, layout styles and other basic container styles
+- `icon`: Icon element with margin, text alignment, font size, status colors and other icon styles
+- `title`: Title element with font size, text color, line height, text alignment and other text styles
+- `subTitle`: Subtitle element with font size, text color, line height and other text styles
+- `extra`: Action area element with margin, text alignment, inner element spacing and other layout styles
+- `body`: Content element with margin, padding, background color and other content area styles
 
 ### ribbon
 
-- 组件: `badge`
-- 变体: `ribbon`
-- 语义节点数: 3
-- 来源示例: `docs/src/pages/components/badge/demo/_semantic_ribbon.vue`
+- Component: `badge`
+- Variant: `ribbon`
+- Semantic nodes: 3
+- Source demo: `docs/src/pages/components/badge/demo/_semantic_ribbon.vue`
 
-- `root`: 根元素，设置相对定位和包装容器样式
-- `indicator`: 指示器元素，设置绝对定位、内边距、背景色、圆角和缎带样式
-- `content`: 文本元素，设置文本颜色和缎带内容显示样式
+- `root`: Root element, set relative positioning and wrapper container styles
+- `indicator`: Indicator element, set absolute positioning, padding, background color, border radius and ribbon styles
+- `content`: Content element, set text color and ribbon content display styles
 
 ### segmented
 
-- 组件: `segmented`
-- 语义节点数: 4
-- 来源示例: `docs/src/pages/components/segmented/demo/_semantic.vue`
+- Component: `segmented`
+- Semantic nodes: 4
+- Source demo: `docs/src/pages/components/segmented/demo/_semantic.vue`
 
-- `root`: 根元素，设置行内块布局、内边距、背景色、圆角、过渡动画和容器样式
-- `item`: 选项元素，设置相对定位、文本对齐、光标样式、过渡动画、选中态背景色和悬停态样式
-- `label`: 标签内容元素，设置最小高度、行高、内边距、文本省略和内容布局样式
-- `icon`: 图标元素，设置图标的尺寸、颜色和与文本的间距样式
+- `root`: Root element with inline-block layout, padding, background, border radius, transition and container styles
+- `item`: Option element with relative positioning, text alignment, cursor style, transition, selected state background and hover styles
+- `label`: Label content element with min height, line height, padding, text ellipsis and content layout styles
+- `icon`: Icon element with icon size, color and text spacing styles
 
 ### select
 
-- 组件: `select`
-- 语义节点数: 13
-- 来源示例: `docs/src/pages/components/select/demo/_semantic.vue`
+- Component: `select`
+- Semantic nodes: 13
+- Source demo: `docs/src/pages/components/select/demo/_semantic.vue`
 
-- `root`: 根元素，包含相对定位、行内 flex 布局、光标样式、过渡动画、边框等选择器容器的基础样式
-- `prefix`: 前缀元素，包含前缀内容的布局和样式
-- `content`: 多选容器，包含已选项的布局、间距、换行相关样式
-- `placeholder`: 占位符元素，包含占位符文本的字体样式和颜色
-- `clear`: 清除按钮元素，包含清除按钮的布局、样式和交互效果
-- `input`: 输入框元素，包含搜索输入框的样式、光标控制、字体继承等搜索相关样式，去除了边框样式
-- `suffix`: 后缀元素，包含后缀内容的布局和样式，如清除按钮、箭头图标等
+- `root`: Root element with relative positioning, inline-flex layout, cursor styles, transitions, border and other basic selector container styles
+- `prefix`: Prefix element with layout and styling for prefix content
+- `content`: Multiple selection container with layout, spacing, and wrapping styles for selected items
+- `placeholder`: Placeholder element with font styles and colors for placeholder text
+- `clear`: Clear button element with layout, styling and interactive effects for clear button
+- `input`: Input element with search input styling, cursor control, font inheritance and other search-related styles. Remove border styles
+- `suffix`: Suffix element with layout and styling for suffix content like clear button, arrow icon, etc.
 - `popup`:
-  - `root`: 弹出菜单元素，包含弹出层的定位、层级、背景、边框、阴影等弹出容器样式
-  - `list`: 弹出菜单列表元素，包含选项列表的布局、滚动、最大高度等列表容器样式
-  - `listItem`: 弹出菜单条目元素，包含选项项的内边距、悬浮效果、选中状态、禁用状态等选项交互样式
-- `item`: 多选项元素，包含边框、背景、内边距、外边距样式
-- `itemContent`: 多选项内容区域，包含文字的省略样式
-- `itemRemove`: 多选项移除按钮，包含字体相关样式
+  - `root`: Popup element with popup layer positioning, z-index, background, border, box-shadow and other popup container styles
+  - `list`: Popup list element with option list layout, scrolling, max-height and other list container styles
+  - `listItem`: Popup item element with option item padding, hover effects, selected states, disabled states and other option interactive styles
+- `item`: Multiple selection item element with border, background, padding, and margin styles
+- `itemContent`: Multiple selection item content area with text ellipsis styles
+- `itemRemove`: Multiple selection item remove button with font-related styless
 
 ### skeleton
 
-- 组件: `skeleton`
-- 语义节点数: 6
-- 来源示例: `docs/src/pages/components/skeleton/demo/_semantic.vue`
+- Component: `skeleton`
+- Semantic nodes: 6
+- Source demo: `docs/src/pages/components/skeleton/demo/_semantic.vue`
 
-- `root`: 根元素，包含表格显示、宽度、动画效果、圆角等骨架屏容器的基础样式
-- `header`: 头部元素，包含表格单元格、内边距、垂直对齐等头像占位区域的布局样式
-- `section`: 区块元素，包含骨架屏内容区域的布局样式
-- `avatar`: 头像元素，包含行内块显示、垂直对齐、背景色、尺寸、圆角等头像占位的样式
-- `title`: 标题元素，包含宽度、高度、背景色、圆角等标题占位的样式
-- `paragraph`: 段落元素，包含内边距、列表项样式、背景色、圆角等段落占位的样式
+- `root`: Root element with table display, width, animation effects, border radius and other skeleton container basic styles
+- `header`: Header element with table cell, padding, vertical alignment and other avatar placeholder area layout styles
+- `section`: Section element with skeleton content area layout styles
+- `avatar`: Avatar element with inline-block display, vertical alignment, background color, size, border radius and other avatar placeholder styles
+- `title`: Title element with width, height, background color, border radius and other title placeholder styles
+- `paragraph`: Paragraph element with padding, list item styles, background color, border radius and other paragraph placeholder styles
 
 ### slider
 
-- 组件: `slider`
-- 语义节点数: 5
-- 来源示例: `docs/src/pages/components/slider/demo/_semantic.vue`
+- Component: `slider`
+- Semantic nodes: 5
+- Source demo: `docs/src/pages/components/slider/demo/_semantic.vue`
 
-- `root`: 根元素，设置相对定位、高度、边距、内边距、光标样式和触摸事件控制
-- `track`: 轨道选取条元素，设置绝对定位、背景色、圆角和过渡动画样式
-- `tracks`: 多段轨道容器元素，设置绝对定位和过渡动画样式
-- `rail`: 背景轨道元素，设置绝对定位、背景色、圆角和过渡动画样式
-- `handle`: 滑块控制点元素，设置绝对定位、尺寸、轮廓线、用户选择、背景色、边框阴影、圆角、光标样式和过渡动画
+- `root`: Root element with relative positioning, height, margin, padding, cursor style and touch action control
+- `track`: Track selection bar element with absolute positioning, background color, border radius and transition animation styles
+- `tracks`: Multi-segment track container element with absolute positioning and transition animation styles
+- `rail`: Background rail element with absolute positioning, background color, border radius and transition animation styles
+- `handle`: Slider handle control element with absolute positioning, size, outline, user selection, background color, border shadow, border radius, cursor style and transition animation
 
 ### space
 
-- 组件: `space`
-- 语义节点数: 3
-- 来源示例: `docs/src/pages/components/space/demo/_semantic.vue`
+- Component: `space`
+- Semantic nodes: 3
+- Source demo: `docs/src/pages/components/space/demo/_semantic.vue`
 
-- `root`: 根元素，包含 flex 布局、间隙设置、对齐方式、换行等间距容器的基础样式
-- `item`: 包裹的子组件，包含间距项的布局和样式，为每个子元素提供包装用于内联对齐
-- `separator`: 分隔符，包含分隔元素的样式
+- `root`: Root element with flex layout, gap settings, alignment, wrap and other spacing container basic styles
+- `item`: Wrapped item element with spacing item layout and styles, providing wrapper for each child element for inline alignment
+- `separator`: Separator element with divider styling
 
 ### spin
 
-- 组件: `spin`
-- 语义节点数: 2
-- 来源示例: `docs/src/pages/components/spin/demo/_semantic.vue`
+- Component: `spin`
+- Semantic nodes: 2
+- Source demo: `docs/src/pages/components/spin/demo/_semantic.vue`
 
-- `root`: 根元素，设置绝对定位、显示控制、颜色、字体大小、文本对齐、垂直对齐、透明度和过渡动画(fullscreen 为 false 时才有效)
-- `indicator`: 指示器元素，设置宽度、高度、字体大小、行内块显示、过渡动画、变换原点、行高和颜色
+- `root`: Root element with absolute positioning, display control, color, font size, text alignment, vertical alignment, opacity and transition animation (effective when fullscreen is false)
+- `indicator`: Indicator element with width, height, font size, inline-block display, transition animation, transform origin, line height and color
 
 ### splitter
 
-- 组件: `splitter`
-- 语义节点数: 3
-- 来源示例: `docs/src/pages/components/splitter/demo/_semantic.vue`
+- Component: `splitter`
+- Semantic nodes: 3
+- Source demo: `docs/src/pages/components/splitter/demo/_semantic.vue`
 
-- `root`: 根元素，设置flex布局、宽度高度、对齐方式和拉伸样式
-- `panel`: 面板元素，设置flex基础值、增长比例和面板容器样式
-- `dragger`: 拖拽控制元素，设置绝对定位、用户选择、层级、居中对齐、背景色、悬停态和激活态样式
+- `root`: Root element with flex layout, width and height, alignment and stretch styles
+- `panel`: Panel element with flex basis, grow ratio and panel container styles
+- `dragger`: Drag control element with absolute positioning, user selection, z-index, center alignment, background color, hover and active states styles
 
 ### statistic
 
-- 组件: `statistic`
-- 语义节点数: 6
-- 来源示例: `docs/src/pages/components/statistic/demo/_semantic.vue`
+- Component: `statistic`
+- Semantic nodes: 6
+- Source demo: `docs/src/pages/components/statistic/demo/_semantic.vue`
 
-- `root`: 根元素，包含统计数值组件的重置样式和整体容器样式
-- `header`: 头部元素，包含下内边距和标题区域的布局样式
-- `title`: 标题元素，包含文字颜色、字体大小等标题文字的显示样式
-- `prefix`: 前缀元素，包含行内块显示、右外边距等前缀内容的布局样式
-- `content`: 内容元素，包含文字颜色、字体大小、字体族等数值内容的展示样式
-- `suffix`: 后缀元素，包含行内块显示、左外边距等后缀内容的布局样式
+- `root`: Root element with reset styles and overall container styles for statistic component
+- `header`: Header element with bottom padding and title area layout styles
+- `title`: Title element with text color, font size and other title text display styles
+- `prefix`: Prefix element with inline-block display, right margin and other prefix content layout styles
+- `content`: Content element with text color, font size, font family and other numeric content display styles
+- `suffix`: Suffix element with inline-block display, left margin and other suffix content layout styles
 
 ### steps
 
-- 组件: `steps`
-- 语义节点数: 10
-- 来源示例: `docs/src/pages/components/steps/demo/_semantic.vue`
+- Component: `steps`
+- Semantic nodes: 10
+- Source demo: `docs/src/pages/components/steps/demo/_semantic.vue`
 
-- `root`: 根元素，包含 flex 布局、禁止换行、对齐方式、CSS 变量等步骤条容器的基础样式
-- `item`: 步骤项元素，包含 flex 布局、相对定位等单个步骤项的基础容器样式
-- `itemWrapper`: 步骤项内裹元素，包含 flex 布局、禁止换行、顶部内边距等步骤项内容的包装样式
-- `itemIcon`: 步骤项图标元素，包含图标的尺寸、定位、字体大小等图标显示相关样式
-- `itemHeader`: 步骤项头部元素，包含 flex 布局、禁止换行、对齐方式等头部区域的布局样式
-- `itemTitle`: 步骤项标题元素，包含颜色、字体大小、行高、文字换行、过渡动画等标题文字样式
-- `itemSubtitle`: 步骤项副标题元素，包含颜色、字体权重、字体大小、行高、外边距、文字换行等副标题样式
-- `itemSection`: 步骤项区域元素，包含步骤项内容区域的布局和样式
-- `itemContent`: 步骤项内容元素，包含颜色、字体大小、行高、文字换行、过渡动画等内容文字样式
-- `itemRail`: 步骤项连接线元素，包含边框样式、边框宽度、过渡动画等连接线的样式
+- `root`: Root element with flex layout, nowrap, alignment, CSS variables and other basic step container styles
+- `item`: Step item element with flex layout, relative positioning and other basic step item container styles
+- `itemWrapper`: Step item wrapper element with flex layout, nowrap, top padding and other step content wrapping styles
+- `itemIcon`: Step item icon element with icon size, positioning, font-size and other icon display related styles
+- `itemHeader`: Step item header element with flex layout, nowrap, alignment and other header area layout styles
+- `itemTitle`: Step item title element with color, font-size, line-height, word-break, transitions and other title text styles
+- `itemSubtitle`: Step item subtitle element with color, font-weight, font-size, line-height, margin, word-break and other subtitle styles
+- `itemSection`: Step item section element with step content area layout and styling
+- `itemContent`: Step item content element with color, font-size, line-height, word-break, transitions and other content text styles
+- `itemRail`: Step item rail element with border-style, border-width, transitions and other connecting line styles
 
 ### switch
 
-- 组件: `switch`
-- 语义节点数: 3
-- 来源示例: `docs/src/pages/components/switch/demo/_semantic.vue`
+- Component: `switch`
+- Semantic nodes: 3
+- Source demo: `docs/src/pages/components/switch/demo/_semantic.vue`
 
-- `root`: 根元素，包含最小宽度、高度、行高、垂直对齐、背景色、边框、圆角、光标样式、过渡动画、用户选择等开关容器的基础样式
-- `content`: 内容元素，包含块级显示、溢出隐藏、圆角、高度、内边距、过渡动画等开关内容区域的布局和样式
-- `indicator`: 指示器元素,包含绝对定位、宽度、高度、背景色、圆角、阴影、过渡动画等开关把手的样式和交互效果
+- `root`: Root element with min-width, height, line-height, vertical alignment, background color, border, border radius, cursor style, transition animations, user selection and other basic switch container styles
+- `content`: Content element with block display, overflow hidden, border radius, height, padding, transition animations and other switch content area layout and styles
+- `indicator`: Indicator element with absolute positioning, width, height, background color, border radius, shadow, transition animations and other switch handle styles and interactive effects
 
 ### table
 
-- 组件: `table`
-- 语义节点数: 13
-- 来源示例: `docs/src/pages/components/table/demo/_semantic.vue`
+- Component: `table`
+- Semantic nodes: 13
+- Source demo: `docs/src/pages/components/table/demo/_semantic.vue`
 
-- `root`: 根元素，包含字体大小、背景色、圆角、滚动条颜色等表格容器的基础样式
-- `title`: 标题元素，包含表格标题的样式和布局
-- `content`: 内容元素，包含表格内容区域的样式和布局
+- `root`: Root element with font-size, background, border-radius, scrollbar-color and other basic table container styles
+- `title`: Title element with table title styling and layout
+- `content`: Content element with table content area styling and layout
 - `header`:
-  - `wrapper`: 头部容器元素，包含表头的布局和容器样式
-  - `row`: 头部行元素，包含表头行的布局和样式
-  - `cell`: 头部单元格元素，包含相对定位、内边距、文字换行、背景色、文字颜色、字体权重等表头单元格样式
-- `section`: 容器元素，包含清除浮动、最大宽度、滚动条背景等表格包装容器样式
+  - `wrapper`: Header wrapper element with table header layout and container styles
+  - `row`: Header row element with table header row layout and styling
+  - `cell`: Header cell element with relative positioning, padding, word-wrap, background, text color, font-weight and other header cell styles
+- `section`: Container element with clear-fix, max-width, scrollbar background and other table wrapper styles
 - `body`:
-  - `wrapper`: 主体容器元素，包含表格主体的布局和容器样式
-  - `row`: 主体行元素，包含数据行的悬浮效果、选中状态、展开状态等交互样式
-  - `cell`: 主体单元格元素，包含相对定位、内边距、文字换行等数据单元格的基础样式
-- `footer`: 底部元素，包含表格底部的背景色、文字颜色等样式
+  - `wrapper`: Body wrapper element with table body layout and container styles
+  - `row`: Body row element with hover effects, selected states, expanded states and other interactive row styles
+  - `cell`: Body cell element with relative positioning, padding, word-wrap and other basic data cell styles
+- `footer`: Footer element with table footer background color, text color and other footer styles
 - `pagination`:
-  - `root`: 分页根元素，包含分页组件的基础样式和布局
-  - `item`: 分页单项元素，包含分页项的样式和交互效果
+  - `root`: Pagination root element with pagination component basic styles and layout
+  - `item`: Pagination item element with pagination item styling and interactive effects
 
 ### tabs
 
-- 组件: `tabs`
-- 语义节点数: 6
-- 来源示例: `docs/src/pages/components/tabs/demo/_semantic.vue`
+- Component: `tabs`
+- Semantic nodes: 6
+- Source demo: `docs/src/pages/components/tabs/demo/_semantic.vue`
 
-- `root`: 根元素，包含标签页容器的基础样式、布局和方向控制
-- `header`: 头部元素，包含标签页头部导航的布局、背景、边框等样式
-- `item`: Item 元素，包含相对定位、内边距、颜色、文本省略、圆角、过渡动画等标签项的样式和交互效果
-- `indicator`: 指示器元素，包含指示条的颜色、位置、尺寸、过渡动画等活跃状态指示样式
-- `content`: 内容元素，包含标签页内容面板的布局、内边距等内容展示样式
+- `root`: Root element with basic tab container styles, layout and direction control
+- `header`: Header element with tab navigation header layout, background, borders and other styles
+- `item`: Item element with relative positioning, padding, colors, text ellipsis, border-radius, transitions and other tab item styles and interactive effects
+- `indicator`: Indicator element with indicator bar color, position, dimensions, transitions and other active state indication styles
+- `content`: Content element with tab content panel layout, padding and other content display styles
 - `popup`:
-  - `root`: 弹出菜单元素，包含下拉菜单的绝对定位、层级、显示控制、最大高度、滚动等样式
+  - `root`: Popup menu element with dropdown absolute positioning, z-index, display control, max-height, scrolling and other styles
 
 ### tag
 
-- 组件: `tag`
-- 语义节点数: 3
-- 来源示例: `docs/src/pages/components/tag/demo/_semantic.vue`
+- Component: `tag`
+- Semantic nodes: 3
+- Source demo: `docs/src/pages/components/tag/demo/_semantic.vue`
 
-- `root`: 根元素，包含行内块布局、自动高度、内边距、字体大小、行高、禁止换行、背景色、边框、圆角、透明度、过渡动画、文本对齐、相对定位等标签的基础样式
-- `icon`: 图标元素，包含字体大小、颜色、光标样式、过渡动画等图标的显示样式
-- `content`: 内容元素，包含文本内容的颜色、字体样式等内容区域的样式
+- `root`: Root element with inline-block display, auto height, padding, font size, line height, nowrap, background color, border, border radius, opacity, transition animations, text alignment, relative positioning and other basic tag styles
+- `icon`: Icon element with font size, color, cursor style, transition animations and other icon display styles
+- `content`: Content element with text content color, font styles and other content area styles
 
 ### textArea
 
-- 组件: `input`
-- 变体: `textarea`
-- 语义节点数: 3
-- 来源示例: `docs/src/pages/components/input/demo/_semantic-textarea.vue`
+- Component: `input`
+- Variant: `textarea`
+- Semantic nodes: 3
+- Source demo: `docs/src/pages/components/input/demo/_semantic-textarea.vue`
 
-- `root`: 根元素，设置文本域包装器的样式、边框、圆角、过渡动画和状态控制
-- `textarea`: 文本域元素，设置字体、行高、内边距、颜色、背景、边框、文本输入和多行文本展示样式
-- `count`: 文字计数元素，设置字符计数显示的位置、字体、颜色和数值统计样式
+- `root`: Root element with textarea wrapper styles, border, border radius, transition animation and state control
+- `textarea`: Textarea element with font, line height, padding, color, background, border, text input and multi-line text display styles
+- `count`: Count element with character count display position, font, color and numeric statistics styles
 
 ### timeline
 
-- 组件: `timeline`
-- 语义节点数: 9
-- 来源示例: `docs/src/pages/components/timeline/demo/_semantic.vue`
+- Component: `timeline`
+- Semantic nodes: 9
+- Source demo: `docs/src/pages/components/timeline/demo/_semantic.vue`
 
-- `root`: 根元素，设置时间轴容器的列表样式重置、垂直布局、点状图标、轮廓样式、交替布局等基础容器样式
-- `item`: 节点元素，设置单个时间节点的相对定位、外边距、内边距、字体大小、完成状态、颜色主题、布局方向等节点基础样式
-- `itemWrapper`: 节点包装元素，设置时间节点内容的包装容器样式
-- `itemIcon`: 节点图标元素，设置节点头部图标的绝对定位、宽高尺寸、背景色、边框、圆角、波纹动画等图标样式
-- `itemSection`: 节点区域元素，设置包含头部和内容的区域容器的Flex布局、换行、间距等布局样式
-- `itemHeader`: 节点头部元素，设置包含标题和连接线的头部区域布局、对齐方式、文本方向等样式
-- `itemTitle`: 节点标题元素，设置节点标题文字的字体大小、行高、颜色等文本样式
-- `itemContent`: 节点内容元素，设置节点详细内容的相对定位、顶部偏移、左侧外边距、文字颜色、词汇换行等内容样式
-- `itemRail`: 节点连接线元素，设置连接时间节点的轨道线条的绝对定位、顶部偏移、左侧偏移、高度、边框颜色、宽度、样式等连接线样式
+- `root`: Root element with timeline container list style reset, vertical layout, dot icon, outlined style, alternate layout and other basic container styles
+- `item`: Item element with single timeline node relative positioning, margin, padding, font size, finish state, color theme, layout direction and other node basic styles
+- `itemWrapper`: Item wrapper element with timeline node content wrapping container styles
+- `itemIcon`: Item icon element with node head icon absolute positioning, width/height size, background color, border, border radius, wave animation and other icon styles
+- `itemSection`: Item section element with section container containing header and content flex layout, wrap, gap and other layout styles
+- `itemHeader`: Item header element with header area layout containing title and rail, alignment, text direction and other styles
+- `itemTitle`: Item title element with node title text font size, line height, color and other text styles
+- `itemContent`: Item content element with node detail content relative positioning, top offset, left margin, text color, word break and other content styles
+- `itemRail`: Item rail element with timeline node connection track line absolute positioning, top offset, left offset, height, border color, width, style and other connection line styles
 
 ### timePicker
 
-- 组件: `time-picker`
-- 语义节点数: 9
-- 来源示例: `docs/src/pages/components/time-picker/demo/_semantic.vue`
+- Component: `time-picker`
+- Semantic nodes: 9
+- Source demo: `docs/src/pages/components/time-picker/demo/_semantic.vue`
 
-- `root`: 根元素，包含相对定位、行内flex布局、内边距、边框圆角、过渡动画等时间选择器容器的基础样式
-- `prefix`: 前缀元素，包含flex布局、右外边距等前缀内容的布局样式
-- `input`: 输入框元素，包含相对定位、宽度、颜色、字体、行高、过渡动画等输入框的核心交互样式
-- `suffix`: 后缀元素，包含flex布局、颜色、行高、指针事件、过渡动画等后缀内容的样式
+- `root`: Root element with relative positioning, inline-flex layout, padding, border-radius, transition animations and other basic styles for time picker container
+- `prefix`: Prefix element with flex layout and margin styles for prefix content layout
+- `input`: Input element with relative positioning, width, color, font, line-height, transition animations and other core interactive styles for input field
+- `suffix`: Suffix element with flex layout, color, line-height, pointer events, transition animations and other styles for suffix content
 - `popup`:
-  - `root`: 弹出框元素
-  - `container`: 容器元素，设置背景色、内边距、圆角、阴影、边框和内容展示样式
-  - `content`: 弹出框内容元素，包含时间列表的宽度、边框、单元格等内容展示样式
-  - `item`: 弹出框单项元素，包含时间单元格的尺寸、背景色、边框圆角、悬停态、选中态等交互样式
-  - `footer`: 弹出框底部元素，包含确认取消按钮等底部操作区域的布局样式
+  - `root`: Popup element
+  - `container`: Container element, set background color, padding, border radius, shadow, border and content display styles
+  - `content`: Popup content element with width, border, cell and other content display styles for time list
+  - `item`: Popup item element with size, background, border-radius, hover state, selected state and other interactive styles for time cells
+  - `footer`: Popup footer element with layout styles for bottom operation area including confirm/cancel buttons
 
 ### tooltip
 
-- 组件: `tooltip`
-- 语义节点数: 3
-- 来源示例: `docs/src/pages/components/tooltip/demo/_semantic.vue`
+- Component: `tooltip`
+- Semantic nodes: 3
+- Source demo: `docs/src/pages/components/tooltip/demo/_semantic.vue`
 
-- `root`: 根元素 (包含箭头、内容元素)，设置绝对定位、层级、块级显示、最大宽度、可见性、变换原点和箭头背景色
-- `container`: 内容元素，设置最小宽度高度、内边距、颜色、文本对齐、背景色、圆角、阴影和边框样式
-- `arrow`: 箭头元素，设置宽高、位置、颜色和边框样式
+- `root`: Root element (including arrows, content elements) with absolute positioning, z-index, block display, max width, visibility, transform origin and arrow background color
+- `container`: Content element with min width and height, padding, color, text alignment, background color, border radius, shadow and border styles
+- `arrow`: Arrow element with width, height, position, color and border styles
 
 ### tour
 
-- 组件: `tour`
-- 语义节点数: 11
-- 来源示例: `docs/src/pages/components/tour/demo/_semantic.vue`
+- Component: `tour`
+- Semantic nodes: 11
+- Source demo: `docs/src/pages/components/tour/demo/_semantic.vue`
 
-- `root`: 引导根容器，设置绝对定位、层级控制、最大宽度、可见性、箭头背景色变量、主题样式等容器样式
-- `mask`: 遮罩层元素，设置固定定位、全屏覆盖、层级、指针事件、过渡动画等遮罩样式
-- `section`: 卡片主要内容区域，设置文本对齐、边框圆角、盒阴影、相对定位、背景色、边框、背景裁剪等卡片样式
-- `cover`: 卡片封面区域，设置文本居中对齐、内边距、图片宽度等图片展示样式
-- `header`: 卡片头部区域，设置内边距、宽度计算、词汇换行等头部容器样式
-- `title`: 引导标题文字，设置字体粗细等标题文本样式
-- `description`: 引导描述文字，设置内边距、词汇换行等描述文本样式
-- `footer`: 卡片底部操作区域，设置内边距、文本右对齐、边框圆角、Flex布局等底部容器样式
-- `actions`: 操作按钮组容器，设置左侧自动外边距、按钮间距等按钮组布局样式
-- `indicators`: 指示器组容器，设置行内块显示等指示器容器样式
-- `indicator`: 单个指示器元素，设置宽高尺寸、行内块显示、圆角、背景色、右外边距、激活状态等圆点样式
+- `root`: Tour root container with absolute positioning, z-index control, max width, visibility, arrow background color variable, theme styles and other container styles
+- `mask`: Mask layer element with fixed positioning, full screen coverage, z-index, pointer events, transition animation and other mask styles
+- `section`: Card main content area with text alignment, border radius, box shadow, relative positioning, background color, border, background clip and other card styles
+- `cover`: Card cover area with text center alignment, padding, image width and other image display styles
+- `header`: Card header area with padding, width calculation, word break and other header container styles
+- `title`: Guide title text with font weight and other title text styles
+- `description`: Guide description text with padding, word wrap and other description text styles
+- `footer`: Card bottom action area with padding, text right alignment, border radius, flex layout and other bottom container styles
+- `actions`: Action button group container with left auto margin, button spacing and other button group layout styles
+- `indicators`: Indicator group container with inline-block display and other indicator container styles
+- `indicator`: Single indicator element with width/height size, inline-block display, border radius, background color, right margin, active state and other dot styles
 
 ### transfer
 
-- 组件: `transfer`
-- 语义节点数: 11
-- 来源示例: `docs/src/pages/components/transfer/demo/_semantic.vue`
+- Component: `transfer`
+- Semantic nodes: 11
+- Source demo: `docs/src/pages/components/transfer/demo/_semantic.vue`
 
-- `root`: 根元素，设置flex布局、穿梭框容器的基础样式和布局控制
-- `section`: 区域元素，设置flex布局、宽度、高度、最小高度、边框、圆角等单侧穿梭框的容器样式
-- `header`: 头部元素，设置flex布局、对齐方式、高度、内边距、颜色、背景色、下边框、圆角等头部区域的样式
-- `title`: 标题元素，设置文本省略、flex占比、文本对齐、自动左边距等标题文字的布局和样式
-- `body`: 内容元素，设置列表主体区域的容器样式和布局控制
-- `list`: 列表元素，设置列表内容的样式、布局和滚动控制
-- `item`: 列表项元素，设置相对定位、内边距、边框、悬停态、选中态、禁用态等列表项的交互样式
-- `itemIcon`: 列表项图标元素，设置复选框等图标的样式和交互状态
-- `itemContent`: 列表项内容元素，设置文本省略、内边距等列表项文本内容的展示样式
-- `footer`: 页脚元素，设置底部操作区域的样式和布局
-- `actions`: 操作元素，设置穿梭按钮组的样式、布局和交互状态
+- `root`: Root element with flex layout, transfer container base styles and layout control
+- `section`: Section element with flex layout, width, height, min height, border, border radius and other single-side transfer container styles
+- `header`: Header element with flex layout, alignment, height, padding, color, background color, bottom border, border radius and other header area styles
+- `title`: Title element with text ellipsis, flex ratio, text alignment, auto left margin and other title text layout and styles
+- `body`: Body element with list main area container styles and layout control
+- `list`: List element with list content styles, layout and scroll control
+- `item`: List item element with relative positioning, padding, border, hover state, selected state, disabled state and other list item interaction styles
+- `itemIcon`: List item icon element with checkbox and other icon styles and interaction states
+- `itemContent`: List item content element with text ellipsis, padding and other list item text content display styles
+- `footer`: Footer element with bottom operation area styles and layout
+- `actions`: Actions element with transfer button group styles, layout and interaction states
 
 ### tree
 
-- 组件: `tree`
-- 语义节点数: 4
-- 来源示例: `docs/src/pages/components/tree/demo/_semantic.vue`
+- Component: `tree`
+- Semantic nodes: 4
+- Source demo: `docs/src/pages/components/tree/demo/_semantic.vue`
 
-- `root`: 根元素，设置树形控件的基础样式、布局和容器控制
-- `item`: 条目元素，设置树节点的基础样式、拖拽状态、角色属性、缩进、切换器、内容包装器等节点结构
-- `itemIcon`: 图标元素，设置树节点图标的样式、尺寸和状态显示
-- `itemTitle`: 标题元素，设置树节点标题文字的显示样式和文本内容
+- `root`: Root element with tree control base styles, layout and container control
+- `item`: Item element with tree node base styles, drag state, role attributes, indentation, switcher, content wrapper and other node structure
+- `itemIcon`: Icon element with tree node icon styles, size and state display
+- `itemTitle`: Title element with tree node title text display styles and text content
 
 ### treeSelect
 
-- 组件: `tree-select`
-- 语义节点数: 12
-- 来源示例: `docs/src/pages/components/tree-select/demo/_semantic.vue`
+- Component: `tree-select`
+- Semantic nodes: 12
+- Source demo: `docs/src/pages/components/tree-select/demo/_semantic.vue`
 
-- `root`: 根元素，设置树选择器的基础样式、边框、圆角容器样式
-- `prefix`: 前缀元素，设置前缀内容的布局和样式
-- `placeholder`: 占位符元素，包含占位符文本的字体样式和颜色
-- `content`: 多选容器，包含已选项的布局、间距、换行相关样式
-- `item`: 多选项元素，包含边框、背景、内边距、外边距样式
-- `itemContent`: 多选项内容区域，包含文字的省略样式
-- `itemRemove`: 多选项移除按钮，包含字体相关样式
-- `input`: 输入框元素，设置文本输入、搜索、选择值显示等输入框的核心交互样式
-- `suffix`: 后缀元素，设置后缀内容、清除按钮、下拉箭头等后缀区域的样式
+- `root`: Root element with tree selector base styles, border, border radius container styles
+- `prefix`: Prefix element with prefix content layout and styles
+- `placeholder`: Placeholder element with font styles and colors for placeholder text
+- `content`: Multiple selection container with layout, spacing, and wrapping styles for selected items
+- `item`: Multiple selection item element with border, background, padding, and margin styles
+- `itemContent`: Multiple selection item content area with text ellipsis styles
+- `itemRemove`: Multiple selection item remove button with font-related styles
+- `input`: Input element with text input, search, selected value display and other input core interaction styles
+- `suffix`: Suffix element with suffix content, clear button, dropdown arrow and other suffix area styles
 - `popup`:
-  - `root`: 弹出菜单元素，设置下拉树形选择面板的定位、层级、背景、边框、阴影等弹层样式
-  - `item`: 弹出菜单条目元素，设置树节点选项的样式、悬停态、选中态等交互状态
-  - `itemTitle`: 弹出菜单标题元素，设置树节点标题文字的显示样式
+  - `root`: Popup element with dropdown tree selection panel positioning, z-index, background, border, shadow and other popup layer styles
+  - `item`: Popup item element with tree node option styles, hover state, selected state and other interaction states
+  - `itemTitle`: Popup title element with tree node title text display styles
 
 ### upload
 
-- 组件: `upload`
-- 语义节点数: 3
-- 来源示例: `docs/src/pages/components/upload/demo/_semantic.vue`
+- Component: `upload`
+- Semantic nodes: 3
+- Source demo: `docs/src/pages/components/upload/demo/_semantic.vue`
 
-- `root`: 根元素容器，包含布局样式、禁用状态文字颜色、用户选择控制、鼠标样式等基础样式
-- `list`: 文件列表容器，包含布局排列、过渡动画、间距控制等样式
-- `item`: 文件项元素，包含内边距、背景色、边框样式、悬停效果、状态颜色、过渡动画等样式
+- `root`: Root container element with layout styles, disabled text color, user-select control, cursor styles and other basic styles
+- `list`: File list container with layout arrangement, transition animations, spacing control and other styles
+- `item`: File item element with padding, background color, border styles, hover effects, status colors, transition animations and other styles

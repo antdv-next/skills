@@ -1,8 +1,8 @@
-# 受控操作示例
+# Controlled Tree
 
-## Description (zh-CN)
+## Description (en-US)
 
-受控操作示例
+Controlled mode lets parent nodes reflect the status of child nodes more intelligently.
 
 ## Source
 

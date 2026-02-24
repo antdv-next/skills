@@ -1,8 +1,8 @@
-# 自定义操作按钮
+# Custom action
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义操作按钮。
+Custom action.
 
 ## Source
 

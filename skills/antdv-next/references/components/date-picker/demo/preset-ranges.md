@@ -1,8 +1,8 @@
-# 预设范围
+# Preset Ranges
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以预设常用的日期范围以提高用户体验。自 `5.8.0` 开始，preset value 支持回调函数返回值方式。
+We can set preset ranges to RangePicker to improve user experience. Since `5.8.0`, preset value supports callback function.
 
 ## Source
 

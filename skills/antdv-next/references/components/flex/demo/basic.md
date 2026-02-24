@@ -1,8 +1,8 @@
-# 基本布局
+# basic
 
-## Description (zh-CN)
+## Description (en-US)
 
-最基本的用法。
+The basic usage.
 
 ## Source
 

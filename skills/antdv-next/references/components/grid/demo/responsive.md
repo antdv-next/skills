@@ -1,8 +1,8 @@
-# 响应式布局
+# Responsive
 
-## Description (zh-CN)
+## Description (en-US)
 
-参照 Bootstrap 的 [响应式设计](http://getbootstrap.com/css/#grid-media-queries)，预设七个响应尺寸：`xs` `sm` `md` `lg` `xl` `xxl` `xxxl`。
+Referring to the Bootstrap [responsive design](http://getbootstrap.com/css/#grid-media-queries), here preset seven dimensions: `xs` `sm` `md` `lg` `xl` `xxl` `xxxl`.
 
 ## Source
 

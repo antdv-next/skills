@@ -1,8 +1,8 @@
-# 最大选中数量不生效
+# Max Count no effect
 
-## Description (zh-CN)
+## Description (en-US)
 
-当 `showCheckedStrategy='SHOW_PARENT'` 或 `showCheckedStrategy='SHOW_ALL'` 且 `treeCheckStrictly=false` 时，`maxCount` 就不会生效。
+When `showCheckedStrategy=SHOW_PARENT` or `showCheckedStrategy=SHOW_ALL` and `treeCheckStrictly=false`, `maxCount` will not take effect.
 
 ## Source
 

@@ -1,6 +1,6 @@
-# 自定义语义结构的样式和类
+# Customize Semantic Elements
 
-## Description (zh-CN)
+## Description (en-US)
 
 ## Source
 

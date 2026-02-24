@@ -1,8 +1,8 @@
-# 动画效果
+# Active Animation
 
-## Description (zh-CN)
+## Description (en-US)
 
-显示动画效果。
+Display active animation.
 
 ## Source
 

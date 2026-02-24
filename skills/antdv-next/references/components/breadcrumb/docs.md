@@ -1,66 +1,68 @@
 ---
 title: Breadcrumb
-subtitle: 面包屑
-description: 显示当前页面在系统层级结构中的位置，并能向上返回。
+description: Display the current location within a hierarchy. And allow going back to states higher up in the hierarchy.
 ---
 
-## 何时使用 
-- 当系统拥有超过两级以上的层级结构时；
-- 当需要告知用户『你在哪里』时；
-- 当需要向上导航的功能时。
+## When To Use 
+- When the system has more than two layers in a hierarchy.
+- When you need to inform the user of where they are.
+- When the user may need to navigate back to a higher level.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本 | demo/basic.md |
-| 带有图标的 | demo/withIcon.md |
-| 带有参数的 | demo/withParams.md |
-| 分隔符 | demo/separator.md |
-| 带下拉菜单的面包屑 | demo/overlay.md |
-| 独立的分隔符 | demo/separator-component.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
+| Basic Usage | demo/basic.md |
+| With an Icon | demo/withIcon.md |
+| With Params | demo/withParams.md |
+| Configuring the Separator | demo/separator.md |
+| Bread crumbs with drop down menu | demo/overlay.md |
+| Configuring the Separator Independently | demo/separator-component.md |
+| Custom semantic dom styling | demo/style-class.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
-### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+### Props
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| dropdownIcon | 自定义下拉图标 | VueNode | `<DownOutlined />` | - |
-| itemRender | 自定义链接函数，和 vue-router 配置使用 | (route, params, routes, paths) =&gt; VueNode | - | - |
-| params | 路由的参数 | object | - | - |
-| items | 路由栈信息 | [ItemType\[\]](#itemtype) | - | - |
-| separator | 分隔符自定义 | VueNode | `/` | - |
+| dropdownIcon | Custom dropdown icon | VueNode | `<DownOutlined />` | - |
+| itemRender | Custom item renderer, work with vue-router | (route, params, routes, paths) =&gt; VueNode | - | - |
+| params | Routing parameters | object | - | - |
+| items | The routing stack information of router | [ItemType\[\]](#itemtype) | - | - |
+| separator | Custom separator | VueNode | `/` | - |
 
-### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+### Events
+
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| clickItem | 点击面包屑项目时触发 | (item: ItemType, event: MouseEvent) =&gt; void | - |
+| clickItem | Triggered when clicking a breadcrumb item | (item: ItemType, event: MouseEvent) =&gt; void | - |
 
-### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+### Slots
+
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| itemRender | 自定义链接函数，和 vue-router 配置使用 | (route: ItemType, params: AnyObject, routes: ItemType[], paths: string[]) =&gt; any | - |
-| titleRender | 自定义标题渲染 | (params: \{ item: ItemType, index: number \}) =&gt; any | - |
-| separator | 分隔符自定义 | () =&gt; any | - |
-| menuLabelRender | 自定义菜单标签渲染 | (params: \{ item: ItemType, index: number, menu: MenuItem \}) =&gt; any | - |
-| menuExtraRender | 自定义菜单额外内容渲染 | (params: \{ item: ItemType, index: number, menu: MenuItem \}) =&gt; any | - |
+| itemRender | Custom item renderer, work with vue-router | (route: ItemType, params: AnyObject, routes: ItemType[], paths: string[]) =&gt; any | - |
+| titleRender | Custom title renderer | (params: \{ item: ItemType, index: number \}) =&gt; any | - |
+| separator | Custom separator | () =&gt; any | - |
+| menuLabelRender | Custom menu label renderer | (params: \{ item: ItemType, index: number, menu: MenuItem \}) =&gt; any | - |
+| menuExtraRender | Custom menu extra content renderer | (params: \{ item: ItemType, index: number, menu: MenuItem \}) =&gt; any | - |
 
-## 类型 
+## Types 
 ### ItemType 
 > type ItemType = Omit&lt;RouteItemType, 'title' | 'path'&gt; | SeparatorType
 
 ### RouteItemType 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| dropdownProps | 弹出下拉菜单的自定义配置 | [Dropdown](../dropdown/docs.md) | - | - |
-| href | 链接的目的地，不能和 `path` 共用 | string | - | - |
-| path | 拼接路径，每一层都会拼接前一个 `path` 信息。不能和 `href` 共用 | string | - | - |
-| menu | 菜单配置项 | [MenuProps](../menu/docs.md#api) | - | - |
-| onClick | 单击事件 | (e: MouseEvent) =&gt; void | - | - |
-| title | 名称 | VueNode | - | - |
+| dropdownProps | The dropdown props | [Dropdown](../dropdown/docs.md) | - | - |
+| href | Target of hyperlink. Can not work with path | string | - | - |
+| path | Connected path. Each path will connect with prev one. Can not work with href | string | - | - |
+| menu | The menu props | [MenuProps](../menu/docs.md#api) | - | - |
+| onClick | Set the handler to handle click event | (e: MouseEvent) =&gt; void | - | - |
+| title | item name | VueNode | - | - |
 
 ### SeparatorType 
 ```ts
@@ -70,13 +72,13 @@ const item = {
 }
 ```
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| type | 标记为分隔符 | `separator` | - | - |
-| separator | 要显示的分隔符 | VueNode | `/` | - |
+| type | Mark as separator | `separator` | - | - |
+| separator | Custom separator | VueNode | `/` | - |
 
-## 和 vue-router 配置 
-和 vue-router 一起使用时，默认生成的链接是 `#`，你可以使用 `itemRender` 属性定义面包屑链接。
+## Use with vue-router 
+The link of Breadcrumb item targets `#` by default, you can use `itemRender` slot to make a vue-router Link.
 
 ```vue
 <script setup lang="ts">
@@ -111,5 +113,6 @@ const items: BreadcrumbProps['items'] = [
 </template>
 ```
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |

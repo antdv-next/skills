@@ -1,8 +1,8 @@
-# 嵌套表格
+# Nested Table
 
-## Description (zh-CN)
+## Description (en-US)
 
-展示每行数据更详细的信息。
+Showing more detailed info of every row.
 
 ## Source
 

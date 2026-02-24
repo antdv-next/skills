@@ -1,8 +1,8 @@
-# 可拖拽标签
+# Draggable Tabs
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `renderTabBar` 结合拖拽能力实现标签可排序。
+Use `renderTabBar` with drag support to reorder tabs.
 
 ## Source
 

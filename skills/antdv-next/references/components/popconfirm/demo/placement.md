@@ -1,8 +1,8 @@
-# 位置
+# Placement
 
-## Description (zh-CN)
+## Description (en-US)
 
-位置有十二个方向。如需箭头指向目标元素中心，可以设置 `arrow` 并指定 `pointAtCenter: true`。
+There are 12 `placement` options available. Set `arrow` with `pointAtCenter: true` if you want the arrow to point at the center of target.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 受控省略展开/收起
+# Controlled ellipsis expand/collapse
 
-## Description (zh-CN)
+## Description (en-US)
 
-受控多行文本省略。
+Controlled multi line text omission.
 
 ## Source
 

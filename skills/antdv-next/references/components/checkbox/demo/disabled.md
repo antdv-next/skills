@@ -1,8 +1,8 @@
-# 失效
+# Disabled
 
-## Description (zh-CN)
+## Description (en-US)
 
-checkbox 不可用。
+Disabled checkbox.
 
 ## Source
 

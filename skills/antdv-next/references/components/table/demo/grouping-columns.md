@@ -1,8 +1,8 @@
-# 分组表头
+# Grouped Columns
 
-## Description (zh-CN)
+## Description (en-US)
 
-`columns[n]` 可以内嵌 `children`，以渲染分组表头。
+Group table head with `columns[n].children`.
 
 ## Source
 

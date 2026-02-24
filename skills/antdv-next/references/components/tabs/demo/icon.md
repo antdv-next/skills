@@ -1,8 +1,8 @@
-# 图标
+# Icon
 
-## Description (zh-CN)
+## Description (en-US)
 
-有图标的标签。
+The Tab with Icon.
 
 ## Source
 

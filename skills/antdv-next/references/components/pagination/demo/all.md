@@ -1,8 +1,8 @@
-# 全部展示
+# Show All
 
-## Description (zh-CN)
+## Description (en-US)
 
-展示所有配置选项。
+Show all configured prop.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# Flex 响应式布局
+# Flex Responsive
 
-## Description (zh-CN)
+## Description (en-US)
 
-支持更灵活的响应式下的任意 flex 比例，该功能需要浏览器支持 CSS Variables。
+Support flexible responsive flex ratios, which require CSS Variables support in the browser.
 
 ## Source
 

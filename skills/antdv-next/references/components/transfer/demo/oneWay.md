@@ -1,8 +1,8 @@
-# 单向样式
+# One Way
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `oneWay` 将 Transfer 转为单向样式。
+Use `oneWay` to make Transfer the one way style.
 
 ## Source
 

@@ -1,44 +1,46 @@
 ---
 title: Affix
-subtitle: 固钉
-description: 将页面元素钉在可视范围。
+description: Stick an element to the viewport.
 ---
 
-## 何时使用 
-当内容区域比较长，需要滚动页面时，这部分内容对应的操作或者导航需要在滚动范围内始终展现。常用于侧边菜单和按钮组合。
+## When To Use 
+On longer web pages, it's helpful to stick component into the viewport. This is common for menus and actions.
 
-页面可视范围过小时，慎用此功能以免出现遮挡页面内容的情况。当页面内容较长，希望某个元素始终在可视区域内时，可以使用 Affix 固钉组件。
+Please note that Affix should not cover other content on the page, especially when the size of the viewport is small.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本 | demo/basic.md |
-| 固定状态改变的回调 | demo/on-change.md |
-| 滚动容器 | demo/target.md |
+| Basic | demo/basic.md |
+| Callback | demo/on-change.md |
+| Container to scroll. | demo/target.md |
 
 ## API
 
-### 属性 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+### Props
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+Common props ref：[Common props](../../docs/vue/common-props.md)
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| offsetTop | 距离窗口顶部达到指定偏移量后触发 | number | 0 | - |
-| offsetBottom | 距离窗口底部达到指定偏移量后触发 | number | - | - |
-| target | 设置 `Affix` 需要监听其滚动事件的元素，值为一个返回对应 DOM 元素的函数 | () =&gt; Window \| HTMLElement \| null | () =&gt; window | - |
+| offsetTop | Offset from the top of the viewport (in pixels) | number | 0 | - |
+| offsetBottom | Offset from the bottom of the viewport (in pixels) | number | - | - |
+| target | Specifies the scrollable area DOM node | () =&gt; Window \| HTMLElement \| null | () =&gt; window | - |
 
-### 事件 
-| 事件名 | 说明 | 类型 | 版本 |
-| ----- | --- | --- | --- |
-| change | 固定状态改变时触发的回调函数 | (affixed?: boolean) =&gt; void | - |
+### Events
 
-### 方法 
-| 方法 | 说明 | 类型 | 版本 |
+| Event | Description | Type | Version |
+| --- | --- | --- | --- |
+| change | Callback for when Affix state is changed | (affixed?: boolean) =&gt; void | - |
+
+### Methods
+
+| Method | Description | Type | Version |
 | --- | --- | --- | --- |
 | updatePosition | - | ReturnType&lt;typeof throttleByAnimationFrame&gt; | - |
 
-**注意：**`Affix` 内的元素不要使用绝对定位，如需要绝对定位的效果，可以直接设置 `Affix` 为绝对定位：
+**Note:** Children of `Affix` must not have the property `position: absolute`, but you can set `position: absolute` on `Affix` itself:
 
 ```html
 <a-affix style="position: absolute;top: y; left: x">...</a-affix>
@@ -46,12 +48,12 @@ description: 将页面元素钉在可视范围。
 
 ## FAQ
 
-### Affix 使用 `target` 绑定容器时，元素会跑到容器外。 
-从性能角度考虑，我们只监听容器滚动事件。如果希望任意滚动，你可以在窗体添加滚动监听：<https://codesandbox.io/s/stupefied-maxwell-ophqnm?file=/index.js>
+### When binding container with `target` in Affix, elements sometimes move out of the container. 
+We only listen to container scroll events for performance consideration. You can add custom listeners if you still want to: <https://codesandbox.io/s/stupefied-maxwell-ophqnm?file=/index.js>
 
-相关 issue：[#3938](https://github.com/ant-design/ant-design/issues/3938) [#5642](https://github.com/ant-design/ant-design/issues/5642) [#16120](https://github.com/ant-design/ant-design/issues/16120)
+Related issues：[#3938](https://github.com/ant-design/ant-design/issues/3938) [#5642](https://github.com/ant-design/ant-design/issues/5642) [#16120](https://github.com/ant-design/ant-design/issues/16120)
 
-### Affix 在水平滚动容器中使用时， 元素 `left` 位置不正确。 
-Affix 一般只适用于单向滚动的区域，只支持在垂直滚动容器中使用。如果希望在水平容器中使用，你可以考虑使用 原生 `position: sticky` 实现。
+### When Affix is ​​used in a horizontal scroll container, the position of the element `left` is incorrect. 
+Affix is ​​generally only applicable to areas with one-way scrolling, and only supports usage in vertical scrolling containers. If you want to use it in a horizontal container, you can consider implementing with the native `position: sticky` property.
 
-相关 issue: [#29108](https://github.com/ant-design/ant-design/issues/29108)
+Related issues：[#29108](https://github.com/ant-design/ant-design/issues/29108)

@@ -1,8 +1,8 @@
-# Modal 与 Drawer
+# Modal or Drawer
 
-## Description (zh-CN)
+## Description (en-US)
 
-在 Modal 与 Drawer 中使用。
+Use in Modal and Drawer.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 隐藏箭头
+# No arrow
 
-## Description (zh-CN)
+## Description (en-US)
 
-你可以通过 `showArrow=false` 隐藏折叠面板的箭头图标。
+You can hide the arrow icon by passing `showArrow=false` to the panel.
 
 ## Source
 

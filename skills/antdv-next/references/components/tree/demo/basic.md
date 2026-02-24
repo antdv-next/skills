@@ -1,8 +1,8 @@
-# 基本
+# Basic
 
-## Description (zh-CN)
+## Description (en-US)
 
-最简单的用法，展示可勾选，可选中，禁用，默认展开等功能。
+The most basic usage, tell you how to use checkable, selectable, disabled, defaultExpandKeys, and etc.
 
 ## Source
 

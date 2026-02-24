@@ -1,6 +1,6 @@
-# 自定义样式
+# Style & Class
 
-## Description (zh-CN)
+## Description (en-US)
 
 ## Source
 

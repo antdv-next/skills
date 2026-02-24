@@ -1,8 +1,8 @@
-# 更多类型
+# More types
 
-## Description (zh-CN)
+## Description (en-US)
 
-共有四种样式 `success`、`info`、`warning`、`error`。
+There are 4 types of Alert: `success`, `info`, `warning`, `error`.
 
 ## Source
 

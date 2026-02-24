@@ -1,8 +1,8 @@
-# 多种形态
+# Variants
 
-## Description (zh-CN)
+## Description (en-US)
 
-可选 `outlined` `filled` `borderless` `underlined` 四种形态。
+There are `outlined`, `filled`, `borderless`, and `underlined` variants to choose from.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 卡片加载中
+# Embedded mode
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以直接把内容内嵌到 `Spin` 中，将现有容器变为加载状态。
+Embedding content into `Spin` will set it into loading state.
 
 ## Source
 

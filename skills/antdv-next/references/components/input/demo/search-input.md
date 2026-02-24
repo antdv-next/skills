@@ -1,8 +1,8 @@
-# 搜索框
+# Search box
 
-## Description (zh-CN)
+## Description (en-US)
 
-带有搜索按钮的输入框。
+Example of creating a search box by grouping a standard input with a search button.
 
 ## Source
 

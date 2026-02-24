@@ -1,8 +1,8 @@
-# 手风琴
+# Accordion
 
-## Description (zh-CN)
+## Description (en-US)
 
-手风琴模式，始终只有一个面板处在激活状态。
+In accordion mode, only one panel can be expanded at a time.
 
 ## Source
 

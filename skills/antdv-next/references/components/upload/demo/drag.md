@@ -1,10 +1,10 @@
-# 拖拽上传
+# Drag and Drop
 
-## Description (zh-CN)
+## Description (en-US)
 
-把文件拖入指定区域，完成上传，同样支持点击上传。
+You can drag files to a specific area, to upload. Alternatively, you can also upload by selecting.
 
-设置 `multiple` 后，在 `IE10+` 可以一次上传多个文件。
+We can upload several files at once in modern browsers by giving the input the `multiple` attribute.
 
 ## Source
 

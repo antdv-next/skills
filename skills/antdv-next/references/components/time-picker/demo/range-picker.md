@@ -1,8 +1,8 @@
-# 范围选择器
+# Time Range Picker
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `TimePicker.RangePicker` 使用时间范围选择器。
+Use time range picker with `TimePicker.RangePicker`.
 
 ## Source
 

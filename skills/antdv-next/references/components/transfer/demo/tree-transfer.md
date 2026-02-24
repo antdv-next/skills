@@ -1,8 +1,8 @@
-# 树形穿梭框
+# Tree Transfer
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 Tree 组件作为自定义渲染列表。
+Customize the render list with a Tree component.
 
 ## Source
 

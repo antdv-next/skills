@@ -1,8 +1,8 @@
-# 基本用法
+# Basic Usage
 
-## Description (zh-CN)
+## Description (en-US)
 
-单击图像可以放大显示。
+Click the image to zoom in.
 
 ## Source
 

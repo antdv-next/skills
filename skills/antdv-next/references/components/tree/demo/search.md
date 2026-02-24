@@ -1,8 +1,8 @@
-# 可搜索
+# Searchable
 
-## Description (zh-CN)
+## Description (en-US)
 
-可搜索的树。
+Searchable Tree.
 
 ## Source
 

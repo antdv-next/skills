@@ -1,8 +1,8 @@
-# 拖动行排序
+# Drag Row Sorting
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用自定义元素，我们可以采用原生来实现拖拽排序。
+With custom elements, we can achieve drag-and-drop sorting using native browser APIs.
 
 ## Source
 

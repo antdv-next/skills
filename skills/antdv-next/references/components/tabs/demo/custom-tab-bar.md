@@ -1,8 +1,8 @@
-# 自定义页签头
+# Customized bar of tab
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `renderTabBar` 配合吸顶容器实现固定页签头。
+Use `renderTabBar` with a sticky container to pin the tab bar.
 
 ## Source
 

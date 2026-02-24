@@ -1,95 +1,91 @@
 ---
 title: Collapse
-subtitle: 折叠面板
-description: 可以折叠/展开的内容区域。
+description: A content area which can be collapsed and expanded.
 ---
 
-## 何时使用 
-- 对复杂区域进行分组和隐藏，保持页面的整洁。
-- `手风琴` 是一种特殊的折叠面板，只允许单个内容区域展开。
+## When To Use 
+- Can be used to group or hide complex regions to keep the page clean.
+- `Accordion` is a special kind of `Collapse`, which allows only one panel to be expanded at a time.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 折叠面板 | demo/basic.md |
-| 面板尺寸 | demo/size.md |
-| 手风琴 | demo/accordion.md |
-| 面板嵌套 | demo/mix.md |
-| 简洁风格 | demo/borderless.md |
-| 自定义面板 | demo/custom.md |
-| 隐藏箭头 | demo/noarrow.md |
-| 额外节点 | demo/extra.md |
-| 幽灵折叠面板 | demo/ghost.md |
-| 可折叠触发区域 | demo/collapsible.md |
-| 自定义语义结构样式 | demo/style-class.md |
+| Collapse | demo/basic.md |
+| Size | demo/size.md |
+| Accordion | demo/accordion.md |
+| Nested panel | demo/mix.md |
+| Borderless | demo/borderless.md |
+| Custom Panel | demo/custom.md |
+| No arrow | demo/noarrow.md |
+| Extra node | demo/extra.md |
+| Ghost Collapse | demo/ghost.md |
+| Collapsible | demo/collapsible.md |
+| Custom semantic dom styling | demo/style-class.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
+
 ### Collapse
 
-#### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| activeKey | 当前激活 tab 面板的 key | Array&lt;string \| number&gt; \| string \| number | 手风琴模式下为第一个元素 | - |
-| defaultActiveKey | 初始化选中面板的 key | Array&lt;string \| number&gt; \| string \| number | - | - |
-| accordion | 手风琴模式 | boolean | false | - |
-| destroyOnHidden | 销毁折叠隐藏的面板 | boolean | false | - |
-| rootClass | 根节点 class | string | - | - |
-| bordered | 带边框风格的折叠面板 | boolean | true | - |
-| expandIcon | 自定义切换图标 | (panelProps: PanelProps) =&gt; any | - | - |
-| expandIconPlacement | 设置图标位置 | ExpandIconPlacement | `start` | - |
-| ghost | 使折叠面板透明且无边框 | boolean | false | - |
-| size | 设置折叠面板大小 | SizeType | `middle` | - |
-| collapsible | 所有子面板是否可折叠或指定可折叠触发区域 | CollapsibleType | - | - |
-| labelRender | 自定义渲染label | (params: &#123; item: CollapseItemType, index: number &#125;) =&gt; any | - | - |
-| contentRender | 自定义渲染内容 | (params: &#123; item: CollapseItemType, index: number &#125;) =&gt; any | - | - |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | CollapseClassNamesType | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | CollapseStylesType | - | - |
-| items | 折叠项目内容 | CollapseItemType[] | - | - |
+| activeKey | Key of the active panel | Array&lt;string \| number&gt; \| string \| number | No default value. In accordion mode, it's the key of the first panel | - |
+| defaultActiveKey | Key of the initial active panel | Array&lt;string \| number&gt; \| string \| number | - | - |
+| accordion | If true, Collapse renders as Accordion | boolean | false | - |
+| destroyOnHidden | Destroy Inactive Panel | boolean | false | - |
+| rootClass | Root container class | string | - | - |
+| bordered | Toggles rendering of the border around the collapse block | boolean | true | - |
+| expandIcon | Allow to customize collapse icon | (panelProps: PanelProps) =&gt; any | - | - |
+| expandIconPlacement | Set expand icon placement | ExpandIconPlacement | `start` | - |
+| ghost | Make the collapse borderless and its background transparent | boolean | false | - |
+| size | Set the size of collapse | SizeType | `middle` | - |
+| collapsible | Specify how to trigger Collapse. Either by clicking icon or by clicking any area in header or disable collapse functionality itself | CollapsibleType | - | - |
+| labelRender | Custom render label | (params: &#123; item: CollapseItemType, index: number &#125;) =&gt; any | - | - |
+| contentRender | Custom render content | (params: &#123; item: CollapseItemType, index: number &#125;) =&gt; any | - | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function. | CollapseClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | CollapseStylesType | - | - |
+| items | Collapse items content | CollapseItemType[] | - | - |
 
-#### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+#### Events 
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| change | 切换面板的回调 | (key: string[]) =&gt; void | - |
+| change | Callback function executed when active panel is changed | (key: string[]) =&gt; void | - |
 
-#### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+#### Slots 
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| expandIcon | 自定义切换图标 | (panelProps: PanelProps) =&gt; any | - |
+| expandIcon | Allow to customize collapse icon | (panelProps: PanelProps) =&gt; any | - |
 | labelRender | - | (params: &#123; item: CollapseItemType, index: number &#125;) =&gt; any | - |
 | contentRender | - | (params: &#123; item: CollapseItemType, index: number &#125;) =&gt; any | - |
 
 ### CollapsePanel 
-#### 属性 
-:::warning 已废弃
-请使用 items 方式配置面板。
-:::
+#### Props 
+Deprecated: when using items, prefer configuring panels with `items`.
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| collapsible | 是否可折叠或指定可折叠触发区域 | `header` \| `icon` \| `disabled` | - | - |
-| forceRender | 被隐藏时是否渲染 body 区域 DOM 结构 | boolean | false |  |
-| key | 对应 activeKey | string \| number | - |  |
-| showArrow | 是否展示当前面板上的箭头（为 false 时，collapsible 不能设为 icon） | boolean | true |  |
+| header | - | VueNode | - | - |
+| showArrow | - | boolean | true | - |
+| extra | - | VueNode | - | - |
+| collapsible | Specify how to trigger Collapse. Either by clicking icon or by clicking any area in header or disable collapse functionality itself | CollapsibleType | - | - |
 
-#### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
-| --- | --- | --- | --- |
-| header | 面板标题 | VueNode | - |
-| extra | 自定义渲染每个面板右上角的内容 | VueNode | - |
+## Types
 
-## 类型 
-### ItemType 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+### ItemType
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| collapsible | 是否可折叠或指定可折叠触发区域 | `header` \| `icon` \| `disabled` | - |  |
-| extra | 自定义渲染每个面板右上角的内容 | VueNode | - |  |
-| forceRender | 被隐藏时是否渲染 body 区域 DOM 结构 | boolean | false |  |
-| key | 对应 activeKey | string \| number | - |  |
-| label | 面板标题 | VueNode | - | - |
-| showArrow | 是否展示当前面板上的箭头（为 false 时，collapsible 不能设为 icon） | boolean | true |  |
+| collapsible | Specify whether the panel be collapsible or the trigger area of collapsible | CollapsibleType | - | - |
+| content | Body area content | VueNode | - | - |
+| extra | The extra element in the corner | VueNode | - | - |
+| forceRender | Forced render of content on panel, instead of lazy rendering after clicking on header | boolean | false | - |
+| key | Unique key identifying the panel from among its siblings | string \| number | - | - |
+| label | Title of the panel | VueNode | - | - |
+| showArrow | If false, panel will not show arrow icon. If false, collapsible can't be set as icon | boolean | true | - |
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |

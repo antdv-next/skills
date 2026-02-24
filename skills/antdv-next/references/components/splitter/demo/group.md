@@ -1,8 +1,8 @@
-# 布局组合
+# Layout Group
 
-## Description (zh-CN)
+## Description (en-US)
 
-嵌套使用 Splitter 实现复杂布局。
+Nested Splitter for complex layout.
 
 ## Source
 

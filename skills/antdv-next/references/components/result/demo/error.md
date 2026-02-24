@@ -1,8 +1,8 @@
 # Error
 
-## Description (zh-CN)
+## Description (en-US)
 
-复杂的错误反馈。
+Complex error feedback.
 
 ## Source
 

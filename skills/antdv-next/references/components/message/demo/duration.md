@@ -1,8 +1,8 @@
-# 自定义时长
+# Customize duration
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义时长 `10s`，默认时长为 `3s`。
+Customize message display duration from default `3s` to `10s`.
 
 ## Source
 

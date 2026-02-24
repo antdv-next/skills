@@ -1,8 +1,8 @@
-# 尺寸
+# Size
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `size` 属性配置大小。
+Configure size via `size` property.
 
 ## Source
 

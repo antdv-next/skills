@@ -1,8 +1,8 @@
-# 阿里云 OSS
+# Aliyun OSS
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用阿里云 OSS 上传示例.
+Use Aliyun OSS upload example.
 
 ## Source
 

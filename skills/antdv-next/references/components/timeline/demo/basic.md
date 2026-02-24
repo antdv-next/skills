@@ -1,8 +1,8 @@
-# 基本用法
+# Basic
 
-## Description (zh-CN)
+## Description (en-US)
 
-基本的时间轴。
+Basic timeline.
 
 ## Source
 

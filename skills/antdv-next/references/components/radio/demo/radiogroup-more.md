@@ -1,8 +1,8 @@
-# Radio.Group 垂直
+# Vertical Radio.Group
 
-## Description (zh-CN)
+## Description (en-US)
 
-垂直的 Radio.Group，配合更多输入框选项。
+Vertical Radio.Group, with more radios.
 
 ## Source
 

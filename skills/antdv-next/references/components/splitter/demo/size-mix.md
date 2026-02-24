@@ -1,8 +1,8 @@
-# 尺寸混合
+# Size Mix
 
-## Description (zh-CN)
+## Description (en-US)
 
-混合使用像素和百分比来设置面板大小。
+Mix using pixels and percentages to set panel size.
 
 ## Source
 

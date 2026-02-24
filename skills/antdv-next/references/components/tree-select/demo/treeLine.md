@@ -1,8 +1,8 @@
-# 线性样式
+# Show Tree Line
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `treeLine` 配置线性样式。
+Use `treeLine` to show the line style.
 
 ## Source
 

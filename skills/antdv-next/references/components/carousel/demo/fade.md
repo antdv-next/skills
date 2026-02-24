@@ -1,8 +1,8 @@
-# 渐显
+# Fade in
 
-## Description (zh-CN)
+## Description (en-US)
 
-切换效果为渐显。
+Slides use fade for transition.
 
 ## Source
 

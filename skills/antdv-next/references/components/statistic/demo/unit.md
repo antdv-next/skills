@@ -1,8 +1,8 @@
-# 单位
+# Unit
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过前缀和后缀添加单位。
+Add unit through `prefix` and `suffix`.
 
 ## Source
 

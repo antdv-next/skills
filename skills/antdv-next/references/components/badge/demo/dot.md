@@ -1,8 +1,8 @@
-# 讨嫌的小红点
+# Red badge
 
-## Description (zh-CN)
+## Description (en-US)
 
-没有具体的数字。
+This will simply display a red badge, without a specific count. If count equals 0, it won't display the dot.
 
 ## Source
 

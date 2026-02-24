@@ -1,8 +1,8 @@
-# 自定义选择标签
+# Custom Tag Render
 
-## Description (zh-CN)
+## Description (en-US)
 
-允许自定义标签的渲染。
+Allows for custom rendering of tags.
 
 ## Source
 

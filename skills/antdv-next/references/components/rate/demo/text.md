@@ -1,8 +1,8 @@
-# 文案展现
+# Show copywriting
 
-## Description (zh-CN)
+## Description (en-US)
 
-给评分组件加上文案展示。
+Add copywriting in rate components.
 
 ## Source
 

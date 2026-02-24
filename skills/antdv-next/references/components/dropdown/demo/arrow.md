@@ -1,8 +1,8 @@
-# 箭头
+# Arrow
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以展示一个箭头。
+You could display an arrow.
 
 ## Source
 

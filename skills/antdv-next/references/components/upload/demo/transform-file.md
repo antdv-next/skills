@@ -1,8 +1,8 @@
-# 上传前转换文件
+# Transform file before request
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `beforeUpload` 转换上传的文件（例如添加水印）。
+Use `beforeUpload` for transform file before request such as add a watermark.
 
 ## Source
 

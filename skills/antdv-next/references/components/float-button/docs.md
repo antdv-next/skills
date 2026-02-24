@@ -1,107 +1,110 @@
 ---
 title: FloatButton
-subtitle: 悬浮按钮
-description: 悬浮于页面上方的按钮。
+description: A button that floats at the top of the page.
 ---
 
-## 何时使用 
-- 用于网站上的全局功能；
-- 无论浏览到何处都可以看见的按钮。
+## When To Use
+
+- For global functionality on the site.
+- Buttons that can be seen wherever you browse.
+
+## Examples
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本 | demo/basic.md |
-| 类型 | demo/type.md |
-| 形状 | demo/shape.md |
-| 描述 | demo/content.md |
-| 含有气泡卡片的悬浮按钮 | demo/tooltip.md |
-| 浮动按钮组 | demo/group.md |
-| 菜单模式 | demo/group-menu.md |
-| 受控模式 | demo/controlled.md |
-| 弹出方向 | demo/placement.md |
-| 回到顶部 | demo/back-top.md |
-| 徽标数 | demo/badge.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
+| Basic | demo/basic.md |
+| Type | demo/type.md |
+| Shape | demo/shape.md |
+| Content | demo/content.md |
+| FloatButton with tooltip | demo/tooltip.md |
+| FloatButton Group | demo/group.md |
+| Menu mode | demo/group-menu.md |
+| Controlled mode | demo/controlled.md |
+| placement | demo/placement.md |
+| BackTop | demo/back-top.md |
+| badge | demo/badge.md |
+| Custom semantic dom styling | demo/style-class.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
 ### FloatButtonGroup
 
-#### 属性 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| shape | 设置包含的 FloatButton 按钮形状 | `circle` \| `square` | `circle` | - |
-| trigger | 触发方式（有触发方式为菜单模式） | `click` \| `hover` | - | - |
-| open | 受控展开，需配合 trigger 一起使用 | boolean | - | - |
-| closeIcon | 自定义关闭按钮 | VueNode | `<CloseOutlined />` | - |
-| placement | 自定义菜单弹出位置 | `top` \| `left` \| `right` \| `bottom` | `top` | - |
+| shape | Setting button shape of children | `circle` \| `square` | `circle` | - |
+| trigger | Which action can trigger menu open/close | `click` \| `hover` | - | - |
+| open | Whether the menu is visible or not, use it with trigger | boolean | - | - |
+| closeIcon | Customize close button icon | VueNode | `<CloseOutlined />` | - |
+| placement | Customize menu animation placement | `top` \| `left` \| `right` \| `bottom` | `top` | - |
 
-#### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+#### Events 
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| update:open | 展开收起时的回调，需配合 trigger 一起使用 | (open: boolean) =&gt; void | - |
-| click | 点击按钮时的回调（仅在菜单模式中有效） | (e: MouseEvent) =&gt; void | - |
+| update:open | Callback executed when active menu is changed, use it with trigger | (open: boolean) =&gt; void | - |
+| click | Set the handler to handle `click` event (only work in Menu mode) | (e: MouseEvent) =&gt; void | - |
 
-#### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+#### Slots 
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| default | 子按钮内容 | () =&gt; any | - |
-| icon | 触发按钮的图标 | () =&gt; any | - |
-| closeIcon | 自定义关闭按钮 | () =&gt; any | - |
+| default | Children buttons content | () =&gt; any | - |
+| icon | Icon of trigger button | () =&gt; any | - |
+| closeIcon | Customize close button icon | () =&gt; any | - |
 
 ### FloatButton
 
-#### 属性 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| icon | 自定义图标 | VueNode | - | - |
-| content | 文字及其它内容 | VueNode | - | - |
-| ~~description~~ | 请使用 `content` 代替 | VueNode | - | - |
-| tooltip | 气泡卡片的内容 | VueNode \| TooltipProps | - | - |
-| type | 设置按钮类型 | `default` \| `primary` | `default` | - |
-| shape | 设置按钮形状 | `circle` \| `square` | `circle` | - |
-| href | 点击跳转的地址，指定此属性 button 的行为和 a 链接一致 | string | - | - |
-| target | 相当于 a 标签的 target 属性，href 存在时生效 | string | - | - |
-| htmlType | 设置 `button` 原生的 `type` 值，可选值请参考 [HTML 标准](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/button#type) | `submit` \| `reset` \| `button` | `button` | - |
-| badge | 带徽标数字的悬浮按钮（不支持 `status` 以及相关属性） | [BadgeProps](../badge/docs.md#api) | - | - |
+| icon | Set the icon component of button | VueNode | - | - |
+| content | Text and other | VueNode | - | - |
+| ~~description~~ | Please use `content` instead | VueNode | - | - |
+| tooltip | The text shown in the tooltip | VueNode \| TooltipProps | - | - |
+| type | Setting button type | `default` \| `primary` | `default` | - |
+| shape | Setting button shape | `circle` \| `square` | `circle` | - |
+| href | The target of hyperlink | string | - | - |
+| target | Specifies where to display the linked URL | string | - | - |
+| htmlType | Set the original html `type` of `button`, see: [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#type) | `submit` \| `reset` \| `button` | `button` | - |
+| badge | Attach Badge to FloatButton. `status` and other props related are not supported. | [BadgeProps](../badge/docs.md#api) | - | - |
 
-#### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+#### Events 
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| click | 点击按钮时的回调 | (e: MouseEvent) =&gt; void | - |
+| click | Set the handler to handle `click` event | (e: MouseEvent) =&gt; void | - |
 
-#### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+#### Slots 
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| default | 按钮内容 | () =&gt; any | - |
-| icon | 自定义图标 | () =&gt; any | - |
-| tooltip | 气泡卡片的内容 | (props?: TooltipProps) =&gt; any | - |
+| default | Button content | () =&gt; any | - |
+| icon | Set the icon component of button | () =&gt; any | - |
+| tooltip | The text shown in the tooltip | (props?: TooltipProps) =&gt; any | - |
 
 ### FloatBackTop 
-#### 属性 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| duration | 回到顶部所需时间（ms） | number | 450 | - |
-| target | 设置需要监听其滚动事件的元素 | () =&gt; HTMLElement | () =&gt; window | - |
-| visibilityHeight | 滚动高度达到此参数值才出现 BackTop | number | 400 | - |
-| target | 相当于 a 标签的 target 属性，href 存在时生效 | '_self' \| '_blank' \| '_parent' \| '_top' \| string | - | - |
-| badge | 带徽标数字的悬浮按钮（不支持 `status` 以及相关属性） | FloatButtonBadgeProps & &#123; class?: string &#125; | - | 5.4.0 |
-| htmlType | 设置 `button` 原生的 `type` 值，可选值请参考 [HTML 标准](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/button#type) | ButtonHTMLType | `button` | 5.21.0 |
+| duration | Time to return to top（ms） | number | 450 | - |
+| target | Specifies the scrollable area dom node | () =&gt; HTMLElement | () =&gt; window | - |
+| visibilityHeight | The BackTop button will not show until the scroll height reaches this value | number | 400 | - |
+| target | Specifies where to display the linked URL | '_self' \| '_blank' \| '_parent' \| '_top' \| string | - | - |
+| badge | Attach Badge to FloatButton. `status` and other props related are not supported. | FloatButtonBadgeProps & &#123; class?: string &#125; | - | 5.4.0 |
+| htmlType | Set the original html `type` of `button`, see: [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#type) | ButtonHTMLType | `button` | 5.21.0 |
 | ariaLabel | - | string | - | - |
 | style | - | CSSProperties | - | - |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | FloatButtonClassNamesType | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | FloatButtonStylesType | - | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function. | FloatButtonClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | FloatButtonStylesType | - | - |
 
-#### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+#### Events 
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| click | 点击按钮的回调函数 | () =&gt; void | - |
+| click | A callback function, which can be executed when you click the button | () =&gt; void | - |
 
-## 语义化 DOM 
+## Semantic DOM
+
 ### FloatButton
 
 | _semantic | demo/_semantic.md |

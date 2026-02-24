@@ -1,8 +1,8 @@
-# 受控模式
+# Controlled mode
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `open` 设置组件为受控模式，需要配合 `trigger` 一起使用。
+Set the component to controlled mode through `open`, which need to be used together with `trigger`.
 
 ## Source
 

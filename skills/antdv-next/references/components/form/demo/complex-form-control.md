@@ -1,8 +1,8 @@
-# 复杂表单控件
+# complex form control
 
-## Description (zh-CN)
+## Description (en-US)
 
-在同一行组合多个控件。
+Combine multiple controls in one line.
 
 ## Source
 

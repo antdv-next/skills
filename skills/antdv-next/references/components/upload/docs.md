@@ -1,131 +1,133 @@
 ---
 title: Upload
-subtitle: 上传
-description: 文件选择上传和拖拽上传控件。
+description: Used to select and upload files or drag and drop files.
 ---
 
-## 何时使用 
-上传是将信息（网页、文字、图片、视频等）通过网页或者上传工具发布到远程服务器上的过程。
+## When To Use 
+Uploading is the process of publishing information (web pages, text, pictures, video, etc.) to a remote server via a web page or upload tool.
 
-- 当需要上传一个或一些文件时。
-- 当需要展现上传的进度时。
-- 当需要使用拖拽交互时。
+- When you need to upload one or more files.
+- When you need to show the process of uploading.
+- When you need to upload files by dragging and dropping.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 点击上传 | demo/basic.md |
-| 用户头像 | demo/avatar.md |
-| 已上传的文件列表 | demo/defaultFileList.md |
-| 照片墙 | demo/picture-card.md |
-| 圆形照片墙 | demo/picture-circle.md |
-| 完全控制的上传列表 | demo/fileList.md |
-| 拖拽上传 | demo/drag.md |
-| 粘贴上传 | demo/paste.md |
-| 文件夹上传 | demo/directory.md |
-| 手动上传 | demo/upload-manually.md |
-| 只上传 png 图片 | demo/upload-png-only.md |
-| 图片列表样式 | demo/picture-style.md |
-| 自定义预览 | demo/preview-file.md |
-| 限制数量 | demo/max-count.md |
-| 上传前转换文件 | demo/transform-file.md |
-| 阿里云 OSS | demo/upload-with-aliyun-oss.md |
-| 自定义显示 icon | demo/file-type.md |
-| 自定义交互图标和文件信息 | demo/upload-custom-action-icon.md |
-| 上传列表拖拽排序 | demo/drag-sorting.md |
-| 上传前裁切图片 | demo/crop-image.md |
-| 自定义进度条样式 | demo/customize-progress-bar.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
-| 组件 Token | demo/component-token.md |
+| Upload by clicking | demo/basic.md |
+| Avatar | demo/avatar.md |
+| Default Files | demo/defaultFileList.md |
+| Pictures Wall | demo/picture-card.md |
+| Pictures with picture-circle type | demo/picture-circle.md |
+| Complete control over file list | demo/fileList.md |
+| Drag and Drop | demo/drag.md |
+| Paste | demo/paste.md |
+| Upload directory | demo/directory.md |
+| Upload manually | demo/upload-manually.md |
+| Upload png file only | demo/upload-png-only.md |
+| Pictures with list style | demo/picture-style.md |
+| Customize preview file | demo/preview-file.md |
+| Max Count | demo/max-count.md |
+| Transform file before request | demo/transform-file.md |
+| Aliyun OSS | demo/upload-with-aliyun-oss.md |
+| Custom show icon | demo/file-type.md |
+| Custom action icon and extra info | demo/upload-custom-action-icon.md |
+| Drag sorting of uploadList | demo/drag-sorting.md |
+| Crop image before uploading | demo/crop-image.md |
+| Customize Progress Bar | demo/customize-progress-bar.md |
+| Custom semantic dom styling | demo/style-class.md |
+| Component Token | demo/component-token.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
-### 属性 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+### Props
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| accept | 接受上传的文件类型，详见 [input accept Attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept) | string \| [AcceptObject](#acceptobject) | - |  |
-| action | 上传的地址 | string \| (file) => Promise&lt;string> | - |  |
-| beforeUpload | 上传文件之前的钩子，参数为上传的文件，若返回 `false` 则停止上传。支持返回一个 Promise 对象，Promise 对象 reject 时则停止上传，resolve 时开始上传（ resolve 传入 `File` 或 `Blob` 对象则上传 resolve 传入对象）；也可以返回 `Upload.LIST_IGNORE`，此时列表中将不展示此文件。 **注意：IE9 不支持该方法** | (file: [RcFile](#rcfile), fileList: [RcFile[]](#rcfile)) => boolean \| Promise&lt;File> \| `Upload.LIST_IGNORE` | - |  |
-| customRequest | 通过覆盖默认的上传行为，可以自定义自己的上传实现 | ( options: [RequestOptions](#request-options), info: { defaultRequest: (option: [RequestOptions](#request-options)) => void; } ) => void | - | - |
-| data | 上传所需额外参数或返回上传额外参数的方法 | object\|(file) => object \| Promise&lt;object> | - |  |
-| directory | 支持上传文件夹（[caniuse](https://caniuse.com/#feat=input-file-directory)） | boolean | false |  |
-| disabled | 是否禁用 | boolean | false | 对于自定义 Upload children 时请将 disabled 属性同时传给 child node 确保 disabled 渲染效果保持一致 |
-| fileList | 已经上传的文件列表（受控），使用此参数时，如果遇到 `onChange` 只调用一次的问题，请参考 [#2423](https://github.com/ant-design/ant-design/issues/2423)，支持 `v-model:file-list` | [UploadFile](#uploadfile)\[] | - |  |
-| headers | 设置上传的请求头部，IE10 以上有效 | object | - |  |
-| iconRender | 自定义显示 icon | (file: UploadFile, listType?: UploadListType) => VueNode | - |  |
-| isImageUrl | 自定义缩略图是否使用 &lt;img /> 标签进行显示 | (file: UploadFile) => boolean | [(内部实现)](https://github.com/ant-design/ant-design/blob/4ad5830eecfb87471cd8ac588c5d992862b70770docs.md/utils.tsx#L47-L68) |  |
-| itemRender | 自定义上传列表项 | (originNode: VueNode, file: UploadFile, fileList: object\[], actions: { download: function, preview: function, remove: function }) => React.VueNode | - | - |
-| listType | 上传列表的内建样式，支持四种基本样式 `text`, `picture`, `picture-card` 和 `picture-circle` | string | `text` | - |
-| maxCount | 限制上传数量。当为 1 时，始终用最新上传的文件代替当前文件 | number | - | - |
-| method | 上传请求的 http method | string | `post` |  |
-| multiple | 是否支持多选文件，`ie10+` 支持。开启后按住 ctrl 可选择多个文件 | boolean | false |  |
-| name | 发到后台的文件参数名 | string | `file` |  |
-| openFileDialogOnClick | 点击打开文件对话框 | boolean | true |  |
-| pastable | 是否支持粘贴文件 | boolean | false | - |
-| previewFile | 自定义文件预览逻辑 | (file: File \| Blob) => Promise&lt;dataURL: string> | - |  |
-| progress | 自定义进度条样式 | [ProgressProps](../progress/docs.md#api)（仅支持 `type="line"`） | { strokeWidth: 2, showInfo: false } | - |
-| showUploadList | 是否展示文件列表, 可设为一个对象，用于单独设定 `extra`, `showPreviewIcon`, `showRemoveIcon`, `showDownloadIcon`, `removeIcon` 和 `downloadIcon` | boolean \| \{ extra?: VueNode \| (file: UploadFile) => VueNode, showPreviewIcon?: boolean \| (file: UploadFile) => boolean, showDownloadIcon?: boolean \| (file: UploadFile) => boolean, showRemoveIcon?: boolean \| (file: UploadFile) => boolean, previewIcon?: VueNode \| (file: UploadFile) => VueNode, removeIcon?: VueNode \| (file: UploadFile) => VueNode, downloadIcon?: VueNode \| (file: UploadFile) => VueNode \} | true | - |
-| withCredentials | 上传请求时是否携带 cookie | boolean | false |  |
+| accept | File types that can be accepted. See [input accept Attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept) | string \| [AcceptObject](#acceptobject) | - | - |
+| action | Uploading URL | string \| (file) => Promise&lt;string> | - | - |
+| beforeUpload | Hook function which will be executed before uploading. Uploading will be stopped with `false` or a rejected Promise returned. When returned value is `Upload.LIST_IGNORE`, the list of files that have been uploaded will ignore it. **Warning：this function is not supported in IE9** | (file: [VcFile](#vcfile), fileList: [VcFile[]](#vcfile)) => boolean \| Promise&lt;File> \| `Upload.LIST_IGNORE` | - | - |
+| customRequest | Override for the default xhr behavior allowing for additional customization and the ability to implement your own XMLHttpRequest | ( options: [RequestOptions](#request-options), info: { defaultRequest: (option: [RequestOptions](#request-options)) => void; } ) => void | - | defaultRequest: - |
+| data | Uploading extra params or function which can return uploading extra params | object \| (file) => object \| Promise&lt;object> | - | - |
+| directory | Support upload whole directory ([caniuse](https://caniuse.com/#feat=input-file-directory)) | boolean | false | - |
+| disabled | Disable upload button | boolean | false | When customizing Upload children, please pass the disabled attribute to the child node at the same time to ensure the disabled rendering effect is consistent. |
+| fileList | List of files that have been uploaded (controlled). Here is a common issue [#2423](https://github.com/ant-design/ant-design/issues/2423) when using it, support `v-model:file-list` | [UploadFile](#uploadfile)\[] | - | - |
+| headers | Set request headers, valid above IE10 | object | - | - |
+| iconRender | Custom show icon | (file: UploadFile, listType?: UploadListType) => VueNode | - | - |
+| isImageUrl | Customize if render &lt;img /> in thumbnail | (file: UploadFile) => boolean | [(inside implementation)](https://github.com/ant-design/ant-design/blob/4ad5830eecfb87471cd8ac588c5d992862b70770docs.md/utils.tsx#L47-L68) | - |
+| itemRender | Custom item of uploadList | (originNode: VueNode, file: UploadFile, fileList: object\[], actions: { download: function, preview: function, remove: function }) => VueNode | - | - |
+| listType | Built-in stylesheets, support for four types: `text`, `picture`, `picture-card` or `picture-circle` | string | `text` | - |
+| maxCount | Limit the number of uploaded files. Will replace current one when `maxCount` is `1` | number | - | - |
+| method | The http method of upload request | string | `post` | - |
+| multiple | Whether to support selected multiple files. `IE10+` supported. You can select multiple files with CTRL holding down while multiple is set to be true | boolean | false | - |
+| name | The name of uploading file | string | `file` | - |
+| openFileDialogOnClick | Click open file dialog | boolean | true | - |
+| pastable | Support paste file | boolean | false | - |
+| previewFile | Customize preview file logic | (file: File \| Blob) => Promise&lt;dataURL: string> | - | - |
+| progress | Custom progress bar | [ProgressProps](../progress/docs.md#api) (support `type="line"` only) | { strokeWidth: 2, showInfo: false } | - |
+| showUploadList | Whether to show default upload list, could be an object to specify `extra`, `showPreviewIcon`, `showRemoveIcon`, `showDownloadIcon`, `removeIcon` and `downloadIcon` individually | boolean \| \{ extra?: VueNode \| (file: UploadFile) => VueNode, showPreviewIcon?: boolean \| (file: UploadFile) => boolean, showDownloadIcon?: boolean \| (file: UploadFile) => boolean, showRemoveIcon?: boolean \| (file: UploadFile) => boolean, previewIcon?: VueNode \| (file: UploadFile) => VueNode, removeIcon?: VueNode \| (file: UploadFile) => VueNode, downloadIcon?: VueNode \| (file: UploadFile) => VueNode \} | true | `extra`: -, `showPreviewIcon` function: -, `showRemoveIcon` function: -, `showDownloadIcon` function: - |
+| withCredentials | The ajax upload with cookie sent | boolean | false | - |
 
-### 事件 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| change | 上传文件改变时的回调，上传每个阶段都会触发该事件。详见 [onChange](#onchange) | function | - |  |
-| drop | 当文件被拖入上传区域时执行的回调功能 | (event: React.DragEvent) => void | - | - |
-| download | 点击下载文件时的回调，如果没有指定，则默认跳转到文件 url 对应的标签页 | function(file): void | (跳转新标签页) |  |
-| preview | 点击文件链接或预览图标时的回调 | function(file) | - |  |
-| remove | 点击移除文件时的回调，返回值为 false 时不移除。支持返回一个 Promise 对象，Promise 对象 resolve(false) 或 reject 时不移除 | function(file): boolean \| Promise | - |  |
+### Events
 
-### 插槽 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| itemRender | 自定义上传列表项 | ( ctx:\{ originNode: VNode, file: UploadFile, fileList: object\[], actions: \{ download: function, preview: function, remove: function \}\}) => VueNode | - | - |
-| iconRender | 自定义显示 icon | (ctx:\{ file: UploadFile, listType?: UploadListType\}) => VueNode | - |  |
+| Event | Description | Type | Version |
+| --- | --- | --- | --- |
+| change | A callback function, can be executed when uploading state is changing. It will trigger by every uploading phase. see [onChange](#onchange) | function | - |
+| drop | A callback function executed when files are dragged and dropped into the upload area | (event: DragEvent) => void | - |
+| download | Click the method to download the file, pass the method to perform the method logic, and do not pass the default jump to the new TAB | function(file): void | (Jump to new TAB) |
+| preview | A callback function, will be executed when the file link or preview icon is clicked | function(file) | - |
+| remove | A callback function, will be executed when removing file button is clicked, remove event will be prevented when the return value is false or a Promise which resolve(false) or reject | function(file): boolean \| Promise | - |
 
-## 类型 
+### Slots
+
+| Slot | Description | Type | Version |
+| --- | --- | --- | --- |
+| itemRender | Custom item of uploadList | ( ctx:{ originNode: VNode, file: UploadFile, fileList: object\[], actions: { download: function, preview: function, remove: function }}) => VueNode | - |
+| iconRender | Custom show icon | (ctx:{ file: UploadFile, listType?: UploadListType}) => VueNode | - |
+
+## Types
+
 ### VcFile 
-继承自 [File](https://developer.mozilla.org/zh-CN/docs/Web/API/File)。
+Extends [File](https://developer.mozilla.org/en-US/docs/Web/API/File).
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| uid | 唯一标识符，不设置时会自动生成 | string | - | - |
-| lastModifiedDate | 上次修改文件的日期和时间 | date | - | - |
+| uid | unique id. Will auto-generate when not provided | string | - | - |
+| lastModifiedDate | A Date object indicating the date and time at which the file was last modified | date | - | - |
 
-### UploadFile
+### UploadFile 
+Extends [File](https://developer.mozilla.org/en-US/docs/Web/API/File) with additional props.
 
-继承自 [File](https://developer.mozilla.org/zh-CN/docs/Web/API/File)，附带额外属性用于渲染。
-
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| crossOrigin | CORS 属性设置 | `'anonymous'` \| `'use-credentials'` \| `''` | - | - |
-| name | 文件名 | string | - | - |
-| percent | 上传进度 | number | - | - |
-| status | 上传状态，不同状态展示颜色也会有所不同 | `error` \| `done` \| `uploading` \| `removed` | - | - |
-| thumbUrl | 缩略图地址 | string | - | - |
-| uid | 唯一标识符，不设置时会自动生成 | string | - | - |
-| url | 下载地址 | string | - | - |
+| crossOrigin | CORS settings attributes | `'anonymous'` \| `'use-credentials'` \| `''` | - | - |
+| name | File name | string | - | - |
+| percent | Upload progress percent | number | - | - |
+| status | Upload status. Show different style when configured | `error` \| `done` \| `uploading` \| `removed` | - | - |
+| thumbUrl | Thumb image url | string | - | - |
+| uid | unique id. Will auto-generate when not provided | string | - | - |
+| url | Download url | string | - | - |
 
 ### RequestOptions 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| action | 上传的地址 | string | - | - |
-| data | 上传所需额外参数或返回上传额外参数的方法 | Record<string, unknown> | - | - |
-| filename | 文件名 | string | - | - |
-| file | 文件信息 | [UploadFile](#uploadfile) | - | - |
-| withCredentials | 上传请求时是否携带 cookie | boolean | - | - |
-| headers | 上传的请求头部 | Record<string, string> | - | - |
-| method | 上传请求的 http method | string | - | - |
-| onProgress | 上传进度回调 | (event: object, file: UploadFile) => void | - | - |
-| onError | 上传失败回调 | (event: object, body?: object) => void | - | - |
-| onSuccess | 上传成功回调 | (body: object, fileOrXhr?: UploadFile \| XMLHttpRequest) => void | - | - |
+| action | Uploading URL | string | - | - |
+| data | Uploading extra params or function which can return uploading extra params | Record<string, unknown> | - | - |
+| filename | file name | string | - | - |
+| file | File object containing upload information | [UploadFile](#uploadfile) | - | - |
+| withCredentials | The ajax upload with cookie sent | boolean | - | - |
+| headers | Set request headers, valid above IE10 | Record<string, string> | - | - |
+| method | The http method of upload request | string | - | - |
+| onProgress | Progress event callback | (event: object, file: UploadFile) => void | - | - |
+| onError | Error callback when upload fails | (event: object, body?: object) => void | - | - |
+| onSuccess | Success callback when upload completes | (body: object, fileOrXhr?: UploadFile \| XMLHttpRequest) => void | - | - |
 
 ### onChange 
-> 💡 上传中、完成、失败都会调用这个函数。
+> 💡 The function will be called when uploading is in progress, completed, or failed.
 
-文件状态改变的回调，返回为：
+When uploading state change, it returns:
 
 ```ts
 {
@@ -135,23 +137,24 @@ description: 文件选择上传和拖拽上传控件。
 }
 ```
 
-1. `file` 当前操作的文件对象。
+1. `file` File object for the current operation.
 
    ```ts
    {
-      uid: 'uid',      // 文件唯一标识，建议设置为负数，防止和内部产生的 id 冲突
-      name: 'xx.png',   // 文件名
-      status: 'done' | 'uploading' | 'error' | 'removed' , //  beforeUpload 拦截的文件没有 status 状态属性
-      response: '{"status": "success"}', // 服务端响应内容
-      linkProps: '{"download": "image"}', // 下载链接额外的 HTML 属性
+      uid: 'uid',      // unique identifier, negative is recommended, // to prevent interference with internally generated id
+      name: 'xx.png',   // file name
+      status: 'done' | 'uploading' | 'error' | 'removed', // Intercepted file by beforeUpload doesn't have a status field.
+      response: '{"status": "success"}', // response from server
+      linkProps: '{"download": "image"}', // additional HTML props of file link
+      xhr: 'XMLHttpRequest{ ... }', // XMLHttpRequest Header
    }
    ```
 
-2. `fileList` 当前的文件列表。
+2. `fileList` current list of files
 
-3. `event` 上传中的服务端响应内容，包含了上传进度等信息，高级浏览器支持。
+3. `event` response from the server, including uploading progress, supported by advanced browsers.
 
-### AcceptConfig 
+### AcceptObject 
 ```ts
 {
   format: string;
@@ -159,55 +162,56 @@ description: 文件选择上传和拖拽上传控件。
 }
 ```
 
-用于配置文件类型接受的规则对象。
+Configuration object for file type acceptance rules.
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| format | 接受的文件类型，与原生 input accept 属性相同，支持 MIME 类型、文件扩展名等格式。详见 [input accept Attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept) | string | - | - |
-| filter | 文件过滤规则。设置为 `'native'` 时使用浏览器原生过滤行为；设置为函数时可以自定义过滤逻辑，函数返回 `true` 表示接受该文件，返回 `false` 表示拒绝 | `'native'` \| `(file: VcFile) => boolean` | - | - |
+| format | Accepted file types, same as native input accept attribute. Supports MIME types, file extensions, etc. See [input accept Attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept) | string | - | - |
+| filter | File filtering rule. When set to `'native'`, uses browser native filtering behavior; when set to a function, allows custom filtering logic. Function returns `true` to accept the file, `false` to reject | `'native'` \| `(file: VcFile) => boolean` | - | - |
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |
 
 ## FAQ
 
-### 服务端如何实现？ 
-- 服务端上传接口实现可以参考 [jQuery-File-Upload](https://github.com/blueimp/jQuery-File-Upload/wiki#server-side)。
-- 如果要做本地 mock 可以参考这个 [express 的例子](https://github.com/react-component/upload/blob/211979fdaa2c7896b6496df7061a0cfc0fc5434e/server.js)。
+### How do I implement upload server side? 
+- You can consult [jQuery-File-Upload](https://github.com/blueimp/jQuery-File-Upload/wiki#server-side) about how to implement server side upload interface.
+- There is a mock example of [express](https://github.com/react-component/upload/blob/211979fdaa2c7896b6496df7061a0cfc0fc5434e/server.js) in rc-upload.
 
-### 如何显示下载链接？ 
-请使用 `fileList` 属性设置数组项的 `url` 属性进行展示控制。
+### I want to display download links. 
+Please set property `url` of each item in `fileList` to control the content of the link.
 
-### `customRequest` 怎么使用？ 
-请参考 <https://github.com/react-component/upload#customrequest>。
+### How to use `customRequest`? 
+See <https://github.com/react-component/upload#customrequest>.
 
-### 为何 `fileList` 受控时，上传不在列表中的文件不会触发 `onChange` 后续的 `status` 更新事件？ 
-`onChange` 事件仅会作用于在列表中的文件，因而 `fileList` 不存在对应文件时后续事件会被忽略。
+### Why will the `fileList` that's in control not trigger `onChange` `status` update when the file is not in the list? 
+`onChange` will only trigger when the file is in the list, it will ignore any events removed from the list.
 
-### `onChange` 为什么有时候返回 File 有时候返回 `{ originFileObj: File }`？ {#faq-on-change-return-type}
+### Why does `onChange` sometimes return File object and other times return `{ originFileObj: File }`? {#faq-on-change-return-type}
 
-历史原因，在 `beforeUpload` 返回 `false` 时，会返回 `File` 对象。在下个大版本我们会统一返回 `{ originFileObj: File }` 对象。当前版本已经兼容所有场景下 `info.file.originFileObj` 获取原 `File` 写法。你可以提前切换。
+For compatible case, we return File object when `beforeUpload` return `false`. It will merge to `{ originFileObj: File }` in the next major version. Current version is compatible to get origin file by `info.file.originFileObj`. You can change this before a major release.
 
-### 为何有时 Chrome 点击 Upload 无法弹出文件选择框？ 
-与 `antd` 无关，原生上传也会失败。请重启 `Chrome` 浏览器，让其完成升级工作。
+### Why sometimes Chrome can not upload? 
+Chrome update will also break native upload. Please restart Chrome to finish the upload job.
 
-<img alt="点击 Chrome 重启启动按钮" src="https://github.com/ant-design/ant-design/assets/507615/1509b25f-4cd3-41b2-9415-90394ad08273" width="800" />
+<img alt="click restart button on Chrome" src="https://github.com/ant-design/ant-design/assets/507615/1509b25f-4cd3-41b2-9415-90394ad08273" width="800" />
 
-相关 `issue`：
+Ref:
 
 - [#48007](https://github.com/ant-design/ant-design/issues/48007)
 - [#32672](https://github.com/ant-design/ant-design/issues/32672)
 - [#32913](https://github.com/ant-design/ant-design/issues/32913)
 - [#33988](https://github.com/ant-design/ant-design/issues/33988)
 
-### 文件夹上传在 Safari 仍然可以选中文件? 
-组件内部是以 `directory`、`webkitdirectory` 属性控制 input 来实现文件夹选择的, 但似乎在 Safari 的实现中，[并不会阻止用户选择文件](https://stackoverflow.com/q/55649945/3040605)。可以通过 `accept` 配置来解决此问题，例如：
+### Can still select files when uploading a folder in Safari? 
+Inside the upload component, we use the `directory` and `webkitdirectory` properties to control the input to implement folder selection, but it seems that in Safari's implementation, [it doesn't prevent users from selecting files](https://stackoverflow.com/q/55649945/3040605). You can solve this issue through `accept` configuration, for example:
 
 ```ts
 accept = {
-  // 不允许选择任何文件
+  // Do not allow selecting any files
   format: `.${'n'.repeat(100)}`,
-  // 当选择文件夹后，接受所有文件夹内的文件
+  // Accept all files within the folder after folder selection
   filter: () => true,
 }
 ```

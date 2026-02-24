@@ -1,8 +1,8 @@
-# 卡片式页签
+# Card type tab
 
-## Description (zh-CN)
+## Description (en-US)
 
-另一种样式的页签，不提供对应的垂直样式。
+Another type of Tabs, which doesn't support vertical mode.
 
 ## Source
 

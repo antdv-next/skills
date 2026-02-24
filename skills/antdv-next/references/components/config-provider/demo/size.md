@@ -1,8 +1,8 @@
-# 组件尺寸
+# Component size
 
-## Description (zh-CN)
+## Description (en-US)
 
-修改默认组件尺寸。
+Config component default size.
 
 ## Source
 

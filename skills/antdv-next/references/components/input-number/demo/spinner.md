@@ -1,8 +1,8 @@
-# 拨轮
+# Spinner
 
-## Description (zh-CN)
+## Description (en-US)
 
-数字拨轮。
+Digit spinner.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# Flex 填充
+# Flex Stretch
 
-## Description (zh-CN)
+## Description (en-US)
 
-Col 提供 `flex` 属性以支持填充。
+Col provides `flex` to support filling the rest space.
 
 ## Source
 

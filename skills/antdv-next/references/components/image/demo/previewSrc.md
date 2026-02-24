@@ -1,8 +1,8 @@
-# 自定义预览图片
+# Custom preview image
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以设置不同的预览图片。
+You can set different preview image.
 
 ## Source
 

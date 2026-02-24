@@ -1,39 +1,38 @@
 ---
 title: Notification
-subtitle: 通知提醒框
-description: 全局展示通知提醒信息。
+description: Prompt notification message globally.
 ---
 
-## 何时使用 
-在系统四个角显示通知提醒信息。经常用于以下情况：
+## When To Use 
+To display a notification message at any of the four corners of the viewport. Typically it can be used in the following cases:
 
-- 较为复杂的通知内容。
-- 带有交互的通知，给出用户下一步的行动点。
-- 系统主动推送。
+- A notification with complex content.
+- A notification providing a feedback based on the user interaction. Or it may show some details about upcoming steps the user may have to follow.
+- A notification that is pushed by the application.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| Hooks 用法（推荐） | demo/hooks.md |
-| 自动关闭延时 | demo/duration.md |
-| 带图标的通知 | demo/with-icon.md |
-| 自定义操作按钮 | demo/with-btn.md |
-| 自定义图标 | demo/custom-icon.md |
-| 位置 | demo/placement.md |
-| 自定义样式 | demo/custom-style.md |
-| 更新通知内容 | demo/update.md |
-| 堆叠 | demo/stack.md |
-| 显示进度条 | demo/show-with-progress.md |
-| 静态方法（不推荐） | demo/basic.md |
-| 自定义进度条颜色 | demo/progress-color.md |
-| 自定义语义化结构样式 | demo/style-class.md |
+| Hooks usage (recommended) | demo/hooks.md |
+| Duration after which the notification box is closed | demo/duration.md |
+| Notification with icon | demo/with-icon.md |
+| Custom close button | demo/with-btn.md |
+| Customized icon | demo/custom-icon.md |
+| Placement | demo/placement.md |
+| Customized style | demo/custom-style.md |
+| Update message content | demo/update.md |
+| Stack | demo/stack.md |
+| Show with progress | demo/show-with-progress.md |
+| Static method (deprecated) | demo/basic.md |
+| Customize progress bar color | demo/progress-color.md |
+| Custom semantic dom styling | demo/style-class.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
-### 静态方法 
+### Static Methods 
 - `notification.success(config)`
 - `notification.error(config)`
 - `notification.info(config)`
@@ -44,59 +43,59 @@ description: 全局展示通知提醒信息。
 - `notification.useNotification(config)`
 
 ### ArgsProps 
-`config` 参数如下：
+The properties of `config` are as follows:
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| title | 通知提醒标题 | VueNode | - | - |
-| description | 通知提醒内容 | VueNode | - | - |
-| actions | 自定义按钮组 | VueNode | - | - |
-| key | 当前通知唯一标志 | Key | - | - |
-| duration | 默认 4.5 秒后自动关闭，配置为 `0 \| false` 则不会自动关闭 | number \| false | 4.5 | - |
-| showProgress | 显示自动关闭通知框的进度条 | boolean | - | - |
-| pauseOnHover | 悬停时是否暂停计时器 | boolean | true | - |
-| icon | 自定义图标 | VueNode | - | - |
-| placement | 弹出位置，可选 `top` \| `topLeft` \| `topRight` \| `bottom` \| `bottomLeft` \| `bottomRight` | NotificationPlacement | `topRight` | - |
-| class | 自定义 CSS class | string | - | - |
-| style | 自定义内联样式 | CSSProperties | - | - |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | NotificationClassNamesType | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | NotificationStylesType | - | - |
-| type | 通知类型 | IconType | - | - |
-| onClick | 点击通知时触发的回调函数 | () =&gt; void | - | - |
-| onClose | 当通知关闭时触发 | () =&gt; void | - | - |
-| closeIcon | 自定义关闭图标，设置为 null 或 false 时隐藏关闭按钮 | VueNode | true | - |
-| closable | 是否显示右上角的关闭按钮 | boolean \| ClosableType | true | - |
-| props | 透传至通知 `div` 的 props，支持 `data-testid`、`aria-*` 或 `role` | DivProps | - | - |
-| role | 供屏幕阅读器识别的通知内容语义 | 'alert' \| 'status' | `alert` | - |
+| title | The title of notification box | VueNode | - | - |
+| description | The content of notification box | VueNode | - | - |
+| actions | Customized button group | VueNode | - | - |
+| key | The unique identifier of the Notification | Key | - | - |
+| duration | Time in seconds before Notification is closed. When set to `0` or `false`, it will never be closed automatically | number \| false | 4.5 | - |
+| showProgress | Show progress bar for auto-closing notification | boolean | - | - |
+| pauseOnHover | Keep the timer running or not on hover | boolean | true | - |
+| icon | Customized icon | VueNode | - | - |
+| placement | Position of Notification, can be one of `top` \| `topLeft` \| `topRight` \| `bottom` \| `bottomLeft` \| `bottomRight` | NotificationPlacement | `topRight` | - |
+| class | Customized CSS class | string | - | - |
+| style | Customized inline style | CSSProperties | - | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function. | NotificationClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | NotificationStylesType | - | - |
+| type | Notification type | IconType | - | - |
+| onClick | Specify a function that will be called when the notification is clicked | () =&gt; void | - | - |
+| onClose | Trigger when notification closed | () =&gt; void | - | - |
+| closeIcon | Custom close icon. Set to null or false to hide close button | VueNode | true | - |
+| closable | Whether to show close button | boolean \| ClosableType | true | - |
+| props | Props passed to the notification `div`, supports `data-testid`, `aria-*`, or `role` | DivProps | - | - |
+| role | The semantics of notification content recognized by screen readers | 'alert' \| 'status' | `alert` | - |
 
 ### notification.useNotification 
-`config` 参数如下：
+The properties of `config` are as follows:
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| top | 消息从顶部弹出时，距离顶部的位置，单位像素 | number | 24 | - |
-| bottom | 消息从底部弹出时，距离底部的位置，单位像素 | number | 24 | - |
-| placement | 弹出位置，可选 `top` \| `topLeft` \| `topRight` \| `bottom` \| `bottomLeft` \| `bottomRight` | NotificationPlacement | `topRight` | - |
-| getContainer | 配置渲染节点的输出位置 | () =&gt; HTMLElement \| ShadowRoot | () =&gt; document.body | - |
-| duration | 默认 4.5 秒后自动关闭，配置为 `0 \| false` 则不会自动关闭 | number \| false | 4.5 | - |
-| maxCount | 最大显示数，超过限制时，最早的消息会被自动关闭 | number | - | - |
-| rtl | 是否开启 RTL 模式 | boolean | false | - |
-| stack | 堆叠模式，超过阈值时会将所有消息收起 | boolean \| &#123; threshold?: number &#125; | &#123; threshold: 3 &#125; | - |
-| showProgress | 显示自动关闭通知框的进度条 | boolean | - | - |
-| pauseOnHover | 悬停时是否暂停计时器 | boolean | true | - |
-| closeIcon | 自定义关闭图标，设置为 null 或 false 时隐藏关闭按钮 | VueNode | true | - |
+| top | Distance from the top of the viewport, when `placement` is `top` `topRight` or `topLeft` (unit: pixels) | number | 24 | - |
+| bottom | Distance from the bottom of the viewport, when `placement` is `bottom` `bottomRight` or `bottomLeft` (unit: pixels) | number | 24 | - |
+| placement | Position of Notification, can be one of `top` \| `topLeft` \| `topRight` \| `bottom` \| `bottomLeft` \| `bottomRight` | NotificationPlacement | `topRight` | - |
+| getContainer | Return the mount node for Notification | () =&gt; HTMLElement \| ShadowRoot | () =&gt; document.body | - |
+| duration | Time in seconds before Notification is closed. When set to `0` or `false`, it will never be closed automatically | number \| false | 4.5 | - |
+| maxCount | Max Notification show, drop oldest if exceed limit | number | - | - |
+| rtl | Whether to enable RTL mode | boolean | false | - |
+| stack | Notifications will be stacked when amount is over threshold | boolean \| &#123; threshold?: number &#125; | &#123; threshold: 3 &#125; | - |
+| showProgress | Show progress bar for auto-closing notification | boolean | - | - |
+| pauseOnHover | Keep the timer running or not on hover | boolean | true | - |
+| closeIcon | Custom close icon. Set to null or false to hide close button | VueNode | true | - |
 | prefixCls | - | string | `ant-notification` | - |
-| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | NotificationClassNamesType | - | - |
-| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | NotificationStylesType | - | - |
+| classes | Customize class for each semantic structure inside the component. Supports object or function. | NotificationClassNamesType | - | - |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | NotificationStylesType | - | - |
 
 ### ClosableType 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| closeIcon | 自定义关闭图标 | VueNode | - | - |
-| onClose | 当通知关闭时触发 | () =&gt; void | - | - |
-| disabled | 是否禁用关闭按钮 | boolean | - | - |
+| closeIcon | Custom close icon | VueNode | - | - |
+| onClose | Trigger when notification close | () =&gt; void | - | - |
+| disabled | Whether the close button is disabled | boolean | - | - |
 
-### 全局配置 
+### Global configuration 
 `notification.config(options)`
 
 ```js
@@ -108,29 +107,30 @@ notification.config({
 })
 ```
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| top | 消息从顶部弹出时，距离顶部的位置，单位像素 | number | 24 | - |
-| bottom | 消息从底部弹出时，距离底部的位置，单位像素 | number | 24 | - |
-| duration | 默认 4.5 秒后自动关闭，配置为 `0 \| false` 则不会自动关闭 | number \| false | 4.5 | - |
-| showProgress | 显示自动关闭通知框的进度条 | boolean | - | - |
-| pauseOnHover | 悬停时是否暂停计时器 | boolean | true | - |
+| top | Distance from the top of the viewport, when `placement` is `top` `topRight` or `topLeft` (unit: pixels) | number | 24 | - |
+| bottom | Distance from the bottom of the viewport, when `placement` is `bottom` `bottomRight` or `bottomLeft` (unit: pixels) | number | 24 | - |
+| duration | Time in seconds before Notification is closed. When set to `0` or `false`, it will never be closed automatically | number \| false | 4.5 | - |
+| showProgress | Show progress bar for auto-closing notification | boolean | - | - |
+| pauseOnHover | Keep the timer running or not on hover | boolean | true | - |
 | prefixCls | - | string | `ant-notification` | - |
-| getContainer | 配置渲染节点的输出位置 | () =&gt; HTMLElement \| ShadowRoot | () =&gt; document.body | - |
-| placement | 弹出位置，可选 `top` \| `topLeft` \| `topRight` \| `bottom` \| `bottomLeft` \| `bottomRight` | NotificationPlacement | `topRight` | - |
-| closeIcon | 自定义关闭图标，设置为 null 或 false 时隐藏关闭按钮 | VueNode | true | - |
-| closable | 是否显示右上角的关闭按钮 | ClosableType | - | - |
-| rtl | 是否开启 RTL 模式 | boolean | false | - |
-| maxCount | 最大显示数，超过限制时，最早的消息会被自动关闭 | number | - | - |
-| props | 透传至通知 `div` 的 props，支持 `data-testid`、`aria-*` 或 `role` | DivProps | - | - |
+| getContainer | Return the mount node for Notification | () =&gt; HTMLElement \| ShadowRoot | () =&gt; document.body | - |
+| placement | Position of Notification, can be one of `top` \| `topLeft` \| `topRight` \| `bottom` \| `bottomLeft` \| `bottomRight` | NotificationPlacement | `topRight` | - |
+| closeIcon | Custom close icon. Set to null or false to hide close button | VueNode | true | - |
+| closable | Whether to show close button | ClosableType | - | - |
+| rtl | Whether to enable RTL mode | boolean | false | - |
+| maxCount | Max Notification show, drop oldest if exceed limit | number | - | - |
+| props | Props passed to the notification `div`, supports `data-testid`, `aria-*`, or `role` | DivProps | - | - |
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |
 
 ## FAQ
 
-### 为什么 notification 不能获取 ConfigProvider 的 `locale/prefixCls/theme` 等配置？ 
-直接调用 notification 方法会创建新的实例，无法继承当前上下文。需要上下文信息时，请使用 `notification.useNotification` 获取 `api` 和 `ContextHolder` 并渲染到组件树中：
+### Why I can not access context, ConfigProvider `locale/prefixCls/theme` in notification? 
+Calling `notification` methods will render a new instance which does not inherit the current context. When you need context info, use `notification.useNotification` to get `api` and `ContextHolder`, then render it inside your component tree:
 
 ```vue
 <script setup>
@@ -144,9 +144,9 @@ const [api, ContextHolder] = notification.useNotification()
 </template>
 ```
 
-**注意：** 通过 hooks 创建的 `ContextHolder` 必须插入到子元素节点中才会生效，当你不需要上下文信息时请直接调用静态方法。
+**Note:** You must insert `ContextHolder` into your children with hooks. You can use static methods if you do not need context connection.
 
-> 可通过 [App 包裹组件](../app/docs.md) 简化 `useNotification` 等方法需要手动植入 ContextHolder 的问题。
+> [App Package Component](../app/docs.md) can be used to simplify `useNotification` and other methods that need to manually implant ContextHolder.
 
-### 静态方法如何设置 prefixCls？ 
-你可以通过 [`ConfigProvider.config`](../config-provider/docs.md#configproviderconfig-4130) 进行设置。
+### How to set static methods prefixCls? 
+You can config with [`ConfigProvider.config`](../config-provider/docs.md#configproviderconfig-4130).

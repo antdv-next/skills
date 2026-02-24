@@ -1,8 +1,8 @@
-# 可关闭
+# Closable
 
-## Description (zh-CN)
+## Description (en-US)
 
-显示关闭按钮，点击可关闭警告提示。
+To show close button.
 
 ## Source
 

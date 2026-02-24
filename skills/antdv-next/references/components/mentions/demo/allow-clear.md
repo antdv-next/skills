@@ -1,8 +1,8 @@
-# 带移除图标
+# With clear icon
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义清除按钮。
+Customize clear button.
 
 ## Source
 

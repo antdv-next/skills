@@ -1,8 +1,8 @@
-# 语义化结构
+# Semantic Sample
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过语义化结构，可以实现更丰富的定制样式。
+Achieve richer custom styles by using semantic structure.
 
 ## Source
 

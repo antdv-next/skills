@@ -1,8 +1,8 @@
-# 带排序的搜索
+# Search with sort
 
-## Description (zh-CN)
+## Description (en-US)
 
-搜索并对选项进行排序。
+Search the options with sorting.
 
 ## Source
 

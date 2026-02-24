@@ -1,8 +1,8 @@
-# 支持更多内容配置
+# Support more content configuration
 
-## Description (zh-CN)
+## Description (en-US)
 
-一种支持封面、头像、标题和描述信息的卡片。
+A Card that supports `cover`, `avatar`, `title` and `description`.
 
 ## Source
 

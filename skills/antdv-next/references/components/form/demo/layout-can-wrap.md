@@ -1,8 +1,8 @@
-# label 换行
+# label can wrap
 
-## Description (zh-CN)
+## Description (en-US)
 
-label 可换行展示。
+Allow label text to wrap.
 
 ## Source
 

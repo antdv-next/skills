@@ -1,8 +1,8 @@
-# 自定义触发器
+# Custom Trigger
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义颜色面板的触发器。
+Triggers for customizing color panels.
 
 ## Source
 

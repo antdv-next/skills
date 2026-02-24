@@ -1,8 +1,8 @@
-# 文本域
+# TextArea
 
-## Description (zh-CN)
+## Description (en-US)
 
-用于多行输入。
+For multi-line input.
 
 ## Source
 

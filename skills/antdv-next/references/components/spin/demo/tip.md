@@ -1,8 +1,8 @@
-# 自定义描述文案
+# Customized description
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义描述文案。
+Customize the description text.
 
 ## Source
 

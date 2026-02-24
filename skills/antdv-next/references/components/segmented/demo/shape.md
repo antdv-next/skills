@@ -1,8 +1,8 @@
-# 胶囊形状
+# Round shape
 
-## Description (zh-CN)
+## Description (en-US)
 
-胶囊型的 Segmented。
+Round shape of Segmented.
 
 ## Source
 

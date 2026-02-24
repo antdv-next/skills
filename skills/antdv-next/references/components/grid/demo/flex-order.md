@@ -1,8 +1,8 @@
-# 排序
+# Order
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `order` 来改变元素的排序。
+To change the element order by `order`.
 
 ## Source
 

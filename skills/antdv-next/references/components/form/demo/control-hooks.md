@@ -1,8 +1,8 @@
-# 表单方法
+# Form methods
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过表单实例方法与数据域交互。
+Interact with form fields through form instance methods.
 
 ## Source
 

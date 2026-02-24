@@ -1,8 +1,8 @@
-# 只设置图标
+# With Icon only
 
-## Description (zh-CN)
+## Description (en-US)
 
-在 Segmented Item 选项中只设置 Icon。
+Set icon without label for Segmented Item.
 
 ## Source
 

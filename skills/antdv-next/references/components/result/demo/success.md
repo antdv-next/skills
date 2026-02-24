@@ -1,8 +1,8 @@
 # Success
 
-## Description (zh-CN)
+## Description (en-US)
 
-成功的结果。
+Show successful results.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 弹出位置
+# Placement
 
-## Description (zh-CN)
+## Description (en-US)
 
-支持 6 个弹出位置。
+Support 6 placements.
 
 ## Source
 

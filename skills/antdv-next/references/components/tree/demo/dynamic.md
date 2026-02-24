@@ -1,8 +1,8 @@
-# 异步数据加载
+# load data asynchronously
 
-## Description (zh-CN)
+## Description (en-US)
 
-点击展开节点，动态加载数据。
+To load data asynchronously when click to expand a treeNode.
 
 ## Source
 

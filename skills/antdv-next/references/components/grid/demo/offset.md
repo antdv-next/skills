@@ -1,10 +1,8 @@
-# 左右偏移
+# Column offset
 
-## Description (zh-CN)
+## Description (en-US)
 
-列偏移。
-
-使用 `offset` 可以将列向右侧偏。例如，`offset={4}` 将元素向右侧偏移 4 个列宽。
+`offset` can set the column to the right side. For example, `offset={4}` shifts the element to the right by four columns.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 间距大小
+# Space Size
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义间距大小。
+Customize space size.
 
 ## Source
 

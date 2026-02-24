@@ -1,8 +1,8 @@
-# 禁用
+# disabled
 
-## Description (zh-CN)
+## Description (en-US)
 
-禁用时间选择。
+A disabled state of the `TimePicker`.
 
 ## Source
 

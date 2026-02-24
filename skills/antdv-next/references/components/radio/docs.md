@@ -1,12 +1,12 @@
 ---
 title: Radio
-subtitle: 单选框
-description: 用于在多个备选项中选中单个状态。
+description: Used to select a single state from multiple options.
 ---
 
-## 何时使用 
-- 用于在多个备选项中选中单个状态。
-- 和 Select 的区别是，Radio 所有选项默认可见，方便用户在比较中选择，因此选项不宜过多。
+## When To Use
+
+- Used to select a single state from multiple options.
+- The difference from Select is that Radio is visible to the user and can facilitate the comparison of choice, which means there shouldn't be too many of them.
 
 ```vue
 <script lang="ts" setup>
@@ -16,7 +16,7 @@ const value = ref()
 </script>
 
 <template>
-  <!-- 使用 Radio.Group 组件时，推荐的写法 ✅ -->
+  <!-- When use RadioGroup, recommended ✅ -->
   <a-radio-group
     v-model:value="value"
     :options="[
@@ -25,7 +25,7 @@ const value = ref()
       { value: 3, label: 'C' },
     ]"
   />
-  <!-- 不推荐的写法 🙅🏻‍♀️ -->
+  <!--  No recommended 🙅🏻‍♀️  -->
   <a-radio-group v-model:value="value">
     <a-radio :value="1">
       A
@@ -40,82 +40,87 @@ const value = ref()
 </template>
 ```
 
+## Examples
+
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本 | demo/basic.md |
-| 不可用 | demo/disabled.md |
-| 单选组合 | demo/radiogroup.md |
-| Radio.Group 垂直 | demo/radiogroup-more.md |
-| Block 单选组合 | demo/radiogroup-block.md |
-| Radio.Group 组合 - 配置方式 | demo/radiogroup-options.md |
-| 按钮样式 | demo/radiobutton.md |
-| 单选组合 - 配合 name 使用 | demo/radiogroup-with-name.md |
-| 大小 | demo/size.md |
-| 填底的按钮样式 | demo/radiobutton-solid.md |
+| Basic | demo/basic.md |
+| disabled | demo/disabled.md |
+| Radio Group | demo/radiogroup.md |
+| Vertical Radio.Group | demo/radiogroup-more.md |
+| Block Radio.Group | demo/radiogroup-block.md |
+| Radio.Group group - optional | demo/radiogroup-options.md |
+| radio style | demo/radiobutton.md |
+| Radio.Group with name | demo/radiogroup-with-name.md |
+| Size | demo/size.md |
+| Solid radio button | demo/radiobutton-solid.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
-### Radio/RadioButton 
-#### Props 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| checked | 指定当前是否选中，支持 `v-model:checked` | boolean | false | - |
-| disabled | 禁用 Radio | boolean | false | - |
-| value | 根据 value 进行比较，判断是否选中 | any | - | - |
-
-#### 方法 
-| 名称 | 说明 |
-| --- | --- |
-| blur() | 移除焦点 |
-| focus() | 获取焦点 |
-
-### RadioGroup 
-单选框组合，用于包裹一组 `Radio`。
+### Radio/RadioButton
 
 #### Props 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| block | 将 RadioGroup 宽度调整为其父宽度的选项 | boolean | false | - |
-| buttonStyle | RadioButton 的风格样式，目前有描边和填色两种风格 | `outline` \| `solid` | `outline` | - |
-| defaultValue | 默认选中的值 | any | - | - |
-| disabled | 禁选所有子单选器 | boolean | false | - |
-| name | RadioGroup 下所有 `input[type="radio"]` 的 `name` 属性。若未设置，则将回退到随机生成的名称 | string | - | - |
-| options | 以配置形式设置子元素 | string\[] \| number\[] \| Array&lt;[CheckboxOptionType](#checkboxoptiontype)&gt; | - | - |
-| optionType | 用于设置 Radio `options` 类型 | `default` \| `button` | `default` | - |
-| orientation | 排列方向 | `horizontal` \| `vertical` | `horizontal` | - |
-| size | 大小，只对按钮样式生效 | `large` \| `middle` \| `small` | - | - |
-| value | 用于设置当前选中的值，支持 `v-model:value` | any | - | - |
-| vertical | 值为 true，Radio Group 为垂直方向。与 `orientation` 同时存在，以 `orientation` 优先 | boolean | false | - |
+| checked | Specifies whether the radio is selected, support `v-model:checked` | boolean | false |  |
+| disabled | Disable radio | boolean | false |  |
+| value | According to value for comparison, to determine whether the selected | any | - |  |
+
+#### Methods 
+| Name    | Description  |
+| ------- | ------------ |
+| blur()  | Remove focus |
+| focus() | Get focus    |
+
+### RadioGroup
+
+Radio group can wrap a group of `Radio`.
+
+#### Props 
+| Property | Description | Type | Default | Version |
+| --- | --- | --- | --- | --- |
+| block | Option to fit RadioGroup width to its parent width | boolean | false | - |
+| buttonStyle | The style type of radio button | `outline` \| `solid` | `outline` |  |
+| defaultValue | Default selected value | any | - |  |
+| disabled | Disable all radio buttons | boolean | false |  |
+| name | The `name` property of all `input[type="radio"]` children. If not set, it will fallback to a randomly generated name | string | - |  |
+| options | Set children optional | string\[] \| number\[] \| Array&lt;[CheckboxOptionType](#checkboxoptiontype)> | - |  |
+| optionType | Set Radio optionType | `default` \| `button` | `default` | - |
+| orientation | Orientation | `horizontal` \| `vertical` | `horizontal` |  |
+| size | The size of radio button style | `large` \| `middle` \| `small` | - |  |
+| value | Used for setting the currently selected value, support `v-model:value` | any | - |  |
+| vertical | If true, the Radio group will be vertical. Simultaneously existing with `orientation`, `orientation` takes priority | boolean | false |  |
 
 #### Events 
-| 事件 | 说明 | 类型 | 版本 |
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| change | 选项变化时的回调函数 | (e: RadioChangeEvent) =&gt; void | - |
+| change | The callback function that is triggered when the state changes  | (e: RadioChangeEvent) =&gt; void | - |
 
 #### Slots 
-| 插槽 | 说明 | 类型 | 版本 |
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| labelRender | label 渲染插槽 | (params: &#123; item: CheckboxOptionType, index: number &#125;) =&gt; any | - |
+| labelRender | label render slot | (params: &#123; item: CheckboxOptionType, index: number &#125;) =&gt; any | - |
 
 ## Types
 
 ### CheckboxOptionType
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| label | 用于作为 Radio 选项展示的文本 | `string` | - | - |
-| value | 关联 Radio 选项的值 | `string` \| `number` \| `boolean` | - | - |
-| style | 应用到 Radio 选项的 style | `CSSProperties` | - | - |
-| class | Radio 选项的类名 | `string` | - | - |
-| disabled | 指定 Radio 选项是否要禁用 | `boolean` | `false` | - |
-| title | 添加 Title 属性值 | `string` | - | - |
-| id | 添加 Radio Id 属性值 | `string` | - | - |
-| onChange | 当 Radio Group 的值发送改变时触发 | `(e: CheckboxChangeEvent) => void;` | - | - |
-| required | 指定 Radio 选项是否必填 | `boolean` | `false` | - |
+| label | The text used to display as the Radio option | `string` | - | - |
+| value | The value associated with the Radio option | `string` \| `number` \| `boolean` | - | - |
+| style | The style to apply to the Radio option | `CSSProperties` | - | - |
+| class | class of the Radio option | `string` | - | - |
+| disabled | Specifies whether the Radio option is disabled | `boolean` | `false` | - |
+| title | Adds the Title attribute value | `string` | - | - |
+| id | Adds the Radio Id attribute value | `string` | - | - |
+| onChange | Triggered when the value of the Radio Group changes | `(e: CheckboxChangeEvent) => void;` | - | - |
+| required | Specifies whether the Radio option is required | `boolean` | `false` | - |
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |

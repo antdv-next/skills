@@ -1,8 +1,8 @@
-# 总数
+# Total number
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过设置 `showTotal` 展示总共有多少数据。
+You can show the total number of data by setting `showTotal`.
 
 ## Source
 

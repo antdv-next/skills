@@ -1,8 +1,8 @@
-# 自定义显示 icon
+# Custom show icon
 
-## Description (zh-CN)
+## Description (en-US)
 
-根据类型默认显示对应 icon
+Displays the corresponding by default by type icon
 
 ## Source
 

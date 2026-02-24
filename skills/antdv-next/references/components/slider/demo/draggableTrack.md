@@ -1,8 +1,8 @@
-# 范围可拖拽
+# Draggable Track
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以设置 `range.draggableTrack`，使得范围刻度整体可拖拽。
+Make range track draggable by setting `range.draggableTrack`.
 
 ## Source
 

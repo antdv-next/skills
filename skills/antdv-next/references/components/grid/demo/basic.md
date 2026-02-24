@@ -1,10 +1,10 @@
-# 基础栅格
+# Basic Grid
 
-## Description (zh-CN)
+## Description (en-US)
 
-从堆叠到水平排列。
+From the stack to the horizontal arrangement.
 
-使用一组 `Row` 和 `Col` 创建基础栅格，所有列（Col）必须放在 `Row` 内。
+Create a basic grid using a single set of `Row` and `Col`. All `Col` must be placed inside a `Row`.
 
 ## Source
 

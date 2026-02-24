@@ -1,8 +1,8 @@
-# 农历日历
+# Lunar Calendar
 
-## Description (zh-CN)
+## Description (en-US)
 
-展示农历、节气等信息。
+Display lunar calendar, solar terms and other information.
 
 ## Source
 

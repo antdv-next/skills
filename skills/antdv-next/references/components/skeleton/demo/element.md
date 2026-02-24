@@ -1,8 +1,8 @@
-# 按钮/头像/输入框/图像/自定义节点
+# Button/Avatar/Input/Image/Node
 
-## Description (zh-CN)
+## Description (en-US)
 
-骨架按钮、头像、输入框、图像和自定义节点。
+Skeleton Button, Avatar, Input, Image and Node.
 
 ## Source
 

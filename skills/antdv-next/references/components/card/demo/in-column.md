@@ -1,8 +1,8 @@
-# 栅格卡片
+# Card in column
 
-## Description (zh-CN)
+## Description (en-US)
 
-在系统概览页面常常和栅格进行配合。
+Cards usually cooperate with grid column layout in overview page.
 
 ## Source
 

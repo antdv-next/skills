@@ -1,88 +1,88 @@
 ---
 title: Slider
-subtitle: 滑动输入条
-description: 滑动型输入器，展示当前值和可选范围。
+description: A Slider component for displaying current value and intervals in range.
 ---
 
-## 何时使用 
-当用户需要在数值区间/自定义区间内进行选择时，可为连续或离散值。
+## When To Use 
+Used to input a value within a specified range.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本 | demo/basic.md |
-| 带输入框的滑块 | demo/input-number.md |
-| 带 icon 的滑块 | demo/icon-slider.md |
-| 自定义提示 | demo/tip-formatter.md |
-| 事件 | demo/event.md |
-| 带标签的滑块 | demo/mark.md |
-| 垂直 | demo/vertical.md |
-| 控制 ToolTip 的显示 | demo/show-tooltip.md |
-| 反向 | demo/reverse.md |
-| 范围可拖拽 | demo/draggableTrack.md |
-| 多点组合 | demo/multiple.md |
-| 动态增减节点 | demo/editable.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
+| Basic | demo/basic.md |
+| Slider with InputNumber | demo/input-number.md |
+| Slider with icon | demo/icon-slider.md |
+| Customize tooltip | demo/tip-formatter.md |
+| Event | demo/event.md |
+| Graduated slider | demo/mark.md |
+| Vertical | demo/vertical.md |
+| Control ToolTip | demo/show-tooltip.md |
+| Reverse | demo/reverse.md |
+| Draggable Track | demo/draggableTrack.md |
+| Multiple Handles | demo/multiple.md |
+| Dynamic edit nodes | demo/editable.md |
+| Customize Semantic Elements | demo/style-class.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
-### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| defaultValue | 设置初始取值。当 `range` 为 false 时，使用 number，否则用 [number, number] | number \| [number, number] | 0 \| [0, 0] | - |
-| disabled | 值为 true 时，滑块为禁用状态 | boolean | false | - |
-| dots | 是否只能拖拽到刻度上 | boolean | false | - |
-| included | `marks` 不为空对象时有效，值为 true 时表示值为包含关系，false 表示并列 | boolean | true | - |
-| keyboard | 支持使用键盘操作 handler | boolean | true | 5.2.0+ |
-| marks | 刻度标记，key 的类型必须为 `number` 且取值在闭区间 [min, max] 内，每个标签可以单独设置样式 | object | &#123; number: VueNode &#125; \| &#123; number: &#123; style: CSSProperties, label: VueNode &#125; &#125; | - |
-| max | 最大值 | number | 100 | - |
-| min | 最小值 | number | 0 | - |
-| orientation | 排列方向 | `horizontal` \| `vertical` | `horizontal` | - |
-| range | 双滑块模式 | boolean \| [RangeConfig](#rangeconfig) | false | - |
-| reverse | 反向坐标轴 | boolean | false | - |
-| step | 步长，取值必须大于 0，并且可被 (max - min) 整除。当 `marks` 不为空对象时，可以设置 `step` 为 null，此时 Slider 的可选值仅有 `marks`、`min` 和 `max` | number \| null | 1 | - |
-| tooltip | 设置 Tooltip 相关属性 | [TooltipConfig](#tooltipconfig) | - | 4.23.0 |
-| value | 设置当前取值。当 `range` 为 false 时，使用 number，否则用 [number, number]，支持 `v-model:value` | number \| [number, number] | - | - |
-| vertical | 值为 true 时，Slider 为垂直方向。与 `orientation` 同时存在，以 `orientation` 优先 | boolean | false | - |
+| defaultValue | The default value of the slider. When `range` is false, use number, otherwise, use [number, number] | number \| [number, number] | 0 \| [0, 0] | - |
+| disabled | If true, the slider will not be interactive | boolean | false | - |
+| dots | Whether the thumb can only be dragged to tick marks | boolean | false | - |
+| included | Takes effect when `marks` is not null. True means containment and false means coordinative | boolean | true | - |
+| keyboard | Support using keyboard to move handlers | boolean | true | 5.2.0+ |
+| marks | Tick marks of Slider. The type of key must be `number`, and must be in closed interval [min, max]. Each mark can declare its own style | object | &#123; number: VueNode &#125; \| &#123; number: &#123; style: CSSProperties, label: VueNode &#125; &#125; | - |
+| max | The maximum value the slider can slide to | number | 100 | - |
+| min | The minimum value the slider can slide to | number | 0 | - |
+| orientation | Orientation direction | `horizontal` \| `vertical` | `horizontal` | - |
+| range | Enable dual thumb mode for range selection | boolean \| [RangeConfig](#rangeconfig) | false | - |
+| reverse | Reverse the component | boolean | false | - |
+| step | The granularity the slider can step through values. Must be greater than 0, and be divisible by (max - min). When `step` is `null` and `marks` exist, valid points will only be marks, `min` and `max` | number \| null | 1 | - |
+| tooltip | The tooltip related props | [TooltipConfig](#tooltipconfig) | - | 4.23.0 |
+| value | The value of slider. When `range` is false, use number, otherwise, use [number, number], support `v-model:value` | number \| [number, number] | - | - |
+| vertical | If true, the slider will be vertical. Simultaneously existing with `orientation`, `orientation` takes priority | boolean | false | - |
 
 ### RangeConfig
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| draggableTrack | 范围刻度是否可被拖拽 | boolean | false | - |
-| editable | 启动动态增减节点，不能和 `draggableTrack` 一同使用 | boolean | false | 5.20.0 |
-| minCount | 配置 `editable` 时，最小节点数量 | number | 0 | 5.20.0 |
-| maxCount | 配置 `editable` 时，最大节点数量 | number | - | 5.20.0 |
+| draggableTrack | Whether range track can be dragged | boolean | false | - |
+| editable | Dynamic edit nodes. Cannot be used with `draggableTrack` | boolean | false | 5.20.0 |
+| minCount | The minimum count of nodes | number | 0 | 5.20.0 |
+| maxCount | The maximum count of nodes | number | - | 5.20.0 |
 
 ### TooltipConfig
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| autoAdjustOverflow | 是否自动调整弹出位置 | boolean | true | 5.8.0 |
-| formatter | Slider 会把当前值传给 `formatter`，并在 Tooltip 中显示 `formatter` 的返回值，若为 null，则隐藏 Tooltip | (value: number) =&gt; VueNode \| null | IDENTITY | 4.23.0 |
-| getPopupContainer | Tooltip 渲染父节点，默认渲染到 body 上 | (triggerNode: HTMLElement) =&gt; HTMLElement | () =&gt; document.body | 4.23.0 |
-| open | 值为 true 时，Tooltip 将会始终显示；否则始终不显示，哪怕在拖拽及移入时 | boolean | - | 4.23.0 |
-| placement | 设置 Tooltip 展示位置。参考 [Tooltip](../tooltip/docs.md/) | string | - | 4.23.0 |
+| autoAdjustOverflow | Whether to automatically adjust the popup position | boolean | true | 5.8.0 |
+| formatter | Slider will pass its value to `formatter`, display its value in Tooltip, and hide the Tooltip when the returned value is null | (value: number) =&gt; VueNode \| null | IDENTITY | 4.23.0 |
+| getPopupContainer | The DOM container of the Tooltip. The default behavior is to create a div element in the body | (triggerNode: HTMLElement) =&gt; HTMLElement | () =&gt; document.body | 4.23.0 |
+| open | If true, Tooltip will always be visible; if false, it will never be visible, even when dragging or hovering | boolean | - | 4.23.0 |
+| placement | Set Tooltip display position. Ref [Tooltip](../tooltip/docs.md/) | string | - | 4.23.0 |
 
-### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+### Events 
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| change | 当 Slider 的值发生改变时，会触发 change 事件，并把改变后的值作为参数传入 | (value: number \| [number, number]) =&gt; void | - |
-| changeComplete | 与 `mouseup` 和 `keyup` 触发时机一致，把当前值作为参数传入 | (value: number \| [number, number]) =&gt; void | - |
+| change | Callback function that is fired when the user changes the slider's value | (value: number \| [number, number]) =&gt; void | - |
+| changeComplete | Fire when `mouseup` or `keyup` is fired | (value: number \| [number, number]) =&gt; void | - |
 
-### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+### Slots 
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| mark | 自定义刻度内容 | (mark: &#123; point: number; label?: any &#125;) =&gt; VueNode | - |
+| mark | Custom mark content | (mark: &#123; point: number; label?: any &#125;) =&gt; VueNode | - |
 
-### 方法 
-| 名称 | 说明 | 版本 |
+### Methods 
+| Name | Description | Version |
 | --- | --- | --- |
-| blur() | 移除焦点 | - |
-| focus() | 获取焦点 | - |
+| blur() | Remove focus | - |
+| focus() | Get focus | - |
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |

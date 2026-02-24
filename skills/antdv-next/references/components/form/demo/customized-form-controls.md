@@ -1,8 +1,8 @@
-# 自定义表单控件
+# Customized Form Controls
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义表单控件。
+Customized form controls.
 
 ## Source
 

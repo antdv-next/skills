@@ -1,8 +1,8 @@
-# 占据整行
+# Block Node
 
-## Description (zh-CN)
+## Description (en-US)
 
-让节点占据一行。
+Make tree nodes fill the remaining horizontal space.
 
 ## Source
 

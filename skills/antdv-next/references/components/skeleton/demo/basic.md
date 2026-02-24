@@ -1,8 +1,8 @@
-# 基本
+# Basic
 
-## Description (zh-CN)
+## Description (en-US)
 
-最简单的占位效果。
+Simplest Skeleton usage.
 
 ## Source
 

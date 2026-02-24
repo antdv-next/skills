@@ -1,8 +1,8 @@
-# 带输入框的滑块
+# Slider with InputNumber
 
-## Description (zh-CN)
+## Description (en-US)
 
-和 [数字输入框](../../input-number/docs.md) 组件保持同步。
+Synchronize with [InputNumber](../../input-number/docs.md/) component.
 
 ## Source
 

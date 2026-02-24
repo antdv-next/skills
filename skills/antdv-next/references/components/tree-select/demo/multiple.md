@@ -1,8 +1,8 @@
-# 多选
+# Multiple Selection
 
-## Description (zh-CN)
+## Description (en-US)
 
-多选的树选择。
+Multiple selection usage.
 
 ## Source
 

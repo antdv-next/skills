@@ -1,8 +1,8 @@
-# 自定义面板
+# Custom Panel
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义各个面板的背景色、圆角、边距和图标。
+Customize the background, border, margin styles and icon for each panel.
 
 ## Source
 

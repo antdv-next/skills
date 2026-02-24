@@ -1,8 +1,8 @@
-# 自定义图标
+# Custom Icon
 
-## Description (zh-CN)
+## Description (en-US)
 
-利用 `Icon` 组件封装一个可复用的自定义图标。可以通过 `component` 属性或插槽传入一个 `svg` 组件来渲染最终的图标，以满足特定的需求。
+Create a reusable Vue component by using `Icon`. The property / slot `component` takes a Vue component that renders to `svg` element.
 
 ## Source
 

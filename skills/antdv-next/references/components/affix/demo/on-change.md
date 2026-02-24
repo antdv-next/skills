@@ -1,8 +1,8 @@
-# 固定状态改变的回调
+# Callback
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以获得是否固定的状态。
+Callback with affixed state.
 
 ## Source
 

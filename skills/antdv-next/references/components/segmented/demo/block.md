@@ -1,8 +1,8 @@
-# block 分段选择器
+# Block Segmented
 
-## Description (zh-CN)
+## Description (en-US)
 
-`block` 属性使其适合父元素宽度。
+`block` property will make the Segmented fit to its parent width.
 
 ## Source
 

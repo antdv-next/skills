@@ -1,8 +1,8 @@
-# 回到顶部
+# BackTop
 
-## Description (zh-CN)
+## Description (en-US)
 
-返回页面顶部的操作按钮。
+`BackTop` makes it easy to go back to the top of the page.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 前缀/后缀
+# Prefix / Suffix
 
-## Description (zh-CN)
+## Description (en-US)
 
-在输入框上添加前缀或后缀图标。
+Add a prefix or suffix inside input.
 
 ## Source
 

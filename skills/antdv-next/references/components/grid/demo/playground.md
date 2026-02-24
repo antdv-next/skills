@@ -1,8 +1,8 @@
-# 栅格配置器
+# Playground
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以简单配置几种等分栅格和间距。
+A simple playground for column count and gutter.
 
 ## Source
 

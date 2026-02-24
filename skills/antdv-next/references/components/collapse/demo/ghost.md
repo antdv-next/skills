@@ -1,8 +1,8 @@
-# 幽灵折叠面板
+# Ghost Collapse
 
-## Description (zh-CN)
+## Description (en-US)
 
-将折叠面板的背景变成透明。
+Making collapse's background transparent.
 
 ## Source
 

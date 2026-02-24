@@ -1,8 +1,8 @@
-# 反向
+# Reverse
 
-## Description (zh-CN)
+## Description (en-US)
 
-设置 `reverse` 可以将滑动条置反。
+Using `reverse` to render slider reversely.
 
 ## Source
 

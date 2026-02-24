@@ -1,8 +1,8 @@
-# 状态
+# Status
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `status` 为 Transfer 添加状态，可选 `error` 或者 `warning`。
+Add status to Transfer with `status`, which could be `error` or `warning`.
 
 ## Source
 

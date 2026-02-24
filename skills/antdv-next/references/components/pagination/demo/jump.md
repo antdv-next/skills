@@ -1,8 +1,8 @@
-# 跳转
+# Jumper
 
-## Description (zh-CN)
+## Description (en-US)
 
-快速跳转到某一页。
+Jump to a page directly.
 
 ## Source
 

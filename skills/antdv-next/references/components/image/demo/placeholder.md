@@ -1,8 +1,8 @@
-# 渐进加载
+# Progressive Loading
 
-## Description (zh-CN)
+## Description (en-US)
 
-大图使用 placeholder 渐进加载。
+Progressive when large image loading.
 
 ## Source
 

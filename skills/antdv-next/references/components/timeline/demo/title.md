@@ -1,8 +1,8 @@
-# 标题
+# Label
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `title` 标签单独展示时间。
+Use `title` show time alone.
 
 ## Source
 

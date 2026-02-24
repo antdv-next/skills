@@ -1,8 +1,8 @@
-# 附加内容
+# Extra content
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以在页签两边添加附加操作。
+You can add extra actions to the right or left or even both side of Tabs.
 
 ## Source
 

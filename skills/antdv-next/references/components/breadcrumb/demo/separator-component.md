@@ -1,8 +1,8 @@
-# 独立的分隔符
+# Configuring the Separator Independently
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义单独的分隔符。
+Customize separator for each other.
 
 ## Source
 

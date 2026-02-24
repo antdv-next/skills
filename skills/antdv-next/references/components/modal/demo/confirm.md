@@ -1,8 +1,8 @@
-# 静态确认对话框
+# Static confirmation
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `confirm()` 可以快捷地弹出确认框。onCancel/onOk 返回 promise 可以延迟关闭。
+Use `confirm()` to show a confirmation modal dialog. Let onCancel/onOk function return a promise object to delay closing the dialog.
 
 ## Source
 

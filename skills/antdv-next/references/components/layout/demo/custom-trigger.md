@@ -1,8 +1,8 @@
-# 自定义触发器
+# Custom trigger
 
-## Description (zh-CN)
+## Description (en-US)
 
-要使用自定义触发器，可以隐藏默认触发器。
+If you want to use a customized trigger, you can hide the default one.
 
 ## Source
 

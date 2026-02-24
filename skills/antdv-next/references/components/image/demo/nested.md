@@ -1,8 +1,8 @@
-# 嵌套
+# nested
 
-## Description (zh-CN)
+## Description (en-US)
 
-嵌套在弹框当中使用。
+Nested in the modal.
 
 ## Source
 

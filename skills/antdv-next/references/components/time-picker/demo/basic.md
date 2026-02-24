@@ -1,8 +1,8 @@
-# 基本
+# Basic
 
-## Description (zh-CN)
+## Description (en-US)
 
-点击 TimePicker，然后可以在浮层中选择或者输入某一时间。
+Click `TimePicker`, and then we could select or input a time in panel.
 
 ## Source
 

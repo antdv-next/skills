@@ -1,40 +1,44 @@
 ---
 title: Divider
-subtitle: 分割线
-description: 区隔内容的分割线。
+description: A divider line separates different content.
 ---
 
-## 何时使用 
-- 对不同章节的文本段落进行分割。
-- 对行内文字/链接进行分割，例如表格的操作列。
+## When To Use
+
+- Divide sections of an article.
+- Divide inline text and links such as the operation column of table.
+
+## Examples
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 水平分割线 | demo/horizontal.md |
-| 带文字的分割线 | demo/with-text.md |
-| 垂直分割线 | demo/vertical.md |
-| 分割文字使用正文样式 | demo/plain.md |
-| 变体 | demo/variant.md |
-| 设置分割线的间距大小 | demo/size.md |
-| 样式自定义 | demo/customize-style.md |
-| 自定义语义结构的样式和类 | demo/style-calss.md |
+| Horizontal | demo/horizontal.md |
+| Divider with title | demo/with-text.md |
+| Vertical | demo/vertical.md |
+| Text without heading style | demo/plain.md |
+| Variant | demo/variant.md |
+| Set the spacing size of the divider | demo/size.md |
+| Style Customization | demo/customize-style.md |
+| Custom semantic dom styling | demo/style-calss.md |
 
 ## API
 
-### 属性 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
+Common props ref：[Common props](../../docs/vue/common-props.md)
+
+| Property | Description | Type | Default |
 | --- | --- | --- | --- |
-| dashed | 是否虚线 | boolean | false |
-| orientation | 水平或垂直类型 | `horizontal` \| `vertical` | `horizontal` |
-| plain | 文字是否显示为普通正文样式 | boolean | false |
-| size | 间距大小，仅对水平布局有效 | `small` \| `middle` \| `large` | - |
-| titlePlacement | 分割线标题的位置 | `start` \| `end` \| `center` | `center` |
-| variant | 分割线是虚线、点线还是实线 | `dashed` \| `dotted` \| `solid` | `solid` |
-| vertical | 是否垂直，和 orientation 同时配置以 orientation 优先 | boolean | false |
+| dashed | Whether line is dashed | boolean | false |
+| orientation | Whether line is horizontal or vertical | `horizontal` \| `vertical` | `horizontal` |
+| plain | Divider text show as plain style | boolean | true |
+| size | The size of divider. Only valid for horizontal layout | `small` \| `middle` \| `large` | - |
+| titlePlacement | The position of title inside divider | `start` \| `end` \| `center` | `center` |
+| variant | Whether line is dashed, dotted or solid | `dashed` \| `dotted` \| `solid` | `solid` |
+| vertical | Orientation, Simultaneously configure with `orientation` and prioritize `orientation` | boolean | false |
 
-## 语义化 DOM 结构 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |

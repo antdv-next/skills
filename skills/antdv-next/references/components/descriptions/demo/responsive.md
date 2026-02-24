@@ -1,8 +1,8 @@
-# 响应式
+# responsive
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过响应式的配置可以实现在小屏幕设备上的完美呈现。
+Responsive configuration enables perfect presentation on small screen devices.
 
 ## Source
 

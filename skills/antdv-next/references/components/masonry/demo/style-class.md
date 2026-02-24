@@ -1,8 +1,8 @@
-# 自定义语义结构的样式和类
+# Custom semantic dom styling
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义语义化结构的样式和类名。支持对象和函数两种形式。
+Customize semantic structure styles and class names. Supports both object and function forms.
 
 ## Source
 

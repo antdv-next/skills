@@ -1,8 +1,8 @@
-# 下载二维码
+# Download QRCode
 
-## Description (zh-CN)
+## Description (en-US)
 
-下载二维码的简单实现。
+A way to download QRCode.
 
 ## Source
 

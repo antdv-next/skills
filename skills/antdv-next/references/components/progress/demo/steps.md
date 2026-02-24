@@ -1,8 +1,8 @@
-# 步骤进度条
+# Progress bar with steps
 
-## Description (zh-CN)
+## Description (en-US)
 
-带步骤的进度条。
+A progress bar with steps.
 
 ## Source
 

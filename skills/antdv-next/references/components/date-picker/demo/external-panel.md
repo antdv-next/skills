@@ -1,8 +1,8 @@
-# 外部使用面板
+# External use panel
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义菜单，外置选择面板。
+Custom menu, external selection panel.
 
 ## Source
 

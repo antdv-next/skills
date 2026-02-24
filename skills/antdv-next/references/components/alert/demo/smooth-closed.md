@@ -1,8 +1,8 @@
-# 平滑卸载
+# Smoothly Unmount
 
-## Description (zh-CN)
+## Description (en-US)
 
-平滑、自然的卸载提示。
+Smoothly unmount Alert upon close.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 迷你
+# Mini size
 
-## Description (zh-CN)
+## Description (en-US)
 
-迷你版本。
+Mini size pagination.
 
 ## Source
 

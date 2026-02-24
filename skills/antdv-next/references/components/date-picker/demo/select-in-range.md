@@ -1,8 +1,8 @@
-# 选择不超过一定的范围
+# Select range dates
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `disabledDate` 的 `info.from` 来限制动态的日期区间选择。
+Using `info.from` of `disabledDate` to limit the dynamic date range selection.
 
 ## Source
 

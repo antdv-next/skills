@@ -1,10 +1,10 @@
-# 响应式布局
+# Responsive
 
-## Description (zh-CN)
+## Description (en-US)
 
-a-layout-sider 支持响应式布局。
+a-layout-sider supports responsive layout.
 
-> 说明：配置 `breakpoint` 属性即生效，视窗宽度小于 `breakpoint` 时 Sider 缩小为 `collapsedWidth` 宽度，若将 `collapsedWidth` 设置为 0，会出现特殊 trigger。
+> Note: You can get a responsive layout by setting `breakpoint`. The Sider will collapse to the width of `collapsedWidth` when window width is below the `breakpoint`. A special trigger will appear if `collapsedWidth` is set to 0.
 
 ## Source
 

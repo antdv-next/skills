@@ -1,8 +1,8 @@
-# 多层抽屉
+# Multi-level drawer
 
-## Description (zh-CN)
+## Description (en-US)
 
-在抽屉内打开新的抽屉，用以解决多分支任务的复杂状况。
+Open a new drawer on top of an existing drawer to handle multi branch tasks.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 限制数量
+# Max Count
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `maxCount` 限制上传数量。当为 `1` 时，始终用最新上传的代替当前。
+Limit files with `maxCount`. Will replace current one when `maxCount` is `1`.
 
 ## Source
 

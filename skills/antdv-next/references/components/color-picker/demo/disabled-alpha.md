@@ -1,8 +1,8 @@
-# 禁用透明度
+# Disabled Alpha
 
-## Description (zh-CN)
+## Description (en-US)
 
-禁用颜色透明度。
+Disabled color alpha.
 
 ## Source
 

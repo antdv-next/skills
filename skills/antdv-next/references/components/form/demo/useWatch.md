@@ -1,8 +1,8 @@
-# 监听字段
+# Watch Hooks
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用响应式监听表单字段。
+Watch form values with Vue reactivity.
 
 ## Source
 

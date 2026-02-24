@@ -1,8 +1,8 @@
-# 渐变色
+# Line Gradient
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `mode` 设置颜色为单一颜色还是渐变色。
+Set the color to a single or a gradient color via `mode`.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 自定义输入组件
+# Custom Input Component
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义输入组件。
+Customize Input Component
 
 ## Source
 

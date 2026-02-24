@@ -1,8 +1,8 @@
-# 手动处理表单数据
+# Handle Form Data Manually
 
-## Description (zh-CN)
+## Description (en-US)
 
-手动控制校验状态。
+Handle validation manually without form binding.
 
 ## Source
 

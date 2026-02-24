@@ -1,8 +1,8 @@
-# 获取配置
+# useConfig
 
-## Description (zh-CN)
+## Description (en-US)
 
-获取父级 `Provider` 的值。如 `DisabledContextProvider`、`SizeContextProvider`。
+Get the value of the parent `Provider`. Such as `DisabledContextProvider`, `SizeContextProvider`.
 
 ## Source
 

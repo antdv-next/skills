@@ -1,12 +1,12 @@
-# 区块间隔
+# Grid Gutter
 
-## Description (zh-CN)
+## Description (en-US)
 
-栅格常常需要和间隔进行配合，你可以使用 `Row` 的 `gutter` 属性，我们推荐使用 `(16 + 8n)px` 作为栅格间隔（n 是自然数）。
+You can use the `gutter` property of `Row` as grid spacing. We recommend `(16 + 8n)px` (`n` stands for natural number).
 
-如果要支持响应式，可以写成 `{ xs: 8, sm: 16, md: 24, lg: 32 }`。
+For responsive spacing, set it as an object like `{ xs: 8, sm: 16, md: 24, lg: 32 }`.
 
-如果需要垂直间距，可以写成数组形式 `[水平间距, 垂直间距]`。
+For vertical spacing, use an array `[horizontal, vertical]`.
 
 ## Source
 

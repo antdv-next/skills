@@ -1,8 +1,8 @@
-# 包含子组件
+# Contains sub component
 
-## Description (zh-CN)
+## Description (en-US)
 
-加载占位图包含子组件
+Skeleton contains sub component.
 
 ## Source
 

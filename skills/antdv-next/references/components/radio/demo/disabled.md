@@ -1,8 +1,8 @@
-# 不可用
+# disabled
 
-## Description (zh-CN)
+## Description (en-US)
 
-Radio 不可用。
+Radio unavailable.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 单元格编辑
+# Edit Cell
 
-## Description (zh-CN)
+## Description (en-US)
 
-带单元格编辑功能的表格。
+Table with editable cells.
 
 ## Source
 

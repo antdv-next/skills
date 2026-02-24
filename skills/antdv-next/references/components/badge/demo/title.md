@@ -1,8 +1,8 @@
-# 自定义标题
+# Title
 
-## Description (zh-CN)
+## Description (en-US)
 
-设置鼠标放在状态点上时显示的文字。
+The badge will display `title` when hovered over, instead of `count`.
 
 ## Source
 

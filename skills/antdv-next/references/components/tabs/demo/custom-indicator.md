@@ -1,8 +1,8 @@
-# 指示条
+# Indicator
 
-## Description (zh-CN)
+## Description (en-US)
 
-设置 `indicator` 属性，自定义指示条宽度和对齐方式。
+Set `indicator` prop to custom indicator size and align.
 
 ## Source
 

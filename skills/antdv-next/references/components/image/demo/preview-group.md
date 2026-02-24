@@ -1,8 +1,8 @@
-# 多张图片预览
+# Multiple image preview
 
-## Description (zh-CN)
+## Description (en-US)
 
-点击左右切换按钮可以预览多张图片。
+Click the left and right switch buttons to preview multiple images.
 
 ## Source
 

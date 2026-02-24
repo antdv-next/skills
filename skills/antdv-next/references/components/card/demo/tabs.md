@@ -1,8 +1,8 @@
-# 带页签的卡片
+# With tabs
 
-## Description (zh-CN)
+## Description (en-US)
 
-可承载更多内容。
+More content can be hosted.
 
 ## Source
 

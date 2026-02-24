@@ -1,8 +1,8 @@
-# 带图标的通知
+# Notification with icon
 
-## Description (zh-CN)
+## Description (en-US)
 
-通知提醒框左侧有图标。
+A notification box with a icon at the left side.
 
 ## Source
 

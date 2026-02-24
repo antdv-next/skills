@@ -1,8 +1,8 @@
-# 更新通知内容
+# Update message content
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以通过唯一的 key 来更新内容。
+Update content with a unique key.
 
 ## Source
 

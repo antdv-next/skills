@@ -1,8 +1,8 @@
-# 加载中
+# Message with loading indicator
 
-## Description (zh-CN)
+## Description (en-US)
 
-进行全局 loading，异步自行移除。
+Display a global loading indicator, which is dismissed by itself asynchronously.
 
 ## Source
 

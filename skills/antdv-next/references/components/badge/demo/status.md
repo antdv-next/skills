@@ -1,8 +1,8 @@
-# 状态点
+# Status
 
-## Description (zh-CN)
+## Description (en-US)
 
-用于表示状态的小圆点。
+Standalone badge with status.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 受控模式
+# Controlled
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `size` 和 `onResize` 控制面板大小。
+Control panel size with `size` and `onResize`.
 
 ## Source
 

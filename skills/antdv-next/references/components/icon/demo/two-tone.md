@@ -1,8 +1,8 @@
-# 多色图标
+# Two-tone icon and colorful icon
 
-## Description (zh-CN)
+## Description (en-US)
 
-双色图标可以通过 `twoToneColor` 属性设置主题色。
+You can set the `twoToneColor` prop to a specific primary color for two-tone icons.
 
 ## Source
 

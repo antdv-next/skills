@@ -1,8 +1,8 @@
-# 只读
+# Read only
 
-## Description (zh-CN)
+## Description (en-US)
 
-只读，无法进行鼠标交互。
+Read only, can't use mouse to interact.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 上一步和下一步
+# Prev and next
 
-## Description (zh-CN)
+## Description (en-US)
 
-修改上一步和下一步为文字链接。
+Use text link for prev and next button.
 
 ## Source
 

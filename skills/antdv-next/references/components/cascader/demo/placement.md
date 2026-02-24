@@ -1,8 +1,8 @@
-# 弹出位置
+# Placement
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以通过 `placement` 手动指定弹出的位置。
+You can manually specify the position of the popup via `placement`.
 
 ## Source
 

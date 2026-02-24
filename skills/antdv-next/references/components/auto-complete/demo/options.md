@@ -1,8 +1,8 @@
-# 自定义选项
+# Customized Options
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以返回自定义的 `Option` label
+You could set custom `Option` label
 
 ## Source
 

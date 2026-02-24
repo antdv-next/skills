@@ -1,8 +1,8 @@
-# 拖动手柄排序
+# Drag Handle Sorting
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用原生api来实现一个拖拽操作列。
+Implement a drag-and-drop operation column using native browser APIs.
 
 ## Source
 

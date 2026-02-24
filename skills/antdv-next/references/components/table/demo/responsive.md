@@ -1,8 +1,8 @@
-# 响应式
+# Responsive
 
-## Description (zh-CN)
+## Description (en-US)
 
-响应式配置列的展示。
+Responsive columns.
 
 ## Source
 

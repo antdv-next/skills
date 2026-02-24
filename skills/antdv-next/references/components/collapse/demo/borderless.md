@@ -1,8 +1,8 @@
-# 简洁风格
+# Borderless
 
-## Description (zh-CN)
+## Description (en-US)
 
-一套没有边框的简洁样式。
+A borderless style of Collapse.
 
 ## Source
 

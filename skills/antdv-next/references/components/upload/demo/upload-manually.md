@@ -1,8 +1,8 @@
-# 手动上传
+# Upload manually
 
-## Description (zh-CN)
+## Description (en-US)
 
-`beforeUpload` 返回 `false` 后，手动上传文件。
+Upload files manually after `beforeUpload` returns `false`.
 
 ## Source
 

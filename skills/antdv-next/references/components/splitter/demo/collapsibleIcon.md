@@ -1,8 +1,8 @@
-# 折叠图标
+# Collapsible Icon
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `showCollapsibleIcon` 控制折叠图标的显示。
+Control the display of collapsible icon with `showCollapsibleIcon`.
 
 ## Source
 

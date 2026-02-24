@@ -1,11 +1,13 @@
 ---
 title: Result
-subtitle: 结果
-description: 用于反馈一系列操作任务的处理结果。
+description: Used to feedback the processing results of a series of operations.
 ---
 
-## 何时使用 
-当有重要操作需告知用户处理结果，且反馈内容较为复杂时使用。
+## When To Use
+
+Use when important operations need to inform the user to process the results and the feedback is more complicated.
+
+## Examples
 
 ## Demos
 
@@ -18,29 +20,32 @@ description: 用于反馈一系列操作任务的处理结果。
 | 404 | demo/404.md |
 | 500 | demo/500.md |
 | Error | demo/error.md |
-| 自定义 icon | demo/customIcon.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
+| Custom icon | demo/customIcon.md |
+| Custom semantic dom styling | demo/style-class.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
-### 属性 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
+### Props
+
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| extra | 操作区 | VueNode | - |  |
-| icon | 自定义 icon | VueNode | - |  |
-| status | 结果的状态，决定图标和颜色 | `success` \| `error` \| `info` \| `warning` \| `404` \| `403` \| `500` | `info` |
-| subTitle | subTitle 文字 | VueNode | - |  |
-| title | title 文字 | VueNode | - |  |
+| extra | Operating area | VueNode | - |  |
+| icon | Custom back icon | VueNode | - |  |
+| status | Result status, decide icons and colors | `success` \| `error` \| `info` \| `warning` \| `404` \| `403` \| `500` | `info` |  |
+| subTitle | The subTitle | VueNode | - |  |
+| title | The title | VueNode | - |  |
 
-### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+### Slots
+
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| icon | 自定义 icon | () =&gt; any | - |
-| title | title 文字 | () =&gt; any | - |
-| subTitle | subTitle 文字 | () =&gt; any | - |
-| extra | 操作区 | () =&gt; any | - |
+| icon | Custom back icon | - | - |
+| title | The title | - | - |
+| subTitle | The subTitle | - | - |
+| extra | Operating area | - | - |
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |

@@ -1,8 +1,8 @@
-# 面板使用
+# Panel
 
-## Description (zh-CN)
+## Description (en-US)
 
-适用于一些需要内嵌适用的场景。
+Used for inline view case.
 
 ## Source
 

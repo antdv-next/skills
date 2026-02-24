@@ -1,8 +1,8 @@
-# 自定义操作按钮
+# Custom close button
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义关闭按钮的样式和文字。
+To customize the style or font of the close button.
 
 ## Source
 

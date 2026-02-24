@@ -1,8 +1,8 @@
-# 基本使用
+# Basic Usage
 
-## Description (zh-CN)
+## Description (en-US)
 
-基本使用，通过 `options` 设置自动完成的数据源。
+Basic Usage, set data source of autocomplete with `options` property.
 
 ## Source
 

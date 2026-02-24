@@ -1,8 +1,8 @@
-# 样式自定义
+# Style Customization
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义分割线的样式。
+Customize the style of the divider.
 
 ## Source
 

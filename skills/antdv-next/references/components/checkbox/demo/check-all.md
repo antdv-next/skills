@@ -1,8 +1,8 @@
-# 全选
+# Check all
 
-## Description (zh-CN)
+## Description (en-US)
 
-在实现全选效果时，你可能会用到 `indeterminate` 属性。
+The `indeterminate` property can help you to achieve a 'check all' effect.
 
 ## Source
 

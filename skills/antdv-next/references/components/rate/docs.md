@@ -1,59 +1,60 @@
 ---
 title: Rate
-subtitle: 评分
-description: 用于对事物进行评分操作。
+description: Used for rating operation on something.
 ---
 
-## 何时使用 
-- 对评价进行展示。
-- 对事物进行快速的评级操作。
+## When To Use 
+- Show evaluation.
+- A quick rating operation on something.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本 | demo/basic.md |
-| 半星 | demo/half.md |
-| 文案展现 | demo/text.md |
-| 只读 | demo/disabled.md |
-| 清除 | demo/clear.md |
-| 其他字符 | demo/character.md |
-| 自定义字符 | demo/character-function.md |
-| 其它尺寸 | demo/size.md |
-| 组件 Token | demo/component-token.md |
+| Basic | demo/basic.md |
+| Half star | demo/half.md |
+| Show copywriting | demo/text.md |
+| Read only | demo/disabled.md |
+| Clear star | demo/clear.md |
+| Other Character | demo/character.md |
+| Customize character | demo/character-function.md |
+| Sizes | demo/size.md |
+| Component Token | demo/component-token.md |
 
 ## API
 
-### 属性 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+### Props
+
+| Property | Description | type | Default | Version |
 | --- | --- | --- | --- | --- |
-| allowClear | 是否允许再次点击后清除 | boolean | true |  |
-| allowHalf | 是否允许半选 | boolean | false |  |
-| character | 自定义字符 | VueNode \| (RateProps) => VueNode | &lt;StarFilled /> | - |
-| className | 自定义样式类名 | string | - |  |
-| count | star 总数 | number | 5 |  |
-| defaultValue | 默认值 | number | 0 |  |
-| disabled | 只读，无法进行交互 | boolean | false |  |
-| keyboard | 支持使用键盘操作 | boolean | true | - |
-| size | 星星尺寸 | 'small' \| 'middle' \| 'large' | 'middle' |  |
-| style | 自定义样式对象 | CSSProperties | - |  |
-| tooltips | 自定义每项的提示信息 | [TooltipProps](../tooltip/docs.md#api)[\] \| string\[] | - |  |
-| value | 当前数，受控值，支持 `v-model:value` | number | - |  |
+| allowClear | Whether to allow clear when click again | boolean | true |  |
+| allowHalf | Whether to allow semi selection | boolean | false |  |
+| character | The custom character of rate | VueNode \| (RateProps) => VueNode | &lt;StarFilled /> | function(): 4.4.0 |
+| className | The custom class name of rate | string | - |  |
+| count | Star count | number | 5 |  |
+| disabled | If read only, unable to interact | boolean | false |  |
+| keyboard | Support keyboard operation | boolean | true | 5.18.0 |
+| size | Star size | 'small' \| 'middle' \| 'large' | 'middle' |  |
+| style | The custom style object of rate | CSSProperties | - |  |
+| tooltips | Customize tooltip by each character | [TooltipProps](../tooltip/docs.md#api)[\] \| string\[] | - |  |
+| value | The current value, support `v-model:value` | number | - |  |
 
-### 事件 
-| 事件 | 说明 | 类型 | 版本 |
+### Events
+
+| Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| change | 选择时的回调 | (value: number) =&gt; void | - |
-| hoverChange | 鼠标经过时数值变化的回调 | (value: number) =&gt; void | - |
-| focus | 获取焦点时的回调 | () =&gt; void | - |
-| blur | 失去焦点时的回调 | () =&gt; void | - |
-| keydown | 按键回调 | (e: KeyboardEvent) =&gt; void | - |
-| mouseleave | 鼠标离开时的回调 | (e: FocusEvent) =&gt; void | - |
+| change | Callback when select value | (value: number) =&gt; void | - |
+| hoverChange | Callback when hover item | (value: number) =&gt; void | - |
+| focus | Callback when component get focus | () =&gt; void | - |
+| blur | Callback when component lose focus | () =&gt; void | - |
+| keydown | Callback when keydown on component | (e: KeyboardEvent) =&gt; void | - |
+| mouseleave | Callback when mouse leaves the component | (e: FocusEvent) =&gt; void | - |
 
-### 方法 
-| 名称    | 说明         |
+### Methods
+
+| Name    | Description  |
 | ------- | ------------ |
-| blur()  | 移除焦点     |
-| focus() | 获取焦点     |
+| blur()  | Remove focus |
+| focus() | Get focus    |

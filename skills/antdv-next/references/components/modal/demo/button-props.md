@@ -1,8 +1,8 @@
-# 自定义页脚按钮属性
+# Customize footer buttons props
 
-## Description (zh-CN)
+## Description (en-US)
 
-传入 `okButtonProps` 和 `cancelButtonProps` 可分别自定义确定按钮和取消按钮的 props。
+Passing `okButtonProps` and `cancelButtonProps` will customize the OK button and cancel button props.
 
 ## Source
 

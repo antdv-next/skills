@@ -1,8 +1,8 @@
-# 联动
+# Coordinate
 
-## Description (zh-CN)
+## Description (en-US)
 
-省市联动是典型的例子，展示了如何协调选择。推荐使用 [Cascader](../../cascader/docs.md) 组件。
+Coordinating the selection of provinces and cities is a common use case and demonstrates how selection can be coordinated. [Cascader](../../cascader/docs.md) component is strongly recommended in this case.
 
 ## Source
 

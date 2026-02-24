@@ -1,8 +1,8 @@
-# 半星
+# Half star
 
-## Description (zh-CN)
+## Description (en-US)
 
-支持选中半星。
+Support select half star.
 
 ## Source
 

@@ -1,6 +1,6 @@
-# 语义化样式
+# Custom semantic dom styling
 
-## Description (zh-CN)
+## Description (en-US)
 
 ## Source
 

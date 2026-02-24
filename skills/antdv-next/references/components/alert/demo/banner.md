@@ -1,8 +1,8 @@
-# 顶部公告
+# Banner
 
-## Description (zh-CN)
+## Description (en-US)
 
-页面顶部通告形式，默认有图标且 `type` 为 'warning'。
+Display Alert as a banner at top of page.
 
 ## Source
 

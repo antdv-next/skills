@@ -1,8 +1,8 @@
-# 其他元素
+# Other elements
 
-## Description (zh-CN)
+## Description (en-US)
 
-分割线和不可用菜单项。
+Divider and disabled menu item.
 
 ## Source
 

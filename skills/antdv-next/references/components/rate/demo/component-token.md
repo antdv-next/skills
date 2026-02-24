@@ -1,8 +1,8 @@
-# 组件 Token
+# Component Token
 
-## Description (zh-CN)
+## Description (en-US)
 
-调试使用。
+Component Token Debug.
 
 ## Source
 

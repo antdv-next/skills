@@ -1,8 +1,8 @@
-# 多行水印
+# Multi-line watermark
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `content` 设置字符串数组指定多行文字水印内容。
+Use `content` to set a string array to specify multi-line text watermark content.
 
 ## Source
 

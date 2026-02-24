@@ -1,8 +1,8 @@
-# 内联样式组合
+# Inline Style Combination
 
-## Description (zh-CN)
+## Description (en-US)
 
-内联步骤条修改样式，通过 `offset` 进行对齐。
+Inline step bar modifies the style and aligns through `offset`.
 
 ## Source
 

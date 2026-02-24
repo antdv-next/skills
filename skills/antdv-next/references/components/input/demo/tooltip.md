@@ -1,8 +1,8 @@
-# 输入时格式化展示
+# Format Tooltip Input
 
-## Description (zh-CN)
+## Description (en-US)
 
-结合 [Tooltip](../../tooltip/docs.md) 组件，实现一个数值输入框，方便内容超长时的全量展现。
+You can use the Input in conjunction with [Tooltip](../../tooltip/docs.md) component to create a Numeric Input, which can provide a good experience for extra-long content display.
 
 ## Source
 

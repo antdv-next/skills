@@ -1,8 +1,8 @@
-# 水平布局
+# Horizontal
 
-## Description (zh-CN)
+## Description (en-US)
 
-水平方向的时间线。
+Horizontal layout.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 清除颜色
+# Clear Color
 
-## Description (zh-CN)
+## Description (en-US)
 
-清除已选择的颜色。
+Clear Color.
 
 ## Source
 

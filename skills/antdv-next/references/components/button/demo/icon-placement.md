@@ -1,8 +1,8 @@
-# 按钮图标位置
+# Icon Placement
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过设置 `iconPlacement` 为 `start` 或 `end` 分别设置按钮图标的位置。
+You can set the position of a button's icon by setting the `iconPlacement` to `start` or `end` respectively.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 替换历史中的 href
+# Replace href in history
 
-## Description (zh-CN)
+## Description (en-US)
 
-替换浏览器历史记录中的路径，后退按钮将返回到上一页而不是上一个锚点。
+Replace path in browser history, so back button returns to previous page instead of previous anchor item.
 
 ## Source
 

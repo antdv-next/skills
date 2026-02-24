@@ -1,8 +1,8 @@
-# 基础用法
+# Basic
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `defaultSize` 设置默认大小，使用 `min` 和 `max` 限制面板的大小。
+Set the default size with `defaultSize`, and restrict the panel size with `min` and `max`.
 
 ## Source
 

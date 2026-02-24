@@ -1,8 +1,8 @@
-# 禁用
+# Disabled
 
-## Description (zh-CN)
+## Description (en-US)
 
-禁用某一项。
+Disabled a tab.
 
 ## Source
 

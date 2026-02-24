@@ -1,8 +1,8 @@
-# 纠错比例
+# Error Level
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过设置 errorLevel 调整不同的容错等级。
+set Error Level.
 
 ## Source
 

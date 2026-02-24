@@ -1,8 +1,8 @@
-# 从浮层内关闭
+# Controlling the close of the dialog
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `open` 属性控制浮层显示。
+Use `open` prop to control the display of the card.
 
 ## Source
 

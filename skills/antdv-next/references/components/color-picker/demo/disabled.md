@@ -1,8 +1,8 @@
-# 禁用
+# Disable
 
-## Description (zh-CN)
+## Description (en-US)
 
-设置为禁用状态。
+Set to disabled state.
 
 ## Source
 

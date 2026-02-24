@@ -1,8 +1,8 @@
-# 表单变体
+# Form variants
 
-## Description (zh-CN)
+## Description (en-US)
 
-表单控件变体切换。
+Switch variants for inputs inside form.
 
 ## Source
 

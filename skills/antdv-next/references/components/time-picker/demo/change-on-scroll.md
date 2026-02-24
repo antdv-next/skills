@@ -1,8 +1,8 @@
-# 滚动即改变
+# Change on scroll
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `changeOnScroll` 与 `needConfirm` 使其滚动时改变数值。
+Use `changeOnScroll` and `needConfirm` to change the value when scrolling.
 
 ## Source
 

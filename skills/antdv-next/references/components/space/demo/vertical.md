@@ -1,8 +1,8 @@
-# 垂直间距
+# Vertical Space
 
-## Description (zh-CN)
+## Description (en-US)
 
-相邻组件垂直间距。
+Vertical spacing between adjacent components.
 
 ## Source
 

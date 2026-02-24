@@ -1,8 +1,8 @@
-# 基础用法
+# Basic
 
-## Description (zh-CN)
+## Description (en-US)
 
-基础空状态。
+Basic empty state.
 
 ## Source
 

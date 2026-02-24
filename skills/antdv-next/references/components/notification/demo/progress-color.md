@@ -1,8 +1,8 @@
-# 自定义进度条颜色
+# Customize progress bar color
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过配置组件 token 来自定义进度条颜色。
+Customize the progress bar color by configuring the component token.
 
 ## Source
 

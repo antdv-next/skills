@@ -1,10 +1,10 @@
-# 超出省略
+# Ellipsis
 
-## Description (zh-CN)
+## Description (en-US)
 
-设置 `column.ellipsis` 可以让单元格内容根据宽度自动省略。
+Ellipsis cell content via setting `column.ellipsis`.
 
-> 列头缩略暂不支持和排序筛选一起使用。
+> Cannot ellipsis table header with sorters and filters for now.
 
 ## Source
 

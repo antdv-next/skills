@@ -1,8 +1,8 @@
-# 周数
+# Show Week
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过将 `showWeek` 属性设置为 `true`，在全屏日历中显示周数。
+Show week number in fullscreen calendar by setting `showWeek` prop to `true`.
 
 ## Source
 

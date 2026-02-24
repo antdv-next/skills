@@ -1,8 +1,8 @@
-# 自定义空状态
+# Custom Empty
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义空状态。
+Custom empty status.
 
 ## Source
 

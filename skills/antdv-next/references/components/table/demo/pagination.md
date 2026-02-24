@@ -1,8 +1,8 @@
-# 分页
+# Pagination
 
-## Description (zh-CN)
+## Description (en-US)
 
-表格的分页设置。
+Table pagination settings.
 
 ## Source
 

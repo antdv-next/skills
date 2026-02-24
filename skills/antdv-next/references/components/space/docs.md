@@ -1,54 +1,53 @@
 ---
 title: Space
-subtitle: 间距
-description: 设置组件之间的间距。
+description: Set components spacing.
 ---
 
-## 何时使用
+## When To Use
 
-- 避免组件紧贴在一起，设置统一的间距。
-- 当子表单组件紧密连接并且边框折叠时，使用 Space.Compact。
+- Avoid components clinging together and set a unified space.
+- Use Space.Compact when child form components are compactly connected and the border is collapsed.
 
-### 与 Flex 组件的区别
+### Difference with Flex component
 
-- Space 用于设置内联元素之间的间距。它会为每个子元素添加一个包装元素进行内联对齐。适用于多个子元素在行列中的等距排列。
-- Flex 用于设置块级元素的布局。它不会添加包装元素。适用于子元素在垂直或水平方向的布局，并提供更多的灵活性和控制。
+- Space is used to set the spacing between inline elements. It will add a wrapper element for each child element for inline alignment. Suitable for equidistant arrangement of multiple child elements in rows and columns.
+- Flex is used to set the layout of block-level elements. It does not add a wrapper element. Suitable for layout of child elements in vertical or horizontal direction, and provides more flexibility and control.
 
 ## Demos
 
 | Demo | Path |
 | --- | --- |
-| 基本用法 | demo/basic.md |
-| 垂直间距 | demo/vertical.md |
-| 间距大小 | demo/size.md |
-| 对齐方式 | demo/align.md |
-| 自动换行 | demo/wrap.md |
-| 分隔符 | demo/separator.md |
-| 紧凑布局组合 | demo/compact.md |
-| Button 紧凑布局 | demo/compact-buttons.md |
-| 垂直方向紧凑布局 | demo/compact-button-vertical.md |
-| 自定义语义结构的样式和类 | demo/style-class.md |
+| Basic Usage | demo/basic.md |
+| Vertical Space | demo/vertical.md |
+| Space Size | demo/size.md |
+| Align | demo/align.md |
+| Wrap | demo/wrap.md |
+| Separator | demo/separator.md |
+| Compact Mode for form component | demo/compact.md |
+| Button Compact Mode | demo/compact-buttons.md |
+| Vertical Compact Mode | demo/compact-button-vertical.md |
+| Custom semantic dom styling | demo/style-class.md |
 
 ## API
 
-通用属性参考：[通用属性](../../docs/vue/common-props.md)
+Common props ref：[Common props](../../docs/vue/common-props.md)
 
 ### Space
 
-#### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| align | 对齐方式 | `start` \| `end` \| `center` \| `baseline` | - | 4.2.0 |
-| orientation | 间距方向 | `vertical` \| `horizontal` | `horizontal` | - |
-| separator | 设置分隔符 | VueNode | - | - |
-| size | 间距大小 | [Size](#size) \| [[Size](#size), [Size](#size)] | `small` | 4.1.0 \| Array: 4.9.0 |
-| vertical | 是否垂直，和 `orientation` 同时配置以 `orientation` 优先 | boolean | false | - |
-| wrap | 是否自动换行，仅在 `horizontal` 时有效 | boolean | false | 4.9.0 |
+| align | Align items | `start` \| `end` \| `center` \| `baseline` | - | 4.2.0 |
+| orientation | The space direction | `vertical` \| `horizontal` | `horizontal` | - |
+| separator | Set separator | VueNode | - | - |
+| size | The space size | [Size](#size) \| [[Size](#size), [Size](#size)] | `small` | 4.1.0 \| Array: 4.9.0 |
+| vertical | Orientation, Simultaneously configure with `orientation` and prioritize `orientation` | boolean | false | - |
+| wrap | Auto wrap line, when `horizontal` effective | boolean | false | 4.9.0 |
 
-#### 插槽 
-| 插槽 | 说明 | 类型 | 版本 |
+#### Slots 
+| Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| separator | 设置分隔符 | () =&gt; VueNode | - |
+| separator | Set separator | () =&gt; VueNode | - |
 
 ### Size
 
@@ -56,7 +55,7 @@ description: 设置组件之间的间距。
 
 ### SpaceCompact
 
-当子表单组件紧密连接并且边框折叠时，使用 Space.Compact。支持的组件有：
+Use Space.Compact when child form components are compactly connected and the border is collapsed. The supported components are:
 
 - Button
 - AutoComplete
@@ -68,13 +67,14 @@ description: 设置组件之间的间距。
 - TimePicker
 - TreeSelect
 
-#### 属性 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+#### Props 
+| Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| block | 将宽度调整为父元素宽度的选项 | boolean | false | 4.24.0 |
-| orientation | 设置布局方向 | `vertical` \| `horizontal` | `horizontal` | - |
-| size | 设置子组件大小 | `large` \| `middle` \| `small` | `middle` | 4.24.0 |
-| vertical | 是否垂直，和 `orientation` 同时配置以 `orientation` 优先 | boolean | false | - |
+| block | Option to fit width to its parent's width | boolean | false | 4.24.0 |
+| orientation | Set direction of layout | `vertical` \| `horizontal` | `horizontal` | - |
+| size | Set child component size | `large` \| `middle` \| `small` | `middle` | 4.24.0 |
+| vertical | Orientation, Simultaneously configure with `orientation` and prioritize `orientation` | boolean | false | - |
 
-## 语义化 DOM 
+## Semantic DOM
+
 | _semantic | demo/_semantic.md |

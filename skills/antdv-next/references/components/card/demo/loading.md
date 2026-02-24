@@ -1,8 +1,8 @@
-# 预加载的卡片
+# Loading card
 
-## Description (zh-CN)
+## Description (en-US)
 
-数据读入前会有文本块样式。
+Shows a loading indicator while the contents of the card is being fetched.
 
 ## Source
 

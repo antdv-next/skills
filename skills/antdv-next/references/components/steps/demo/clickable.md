@@ -1,8 +1,8 @@
-# 可点击
+# Clickable
 
-## Description (zh-CN)
+## Description (en-US)
 
-设置 `onChange` 后，Steps 变为可点击状态。
+Setting `onChange` makes Steps clickable.
 
 ## Source
 

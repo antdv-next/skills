@@ -1,8 +1,8 @@
-# 自动分词
+# Automatic tokenization
 
-## Description (zh-CN)
+## Description (en-US)
 
-尝试复制 `Lucy,Jack` 并粘贴到输入框中。仅在 tags 和 multiple 模式下可用。
+Try to copy `Lucy,Jack` and paste to the input. Only available in tags and multiple mode.
 
 ## Source
 

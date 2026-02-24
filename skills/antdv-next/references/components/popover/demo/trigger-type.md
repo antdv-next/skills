@@ -1,8 +1,8 @@
-# 三种触发方式
+# Three ways to trigger
 
-## Description (zh-CN)
+## Description (en-US)
 
-鼠标移入、聚集、点击。
+Mouse to click, focus and move in.
 
 ## Source
 

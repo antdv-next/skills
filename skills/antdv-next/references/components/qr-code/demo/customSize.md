@@ -1,8 +1,8 @@
-# 自定义尺寸
+# Custom Size
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义尺寸。
+Custom Size.
 
 ## Source
 

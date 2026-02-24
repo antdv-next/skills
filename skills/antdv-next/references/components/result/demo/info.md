@@ -1,8 +1,8 @@
 # Info
 
-## Description (zh-CN)
+## Description (en-US)
 
-展示处理结果。
+Show processing results.
 
 ## Source
 

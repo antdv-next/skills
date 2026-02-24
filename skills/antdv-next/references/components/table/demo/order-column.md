@@ -1,8 +1,8 @@
-# 列顺序
+# Order Columns
 
-## Description (zh-CN)
+## Description (en-US)
 
-你可以通过 `Table.EXPAND_COLUMN` 和 `Table.SELECTION_COLUMN` 来控制选择和展开列的顺序。
+You can control the order of the expand and select columns by using `Table.EXPAND_COLUMN` and `Table.SELECTION_COLUMN`.
 
 ## Source
 

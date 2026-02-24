@@ -1,8 +1,8 @@
-# 无描述
+# No description
 
-## Description (zh-CN)
+## Description (en-US)
 
-隐藏默认描述。
+Hide default description.
 
 ## Source
 

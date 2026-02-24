@@ -1,8 +1,8 @@
-# 垂直
+# Vertical
 
-## Description (zh-CN)
+## Description (en-US)
 
-垂直方向的 Slider。
+The vertical Slider.
 
 ## Source
 

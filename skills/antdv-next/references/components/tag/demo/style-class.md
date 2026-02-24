@@ -1,6 +1,6 @@
-# 自定义语义结构的样式和类
+# Custom semantic dom styling
 
-## Description (zh-CN)
+## Description (en-US)
 
 ## Source
 

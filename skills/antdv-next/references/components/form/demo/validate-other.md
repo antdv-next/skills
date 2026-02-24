@@ -1,8 +1,8 @@
-# 其他表单控件
+# Other Form Controls
 
-## Description (zh-CN)
+## Description (en-US)
 
-其他类型控件的校验示例。
+Validation with other form controls.
 
 ## Source
 

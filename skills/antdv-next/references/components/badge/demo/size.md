@@ -1,8 +1,8 @@
-# 大小
+# Size
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以设置有数字徽标的大小。
+Set size of numeral Badge.
 
 ## Source
 

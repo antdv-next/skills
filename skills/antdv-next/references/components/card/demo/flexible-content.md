@@ -1,8 +1,8 @@
-# 更灵活的内容展示
+# Customized content
 
-## Description (zh-CN)
+## Description (en-US)
 
-可以利用 `a-card-meta` 支持更灵活的内容。
+You can use `a-card-meta` to support more flexible content.
 
 ## Source
 

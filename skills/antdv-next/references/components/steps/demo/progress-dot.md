@@ -1,8 +1,8 @@
-# 点状步骤条
+# Dot Style
 
-## Description (zh-CN)
+## Description (en-US)
 
-包含步骤点的进度条。
+Steps with progress dot style.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 自定义尺寸
+# Custom size
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义尺寸，适应在各种容器中展示。
+Custom sizes to fit in a variety of containers.
 
 ## Source
 

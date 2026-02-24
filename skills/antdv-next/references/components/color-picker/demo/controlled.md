@@ -1,8 +1,8 @@
-# 受控模式
+# controlled mode
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `value` 和 `onChange` 设置组件为受控模式，如果通过 `onChangeComplete` 受控则会锁定展示颜色。
+Set the component to controlled mode. Will lock the display color if controlled by `onChangeComplete`.
 
 ## Source
 

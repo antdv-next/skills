@@ -1,8 +1,8 @@
-# 自定义颜色
+# Custom Color
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过设置 `color` 自定义二维码颜色，通过设置 `bgColor` 自定义背景颜色。
+Custom Color.
 
 ## Source
 

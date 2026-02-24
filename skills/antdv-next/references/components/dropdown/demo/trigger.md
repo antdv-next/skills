@@ -1,8 +1,8 @@
-# 触发方式
+# Trigger mode
 
-## Description (zh-CN)
+## Description (en-US)
 
-默认是移入触发菜单，可以点击触发。
+The default trigger mode is `hover`, you can change it to `click`.
 
 ## Source
 

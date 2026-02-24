@@ -1,8 +1,8 @@
-# 卡片模式
+# Card
 
-## Description (zh-CN)
+## Description (en-US)
 
-用于嵌套在空间有限的容器中。
+Nested inside a container element for rendering in limited space.
 
 ## Source
 

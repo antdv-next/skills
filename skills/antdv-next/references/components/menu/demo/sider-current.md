@@ -1,8 +1,8 @@
-# 只展开当前父级菜单
+# Open current submenu only
 
-## Description (zh-CN)
+## Description (en-US)
 
-点击菜单，收起其他展开的所有菜单，保持菜单聚焦简洁。
+Click the menu and you will see that all the other menus gets collapsed to keep the entire menu compact.
 
 ## Source
 

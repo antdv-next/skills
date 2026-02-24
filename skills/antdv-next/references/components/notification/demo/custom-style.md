@@ -1,8 +1,8 @@
-# 自定义样式
+# Customized style
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 style 和 class 来定义样式。
+The style and class are available to customize Notification.
 
 ## Source
 

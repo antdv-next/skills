@@ -1,8 +1,8 @@
-# 查询模式 - 不确定类目
+# Lookup-Patterns - Uncertain Category
 
-## Description (zh-CN)
+## Description (en-US)
 
-[查询模式: 不确定类目](https://ant.design/docs/spec/reaction#lookup-patterns) 示例。
+Demonstration of [Lookup Patterns: Uncertain Category](https://ant.design/docs/spec/reaction#lookup-patterns).
 
 ## Source
 

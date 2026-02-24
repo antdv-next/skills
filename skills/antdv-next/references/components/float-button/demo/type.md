@@ -1,8 +1,8 @@
-# 类型
+# Type
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `type` 改变悬浮按钮的类型。
+Change the type of the FloatButton with the `type` property.
 
 ## Source
 

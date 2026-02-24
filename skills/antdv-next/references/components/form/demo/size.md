@@ -1,8 +1,8 @@
-# 表单尺寸
+# Form size
 
-## Description (zh-CN)
+## Description (en-US)
 
-表单尺寸联动展示。
+Change form size for built-in controls.
 
 ## Source
 

@@ -1,8 +1,8 @@
-# 加载中
+# Loading
 
-## Description (zh-CN)
+## Description (en-US)
 
-标识开关操作仍在执行中。
+Mark a pending state of switch.
 
 ## Source
 

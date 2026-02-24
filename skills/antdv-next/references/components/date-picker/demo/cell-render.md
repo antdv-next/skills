@@ -1,8 +1,8 @@
-# 定制单元格
+# Customized Cell Rendering
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `cellRender` 插槽可以自定义单元格的内容和样式。
+We can customize the rendering of the cells in the calendar by providing a `cellRender` slot to `DatePicker`.
 
 ## Source
 

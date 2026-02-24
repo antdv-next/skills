@@ -1,8 +1,8 @@
-# 设置分割线的间距大小
+# Set the spacing size of the divider
 
-## Description (zh-CN)
+## Description (en-US)
 
-通过 `size` 控制分割线的间距大小，仅对水平分割线有效。
+Control the size of divider by `size`, only works for horizontal layout.
 
 ## Source
 

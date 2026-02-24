@@ -1,8 +1,8 @@
-# 可复制
+# Copyable
 
-## Description (zh-CN)
+## Description (en-US)
 
-提供可复制的交互能力。
+Makes Typography copyable with the click of a button.
 
 ## Source
 

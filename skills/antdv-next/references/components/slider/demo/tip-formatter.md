@@ -1,8 +1,8 @@
-# 自定义提示
+# Customize tooltip
 
-## Description (zh-CN)
+## Description (en-US)
 
-使用 `tooltip.formatter` 可以格式化 `Tooltip` 的内容，设置 `tooltip.formatter={null}`，则隐藏 `Tooltip`。
+Use `tooltip.formatter` to format content of `Tooltip`. If `tooltip.formatter` is null, hide it.
 
 ## Source
 

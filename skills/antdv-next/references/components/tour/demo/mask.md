@@ -1,8 +1,8 @@
-# 自定义遮罩样式
+# Custom mask style
 
-## Description (zh-CN)
+## Description (en-US)
 
-自定义遮罩样式。
+Custom mask style.
 
 ## Source
 

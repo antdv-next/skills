@@ -1,8 +1,8 @@
-# 不区分大小写
+# Non-case-sensitive AutoComplete
 
-## Description (zh-CN)
+## Description (en-US)
 
-不区分大小写的 AutoComplete
+A non-case-sensitive AutoComplete
 
 ## Source
 

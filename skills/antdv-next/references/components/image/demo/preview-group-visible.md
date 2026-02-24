@@ -1,8 +1,8 @@
-# 相册模式
+# Preview from one image
 
-## Description (zh-CN)
+## Description (en-US)
 
-从一张图片点开相册。
+Preview a collection from one image.
 
 ## Source
 

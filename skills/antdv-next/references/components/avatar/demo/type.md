@@ -1,5 +1,9 @@
 # Type
 
+## Description (en-US)
+
+Image, Icon and letter are supported, and the latter two kinds of avatar can have custom colors and background colors.
+
 ## Source
 
 ```vue

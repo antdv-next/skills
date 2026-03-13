@@ -18,6 +18,7 @@ description: Display the current location within a hierarchy. And allow going ba
 | Configuring the Separator | demo/separator.md |
 | Bread crumbs with drop down menu | demo/overlay.md |
 | Configuring the Separator Independently | demo/separator-component.md |
+| SFC Mode | demo/sfc.md |
 | Custom semantic dom styling | demo/style-class.md |
 
 ## API

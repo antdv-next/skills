@@ -2,7 +2,7 @@
 
 This document extracts semantic DOM descriptions from component `_semantic` demos and formats them into AI-friendly structured data.
 
-> Total semantic entries: 63
+> Total semantic entries: 64
 > Components with semantic descriptions: 57
 
 ## Component List
@@ -107,15 +107,23 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 ### cascader
 
 - Component: `cascader`
-- Semantic nodes: 6
+- Semantic nodes: 13
 - Source demo: `docs/src/pages/components/cascader/demo/_semantic.vue`
 
-- `root`: Root element, set inline flex layout, relative positioning, padding and border styles
+- `root`: Root element with relative positioning, inline-flex layout, cursor styles, transitions, border and other basic selector container styles
 - `prefix`: Prefix element with layout and styling for prefix content
-- `selector`: Selector element, set padding, flex layout and selected item display styles
-- `suffix`: Suffix element with layout and styling for suffix content like arrow icon, etc.
-- `popup`: Popup element, set absolute positioning, z-index, background color, border radius, shadow and dropdown options styles
-- `item`: Option element, set padding, background color, hover state and selected state styles
+- `content`: Multiple selection container with layout, spacing, and wrapping styles for selected items
+- `placeholder`: Placeholder element with font styles and colors for placeholder text
+- `clear`: Clear button element with layout, styling and interactive effects for clear button式
+- `input`: Input element with search input styling, cursor control, font inheritance and other search-related styles. Remove border styles
+- `suffix`: Suffix element with layout and styling for suffix content like clear button, arrow icon, etc.
+- `popup`:
+  - `root`: Popup element with popup layer positioning, z-index, background, border, box-shadow and other popup container styles
+  - `list`: Popup list element with option list layout, scrolling, max-height and other list container styles
+  - `listItem`: Popup item element with option item padding, hover effects, selected states, disabled states and other option interactive styles
+- `item`: Multiple selection item element with border, background, padding, and margin styles
+- `itemContent`: Multiple selection item content area with text ellipsis styles
+- `itemRemove`: Multiple selection item remove button with font-related styles式
 
 ### checkbox
 
@@ -561,6 +569,16 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 - `avatar`: Avatar element with inline-block display, vertical alignment, background color, size, border radius and other avatar placeholder styles
 - `title`: Title element with width, height, background color, border radius and other title placeholder styles
 - `paragraph`: Paragraph element with padding, list item styles, background color, border radius and other paragraph placeholder styles
+
+### skeleton:element
+
+- Component: `skeleton`
+- Variant: `element`
+- Semantic nodes: 2
+- Source demo: `docs/src/pages/components/skeleton/demo/_semantic_element.vue`
+
+- `root`: Root element
+- `content`: Content element
 
 ### slider
 

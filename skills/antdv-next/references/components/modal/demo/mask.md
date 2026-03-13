@@ -2,7 +2,7 @@
 
 ## Description (en-US)
 
-mask effect, default `blur`.
+mask effect.
 
 ## Source
 
@@ -17,8 +17,8 @@ const modalConfig = {
 
 const [modal, ContextHolder] = Modal.useModal()
 
-function showDefault() {
-  modal.confirm({ ...modalConfig })
+function showBlur() {
+  modal.confirm({ ...modalConfig, mask: { blur: true } })
 }
 
 function showDimmed() {
@@ -32,8 +32,8 @@ function showNoMask() {
 
 <template>
   <a-space>
-    <a-button @click="showDefault">
-      Default blur
+    <a-button @click="showBlur">
+      blur
     </a-button>
     <a-button @click="showDimmed">
       Dimmed mask

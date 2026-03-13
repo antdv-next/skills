@@ -1,5 +1,9 @@
 # Responsive Size
 
+## Description (en-US)
+
+Avatar size can be automatically adjusted based on the screen size.
+
 ## Source
 
 ```vue

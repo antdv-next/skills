@@ -1,5 +1,9 @@
 # With Badge
 
+## Description (en-US)
+
+Usually used for reminders and notifications.
+
 ## Source
 
 ```vue

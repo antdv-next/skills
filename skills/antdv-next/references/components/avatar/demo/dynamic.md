@@ -1,5 +1,9 @@
 # Autoset Font Size
 
+## Description (en-US)
+
+For letter type Avatar, when the letters are too long to display, the font size can be automatically adjusted according to the width of the Avatar. You can also use `gap` to set the unit distance between left and right sides.
+
 ## Source
 
 ```vue

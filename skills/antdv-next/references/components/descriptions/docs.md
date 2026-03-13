@@ -19,6 +19,7 @@ Commonly displayed on the details page.
 | responsive | demo/responsive.md |
 | Vertical | demo/vertical.md |
 | Vertical border | demo/vertical-border.md |
+| SFC Mode | demo/sfc.md |
 | Custom semantic dom styling | demo/style-class.md |
 | row | demo/block.md |
 
@@ -36,7 +37,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | extra | The action area of the description list, placed at the top-right | VueNode | - | - |
 | labelRender | - | RenderDescriptionsItem | - | - |
 | contentRender | - | RenderDescriptionsItem | - | - |
-| column | The number of `DescriptionItems` in a row, could be an object (like `&#123; xs: 8, sm: 16, md: 24&#125;`, but must have `bordered=&#123;true&#125;`) or a number | number \| Partial&lt;Record&lt;Breakpoint, number&gt;&gt; | 3 | - |
+| column | The number of `DescriptionItems` in a row, could be a number or a responsive object like `{ xs: 8, sm: 16, md: 24}` | number \| Partial&lt;Record&lt;Breakpoint, number&gt;&gt; | `{xxxl: 4,xxl: 3,xl: 3,lg: 3,md: 3,sm: 2,xs: 1}` | - |
 | layout | Define description layout | 'horizontal' \| 'vertical' | `horizontal` | - |
 | colon | Change default props `colon` value of Descriptions.Item. Indicates whether the colon after the label is displayed | boolean | true | - |
 | styles | Customize inline style for each semantic structure inside the component. Supports object or function. | DescriptionsStylesType | - | - |

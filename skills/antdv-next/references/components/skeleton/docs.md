@@ -45,7 +45,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | --- | --- | --- | --- | --- |
 | active | Show animation effect, only valid when used avatar independently | boolean | false | - |
 | shape | Set the shape of avatar | `circle` \| `square` | `circle` | - |
-| size | Set the size of avatar | number \| `large` \| `small` \| `default` | `default` | - |
+| size | Set the size of avatar | number \| `large` \| `medium` \| `small` | `medium` | - |
 
 ### SkeletonTitle
 
@@ -69,7 +69,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | --- | --- | --- | --- | --- |
 | active | Show animation effect | boolean | false | - |
 | shape | Set the shape of avatar | `circle` \| `square` | `circle` | - |
-| size | Set the size of avatar | number \| `large` \| `small` \| `default` | `default` | - |
+| size | Set the size of avatar | number \| `large` \| `medium` \| `small` | `medium` | - |
 | classes | Customize class for each semantic structure inside the component | SkeletonClassNamesType | - | - |
 | styles | Customize inline style for each semantic structure inside the component | SkeletonStylesType | - | - |
 
@@ -81,7 +81,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | active | Show animation effect | boolean | false | - |
 | block | Option to fit button width to its parent width | boolean | false | - |
 | shape | Set the shape of button | `circle` \| `round` \| `square` \| `default` | - | - |
-| size | Set the size of button | `large` \| `small` \| `default` | - | - |
+| size | Set the size of button | `large` \| `medium` \| `small` | `medium` | - |
 | classes | Customize class for each semantic structure inside the component | SkeletonClassNamesType | - | - |
 | styles | Customize inline style for each semantic structure inside the component | SkeletonStylesType | - | - |
 
@@ -91,7 +91,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
 | active | Show animation effect | boolean | false | - |
-| size | Set the size of input | `large` \| `small` \| `default` | - | - |
+| size | Set the size of input | `large` \| `medium` \| `small` | `medium` | - |
 | classes | Customize class for each semantic structure inside the component | SkeletonClassNamesType | - | - |
 | styles | Customize inline style for each semantic structure inside the component | SkeletonStylesType | - | - |
 
@@ -116,3 +116,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 ## Semantic DOM
 
 | _semantic | demo/_semantic.md |
+
+### Skeleton.Element
+
+| _semantic_element | demo/_semantic_element.md |

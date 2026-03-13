@@ -14,6 +14,7 @@ description: Vertical display timeline.
 | Basic | demo/basic.md |
 | Alternate | demo/alternate.md |
 | Custom | demo/custom.md |
+| SFC Mode | demo/sfc.md |
 | Pending | demo/pending.md |
 | Label | demo/title.md |
 | Variant | demo/variant.md |

@@ -1,5 +1,9 @@
 # Avatar.Group
 
+## Description (en-US)
+
+Avatar group display.
+
 ## Source
 
 ```vue

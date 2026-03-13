@@ -3,13 +3,13 @@ name: antdv-next
 description: Antdv Next Vue 3 component library. Use when locating component API docs, props/events/slots, or playground demos.
 metadata:
   author: Antdv Next team
-  version: "2026-02-24"
+  version: "2026-03-13"
   source: Generated from https://github.com/antdv-next/antdv-next, script located in this repo at scripts/generate-antdv-next-skill.ts
 ---
 
 # Antdv Next
 
-> The skill is based on Antdv Next docs and demos, generated at 2026-02-24.
+> The skill is based on Antdv Next docs and demos, generated at 2026-03-13.
 
 Language: en-US
 
@@ -88,7 +88,7 @@ Docs and demos are copied into `references/` for offline use.
 | result | components/result/docs.md | components/result/demo/ | 1 entries |
 | segmented | components/segmented/docs.md | components/segmented/demo/ | 1 entries |
 | select | components/select/docs.md | components/select/demo/ | 1 entries |
-| skeleton | components/skeleton/docs.md | components/skeleton/demo/ | 1 entries |
+| skeleton | components/skeleton/docs.md | components/skeleton/demo/ | 2 entries |
 | slider | components/slider/docs.md | components/slider/demo/ | 1 entries |
 | space | components/space/docs.md | components/space/demo/ | 1 entries |
 | spin | components/spin/docs.md | components/spin/demo/ | 1 entries |

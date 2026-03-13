@@ -24,6 +24,7 @@ More layouts with navigation: [Layout](../layout/docs.md).
 | Menu Themes | demo/theme.md |
 | Sub-menu theme | demo/submenu-theme.md |
 | Switch the menu type | demo/switch-mode.md |
+| Slot Render (items mode) | demo/slot-render.md |
 | Custom semantic dom styling | demo/style-class.md |
 | Custom Submenu Render | demo/custom-popup-render.md |
 
@@ -58,6 +59,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | getPopupContainer | To set the container of the submenu popup. The default is to create a div element in body, but you can reset it to the scrolling area and make a relative reposition | (triggerNode: HTMLElement) => HTMLElement | () => document.body | - |
 | itemIcon | Custom menu item icon render | (props: MenuItemProps & RenderIconInfo) => any | - | - |
 | labelRender | Custom label render | (item: RenderItem) => any | - | - |
+| iconRender | Custom icon render (items mode) | (item: RenderItem) => any | - | - |
 | extraRender | Custom extra render | (item: RenderItem) => any | - | - |
 | popupRender | Custom popup renderer for submenu | (node: VueNode, info: { item: SubMenuProps; keys: string[] }) => VueNode | - | - |
 
@@ -76,6 +78,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | --- | --- | --- | --- |
 | expandIcon | Custom expand icon | () => any | - |
 | labelRender | Customize label content | (item: RenderItem) => any | - |
+| iconRender | Customize item icon (items mode) | (item: RenderItem) => any | - |
 | extraRender | Customize extra content | (item: RenderItem) => any | - |
 | itemIcon | Custom item icon | (props: MenuItemProps & RenderIconInfo) => any | - |
 

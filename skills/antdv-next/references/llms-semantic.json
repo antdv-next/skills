@@ -53,7 +53,7 @@
       "keys": [
         "cascader"
       ],
-      "leafCount": 6
+      "leafCount": 13
     },
     "checkbox": {
       "keys": [
@@ -236,9 +236,10 @@
     },
     "skeleton": {
       "keys": [
-        "skeleton"
+        "skeleton",
+        "skeleton:element"
       ],
-      "leafCount": 6
+      "leafCount": 8
     },
     "slider": {
       "keys": [
@@ -467,14 +468,23 @@
     {
       "component": "cascader",
       "key": "cascader",
-      "leafCount": 6,
+      "leafCount": 13,
       "semantics": {
-        "item": "Option element, set padding, background color, hover state and selected state styles",
-        "popup": "Popup element, set absolute positioning, z-index, background color, border radius, shadow and dropdown options styles",
+        "clear": "Clear button element with layout, styling and interactive effects for clear button式",
+        "content": "Multiple selection container with layout, spacing, and wrapping styles for selected items",
+        "input": "Input element with search input styling, cursor control, font inheritance and other search-related styles. Remove border styles",
+        "item": "Multiple selection item element with border, background, padding, and margin styles",
+        "itemContent": "Multiple selection item content area with text ellipsis styles",
+        "itemRemove": "Multiple selection item remove button with font-related styles式",
+        "placeholder": "Placeholder element with font styles and colors for placeholder text",
+        "popup": {
+          "list": "Popup list element with option list layout, scrolling, max-height and other list container styles",
+          "listItem": "Popup item element with option item padding, hover effects, selected states, disabled states and other option interactive styles",
+          "root": "Popup element with popup layer positioning, z-index, background, border, box-shadow and other popup container styles"
+        },
         "prefix": "Prefix element with layout and styling for prefix content",
-        "root": "Root element, set inline flex layout, relative positioning, padding and border styles",
-        "selector": "Selector element, set padding, flex layout and selected item display styles",
-        "suffix": "Suffix element with layout and styling for suffix content like arrow icon, etc."
+        "root": "Root element with relative positioning, inline-flex layout, cursor styles, transitions, border and other basic selector container styles",
+        "suffix": "Suffix element with layout and styling for suffix content like clear button, arrow icon, etc."
       },
       "sourceDemo": "docs/src/pages/components/cascader/demo/_semantic.vue",
       "variant": null
@@ -996,6 +1006,17 @@
       "variant": null
     },
     {
+      "component": "skeleton",
+      "key": "skeleton:element",
+      "leafCount": 2,
+      "semantics": {
+        "content": "Content element",
+        "root": "Root element"
+      },
+      "sourceDemo": "docs/src/pages/components/skeleton/demo/_semantic_element.vue",
+      "variant": "element"
+    },
+    {
       "component": "slider",
       "key": "slider",
       "leafCount": 5,
@@ -1298,7 +1319,7 @@
       "variant": null
     }
   ],
-  "generatedAt": "2026-02-24T09:50:37.535Z",
+  "generatedAt": "2026-03-13T12:10:01.798Z",
   "language": "en-US",
   "source": {
     "componentsDir": "docs/src/pages/components",
@@ -1306,8 +1327,8 @@
   },
   "totals": {
     "components": 57,
-    "entries": 63,
-    "semanticNodes": 354
+    "entries": 64,
+    "semanticNodes": 363
   },
   "version": 1
 }

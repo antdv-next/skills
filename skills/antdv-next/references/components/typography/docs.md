@@ -128,7 +128,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | tooltip | Custom tooltip text, hide when it is false | VueNode | `Edit` | - |
 | text | Edit text, specify the editing content instead of using the children implicitly | string | - | - |
 | triggerType | Edit mode trigger - icon, text or both (not specifying icon as trigger hides it) | Array&lt;`icon`\|`text`&gt; | \[`icon`] | - |
-| enterIcon | Custom "enter" icon in the edit field (passing `null` removes the icon) | VueNode | `&lt;EnterOutlined /&gt;` | - |
+| enterIcon | Custom "enter" icon in the edit field (passing `null` removes the icon) | VueNode | &lt;EnterOutlined /&gt; | - |
 | tabIndex | Set tabIndex of the edit button | number | 0 | - |
 
 #### Events

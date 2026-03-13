@@ -1,5 +1,9 @@
 # Basic
 
+## Description (en-US)
+
+Three sizes and two shapes are available.
+
 ## Source
 
 ```vue

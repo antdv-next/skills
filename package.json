@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "generate": "esno scripts/generate-antdv-next-skill.ts --repo repos/antdv-next --lang zh",
+    "generate": "esno scripts/generate-antdv-next-skill.ts --repo repos/antdv-next --lang en",
     "generate:en": "esno scripts/generate-antdv-next-skill.ts --repo repos/antdv-next --lang en",
     "generate:zh": "esno scripts/generate-antdv-next-skill.ts --repo repos/antdv-next --lang zh"
   },

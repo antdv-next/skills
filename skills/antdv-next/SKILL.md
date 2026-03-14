@@ -27,6 +27,9 @@ Docs and demos are copied into `references/` for offline use.
 | i18n | docs/vue/i18n.md |
 | migration-antdv-next | docs/vue/migration-antdv-next.md |
 | nuxt | docs/vue/nuxt.md |
+| secondary-development | docs/vue/secondary-development.md |
+| tailwindcss | docs/vue/tailwindcss.md |
+| unocss | docs/vue/unocss.md |
 
 ## AI Structured References
 

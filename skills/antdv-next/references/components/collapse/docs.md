@@ -17,6 +17,7 @@ description: A content area which can be collapsed and expanded.
 | Nested panel | demo/mix.md |
 | Borderless | demo/borderless.md |
 | Custom Panel | demo/custom.md |
+| SFC Mode | demo/sfc.md |
 | No arrow | demo/noarrow.md |
 | Extra node | demo/extra.md |
 | Ghost Collapse | demo/ghost.md |

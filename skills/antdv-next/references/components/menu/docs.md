@@ -24,6 +24,7 @@ More layouts with navigation: [Layout](../layout/docs.md).
 | Menu Themes | demo/theme.md |
 | Sub-menu theme | demo/submenu-theme.md |
 | Switch the menu type | demo/switch-mode.md |
+| SFC Mode (Nested) | demo/sfc.md |
 | Slot Render (items mode) | demo/slot-render.md |
 | Custom semantic dom styling | demo/style-class.md |
 | Custom Submenu Render | demo/custom-popup-render.md |

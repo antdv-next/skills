@@ -287,6 +287,13 @@ function toCodeSpan(value: string): string {
   return `\`${escapeTableCell(value)}\``
 }
 
+function toSkillRelativePath(referencePath: string | null): string {
+  if (!referencePath) {
+    return 'none'
+  }
+  return toPosix(path.join('references', referencePath))
+}
+
 function specialComponentName(value: string): string {
   const specialComponentNames: Record<string, string> = {
     qrcode: 'QRCode',
@@ -1333,7 +1340,7 @@ async function main() {
     skillLines.push('| none | - |')
   } else {
     for (const doc of vueDocs) {
-      skillLines.push(`| ${doc.name} | ${doc.file} |`)
+      skillLines.push(`| ${doc.name} | ${toSkillRelativePath(doc.file)} |`)
     }
   }
 
@@ -1342,14 +1349,14 @@ async function main() {
   skillLines.push('')
   skillLines.push('| Type | Path | Notes |')
   skillLines.push('| --- | --- | --- |')
-  skillLines.push(`| Global Token Markdown | ${tokenArtifacts.globalFile ?? 'none'} | Global Design Token definitions for \`ConfigProvider theme.token\` |`)
+  skillLines.push(`| Global Token Markdown | ${toSkillRelativePath(tokenArtifacts.globalFile)} | Global Design Token definitions for \`ConfigProvider theme.token\` |`)
   if (semanticArtifacts.jsonFile) {
-    skillLines.push(`| Semantic JSON | ${semanticArtifacts.jsonFile} | Structured semantic DOM descriptions extracted from \`_semantic\` demos |`)
+    skillLines.push(`| Semantic JSON | ${toSkillRelativePath(semanticArtifacts.jsonFile)} | Structured semantic DOM descriptions extracted from \`_semantic\` demos |`)
   } else {
     skillLines.push('| Semantic JSON | none | No semantic descriptions found |')
   }
   if (semanticArtifacts.markdownFile) {
-    skillLines.push(`| Semantic Markdown | ${semanticArtifacts.markdownFile} | Human-readable semantic structure summary |`)
+    skillLines.push(`| Semantic Markdown | ${toSkillRelativePath(semanticArtifacts.markdownFile)} | Human-readable semantic structure summary |`)
   } else {
     skillLines.push('| Semantic Markdown | none | No semantic descriptions found |')
   }
@@ -1359,9 +1366,9 @@ async function main() {
   skillLines.push('| Component | Doc | Demos | Token | Semantic |')
   skillLines.push('| --- | --- | --- | --- | --- |')
   for (const component of components) {
-    const docPath = component.docs.en ?? component.docs.zh ?? 'none'
-    const demosPath = component.demos.length > 0 ? `components/${component.name}/demo/` : 'none'
-    const tokenPath = component.tokenFile ?? 'none'
+    const docPath = toSkillRelativePath(component.docs.en ?? component.docs.zh)
+    const demosPath = component.demos.length > 0 ? toSkillRelativePath(`components/${component.name}/demo/`) : 'none'
+    const tokenPath = toSkillRelativePath(component.tokenFile)
     const semanticInfo = semanticArtifacts.byComponent[component.name]
     const semanticCell = semanticInfo ? `${semanticInfo.keys.length} entries` : 'none'
     skillLines.push(`| ${component.name} | ${docPath} | ${demosPath} | ${tokenPath} | ${semanticCell} |`)

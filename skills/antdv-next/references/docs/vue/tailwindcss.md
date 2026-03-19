@@ -2,6 +2,16 @@
 title: Tailwind CSS
 ---
 
+Before anything else, wrap the `App.vue` entry with `a-app` so the runtime has a parent style container:
+
+```vue
+<template>
+  <a-app>
+    <router-view />
+  </a-app>
+</template>
+```
+
 This plugin maps Ant Design CSS variables into Tailwind's theme system, so utilities like `bg-primary`, `shadow-card`, and `text-h1` can still follow `antdv-next` runtime theming.
 
 ## Package Info

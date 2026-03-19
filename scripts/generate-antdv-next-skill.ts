@@ -2,6 +2,7 @@ import { promises as fs } from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
 import { execSync } from 'node:child_process'
+import ts from 'typescript'
 
 type DemoTitles = {
   en?: string
@@ -22,6 +23,8 @@ type ComponentEntry = {
     zh: string | null
   }
   demos: DemoEntry[]
+  tokenFile: string | null
+  tokenComponentKey: string | null
 }
 
 type SemanticEntry = {
@@ -47,6 +50,30 @@ type Args = {
   out?: string
   lang?: string
   help?: boolean
+}
+
+type TokenSource = 'seed' | 'map' | 'alias'
+
+type TokenMetaItem = {
+  token: string
+  type: string
+  desc: string
+  descEn: string
+  name: string
+  nameEn: string
+  source: TokenSource
+}
+
+type TokenMetadata = {
+  globalTokens: TokenMetaItem[]
+  componentTokens: Record<string, TokenMetaItem[]>
+}
+
+type TokenArtifacts = {
+  globalFile: string | null
+  totalGlobalTokens: number
+  totalComponentSets: number
+  totalComponentTokens: number
 }
 
 function parseArgs(argv: string[]): Args {
@@ -108,12 +135,166 @@ async function listFiles(rootDir: string, ext: string): Promise<string[]> {
   return results
 }
 
+function createTypeScriptProgram(packageRoot: string): ts.Program {
+  const configPath = ts.findConfigFile(packageRoot, ts.sys.fileExists, 'tsconfig.json')
+  if (!configPath) {
+    throw new Error(`Unable to locate tsconfig.json under ${toPosix(packageRoot)}`)
+  }
+
+  const configFile = ts.readConfigFile(configPath, ts.sys.readFile)
+  if (configFile.error) {
+    throw new Error(ts.formatDiagnostic(configFile.error, {
+      getCanonicalFileName: fileName => fileName,
+      getCurrentDirectory: () => process.cwd(),
+      getNewLine: () => '\n',
+    }))
+  }
+
+  const parsed = ts.parseJsonConfigFileContent(
+    configFile.config,
+    ts.sys,
+    path.dirname(configPath),
+  )
+
+  return ts.createProgram({
+    rootNames: parsed.fileNames,
+    options: {
+      ...parsed.options,
+      noEmit: true,
+      skipLibCheck: true,
+    },
+  })
+}
+
+function findInterfaceDeclaration(sourceFile: ts.SourceFile, name: string): ts.InterfaceDeclaration | null {
+  let found: ts.InterfaceDeclaration | null = null
+
+  function visit(node: ts.Node) {
+    if (found) return
+    if (ts.isInterfaceDeclaration(node) && node.name.text === name) {
+      found = node
+      return
+    }
+    node.forEachChild(visit)
+  }
+
+  visit(sourceFile)
+  return found
+}
+
+function getJsDocTagText(symbol: ts.Symbol, tagName: string): string {
+  const tag = symbol.getJsDocTags().find(item => item.name === tagName)
+  if (!tag?.text) {
+    return ''
+  }
+  if (typeof tag.text === 'string') {
+    return tag.text.trim()
+  }
+  return tag.text
+    .map(part => typeof part === 'string' ? part : part.text)
+    .join('')
+    .trim()
+}
+
+function shouldSkipTokenSymbol(symbol: ts.Symbol): boolean {
+  const tagNames = new Set(symbol.getJsDocTags().map(tag => tag.name))
+  return tagNames.has('internal') || tagNames.has('private') || tagNames.has('deprecated')
+}
+
+function getSymbolTypeText(checker: ts.TypeChecker, symbol: ts.Symbol, contextNode: ts.Node): string {
+  const declaration = symbol.valueDeclaration ?? symbol.declarations?.[0] ?? contextNode
+  const type = checker.getTypeOfSymbolAtLocation(symbol, declaration)
+  return checker.typeToString(
+    type,
+    declaration,
+    ts.TypeFormatFlags.NoTruncation | ts.TypeFormatFlags.UseAliasDefinedOutsideCurrentScope,
+  )
+}
+
+function extractTokenItemsFromInterface(
+  checker: ts.TypeChecker,
+  declaration: ts.InterfaceDeclaration,
+  source: TokenSource,
+): TokenMetaItem[] {
+  const type = checker.getTypeAtLocation(declaration)
+  return type.getProperties()
+    .filter(symbol => !shouldSkipTokenSymbol(symbol))
+    .map((symbol) => {
+      const desc = getJsDocTagText(symbol, '@desc') || getJsDocTagText(symbol, 'desc')
+      const descEn = getJsDocTagText(symbol, '@descEN') || getJsDocTagText(symbol, 'descEN')
+      const name = getJsDocTagText(symbol, '@nameZH') || getJsDocTagText(symbol, 'nameZH')
+      const nameEn = getJsDocTagText(symbol, '@nameEN') || getJsDocTagText(symbol, 'nameEN')
+
+      return {
+        token: symbol.getName(),
+        type: getSymbolTypeText(checker, symbol, declaration),
+        desc,
+        descEn,
+        name,
+        nameEn,
+        source,
+      }
+    })
+}
+
+function extractPresetColors(sourceFile: ts.SourceFile): string[] {
+  for (const statement of sourceFile.statements) {
+    if (!ts.isVariableStatement(statement)) continue
+    for (const declaration of statement.declarationList.declarations) {
+      if (!ts.isIdentifier(declaration.name) || declaration.name.text !== 'PresetColors') continue
+      if (!declaration.initializer) continue
+
+      let initializer: ts.Expression = declaration.initializer
+      if (ts.isAsExpression(initializer) || ts.isTypeAssertionExpression(initializer)) {
+        initializer = initializer.expression
+      }
+
+      if (!ts.isArrayLiteralExpression(initializer)) continue
+
+      return initializer.elements
+        .filter(ts.isStringLiteral)
+        .map(element => element.text)
+    }
+  }
+  return []
+}
+
+function createPresetColorTokenList(colors: string[]): TokenMetaItem[] {
+  return colors.map(color => ({
+    token: color,
+    type: 'color',
+    desc: `预设${color}颜色`,
+    descEn: `Preset ${color} color`,
+    name: `预设${color}颜色`,
+    nameEn: `Preset ${color} color`,
+    source: 'seed',
+  }))
+}
+
 function formatDateISO(date: Date): string {
   return date.toISOString().slice(0, 10)
 }
 
 function formatDateTimeISO(date: Date): string {
   return date.toISOString()
+}
+
+function escapeTableCell(value: string): string {
+  return value.replace(/\|/g, '\\|').replace(/\n/g, '<br />')
+}
+
+function toCodeSpan(value: string): string {
+  return `\`${escapeTableCell(value)}\``
+}
+
+function specialComponentName(value: string): string {
+  const specialComponentNames: Record<string, string> = {
+    qrcode: 'QRCode',
+  }
+  if (specialComponentNames[value]) {
+    return specialComponentNames[value]
+  }
+  return value.replace(/(^(.)|-(.))/g, match => match.replace('-', '').toUpperCase())
 }
 
 function normalizeLang(input?: string): 'en-US' | 'zh-CN' {
@@ -500,6 +681,242 @@ async function generateSemanticArtifacts(
   }
 }
 
+function filterOutPresetColorTokens(tokens: TokenMetaItem[], presetColors: string[]): TokenMetaItem[] {
+  return tokens.filter(item => !presetColors.some(color => item.token.startsWith(color)))
+}
+
+function dedupeTokenItems(tokens: TokenMetaItem[], seen: Set<string>): TokenMetaItem[] {
+  return tokens.filter((item) => {
+    if (seen.has(item.token)) {
+      return false
+    }
+    seen.add(item.token)
+    return true
+  })
+}
+
+async function collectTokenMetadata(repoRoot: string): Promise<TokenMetadata> {
+  const packageRoot = path.join(repoRoot, 'packages', 'antdv-next')
+  const srcRoot = path.join(packageRoot, 'src')
+  const interfaceRoot = path.join(srcRoot, 'theme', 'interface')
+  const program = createTypeScriptProgram(packageRoot)
+  const checker = program.getTypeChecker()
+
+  const seedPath = path.join(interfaceRoot, 'seeds.ts')
+  const mapPath = path.join(interfaceRoot, 'maps', 'index.ts')
+  const aliasPath = path.join(interfaceRoot, 'alias.ts')
+  const presetColorsPath = path.join(interfaceRoot, 'presetColors.ts')
+
+  const seedSourceFile = program.getSourceFile(seedPath)
+  const mapSourceFile = program.getSourceFile(mapPath)
+  const aliasSourceFile = program.getSourceFile(aliasPath)
+  const presetColorsSourceFile = program.getSourceFile(presetColorsPath)
+
+  if (!seedSourceFile || !mapSourceFile || !aliasSourceFile || !presetColorsSourceFile) {
+    throw new Error('Failed to load one or more token interface source files from upstream repository')
+  }
+
+  const seedDeclaration = findInterfaceDeclaration(seedSourceFile, 'SeedToken')
+  const mapDeclaration = findInterfaceDeclaration(mapSourceFile, 'MapToken')
+  const aliasDeclaration = findInterfaceDeclaration(aliasSourceFile, 'AliasToken')
+
+  if (!seedDeclaration || !mapDeclaration || !aliasDeclaration) {
+    throw new Error('Failed to locate SeedToken, MapToken, or AliasToken declarations')
+  }
+
+  const presetColors = extractPresetColors(presetColorsSourceFile)
+
+  const seedTokens = filterOutPresetColorTokens(
+    extractTokenItemsFromInterface(checker, seedDeclaration, 'seed'),
+    presetColors,
+  ).concat(createPresetColorTokenList(presetColors))
+
+  const seenSeed = new Set(seedTokens.map(item => item.token))
+  const mapTokens = dedupeTokenItems(
+    filterOutPresetColorTokens(
+      extractTokenItemsFromInterface(checker, mapDeclaration, 'map'),
+      presetColors,
+    ),
+    seenSeed,
+  )
+
+  const seenMap = new Set([...seenSeed, ...mapTokens.map(item => item.token)])
+  const aliasTokens = dedupeTokenItems(
+    filterOutPresetColorTokens(
+      extractTokenItemsFromInterface(checker, aliasDeclaration, 'alias'),
+      presetColors,
+    ),
+    seenMap,
+  )
+
+  const styleFiles = (
+    await Promise.all([
+      listFiles(srcRoot, '.ts'),
+      listFiles(srcRoot, '.tsx'),
+    ])
+  ).flat()
+    .filter(file => /\/style\/(index|token)\.tsx?$/.test(toPosix(file)))
+    .sort((a, b) => a.localeCompare(b))
+
+  const componentTokens: Record<string, TokenMetaItem[]> = {}
+
+  for (const filePath of styleFiles) {
+    const sourceFile = program.getSourceFile(filePath)
+    if (!sourceFile) continue
+
+    const declaration = findInterfaceDeclaration(sourceFile, 'ComponentToken')
+    if (!declaration) continue
+
+    const relativePath = toPosix(path.relative(srcRoot, filePath))
+    const componentSlug = relativePath.split('/')[0]
+    if (!componentSlug) continue
+
+    const componentKey = specialComponentName(componentSlug)
+    const items = extractTokenItemsFromInterface(checker, declaration, 'alias')
+    if (!componentTokens[componentKey] || items.length > 0) {
+      componentTokens[componentKey] = items
+    }
+  }
+
+  return {
+    globalTokens: [...seedTokens, ...mapTokens, ...aliasTokens],
+    componentTokens,
+  }
+}
+
+function sourceLabel(source: TokenSource, preferredLang: 'en-US' | 'zh-CN'): string {
+  if (preferredLang === 'zh-CN') {
+    if (source === 'seed') return 'Seed'
+    if (source === 'map') return 'Map'
+    return 'Alias'
+  }
+  if (source === 'seed') return 'Seed'
+  if (source === 'map') return 'Map'
+  return 'Alias'
+}
+
+function renderGlobalTokenMarkdown(
+  tokens: TokenMetaItem[],
+  preferredLang: 'en-US' | 'zh-CN',
+): string {
+  const zh = preferredLang === 'zh-CN'
+  const lines: string[] = []
+  lines.push(zh ? '# 全局主题变量' : '# Global Theme Tokens')
+  lines.push('')
+  lines.push(
+    zh
+      ? '这些变量通过 `ConfigProvider` 的 `theme.token` 配置，用于定义全局 Design Token。下表只保留变量定义，不包含默认值。'
+      : 'Use these variables through `ConfigProvider` `theme.token` to define global Design Tokens. This table lists definitions only and does not include values.',
+  )
+  lines.push('')
+  lines.push('```vue')
+  lines.push('<a-config-provider')
+  lines.push('  :theme="{')
+  lines.push('    token: {')
+  lines.push(zh ? '      // 全局 token 配置' : '      // Global token configuration')
+  lines.push('    },')
+  lines.push('  }"')
+  lines.push('>')
+  lines.push('  ...')
+  lines.push('</a-config-provider>')
+  lines.push('```')
+  lines.push('')
+  lines.push(zh ? '## Token 列表' : '## Token List')
+  lines.push('')
+  lines.push(zh ? '| Token | 类型 | 来源层级 | 说明 |' : '| Token | Type | Source | Description |')
+  lines.push(zh ? '| --- | --- | --- | --- |' : '| --- | --- | --- | --- |')
+
+  for (const item of tokens) {
+    const description = zh ? (item.desc || item.name || '-') : (item.descEn || item.nameEn || '-')
+    lines.push(`| ${toCodeSpan(item.token)} | ${toCodeSpan(item.type || 'unknown')} | ${sourceLabel(item.source, preferredLang)} | ${escapeTableCell(description)} |`)
+  }
+
+  lines.push('')
+  return lines.join('\n')
+}
+
+function renderComponentTokenMarkdown(
+  componentSlug: string,
+  componentKey: string,
+  fallbackComponentKey: string,
+  tokens: TokenMetaItem[],
+  preferredLang: 'en-US' | 'zh-CN',
+): string {
+  const zh = preferredLang === 'zh-CN'
+  const lines: string[] = []
+  lines.push(zh ? `# ${componentSlug} 主题变量` : `# ${componentSlug} Token`)
+  lines.push('')
+  lines.push(
+    zh
+      ? `这些变量通过 \`theme.components.${componentKey}\` 配置。文档仅保留变量定义，不包含默认值。`
+      : `Use these variables through \`theme.components.${componentKey}\`. This document lists definitions only and does not include values.`,
+  )
+
+  if (componentKey !== fallbackComponentKey) {
+    lines.push('')
+    lines.push(
+      zh
+        ? `当前目录复用 \`${componentKey}\` 的组件主题配置。`
+        : `This directory reuses the \`${componentKey}\` component theme configuration.`,
+    )
+  }
+
+  lines.push('')
+  lines.push('```vue')
+  lines.push('<a-config-provider')
+  lines.push('  :theme="{')
+  lines.push('    token: {')
+  lines.push(zh ? '      // 全局 token 配置' : '      // Global token configuration')
+  lines.push('    },')
+  lines.push('    components: {')
+  lines.push(`      ${componentKey}: {`)
+  lines.push(zh ? '        // 具体的 token 名称: value' : '        // Token name: value')
+  lines.push('      },')
+  lines.push('    },')
+  lines.push('  }"')
+  lines.push('>')
+  lines.push('  ...')
+  lines.push('</a-config-provider>')
+  lines.push('```')
+  lines.push('')
+  lines.push(zh ? '## Token 列表' : '## Token List')
+  lines.push('')
+  lines.push(zh ? '| Token | 类型 | 说明 |' : '| Token | Type | Description |')
+  lines.push(zh ? '| --- | --- | --- |' : '| --- | --- | --- |')
+
+  for (const item of tokens) {
+    const description = zh ? (item.desc || item.name || '-') : (item.descEn || item.nameEn || '-')
+    lines.push(`| ${toCodeSpan(item.token)} | ${toCodeSpan(item.type || 'unknown')} | ${escapeTableCell(description)} |`)
+  }
+
+  lines.push('')
+  return lines.join('\n')
+}
+
+function extractComponentTokenKey(content: string): string | null {
+  const match = content.match(/<ComponentTokenTable\b[^>]*\bcomponent="([^"]+)"/)
+  return match?.[1]?.trim() || null
+}
+
+function resolveComponentTokenKey(
+  componentSlug: string,
+  componentTokens: Record<string, TokenMetaItem[]>,
+  ...candidates: Array<string | null>
+): string | null {
+  const fallback = specialComponentName(componentSlug)
+  const values = [...candidates, fallback]
+    .filter((value): value is string => Boolean(value))
+    .filter((value, index, array) => array.indexOf(value) === index)
+
+  for (const value of values) {
+    if ((componentTokens[value] ?? []).length > 0) {
+      return value
+    }
+  }
+
+  return values[0] ?? null
+}
+
 async function resolvePagesSourceDirs(repoRoot: string): Promise<{ componentsRoot: string; docsRoot: string; pagesRoot: string }> {
   const candidatePagesRoots = [
     path.join(repoRoot, 'docs', 'src', 'pages'),
@@ -694,6 +1111,7 @@ async function main() {
   await fs.rm(path.join(referencesDir, 'components-index.md'), { force: true })
   await fs.rm(path.join(referencesDir, 'llms-semantic.md'), { force: true })
   await fs.rm(path.join(referencesDir, 'llms-semantic.json'), { force: true })
+  await fs.rm(path.join(referencesDir, 'global-token.md'), { force: true })
 
   const repoDisplayPath = (() => {
     const relative = toPosix(path.relative(cwd, repoRoot))
@@ -721,6 +1139,14 @@ async function main() {
   const components: ComponentEntry[] = []
   const vueDocs: Array<{ name: string; file: string }> = []
   const semanticArtifacts = await generateSemanticArtifacts(repoRoot, referencesDir, componentsRoot, preferredLang)
+  const tokenMetadata = await collectTokenMetadata(repoRoot)
+
+  const globalTokenPath = path.join(referencesDir, 'global-token.md')
+  await fs.writeFile(
+    globalTokenPath,
+    renderGlobalTokenMarkdown(tokenMetadata.globalTokens, preferredLang),
+    'utf8',
+  )
 
   if (await pathExists(docsRoot)) {
     const docEntries = await fs.readdir(docsRoot, { withFileTypes: true })
@@ -760,7 +1186,9 @@ async function main() {
       continue
     }
 
-    const docContent = hasDoc ? await fs.readFile(docPath, 'utf8') : ''
+    const enDocContent = hasEn ? await fs.readFile(enDocPath, 'utf8') : ''
+    const zhDocContent = hasZh ? await fs.readFile(zhDocPath, 'utf8') : ''
+    const docContent = preferredLang === 'zh-CN' ? zhDocContent : enDocContent
     const demoTags = docContent ? extractDemoTags(docContent) : []
     const demoTitlesMap = new Map<string, DemoTitles>()
     for (const tag of demoTags) {
@@ -776,6 +1204,15 @@ async function main() {
 
     let enOut: string | null = null
     let zhOut: string | null = null
+    let tokenFile: string | null = null
+
+    const fallbackComponentKey = specialComponentName(componentName)
+    const tokenComponentKey = resolveComponentTokenKey(
+      componentName,
+      tokenMetadata.componentTokens,
+      extractComponentTokenKey(enDocContent),
+      extractComponentTokenKey(zhDocContent),
+    )
 
     if (hasDoc) {
       const outPath = path.join(componentOutRoot, 'docs.md')
@@ -813,6 +1250,19 @@ async function main() {
       }
     }
 
+    if (tokenComponentKey && (tokenMetadata.componentTokens[tokenComponentKey] ?? []).length > 0) {
+      const tokenOutPath = path.join(componentOutRoot, 'token.md')
+      const tokenMarkdown = renderComponentTokenMarkdown(
+        componentName,
+        tokenComponentKey,
+        fallbackComponentKey,
+        tokenMetadata.componentTokens[tokenComponentKey]!,
+        preferredLang,
+      )
+      await fs.writeFile(tokenOutPath, tokenMarkdown, 'utf8')
+      tokenFile = toPosix(path.relative(referencesDir, tokenOutPath))
+    }
+
     components.push({
       name: componentName,
       docs: {
@@ -820,11 +1270,19 @@ async function main() {
         zh: zhOut,
       },
       demos,
+      tokenFile,
+      tokenComponentKey,
     })
   }
 
   const generatedAt = new Date()
   await fs.mkdir(referencesDir, { recursive: true })
+  const tokenArtifacts: TokenArtifacts = {
+    globalFile: toPosix(path.relative(referencesDir, globalTokenPath)),
+    totalGlobalTokens: tokenMetadata.globalTokens.length,
+    totalComponentSets: Object.values(tokenMetadata.componentTokens).filter(items => items.length > 0).length,
+    totalComponentTokens: Object.values(tokenMetadata.componentTokens).reduce((sum, items) => sum + items.length, 0),
+  }
 
   const generationPath = path.join(outputRoot, 'GENERATION.md')
   const generationLines = [
@@ -835,9 +1293,13 @@ async function main() {
     `- Generated: ${formatDateISO(generatedAt)}`,
     `- Language: ${preferredLang}`,
     `- Source Pages Root: \`${toPosix(path.relative(repoRoot, pagesRoot))}\``,
+    '- Token Metadata Source: upstream TypeScript declarations parsed locally in this repository',
     `- Semantic Structured Entries: ${semanticArtifacts.totalEntries}`,
     `- Semantic Components: ${semanticArtifacts.totalComponents}`,
     `- Semantic Nodes: ${semanticArtifacts.totalLeaves}`,
+    `- Global Tokens: ${tokenArtifacts.totalGlobalTokens}`,
+    `- Component Token Sets: ${tokenArtifacts.totalComponentSets}`,
+    `- Component Tokens: ${tokenArtifacts.totalComponentTokens}`,
     '',
   ]
   await fs.writeFile(generationPath, generationLines.join('\n'), 'utf8')
@@ -846,7 +1308,7 @@ async function main() {
   const skillLines: string[] = [
     '---',
     'name: antdv-next',
-    'description: Antdv Next Vue 3 component library. Use when locating component API docs, props/events/slots, or playground demos.',
+    'description: Antdv Next Vue 3 component library. Use when locating component API docs, props/events/slots, playground demos, or theme token definitions.',
     'metadata:',
     '  author: Antdv Next team',
     `  version: \"${formatDateISO(generatedAt)}\"`,
@@ -880,6 +1342,7 @@ async function main() {
   skillLines.push('')
   skillLines.push('| Type | Path | Notes |')
   skillLines.push('| --- | --- | --- |')
+  skillLines.push(`| Global Token Markdown | ${tokenArtifacts.globalFile ?? 'none'} | Global Design Token definitions for \`ConfigProvider theme.token\` |`)
   if (semanticArtifacts.jsonFile) {
     skillLines.push(`| Semantic JSON | ${semanticArtifacts.jsonFile} | Structured semantic DOM descriptions extracted from \`_semantic\` demos |`)
   } else {
@@ -893,14 +1356,15 @@ async function main() {
   skillLines.push('')
   skillLines.push('## Components')
   skillLines.push('')
-  skillLines.push('| Component | Doc | Demos | Semantic |')
-  skillLines.push('| --- | --- | --- | --- |')
+  skillLines.push('| Component | Doc | Demos | Token | Semantic |')
+  skillLines.push('| --- | --- | --- | --- | --- |')
   for (const component of components) {
     const docPath = component.docs.en ?? component.docs.zh ?? 'none'
     const demosPath = component.demos.length > 0 ? `components/${component.name}/demo/` : 'none'
+    const tokenPath = component.tokenFile ?? 'none'
     const semanticInfo = semanticArtifacts.byComponent[component.name]
     const semanticCell = semanticInfo ? `${semanticInfo.keys.length} entries` : 'none'
-    skillLines.push(`| ${component.name} | ${docPath} | ${demosPath} | ${semanticCell} |`)
+    skillLines.push(`| ${component.name} | ${docPath} | ${demosPath} | ${tokenPath} | ${semanticCell} |`)
   }
   skillLines.push('')
   skillLines.push('## Generate / Update')

@@ -2,7 +2,6 @@
 title: App
 description: Application wrapper for some global usages.
 ---
-
 ## When To Use 
 - Provide reset styles based on `.ant-app` element.
 - You could use static methods of `message/notification/Modal` form `useApp` without writing `contextHolder` manually.
@@ -25,7 +24,7 @@ description: Application wrapper for some global usages.
 </template>
 
 <script setup lang="ts">
-  import { App } from 'ant-design-vue';
+  import { App } from 'antdv-next';
 
   const { message, modal, notification } = App.useApp();
 
@@ -116,11 +115,11 @@ The App component can only use the token in the `ConfigProvider`, if you need to
 ### Property 
 Common props ref：[Common props](../../docs/vue/common-props.md)
 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| message | Global config for Message | MessageConfig | - | |
-| notification | Global config for Notification | NotificationConfig | - | |
-| component | Config render element, if `false` will not create DOM node | any | div | |
+| Property     | Description                                               | Type               | Default | Version |
+| ------------ | --------------------------------------------------------- | ------------------ | ------- | ------- |
+| message      | Global config for Message                                 | MessageConfig      | -       |         |
+| notification | Global config for Notification                            | NotificationConfig | -       |         |
+| component    | Config render element, if`false` will not create DOM node | any                | div     |         |
 
 ## FAQ
 

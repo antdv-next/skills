@@ -119,5 +119,22 @@ const [api, ContextHolder] = message.useMessage()
 
 > [App Package Component](../app/docs.md) can be used to simplify `useMessage` and other methods that need to manually implant ContextHolder.
 
+If you still need to use static methods and want them to read `locale`, `theme`, or other ConfigProvider settings, configure a global `holderRender` once:
+
+```ts
+import { App, ConfigProvider } from 'antdv-next'
+import { h } from 'vue'
+import zhCN from 'antdv-next/locale/zh_CN'
+
+ConfigProvider.config({
+  holderRender: children =>
+    h(ConfigProvider, { locale: zhCN }, {
+      default: () => h(App, null, () => children),
+    }),
+})
+```
+
+Then `message.info`, `message.success` and other static methods will render with that wrapped context.
+
 ### How to set static methods prefixCls? 
 You can config with [`ConfigProvider.config`](../config-provider/docs.md#configproviderconfig-4130).

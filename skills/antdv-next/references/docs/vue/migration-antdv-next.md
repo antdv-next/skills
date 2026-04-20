@@ -68,14 +68,16 @@ yarn add @antdv-next/icons
     - `maxPopoverTrigger` deprecated, changed to `:max="{popover: PopoverProps}"`.
 
 - `BackTop`
-    - `BackTop` deprecated, changed to `FloatButton.BackTop`.
+    - `FloatButton.BackTop` deprecated, changed to `FloatButton.BackTop`.
 
 - `Breadcrumb`
     - `routes` deprecated, changed to `items`.
+    - `routes.children` deprecated, changed to `items.menu`.
+    - `itemRender="props"` deprecated, changed to `itemRender="item"`.
     - `Breadcrumb.Item` and `Breadcrumb.Separator` deprecated, changed to `items`.
 
 - `Button.Group`
-    - `Button.Group` deprecated, changed to `Space.Compact`.
+    - `BackTop` deprecated, changed to `FloatButton.BackTop`.
 
 - `Button`
     - `iconPosition` deprecated, changed to `iconPlacement`.
@@ -140,6 +142,7 @@ yarn add @antdv-next/icons
     - `bodyStyle` deprecated, changed to `styles.body`.
     - `footerStyle` deprecated, changed to `styles.footer`.
     - `contentWrapperStyle` deprecated, changed to `styles.wrapper`.
+    - `destroyOnClose` deprecated, changed to `destroyOnHidden`.
     - `maskStyle` deprecated, changed to `styles.mask`.
     - `drawerStyle` deprecated, changed to `styles.section`.
     - `destroyInactivePanel` deprecated, changed to `destroyOnHidden`.
@@ -152,9 +155,11 @@ yarn add @antdv-next/icons
 - `Dropdown`
     - `dropdownRender` deprecated, changed to `popupRender`.
     - `destroyPopupOnHide` deprecated, changed to `destroyOnHidden`.
+    - `overlay(v-slot)` deprecated, changed to `popupRender`.
     - `overlayClassName` deprecated, changed to `classes.root`.
     - `overlayStyle` deprecated, changed to `styles.root`.
     - `placement: xxxCenter` deprecated, changed to `placement: xxx`.
+    - `<Dropdown class="xx"></Dropdown>` deprecated, changed to `<Dropdown><span class="xx"></span></Dropdown>`.
 
 - `Empty`
     - `imageStyle` deprecated, changed to `styles.image`.
@@ -170,6 +175,10 @@ yarn add @antdv-next/icons
     - `rootClassName` deprecated, changed to `classes.root`.
     - `toolbarRender` deprecated, changed to `actionsRender`.
 
+- `Input`
+    - `addonAfter` deprecated, changed to `SpaceCompact`.
+    - `addonBefore` deprecated, changed to `SpaceCompact`.
+
 - `Input.Group`
     - `Input.Group` deprecated, changed to `Space.Compact`.
 
@@ -182,7 +191,9 @@ yarn add @antdv-next/icons
     - `Mentions.Option` deprecated, changed to `options`.
 
 - `Menu`
+    - `value` deprecated, changed to `key`.
     - `children` deprecated, changed to `items`.
+    - `select` event, changed to `(value: string | number, option: Option) => void`.
 
 - `Modal`
     - `bodyStyle` deprecated, changed to `styles.body`.
@@ -215,12 +226,16 @@ yarn add @antdv-next/icons
     - `tooltipPlacement` deprecated, changed to `tooltip.placement`.
     - `tooltipVisible` deprecated, changed to `tooltip.open`.
 
-- `Space.Compact`
+- `SpaceCompact`
     - `direction` deprecated, changed to `orientation`.
 
 - `Space`
     - `direction` deprecated, changed to `orientation`.
     - `split` deprecated, changed to `separator`.
+
+- `Spin`
+    - `tip` deprecated, changed to `description`.
+    - `wrapperClassName` deprecated, changed to `classes.root`.
 
 - `Splitter`
     - `layout` deprecated, changed to `orientation`.
@@ -243,6 +258,12 @@ yarn add @antdv-next/icons
     - `filterDropdownOpen` deprecated, changed to `filterDropdownProps.open`.
     - `onFilterDropdownOpenChange` deprecated, changed to `filterDropdownProps.onOpenChange`.
     - `filterCheckall` deprecated, changed to `locale.filterCheckAll`.
+    - `customRender` deprecated, changed to `render`.
+    - `customRow` deprecated, changed to `onRow`.
+    - `onResizeColumn` deprecated, changed to `onResize`.
+    - `customFilterIcon` deprecated, changed to `filterIcon`.
+    - `customFilterDropdown` deprecated, changed to `filterDropdown`.
+    - `customCell` deprecated, changed to `onCell`.
 
 - `Tabs`
     - `popupClassName` deprecated, changed to `classes.popup`.
@@ -269,6 +290,9 @@ yarn add @antdv-next/icons
     - `overlayClassName` deprecated, changed to `classes.root`.
     - `destroyTooltipOnHide` deprecated, changed to `destroyOnHidden`.
 
+- `Popover`
+    - `overlayClassName` deprecated, changed to `classes.container`.
+
 - `Transfer`
     - `listStyle` deprecated, changed to `styles.section`.
     - `operationStyle` deprecated, changed to `styles.actions`.
@@ -282,6 +306,15 @@ yarn add @antdv-next/icons
     - `dropdownRender` deprecated, changed to `popupRender`.
     - `onDropdownVisibleChange` deprecated, changed to `onOpenChange`.
     - `bordered` deprecated, changed to `variant`.
+
+- `Tree`
+    - `tree.dataRef` deprecated, changed to `tree`.
+    - `treeData.title(v-slot)` deprecated, changed to `titleRender`.
+
+- `notification`
+    - `message` deprecated, changed to `title`.
+    - `btn` deprecated, changed to `actions`.
+    - `close` deprecated, changed to `destroy`.
 
 ### Overlay Components (Modal, Drawer, etc.)
 

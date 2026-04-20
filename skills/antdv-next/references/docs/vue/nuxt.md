@@ -19,16 +19,12 @@ npx nuxi@latest module add @antdv-next/nuxt
 
 Or install dependencies manually:
 
-```shell
-# via pnpm
-pnpm add -D @antdv-next/nuxt antdv-next @antdv-next/icons
-
-# via npm
-npm i -D @antdv-next/nuxt antdv-next @antdv-next/icons
-
-# via yarn
-yarn add -D @antdv-next/nuxt antdv-next @antdv-next/icons
-```
+<InstallDependencies
+  npm='$ npm i -D @antdv-next/nuxt antdv-next @antdv-next/icons'
+  yarn='$ yarn add -D @antdv-next/nuxt antdv-next @antdv-next/icons'
+  pnpm='$ pnpm add -D @antdv-next/nuxt antdv-next @antdv-next/icons'
+  bun='$ bun add -D @antdv-next/nuxt antdv-next @antdv-next/icons'
+/>
 
 ## Configuration
 
@@ -75,14 +71,6 @@ export default defineNuxtConfig({
 })
 ```
 
-:::warning Note
-
-If `nuxt devtools` is enabled, style loading in development may become slower. If you encounter slow style loading or temporarily unclickable UI, try disabling `nuxt devtools`, or wait until loading is finished in the console before interacting.
-
-This does not affect normal precompiled development flow, and it does not affect production builds.
-
-:::
-
 ## Options
 
 | Option | Type | Default | Description |
@@ -101,10 +89,17 @@ Notes:
 
 ## Full Example
 
+`assets/entry.css`
+
+```css
+@import "antdv-next/dist/reset.css";
+
+```
+
 ```ts
 export default defineNuxtConfig({
   modules: ['@antdv-next/nuxt'],
-  css: ['antdv-next/dist/reset.css'],
+  css: ['~/assets/entry.css'],
   antd: {
     prefix: 'A',
     icon: true,

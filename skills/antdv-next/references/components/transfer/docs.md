@@ -24,6 +24,7 @@ One or more elements can be selected from either column, one click on the proper
 | Custom datasource | demo/custom-item.md |
 | Custom Actions | demo/actions.md |
 | Pagination | demo/large-data.md |
+| Table Transfer | demo/table-transfer.md |
 | Tree Transfer | demo/tree-transfer.md |
 | Status | demo/status.md |
 | Custom semantic dom styling | demo/style-class.md |

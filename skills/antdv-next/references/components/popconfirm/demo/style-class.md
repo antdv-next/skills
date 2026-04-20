@@ -7,9 +7,6 @@
 ```vue
 <script setup lang="ts">
 import type { PopconfirmProps } from 'antdv-next'
-import { theme } from 'antdv-next'
-
-const { token } = theme.useToken()
 
 const classes: PopconfirmProps['classes'] = {
   container: 'demo-popconfirm-container',
@@ -77,8 +74,7 @@ const stylesFn: PopconfirmProps['styles'] = (info) => {
 
 <style>
 .demo-popconfirm-container {
-  padding: v-bind('`${token.paddingXS}px`');
-  border: 1px dashed v-bind('token.colorBorder');
+  padding: 10px;
 }
 </style>
 ```

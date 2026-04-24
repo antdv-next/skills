@@ -38,6 +38,7 @@ const ResizableTitle = defineComponent<ResizableTitleProps>({
   props: ['width', 'onResize'] as any,
   setup(props, { slots, attrs }) {
     const dragging = ref(false)
+    const stopNextClick = ref(false)
     let startX = 0
     let startWidth = 0
 
@@ -45,6 +46,7 @@ const ResizableTitle = defineComponent<ResizableTitleProps>({
       if (!dragging.value) {
         return
       }
+      stopNextClick.value = true
       const nextWidth = Math.max(startWidth + event.clientX - startX, 40)
       props.onResize?.(event, { size: { width: nextWidth } })
     }
@@ -53,16 +55,28 @@ const ResizableTitle = defineComponent<ResizableTitleProps>({
       dragging.value = false
       document.removeEventListener('mousemove', onMouseMove)
       document.removeEventListener('mouseup', onMouseUp)
+      setTimeout(() => {
+        stopNextClick.value = false
+      }, 0)
     }
 
     const onMouseDown = (event: MouseEvent) => {
       event.preventDefault()
       event.stopPropagation()
       dragging.value = true
+      stopNextClick.value = false
       startX = event.clientX
       startWidth = props.width || (event.currentTarget as HTMLElement).parentElement?.offsetWidth || 0
       document.addEventListener('mousemove', onMouseMove)
       document.addEventListener('mouseup', onMouseUp)
+    }
+
+    const onClickCapture = (event: MouseEvent) => {
+      if (stopNextClick.value) {
+        event.stopPropagation()
+        event.preventDefault()
+        stopNextClick.value = false
+      }
     }
 
     onBeforeUnmount(() => {
@@ -81,6 +95,7 @@ const ResizableTitle = defineComponent<ResizableTitleProps>({
           ...attrs,
           class: ['resizable-title', attrs.class],
           style: { ...(attrs.style as any), width: `${props.width}px` },
+          onClickCapture,
         },
         [
           slots.default?.(),

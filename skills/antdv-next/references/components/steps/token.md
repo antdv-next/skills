@@ -33,4 +33,4 @@ Use these variables through `theme.components.Steps`. This document lists defini
 | `dotCurrentSize` | `number` | Current size of dot |
 | `navArrowColor` | `string` | Color of arrow in nav |
 | `navContentMaxWidth` | `CSSProperties` | Max width of nav content |
-| `iconSizeSM` | `number` | Size of small steps icon |
+| `iconSizeSM` | `string \| number` | Size of small steps icon |

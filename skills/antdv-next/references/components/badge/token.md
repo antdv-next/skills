@@ -31,3 +31,4 @@ Use these variables through `theme.components.Badge`. This document lists defini
 | `textFontSizeSM` | `number` | Font size of small badge text |
 | `textFontWeight` | `string \| number` | Font weight of badge text |
 | `statusSize` | `number` | Size of status badge |
+| `paddingInline` | `string \| number` | Inline padding of badge |

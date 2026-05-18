@@ -24,4 +24,4 @@ Use these variables through `theme.components.Statistic`. This document lists de
 | Token | Type | Description |
 | --- | --- | --- |
 | `titleFontSize` | `number` | Title font size |
-| `contentFontSize` | `number` | Content font size |
+| `contentFontSize` | `string \| number` | Content font size |

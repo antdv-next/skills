@@ -23,7 +23,7 @@ const semantics = computed(() => [
 const bordered = ref(false)
 
 const items = [
-  { key: '1', label: 'Telephone', children: '1810000000' },
+  { key: '1', label: 'Telephone', content: '1810000000' },
 ]
 </script>
 

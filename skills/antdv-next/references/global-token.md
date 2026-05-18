@@ -112,6 +112,7 @@ Use these variables through `ConfigProvider` `theme.token` to define global Desi
 | `colorWarningTextHover` | `string` | Map | The hover state of the text in the warning color. |
 | `colorWarningText` | `string` | Map | The default state of the text in the warning color. |
 | `colorWarningTextActive` | `string` | Map | The active state of the text in the warning color. |
+| `colorWarningAffix` | `string` | Map | The warning color used inside input affix areas; defaults to colorWarning. |
 | `colorErrorBg` | `string` | Map | The background color of the error state. |
 | `colorErrorBgHover` | `string` | Map | The hover state background color of the error state. |
 | `colorErrorBgFilledHover` | `string` | Map | The wrong color fills the background color of the suspension state, which is currently only used in the hover effect of the dangerous filled button. |
@@ -123,6 +124,7 @@ Use these variables through `ConfigProvider` `theme.token` to define global Desi
 | `colorErrorTextHover` | `string` | Map | The hover state of the text in the error color. |
 | `colorErrorText` | `string` | Map | The default state of the text in the error color. |
 | `colorErrorTextActive` | `string` | Map | The active state of the text in the error color. |
+| `colorErrorAffix` | `string` | Map | The error color used inside input affix areas; defaults to colorError. |
 | `colorInfoBg` | `string` | Map | Light background color of information color. |
 | `colorInfoBgHover` | `string` | Map | Hover state of light background color of information color. |
 | `colorInfoBorder` | `string` | Map | Border color of information color. |
@@ -154,11 +156,11 @@ Use these variables through `ConfigProvider` `theme.token` to define global Desi
 | `fontSizeSM` | `number` | Map | Small font size |
 | `fontSizeLG` | `number` | Map | Large font size |
 | `fontSizeXL` | `number` | Map | Super large font size |
-| `fontSizeHeading1` | `number` | Map | Font size of h1 tag. |
-| `fontSizeHeading2` | `number` | Map | Font size of h2 tag. |
-| `fontSizeHeading3` | `number` | Map | Font size of h3 tag. |
-| `fontSizeHeading4` | `number` | Map | Font size of h4 tag. |
-| `fontSizeHeading5` | `number` | Map | Font size of h5 tag. |
+| `fontSizeHeading1` | `string \| number` | Map | Font size of h1 tag. |
+| `fontSizeHeading2` | `string \| number` | Map | Font size of h2 tag. |
+| `fontSizeHeading3` | `string \| number` | Map | Font size of h3 tag. |
+| `fontSizeHeading4` | `string \| number` | Map | Font size of h4 tag. |
+| `fontSizeHeading5` | `string \| number` | Map | Font size of h5 tag. |
 | `lineHeight` | `number` | Map | Line height of text. |
 | `lineHeightLG` | `number` | Map | Line height of large text. |
 | `lineHeightSM` | `number` | Map | Line height of small text. |

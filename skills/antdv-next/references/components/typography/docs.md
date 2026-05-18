@@ -157,3 +157,6 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | --- | --- | --- | --- |
 | ellipsis | Called when enter or leave ellipsis state | (ellipsis: boolean) =&gt; void | - |
 | expand | Called when expand content | (event: MouseEvent, info: &#123; expanded: boolean &#125;) =&gt; void | - |
+
+## Semantic DOM 
+| _semantic | demo/_semantic.md |

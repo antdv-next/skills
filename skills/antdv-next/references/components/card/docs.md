@@ -21,6 +21,7 @@ A card can be used to display content related to a single subject. The content c
 | With tabs | demo/tabs.md |
 | Support more content configuration | demo/meta.md |
 | Custom semantic dom styling | demo/style-class.md |
+| Cover and actions without body | demo/no-body-debug.md |
 
 ## API
 

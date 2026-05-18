@@ -30,7 +30,7 @@ Use these variables through `theme.components.Avatar`. This document lists defin
 | `textFontSizeLG` | `number` | Font size of large Avatar |
 | `textFontSizeSM` | `number` | Font size of small Avatar |
 | `iconFontSize` | `number` | Font size of Avatar icon |
-| `iconFontSizeLG` | `number` | Font size of large Avatar icon |
+| `iconFontSizeLG` | `string \| number` | Font size of large Avatar icon |
 | `iconFontSizeSM` | `number` | Font size of small Avatar icon |
 | `groupSpace` | `number` | Spacing between avatars in a group |
 | `groupOverlapping` | `number` | Overlapping of avatars in a group |

@@ -23,7 +23,7 @@ Use these variables through `theme.components.Result`. This document lists defin
 
 | Token | Type | Description |
 | --- | --- | --- |
-| `titleFontSize` | `number` | Title font size |
+| `titleFontSize` | `string \| number` | Title font size |
 | `subtitleFontSize` | `number` | Subtitle font size |
-| `iconFontSize` | `number` | Icon size |
+| `iconFontSize` | `string \| number` | Icon size |
 | `extraMargin` | `CSSProperties` | Margin of extra area |

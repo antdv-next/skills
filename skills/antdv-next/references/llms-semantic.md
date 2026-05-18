@@ -2,8 +2,8 @@
 
 This document extracts semantic DOM descriptions from component `_semantic` demos and formats them into AI-friendly structured data.
 
-> Total semantic entries: 64
-> Components with semantic descriptions: 57
+> Total semantic entries: 65
+> Components with semantic descriptions: 58
 
 ## Component List
 
@@ -81,7 +81,7 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 ### calendar
 
 - Component: `calendar`
-- Semantic nodes: 5
+- Semantic nodes: 6
 - Source demo: `docs/src/pages/components/calendar/demo/_semantic.vue`
 
 - `root`: Root element containing background, border, border-radius and overall layout structure of the calendar component
@@ -89,6 +89,7 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 - `body`: Body element with padding and layout control for the calendar table that contains the calendar grid
 - `content`: Content element with width, height and table styling control for the calendar table
 - `item`: Item element with background, border, hover state, selected state and other interactive styles for calendar cells
+- `itemContent`: Item content element with layout and styles for the calendar cell content area
 
 ### card
 
@@ -271,17 +272,20 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 ### form
 
 - Component: `form`
-- Semantic nodes: 3
+- Semantic nodes: 6
 - Source demo: `docs/src/pages/components/form/demo/_semantic.vue`
 
 - `root`: Root element with form item margin-bottom, vertical-align, transitions, hidden states, error/warning states and other basic form item container styles
 - `label`: Label element with flex layout, overflow hidden, whitespace nowrap, text alignment, vertical alignment, plus label color, font size, height, required marks and other label display styles
 - `content`: Content element with form content area layout, styling and control container related styles
+- `help`: Help container element with spacing, motion, and presentation styles for help and validation areas
+- `helpItem`: Single help message item with typography styles for prompt, error, and warning text
+- `extra`: Extra prompt container element with spacing, color, and typography styles for supplementary text
 
 ### image
 
 - Component: `image`
-- Semantic nodes: 8
+- Semantic nodes: 9
 - Source demo: `docs/src/pages/components/image/demo/_semantic.vue`
 
 - `root`: Root element, sets relative positioning and inline-block layout styles
@@ -293,11 +297,12 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
   - `body`: Preview body element, sets flex layout, center alignment and pointer event styles
   - `footer`: Preview footer element, sets absolute positioning, center layout and bottom operation area styles
   - `actions`: Preview actions group element, sets flex layout, background color, border radius and action button styles
+  - `close`: Preview close button element, sets basic button styles
 
 ### input
 
 - Component: `input`
-- Semantic nodes: 5
+- Semantic nodes: 6
 - Source demo: `docs/src/pages/components/input/demo/_semantic.vue`
 
 - `root`: Root element with relative positioning, inline-block display, width, min-width, padding, colors, fonts, line-height, border-radius, transitions and other input container basic styles
@@ -305,6 +310,7 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 - `input`: Input element with core interactive styles and text input related styling
 - `suffix`: Suffix wrapper element with layout and styling for suffix content
 - `count`: Character count element with font and color styles for count display
+- `clear`: Clear button element with color, size, hover state and transition animation styles
 
 ### input:password
 
@@ -392,17 +398,20 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 ### message
 
 - Component: `message`
-- Semantic nodes: 3
+- Semantic nodes: 6
 - Source demo: `docs/src/pages/components/message/demo/_semantic.vue`
 
-- `root`: Root element, set fixed positioning, z-index, padding, background color, border radius, shadow and animation styles
-- `icon`: Icon element, set font size, right margin and status color styles
-- `content`: Content element, set inline block layout, text color and content display styles
+- `root`: Message item root element, set background color, border radius, shadow, padding and animation styles
+- `wrapper`: Wrapper element for icon and title, set content layout, gap and alignment styles
+- `icon`: Icon element, set font size, line height and status color styles
+- `title`: Title element, set text color, font size, line height and content display styles
+- `list`: Message list root element, set positioning, z-index, width, scroll area and placement styles
+- `listContent`: Message list content element, set notice layout, gap and height transition styles
 
 ### modal
 
 - Component: `modal`
-- Semantic nodes: 8
+- Semantic nodes: 9
 - Source demo: `docs/src/pages/components/modal/demo/_semantic.vue`
 
 - `root`: Root element with relative positioning, top position, width, max-width, margins, bottom padding and other basic layout styles for modal container
@@ -413,18 +422,25 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 - `title`: Title element with margin, color, font-weight, font-size, line-height, word-wrap and other title text styles
 - `body`: Body element with content area background color, padding and other content display styles
 - `footer`: Footer element with footer background color, padding, top border, border-radius and other footer area styles
+- `close`: Close button element with base button styles, positioning and interaction effects
 
 ### notification
 
 - Component: `notification`
-- Semantic nodes: 5
+- Semantic nodes: 11
 - Source demo: `docs/src/pages/components/notification/demo/_semantic.vue`
 
-- `root`: Root element, set fixed positioning, z-index, padding, background color, border radius, shadow and animation styles
+- `root`: Notice root element, set background color, border radius, shadow, padding and animation styles
+- `wrapper`: Wrapper element for icon and content with content layout styles
 - `icon`: Icon element, set absolute positioning, font size, line height and status color styles
+- `section`: Content section element that contains title and description
 - `title`: Title element, set color, font size, line height and margin styles
 - `description`: Description element, set font size, color and margin styles
+- `close`: Close button element, set position, size and interaction styles
 - `actions`: Actions element, set float right, top margin and action button layout styles
+- `progress`: Progress element, set progress styles for auto-closing notifications
+- `list`: Notification list root element, set positioning, z-index, width, scroll area and placement styles
+- `listContent`: Notification list content element, set notice layout, gap and height transition styles
 
 ### otp
 
@@ -449,13 +465,14 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 ### popconfirm
 
 - Component: `popconfirm`
-- Semantic nodes: 5
+- Semantic nodes: 6
 - Source demo: `docs/src/pages/components/popconfirm/demo/_semantic.vue`
 
 - `root`: Root element, set absolute positioning, z-index, transform origin, arrow direction and popover container styles
 - `container`: Container element, set background color, padding, border radius, shadow, border and content display styles
 - `title`: Title element, set title text styles and spacing
 - `content`: Description element, set content text styles and layout
+- `icon`: Icon element, set icon size, color and margin styles
 - `arrow`: Arrow element with width, height, position, color and border styles
 
 ### popover
@@ -624,7 +641,7 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 ### statistic
 
 - Component: `statistic`
-- Semantic nodes: 6
+- Semantic nodes: 7
 - Source demo: `docs/src/pages/components/statistic/demo/_semantic.vue`
 
 - `root`: Root element with reset styles and overall container styles for statistic component
@@ -632,6 +649,7 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 - `title`: Title element with text color, font size and other title text display styles
 - `prefix`: Prefix element with inline-block display, right margin and other prefix content layout styles
 - `content`: Content element with text color, font size, font family and other numeric content display styles
+- `value`: Value element with text color, font size, font family and other statistic number display styles
 - `suffix`: Suffix element with inline-block display, left margin and other suffix content layout styles
 
 ### steps
@@ -701,12 +719,13 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 ### tag
 
 - Component: `tag`
-- Semantic nodes: 3
+- Semantic nodes: 4
 - Source demo: `docs/src/pages/components/tag/demo/_semantic.vue`
 
 - `root`: Root element with inline-block display, auto height, padding, font size, line height, nowrap, background color, border, border radius, opacity, transition animations, text alignment, relative positioning and other basic tag styles
 - `icon`: Icon element with font size, color, cursor style, transition animations and other icon display styles
 - `content`: Content element with text content color, font styles and other content area styles
+- `close`: Close element with close button layout, cursor styles, transition animations and other interaction styles
 
 ### textArea
 
@@ -765,7 +784,7 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 ### tour
 
 - Component: `tour`
-- Semantic nodes: 11
+- Semantic nodes: 12
 - Source demo: `docs/src/pages/components/tour/demo/_semantic.vue`
 
 - `root`: Tour root container with absolute positioning, z-index control, max width, visibility, arrow background color variable, theme styles and other container styles
@@ -779,11 +798,12 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 - `actions`: Action button group container with left auto margin, button spacing and other button group layout styles
 - `indicators`: Indicator group container with inline-block display and other indicator container styles
 - `indicator`: Single indicator element with width/height size, inline-block display, border radius, background color, right margin, active state and other dot styles
+- `close`: Close button element with absolute positioning, size, color, hover state and interaction feedback styles
 
 ### transfer
 
 - Component: `transfer`
-- Semantic nodes: 11
+- Semantic nodes: 13
 - Source demo: `docs/src/pages/components/transfer/demo/_semantic.vue`
 
 - `root`: Root element with flex layout, transfer container base styles and layout control
@@ -797,22 +817,25 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 - `itemContent`: List item content element with text ellipsis, padding and other list item text content display styles
 - `footer`: Footer element with bottom operation area styles and layout
 - `actions`: Actions element with transfer button group styles, layout and interaction states
+- `source`: Source-side (left) overrides nested under the same shared semantic keys (section/header/title/body/list/item/itemIcon/itemContent/footer); only the source list picks them up
+- `target`: Target-side (right) overrides nested under the same shared semantic keys (section/header/title/body/list/item/itemIcon/itemContent/footer); only the target list picks them up
 
 ### tree
 
 - Component: `tree`
-- Semantic nodes: 4
+- Semantic nodes: 5
 - Source demo: `docs/src/pages/components/tree/demo/_semantic.vue`
 
 - `root`: Root element with tree control base styles, layout and container control
 - `item`: Item element with tree node base styles, drag state, role attributes, indentation, switcher, content wrapper and other node structure
 - `itemIcon`: Icon element with tree node icon styles, size and state display
 - `itemTitle`: Title element with tree node title text display styles and text content
+- `itemSwitcher`: Switcher element with tree node expand/collapse button styles and background
 
 ### treeSelect
 
 - Component: `tree-select`
-- Semantic nodes: 12
+- Semantic nodes: 13
 - Source demo: `docs/src/pages/components/tree-select/demo/_semantic.vue`
 
 - `root`: Root element with tree selector base styles, border, border radius container styles
@@ -828,6 +851,18 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
   - `root`: Popup element with dropdown tree selection panel positioning, z-index, background, border, shadow and other popup layer styles
   - `item`: Popup item element with tree node option styles, hover state, selected state and other interaction states
   - `itemTitle`: Popup title element with tree node title text display styles
+  - `itemSwitcher`: Popup switcher element with tree node expand/collapse button styles and background
+
+### typography
+
+- Component: `typography`
+- Semantic nodes: 4
+- Source demo: `docs/src/pages/components/typography/demo/_semantic.vue`
+
+- `root`: Root element with base typography styles, layout, and positioning
+- `actions`: Actions element with layout and spacing styles for copy, edit, expand/collapse buttons
+- `action`: Individual action button element including copy, edit, expand, collapse button styles like padding, border radius, colors, etc.
+- `textarea`: TextArea element in editable mode, used to customize className and inline styles for the edit input
 
 ### upload
 

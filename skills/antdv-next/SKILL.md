@@ -3,13 +3,13 @@ name: antdv-next
 description: Antdv Next Vue 3 component library. Use when locating component API docs, props/events/slots, playground demos, or theme token definitions.
 metadata:
   author: Antdv Next team
-  version: "2026-04-20"
+  version: "2026-05-18"
   source: Generated from https://github.com/antdv-next/antdv-next, script located in this repo at scripts/generate-antdv-next-skill.ts
 ---
 
 # Antdv Next
 
-> The skill is based on Antdv Next docs and demos, generated at 2026-04-20.
+> The skill is based on Antdv Next docs and demos, generated at 2026-05-18.
 
 Language: en-US
 
@@ -50,6 +50,7 @@ Docs and demos are copied into `references/` for offline use.
 | auto-complete | references/components/auto-complete/docs.md | references/components/auto-complete/demo/ | references/components/auto-complete/token.md | 1 entries |
 | avatar | references/components/avatar/docs.md | references/components/avatar/demo/ | references/components/avatar/token.md | none |
 | badge | references/components/badge/docs.md | references/components/badge/demo/ | references/components/badge/token.md | 2 entries |
+| border-beam | references/components/border-beam/docs.md | references/components/border-beam/demo/ | none | none |
 | breadcrumb | references/components/breadcrumb/docs.md | references/components/breadcrumb/demo/ | references/components/breadcrumb/token.md | 1 entries |
 | button | references/components/button/docs.md | references/components/button/demo/ | references/components/button/token.md | 1 entries |
 | calendar | references/components/calendar/docs.md | references/components/calendar/demo/ | references/components/calendar/token.md | 1 entries |
@@ -94,7 +95,7 @@ Docs and demos are copied into `references/` for offline use.
 | select | references/components/select/docs.md | references/components/select/demo/ | references/components/select/token.md | 1 entries |
 | skeleton | references/components/skeleton/docs.md | references/components/skeleton/demo/ | references/components/skeleton/token.md | 2 entries |
 | slider | references/components/slider/docs.md | references/components/slider/demo/ | references/components/slider/token.md | 1 entries |
-| space | references/components/space/docs.md | references/components/space/demo/ | none | 1 entries |
+| space | references/components/space/docs.md | references/components/space/demo/ | references/components/space/token.md | 1 entries |
 | spin | references/components/spin/docs.md | references/components/spin/demo/ | references/components/spin/token.md | 1 entries |
 | splitter | references/components/splitter/docs.md | references/components/splitter/demo/ | references/components/splitter/token.md | 1 entries |
 | statistic | references/components/statistic/docs.md | references/components/statistic/demo/ | references/components/statistic/token.md | 1 entries |
@@ -110,7 +111,7 @@ Docs and demos are copied into `references/` for offline use.
 | transfer | references/components/transfer/docs.md | references/components/transfer/demo/ | references/components/transfer/token.md | 1 entries |
 | tree | references/components/tree/docs.md | references/components/tree/demo/ | references/components/tree/token.md | 1 entries |
 | tree-select | references/components/tree-select/docs.md | references/components/tree-select/demo/ | references/components/tree-select/token.md | 1 entries |
-| typography | references/components/typography/docs.md | references/components/typography/demo/ | references/components/typography/token.md | none |
+| typography | references/components/typography/docs.md | references/components/typography/demo/ | references/components/typography/token.md | 1 entries |
 | upload | references/components/upload/docs.md | references/components/upload/demo/ | references/components/upload/token.md | 1 entries |
 | watermark | references/components/watermark/docs.md | references/components/watermark/demo/ | none | none |
 

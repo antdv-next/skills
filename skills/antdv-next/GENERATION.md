@@ -1,14 +1,14 @@
 # Generation Info
 
 - Source: `repos/antdv-next`
-- Git SHA: `f9f368eefd00131fc6f9921ccbfb7fc08e2e2a55`
-- Generated: 2026-04-20
+- Git SHA: `460867f0c10866b998ebec9a89c30aede171e4c2`
+- Generated: 2026-05-18
 - Language: en-US
 - Source Pages Root: `docs/src/pages`
 - Token Metadata Source: upstream TypeScript declarations parsed locally in this repository
-- Semantic Structured Entries: 64
-- Semantic Components: 57
-- Semantic Nodes: 363
-- Global Tokens: 231
-- Component Token Sets: 54
-- Component Tokens: 565
+- Semantic Structured Entries: 65
+- Semantic Components: 58
+- Semantic Nodes: 391
+- Global Tokens: 233
+- Component Token Sets: 55
+- Component Tokens: 568

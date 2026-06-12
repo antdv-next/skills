@@ -64,11 +64,11 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 ### Radio/RadioButton
 
 #### Props 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| checked | Specifies whether the radio is selected, support `v-model:checked` | boolean | false |  |
-| disabled | Disable radio | boolean | false |  |
-| value | According to value for comparison, to determine whether the selected | any | - |  |
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| checked | Specifies whether the radio is selected, support `v-model:checked` | boolean | false |  | × |
+| disabled | Disable radio | boolean | false |  | × |
+| value | According to value for comparison, to determine whether the selected | any | - |  | × |
 
 #### Methods 
 | Name    | Description  |

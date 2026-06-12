@@ -8,7 +8,7 @@ You can use `a-card-meta` to support more flexible content.
 
 ```vue
 <template>
-  <a-card hoverable style="width: 240px">
+  <a-card hoverable variant="borderless" style="width: 240px">
     <template #cover>
       <img
         draggable="false"

@@ -106,29 +106,29 @@ const columns = [
 
 Common props ref：[Common props](../../docs/vue/common-props.md)
 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| bordered | Whether to show all table borders | boolean | false | - |
-| columns |  Columns of table | [ColumnsType](#Column)\[\] | - | - |
-| dataSource | Data record array to be displayed | object[] | - | - |
-| expandable | Config expandable content | [expandable](#expandable) | - |  |
-| getPopupContainer | The render container of dropdowns in table| (triggerNode) => HTMLElement | () => TableHtmlElement | - |
-| loading | Loading status of table | boolean \| [Spin Props](../spin/docs.md#props) | false | - |
-| locale | The i18n text including filter, sort, empty text, etc | object | [默认值](https://github.com/ant-design/ant-design/blob/6dae4a7e18ad1ba193aedd5ab6867e1d823e2aa4../locale/docs.md/zh_CN.tsx#L20-L37) | - |
-| pagination |Config of pagination. You can ref table pagination [config](#pagination) or full [`pagination`](../pagination/docs.md/) document, hide it by setting it to `false` | false \| TablePaginationConfig | - | - |
-| rowClassName | Row's className | function(record, index): string | - |  |
-| rowKey | Row's unique key, could be a string or function that returns a string | string \| function(record): string | `key` | - |
-| rowSelection | Row selection [config](#rowselection) | object | - | - |
-| rowHoverable | Row hover | boolean | true | - |
-| scroll | Whether the table can be scrollable, [config](#scroll) | object | - | - |
-| showHeader | Whether to show table header | boolean | true | - |
-| showSorterTooltip | The header show next sorter direction tooltip. It will be set as the property of Tooltip if its type is object | boolean \| [Tooltip props](../tooltip/docs.md) & `{target?: 'full-header' \| 'sorter-icon' }` | \{ target: 'full-header' \} | - |
-| size | Size of table | `large` \| `middle` \| `small` | `large` |  |
-| sortDirections | Supported sort way, could be `ascend`, `descend` | Array | \[`ascend`, `descend`] | - |
-| sticky | Set sticky header and scroll bar | boolean \| `{offsetHeader?: number, offsetScroll?: number, getContainer?: () => HTMLElement}` | - | - |
-| tableLayout | The [table-layout](https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout) attribute of table element | - \| `auto` \| `fixed` | -<hr />`fixed` when header/columns are fixed, or using `column.ellipsis`  |  |
-| dropdownPrefixCls | - | string | - | - |
-| virtual | Support virtual list | boolean | - | - |
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| bordered | Whether to show all table borders | boolean | false | - | × |
+| columns |  Columns of table | [ColumnsType](#Column)\[\] | - | - | × |
+| dataSource | Data record array to be displayed | object[] | - | - | × |
+| expandable | Config expandable content | [expandable](#expandable) | - |  | ✓ |
+| getPopupContainer | The render container of dropdowns in table| (triggerNode) => HTMLElement | () => TableHtmlElement | - | × |
+| loading | Loading status of table | boolean \| [Spin Props](../spin/docs.md#props) | false | - | × |
+| locale | The i18n text including filter, sort, empty text, etc | object | [默认值](https://github.com/ant-design/ant-design/blob/6dae4a7e18ad1ba193aedd5ab6867e1d823e2aa4../locale/docs.md/zh_CN.tsx#L20-L37) | - | × |
+| pagination |Config of pagination. You can ref table pagination [config](#pagination) or full [`pagination`](../pagination/docs.md/) document, hide it by setting it to `false` | false \| TablePaginationConfig | - | - | × |
+| rowClassName | Row's className | function(record, index): string | - |  | × |
+| rowKey | Row's unique key, could be a string or function that returns a string | string \| function(record): string | `key` | - | ✓ |
+| rowSelection | Row selection [config](#rowselection) | object | - | - | × |
+| rowHoverable | Row hover | boolean | true | - | × |
+| scroll | Whether the table can be scrollable, [config](#scroll) | object | - | - | ✓ |
+| showHeader | Whether to show table header | boolean | true | - | × |
+| showSorterTooltip | The header show next sorter direction tooltip. It will be set as the property of Tooltip if its type is object | boolean \| [Tooltip props](../tooltip/docs.md) & `{target?: 'full-header' \| 'sorter-icon' }` | \{ target: 'full-header' \} | - | × |
+| size | Size of table | `large` \| `middle` \| `small` | `large` |  | × |
+| sortDirections | Supported sort way, could be `ascend`, `descend` | Array | \[`ascend`, `descend`] | - | × |
+| sticky | Set sticky header and scroll bar | boolean \| `{offsetHeader?: number, offsetScroll?: number, getContainer?: () => HTMLElement}` | - | - | × |
+| tableLayout | The [table-layout](https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout) attribute of table element | - \| `auto` \| `fixed` | -<hr />`fixed` when header/columns are fixed, or using `column.ellipsis`  |  | × |
+| dropdownPrefixCls | - | string | - | - | × |
+| virtual | Support virtual list | boolean | - | - | × |
 
 ### Events
 

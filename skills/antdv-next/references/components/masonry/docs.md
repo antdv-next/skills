@@ -26,13 +26,13 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 
 ### Props
 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| columns | Number of columns, can be a fixed value or a responsive configuration | number \| &#123; xs?: number; sm?: number; md?: number; lg?: number; xl?: number; xxl?: number &#125; | 3 | - |
-| fresh | Whether to continuously monitor the size changes of child items | boolean | false | - |
-| gutter | Spacing, can be a fixed value, responsive configuration, or a configuration for horizontal and vertical spacing | [Gap](#gap) \| [[Gap](#gap), [Gap](#gap)] | 0 | - |
-| items | Masonry items | [MasonryItem](#masonryitem)[] | - | - |
-| itemRender | Custom item rendering function | (item: MasonryItem) =&gt; VueNode | - | - |
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| columns | Number of columns, can be a fixed value or a responsive configuration | number \| &#123; xs?: number; sm?: number; md?: number; lg?: number; xl?: number; xxl?: number &#125; | 3 | - | × |
+| fresh | Whether to continuously monitor the size changes of child items | boolean | false | - | × |
+| gutter | Spacing, can be a fixed value, responsive configuration, or a configuration for horizontal and vertical spacing | [Gap](#gap) \| [[Gap](#gap), [Gap](#gap)] | 0 | - | × |
+| items | Masonry items | [MasonryItem](#masonryitem)[] | - | - | × |
+| itemRender | Custom item rendering function | (item: MasonryItem) =&gt; VueNode | - | - | × |
 
 ### Events
 

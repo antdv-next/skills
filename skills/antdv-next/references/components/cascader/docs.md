@@ -33,31 +33,31 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 
 ### Props
 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| allowClear | Show clear button | boolean \| \{ clearIcon?: VueNode \} | true | - |
-| changeOnSelect | Change value on each selection if set to true (always works when `multiple` is `true`) | boolean | false | - |
-| disabled | Whether disabled select | boolean | false | - |
-| expandTrigger | expand current item when click or hover, one of `click` `hover` | string | `click` | - |
-| fieldNames | Custom field name for label and value and children | object | \{ label: `label`, value: `value`, children: `children` \} | - |
-| getPopupContainer | Parent Node which the selector should be rendered to. Default to `body`. When position issues happen, try to modify it into scrollable content and position it relative. [example](https://codepen.io/afc163/pen/zEjNOy?editors=0010) | function(triggerNode) | () =&gt; document.body | - |
-| loadData | To load option lazily, and it cannot work with `showSearch` | (selectedOptions) =&gt; void | - | - |
-| maxTagCount | Max tag count to show. `responsive` will cost render performance | number \| `responsive` | - | - |
-| maxTagPlaceholder | Placeholder for not showing tags | VueNode \| function(omittedValues) | - | - |
-| maxTagTextLength | Max tag text length to show | number | - | - |
-| multiple | Support multiple or not | boolean | - | - |
-| open | Set visible of cascader popup | boolean | - | - |
-| options | The data options of cascade | [Option](#option)\[] | - | - |
-| placeholder | The input placeholder | string | - | - |
-| placement | Use preset popup align config from builtinPlacements | `bottomLeft` `bottomRight` `topLeft` `topRight` | `bottomLeft` | - |
-| popupMenuColumnStyle | The style of the drop-down menu column | CSSProperties | - | - |
-| showCheckedStrategy | The way to show selected items in the box (only effective when `multiple` is `true`). `Cascader.SHOW_CHILD`: just show child treeNode. `Cascader.SHOW_PARENT`: just show parent treeNode (when all child treeNode under the parent treeNode are checked) | `Cascader.SHOW_PARENT` \| `Cascader.SHOW_CHILD` | `Cascader.SHOW_PARENT` | - |
-| showSearch | Whether show search input in single mode | boolean \| [Object](#showsearch) | false | - |
-| ~~searchValue~~ | Set search value, Need work with `showSearch` | string | - | - |
-| size | The input size | `large` \| `middle` \| `small` | - | - |
-| status | Set validation status | 'error' \| 'warning' | - | - |
-| value | The selected value, support `v-model:value` | string\[] \| number\[] | - | - |
-| variant | Variants of selector | `outlined` \| `borderless` \| `filled` \| `underlined` | `outlined` | - |
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| allowClear | Show clear button | boolean \| \{ clearIcon?: VueNode \} | true | - | × |
+| changeOnSelect | Change value on each selection if set to true (always works when `multiple` is `true`) | boolean | false | - | × |
+| disabled | Whether disabled select | boolean | false | - | × |
+| expandTrigger | expand current item when click or hover, one of `click` `hover` | string | `click` | - | × |
+| fieldNames | Custom field name for label and value and children | object | \{ label: `label`, value: `value`, children: `children` \} | - | × |
+| getPopupContainer | Parent Node which the selector should be rendered to. Default to `body`. When position issues happen, try to modify it into scrollable content and position it relative. [example](https://codepen.io/afc163/pen/zEjNOy?editors=0010) | function(triggerNode) | () =&gt; document.body | - | × |
+| loadData | To load option lazily, and it cannot work with `showSearch` | (selectedOptions) =&gt; void | - | - | × |
+| maxTagCount | Max tag count to show. `responsive` will cost render performance | number \| `responsive` | - | - | × |
+| maxTagPlaceholder | Placeholder for not showing tags | VueNode \| function(omittedValues) | - | - | × |
+| maxTagTextLength | Max tag text length to show | number | - | - | × |
+| multiple | Support multiple or not | boolean | - | - | × |
+| open | Set visible of cascader popup | boolean | - | - | × |
+| options | The data options of cascade | [Option](#option)\[] | - | - | × |
+| placeholder | The input placeholder | string | - | - | × |
+| placement | Use preset popup align config from builtinPlacements | `bottomLeft` `bottomRight` `topLeft` `topRight` | `bottomLeft` | - | × |
+| popupMenuColumnStyle | The style of the drop-down menu column | CSSProperties | - | - | × |
+| showCheckedStrategy | The way to show selected items in the box (only effective when `multiple` is `true`). `Cascader.SHOW_CHILD`: just show child treeNode. `Cascader.SHOW_PARENT`: just show parent treeNode (when all child treeNode under the parent treeNode are checked) | `Cascader.SHOW_PARENT` \| `Cascader.SHOW_CHILD` | `Cascader.SHOW_PARENT` | - | × |
+| showSearch | Whether show search input in single mode | boolean \| [Object](#showsearch) | false | - | × |
+| ~~searchValue~~ | Set search value, Need work with `showSearch` | string | - | - | × |
+| size | The input size | `large` \| `middle` \| `small` | - | - | × |
+| status | Set validation status | 'error' \| 'warning' | - | - | × |
+| value | The selected value, support `v-model:value` | string\[] \| number\[] | - | - | × |
+| variant | Variants of selector | `outlined` \| `borderless` \| `filled` \| `underlined` | `outlined` | - | ✓ |
 
 ### Events
 

@@ -1,8 +1,8 @@
 # Generation Info
 
 - Source: `repos/antdv-next`
-- Git SHA: `460867f0c10866b998ebec9a89c30aede171e4c2`
-- Generated: 2026-05-18
+- Git SHA: `774b3a874f28d20dcc72a767c3daf333ee5550e7`
+- Generated: 2026-06-12
 - Language: en-US
 - Source Pages Root: `docs/src/pages`
 - Token Metadata Source: upstream TypeScript declarations parsed locally in this repository

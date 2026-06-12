@@ -26,6 +26,7 @@ The differences with Select are:
 | Variants | demo/variant.md |
 | Customize clear button | demo/allowClear.md |
 | Custom semantic dom styling | demo/style-class.md |
+| Disabled custom input debug | demo/disabled-custom-debug.md |
 
 ## API
 
@@ -33,27 +34,27 @@ The differences with Select are:
 
 Common props ref：[Common props](../../docs/vue/common-props.md)
 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| allowClear | Show clear button | boolean \| &#123; clearIcon?: VueNode &#125; | false | - |
-| backfill | If backfill selected item the input when using keyboard | boolean | false | - |
-| defaultActiveFirstOption | Whether active first option by default | boolean | true | - |
-| disabled | Whether disabled select | boolean | false | - |
-| getPopupContainer | Parent node of the dropdown. Default to body, if you encountered positioning problems during scroll, try changing to the scrollable area and position relative to it | (triggerNode: HTMLElement) =&gt; HTMLElement | () =&gt; document.body | - |
-| labelRender | Customize selected label render | (props: LabelInValueType) =&gt; VueNode | - | - |
-| notFoundContent | Specify content to show when no result matches | VueNode | - | - |
-| open | Controlled open state of dropdown | boolean | - | - |
-| options | Select options. Will get better perf than jsx definition | &#123; label: VueNode; value: string &#125;[] | - | - |
-| optionRender | Customize the rendering dropdown options | (option: FlattenOptionData&lt;BaseOptionType&gt;, info: &#123; index: number &#125;) =&gt; VueNode | - | - |
-| placeholder | The placeholder of input | string | - | - |
-| popupMatchSelectWidth | Determine whether the dropdown menu and the select input are the same width. Default set `min-width` same as input. Will ignore when value less than select width. `false` will disable virtual scroll | boolean \| number | true | - |
-| popupRender | Customize dropdown content | (menu: VueNode) =&gt; VueNode | - | - |
-| showSearch | Search configuration | boolean \| [SearchConfig](#showsearch) | true | - |
-| size | The size of the input box | `large` \| `middle` \| `small` | - | - |
-| status | Set validation status | `error` \| `warning` | - | - |
-| value | Selected option, support `v-model:value` | string | - | - |
-| variant | Variants of input | `outlined` \| `borderless` \| `filled` \| `underlined` | `outlined` | - |
-| virtual | Disable virtual scroll when set to false | boolean | true | - |
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| allowClear | Show clear button | boolean \| &#123; clearIcon?: VueNode &#125; | false | - | × |
+| backfill | If backfill selected item the input when using keyboard | boolean | false | - | × |
+| defaultActiveFirstOption | Whether active first option by default | boolean | true | - | × |
+| disabled | Whether disabled select | boolean | false | - | × |
+| getPopupContainer | Parent node of the dropdown. Default to body, if you encountered positioning problems during scroll, try changing to the scrollable area and position relative to it | (triggerNode: HTMLElement) =&gt; HTMLElement | () =&gt; document.body | - | × |
+| labelRender | Customize selected label render | (props: LabelInValueType) =&gt; VueNode | - | - | × |
+| notFoundContent | Specify content to show when no result matches | VueNode | - | - | × |
+| open | Controlled open state of dropdown | boolean | - | - | × |
+| options | Select options. Will get better perf than jsx definition | &#123; label: VueNode; value: string &#125;[] | - | - | × |
+| optionRender | Customize the rendering dropdown options | (option: FlattenOptionData&lt;BaseOptionType&gt;, info: &#123; index: number &#125;) =&gt; VueNode | - | - | × |
+| placeholder | The placeholder of input | string | - | - | × |
+| popupMatchSelectWidth | Determine whether the dropdown menu and the select input are the same width. Default set `min-width` same as input. Will ignore when value less than select width. `false` will disable virtual scroll | boolean \| number | true | - | × |
+| popupRender | Customize dropdown content | (menu: VueNode) =&gt; VueNode | - | - | × |
+| showSearch | Search configuration | boolean \| [SearchConfig](#showsearch) | true | - | × |
+| size | The size of the input box | `large` \| `middle` \| `small` | - | - | × |
+| status | Set validation status | `error` \| `warning` | - | - | × |
+| value | Selected option, support `v-model:value` | string | - | - | × |
+| variant | Variants of input | `outlined` \| `borderless` \| `filled` \| `underlined` | `outlined` | - | × |
+| virtual | Disable virtual scroll when set to false | boolean | true | - | × |
 
 ### Events
 

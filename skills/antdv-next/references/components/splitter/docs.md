@@ -30,13 +30,13 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 ### Splitter
 
 #### Props 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| collapsibleIcon | Custom collapsible icon | &#123; start?: VueNode; end?: VueNode &#125; | - | 6.0.0 |
-| draggerIcon | Custom dragger icon | VueNode | - | 6.0.0 |
-| lazy | Lazy rendering mode | boolean | false | 5.23.0 |
-| orientation | Layout direction | `vertical` \| `horizontal` | `horizontal` | - |
-| vertical | Orientation, Simultaneously existing with `orientation`, `orientation` takes priority | boolean | false | - |
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| collapsibleIcon | Custom collapsible icon | &#123; start?: VueNode; end?: VueNode &#125; | - | 6.0.0 | × |
+| draggerIcon | Custom dragger icon | VueNode | - | 6.0.0 | × |
+| lazy | Lazy rendering mode | boolean | false | 5.23.0 | × |
+| orientation | Layout direction | `vertical` \| `horizontal` | `horizontal` | - | × |
+| vertical | Orientation, Simultaneously existing with `orientation`, `orientation` takes priority | boolean | false | - | × |
 
 #### Events 
 | Event | Description | Type | Version |

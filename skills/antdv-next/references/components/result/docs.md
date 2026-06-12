@@ -29,13 +29,13 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 
 ### Props
 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| extra | Operating area | VueNode | - |  |
-| icon | Custom back icon | VueNode | - |  |
-| status | Result status, decide icons and colors | `success` \| `error` \| `info` \| `warning` \| `404` \| `403` \| `500` | `info` |  |
-| subTitle | The subTitle | VueNode | - |  |
-| title | The title | VueNode | - |  |
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| extra | Operating area | VueNode | - |  | × |
+| icon | Custom back icon | VueNode | - |  | × |
+| status | Result status, decide icons and colors | `success` \| `error` \| `info` \| `warning` \| `404` \| `403` \| `500` | `info` |  | × |
+| subTitle | The subTitle | VueNode | - |  | × |
+| title | The title | VueNode | - |  | × |
 
 ### Slots
 

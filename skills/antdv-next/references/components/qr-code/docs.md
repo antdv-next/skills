@@ -28,21 +28,21 @@ Used when the text needs to be converted into a QR Code.
 
 Common props ref：[Common props](../../docs/vue/common-props.md)
 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| value | scanned text | string \| string[] | - | - |
-| type | render type | `canvas` \| `svg` | `canvas` | - |
-| icon | include image url (only image link are supported) | string | - | - |
-| size | QRCode size | number | 160 | - |
-| iconSize | include image size | number \| &#123; width: number; height: number &#125; | 40 | - |
-| color | QRCode Color | string | `#000` | - |
-| bgColor | QRCode Background Color | string | `transparent` | - |
-| marginSize | Quiet zone size (in modules). `0` means no margin | number | `0` | - |
-| bordered | Whether has border style | boolean | `true` | - |
-| errorLevel | Error Code Level | `'L'` \| `'M'` \| `'Q'` \| `'H'` | `'M'` | - |
-| boostLevel | If enabled, the Error Correction Level of the result may be higher than the specified Error Correction Level | boolean | true | - |
-| status | QRCode status | `'active'` \| `'expired'` \| `'loading'` \| `'scanned'` | `'active'` | - |
-| statusRender | custom status render | (info: StatusRenderInfo) =&gt; VueNode | - | - |
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| value | scanned text | string \| string[] | - | - | × |
+| type | render type | `canvas` \| `svg` | `canvas` | - | × |
+| icon | include image url (only image link are supported) | string | - | - | × |
+| size | QRCode size | number | 160 | - | × |
+| iconSize | include image size | number \| &#123; width: number; height: number &#125; | 40 | - | × |
+| color | QRCode Color | string | `#000` | - | × |
+| bgColor | QRCode Background Color | string | `transparent` | - | × |
+| marginSize | Quiet zone size (in modules). `0` means no margin | number | `0` | - | × |
+| bordered | Whether has border style | boolean | `true` | - | × |
+| errorLevel | Error Code Level | `'L'` \| `'M'` \| `'Q'` \| `'H'` | `'M'` | - | × |
+| boostLevel | If enabled, the Error Correction Level of the result may be higher than the specified Error Correction Level | boolean | true | - | × |
+| status | QRCode status | `'active'` \| `'expired'` \| `'loading'` \| `'scanned'` | `'active'` | - | × |
+| statusRender | custom status render | (info: StatusRenderInfo) =&gt; VueNode | - | - | × |
 
 ### Events
 

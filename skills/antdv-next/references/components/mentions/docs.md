@@ -22,6 +22,7 @@ When you need to mention someone or something.
 | autoSize | demo/auto-size.md |
 | Status | demo/status.md |
 | Custom semantic dom styling | demo/style-class.md |
+| autoSize debug | demo/autosize-textarea-debug.md |
 
 ## API
 
@@ -29,19 +30,19 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 
 ### Props
 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| loading | - | boolean | - | - |
-| status | Set validation status | InputStatus | - | - |
-| options | Option Configuration | MentionsOptionProps[] | \[] | - |
-| popupClassName | - | string | - | - |
-| variant | Variants of Input | Variant | `outlined` | - |
-| classes | Customize class for each semantic structure inside the component. Supports object or function. | MentionsClassNamesType | - | - |
-| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | MentionsStylesType | - | - |
-| size | - | SizeType | - | - |
-| labelRender | - | (ctx: &#123; option: MentionsOptionProps, index: number &#125;) =&gt; any | - | - |
-| allowClear | If allow to remove mentions content with clear icon | boolean \| &#123;     clearIcon?: VueNode   &#125; | false | - |
-| disabled | - | boolean | - | - |
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| loading | - | boolean | - | - | × |
+| status | Set validation status | InputStatus | - | - | × |
+| options | Option Configuration | MentionsOptionProps[] | \[] | - | × |
+| popupClassName | - | string | - | - | × |
+| variant | Variants of Input | Variant | `outlined` | - | ✓ |
+| classes | Customize class for each semantic structure inside the component. Supports object or function. | MentionsClassNamesType | - | - | ✓ |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function. | MentionsStylesType | - | - | ✓ |
+| size | - | SizeType | - | - | × |
+| labelRender | - | (ctx: &#123; option: MentionsOptionProps, index: number &#125;) =&gt; any | - | - | × |
+| allowClear | If allow to remove mentions content with clear icon | boolean \| &#123;     clearIcon?: VueNode   &#125; | false | - | ✓ |
+| disabled | - | boolean | - | - | × |
 
 ### Events
 

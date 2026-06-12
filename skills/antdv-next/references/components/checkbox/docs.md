@@ -23,14 +23,14 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 ### Checkbox
 
 #### Props 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| checked | Specifies whether the checkbox is selected, support `v-model:checked` | string \| number \| boolean \| object | false | - |
-| checkedValue | The value when checked | string \| number \| boolean \| object | true | - |
-| defaultChecked | Whether to set the initial state | string \| number \| boolean \| object | false | - |
-| disabled | If disable checkbox | boolean | false | - |
-| indeterminate | The indeterminate checked state of checkbox | boolean | false | - |
-| unCheckedValue | The value when unchecked | string \| number \| boolean \| object | false | - |
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| checked | Specifies whether the checkbox is selected, support `v-model:checked` | string \| number \| boolean \| object | false | - | × |
+| checkedValue | The value when checked | string \| number \| boolean \| object | true | - | × |
+| defaultChecked | Whether to set the initial state | string \| number \| boolean \| object | false | - | × |
+| disabled | If disable checkbox | boolean | false | - | × |
+| indeterminate | The indeterminate checked state of checkbox | boolean | false | - | × |
+| unCheckedValue | The value when unchecked | string \| number \| boolean \| object | false | - | × |
 
 #### Events 
 | Event | Description | Type | Version |

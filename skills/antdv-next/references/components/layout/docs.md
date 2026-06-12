@@ -86,9 +86,9 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 The wrapper.
 
 #### Props 
-| Property | Description | Type | Default |
-| --- | --- | --- | --- |
-| hasSider | Whether contain Sider in children, don't have to assign it normally. Useful in ssr avoid style flickering | boolean | - |
+| Property | Description | Type | Default | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- |
+| hasSider | Whether contain Sider in children, don't have to assign it normally. Useful in ssr avoid style flickering | boolean | - | × |
 
 ### LayoutSider
 

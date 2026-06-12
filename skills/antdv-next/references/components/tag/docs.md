@@ -28,18 +28,18 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 ### Tag
 
 #### Props 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| closable | Whether the Tag can be closed | boolean | false | - |
-| closeIcon | Custom close icon. Setting to `null` or `false` hides the close button | VueNode | - | 4.4.0 |
-| color | Color of the Tag | string | - | - |
-| classes | Customize class for each semantic structure inside the component. Supports object or function | TagClassNamesType | - | - |
-| disabled | Whether the tag is disabled | boolean | false | 6.0.0 |
-| href | The address to jump when clicking, when specified the tag will be rendered as `<a>` tag | string | - | 6.0.0 |
-| icon | Set the icon of tag | VueNode | - | - |
-| styles | Customize inline style for each semantic structure inside the component. Supports object or function | TagStylesType | - | - |
-| target | Same as target attribute of `<a>`, works when href is specified | string | - | 6.0.0 |
-| variant | Variant of the tag | `filled` \| `solid` \| `outlined` | `filled` | 6.0.0 |
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| closable | Whether the Tag can be closed | boolean | false | - | ✓ |
+| closeIcon | Custom close icon. Setting to `null` or `false` hides the close button | VueNode | - | 4.4.0 | ✓ |
+| color | Color of the Tag | string | - | - | × |
+| classes | Customize class for each semantic structure inside the component. Supports object or function | TagClassNamesType | - | - | ✓ |
+| disabled | Whether the tag is disabled | boolean | false | 6.0.0 | × |
+| href | The address to jump when clicking, when specified the tag will be rendered as `<a>` tag | string | - | 6.0.0 | × |
+| icon | Set the icon of tag | VueNode | - | - | × |
+| styles | Customize inline style for each semantic structure inside the component. Supports object or function | TagStylesType | - | - | ✓ |
+| target | Same as target attribute of `<a>`, works when href is specified | string | - | 6.0.0 | × |
+| variant | Variant of the tag | `filled` \| `solid` \| `outlined` | `filled` | 6.0.0 | ✓ |
 
 #### Events 
 | Event | Description | Type | Version |

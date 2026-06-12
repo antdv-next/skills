@@ -27,7 +27,7 @@ const items = computed(() =>
       label: `Tab-${id}`,
       key: id,
       disabled: i === 28,
-      children: `Content of tab ${id}`,
+      content: `Content of tab ${id}`,
     }
   }),
 )

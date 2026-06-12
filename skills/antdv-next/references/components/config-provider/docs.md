@@ -75,7 +75,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | renderEmpty | Set empty content of components. Ref [Empty](../empty/docs.md/) | (componentName?: string) => any | - |
 
 ### ConfigProvider.config() 
-Setting `Modal`, `Message`, `Notification` static config. Not work on hooks.
+Setting `Modal`, `Message`, `Notification` static config. Does not work on hooks.
 
 ```ts
 import { App, ConfigProvider } from 'antdv-next'
@@ -111,26 +111,80 @@ const { componentDisabled, componentSize } = config.value
 
 ### Component Config
 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| affix | Set Affix common props | &#123; class?: string, style?: CSSProperties &#125; | - | - |
-| alert | Set Alert common props | &#123; class?: string, style?: CSSProperties, closeIcon?: VueNode, successIcon?: VueNode, infoIcon?: VueNode, warningIcon?: VueNode, errorIcon?: VueNode &#125; | - | - |
-| avatar | Set Avatar common props | &#123; class?: string, style?: CSSProperties &#125; | - | - |
-| carousel | Set Carousel common props | &#123; class?: string, style?: CSSProperties &#125; | - | - |
-| cascader | Set Cascader common props | &#123; class?: string, style?: CSSProperties &#125; | - | - |
-| rangePicker | Set RangePicker common props | &#123; class?: string, style?: CSSProperties &#125; | - | - |
-| empty | Set Empty common props | &#123; class?: string, style?: CSSProperties, classes?: [EmptyProps["classes"]](../empty/docs.md#api), styles?: [EmptyProps["styles"]](../empty/docs.md#api), image?: VueNode &#125; | - | - |
-| flex | Set Flex common props | &#123; class?: string, style?: CSSProperties, vertical?: boolean &#125; | - | - |
-| input | Set Input common props | &#123; autoComplete?: string, class?: string, style?: CSSProperties, classes?: [InputConfig["classes"]](../input/docs.md#semantic-input), styles?: [InputConfig["styles"]](../input/docs.md#semantic-input), allowClear?: boolean \| &#123; clearIcon?: VueNode &#125; &#125; | - | - |
-| otp | Set OTP common props | &#123; class?: string, style?: CSSProperties, classes?: [OTPConfig["classes"]](../input/docs.md#semantic-otp), styles?: [OTPConfig["styles"]](../input/docs.md#semantic-otp) &#125; | - | - |
-| inputSearch | Set Search common props | &#123; class?: string, style?: CSSProperties, classes?: [InputSearchConfig["classes"]](../input/docs.md#semantic-search), styles?: [InputSearchConfig["styles"]](../input/docs.md#semantic-search) &#125; | - | - |
-| textArea | Set TextArea common props | &#123; autoComplete?: string, class?: string, style?: CSSProperties, classes?: [TextAreaConfig["classes"]](../input/docs.md#semantic-textarea), styles?: [TextAreaConfig["styles"]](../input/docs.md#semantic-textarea), allowClear?: boolean \| &#123; clearIcon?: VueNode &#125; &#125; | - | - |
-| layout | Set Layout common props | &#123; class?: string, style?: CSSProperties &#125; | - | - |
-| list | Set List common props | &#123; class?: string, style?: CSSProperties, item?: &#123; classes: [ListItemProps["classes"]](../list/docs.md#listitem), styles: [ListItemProps["styles"]](../list/docs.md#listitem) &#125; &#125; | - | - |
-| menu | Set Menu common props | &#123; class?: string, style?: CSSProperties, expandIcon?: VueNode \| (props) => VueNode &#125; | - | - |
-| rate | Set Rate common props | &#123; class?: string, style?: CSSProperties &#125; | - | - |
-| typography | Set Typography common props | &#123; class?: string, style?: CSSProperties &#125; | - | - |
-| wave | Config wave effect | &#123; disabled?: boolean, showEffect?: (node: HTMLElement, info: &#123; className, token, component &#125;) => void &#125; | - | - |
+The following config keys set common props for corresponding components or global effects. See the related APIs for details:
+
+- `alert`: [Alert](../alert/docs.md#api)
+- `anchor`: [Anchor](../anchor/docs.md#api)
+- `app`: [App](../app/docs.md#api)
+- `avatar`: [Avatar](../avatar/docs.md#api)
+- `badge`: [Badge](../badge/docs.md#api)
+- `borderBeam`: [BorderBeam](../border-beam/docs.md#api)
+- `breadcrumb`: [Breadcrumb](../breadcrumb/docs.md#api)
+- `button`: [Button](../button/docs.md#api)
+- `calendar`: [Calendar](../calendar/docs.md#api)
+- `card`: [Card](../card/docs.md#api)
+- `cardMeta`: [Card.Meta](../card/docs.md#cardmeta)
+- `carousel`: [Carousel](../carousel/docs.md#api)
+- `cascader`: [Cascader](../cascader/docs.md#api)
+- `checkbox`: [Checkbox](../checkbox/docs.md#api)
+- `collapse`: [Collapse](../collapse/docs.md#api)
+- `colorPicker`: [ColorPicker](../color-picker/docs.md#api)
+- `datePicker`: [DatePicker](../date-picker/docs.md#api)
+- `descriptions`: [Descriptions](../descriptions/docs.md#api)
+- `divider`: [Divider](../divider/docs.md#api)
+- `drawer`: [Drawer](../drawer/docs.md#api)
+- `dropdown`: [Dropdown](../dropdown/docs.md#api)
+- `empty`: [Empty](../empty/docs.md#api)
+- `flex`: [Flex](../flex/docs.md#api)
+- `floatButton`: [FloatButton](../float-button/docs.md#api)
+- `floatButtonGroup`: [FloatButton.Group](../float-button/docs.md#floatbuttongroup)
+- `form`: [Form](../form/docs.md#api)
+- `image`: [Image](../image/docs.md#api)
+- `input`: [Input](../input/docs.md#input)
+- `inputNumber`: [InputNumber](../input-number/docs.md#api)
+- `inputSearch`: [Input.Search](../input/docs.md#input-search)
+- `layout`: [Layout](../layout/docs.md#api)
+- `masonry`: [Masonry](../masonry/docs.md#api)
+- `mentions`: [Mentions](../mentions/docs.md#api)
+- `menu`: [Menu](../menu/docs.md#api)
+- `message`: [Message](../message/docs.md#api)
+- `modal`: [Modal](../modal/docs.md#api)
+- `notification`: [Notification](../notification/docs.md#api)
+- `otp`: [Input.OTP](../input/docs.md#input-otp)
+- `pagination`: [Pagination](../pagination/docs.md#api)
+- `popconfirm`: [Popconfirm](../popconfirm/docs.md#api)
+- `popover`: [Popover](../popover/docs.md#api)
+- `progress`: [Progress](../progress/docs.md#api)
+- `qrcode`: [QRCode](../qr-code/docs.md#api)
+- `radio`: [Radio](../radio/docs.md#api)
+- `rangePicker`: [RangePicker](../date-picker/docs.md#rangepicker)
+- `rate`: [Rate](../rate/docs.md#api)
+- `result`: [Result](../result/docs.md#api)
+- `ribbon`: [Badge.Ribbon](../badge/docs.md#api)
+- `segmented`: [Segmented](../segmented/docs.md#api)
+- `select`: [Select](../select/docs.md#api)
+- `skeleton`: [Skeleton](../skeleton/docs.md#api)
+- `slider`: [Slider](../slider/docs.md#api)
+- `space`: [Space](../space/docs.md#api)
+- `spin`: [Spin](../spin/docs.md#api)
+- `splitter`: [Splitter](../splitter/docs.md#api)
+- `statistic`: [Statistic](../statistic/docs.md#api)
+- `steps`: [Steps](../steps/docs.md#api)
+- `switch`: [Switch](../switch/docs.md#api)
+- `table`: [Table](../table/docs.md#api)
+- `tabs`: [Tabs](../tabs/docs.md#api)
+- `tag`: [Tag](../tag/docs.md#api)
+- `textArea`: [Input.TextArea](../input/docs.md#input-textarea)
+- `timeline`: [Timeline](../timeline/docs.md#api)
+- `timePicker`: [TimePicker](../time-picker/docs.md#api)
+- `tooltip`: [Tooltip](../tooltip/docs.md#api)
+- `tour`: [Tour](../tour/docs.md#api)
+- `transfer`: [Transfer](../transfer/docs.md#api)
+- `tree`: [Tree](../tree/docs.md#api)
+- `treeSelect`: [TreeSelect](../tree-select/docs.md#api)
+- `typography`: [Typography](../typography/docs.md#api)
+- `upload`: [Upload](../upload/docs.md#api)
+- `wave`: [WaveConfig](#api)
 
 ## FAQ
 

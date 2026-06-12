@@ -27,16 +27,16 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 ### Skeleton
 
 #### Props 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| active | Show animation effect | boolean | false | - |
-| avatar | Show avatar placeholder | boolean \| [SkeletonAvatarProps](#skeletonavatarprops) | false | - |
-| loading | Display the skeleton when true | boolean | - | - |
-| paragraph | Show paragraph placeholder | boolean \| [SkeletonParagraphProps](#skeletonparagraphprops) | true | - |
-| round | Show paragraph and title radius when true | boolean | false | - |
-| title | Show title placeholder | boolean \| [SkeletonTitleProps](#skeletontitleprops) | true | - |
-| classes | Customize class for each semantic structure inside the component | SkeletonClassNamesType | - | - |
-| styles | Customize inline style for each semantic structure inside the component | SkeletonStylesType | - | - |
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| active | Show animation effect | boolean | false | - | × |
+| avatar | Show avatar placeholder | boolean \| [SkeletonAvatarProps](#skeletonavatarprops) | false | - | × |
+| loading | Display the skeleton when true | boolean | - | - | × |
+| paragraph | Show paragraph placeholder | boolean \| [SkeletonParagraphProps](#skeletonparagraphprops) | true | - | × |
+| round | Show paragraph and title radius when true | boolean | false | - | × |
+| title | Show title placeholder | boolean \| [SkeletonTitleProps](#skeletontitleprops) | true | - | × |
+| classes | Customize class for each semantic structure inside the component | SkeletonClassNamesType | - | - | ✓ |
+| styles | Customize inline style for each semantic structure inside the component | SkeletonStylesType | - | - | ✓ |
 
 ### SkeletonAvatar
 

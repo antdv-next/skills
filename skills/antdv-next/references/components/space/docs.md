@@ -35,14 +35,14 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 ### Space
 
 #### Props 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| align | Align items | `start` \| `end` \| `center` \| `baseline` | - | 4.2.0 |
-| orientation | The space direction | `vertical` \| `horizontal` | `horizontal` | - |
-| separator | Set separator | VueNode | - | - |
-| size | The space size | [Size](#size) \| [[Size](#size), [Size](#size)] | `small` | 4.1.0 \| Array: 4.9.0 |
-| vertical | Orientation, Simultaneously configure with `orientation` and prioritize `orientation` | boolean | false | - |
-| wrap | Auto wrap line, when `horizontal` effective | boolean | false | 4.9.0 |
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| align | Align items | `start` \| `end` \| `center` \| `baseline` | - | 4.2.0 | × |
+| orientation | The space direction | `vertical` \| `horizontal` | `horizontal` | - | × |
+| separator | Set separator | VueNode | - | - | × |
+| size | The space size | [Size](#size) \| [[Size](#size), [Size](#size)] | `small` | 4.1.0 \| Array: 4.9.0 | ✓ |
+| vertical | Orientation, Simultaneously configure with `orientation` and prioritize `orientation` | boolean | false | - | × |
+| wrap | Auto wrap line, when `horizontal` effective | boolean | false | 4.9.0 | × |
 
 #### Slots 
 | Slot | Description | Type | Version |

@@ -27,13 +27,13 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 
 ### Props
 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| dropdownIcon | Custom dropdown icon | VueNode | `<DownOutlined />` | - |
-| itemRender | Custom item renderer, work with vue-router | (route, params, routes, paths) =&gt; VueNode | - | - |
-| params | Routing parameters | object | - | - |
-| items | The routing stack information of router | [ItemType\[\]](#itemtype) | - | - |
-| separator | Custom separator | VueNode | `/` | - |
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| dropdownIcon | Custom dropdown icon | VueNode | `<DownOutlined />` | - | ✓ |
+| itemRender | Custom item renderer, work with vue-router | (route, params, routes, paths) =&gt; VueNode | - | - | × |
+| params | Routing parameters | object | - | - | × |
+| items | The routing stack information of router | [ItemType\[\]](#itemtype) | - | - | × |
+| separator | Custom separator | VueNode | `/` | - | ✓ |
 
 ### Events
 

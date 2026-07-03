@@ -13,6 +13,9 @@ description: High-performance form component with data domain management. Includ
 | --- | --- |
 | Basic Usage | demo/basic.md |
 | Form methods | demo/control-hooks.md |
+| useForm instance | demo/use-form.md |
+| Connect form by name | demo/use-form-name.md |
+| Bind form via ref | demo/use-form-ref.md |
 | Form Layout | demo/layout.md |
 | Form mix layout | demo/layout-multiple.md |
 | Form disabled | demo/disabled.md |
@@ -24,6 +27,7 @@ description: High-performance form component with data domain management. Includ
 | Watch Hooks | demo/useWatch.md |
 | Validate Trigger | demo/validate-trigger.md |
 | Validate Only | demo/validate-only.md |
+| Validate with zod | demo/form-zod.md |
 | Path Prefix | demo/form-item-path.md |
 | Dynamic Form Item | demo/dynamic-form-item.md |
 | Dynamic Form nest Items | demo/dynamic-form-items.md |

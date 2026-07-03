@@ -22,6 +22,7 @@ Used to input a value within a specified range.
 | Draggable Track | demo/draggableTrack.md |
 | Multiple Handles | demo/multiple.md |
 | Dynamic edit nodes | demo/editable.md |
+| Disable specific handles | demo/disabled-handle.md |
 | Customize Semantic Elements | demo/style-class.md |
 
 ## API
@@ -32,7 +33,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
 | --- | --- | --- | --- | --- | --- |
 | defaultValue | The default value of the slider. When `range` is false, use number, otherwise, use [number, number] | number \| [number, number] | 0 \| [0, 0] | - | × |
-| disabled | If true, the slider will not be interactive | boolean | false | - | × |
+| disabled | If true, the slider will not be interactive. Pass `boolean[]` to disable specific handles individually in Range mode | boolean \| boolean[] | false | boolean[]: 1.4.0 | × |
 | dots | Whether the thumb can only be dragged to tick marks | boolean | false | - | × |
 | included | Takes effect when `marks` is not null. True means containment and false means coordinative | boolean | true | - | × |
 | keyboard | Support using keyboard to move handlers | boolean | true | 5.2.0+ | × |

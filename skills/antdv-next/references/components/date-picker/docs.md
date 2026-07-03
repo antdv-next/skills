@@ -84,7 +84,7 @@ The following APIs are shared by DatePicker, RangePicker.
 | allowClear | Customize clear button | boolean \| \{ clearIcon?: VueNode \} | true | - | ✓ |
 | dateRender | Custom rendering function for date cells, >= 5.4.0 use `cellRender` instead. | function(currentDate: dayjs, today: dayjs) => VueNode | - | - | × |
 | cellRender | Custom rendering function for picker cells | (current: dayjs, info: { originNode: VueNode, today: DateType, range?: 'start' \| 'end', type: PanelMode, locale?: Locale, subType?: 'hour' \| 'minute' \| 'second' \| 'meridiem' }) => VueNode | - | - | × |
-| components | Custom panels | Record<Panel \| 'input', Component> | - | - | × |
+| components | Custom panels. A custom panel component should set `inheritAttrs: false`; otherwise the picker-injected props (e.g. `prefixCls`) fall through to its root node, causing child components (such as Flex) to emit styles under the wrong prefix and break the panel layout | Record<Panel \| 'input', Component> | - | - | × |
 | defaultOpen | Initial open state of picker | boolean | - | - | × |
 | disabled | Determine whether the DatePicker is disabled | boolean | false | - | × |
 | disabledDate | Specify the date that cannot be selected | (currentDate: dayjs, info: { from?: dayjs, type: Picker }) => boolean | - | - | × |
@@ -237,6 +237,7 @@ export type FormatType
 | panelChange | Callback when picker panel mode is changed | (value: Dayjs, mode: PickerMode) => void | - |
 | openChange | Callback function, can be executed whether the popup calendar is popped up or closed | (open: boolean) => void | - |
 | ok | Callback when click ok button | () => void | - |
+| clear | Callback when click clear button | () => void | 1.4.0 |
 | select | - | (date: Dayjs) => void | - |
 | focus | Trigger when get focus | (event: FocusEvent, info: { range: 'start' \| 'end' }) => void | - |
 | blur | Trigger when lose focus | (event: FocusEvent, info: { range: 'start' \| 'end' }) => void | - |

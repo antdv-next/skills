@@ -705,14 +705,15 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 ### tabs
 
 - Component: `tabs`
-- Semantic nodes: 6
+- Semantic nodes: 7
 - Source demo: `docs/src/pages/components/tabs/demo/_semantic.vue`
 
 - `root`: Root element with basic tab container styles, layout and direction control
 - `header`: Header element with tab navigation header layout, background, borders and other styles
 - `item`: Item element with relative positioning, padding, colors, text ellipsis, border-radius, transitions and other tab item styles and interactive effects
 - `indicator`: Indicator element with indicator bar color, position, dimensions, transitions and other active state indication styles
-- `content`: Content element with tab content panel layout, padding and other content display styles
+- `body`: Body element with tab panel container layout, animation and size control styles
+- `content`: Content element with single tab panel layout, padding and other content display styles
 - `popup`:
   - `root`: Popup menu element with dropdown absolute positioning, z-index, display control, max-height, scrolling and other styles
 

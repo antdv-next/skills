@@ -16,7 +16,7 @@ const lineStyle = {
   lineHeight: '28px',
 }
 
-const classNames = computed(() => ({
+const classes = computed(() => ({
   container: 'custom-modal-container',
 }))
 
@@ -47,12 +47,12 @@ const stylesFn: ModalProps['styles'] = {
 
 const sharedProps = computed<ModalProps>(() => ({
   centered: true,
-  classes: classNames.value,
+  classes: classes.value,
 }))
 </script>
 
 <template>
-  <a-flex gap="middle">
+  <a-flex gap="medium">
     <a-button @click="modalOpen = true">
       Open Style Modal
     </a-button>

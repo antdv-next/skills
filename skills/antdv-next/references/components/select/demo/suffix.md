@@ -2,7 +2,7 @@
 
 ## Description (en-US)
 
-Custom `prefix` and `suffixIcon`.
+Custom `prefix` and `suffix`.
 
 ## Source
 
@@ -49,7 +49,7 @@ function handleChange(val: string | string[]) {
       :options="options"
       @change="handleChange"
     >
-      <template #suffixIcon>
+      <template #suffix>
         <SmileOutlined />
       </template>
     </a-select>
@@ -60,7 +60,7 @@ function handleChange(val: string | string[]) {
       disabled
       :options="[{ value: 'lucy', label: 'Lucy' }]"
     >
-      <template #suffixIcon>
+      <template #suffix>
         <MehOutlined />
       </template>
     </a-select>
@@ -82,7 +82,7 @@ function handleChange(val: string | string[]) {
       :options="options"
       @change="handleChange"
     >
-      <template #suffixIcon>
+      <template #suffix>
         <SmileOutlined />
       </template>
     </a-select>
@@ -94,7 +94,7 @@ function handleChange(val: string | string[]) {
       disabled
       :options="[{ value: 'lucy', label: 'Lucy' }]"
     >
-      <template #suffixIcon>
+      <template #suffix>
         <MehOutlined />
       </template>
     </a-select>

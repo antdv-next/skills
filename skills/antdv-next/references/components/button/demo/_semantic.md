@@ -4,7 +4,7 @@
 
 ```vue
 <script setup lang="ts">
-import { AntDesignOutlined } from '@antdv-next/icons'
+import { AntdvNextOutlined } from '@antdv-next/icons'
 import { computed } from 'vue'
 import { SemanticPreview } from '@/components/semantic'
 import { useComponentLocale } from '@/composables/use-locale'
@@ -27,7 +27,7 @@ const semantics = computed(() => [
     <template #default="{ classes }">
       <a-button type="primary" :classes="classes">
         <template #icon>
-          <AntDesignOutlined />
+          <AntdvNextOutlined />
         </template>
         Antdv Next
       </a-button>

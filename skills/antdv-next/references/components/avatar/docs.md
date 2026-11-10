@@ -13,6 +13,7 @@ description: Used to represent users or things, supporting the display of images
 | Autoset Font Size | demo/dynamic.md |
 | With Badge | demo/badge.md |
 | Avatar.Group | demo/group.md |
+| maxCount includes overflow | demo/max-count.md |
 | Responsive Size | demo/responsive.md |
 
 ## API
@@ -53,5 +54,5 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | --- | --- | --- | --- | --- |
 | prefixCls | - | string | - | - |
 | max | - | &#123;     count?: number     style?: CSSProperties     popover?: PopoverProps   &#125; | - | - |
-| size | The size of the avatar | AvatarSize | `default` | - |
+| size | The size of the avatar | AvatarSize | `medium` | - |
 | shape | The shape of avatar | 'circle' \| 'square' | `circle` | - |

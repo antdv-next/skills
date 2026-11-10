@@ -64,7 +64,7 @@ const stylesCardMeta = {
 </script>
 
 <template>
-  <a-flex gap="middle">
+  <a-flex gap="medium">
     <a-card
       title="Object Card"
       :classes="classes"

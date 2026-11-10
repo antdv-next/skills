@@ -64,6 +64,7 @@ const columns = [
 | Size | demo/size.md |
 | Sticky Header | demo/sticky.md |
 | Fixed Header | demo/fixed-header.md |
+| Auto Height | demo/auto-height.md |
 | Fixed Columns | demo/fixed-columns.md |
 | Fixed Columns & Header | demo/fixed-columns-header.md |
 | Wide Fixed Columns | demo/fixed-gapped-columns.md |
@@ -74,6 +75,7 @@ const columns = [
 | Summary | demo/summary.md |
 | Custom Empty | demo/custom-empty.md |
 | Custom Filter Panel | demo/custom-filter-panel.md |
+| Close Custom Filter Panel | demo/custom-filter-close.md |
 | Filter Search | demo/filter-search.md |
 | Tree Filter | demo/filter-in-tree.md |
 | Sorting & Filtering | demo/head.md |
@@ -88,6 +90,7 @@ const columns = [
 | Ellipsis | demo/ellipsis.md |
 | Custom Ellipsis Tooltip | demo/ellipsis-custom-tooltip.md |
 | Expand | demo/expand.md |
+| Expand all rows | demo/expand-all.md |
 | Expand Sticky | demo/expand-sticky.md |
 | Nested Table | demo/nested-table.md |
 | Tree Data | demo/tree-data.md |
@@ -111,11 +114,12 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | bordered | Whether to show all table borders | boolean | false | - | × |
 | column | Default props for every column. See [Column](#column). It only applies when the column does not define the same property. | Partial\<[ColumnType](#column)\> | - | - | ✓ |
 | columns |  Columns of table | [ColumnsType](#column)\[\] | - | - | × |
-| components | Override default table elements | [components](#components) | - | - | × |
+| components | Override default table elements, including row and expand-all icons through `ExpandIcon` | [components](#components) | - | `ExpandIcon`: 1.7.0 | × |
 | dataSource | Data record array to be displayed | object[] | - | - | × |
 | expandable | Config expandable content | [expandable](#expandable) | - |  | ✓ |
+| footer | Table footer renderer. You can also use the `#footer` slot. | VueNode \| function(currentPageData) | - | - | × |
 | getPopupContainer | The render container of dropdowns in table| (triggerNode) => HTMLElement | () => TableHtmlElement | - | × |
-| loading | Loading status of table | boolean \| [Spin Props](../spin/docs.md#props) | false | - | × |
+| loading | Loading status of table | boolean \| [Spin Props](../spin/docs.md/#props) | false | - | × |
 | locale | The i18n text including filter, sort, empty text, etc | object | [默认值](https://github.com/ant-design/ant-design/blob/6dae4a7e18ad1ba193aedd5ab6867e1d823e2aa4../locale/docs.md/zh_CN.tsx#L20-L37) | - | × |
 | pagination |Config of pagination. You can ref table pagination [config](#pagination) or full [`pagination`](../pagination/docs.md/) document, hide it by setting it to `false` | false \| TablePaginationConfig | - | - | × |
 | rowClassName | Row's className | function(record, index): string | - |  | × |
@@ -124,8 +128,8 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | rowHoverable | Row hover | boolean | true | - | × |
 | scroll | Whether the table can be scrollable, [config](#scroll) | object | - | - | ✓ |
 | showHeader | Whether to show table header | boolean | true | - | × |
-| showSorterTooltip | The header show next sorter direction tooltip. It will be set as the property of Tooltip if its type is object | boolean \| [Tooltip props](../tooltip/docs.md) & `{target?: 'full-header' \| 'sorter-icon' }` | \{ target: 'full-header' \} | - | × |
-| size | Size of table | `large` \| `middle` \| `small` | `large` |  | × |
+| showSorterTooltip | The header show next sorter direction tooltip. It will be set as the property of Tooltip if its type is object | boolean \| [Tooltip props](../tooltip/docs.md/) & `{target?: 'full-header' \| 'sorter-icon' }` | \{ target: 'full-header' \} | - | × |
+| size | Size of table | `large` \| `medium` \| `small` | `large` |  | × |
 | sortDirections | Supported sort way, could be `ascend`, `descend` | Array | \[`ascend`, `descend`] | - | × |
 | sticky | Set sticky header and scroll bar | boolean \| `{offsetHeader?: number, offsetScroll?: number, getContainer?: () => HTMLElement}` | - | - | × |
 | summary | Summary content renderer. You can also use the `#summary` slot. | VueNode \| function(currentPageData) | - | - | × |
@@ -141,6 +145,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | change | Callback executed when pagination, filters or sorter is changed | (     pagination: TablePaginationConfig,     filters: Record&lt;string, FilterValue \| null&gt;,     sorter: SorterResult&lt;RecordType&gt; \| SorterResult&lt;RecordType&gt;[],     extra: TableCurrentDataSource&lt;RecordType&gt;,   ) =&gt; void | - |
 | update:expandedRowKeys | - | (keys: readonly Key[]) =&gt; void | - |
 | scroll | Whether the table can be scrollable, [config](#scroll) | NonNullable&lt;VcTableProps['onScroll']&gt; | - |
+| resizeColumn | Fired once per drag after a `resizable` column is resized; `columnKey` is the key the width is tracked by (the column `key`, or a positional key when unset) | (width: number, column: ColumnType, columnKey: Key) =&gt; void | 1.5.5 |
 | headerRow | Set props on per header row | function(columns, index) | - | - |
 | row | Set props on per row | function(record, index) | - | - |
 
@@ -221,6 +226,7 @@ One of the Table `columns` prop for describing the table's columns, Column has t
 | fixed | (IE not support) Set column to be fixed: `true`(same as `'start'`) `'start'` `'end'` | boolean \| string | false | - |
 | key | Unique key of this column, you can ignore this prop if you've set a unique `dataIndex` | string | - |  |
 | render | Renderer of the table cell. `value` is the value of current cell; `record` is the value object of current row; `index` is the row number. The return value should be a VueNode | (value: V, record: T, index: number): VueNode | - | - |
+| resizable | Whether the column can be resized by dragging its header edge; leaf columns only. Enables horizontal scroll and `tableLayout="fixed"`. Widths are tracked by `key`, so give the column a stable `key` when columns can be added, removed or reordered; use numeric `width` values | boolean | false | 1.5.5 |
 | responsive | The list of breakpoints at which to display this column. Always visible if not set | [Breakpoint](https://github.com/antdv-next/antdv-next/blob/main/packages/antdv-next/src/_util/responsiveObserver.ts#L9)\[] | - | - |
 | rowScope | Set scope attribute for all cells in this column | `row` \| `rowgroup` | - | - |
 | shouldCellUpdate | Control cell render logic | (record, prevRecord) => boolean | - | - |
@@ -231,7 +237,7 @@ One of the Table `columns` prop for describing the table's columns, Column has t
 | sortIcon | Customized sort icon | (props: \{ sortOrder \}) => VueNode | - | - |
 | title | Title of this column | VueNode \| (\{ sortColumns, filters \}) => VueNode | - | - |
 | width | Width of this column ([width not working?](https://github.com/ant-design/ant-design/issues/13825#issuecomment-449889241)) | string \| number | - | - |
-| minWidth | Min width of this column, only works when `tableLayout="auto"` | number | - | - |
+| minWidth | Min width of this column; the width floor when `tableLayout="auto"` and the drag lower bound when `resizable` (default 40) | number | - | - |
 | hidden | Hidden this column | boolean | false | - |
 | onCell | Set props on per cell | function(record, rowIndex) | - | - |
 | onFilter | Function that determines if the row is displayed when filtered | function(value, record) => boolean | - | - |
@@ -256,6 +262,7 @@ One of the Table `columns` prop for describing the table's columns, Column has t
 | body.wrapper | Customize body wrapper element | Component | - |
 | body.row | Customize body row element | Component | - |
 | body.cell | Customize body cell element | Component | - |
+| ExpandIcon | Customize row and expand-all icons. Receives `{ type: 'row' \| 'all', prefixCls, record, expanded, expandable, onClick }` | Component | - |
 
 ### pagination
 
@@ -274,20 +281,23 @@ Properties for expandable.
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
 | childrenColumnName | The column contains children to display | string | children | - |
-| columnTitle | Set the title of the expand column | VueNode | - | - |
+| columnTitle | Set the title of the expand column | VueNode \| ({ expandIcon }) => VueNode | - | function: 1.7.0 |
 | columnWidth | Set the width of the expand column | string \| number | - | - |
 | defaultExpandAllRows | Expand all rows initially | boolean | false | - |
 | defaultExpandedRowKeys | Initial expanded row keys | string\[] | - | - |
 | expandedRowClassName | Expanded row's className | string \| (record, index, indent) => string | - | - |
 | expandedRowKeys | Current expanded row keys | string\[] | - | - |
 | expandedRowRender | Expanded container render for each row | function(record, index, indent, expanded): VueNode | - | - |
-| expandIcon | Customize row expand Icon. Ref [example](https://stackblitz.com/edit/vitejs-vite-jezqinto?file=src%2FApp.vue) | function(props): VueNode | - | - |
+| ~~expandIcon~~ | Deprecated. Use `components.ExpandIcon` instead. This remains a row-only fallback | function(props): VueNode | - | - |
 | expandRowByClick | Whether to expand row by clicking anywhere in the whole row | boolean | false | - |
 | fixed | Whether the expansion icon is fixed. Optional true `left` `right` | boolean \| string | false | - |
+| forceRender | Force render expanded row content before expansion. In virtual mode, only rows currently mounted by the virtual list are force-rendered; off-screen rows may still be unmounted | boolean | false | - |
 | indentSize | Indent size in pixels of tree data | number | 15 | - |
 | rowExpandable | Enable row can be expandable | (record) => boolean | - | - |
+| showExpandAll | Show an expand-all control for expandable rows on the current page. Only available with `expandedRowRender` | boolean | false | 1.7.0 |
 | showExpandColumn | Show expand column | boolean | true | - |
 | onExpand | Callback executed when the row expand icon is clicked | function(expanded, record) | - | - |
+| onExpandAll | Callback executed when the expand-all icon is clicked | (expanded: boolean) => void | - | 1.7.0 |
 | onExpandedRowsChange | Callback executed when the expanded rows change | function(expandedRows) | - | - |
 
 ### rowSelection
@@ -307,6 +317,7 @@ Properties for row selection.
 | preserveSelectedRowKeys | Keep selection `key` even when it removed from `dataSource` | boolean | - | - |
 | renderCell | Renderer of the table cell. Same as `render` in column | (checked: boolean, record: T, index: number, originNode: VueNode): VueNode | - | - |
 | selectedRowKeys | Controlled selected row keys | string\[] \| number\[] | \[] | - |
+| defaultSelectedRowKeys | Default selected row keys | string\[] \| number\[] | \[] | - |
 | selections | Custom selection [config](#selection), only displays default selections when set to `true` | object\[] \| boolean | - | - |
 | type | `checkbox` or `radio` | `checkbox` \| `radio` | `checkbox` | - |
 | onCell | Set props on per cell. Same as `onCell` in column | function(record, rowIndex) | - | - |
@@ -315,11 +326,11 @@ Properties for row selection.
 
 ### scroll
 
-| Property | Description | Type | Default |
-| --- | --- | --- | --- |
-| scrollToFirstRowOnChange | Whether to scroll to the top of the table when paging, sorting, filtering changes | boolean | - |
-| x | Set horizontal scrolling, can also be used to specify the width of the scroll area, could be number, percent value, true and ['max-content'](https://developer.mozilla.org/en-US/docs/Web/CSS/width#max-content) | string \| number \| true | - |
-| y | Set vertical scrolling, can also be used to specify the height of the scroll area, could be string or number | string \| number | - |
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| scrollToFirstRowOnChange | Whether to scroll to the top of the table when paging, sorting, filtering changes | boolean | - | - | ✓ |
+| x | Set horizontal scrolling, can also be used to specify the width of the scroll area, could be number, percent value, true and ['max-content'](https://developer.mozilla.org/en-US/docs/Web/CSS/width#max-content) | string \| number \| true | - | - | ✓ |
+| y | Set vertical scrolling, can also be used to specify the height of the scroll area, could be string or number | string \| number | - | - | ✓ |
 
 ### selection
 
@@ -331,3 +342,8 @@ Properties for row selection.
 
 ## Semantic DOM 
 | _semantic | demo/_semantic.md |
+
+## FAQ
+
+### How should I troubleshoot Table performance issues? 
+Vue DevTools may add extra overhead when profiling complex tables, especially with many rows or cells. If you notice obvious lag, please try disabling Vue DevTools or testing in a clean browser environment first. If the performance issue can still be reproduced in a normal runtime, feel free to provide a minimal reproduction so we can continue to investigate.

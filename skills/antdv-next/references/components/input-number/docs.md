@@ -21,9 +21,11 @@ When a numeric value needs to be provided.
 | Spinner | demo/spinner.md |
 | Out of range | demo/out-of-range.md |
 | Prefix / Suffix | demo/presuffix.md |
+| Allow clear | demo/allow-clear.md |
 | Status | demo/status.md |
 | Focus | demo/focus.md |
 | Custom semantic dom styling | demo/style-class.md |
+| Suffix with feedback debug | demo/feedback-suffix-debug.md |
 
 ## API
 
@@ -36,6 +38,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | status | Set validation status | InputStatus | - | - | × |
 | disabled | If the input is disabled | boolean | false | - | × |
 | addonBefore | The label text displayed before (on the left side of) the input field, please use Space.Compact instead | VueNode | - | - | × |
+| allowClear | Whether to show a clear button (cleared value: `null`) | boolean \| [AllowClearConfig](#allowclearconfig) | false | 1.5.4 | ✓ |
 | addonAfter | The label text displayed after (on the right side of) the input field, please use Space.Compact instead | VueNode | - | - | × |
 | prefix | The prefix icon for the Input | VueNode | - | - | × |
 | suffix | The suffix icon for the Input | VueNode | - | - | × |
@@ -53,7 +56,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | Event | Description | Type | Version |
 | --- | --- | --- | --- |
 | change | The callback triggered when the value is changed | (value: any) =&gt; void | - |
-| update:value | - | (value: any) =&gt; void | - |
+| clear | Callback when the clear icon is clicked | () =&gt; void | 1.5.4 |
 | input | - | (text: string) =&gt; void | - |
 | pressEnter | The callback function that is triggered when Enter key is pressed | (e: KeyboardEvent) =&gt; void | - |
 | step | `@step`The callback function that is triggered when click up or down buttons / Keyboard / Wheel | (value: any, info: InputNumberStepContext) =&gt; void | - |
@@ -72,11 +75,21 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | compositionend | - | (e: CompositionEvent) =&gt; void | - |
 | beforeinput | - | (e: InputEvent) =&gt; void | - |
 
+### AllowClearConfig 
+Fields that support global configuration use component values first, then global values, then defaults. `allowClear: true` inherits the global configuration; `disabled: false` overrides the global value.
+
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| clearIcon | Custom clear icon | VueNode | - | - | ✓ |
+| disabled | Disable the clear button | boolean | false | - | ✓ |
+| label | Accessible name of the clear button | string | Component locale text | 1.5.4 | ✓ |
+
 ### Slots 
 | Slot | Description | Type | Version |
 | --- | --- | --- | --- |
 | prefix | The prefix icon for the Input | () =&gt; any | - |
 | suffix | The suffix icon for the Input | () =&gt; any | - |
+| clearIcon | Custom clear icon | () =&gt; any | 1.5.4 |
 | addonBefore | The label text displayed before (on the left side of) the input field, please use Space.Compact instead | () =&gt; any | - |
 | addonAfter | The label text displayed after (on the right side of) the input field, please use Space.Compact instead | () =&gt; any | - |
 

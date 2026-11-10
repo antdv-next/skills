@@ -14,6 +14,7 @@ description: Basic text writing, including headings, body text, lists, and more.
 | Basic | demo/basic.md |
 | Title Component | demo/title.md |
 | Text and Link Component | demo/text.md |
+| Shimmer Text | demo/shimmer.md |
 | Editable | demo/editable.md |
 | Copyable | demo/copyable.md |
 | Ellipsis | demo/ellipsis.md |
@@ -31,7 +32,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | --- | --- | --- | --- | --- | --- |
 | direction | Direction control | 'ltr' \| 'rtl' | - | - | × |
 
-### Typography.Text 
+### TypographyText 
 #### Props 
 | Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
 | --- | --- | --- | --- | --- | --- |
@@ -43,6 +44,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | ellipsis | Display ellipsis when text overflows, can't configure expandable, rows and onExpand by using object. Diff with Typography.Paragraph, Text do not have 100% width style which means it will fix width on the first ellipsis. If you want to have responsive ellipsis, please set width manually | boolean \| [Omit&lt;ellipsis, 'expandable' \| 'rows' \| 'onExpand'&gt;](#ellipsis) | false | - | × |
 | keyboard | Keyboard style | boolean | false | - | × |
 | mark | Marked style | boolean | false | - | × |
+| shimmer | Show a shimmer effect, customizable via an object | boolean \| [shimmer](#shimmer) | false | 1.7.0 | × |
 | strong | Bold style | boolean | false | - | × |
 | italic | Italic style | boolean | false | - | × |
 | type | Content type | `secondary` \| `success` \| `warning` \| `danger` | - | - | × |
@@ -55,7 +57,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | --- | --- | --- | --- |
 | click | Set the handler to handle click event | (event: MouseEvent) =&gt; void | - |
 
-### Typography.Title 
+### TypographyTitle 
 #### Props 
 | Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
 | --- | --- | --- | --- | --- | --- |
@@ -67,6 +69,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | ellipsis | Display ellipsis when text overflows, can configure rows and expandable by using object | boolean \| [ellipsis](#ellipsis) | false | - | × |
 | level | Set content importance. Match with `h1`, `h2`, `h3`, `h4`, `h5` | number: 1, 2, 3, 4, 5 | 1 | - | × |
 | mark | Marked style | boolean | false | - | × |
+| shimmer | Show a shimmer effect, customizable via an object | boolean \| [shimmer](#shimmer) | false | 1.7.0 | × |
 | italic | Italic style | boolean | false | - | × |
 | type | Content type | `secondary` \| `success` \| `warning` \| `danger` | - | - | × |
 | underline | Underlined style | boolean | false | - | × |
@@ -78,7 +81,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | --- | --- | --- | --- |
 | click | Set the handler to handle click event | (event: MouseEvent) =&gt; void | - |
 
-### Typography.Paragraph 
+### TypographyParagraph 
 #### Props 
 | Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
 | --- | --- | --- | --- | --- | --- |
@@ -89,6 +92,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | editable | If editable. Can control edit state when is object | boolean \| [editable](#editable) | false | - | × |
 | ellipsis | Display ellipsis when text overflows, can configure rows and expandable by using object | boolean \| [ellipsis](#ellipsis) | false | - | × |
 | mark | Marked style | boolean | false | - | × |
+| shimmer | Show a shimmer effect, customizable via an object | boolean \| [shimmer](#shimmer) | false | 1.7.0 | × |
 | strong | Bold style | boolean | false | - | × |
 | italic | Italic style | boolean | false | - | × |
 | type | Content type | `secondary` \| `success` \| `warning` \| `danger` | - | - | × |
@@ -135,7 +139,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 
 | Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| change | Called when input at textarea | (value: string) =&gt; void | - |
+| change | Called when editing is completed | (value: string) =&gt; void | - |
 | cancel | Called when type ESC to exit editable state | () =&gt; void | - |
 | start | Called when enter editable state | () =&gt; void | - |
 | end | Called when type ENTER to exit editable state | () =&gt; void | - |
@@ -147,7 +151,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | rows | Max rows of content | number | - | - |
 | suffix | Suffix of ellipsis content | string | - | - |
 | symbol | Custom description of ellipsis | VueNode \| ((expanded: boolean) =&gt; VueNode) | `Expand` `Collapse` | - |
-| tooltip | Show tooltip when ellipsis | VueNode \| [TooltipProps](../tooltip/docs.md/#api) | - | - |
+| tooltip | Show tooltip when ellipsis | VueNode \| [TooltipProps](../tooltip/docs.md#api) | - | - |
 | defaultExpanded | Default expand or collapse | boolean | - | - |
 | expanded | Expand or Collapse | boolean | - | - |
 
@@ -157,6 +161,17 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | --- | --- | --- | --- |
 | ellipsis | Called when enter or leave ellipsis state | (ellipsis: boolean) =&gt; void | - |
 | expand | Called when expand content | (event: MouseEvent, info: &#123; expanded: boolean &#125;) =&gt; void | - |
+
+### shimmer 
+```ts
+interface ShimmerConfig {
+  duration?: number | [motionTime: number, waitTime: number]
+}
+```
+
+| Property | Description | Type | Default | Version |
+| --- | --- | --- | --- | --- |
+| duration | Motion time in seconds. A number uses a 1-second wait; a tuple sets the motion and wait times separately | number \| \[motionTime: number, waitTime: number\] | 1 | 1.7.0 |
 
 ## Semantic DOM 
 | _semantic | demo/_semantic.md |

@@ -32,7 +32,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
 | --- | --- | --- | --- | --- | --- |
 | bordered | Whether to display the border | boolean | false | - | × |
-| size | Set the size of the list. Can be set to `middle`,`small`, or not filled | 'middle' \| 'small' \| 'default' | - | - | × |
+| size | Set the size of the list. Can be set to `medium`,`small`, or not filled | `large` \| `medium` \| `small` | `large` | - | × |
 | title | The title of the description list, placed at the top | VueNode | - | - | × |
 | extra | The action area of the description list, placed at the top-right | VueNode | - | - | × |
 | labelRender | - | RenderDescriptionsItem | - | - | × |
@@ -42,7 +42,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | colon | Change default props `colon` value of Descriptions.Item. Indicates whether the colon after the label is displayed | boolean | true | - | × |
 | styles | Customize inline style for each semantic structure inside the component. Supports object or function. | DescriptionsStylesType | - | - | ✓ |
 | classes | Customize class for each semantic structure inside the component. Supports object or function. | DescriptionsClassNamesType | - | - | ✓ |
-| items | Describe the contents of the list item | DescriptionsItemType[] | - | 5.8.0 | × |
+| items | Describe the contents of the list item | DescriptionsItemType[] | - | - | × |
 | id | - | string | - | - | × |
 
 ### Slots

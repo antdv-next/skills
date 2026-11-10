@@ -26,7 +26,10 @@ The differences with Select are:
 | Variants | demo/variant.md |
 | Customize clear button | demo/allowClear.md |
 | Custom semantic dom styling | demo/style-class.md |
+| Custom input with allowClear debug | demo/customize-clear-debug.md |
 | Disabled custom input debug | demo/disabled-custom-debug.md |
+| Filled custom input debug | demo/filled-custom-debug.md |
+| Disabled text colour in Form debug | demo/disabled-in-form-debug.md |
 
 ## API
 
@@ -36,7 +39,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 
 | Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
 | --- | --- | --- | --- | --- | --- |
-| allowClear | Show clear button | boolean \| &#123; clearIcon?: VueNode &#125; | false | - | × |
+| allowClear | Whether to show a clear button | boolean \| [AllowClearConfig](#allowclearconfig) | false | - | 1.8.0 |
 | backfill | If backfill selected item the input when using keyboard | boolean | false | - | × |
 | defaultActiveFirstOption | Whether active first option by default | boolean | true | - | × |
 | disabled | Whether disabled select | boolean | false | - | × |
@@ -48,10 +51,12 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | optionRender | Customize the rendering dropdown options | (option: FlattenOptionData&lt;BaseOptionType&gt;, info: &#123; index: number &#125;) =&gt; VueNode | - | - | × |
 | placeholder | The placeholder of input | string | - | - | × |
 | popupMatchSelectWidth | Determine whether the dropdown menu and the select input are the same width. Default set `min-width` same as input. Will ignore when value less than select width. `false` will disable virtual scroll | boolean \| number | true | - | × |
-| popupRender | Customize dropdown content | (menu: VueNode) =&gt; VueNode | - | - | × |
+| popupRender | Customize dropdown content | (menu: VNode) =&gt; VueNode | - | - | × |
 | showSearch | Search configuration | boolean \| [SearchConfig](#showsearch) | true | - | × |
-| size | The size of the input box | `large` \| `middle` \| `small` | - | - | × |
+| size | The size of the input box | `large` \| `medium` \| `small` | - | - | × |
 | status | Set validation status | `error` \| `warning` | - | - | × |
+| suffix | The custom suffix | VueNode \| (info: &#123; open: boolean, searchValue: string, focused: boolean, showSearch?: boolean, loading?: boolean &#125;) =&gt; VueNode | - | 1.8.0 | × |
+| suffixIcon | The custom suffix icon. Deprecated. Use `suffix` instead | VueNode | - | - | × |
 | value | Selected option, support `v-model:value` | string | - | - | × |
 | variant | Variants of input | `outlined` \| `borderless` \| `filled` \| `underlined` | `outlined` | - | × |
 | virtual | Disable virtual scroll when set to false | boolean | true | - | × |
@@ -70,6 +75,12 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | search | Called when searching items | (value: string) =&gt; void | - |
 | select | Called when an option is selected, the params are option's value (or key) and option instance | (value: string, option: Option) =&gt; void | - |
 
+### AutoComplete Methods 
+| Name | Description | Version |
+| --- | --- | --- |
+| blur() | Remove focus | - |
+| focus() | Get focus | - |
+
 ### Slots
 
 | Slot | Description | Type | Version |
@@ -78,11 +89,22 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | labelRender | Customize selected label render | (props: LabelInValueType) =&gt; VueNode | - |
 | notFoundContent | Specify content to show when no result matches | () =&gt; VueNode | - |
 | optionRender | Customize the rendering dropdown options | (option: FlattenOptionData&lt;BaseOptionType&gt;, info: &#123; index: number &#125;) =&gt; VueNode | - |
-| popupRender | Customize dropdown content | (menu: VueNode) =&gt; VueNode | - |
+| popupRender | Customize dropdown content | (menu: VNode) =&gt; VueNode | - |
 | prefix | The custom prefix | () =&gt; VueNode | - |
-| suffixIcon | The custom suffix icon | () =&gt; VueNode | - |
+| suffix | The custom suffix | (info: &#123; open: boolean, searchValue: string, focused: boolean, showSearch?: boolean, loading?: boolean &#125;) =&gt; VueNode | 1.8.0 |
+| suffixIcon | The custom suffix icon. Deprecated. Use `suffix` slot instead | () =&gt; VueNode | - |
 
 ## Types
+
+### AllowClearConfig 
+Supports global configuration through `ConfigProvider.autoComplete.allowClear` (1.8.0). Fields use component values first, then global values, then defaults. `allowClear: true` inherits the global configuration; `disabled: false` and `tabIndex: 0` override global values.
+
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| clearIcon | Custom clear icon | VueNode | - | - | 1.8.0 |
+| disabled | When `true`, equivalent to `allowClear: false` | boolean | false | 1.8.0 | 1.8.0 |
+| label | Accessible name of the clear button | string | Component locale text | - | 1.8.0 |
+| tabIndex | Tab order of the clear button. `-1` excludes it from Tab navigation | number | 0 | 1.8.0 | 1.8.0 |
 
 ### showSearch
 

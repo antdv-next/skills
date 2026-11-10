@@ -1,4 +1,4 @@
-# Line width
+# Component Token
 
 ## Description (en-US)
 

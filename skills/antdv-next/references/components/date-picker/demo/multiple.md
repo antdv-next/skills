@@ -8,7 +8,7 @@ Multiple selections. Does not support `showTime` and `picker="time"`.
 
 ```vue
 <script setup lang="ts">
-import type { DatePickerEmits } from 'antdv-next/date-picker/generatePicker/generateSinglePicker.tsx'
+import type { DatePickerEmits } from 'antdv-next'
 import type { Dayjs } from 'dayjs'
 import dayjs from 'dayjs'
 import { shallowRef } from 'vue'

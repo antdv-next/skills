@@ -2,41 +2,28 @@
 
 ## Description (en-US)
 
-You can add an icon using the `icon`/`slot` property.
+You can add an icon using the `icon` prop/slot.
 
 ## Source
 
 ```vue
 <script setup lang="ts">
 import { SearchOutlined } from '@antdv-next/icons'
+import { h } from 'vue'
 </script>
 
 <template>
   <a-flex gap="small" vertical>
     <a-flex wrap gap="small">
-      <a-button type="primary" shape="circle">
-        <template #icon>
-          <SearchOutlined />
-        </template>
-      </a-button>
+      <a-button type="primary" shape="circle" :icon="h(SearchOutlined)" />
       <a-button type="primary" shape="circle">
         A
       </a-button>
-      <a-button type="primary">
-        <template #icon>
-          <SearchOutlined />
-        </template>
+      <a-button type="primary" :icon="h(SearchOutlined)">
         Search
       </a-button>
-      <a-button shape="circle">
-        <template #icon>
-          <SearchOutlined />
-        </template>
-      </a-button>
-      <a-button>
-        <template #icon>
-          <SearchOutlined />
-        </template>
+      <a-button shape="circle" :icon="h(SearchOutlined)" />
+      <a-button :icon="h(SearchOutlined)">
         Search
       </a-button>
     </a-flex>

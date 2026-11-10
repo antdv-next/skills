@@ -31,7 +31,7 @@ Before using icons, you need to install the [@antdv-next/icons](https://www.npmj
 
 | Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
 | --- | --- | --- | --- | --- | --- |
-| className | The className of Icon | string | - | | × |
+| class | The class name of the icon | string | - | | × |
 | rotate | Rotate by n degrees (not working in IE9) | number | - | | × |
 | spin | Rotate icon with animation | boolean | false | | × |
 | style | The style properties of icon, like `fontSize` and `color` | CSSProperties | - | | × |

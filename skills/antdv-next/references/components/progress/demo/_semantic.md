@@ -20,7 +20,13 @@ const semantics = computed(() => [
 ])
 
 const gradient = ref(false)
-const type = ref('line')
+type DemoType = 'line' | 'circle' | 'dashboard' | 'steps'
+
+const type = ref<DemoType>('line')
+
+function onTypeChange(val: string | number) {
+  type.value = val as DemoType
+}
 
 const colorMap = {
   '0%': '#108ee9',
@@ -34,12 +40,12 @@ const colorMap = {
     :semantics="semantics"
   >
     <template #default="{ classes }">
-      <a-flex vertical gap="middle" :style="{ width: '100%' }" align="center">
-        <a-flex align="center" gap="middle">
+      <a-flex vertical gap="medium" :style="{ width: '100%' }" align="center">
+        <a-flex align="center" gap="medium">
           <a-segmented
             :options="['line', 'steps', 'circle', 'dashboard']"
             :value="type"
-            @change="(val: string) => type = val"
+            @change="onTypeChange"
           />
           <a-switch
             :checked="gradient"

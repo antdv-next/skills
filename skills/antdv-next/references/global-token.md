@@ -50,6 +50,7 @@ Use these variables through `ConfigProvider` `theme.token` to define global Desi
 | `motionEaseOutQuint` | `string` | Seed | Preset motion curve. |
 | `motionEaseOut` | `string` | Seed | Preset motion curve. |
 | `wireframe` | `boolean` | Seed | Used to change the visual effect of the component to wireframe, if you need to use the V4 effect, you need to enable the configuration item |
+| `focusOutline` | `boolean` | Seed | Used to configure whether components show a visible outline when focused |
 | `motion` | `boolean` | Seed | Used to configure the motion effect, when it is `false`, the motion is turned off |
 | `blue` | `color` | Seed | Preset blue color |
 | `purple` | `color` | Seed | Preset purple color |

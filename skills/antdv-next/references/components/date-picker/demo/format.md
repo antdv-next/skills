@@ -9,6 +9,7 @@ We can set the date format by `format`. When `format` is an array, the input box
 ```vue
 <script setup lang="ts">
 import type { DatePickerProps } from 'antdv-next'
+import type { Dayjs } from 'dayjs'
 import dayjs from 'dayjs'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
 import { shallowRef } from 'vue'
@@ -34,7 +35,7 @@ const basicValue = shallowRef(dayjs('2015/01/01', dateFormat))
 const listValue = shallowRef(dayjs('01/01/2015', dateFormatList[0]))
 const monthValue = shallowRef(dayjs('2015/01', monthFormat))
 const weekValue = shallowRef(dayjs())
-const rangeValue = shallowRef([
+const rangeValue = shallowRef<[Dayjs, Dayjs]>([
   dayjs('2015/01/01', dateFormat),
   dayjs('2015/01/01', dateFormat),
 ])

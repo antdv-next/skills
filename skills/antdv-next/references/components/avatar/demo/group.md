@@ -8,7 +8,7 @@ Avatar group display.
 
 ```vue
 <script setup lang="ts">
-import { AntDesignOutlined, UserOutlined } from '@antdv-next/icons'
+import { AntdvNextOutlined, UserOutlined } from '@antdv-next/icons'
 </script>
 
 <template>
@@ -29,7 +29,7 @@ import { AntDesignOutlined, UserOutlined } from '@antdv-next/icons'
       </a-tooltip>
       <a-avatar style="background-color: #1677ff;">
         <template #icon>
-          <AntDesignOutlined />
+          <AntdvNextOutlined />
         </template>
       </a-avatar>
     </a-avatar-group>
@@ -53,7 +53,7 @@ import { AntDesignOutlined, UserOutlined } from '@antdv-next/icons'
       </a-tooltip>
       <a-avatar style="background-color: #1677ff;">
         <template #icon>
-          <AntDesignOutlined />
+          <AntdvNextOutlined />
         </template>
       </a-avatar>
     </a-avatar-group>
@@ -78,7 +78,7 @@ import { AntDesignOutlined, UserOutlined } from '@antdv-next/icons'
       </a-tooltip>
       <a-avatar style="background-color: #1677ff;">
         <template #icon>
-          <AntDesignOutlined />
+          <AntdvNextOutlined />
         </template>
       </a-avatar>
     </a-avatar-group>
@@ -104,7 +104,7 @@ import { AntDesignOutlined, UserOutlined } from '@antdv-next/icons'
       </a-tooltip>
       <a-avatar style="background-color: #1677ff;">
         <template #icon>
-          <AntDesignOutlined />
+          <AntdvNextOutlined />
         </template>
       </a-avatar>
     </a-avatar-group>
@@ -123,7 +123,7 @@ import { AntDesignOutlined, UserOutlined } from '@antdv-next/icons'
       </a-avatar>
       <a-avatar style="background-color: #1677ff;">
         <template #icon>
-          <AntDesignOutlined />
+          <AntdvNextOutlined />
         </template>
       </a-avatar>
     </a-avatar-group>

@@ -31,12 +31,13 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 
 | Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
 | --- | --- | --- | --- | --- | --- |
-| allowClear | Show clear button | boolean \| &#123; clearIcon?: VueNode &#125; | false | - | × |
+| allowClear | Whether to show a clear button | boolean \| [AllowClearConfig](#allowclearconfig) | false | - | 1.8.0 |
+| rootClass | Root container class | string | - | - | × |
 | defaultOpen | Initial open state of dropdown | boolean | - | - | × |
 | defaultValue | To set the initial selected treeNode(s) | string \| string[] | - | - | × |
 | disabled | Disabled or not | boolean | false | - | × |
 | popupMatchSelectWidth | Determine whether the popup menu and the select input are the same width. Default set `min-width` same as input. Will ignore when value less than select width. `false` will disable virtual scroll | boolean \| number | true | - | × |
-| popupRender | Customize dropdown content | (menu: VueNode) =&gt; VueNode | - | - | × |
+| popupRender | Customize dropdown content | (menu: VNode) =&gt; VueNode | - | - | × |
 | fieldNames | Customize node label, value, children field name | object | &#123; label: `label`, value: `value`, children: `children` &#125; | - | × |
 | getPopupContainer | To set the container of the dropdown menu | (triggerNode: HTMLElement) =&gt; HTMLElement | () =&gt; document.body | - | × |
 | labelInValue | Whether to embed label in value, turn the format of value from `string` to &#123; value: string, label: VueNode, halfChecked: boolean &#125; | boolean | false | - | × |
@@ -47,17 +48,18 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | maxTagPlaceholder | Placeholder for not showing tags | VueNode \| ((omittedValues: LabeledValue[]) =&gt; VueNode) | - | - | × |
 | maxTagTextLength | Max tag text length to show | number | - | - | × |
 | multiple | Support multiple or not, will be `true` when enable `treeCheckable` | boolean | false | - | × |
-| notFoundContent | Specify content to show when no result matches | VueNode | `Not Found` | - | × |
+| notFoundContent | Specify content to show when no result matches | VueNode | `No data` | - | × |
 | open | Controlled open state of dropdown | boolean | - | - | × |
 | placeholder | Placeholder of the select input | string | - | - | × |
 | placement | The position where the selection box pops up | `bottomLeft` \| `bottomRight` \| `topLeft` \| `topRight` | `bottomLeft` | - | × |
 | prefix | The custom prefix | VueNode | - | - | × |
 | showCheckedStrategy | The way show selected item in box when `treeCheckable` set. **Default:** just show child nodes. **`TreeSelect.SHOW_ALL`:** show all checked treeNodes (include parent treeNode). **`TreeSelect.SHOW_PARENT`:** show checked treeNodes (just show parent treeNode) | `TreeSelect.SHOW_ALL` \| `TreeSelect.SHOW_PARENT` \| `TreeSelect.SHOW_CHILD` | `TreeSelect.SHOW_CHILD` | - | × |
 | showSearch | Support search or not | boolean \| [Object](#showsearch) | single: false \| multiple: true | - | × |
-| size | To set the size of the select input | `large` \| `middle` \| `small` | - | - | × |
+| size | To set the size of the select input | `large` \| `medium` \| `small` | - | - | × |
 | status | Set validation status | `error` \| `warning` | - | - | × |
 | variant | Variants of selector | `outlined` \| `borderless` \| `filled` \| `underlined` | `outlined` | - | ✓ |
-| suffixIcon | The custom suffix icon | VueNode | `&lt;DownOutlined /&gt;` | - | × |
+| suffix | The custom suffix. Custom suffixes will not respond to clicks to open, because the replaced suffix may be designed for other interactions. You can use `pointer-events: none` style to bypass | VueNode \| (info: &#123; open: boolean, searchValue: string, focused: boolean, showSearch?: boolean, loading?: boolean &#125;) =&gt; VueNode | `&lt;DownOutlined /&gt;` | 1.8.0 | × |
+| suffixIcon | The custom suffix icon. Deprecated. Use `suffix` instead | VueNode | `&lt;DownOutlined /&gt;` | - | × |
 | switcherIcon | Customize collapse/expand icon of tree node | VueNode \| ((props: AntTreeNodeProps) =&gt; VueNode) | - | - | ✓ |
 | tagRender | Customize tag render when `multiple` | (props: any) =&gt; VueNode | - | - | × |
 | treeCheckable | Whether to show checkbox on the treeNodes | boolean | false | - | × |
@@ -76,12 +78,13 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | value | To set the current selected treeNode(s), support `v-model:value` | string \| string[] | - | - | × |
 | virtual | Disable virtual scroll when set to false | boolean | true | - | × |
 | bordered | Deprecated. Use `variant` instead | boolean | - | - | × |
-| showArrow | Deprecated. Set `suffixIcon` to null to hide | boolean | - | - | × |
+| showArrow | Deprecated. Set `suffix` to null to hide | boolean | - | - | × |
 
 ### Events 
 | Event | Description | Type | Version |
 | --- | --- | --- | --- |
 | change | A callback function, can be executed when selected treeNodes or input value change | function(value, label, extra) | - |
+| clear | Called when clear | () =&gt; void | - |
 | openChange | Callback when dropdown open state changes | (open: boolean) =&gt; void | - |
 | select | A callback function, can be executed when you select a treeNode | function(value, node, extra) | - |
 | treeExpand | A callback function, can be executed when treeNode expanded | function(expandedKeys) | - |
@@ -90,7 +93,8 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 ### Slots 
 | Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| suffixIcon | The custom suffix icon | () =&gt; any | - |
+| suffix | The custom suffix | (info: &#123; open: boolean, searchValue: string, focused: boolean, showSearch?: boolean, loading?: boolean &#125;) =&gt; VueNode | 1.8.0 |
+| suffixIcon | The custom suffix icon. Deprecated. Use `suffix` slot instead | () =&gt; any | - |
 | tagRender | Customize tag render when `multiple` | (props: any) =&gt; any | - |
 | notFoundContent | Specify content to show when no result matches | () =&gt; any | - |
 | switcherIcon | Customize collapse/expand icon of tree node | () =&gt; any | - |
@@ -103,6 +107,16 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | focus() | Get focus | - |
 
 ## Types 
+### AllowClearConfig 
+Supports global configuration through `ConfigProvider.treeSelect.allowClear` (1.8.0). Fields use component values first, then global values, then defaults. `allowClear: true` inherits the global configuration; `disabled: false` and `tabIndex: 0` override global values.
+
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| clearIcon | Custom clear icon | VueNode | - | - | 1.8.0 |
+| disabled | When `true`, equivalent to `allowClear: false` | boolean | false | 1.8.0 | 1.8.0 |
+| label | Accessible name of the clear button | string | Component locale text | - | 1.8.0 |
+| tabIndex | Tab order of the clear button. `-1` excludes it from Tab navigation | number | 0 | 1.8.0 | 1.8.0 |
+
 ### showSearch 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
@@ -139,7 +153,7 @@ We don't provide this since performance consideration. You can get by this way: 
 You can ref Select [FAQ](../select/docs.md).
 
 ### Why `loadData` not trigger when searching? 
-In earlier version, `loadData` will be triggered when searching. But we got feedback that it will block network when inputting. So we change it to not trigger `loadData` when searching. But you can still handle async logic by `filterTreeNode`:
+`loadData` is not triggered when searching, to avoid blocking the network while typing. You can still handle async logic by `filterTreeNode`:
 
 ```html
 <a-tree-select

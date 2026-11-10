@@ -35,6 +35,10 @@ const approverOptions = [
   { label: 'Jack Ma', value: 'jack' },
   { label: 'Tom Liu', value: 'tom' },
 ]
+
+function getPopupContainer(trigger: HTMLElement) {
+  return trigger.parentElement || document.body
+}
 </script>
 
 <template>
@@ -137,7 +141,7 @@ const approverOptions = [
             <a-range-picker
               v-model:value="formState.dateTime"
               style="width: 100%"
-              :get-popup-container="(trigger) => trigger.parentElement || document.body"
+              :get-popup-container="getPopupContainer"
             />
           </a-form-item>
         </a-col>

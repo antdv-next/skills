@@ -63,6 +63,7 @@ function handleSearch(val: string) {
     mode="multiple"
     label-in-value
     show-search
+    :auto-clear-search-value="false"
     :filter-option="false"
     placeholder="Select users"
     style="width: 100%"

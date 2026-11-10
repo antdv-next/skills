@@ -43,7 +43,6 @@ const stylesFn: FloatButtonProps['styles'] = (info) => {
     <a-float-button
       type="primary"
       :classes="classes"
-      href="https://ant.design/index-cn"
       :styles="stylesFn"
     >
       <template #tooltip>

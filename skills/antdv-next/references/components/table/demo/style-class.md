@@ -79,7 +79,7 @@ const styles: TableProps['styles'] = {
 }
 
 const stylesFn: TableProps['styles'] = (info) => {
-  if (info?.props?.size === 'middle') {
+  if (info?.props?.size === 'medium') {
     return {
       root: {
         color: '#e0e0e0',
@@ -120,7 +120,7 @@ const stylesFn: TableProps['styles'] = (info) => {
 </script>
 
 <template>
-  <a-flex vertical gap="middle">
+  <a-flex vertical gap="medium">
     <a-table
       :columns="columns"
       :data-source="dataSource"
@@ -144,7 +144,7 @@ const stylesFn: TableProps['styles'] = (info) => {
       :classes="classes"
       :pagination="{ pageSize: 3, simple: true }"
       :styles="stylesFn"
-      size="middle"
+      size="medium"
     >
       <template #title>
         Table Function Styles

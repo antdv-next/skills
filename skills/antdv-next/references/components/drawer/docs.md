@@ -47,7 +47,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | classes | Customize class for each semantic structure inside the Drawer component. Supports object or function. | DrawerClassNamesType | - | - | ✓ |
 | closable | Whether to show a close button. The position can be configured with `placement` | boolean \| \{ closeIcon?: VueNode, disabled?: boolean, placement?: 'start' \| 'end' \} | true | - | ✓ |
 | closeIcon | Custom close icon | VueNode | - | - | ✓ |
-| ~~destroyOnClose~~ | Whether to unmount child components on closing drawer or not | boolean | false | - | × |
+| ~~destroyOnClose~~ | Whether to unmount child components on closing drawer or not, please use `destroyOnHidden` instead | boolean | false | - | × |
 | destroyOnHidden | Whether to unmount child components on closing drawer or not | boolean | false | - | × |
 | extra | Extra actions area at corner | VueNode | - | - | × |
 | footer | The footer for Drawer | VueNode | - | - | × |
@@ -72,7 +72,6 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 
 | Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| afterOpenChange | Callback after the animation ends when switching drawers | (open: boolean) => void | - |
 | close | Callback when drawer is closed | (e: MouseEvent \| KeyboardEvent) => void | - |
 | keydown | Keyboard keydown event | (e: KeyboardEvent) => void | - |
 | keyup | Keyboard keyup event | (e: KeyboardEvent) => void | - |

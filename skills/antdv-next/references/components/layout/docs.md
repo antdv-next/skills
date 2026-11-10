@@ -21,8 +21,7 @@ The first level navigation is left aligned near a logo, and the secondary menu i
 - When the current navigation item is collapsed, the style of the current navigation item is applied to its parent level;
 - The left side navigation bar has support for both the accordion and expanding styles; you can choose the one that fits your case the best.
 
-## Visualization rules
-
+### Visualization rules 
 Style of a navigation should conform to its level.
 
 - **Emphasis by colorblock**
@@ -61,6 +60,7 @@ Style of a navigation should conform to its level.
 | Header Sider 2 | demo/top-side-2.md |
 | Sider | demo/side.md |
 | Custom trigger | demo/custom-trigger.md |
+| Collapsible overlay | demo/collapsible-overlay.md |
 | Responsive | demo/responsive.md |
 | Fixed Header | demo/fixed.md |
 | Fixed Sider | demo/fixed-sider.md |
@@ -105,7 +105,7 @@ The sidebar.
 | reverseArrow | Reverse direction of arrow, for a sider that expands from the right | boolean | false |  |
 | styles | Semantic structure inline style (`root`, `body`) for the Sider, supports object or function | Record<string, CSSProperties> \| (info: { props }) => Record<string, CSSProperties> | - | 1.4.0 |
 | theme | Color theme of the sidebar | `light` \| `dark` | `dark` |  |
-| trigger | Specify the customized trigger, set to null to hide the trigger | ReactNode | - |  |
+| trigger | Specify the customized trigger, set to null to hide the trigger | VueNode | - |  |
 | width | Width of the sidebar | number \| string | 200 |  |
 | zeroWidthTriggerStyle | To customize the styles of the special trigger that appears when `collapsedWidth` is 0 | object | - |  |
 
@@ -114,6 +114,11 @@ The sidebar.
 | --- | --- | --- | --- |
 | breakpoint | The callback function, executed when [breakpoints](../grid/docs.md/#api) changed | (broken: boolean) => void | - |
 | collapse | The callback function, executed by clicking the trigger or activating the responsive layout | (collapsed: boolean, type: string) => void | - |
+
+#### Slots 
+| Slot | Description | Type | Version |
+| --- | --- | --- | --- |
+| trigger | Specify the customized trigger, set to null to hide the trigger | - | - |
 
 ## Types
 

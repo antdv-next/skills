@@ -51,7 +51,7 @@ const watermarkProps = computed<WatermarkProps>(() => ({
 </script>
 
 <template>
-  <a-flex gap="middle">
+  <a-flex gap="medium">
     <a-watermark v-bind="watermarkProps">
       <a-typography>
         <a-typography-paragraph>
@@ -87,7 +87,7 @@ const watermarkProps = computed<WatermarkProps>(() => ({
     </a-watermark>
     <a-form :model="formState" layout="vertical" style="width: 200px; flex-shrink: 0; border-inline-start: 1px solid #eee; padding-inline-start: 16px;">
       <a-form-item label="Content">
-        <a-input v-model:value="formState.content" placeholder="请输入" />
+        <a-input v-model:value="formState.content" placeholder="Please enter" />
       </a-form-item>
       <a-form-item label="Color">
         <a-color-picker v-model:value="formState.color as any" />

@@ -1,4 +1,4 @@
-# Basic card片
+# Basic card
 
 ## Description (en-US)
 

@@ -35,7 +35,7 @@ const handleSelect: MentionsEmits['select'] = (option) => {
 </script>
 
 <template>
-  <a-flex vertical gap="middle">
+  <a-flex vertical gap="medium">
     <a-mentions
       default-value="@afc163"
       status="error"

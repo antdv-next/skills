@@ -8,10 +8,11 @@ Use time range picker with `TimePicker.RangePicker`.
 
 ```vue
 <script setup lang="ts">
+import type { Dayjs } from 'dayjs'
 import dayjs from 'dayjs'
 
 const format = 'HH:mm:ss'
-const defaultValue = [dayjs('12:08:23', 'HH:mm:ss'), dayjs('12:08:23', 'HH:mm:ss')]
+const defaultValue: [Dayjs, Dayjs] = [dayjs('12:08:23', 'HH:mm:ss'), dayjs('12:08:23', 'HH:mm:ss')]
 </script>
 
 <template>

@@ -62,7 +62,7 @@ const stylesFn: MasonryProps['styles'] = (info) => {
   <a-flex vertical :gap="24">
     <div>
       <a-typography-title :level="4">
-        classNames and styles Object
+        classes and styles Object
       </a-typography-title>
       <a-masonry
         :columns="4"
@@ -81,7 +81,7 @@ const stylesFn: MasonryProps['styles'] = (info) => {
     <a-divider />
     <div>
       <a-typography-title :level="4">
-        classNames and styles Function
+        classes and styles Function
       </a-typography-title>
       <a-masonry
         :columns="3"

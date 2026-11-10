@@ -24,6 +24,7 @@ description: A button that floats at the top of the page.
 | Controlled mode | demo/controlled.md |
 | placement | demo/placement.md |
 | BackTop | demo/back-top.md |
+| Progress ring | demo/progress-ring.md |
 | badge | demo/badge.md |
 | Custom semantic dom styling | demo/style-class.md |
 
@@ -45,7 +46,6 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 #### Events 
 | Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| update:open | Callback executed when active menu is changed, use it with trigger | (open: boolean) =&gt; void | - |
 | click | Set the handler to handle `click` event (only work in Menu mode) | (e: MouseEvent) =&gt; void | - |
 
 #### Slots 
@@ -87,12 +87,13 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 #### Props 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| duration | Time to return to top（ms） | number | 450 | - |
+| duration | Time to return to top (ms). This property is ignored when reduced motion (`prefers-reduced-motion: reduce`) is enabled | number | 450 | - |
+| showProgress | Show the current scroll progress ring around the BackTop button edge | boolean | false | - |
 | target | Specifies the scrollable area dom node | () =&gt; HTMLElement | () =&gt; window | - |
 | visibilityHeight | The BackTop button will not show until the scroll height reaches this value | number | 400 | - |
 | target | Specifies where to display the linked URL | '_self' \| '_blank' \| '_parent' \| '_top' \| string | - | - |
-| badge | Attach Badge to FloatButton. `status` and other props related are not supported. | FloatButtonBadgeProps & &#123; class?: string &#125; | - | 5.4.0 |
-| htmlType | Set the original html `type` of `button`, see: [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#type) | ButtonHTMLType | `button` | 5.21.0 |
+| badge | Attach Badge to FloatButton. `status` and other props related are not supported. | FloatButtonBadgeProps & &#123; class?: string &#125; | - | - |
+| htmlType | Set the original html `type` of `button`, see: [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#type) | ButtonHTMLType | `button` | - |
 | ariaLabel | - | string | - | - |
 | style | - | CSSProperties | - | - |
 | classes | Customize class for each semantic structure inside the component. Supports object or function. | FloatButtonClassNamesType | - | - |

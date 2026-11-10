@@ -42,7 +42,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 #### Slots 
 | Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| formatter | Customize value display logic | (value: number \| string) =&gt; VueNode | - |
+| formatter | Customize value display logic | (ctx: { value: number \| string }) =&gt; VueNode | - |
 | prefix | The prefix node of value | () =&gt; VueNode | - |
 | suffix | The suffix node of value | () =&gt; VueNode | - |
 | title | Display title | () =&gt; VueNode | - |

@@ -23,6 +23,7 @@ Almost anything can be represented in a tree structure. Examples include directo
 | directory | demo/directory.md |
 | Customize collapse/expand icon | demo/switcher-icon.md |
 | Virtual scroll | demo/virtual-scroll.md |
+| Scroll to nested node | demo/scroll-to.md |
 | Block Node | demo/block-node.md |
 | Big data | demo/big-data.md |
 | Multiple lines | demo/multiple-line.md |
@@ -58,7 +59,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | loadData | Load data asynchronously | function(node) | - | - | × |
 | loadedKeys | (Controlled) Set loaded tree nodes. Need to work with `loadData` | string[] | [] | - | × |
 | multiple | Allows selecting multiple treeNodes | boolean | false | - | × |
-| rootStyle | Style on the root element | CSSProperties | - | - | × |
+| ~~rootStyle~~ | Style on the root element, please use `styles.root` instead | CSSProperties | - | - | × |
 | selectable | Whether it can be selected | boolean | true | - | × |
 | selectedKeys | (Controlled) Specifies the keys of the selected treeNodes, multiple selection needs to set `multiple` to true, support `v-model:selected-keys` | string[] | - | - | × |
 | showIcon | Controls whether to display the `icon` node (no default style) | boolean | false | - | × |
@@ -96,7 +97,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 #### Methods 
 | Name | Description |
 | --- | --- |
-| scrollTo(&#123; key: Key, align?: 'top' \| 'bottom' \| 'auto', offset?: number &#125;) | Scroll to key item in virtual scroll |
+| scrollTo(&#123; key: Key, align?: 'top' \| 'bottom' \| 'auto', offset?: number, autoExpand?: boolean &#125;) | Scroll to key item in virtual scroll. `autoExpand` expands the target node in uncontrolled mode |
 
 ### TreeNode
 
@@ -118,6 +119,19 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | Property | Description | Type | Default |
 | --- | --- | --- | --- |
 | expandAction | Directory opening logic, options: false \| `click` \| `doubleClick` | string \| boolean | `click` |
+
+### Tree Hooks
+
+#### useTree 
+`type useTree = (treeData: MaybeRefOrGetter<TreeDataNode[]>, config?: { fieldNames?: MaybeRefOrGetter<FieldNames> }) => TreeInstance`
+
+Provides Tree data utilities. `getPath(key)` returns the node entities from the root to the target node, which can be used to update `expandedKeys` in controlled mode. Also available as `Tree.useTree`.
+
+```ts
+import { useTree } from 'antdv-next'
+
+const { getPath } = useTree(treeData)
+```
 
 ## Semantic DOM 
 | _semantic | demo/_semantic.md |

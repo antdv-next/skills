@@ -13,7 +13,7 @@ import { ref } from 'vue'
 const value = ref(30)
 const value2 = ref(30)
 
-function formatter(value: number) {
+function formatter(value?: number) {
   return `${value}%`
 }
 </script>

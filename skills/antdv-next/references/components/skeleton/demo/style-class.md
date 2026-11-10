@@ -38,7 +38,7 @@ function stylesFn(info: { props: { active?: boolean } }) {
 </script>
 
 <template>
-  <a-flex gap="middle">
+  <a-flex gap="medium">
     <a-skeleton
       :classes="classes"
       :styles="styles"

@@ -27,7 +27,7 @@ const stylesObject: TreeSelectProps['styles'] = {
 }
 
 const stylesFn: TreeSelectProps['styles'] = (info) => {
-  if (info.props.size === 'middle') {
+  if (info.props.size === 'medium') {
     return {
       suffix: {
         color: '#722ed1',
@@ -89,7 +89,7 @@ const treeData: TreeSelectProps['treeData'] = [
       :classes="classes"
       :styles="stylesFn"
       placeholder="Function"
-      size="middle"
+      size="medium"
     />
   </a-flex>
 </template>

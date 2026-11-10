@@ -15,8 +15,8 @@ const loading = ref(true)
 </script>
 
 <template>
-  <a-flex gap="middle" align="start" vertical>
-    <a-switch :checked="!loading" @change="(checked: boolean) => loading = !checked" />
+  <a-flex gap="medium" align="start" vertical>
+    <a-switch aria-label="Show card content" :checked="!loading" @change="(checked: boolean) => loading = !checked" />
     <a-card :loading="loading" style="min-width: 300px">
       <template #actions>
         <EditOutlined key="edit" />

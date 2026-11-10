@@ -2,8 +2,8 @@
 
 This document extracts semantic DOM descriptions from component `_semantic` demos and formats them into AI-friendly structured data.
 
-> Total semantic entries: 65
-> Components with semantic descriptions: 58
+> Total semantic entries: 66
+> Components with semantic descriptions: 59
 
 ## Component List
 
@@ -115,7 +115,7 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 - `prefix`: Prefix element with layout and styling for prefix content
 - `content`: Multiple selection container with layout, spacing, and wrapping styles for selected items
 - `placeholder`: Placeholder element with font styles and colors for placeholder text
-- `clear`: Clear button element with layout, styling and interactive effects for clear button式
+- `clear`: Clear button element with layout, styling and interactive effects for clear button styles
 - `input`: Input element with search input styling, cursor control, font inheritance and other search-related styles. Remove border styles
 - `suffix`: Suffix element with layout and styling for suffix content like clear button, arrow icon, etc.
 - `popup`:
@@ -124,7 +124,7 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
   - `listItem`: Popup item element with option item padding, hover effects, selected states, disabled states and other option interactive styles
 - `item`: Multiple selection item element with border, background, padding, and margin styles
 - `itemContent`: Multiple selection item content area with text ellipsis styles
-- `itemRemove`: Multiple selection item remove button with font-related styles式
+- `itemRemove`: Multiple selection item remove button with font-related styles
 
 ### checkbox
 
@@ -132,7 +132,7 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 - Semantic nodes: 3
 - Source demo: `docs/src/pages/components/checkbox/demo/_semantic.vue`
 
-- `root`: Root element with inline-flex layout, baseline alignment, cursor style, reset styles and other basic checkbox container styles
+- `root`: Root element of the checkbox group container, including layout, spacing and arrangement styles
 - `icon`: Checkbox icon element with size, direction, background, border, border-radius, transitions, and checked state checkmark styles
 - `label`: Label text element with padding and spacing styles relative to the checkbox
 
@@ -151,7 +151,7 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 ### colorPicker
 
 - Component: `color-picker`
-- Semantic nodes: 5
+- Semantic nodes: 6
 - Source demo: `docs/src/pages/components/color-picker/demo/_semantic.vue`
 
 - `root`: Trigger container with border styles, transition animations, size controls, displaying color block and text content
@@ -160,6 +160,7 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 - `description`: Description text content with font styles and color
 - `popup`:
   - `root`: Popup panel root container with background color, shadow effects, color selection panel, slider controls and preset colors
+  - `container`: Popup panel content container with background color, padding, border radius and shadow
 
 ### datePicker
 
@@ -223,10 +224,11 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 ### dropdown
 
 - Component: `dropdown`
-- Semantic nodes: 5
+- Semantic nodes: 6
 - Source demo: `docs/src/pages/components/dropdown/demo/_semantic.vue`
 
 - `root`: Root element of dropdown, sets positioning, z-index and container styles
+- `menu`: Menu element of dropdown, sets menu container styles
 - `itemTitle`: Title content area of dropdown option, sets layout and text styles
 - `item`: Individual dropdown option element, sets interaction states and background styles
 - `itemContent`: Main content area of dropdown option, sets content layout and link styles
@@ -328,7 +330,7 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 ### inputNumber
 
 - Component: `input-number`
-- Semantic nodes: 6
+- Semantic nodes: 7
 - Source demo: `docs/src/pages/components/input-number/demo/_semantic.vue`
 
 - `root`: Root element, sets inline-block layout, width, border radius and reset styles
@@ -337,6 +339,7 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 - `suffix`: Suffix wrapper element, sets flex layout, margin and transition animation styles
 - `actions`: Actions element, sets absolute positioning, width, flex layout and number adjustment button styles
 - `action`: Single action button element, sets button styling, hover effects and click interactions
+- `clear`: Clear button element, sets icon color, size and interaction styles
 
 ### inputSearch
 
@@ -354,6 +357,16 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
   - `root`: Search button root element with button styles, hover effects and click interactions
   - `icon`: Search button icon element with icon styles, hover effects and click interactions
   - `content`: Search button content element with text styles, hover effects and click interactions
+
+### listy
+
+- Component: `listy`
+- Semantic nodes: 3
+- Source demo: `docs/src/pages/components/listy/demo/_semantic.vue`
+
+- `root`: Root element, the scroll container, with font and relative positioning
+- `item`: Item element, with padding, split line and hover background
+- `groupHeader`: Group header element, with sticky positioning and background color
 
 ### masonry
 
@@ -514,7 +527,7 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 - Semantic nodes: 3
 - Source demo: `docs/src/pages/components/radio/demo/_semantic.vue`
 
-- `root`: Root element with layout styles, cursor styles, disabled text color and other basic container styles
+- `root`: Root element of the radio group container, including layout direction, spacing, button style and other group layout styles
 - `icon`: Icon element with border radius, transition animations, border styles, hover states, focus states and other interactive styles
 - `label`: Label element with padding, text color, disabled states, alignment and other text styles
 
@@ -622,11 +635,14 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 ### spin
 
 - Component: `spin`
-- Semantic nodes: 2
+- Semantic nodes: 5
 - Source demo: `docs/src/pages/components/spin/demo/_semantic.vue`
 
 - `root`: Root element with absolute positioning, display control, color, font size, text alignment, vertical alignment, opacity and transition animation (effective when fullscreen is false)
+- `section`: The loading element area, which sets relative positioning, flexbox layout, alignment, and color
 - `indicator`: Indicator element with width, height, font size, inline-block display, transition animation, transform origin, line height and color
+- `description`: The description element, which sets font size and line height
+- `container`: The container element that holds the child elements wrapped by Spin, setting opacity and transition animation
 
 ### splitter
 
@@ -705,12 +721,13 @@ This document extracts semantic DOM descriptions from component `_semantic` demo
 ### tabs
 
 - Component: `tabs`
-- Semantic nodes: 7
+- Semantic nodes: 8
 - Source demo: `docs/src/pages/components/tabs/demo/_semantic.vue`
 
 - `root`: Root element with basic tab container styles, layout and direction control
 - `header`: Header element with tab navigation header layout, background, borders and other styles
 - `item`: Item element with relative positioning, padding, colors, text ellipsis, border-radius, transitions and other tab item styles and interactive effects
+- `remove`: Remove button element with editable tab close button size, color, hover state and other interactive feedback styles
 - `indicator`: Indicator element with indicator bar color, position, dimensions, transitions and other active state indication styles
 - `body`: Body element with tab panel container layout, animation and size control styles
 - `content`: Content element with single tab panel layout, padding and other content display styles

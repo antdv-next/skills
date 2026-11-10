@@ -2,7 +2,7 @@
 
 ## Description (en-US)
 
-Can customize each character using `(RateProps) => ReactNode`.
+Can customize each character using `(RateProps) => VueNode`.
 
 ## Source
 
@@ -23,7 +23,7 @@ const value2 = ref(3)
 </script>
 
 <template>
-  <a-flex gap="middle" vertical>
+  <a-flex gap="medium" vertical>
     <a-rate v-model:value="value" :character="({ index = 0 }) => index + 1" />
     <a-rate v-model:value="value2" :character="({ index = 0 }) => customIcons[index + 1]" />
   </a-flex>

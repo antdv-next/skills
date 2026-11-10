@@ -46,7 +46,7 @@ const stylesFn: PopconfirmProps['styles'] = (info) => {
 </script>
 
 <template>
-  <a-flex gap="middle">
+  <a-flex gap="medium">
     <a-popconfirm
       title="Object text"
       description="Object description"

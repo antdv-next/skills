@@ -8,7 +8,7 @@
 
 ```vue
 <script setup lang="ts">
-import type { TableProps } from 'antdv-next'
+import type { TableEmits, TableProps } from 'antdv-next'
 
 interface DataType {
   key: string
@@ -56,7 +56,7 @@ const dataSource: DataType[] = [
   { key: '4', name: 'Jim Red', age: 32, address: 'London No. 2 Lake Park' },
 ]
 
-const handleChange: TableProps['onChange'] = (pagination, filters, sorter, extra) => {
+const handleChange: TableEmits['change'] = (pagination, filters, sorter, extra) => {
   console.log('params', pagination, filters, sorter, extra)
 }
 </script>

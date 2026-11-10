@@ -27,7 +27,7 @@ const items = [
 </script>
 
 <template>
-  <a-flex vertical gap="middle">
+  <a-flex vertical gap="medium">
     <a-steps
       :current="1"
       title-placement="vertical"

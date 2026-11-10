@@ -4,6 +4,8 @@
 
 Combine multiple controls in one line.
 
+When the outer labeled `a-form-item` has no `name`, it cannot infer the nested control's ID. If the label describes a single control, set `html-for` on the outer item and the same `id` on the nested control to preserve label-click focus and screen reader association.
+
 ## Source
 
 ```vue
@@ -39,14 +41,14 @@ function handleFinish(values: any) {
     style="max-width: 600px"
     @finish="handleFinish"
   >
-    <a-form-item label="Username">
+    <a-form-item label="Username" html-for="username">
       <a-space>
         <a-form-item
           name="username"
           no-style
           :rules="[{ required: true, message: 'Username is required' }]"
         >
-          <a-input v-model:value="model.username" style="width: 160px" placeholder="Please input" />
+          <a-input id="username" v-model:value="model.username" style="width: 160px" placeholder="Please input" />
         </a-form-item>
         <a-tooltip title="Useful information">
           <a-typography-link href="#API">

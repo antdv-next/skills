@@ -22,6 +22,7 @@ description: A long list can be divided into several pages, and only one page wi
 | Total number | demo/total.md |
 | Show All | demo/all.md |
 | Prev and next | demo/itemRender.md |
+| Custom component | demo/components.md |
 | Custom semantic dom styling | demo/style-class.md |
 
 ## API
@@ -34,6 +35,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | --- | --- | --- | --- | --- | --- |
 | align | Alignment of pagination | `start` \| `center` \| `end` | - | - | × |
 | classes | Customize class for each semantic structure inside the component. Supports object or function | PaginationClassNamesType | - | - | ✓ |
+| components | Customize internal components | &#123; sizeChanger?: Component&lt;PaginationSizeChangerProps&gt; &#125; | - | - | × |
 | current | Current page number | number | - | - | × |
 | defaultCurrent | Default initial page number | number | 1 | - | × |
 | defaultPageSize | Default number of data items per page | number | 10 | - | × |
@@ -51,7 +53,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | showTitle | Show page item's title | boolean | true | - | × |
 | showTotal | To display the total number and range | (total: number, range: [number, number]) => VueNode | - | - | × |
 | simple | Whether to use simple mode | boolean \| \{ readOnly?: boolean \} | - | - | × |
-| size | Specify the size of `Pagination`, can be set to `small` | `default` \| `small` | `default` | - | × |
+| size | Component size | `large` \| `medium` \| `small` | `medium` | - | × |
 | styles | Customize inline style for each semantic structure inside the component. Supports object or function | PaginationStylesType | - | - | ✓ |
 | total | Total number of data items | number | 0 | - | × |
 | locale | Pagination locale | PaginationLocale | - | - | × |
@@ -64,7 +66,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 ### Events 
 | Event | Description | Type | Version |
 | --- | --- | --- | --- |
-| change | Called when the page number or `pageSize` is changed | (page: number, pageSize: number) => void | - |
+| change | Called when the page number or `pageSize` is changed. When `pageSize` changes, the third parameter `info.recommendPage` provides a recommended page number based on the new page size to help preserve the user's data position | (page: number, pageSize: number, info?: &#123; recommendPage?: number &#125;) => void | info: 1.8.0 |
 | showSizeChange | Called when `pageSize` is changed | (current: number, size: number) => void | - |
 | update:current | Update current page | (page: number) => void | - |
 | update:pageSize | Update page size | (pageSize: number) => void | - |
@@ -81,8 +83,3 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 
 ## Semantic DOM 
 | _semantic | demo/_semantic.md |
-
-| Name | Description |
-| --- | --- |
-| root | Root element, set flex layout, alignment, wrap and list styles |
-| item | Item element, set size, padding, border, background color, hover and active styles |

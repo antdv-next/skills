@@ -113,7 +113,7 @@ const tagPlusStyle: CSSProperties = {
         type="text" size="small"
         :style="tagInputStyle"
         @blur="handleInputConfirm"
-        @press.enter="handleInputConfirm"
+        @press-enter="handleInputConfirm"
       />
     </template>
     <template v-else>

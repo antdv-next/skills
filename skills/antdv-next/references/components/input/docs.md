@@ -14,6 +14,7 @@ description: Through mouse or keyboard input content, it is the most basic form 
 | Basic usage | demo/basic.md |
 | Three sizes of Input | demo/size.md |
 | Variants | demo/variant.md |
+| Subcomponent variant config | demo/subcomponent-variant.md |
 | Compact Style | demo/compact-style.md |
 | Search box | demo/search-input.md |
 | Search box with loading | demo/search-input-loading.md |
@@ -39,7 +40,10 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 #### Props 
 | Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
 | --- | --- | --- | --- | --- | --- |
-| allowClear | If allow to remove input content with clear icon | boolean \| &#123; clearIcon: VueNode &#125; | false | - | ✓ |
+| ~~addonAfter~~ | The label text displayed after (on the right side of) the input field, please use Space.Compact instead | VueNode | - | - | × |
+| ~~addonBefore~~ | The label text displayed before (on the left side of) the input field, please use Space.Compact instead | VueNode | - | - | × |
+| allowClear | Whether to show a clear button | boolean \| [AllowClearConfig](#allowclearconfig) | false | - | ✓ |
+| ~~bordered~~ | Whether has border style, please use `variant` instead | boolean | true | - | × |
 | classes | Customize class for each semantic structure inside the component. Supports object or function. | Record&lt;[SemanticDOM](#semantic-input), string&gt; \| (info: &#123; props &#125;) =&gt; Record&lt;[SemanticDOM](#semantic-input), string&gt; | - | - | ✓ |
 | count | Character count config | [CountConfig](#countconfig) | - | - | × |
 | defaultValue | The initial input content | string | - | - | × |
@@ -50,7 +54,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | showCount | Whether to show character count | boolean \| &#123; formatter: (info: &#123; value: string, count: number, maxLength?: number &#125;) =&gt; VueNode &#125; | false | - | × |
 | status | Set validation status | 'error' \| 'warning' | - | - | × |
 | styles | Customize inline style for each semantic structure inside the component. Supports object or function. | Record&lt;[SemanticDOM](#semantic-input), CSSProperties&gt; \| (info: &#123; props &#125;) =&gt; Record&lt;[SemanticDOM](#semantic-input), CSSProperties&gt; | - | - | ✓ |
-| size | The size of the input box. Note: in the context of a form, the `middle` size is used | `large` \| `middle` \| `small` | - | - | × |
+| size | The size of the input box. Note: in the context of a form, the `medium` size is used | `large` \| `medium` \| `small` | - | - | × |
 | suffix | The suffix icon for the Input | VueNode | - | - | × |
 | type | The type of input, see: [MDN](https://developer.mozilla.org/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types)( use `Input.TextArea` instead of `type="textarea"`) | string | `text` | - | × |
 | value | The input content value, support `v-model:value` | string | - | - | × |
@@ -99,7 +103,9 @@ The rest of the props of `Input.TextArea` are the same as the original [textarea
 | classes | Customize class for each semantic structure inside the component. Supports object or function. | Record&lt;[SemanticDOM](#semantic-search), string&gt; \| (info: &#123; props &#125;) =&gt; Record&lt;[SemanticDOM](#semantic-search), string&gt; | - | - | ✓ |
 | enterButton | false displays the default button color, true uses the primary color, or you can provide a custom button. Conflicts with addonAfter. | VueNode | false | - | × |
 | loading | Search box with loading | boolean | false | - | × |
+| searchIcon | Customize the search icon | VueNode | - | - | ✓ |
 | styles | Customize inline style for each semantic structure inside the component. Supports object or function. | Record&lt;[SemanticDOM](#semantic-search), CSSProperties&gt; \| (info: &#123; props &#125;) =&gt; Record&lt;[SemanticDOM](#semantic-search), CSSProperties&gt; | - | - | ✓ |
+| variant | Variants of Input | `outlined` \| `borderless` \| `filled` \| `underlined` | `outlined` | - | ✓ |
 
 Supports all props of `Input`.
 
@@ -108,18 +114,25 @@ Supports all props of `Input`.
 | --- | --- | --- | --- |
 | search | The callback function triggered when you click on the search-icon, the clear-icon or press the Enter key | function(value, event, &#123; source: "input" \| "clear" &#125;) | - |
 
+#### Slots 
+| Slot | Description | Type | Version |
+| --- | --- | --- | --- |
+| searchIcon | Customize the search icon, effective when `enterButton` is a boolean, takes priority over the `searchIcon` prop | - | - |
+
+Supports all slots of `Input`.
+
 ### InputPassword 
 #### Props 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| classes | Semantic DOM class | Record&lt;[SemanticDOM](#semantic-password), string&gt; | - | - |
-| iconRender | Custom toggle button | (visible) =&gt; VueNode | (visible) =&gt; (visible ? &lt;EyeOutlined /> : &lt;EyeInvisibleOutlined />) | - |
-| styles | Semantic DOM style | Record&lt;[SemanticDOM](#semantic-password), CSSProperties&gt; | - | - |
-| visibilityToggle | Whether show toggle button or control password visible | boolean \| [VisibilityToggle](#visibilitytoggle) | true | - |
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| classes | Semantic DOM class | Record&lt;[SemanticDOM](#semantic-password), string&gt; | - | - | × |
+| iconRender | Custom toggle button | (visible) =&gt; VueNode | (visible) =&gt; (visible ? &lt;EyeOutlined /> : &lt;EyeInvisibleOutlined />) | - | × |
+| iconVisible | Whether the password is visible, support `v-model:icon-visible` | boolean | false | - | × |
+| styles | Semantic DOM style | Record&lt;[SemanticDOM](#semantic-password), CSSProperties&gt; | - | - | × |
+| variant | Variants of Input | `outlined` \| `borderless` \| `filled` \| `underlined` | `outlined` | - | ✓ |
+| visibilityToggle | Whether show toggle button or control password visible | boolean \| [VisibilityToggle](#visibilitytoggle) | true | - | × |
 
 ### InputOTP 
-Added in `5.16.0`.
-
 > Notes for developers
 >
 > When the `mask` prop is string, we recommend receiving a single character or a single emoji. If multiple characters or multiple emoji are passed, a warning will be thrown.
@@ -136,7 +149,7 @@ Added in `5.16.0`.
 | mask | Custom display, the original value will not be modified | boolean \| string | `false` | - | × |
 | length | The number of input elements | number | 6 | - | × |
 | status | Set validation status | 'error' \| 'warning' | - | - | × |
-| size | The size of the input box | `small` \| `middle` \| `large` | `middle` | - | × |
+| size | The size of the input box | `small` \| `medium` \| `large` | `medium` | - | × |
 | variant | Variants of Input | `outlined` \| `borderless` \| `filled` \| `underlined` | `outlined` | - | ✓ |
 | value | The input content value | string | - | - | × |
 
@@ -144,9 +157,19 @@ Added in `5.16.0`.
 | Event | Description | Type | Version |
 | --- | --- | --- | --- |
 | change | Trigger when all the fields are filled | (value: string) =&gt; void | - |
+| focus | Trigger when an input gets focus | (event: FocusEvent) =&gt; void | - |
 | input | Trigger when the input value changes | (value: string[]) =&gt; void | - |
 
 ### Types 
+#### AllowClearConfig 
+Fields that support global configuration use component values first, then global values, then defaults. `allowClear: true` inherits the global configuration; `disabled: false` and `tabIndex: 0` override global values.
+
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| clearIcon | Custom clear icon | VueNode | - | - | ✓ |
+| disabled | Disable the clear button | boolean | false | - | ✓ |
+| tabIndex | Tab order of the clear button. `-1` excludes it from Tab navigation | number | 0 | 1.7.0 | ✓ |
+
 #### CountConfig
 
 ```tsx
@@ -191,3 +214,26 @@ interface VisibilityToggle {
 
 ### InputOTP 
 | _semantic-otp | demo/_semantic-otp.md |
+
+## FAQ
+
+### Why does Input lose focus when `prefix/suffix/showCount` is changed dynamically? 
+When Input dynamically adds or removes `prefix/suffix/showCount`, Vue will re-create the DOM structure and the new input is not focused. You can preset an empty `<span />` to keep the DOM structure unchanged:
+
+```vue
+<template>
+  <a-input>
+    <template #suffix>
+      <template v-if="condition">
+        <Icon type="smile" />
+      </template>
+      <template v-else>
+        <span />
+      </template>
+    </template>
+  </a-input>
+</template>
+```
+
+### Why can `value` exceed `maxLength` when TextArea is controlled? 
+When controlled, the component should display according to the controlled content, to prevent the displayed value from differing from the submitted value when used inside a form component.

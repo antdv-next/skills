@@ -12,7 +12,7 @@ import { LoadingOutlined } from '@antdv-next/icons'
 </script>
 
 <template>
-  <a-flex align="center" gap="middle">
+  <a-flex align="center" gap="medium">
     <a-spin size="small">
       <template #indicator>
         <LoadingOutlined spin />

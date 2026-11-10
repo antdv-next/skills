@@ -8,7 +8,7 @@ For displaying anchor hyperlinks on page and jumping between them.
 
 > Notes for developers
 >
-> After version `4.24.0`, we rewrite Anchor use FC, Some methods of obtaining `ref` and calling internal instance methods will invalid.
+> Anchor is implemented with a functional component. Some methods of obtaining `ref` and calling internal instance methods are invalid.
 
 ## Demos
 
@@ -37,7 +37,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | bounds | Bounding distance of anchor area | number | 5 | - | × |
 | getContainer | Scrolling container | () =&gt; HTMLElement | () =&gt; window | - | × |
 | getCurrentAnchor | Customize the anchor highlight | (activeLink: string) =&gt; string | - | - | × |
-| offsetTop | Pixels to offset from top when calculating position of scroll | number | - | - | × |
+| offsetTop | Pixels to offset from top when calculating position of scroll | number | 0 | - | × |
 | showInkInFixed | Whether show ink-square when `affix={false}` | boolean| false | - | × |
 | targetOffset | Anchor scroll offset, default as `offsetTop`, [example](#anchor-demo-targetoffset) | number | - | - | × |
 | items | Data configuration option content, support nesting through children | &#123; key, href, title, target, children &#125;\[] [see](#anchoritem) | - |  | × |
@@ -84,7 +84,7 @@ We recommend using the items form instead.
 
 ## FAQ
 
-### In version `5.25.0+`, the `:target` pseudo-class of the destination element does not take effect as expected after anchor navigation. 
+### The `:target` pseudo-class of the destination element does not take effect as expected after anchor navigation. 
 For the purpose of page performance optimization, the implementation of anchor navigation has been changed from `window.location.href` to `window.history.pushState/replaceState`. Since `pushState/replaceState` does not trigger a page reload, the browser will not automatically update the matching state of the `:target` pseudo-class. To resolve this issue, you can manually construct the full URL: `href = window.location.origin + window.location.pathname + '#xxx'`.
 
 Related issues: [#53143](https://github.com/ant-design/ant-design/issues/53143) [#54255](https://github.com/ant-design/ant-design/issues/54255)

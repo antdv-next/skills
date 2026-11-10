@@ -36,7 +36,7 @@ function handleSelect(data: string) {
 </script>
 
 <template>
-  <a-flex vertical gap="middle">
+  <a-flex vertical gap="medium">
     <a-auto-complete
       :options="options"
       style="width: 200px"

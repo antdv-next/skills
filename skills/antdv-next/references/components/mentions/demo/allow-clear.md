@@ -4,6 +4,8 @@
 
 Customize clear button.
 
+A clear button with `tabIndex: -1` is excluded from Tab navigation.
+
 ## Source
 
 ```vue
@@ -18,10 +20,11 @@ const customAllowClear = {
 </script>
 
 <template>
-  <a-flex vertical gap="middle">
+  <a-flex vertical gap="medium">
     <a-mentions v-model:value="value" allow-clear />
     <a-mentions v-model:value="value" :allow-clear="customAllowClear" />
     <a-mentions v-model:value="value" allow-clear :rows="3" />
+    <a-mentions v-model:value="value" :allow-clear="{ tabIndex: -1 }" />
   </a-flex>
 </template>
 ```

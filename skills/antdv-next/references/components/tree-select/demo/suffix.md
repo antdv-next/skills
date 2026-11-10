@@ -2,7 +2,7 @@
 
 ## Description (en-US)
 
-Custom `prefix` and `suffixIcon`.
+Custom `prefix` and `suffix`.
 
 ## Source
 
@@ -71,7 +71,7 @@ const onChange: TreeSelectEmits['change'] = (newValue) => {
     :tree-data="treeData"
     @change="onChange"
   >
-    <template #suffixIcon>
+    <template #suffix>
       <SmileOutlined />
     </template>
   </a-tree-select>

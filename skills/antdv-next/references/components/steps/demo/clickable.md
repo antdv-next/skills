@@ -2,7 +2,7 @@
 
 ## Description (en-US)
 
-Setting `onChange` makes Steps clickable.
+Binding `v-model:current` makes Steps clickable.
 
 ## Source
 

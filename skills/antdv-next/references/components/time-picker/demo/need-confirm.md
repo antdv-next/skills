@@ -8,7 +8,9 @@ TimePicker will automatically determine whether to show a confirm button accordi
 
 ```vue
 <script setup lang="ts">
-function onChange(time: any, timeString: string) {
+import type { TimePickerEmits } from 'antdv-next'
+
+const onChange: TimePickerEmits['change'] = (time, timeString) => {
   console.log(time, timeString)
 }
 </script>

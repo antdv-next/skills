@@ -12,13 +12,13 @@ function onChange(text: string) {
   console.log('onChange:', text)
 }
 
-function onInput(value: string) {
+function onInput(value: string[]) {
   console.log('onInput:', value)
 }
 </script>
 
 <template>
-  <a-flex gap="middle" align="flex-start" vertical>
+  <a-flex gap="medium" align="flex-start" vertical>
     <a-typography-title :level="5">
       With formatter (Upcase)
     </a-typography-title>
@@ -45,7 +45,7 @@ function onInput(value: string) {
     <a-input-otp mask="🔒" @change="onChange" @input="onInput" />
 
     <a-typography-title :level="5">
-      With custom ReactNode separator
+      With custom VueNode separator
     </a-typography-title>
     <a-input-otp @change="onChange" @input="onInput">
       <template #separator>

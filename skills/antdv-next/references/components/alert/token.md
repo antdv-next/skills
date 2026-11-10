@@ -23,6 +23,7 @@ Use these variables through `theme.components.Alert`. This document lists defini
 
 | Token | Type | Description |
 | --- | --- | --- |
+| `containerBorderRadius` | `CSSProperties` | Border radius of the container |
 | `defaultPadding` | `CSSProperties` | Default padding |
 | `withDescriptionPadding` | `CSSProperties` | Padding with description |
 | `withDescriptionIconSize` | `string \| number` | Icon size with description |

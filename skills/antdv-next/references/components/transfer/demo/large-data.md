@@ -8,7 +8,7 @@ Store a large amount of items with pagination.
 
 ```vue
 <script setup lang="ts">
-import type { TransferEmits } from 'antdv-next'
+import type { TransferEmits, TransferKey } from 'antdv-next'
 import { onMounted, ref } from 'vue'
 
 interface RecordType {
@@ -20,10 +20,10 @@ interface RecordType {
 
 const oneWay = ref(false)
 const mockData = ref<RecordType[]>([])
-const targetKeys = ref<string[]>([])
+const targetKeys = ref<TransferKey[]>([])
 
 onMounted(() => {
-  const newTargetKeys: string[] = []
+  const newTargetKeys: TransferKey[] = []
   const newMockData: RecordType[] = []
   for (let i = 0; i < 2000; i++) {
     const data = {

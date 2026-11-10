@@ -37,7 +37,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | classes | Customize class for each semantic structure inside the component. Supports object or function. | ImageClassNamesType | - | - | ✓ |
 | styles | Customize inline style for each semantic structure inside the component. Supports object or function. | ImageStylesType | - | - | ✓ |
 | rootClass | - | string | - | - | × |
-| alt | Image description | string | - | _ | × |
+| alt | Image description | string | - | - | × |
 | height | Image height | string \| number | - | - | × |
 | src | Image URL | string | - | - | × |
 | width | Image width | string \| number | - | - | × |
@@ -68,7 +68,7 @@ Other Property ref [&lt;img>](https://developer.mozilla.org/en-US/docs/Web/HTML/
 | focusTrap | Whether to trap focus within the preview when open | boolean | true | - |
 | getContainer | Specify container for preview mounting; still full screen; false mounts at current location | string \| HTMLElement \| (() => HTMLElement) \| false | - | - |
 | imageRender | Custom preview content | (originalNode: VNode, info: { transform: [TransformType](#transformtype), image: [ImgInfo](#imginfo) }) => VNode | - | - |
-| mask | preview mask effect | boolean \| \{ enabled?: boolean, blur?: boolean \} | true | - |
+| mask | preview mask effect | boolean \| \{ enabled?: boolean, blur?: boolean, closable?: boolean \} | true | - |
 | maxScale | Maximum zoom scale | number | 50 | - |
 | minScale | Minimum zoom scale | number | 1 | - |
 | movable | Whether the preview image can be dragged when it is larger than the viewport | boolean | true | - |
@@ -76,7 +76,8 @@ Other Property ref [&lt;img>](https://developer.mozilla.org/en-US/docs/Web/HTML/
 | rootClassName | Root DOM class name for preview; applies to both image and preview wrapper | string | - | - |
 | scaleStep | Each step's zoom multiplier is 1 + scaleStep | number | 0.5 | - |
 | src | Custom preview src | string | - | - |
-| onOpenChange | Callback when preview open state changes | (visible: boolean) => void | - | - |
+| wheel | Whether to enable mouse wheel zoom | boolean | true | - |
+| onOpenChange | Callback when preview open state changes | (open: boolean) => void | - | - |
 | onTransform | Callback for preview transform changes | { transform: [TransformType](#transformtype), action: [TransformAction](#transformaction) } | - | - |
 
 ### PreviewGroup
@@ -98,13 +99,14 @@ Other Property ref [&lt;img>](https://developer.mozilla.org/en-US/docs/Web/HTML/
 | current | Index of the current preview image | number | - | - |
 | getContainer | Specify container for preview mounting; still full screen; false mounts at current location | string \| HTMLElement \| (() => HTMLElement) \| false | - | - |
 | imageRender | Custom preview content | (originalNode: VNode, info: { transform: [TransformType](#transformtype), image: [ImgInfo](#imginfo), current: number }) => VNode | - | - |
-| mask | preview mask effect | boolean \| \{ enabled?: boolean, blur?: boolean \} | true | - |
+| mask | preview mask effect | boolean \| \{ enabled?: boolean, blur?: boolean, closable?: boolean \} | true | - |
 | minScale | Minimum zoom scale | number | 1 | - |
 | maxScale | Maximum zoom scale | number | 50 | - |
 | movable | Whether the preview image can be dragged when it is larger than the viewport | boolean | true | - |
 | open | Whether to display preview | boolean | - | - |
 | scaleStep | Each step's zoom multiplier is 1 + scaleStep | number | 0.5 | - |
-| onOpenChange | Callback when preview open state changes, includes current preview index | (visible: boolean, info: { current: number }) => void | - | - |
+| wheel | Whether to enable mouse wheel zoom | boolean | true | - |
+| onOpenChange | Callback when preview open state changes, includes current preview index | (open: boolean, info: { current: number }) => void | - | - |
 | onChange | Callback when changing preview image | (current: number, prevCurrent: number) => void | - | - |
 | onTransform | Callback for preview transform changes | { transform: [TransformType](#transformtype), action: [TransformAction](#transformaction) } | - | - |
 
@@ -140,6 +142,7 @@ type TransformAction
     | 'doubleClick'
     | 'move'
     | 'dragRebound'
+    | 'reset'
 ```
 
 ### ToolbarRenderInfoType
@@ -167,6 +170,7 @@ type TransformAction
   };
   transform: TransformType,
   current: number;
+  total: number;
   image: ImgInfo
 }
 ```

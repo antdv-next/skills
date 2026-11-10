@@ -3,13 +3,13 @@ name: antdv-next
 description: Antdv Next Vue 3 component library. Use when locating component API docs, props/events/slots, playground demos, or theme token definitions.
 metadata:
   author: Antdv Next team
-  version: "2026-07-03"
+  version: "2026-11-10"
   source: Generated from https://github.com/antdv-next/antdv-next, script located in this repo at scripts/generate-antdv-next-skill.ts
 ---
 
 # Antdv Next
 
-> The skill is based on Antdv Next docs and demos, generated at 2026-07-03.
+> The skill is based on Antdv Next docs and demos, generated at 2026-11-10.
 
 Language: en-US
 
@@ -19,12 +19,16 @@ Docs and demos are copied into `references/` for offline use.
 
 | Doc | Path |
 | --- | --- |
+| cli | references/docs/vue/cli.md |
 | common-props | references/docs/vue/common-props.md |
 | compatible-style | references/docs/vue/compatible-style.md |
 | customize-theme | references/docs/vue/customize-theme.md |
+| design-md | references/docs/vue/design-md.md |
 | faq | references/docs/vue/faq.md |
+| for-agents | references/docs/vue/for-agents.md |
 | getting-started | references/docs/vue/getting-started.md |
 | i18n | references/docs/vue/i18n.md |
+| mcp | references/docs/vue/mcp.md |
 | migration-antdv-next | references/docs/vue/migration-antdv-next.md |
 | nuxt | references/docs/vue/nuxt.md |
 | secondary-development | references/docs/vue/secondary-development.md |
@@ -76,6 +80,7 @@ Docs and demos are copied into `references/` for offline use.
 | input | references/components/input/docs.md | references/components/input/demo/ | references/components/input/token.md | 5 entries |
 | input-number | references/components/input-number/docs.md | references/components/input-number/demo/ | references/components/input-number/token.md | 1 entries |
 | layout | references/components/layout/docs.md | references/components/layout/demo/ | references/components/layout/token.md | none |
+| listy | references/components/listy/docs.md | references/components/listy/demo/ | references/components/listy/token.md | 1 entries |
 | masonry | references/components/masonry/docs.md | references/components/masonry/demo/ | none | 1 entries |
 | mentions | references/components/mentions/docs.md | references/components/mentions/demo/ | references/components/mentions/token.md | 1 entries |
 | menu | references/components/menu/docs.md | references/components/menu/demo/ | references/components/menu/token.md | 1 entries |

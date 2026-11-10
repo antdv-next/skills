@@ -37,7 +37,7 @@ const options = [
     placeholder="Please select"
     :options="options"
   >
-    <template #suffixIcon>
+    <template #suffix>
       <span>{{ value.length }} / {{ MAX_COUNT }}</span>
       <DownOutlined />
     </template>

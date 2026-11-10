@@ -17,6 +17,7 @@ description: A content area which can be collapsed and expanded.
 | Nested panel | demo/mix.md |
 | Borderless | demo/borderless.md |
 | Custom Panel | demo/custom.md |
+| Panel Icon | demo/icon.md |
 | SFC Mode | demo/sfc.md |
 | No arrow | demo/noarrow.md |
 | Extra node | demo/extra.md |
@@ -33,7 +34,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 #### Props 
 | Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
 | --- | --- | --- | --- | --- | --- |
-| activeKey | Key of the active panel | Array&lt;string \| number&gt; \| string \| number | No default value. In accordion mode, it's the key of the first panel | - | × |
+| activeKey | Key of the active panel, support `v-model:active-key` | Array&lt;string \| number&gt; \| string \| number | No default value. In accordion mode, it's the key of the first panel | - | × |
 | defaultActiveKey | Key of the initial active panel | Array&lt;string \| number&gt; \| string \| number | - | - | × |
 | accordion | If true, Collapse renders as Accordion | boolean | false | - | × |
 | destroyOnHidden | Destroy Inactive Panel | boolean | false | - | × |
@@ -42,7 +43,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | expandIcon | Allow to customize collapse icon | (panelProps: PanelProps) =&gt; any | - | - | ✓ |
 | expandIconPlacement | Set expand icon placement | `start` \| `end` | `start` | - | × |
 | ghost | Make the collapse borderless and its background transparent | boolean | false | - | × |
-| size | Set the size of collapse | SizeType | `middle` | - | × |
+| size | Set the size of collapse | SizeType | `medium` | - | × |
 | collapsible | Specify how to trigger Collapse. Either by clicking icon or by clicking any area in header or disable collapse functionality itself | `header` \| `icon` \| `disabled` | - | - | × |
 | labelRender | Custom render label | (params: &#123; item: CollapseItemType, index: number &#125;) =&gt; any | - | - | × |
 | contentRender | Custom render content | (params: &#123; item: CollapseItemType, index: number &#125;) =&gt; any | - | - | × |
@@ -68,10 +69,19 @@ Deprecated: when using items, prefer configuring panels with `items`.
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| header | - | VueNode | - | - |
-| showArrow | - | boolean | true | - |
-| extra | - | VueNode | - | - |
 | collapsible | Specify how to trigger Collapse. Either by clicking icon or by clicking any area in header or disable collapse functionality itself | `header` \| `icon` \| `disabled` | - | - |
+| extra | The extra element in the corner | VueNode | - | - |
+| forceRender | Forced render of content on panel, instead of lazy rendering after clicking on header | boolean | false | - |
+| header | Title of the panel | VueNode | - | - |
+| key | Unique key identifying the panel from among its siblings | string \| number | - | - |
+| showArrow | If false, panel will not show arrow icon. If false, collapsible can't be set as icon | boolean | true | - |
+
+#### Slots 
+| Slot | Description | Type | Version |
+| --- | --- | --- | --- |
+| default | Body area content | VueNode | - |
+| header | Title of the panel | VueNode | - |
+| extra | The extra element in the corner | VueNode | - |
 
 ## Types
 

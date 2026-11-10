@@ -32,7 +32,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
 | --- | --- | --- | --- | --- | --- |
 | type | Type of Alert styles, options: `success`, `info`, `warning`, `error` | 'success' \| 'info' \| 'warning' \| 'error' | `info`, in `banner` mode default is `warning` | - | × |
-| closable | The config of closable, &gt;=5.15.0: support `aria-*` | ClosableType | `false` | - | ✓ |
+| closable | The config of closable | ClosableType | `false` | - | ✓ |
 | title | Content of Alert | VueNode | - | - | × |
 | message | Content of Alert, please use `title` instead | VueNode | - | - | × |
 | description | Additional content of Alert | VueNode | - | - | × |
@@ -48,7 +48,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | warningIcon | (Only supports global configuration) Custom warning icon in Alert icon | VueNode | - | - | ✓ |
 | errorIcon | (Only supports global configuration) Custom error icon in Alert icon | VueNode | - | - | ✓ |
 | closeIcon | - | VueNode | - | - | ✓ |
-| action | The action of Alert | VueNode | - | 4.9.0 | × |
+| action | The action of Alert | VueNode | - | - | × |
 | id | - | string | - | - | × |
 
 ### Events 
@@ -66,8 +66,16 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | title       | Content of Alert| () =&gt; any | - |
 | description | Additional content of Alert | () =&gt; any | - |
 | icon        | Custom icon, effective when `showIcon` is true | () =&gt; any | - |
-| closeIcon   | - | () =&gt; any | - |
-| action      | The action of Alert | () =&gt; any | 4.9.0 |
+| closeIcon   | Custom close icon | () =&gt; any | - |
+| action      | The action of Alert | () =&gt; any | - |
+
+### ClosableType 
+| Property | Description | Type | Default | Version |
+| --- | --- | --- | --- | --- |
+| afterClose | Called when close animation is finished | () =&gt; void | - | - |
+| closeIcon | Custom close icon | VueNode | - | - |
+| disabled | Whether the close button is disabled | boolean | false | - |
+| onClose | Callback when Alert is closed | (e: MouseEvent) =&gt; void | - | - |
 
 ## Semantic DOM
 

@@ -19,7 +19,7 @@ const options = [
 
 const value = computed(() => {
   if (mode.value !== 'multiple')
-    return []
+    return options[0]!.value
 
   return options.length > 0
     ? [options[0]!.value]
@@ -62,25 +62,45 @@ const divRef = ref<HTMLDivElement | null>(null)
     component-name="Select"
     :semantics="semantics"
   >
-    <template #default="{ classes }">
-      <div ref="divRef" :style="{ position: 'absolute', height: '200px' }">
+    <template #default="{ classes, activeSemantic }">
+      <div
+        ref="divRef"
+        class="select-semantic-demo"
+        :class="{ 'is-clear-active': activeSemantic === 'clear' }"
+        :style="{ position: 'absolute', height: '200px' }"
+      >
         <div :style="{ display: 'flex', justifyContent: 'center', marginBottom: '12px' }">
           <a-segmented v-model:value="mode" :options="['single', 'multiple']" />
         </div>
         <div :style="{ display: 'flex', flexDirection: 'column', gap: '12px' }">
           <a-select
             prefix="prefix"
+            placeholder="Please select"
             :style="{ width: '300px' }"
             :options="options"
-            :value="value"
+            :value="activeSemantic === 'placeholder' ? null : value"
             :mode="mode === 'multiple' ? 'multiple' : undefined"
+            allow-clear
             open
             :get-popup-container="() => divRef!"
             :classes="classes"
+            :styles="{
+              clear: {
+                opacity: 1,
+                visibility: activeSemantic === 'clear' ? 'visible' : 'hidden',
+              },
+            }"
           />
         </div>
       </div>
     </template>
   </SemanticPreview>
 </template>
+
+<style scoped>
+.select-semantic-demo.is-clear-active :deep(.ant-select-suffix) {
+  visibility: hidden;
+  pointer-events: none;
+}
+</style>
 ```

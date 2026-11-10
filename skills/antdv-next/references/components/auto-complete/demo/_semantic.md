@@ -37,16 +37,19 @@ const divRef = ref<HTMLDivElement | null>(null)
     component-name="AutoComplete"
     :semantics="semantics"
   >
-    <template #default="{ classes }">
+    <template #default="{ classes, activeSemantic }">
       <div ref="divRef" :style="{ position: 'absolute', height: '200px' }">
         <a-auto-complete
           prefix="prefix"
+          :value="activeSemantic === 'placeholder' ? null : 'aojunhao123'"
           :style="{ width: '200px' }"
           :options="options"
           placeholder="input here"
+          allow-clear
           open
           :get-popup-container="() => divRef!"
           :classes="classes"
+          :styles="{ clear: { opacity: 1 } }"
         />
       </div>
     </template>

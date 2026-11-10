@@ -23,7 +23,7 @@ function handleReset() {
 </script>
 
 <template>
-  <a-flex vertical gap="middle">
+  <a-flex vertical gap="medium">
     <a-splitter
       style="height: 200px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)"
       @resize="handleResize"
@@ -43,7 +43,7 @@ function handleReset() {
         </a-flex>
       </a-splitter-panel>
     </a-splitter>
-    <a-flex gap="middle" justify="space-between">
+    <a-flex gap="medium" justify="space-between">
       <a-switch
         v-model:checked="enabled"
         checked-children="Enabled"

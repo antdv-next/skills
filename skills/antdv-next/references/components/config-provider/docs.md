@@ -43,6 +43,7 @@ Some components use dynamic style to support wave effect. You can config `csp` p
 | Custom Wave | demo/wave.md |
 | Static function | demo/holder-render.md |
 | useConfig | demo/use-config.md |
+| Focus outline | demo/focus-outline.md |
 
 ## API
 
@@ -53,7 +54,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
 | componentDisabled | Config antd component `disabled` | boolean | - | - |
-| componentSize | Config antd component size | `small` \| `middle` \| `large` | - | - |
+| componentSize | Config antd component size | `small` \| `medium` \| `large` | - | - |
 | csp | Set [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) config | CSPConfig | - | - |
 | direction | Set direction of layout. See [demo](#config-provider-demo-direction) | `ltr` \| `rtl` | `ltr` | - |
 | getPopupContainer | To set the container of the popup element. The default is to create a `div` element in `body` | `(trigger?: HTMLElement) => HTMLElement \| ShadowRoot` | () => document.body | - |
@@ -107,7 +108,7 @@ const { componentDisabled, componentSize } = config.value
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
 | componentDisabled | antd component disabled state | boolean | - | - |
-| componentSize | antd component size state | `small` \| `middle` \| `large` | - | - |
+| componentSize | antd component size state | `small` \| `medium` \| `large` | - | - |
 
 ### Component Config
 
@@ -116,6 +117,7 @@ The following config keys set common props for corresponding components or globa
 - `alert`: [Alert](../alert/docs.md#api)
 - `anchor`: [Anchor](../anchor/docs.md#api)
 - `app`: [App](../app/docs.md#api)
+- `autoComplete`: [AutoComplete](../auto-complete/docs.md#allowclearconfig) (supported since 1.8.0, only supports `allowClear`)
 - `avatar`: [Avatar](../avatar/docs.md#api)
 - `badge`: [Badge](../badge/docs.md#api)
 - `borderBeam`: [BorderBeam](../border-beam/docs.md#api)
@@ -142,8 +144,10 @@ The following config keys set common props for corresponding components or globa
 - `image`: [Image](../image/docs.md#api)
 - `input`: [Input](../input/docs.md#input)
 - `inputNumber`: [InputNumber](../input-number/docs.md#api)
+- `inputPassword`: [Input.Password](../input/docs.md#input-password)
 - `inputSearch`: [Input.Search](../input/docs.md#input-search)
 - `layout`: [Layout](../layout/docs.md#api)
+- `listy`: [Listy](../listy/docs.md#api)
 - `masonry`: [Masonry](../masonry/docs.md#api)
 - `mentions`: [Mentions](../mentions/docs.md#api)
 - `menu`: [Menu](../menu/docs.md#api)

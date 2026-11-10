@@ -57,7 +57,7 @@ function decline() {
     :size="size"
     :icon-size="size / 4"
     value="https://antdv-next.com/"
-    icon="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
+    icon="/antdv-next.svg"
   />
 </template>
 ```

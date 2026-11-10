@@ -12,6 +12,12 @@ description: Cascade selection box.
 
 | Demo | Path |
 | --- | --- |
+| Basic | demo/basic.md |
+| Default value | demo/default-value.md |
+| Custom trigger | demo/custom-trigger.md |
+| Hover | demo/hover.md |
+| Disabled option | demo/disabled-option.md |
+| Change on select | demo/change-on-select.md |
 | Multiple | demo/multiple.md |
 | ShowCheckedStrategy | demo/showCheckedStrategy.md |
 | Size | demo/size.md |
@@ -35,13 +41,14 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 
 | Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
 | --- | --- | --- | --- | --- | --- |
-| allowClear | Show clear button | boolean \| \{ clearIcon?: VueNode \} | true | - | × |
+| allowClear | Whether to show a clear button | boolean \| [AllowClearConfig](#allowclearconfig) | true | - | 1.8.0 |
 | changeOnSelect | Change value on each selection if set to true (always works when `multiple` is `true`) | boolean | false | - | × |
 | disabled | Whether disabled select | boolean | false | - | × |
 | expandTrigger | expand current item when click or hover, one of `click` `hover` | string | `click` | - | × |
 | fieldNames | Custom field name for label and value and children | object | \{ label: `label`, value: `value`, children: `children` \} | - | × |
 | getPopupContainer | Parent Node which the selector should be rendered to. Default to `body`. When position issues happen, try to modify it into scrollable content and position it relative. [example](https://codepen.io/afc163/pen/zEjNOy?editors=0010) | function(triggerNode) | () =&gt; document.body | - | × |
 | loadData | To load option lazily, and it cannot work with `showSearch` | (selectedOptions) =&gt; void | - | - | × |
+| loadingIcon | Customize the loading icon while options are loading lazily | VueNode | - | - | ✓ |
 | maxTagCount | Max tag count to show. `responsive` will cost render performance | number \| `responsive` | - | - | × |
 | maxTagPlaceholder | Placeholder for not showing tags | VueNode \| function(omittedValues) | - | - | × |
 | maxTagTextLength | Max tag text length to show | number | - | - | × |
@@ -50,12 +57,12 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | options | The data options of cascade | [Option](#option)\[] | - | - | × |
 | placeholder | The input placeholder | string | - | - | × |
 | placement | Use preset popup align config from builtinPlacements | `bottomLeft` `bottomRight` `topLeft` `topRight` | `bottomLeft` | - | × |
-| popupMenuColumnStyle | The style of the drop-down menu column | CSSProperties | - | - | × |
 | showCheckedStrategy | The way to show selected items in the box (only effective when `multiple` is `true`). `Cascader.SHOW_CHILD`: just show child treeNode. `Cascader.SHOW_PARENT`: just show parent treeNode (when all child treeNode under the parent treeNode are checked) | `Cascader.SHOW_PARENT` \| `Cascader.SHOW_CHILD` | `Cascader.SHOW_PARENT` | - | × |
-| showSearch | Whether show search input in single mode | boolean \| [Object](#showsearch) | false | - | × |
-| ~~searchValue~~ | Set search value, Need work with `showSearch` | string | - | - | × |
-| size | The input size | `large` \| `middle` \| `small` | - | - | × |
+| showSearch | Whether show search input | boolean \| [Object](#showsearch) | false | - | × |
+| size | The input size | `large` \| `medium` \| `small` | `medium` | - | × |
 | status | Set validation status | 'error' \| 'warning' | - | - | × |
+| suffix | The custom suffix. Custom suffixes will not respond to clicks to open, because the replaced suffix may be designed for other interactions. You can use `pointer-events: none` style to bypass | VueNode \| (info: &#123; open: boolean, searchValue: string, focused: boolean, showSearch?: boolean, loading?: boolean &#125;) =&gt; VueNode | `&lt;DownOutlined /&gt;` | 1.8.0 | 1.8.0 |
+| suffixIcon | The custom suffix icon. Deprecated. Use `suffix` instead | VueNode | - | - | ✓ |
 | value | The selected value, support `v-model:value` | string\[] \| number\[] | - | - | × |
 | variant | Variants of selector | `outlined` \| `borderless` \| `filled` \| `underlined` | `outlined` | - | ✓ |
 
@@ -64,7 +71,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | Event | Description | Type | Version |
 | --- | --- | --- | --- |
 | change | Callback when finishing cascader select | (value, selectedOptions) =&gt; void | - |
-| openChange | Callback when popup shown or hidden | (value) =&gt; void | - |
+| openChange | Callback when popup shown or hidden | (open: boolean) =&gt; void | - |
 
 ### Slots
 
@@ -72,13 +79,14 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | --- | --- | --- | --- |
 | displayRender | The render function of displaying selected options | (label, selectedOptions) => VueNode | - |
 | expandIcon | Customize the current item expand icon | VueNode | - |
-| loadingIcon | The appearance of lazy loading (now is useless) | VueNode | - |
+| loadingIcon | Customize the loading icon while options are loading lazily | VueNode | - |
 | notFoundContent | Specify content to show when no result matches | VueNode | - |
 | optionRender | Customize the rendering dropdown options | (option: Option) => VueNode | - |
-| popupRender | Customize dropdown content | (menus: VueNode) => VueNode | - |
+| popupRender | Customize dropdown content | (menus: VNode) => VueNode | - |
 | prefix | The custom prefix | VueNode | - |
 | removeIcon | The custom remove icon | VueNode | - |
-| suffixIcon | The custom suffix icon | VueNode | - |
+| suffix | The custom suffix | (info: &#123; open: boolean, searchValue: string, focused: boolean, showSearch?: boolean, loading?: boolean &#125;) =&gt; VueNode | 1.8.0 |
+| suffixIcon | The custom suffix icon. Deprecated. Use `suffix` slot instead | VueNode | - |
 | tagRender | Custom render function for tags in `multiple` mode | (\{ label: string, onClose: function, value: string \}) =&gt; VueNode | - |
 
 ### Methods
@@ -89,6 +97,16 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | focus() | Get focus | - |
 
 ## Types
+
+### AllowClearConfig 
+Supports global configuration through `ConfigProvider.cascader.allowClear` (1.8.0). Fields use component values first, then global values, then defaults. `allowClear: true` inherits the global configuration; `disabled: false` and `tabIndex: 0` override global values.
+
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| clearIcon | Custom clear icon | VueNode | - | - | 1.8.0 (`cascader.allowClear.clearIcon`), ✓ (`cascader.clearIcon`) |
+| disabled | When `true`, equivalent to `allowClear: false` | boolean | false | 1.8.0 | 1.8.0 |
+| label | Accessible name of the clear button | string | Component locale text | - | 1.8.0 |
+| tabIndex | Tab order of the clear button. `-1` excludes it from Tab navigation | number | 0 | 1.8.0 | 1.8.0 |
 
 ### showSearch
 

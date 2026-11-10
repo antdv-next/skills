@@ -2,7 +2,7 @@
 
 ## Description (en-US)
 
-Set the `gap` between elements, which has three preset sizes: `small`, `middle`, `large`, You can also customize the gap size.
+Set the `gap` between elements, which has three preset sizes: `small`, `medium`, `large`, You can also customize the gap size.
 
 ## Source
 
@@ -10,7 +10,7 @@ Set the `gap` between elements, which has three preset sizes: `small`, `middle`,
 <script setup lang="ts">
 import { ref } from 'vue'
 
-type SizeType = 'small' | 'middle' | 'large' | undefined
+type SizeType = 'small' | 'medium' | 'large' | undefined
 
 const gapSize = ref<SizeType | 'customize'>('small')
 
@@ -18,13 +18,13 @@ const customGapSize = ref<number>(0)
 </script>
 
 <template>
-  <a-flex gap="middle" vertical>
+  <a-flex gap="medium" vertical>
     <a-radio-group v-model:value="gapSize">
       <a-radio value="small">
         small
       </a-radio>
-      <a-radio value="middle">
-        middle
+      <a-radio value="medium">
+        medium
       </a-radio>
       <a-radio value="large">
         large

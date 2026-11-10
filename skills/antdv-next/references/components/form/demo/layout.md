@@ -4,6 +4,8 @@
 
 Switch between horizontal, vertical, and inline layouts.
 
+By default, the `horizontal` layout stacks labels above controls when the viewport width is `575px` or less to accommodate narrow screens. Use the `xs` settings in `labelCol` and `wrapperCol` to customize column widths on narrow screens.
+
 ## Source
 
 ```vue

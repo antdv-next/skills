@@ -24,7 +24,7 @@ const placeholderStyle = {
 </script>
 
 <template>
-  <a-flex gap="middle">
+  <a-flex gap="medium">
     <a-button type="primary" @click="showModal = true">
       Show in Modal
     </a-button>

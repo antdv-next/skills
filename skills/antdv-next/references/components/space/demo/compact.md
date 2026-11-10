@@ -175,7 +175,7 @@ const value = ref('leaf1')
       <a-range-picker style="width: 70%" />
       <a-input style="width: 30%" default-value="input content" />
       <a-button type="primary">
-        查询
+        Search
       </a-button>
     </a-space-compact>
     <a-space-compact block>
@@ -242,7 +242,7 @@ const value = ref('leaf1')
         tree-default-expand-all
         :tree-data="treeData"
       >
-        <template #title="{ value: val, title }">
+        <template #treeTitleRender="{ value: val, title }">
           <b v-if="val === 'leaf3'" style="color: #08c">{{ title }}</b>
           <template v-else>
             {{ title }}

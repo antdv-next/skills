@@ -16,6 +16,7 @@ description: A dropdown menu for displaying choices.
 | --- | --- |
 | Basic Usage | demo/basic.md |
 | Select with search field | demo/search.md |
+| Multiple fields search | demo/multiple-fields-search.md |
 | Custom Search | demo/search-filter-option.md |
 | Multiple selection | demo/multiple.md |
 | Sizes | demo/size.md |
@@ -32,6 +33,7 @@ description: A dropdown menu for displaying choices.
 | Custom dropdown | demo/custom-dropdown-menu.md |
 | Hide Already Selected | demo/hide-selected.md |
 | Variants | demo/variant.md |
+| Clear suffix | demo/clear-suffix-debug.md |
 | Custom Tag Render | demo/custom-tag-render.md |
 | Custom Selected Label Render | demo/custom-label-render.md |
 | Responsive maxTagCount | demo/responsive.md |
@@ -48,13 +50,14 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 
 | Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
 | --- | --- | --- | --- | --- | --- |
-| allowClear | Show clear button | boolean \| &#123; clearIcon?: VueNode &#125; | false | - | ✓ |
+| allowClear | Whether to show a clear button | boolean \| [AllowClearConfig](#allowclearconfig) | false | - | ✓ |
 | autoClearSearchValue | Whether the current search will be cleared on selecting an item. Only applies when `mode` is set to `multiple` or `tags` | boolean | true | - | × |
+| autoComplete | The HTML `autocomplete` attribute of the input | string | `new-password` | - | 1.8.0 |
 | defaultActiveFirstOption | Whether active first option by default | boolean | true | - | × |
 | disabled | Whether disabled select | boolean | false | - | × |
 | dropdownClassName | The className of dropdown menu, **Deprecated. Use `classes.popup.root` instead** | string | - | - | × |
 | dropdownMatchSelectWidth | Determine whether the dropdown menu and the select input are the same width, **Deprecated. Use `popupMatchSelectWidth` instead** | boolean \| number | - | - | × |
-| dropdownRender | Customize dropdown content, **Deprecated. Use `popupRender` instead** | (originNode: VueNode) =&gt; VueNode | - | - | × |
+| dropdownRender | Customize dropdown content, **Deprecated. Use `popupRender` instead** | (originNode: VNode) =&gt; VueNode | - | - | × |
 | dropdownStyle | The style of dropdown menu, **Deprecated. Use `styles.popup.root` instead** | CSSProperties | - | - | × |
 | fieldNames | Customize node label, value, options, groupLabel field name | object | &#123; label: 'label', value: 'value', options: 'options', groupLabel: 'label' &#125; | - | × |
 | filterOption | If true, filter options by input, if function, filter options against it. The function will receive two arguments, `inputValue` and `option`, if the function returns true, the option will be included in the filtered set; Otherwise, it will be excluded | boolean \| (inputValue: string, option?: Option) =&gt; boolean | true | - | × |
@@ -69,23 +72,24 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | maxTagTextLength | Max tag text length to show | number | - | - | × |
 | menuItemSelectedIcon | The custom menuItemSelected icon with multiple options | VueNode | - | - | ✓ |
 | mode | Set mode of Select | 'multiple' \| 'tags' | - | - | × |
-| notFoundContent | Specify content to show when no result matches | VueNode | `Not Found` | - | × |
+| notFoundContent | Specify content to show when no result matches | VueNode | `No data` | - | × |
 | open | Controlled open state of dropdown | boolean | - | - | × |
 | optionFilterProp | Which prop value of option will be used for filter if filterOption is true. If options is set, it should be set to label. When a string[] is provided, multiple fields are searched using OR matching | string \| string[] | value | - | × |
 | options | Select options. Will get better perf than jsx definition | &#123; label: VueNode; value: string &#125;[] | - | - | × |
 | optionRender | Customize the rendering dropdown options | (option: FlattenOptionData&lt;BaseOptionType&gt;, info: &#123; index: number &#125;) =&gt; VueNode | - | - | × |
-| placeholder | The placeholder of select | string | - | - | × |
+| placeholder | The placeholder of select | VNode | - | - | × |
 | placement | The position where the selection box pops up | `bottomLeft` `bottomRight` `topLeft` `topRight` | bottomLeft | - | × |
 | popupClassName | The className of dropdown menu, use `classes.popup.root` instead | string | - | - | × |
 | popupMatchSelectWidth | Determine whether the dropdown menu and the select input are the same width. Default set `min-width` same as input. Will ignore when value less than select width. `false` will disable virtual scroll | boolean \| number | true | - | × |
-| popupRender | Customize dropdown content | (originNode: VueNode) =&gt; VueNode | - | - | × |
+| popupRender | Customize dropdown content | (originNode: VNode) =&gt; VueNode | - | - | × |
 | prefix | The custom prefix | VueNode | - | - | × |
 | removeIcon | The custom remove icon | VueNode | - | - | ✓ |
 | searchValue | The current input "search" text | string | - | - | × |
 | showSearch | Whether select is searchable | boolean \| Object | single: false, multiple: true | - | ✓ |
-| size | Size of Select input | `large` \| `middle` \| `small` | - | - | × |
+| size | Size of Select input | `large` \| `medium` \| `small` | `medium` | - | × |
 | status | Set validation status | 'error' \| 'warning' | - | - | × |
-| suffixIcon | The custom suffix icon. Customize icon will not response click open to avoid icon designed to do other interactive. You can use `pointer-events: none` style to bypass | VueNode | `<DownOutlined />` | - | ✓ |
+| suffix | The custom suffix. Custom suffixes will not respond to clicks to open, because the replaced suffix may be designed for other interactions. You can use `pointer-events: none` style to bypass | VueNode \| (info: &#123; open: boolean, searchValue: string, focused: boolean, showSearch?: boolean, loading?: boolean &#125;) =&gt; VueNode | `<DownOutlined />` | 1.8.0 | 1.8.0 |
+| suffixIcon | The custom suffix icon, **Deprecated. Use `suffix` instead** | VueNode | `<DownOutlined />` | - | ✓ |
 | tagRender | Customize tag render, only applies when `mode` is set to `multiple` or `tags` | (props) =&gt; VueNode | - | - | × |
 | labelRender | Customize selected label render | (props: LabelInValueType) =&gt; VueNode | - | - | × |
 | tokenSeparators | Separator used to tokenize, only applies when `mode="tags"` | string[] | - | - | × |
@@ -117,10 +121,11 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | menuItemSelectedIcon | The custom menuItemSelected icon with multiple options | VueNode | - |
 | notFoundContent | Specify content to show when no result matches | VueNode | - |
 | optionRender | Customize the rendering dropdown options | (option: FlattenOptionData&lt;BaseOptionType&gt;, info: &#123; index: number &#125;) =&gt; VueNode | - |
-| popupRender | Customize dropdown content | (originNode: VueNode) =&gt; VueNode | - |
+| popupRender | Customize dropdown content | (originNode: VNode) =&gt; VueNode | - |
 | prefix | The custom prefix | VueNode | - |
 | removeIcon | The custom remove icon | VueNode | - |
-| suffixIcon | The custom suffix icon. Customize icon will not response click open to avoid icon designed to do other interactive. You can use `pointer-events: none` style to bypass | VueNode | - |
+| suffix | The custom suffix. Custom suffixes will not respond to clicks to open, because the replaced suffix may be designed for other interactions. You can use `pointer-events: none` style to bypass | (info: &#123; open: boolean, searchValue: string, focused: boolean, showSearch?: boolean, loading?: boolean &#125;) =&gt; VueNode | 1.8.0 |
+| suffixIcon | The custom suffix icon, **Deprecated. Use `suffix` slot instead** | VueNode | - |
 | tagRender | Customize tag render, only applies when `mode` is set to `multiple` or `tags` | (props) =&gt; VueNode | - |
 
 ### Select Methods 
@@ -128,6 +133,16 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | --- | --- | --- |
 | blur() | Remove focus | - |
 | focus() | Get focus | - |
+
+### AllowClearConfig 
+Fields that support global configuration use component values first, then global values, then defaults. `allowClear: true` inherits the global configuration; `disabled: false` and `tabIndex: 0` override global values.
+
+| Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
+| --- | --- | --- | --- | --- | --- |
+| clearIcon | Custom clear icon | VueNode | - | - | ✓ |
+| disabled | When `true`, equivalent to `allowClear: false` | boolean | false | 1.8.0 | 1.8.0 |
+| label | Accessible name of the clear button | string | Component locale text | - | 1.8.0 |
+| tabIndex | Tab order of the clear button. `-1` excludes it from Tab navigation | number | 0 | 1.8.0 | 1.8.0 |
 
 ### showSearch 
 | Property | Description | Type | Default | Version |

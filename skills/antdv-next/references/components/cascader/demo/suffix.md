@@ -2,7 +2,7 @@
 
 ## Description (en-US)
 
-Use `prefix` to customize the prefix content, use `suffixIcon` to customize the selection box suffix icon, and use `expandIcon` to customize the current item expand icon.
+Use `prefix` to customize the prefix content, use `suffix` to customize the selection box suffix, and use `expandIcon` to customize the current item expand icon.
 
 ## Source
 
@@ -66,14 +66,14 @@ const prefixIcon = h(SmileOutlined)
     placeholder="Please select"
     @change="onChange"
   >
-    <template #suffixIcon>
+    <template #suffix>
       <SmileOutlined />
     </template>
   </a-cascader>
   <br>
   <br>
   <a-cascader
-    suffix-icon="ab"
+    suffix="ab"
     :options="options"
     placeholder="Please select"
     @change="onChange"

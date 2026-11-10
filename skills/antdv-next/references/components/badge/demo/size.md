@@ -11,7 +11,7 @@ Set size of numeral Badge.
 </script>
 
 <template>
-  <a-space size="middle">
+  <a-space size="medium">
     <a-badge size="medium" :count="5">
       <a-avatar shape="square" size="large" />
     </a-badge>

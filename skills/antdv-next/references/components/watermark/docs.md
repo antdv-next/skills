@@ -48,7 +48,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | --- | --- | --- | --- | --- |
 | color | Font color | [CanvasFillStrokeStyles.fillStyle](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fillStyle) | rgba(0,0,0,.15) | - |
 | fontSize | Font size | number \| string | 16 | - |
-| fontWeight | Font weight | `normal` \| `light` \| `weight` \| number | normal | - |
+| fontWeight | Font weight | `normal` \| `lighter` \| `bold` \| `bolder` \| number | 400 | - |
 | fontFamily | Font family | string | sans-serif | - |
 | fontStyle | Font style | `none` \| `normal` \| `italic` \| `oblique` | normal | - |
 | textAlign | Specify the text alignment direction | [CanvasTextAlign](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/textAlign) | `center` | - |
@@ -80,7 +80,7 @@ When using an image watermark and the image loads abnormally, you can add `conte
 ```
 
 ### Why `overflow: hidden` style is added? 
-Users can hide the watermark by setting the container height to 0 through the developer tool in previous versions. To avoid this situation, the container adds `overflow: hidden`. When the container height changes, the content is also hidden. You can override the style to modify this behavior:
+To prevent users from hiding the watermark by setting the container height to 0 through the developer tool, the container adds `overflow: hidden`. When the container height changes, the content is also hidden. You can override the style to modify this behavior:
 
 ```vue
 <template>

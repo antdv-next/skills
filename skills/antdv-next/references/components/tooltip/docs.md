@@ -16,6 +16,7 @@ description: Simple text popup box.
 | Placement | demo/placement.md |
 | Arrow | demo/arrow.md |
 | Auto Shift | demo/shift.md |
+| Realign after layout changes | demo/force-align.md |
 | Colorful Tooltip | demo/colorful.md |
 | Disabled | demo/disabled.md |
 | Disabled children | demo/disabled-children.md |
@@ -42,12 +43,12 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | placement | Tooltip placement | TooltipPlacement | top | - | × |
 | trigger | Trigger action | ActionType \| ActionType[] | - | - | ✓ |
 | fresh | Update content even when tooltip is hidden | boolean | - | - | × |
-| mouseEnterDelay | Delay in seconds before showing tooltip | number | 0.1 | - | × |
-| mouseLeaveDelay | Delay in seconds before hiding tooltip | number | 0.1 | - | × |
+| mouseEnterDelay | Delay in seconds before showing tooltip | number | 0.1 | - | ✓ |
+| mouseLeaveDelay | Delay in seconds before hiding tooltip | number | 0.1 | - | ✓ |
 | classes | Semantic DOM class. Supports object or function | TooltipClassNamesType | - | - | ✓ |
 | styles | Semantic DOM style. Supports object or function | TooltipStylesType | - | - | ✓ |
 | getTooltipContainer | Legacy alias of `getPopupContainer` | (node: HTMLElement) =&gt; HTMLElement | - | - | × |
-| motion | Popup motion config | VcTooltipProps['motion'] | - | - | × |
+| motion | Popup motion config. Only `name` takes effect, the rest is managed internally | &#123; name?: string &#125; | - | - | × |
 | afterOpenChange | Callback after visibility change | (open: boolean) =&gt; void | - | - | × |
 | builtinPlacements | Built-in placement config | typeof Placements | - | - | × |
 | title | The text shown in the tooltip | VueNode | - | - | × |
@@ -60,7 +61,6 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | Event | Description | Type | Version |
 | --- | --- | --- | --- |
 | openChange | Callback when tooltip visibility changes | (open: boolean) =&gt; void | - |
-| update:open | Emit when tooltip visibility changes | (open: boolean) =&gt; void | - |
 
 ### Slots
 
@@ -128,3 +128,6 @@ If need update content when close, you can set `fresh` property ([#44830](https:
 <div>
 <img alt="no blink" height="50" src="https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*rUbsR4xWpMsAAAAAAAAAAAAADrJ8AQ/original" />
 </div>
+
+### Why is Tooltip not realigned after the layout changes? 
+Tooltip does not keep watching every external layout change, to avoid extra overhead for each open Tooltip. When loading data asynchronously, refreshing a list or expanding a collapsible area moves the trigger element, you can grab the `TooltipRef` through `ref` and call its `forceAlign` method once the layout has settled (see [#57809](https://github.com/ant-design/ant-design/issues/57809)). The "Realign after layout changes" demo above shows the pattern.

@@ -8,7 +8,7 @@ Vertical spacing between adjacent components.
 
 ```vue
 <template>
-  <a-space orientation="vertical" size="middle" style="display: flex;">
+  <a-space orientation="vertical" size="medium" style="display: flex;">
     <a-card title="Card" size="small">
       <p>Card content</p>
       <p>Card content</p>

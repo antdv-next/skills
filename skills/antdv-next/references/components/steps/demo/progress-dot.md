@@ -25,7 +25,7 @@ const items = [
 </script>
 
 <template>
-  <a-flex vertical gap="middle">
+  <a-flex vertical gap="medium">
     <a-steps
       type="dot"
       :current="1"
@@ -38,7 +38,7 @@ const items = [
       variant="outlined"
     />
     <a-divider />
-    <a-flex gap="middle">
+    <a-flex gap="medium">
       <a-steps
         type="dot"
         orientation="vertical"

@@ -37,12 +37,12 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 #### Props 
 | Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
 | --- | --- | --- | --- | --- | --- |
-| align | Align items | `start` \| `end` \| `center` \| `baseline` | - | 4.2.0 | × |
+| align | Align items | `start` \| `end` \| `center` \| `baseline` \| `stretch` | - | `stretch`: 1.8.0 | × |
 | orientation | The space direction | `vertical` \| `horizontal` | `horizontal` | - | × |
 | separator | Set separator | VueNode | - | - | × |
-| size | The space size | [Size](#size) \| [[Size](#size), [Size](#size)] | `small` | 4.1.0 \| Array: 4.9.0 | ✓ |
+| size | The space size | [Size](#size) \| [[Size](#size), [Size](#size)] | `small` | - | ✓ |
 | vertical | Orientation, Simultaneously configure with `orientation` and prioritize `orientation` | boolean | false | - | × |
-| wrap | Auto wrap line, when `horizontal` effective | boolean | false | 4.9.0 | × |
+| wrap | Auto wrap line, when `horizontal` effective | boolean | false | - | × |
 
 #### Slots 
 | Slot | Description | Type | Version |
@@ -70,9 +70,9 @@ Use Space.Compact when child form components are compactly connected and the bor
 #### Props 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| block | Option to fit width to its parent's width | boolean | false | 4.24.0 |
+| block | Option to fit width to its parent's width | boolean | false | - |
 | orientation | Set direction of layout | `vertical` \| `horizontal` | `horizontal` | - |
-| size | Set child component size | `large` \| `middle` \| `small` | `middle` | 4.24.0 |
+| size | Set child component size | `large` \| `medium` \| `small` | `medium` | - |
 | vertical | Orientation, Simultaneously configure with `orientation` and prioritize `orientation` | boolean | false | - |
 
 ## Semantic DOM

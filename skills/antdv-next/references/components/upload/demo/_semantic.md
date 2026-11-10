@@ -4,6 +4,7 @@
 
 ```vue
 <script setup lang="ts">
+import type { UploadFile } from 'antdv-next'
 import { UploadOutlined } from '@antdv-next/icons'
 import { computed } from 'vue'
 import { SemanticPreview } from '@/components/semantic'
@@ -18,7 +19,7 @@ const semantics = computed(() => [
   { name: 'item', desc: t('item'), version: '1.0.0' },
 ])
 
-const defaultFileList = [
+const defaultFileList: UploadFile[] = [
   { uid: '1', name: 'xxx.png', status: 'uploading', url: 'http://www.baidu.com/xxx.png', percent: 33 },
   { uid: '2', name: 'yyy.png', status: 'done', url: 'http://www.baidu.com/yyy.png' },
   { uid: '3', name: 'zzz.png', status: 'error', response: 'Server Error 500', url: 'http://www.baidu.com/zzz.png' },

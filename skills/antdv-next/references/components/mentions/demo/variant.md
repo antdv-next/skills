@@ -8,7 +8,7 @@ Variants of Mentions, there are four variants: `outlined` `filled` `borderless` 
 
 ```vue
 <template>
-  <a-flex vertical gap="middle">
+  <a-flex vertical gap="medium">
     <a-mentions placeholder="Outlined" />
     <a-mentions placeholder="Filled" variant="filled" />
     <a-mentions placeholder="Borderless" variant="borderless" />

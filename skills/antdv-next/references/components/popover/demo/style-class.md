@@ -49,7 +49,7 @@ const stylesFn: PopoverProps['styles'] = (info) => {
 </script>
 
 <template>
-  <a-flex gap="middle">
+  <a-flex gap="medium">
     <a-popover
       content="Object text"
       :classes="classes"

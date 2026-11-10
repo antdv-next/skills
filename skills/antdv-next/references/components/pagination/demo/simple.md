@@ -8,7 +8,7 @@ Simple mode.
 
 ```vue
 <template>
-  <a-space direction="vertical" size="middle" style="width: 100%">
+  <a-space direction="vertical" size="medium" style="width: 100%">
     <a-pagination simple :default-current="2" :total="50" />
     <a-pagination :simple="{ readOnly: true }" :default-current="2" :total="50" />
     <a-pagination simple :default-current="2" :total="50" disabled />

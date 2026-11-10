@@ -19,10 +19,12 @@ Antdv Next has 3 types of Tabs for different situations.
 | Centered | demo/centered.md |
 | Icon | demo/icon.md |
 | Indicator | demo/custom-indicator.md |
+| Scroll position | demo/scroll-position.md |
 | Slide | demo/slide.md |
 | Extra content | demo/extra.md |
 | Size | demo/size.md |
 | Placement | demo/placement.md |
+| Custom Popup Search | demo/popup-render-search.md |
 | Card type tab | demo/card.md |
 | Add & close tab | demo/editable-card.md |
 | Customized trigger of new tab | demo/custom-add-trigger.md |
@@ -50,7 +52,8 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | moreIcon | Custom icon of the collapse menu | VueNode | `<EllipsisOutlined />` | - | ✓ |
 | removeIcon | The custom icon of remove, only works with `type="editable-card"` | VueNode | `<CloseOutlined />` | - | ✓ |
 | renderTabBar | Replace the TabBar | (ctx: \{ props: any; TabNavListComponent: any \}) => VueNode | - | - | × |
-| size | Preset tab bar size | `large` \| `middle` \| `small` | `middle` | - | × |
+| scrollPosition | Scroll alignment of the active tab when switching. `auto` scrolls only when the active tab overflows and aligns it to the nearest edge | `auto` \| `start` \| `center` \| `end` \| number | `auto` | 1.5.5 | ✓ |
+| size | Preset tab bar size | `large` \| `medium` \| `small` | `medium` | - | × |
 | styles | Customize inline style for each semantic structure inside the component. Supports object or function | TabsStylesType | - | - | ✓ |
 | tabBarExtraContent | Extra content in tab bar | VueNode \| \{ left?: VueNode, right?: VueNode \} | - | - | × |
 | tabBarGutter | The gap between tabs | number | - | - | × |
@@ -76,7 +79,10 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
 | icon | The custom icon | VueNode | - | - |
+| popupRender | Customize the dropdown menu render | (menu: VueNode, info: \{ restTabs: Tab[], onClose: () => void \}) => VueNode | - | - |
+| ~~visible~~ | Whether the dropdown menu is open, use `open` instead | boolean | - | - |
 | DropdownProps | Dropdown props | DropdownProps | - | - |
+| ~~onVisibleChange~~ | Called when the dropdown open state changes, use `onOpenChange` instead | (open: boolean) => void | - | - |
 
 ### Events 
 | Event | Description | Type | Version |

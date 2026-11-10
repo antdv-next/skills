@@ -12,17 +12,18 @@ description: Vertical display timeline.
 | Demo | Path |
 | --- | --- |
 | Basic | demo/basic.md |
-| Alternate | demo/alternate.md |
-| Custom | demo/custom.md |
-| SFC Mode | demo/sfc.md |
-| Pending | demo/pending.md |
-| Label | demo/title.md |
 | Variant | demo/variant.md |
-| Right Alternate | demo/end.md |
+| Pending | demo/pending.md |
+| Alternate | demo/alternate.md |
 | Horizontal | demo/horizontal.md |
+| Custom | demo/custom.md |
+| Dot render | demo/dot-render.md |
+| SFC Mode | demo/sfc.md |
+| Right Alternate | demo/end.md |
+| Label | demo/title.md |
 | Title Offset | demo/title-span.md |
-| Semantic Sample | demo/semantic.md |
 | Custom semantic dom styling | demo/style-class.md |
+| Semantic Sample | demo/semantic.md |
 
 ## API
 
@@ -39,6 +40,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | pendingDot | Set the dot of the last ghost node when pending is true. Use `item.icon` instead | VueNode | &lt;LoadingOutlined /&gt; | - | × |
 | reverse | Whether reverse nodes or not | boolean | false | - | × |
 | styles | Customize inline style for each semantic structure inside the component. Supports object or function | Record&lt;SemanticDOM, CSSProperties&gt; | - | - | ✓ |
+| variant | Config style variant | `filled` \| `outlined` | `outlined` | - | 1.8.0 |
 | dotRender | Custom rendering function for timeline dot | (params: &#123; item: TimelineItemProps, index: number &#125;) =&gt; VueNode | - | - | × |
 | labelRender | Custom rendering function for timeline label | (params: &#123; item: TimelineItemProps, index: number &#125;) =&gt; VueNode | - | - | × |
 | contentRender | Custom rendering function for timeline content | (params: &#123; item: TimelineItemProps, index: number &#125;) =&gt; VueNode | - | - | × |

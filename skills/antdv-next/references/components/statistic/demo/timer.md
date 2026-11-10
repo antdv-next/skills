@@ -15,7 +15,7 @@ const tenSecondsLater = Date.now() + 10 * 1000
 function onFinish() {
   console.log('finished!')
 }
-function onChange(val?: number) {
+function onChange(val?: number | string) {
   if (typeof val === 'number' && 4.95 * 1000 < val && val < 5 * 1000) {
     console.log('changed!')
   }
@@ -28,7 +28,7 @@ function onChange(val?: number) {
       <a-statistic-timer type="countdown" :value="deadline" @finish="onFinish" />
     </a-col>
     <a-col :span="12">
-      <a-statistic-timer type="countdown" title="Million Seconds" :value="deadline" format="HH:mm:ss:SSS" />
+      <a-statistic-timer type="countdown" title="Milliseconds" :value="deadline" format="HH:mm:ss:SSS" />
     </a-col>
     <a-col :span="12">
       <a-statistic-timer

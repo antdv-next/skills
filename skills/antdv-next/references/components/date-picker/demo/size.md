@@ -2,7 +2,7 @@
 
 ## Description (en-US)
 
-The input box comes in three sizes: small, middle and large. The `middle` size will be used if `size` is omitted.
+The input box comes in three sizes: small, medium and large. The `medium` size will be used if `size` is omitted.
 
 ## Source
 
@@ -10,9 +10,9 @@ The input box comes in three sizes: small, middle and large. The `middle` size w
 <script setup lang="ts">
 import { shallowRef } from 'vue'
 
-type SizeType = 'large' | 'middle' | 'small'
+type SizeType = 'large' | 'medium' | 'small'
 
-const size = shallowRef<SizeType>('middle')
+const size = shallowRef<SizeType>('medium')
 </script>
 
 <template>
@@ -21,8 +21,8 @@ const size = shallowRef<SizeType>('middle')
       <a-radio-button value="large">
         Large
       </a-radio-button>
-      <a-radio-button value="middle">
-        middle
+      <a-radio-button value="medium">
+        medium
       </a-radio-button>
       <a-radio-button value="small">
         Small

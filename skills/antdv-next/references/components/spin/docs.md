@@ -22,6 +22,7 @@ When part of the page is waiting for asynchronous data or during a rendering pro
 | Progress | demo/percent.md |
 | Custom semantic dom styling | demo/style-class.md |
 | Fullscreen | demo/fullscreen.md |
+| Nested debug | demo/list-debug.md |
 
 ## API
 
@@ -32,7 +33,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
 | --- | --- | --- | --- | --- | --- |
 | spinning | Whether Spin is visible | boolean | true | - | × |
-| size | The size of Spin, options: `small`, `default` and `large` | SpinSize | `default` | - | × |
+| size | The size of Spin, options: `small`, `medium` and `large` | SpinSize | `medium` | - | × |
 | ~~tip~~ | `deprecated, use description`Customize description content when Spin has children | VueNode | - | - | × |
 | description | Customize description content | VueNode | - | - | × |
 | delay | Specifies a delay in milliseconds for loading state (prevent flush) | number | - | - | × |

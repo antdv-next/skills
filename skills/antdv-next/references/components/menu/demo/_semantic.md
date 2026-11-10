@@ -4,7 +4,8 @@
 
 ```vue
 <script setup lang="ts">
-import { MailOutlined } from '@antdv-next/icons'
+import type { MenuProps } from 'antdv-next'
+import { AppstoreOutlined, MailOutlined } from '@antdv-next/icons'
 import { computed, h, ref } from 'vue'
 import { SemanticPreview } from '@/components/semantic'
 import { useComponentLocale } from '@/composables/use-locale'
@@ -41,12 +42,12 @@ const semantics = computed(() => {
   return [...baseLocale, ...additionalGroupLocale, ...additionalPopupLocale, ...subMenuLocale]
 })
 
-const items = [
+const items: NonNullable<MenuProps['items']> = [
   { label: 'Navigation One', key: 'mail', icon: h(MailOutlined) },
   {
     key: 'SubMenu',
-    label: 'Navigation One',
-    icon: h(MailOutlined),
+    label: 'Navigation Two',
+    icon: h(AppstoreOutlined),
     children: [
       {
         key: 'g1',
@@ -61,14 +62,14 @@ const items = [
   },
 ]
 
-const groupItem = [
+const groupItem: NonNullable<MenuProps['items']> = [
   {
     key: 'grp',
-    label: 'Group',
+    label: 'Navigation Three',
     type: 'group',
     children: [
-      { key: '13', label: 'Option 13' },
-      { key: '14', label: 'Option 14' },
+      { key: '3', label: 'Option 3' },
+      { key: '4', label: 'Option 4' },
     ],
   },
 ]
@@ -80,6 +81,11 @@ const itemList = computed(() => {
 function onClick(e: { key: string }) {
   current.value = e.key
 }
+
+function getPopupContainer() {
+  const el = ((divRef.value as any)?.$el ?? divRef.value) as HTMLElement | null
+  return el?.parentElement?.parentElement || el!
+}
 </script>
 
 <template>
@@ -88,7 +94,7 @@ function onClick(e: { key: string }) {
     :semantics="semantics"
   >
     <template #default="{ classes }">
-      <a-flex ref="divRef" vertical gap="middle" align="center">
+      <a-flex ref="divRef" vertical gap="medium" align="center">
         <a-segmented
           :options="['horizontal', 'vertical', 'inline']"
           :value="mode"
@@ -100,11 +106,11 @@ function onClick(e: { key: string }) {
             :mode="mode"
             :items="itemList"
             :styles="{
-              root: { width: mode === 'horizontal' ? '310px' : '230px' },
+              root: { width: mode === 'horizontal' ? '480px' : '230px' },
               popup: { root: { zIndex: 1 } },
             }"
             :open-keys="['SubMenu']"
-            :get-popup-container="() => divRef!"
+            :get-popup-container="getPopupContainer"
             :classes="classes"
             @click="onClick"
           />

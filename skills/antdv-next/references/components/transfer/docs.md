@@ -38,13 +38,13 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 
 | Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
 | --- | --- | --- | --- | --- | --- |
-| actions | A set of operations that are sorted from top to bottom. When an array of strings is provided, default buttons will be used; when an array of VueNode is provided, custom elements will be used | VueNode[] | [`>`, `<`] | 6.0.0 | × |
+| actions | A set of operations that are sorted from top to bottom. When an array of strings is provided, default buttons will be used; when an array of VueNode is provided, custom elements will be used | VueNode[] | [`>`, `<`] | - | × |
 | classes | Customize class for each semantic structure inside the component. Supports object or function | TransferClassNamesType | - | - | ✓ |
 | dataSource | Used for setting the source data. The elements that are part of this array will be present the left column. Except the elements whose keys are included in `targetKeys` prop | TransferItem[] | [] | - | × |
 | disabled | Whether disabled transfer | boolean | false | - | × |
 | filterOption | A function to determine whether an item should show in search result list, only works when searching | (inputValue: string, option: TransferItem, direction: `left` \| `right`) =&gt; boolean | - | - | × |
 | footer | A function used for rendering the footer | (props: TransferListProps, direction: `left` \| `right`) =&gt; VueNode | - | - | × |
-| locale | The i18n text including filter, empty text, item unit, etc | TransferLocale | - | - | × |
+| locale | The i18n text including filter, empty text, item unit, etc | TransferLocale | &#123; itemUnit: `item`, itemsUnit: `items`, notFoundContent: `No data`, searchPlaceholder: `Search here` &#125; | - | × |
 | oneWay | Display as single direction style | boolean | false | - | × |
 | pagination | Use pagination. Not work in render props | boolean \| &#123; pageSize: number; simple: boolean; showSizeChanger?: boolean; showLessItems?: boolean &#125; | false | - | × |
 | render | The function to generate the item shown on a column. Based on an record (element of the dataSource array), this function should return a VueNode which is generated from that record. Also, it can return a plain object with `value` and `label`, `label` is a VueNode and `value` is for title | (record: TransferItem) =&gt; VueNode | - | - | × |

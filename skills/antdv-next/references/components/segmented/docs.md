@@ -37,7 +37,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | disabled | Disable all segments | boolean | false |  | × |
 | options | Set children optional | string\[] \| number\[] \| SegmentedItemType\[] | [] |  | × |
 | orientation | Orientation | `horizontal` \| `vertical` | `horizontal` |  | × |
-| size | The size of the Segmented. | `large` \| `middle` \| `small` | `middle` |  | × |
+| size | The size of the Segmented. | `large` \| `medium` \| `small` | `medium` |  | × |
 | vertical | Orientation，Simultaneously existing with `orientation`, `orientation` takes priority | boolean | `false` | - | × |
 | value | Currently selected value, support `v-model:value` | string \| number |  |  | × |
 | shape | shape of Segmented | `default` \| `round` | `default` | - | × |

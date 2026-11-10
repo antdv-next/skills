@@ -8,7 +8,7 @@ Classic page layouts.
 
 ```vue
 <template>
-  <a-flex gap="middle" wrap>
+  <a-flex gap="medium" wrap>
     <a-layout class="demo-layout">
       <a-layout-header class="demo-header">
         Header

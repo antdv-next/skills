@@ -2,7 +2,7 @@
 
 ## Description (en-US)
 
-Usage of basic Tag, and it could be closable and customize close button by set `closeIcon` property, will display default close button when `closeIcon` is setting to `true`. Closable Tag supports `onClose` events.
+Set `closable` to show the default close button, or use an object to configure accessibility attributes such as `aria-label`, with `closeIcon` customizing the close icon. The top-level `closeIcon` is a shorthand for setting a custom close icon or showing the default close button with `true`. Closable tags support the `close` event. Use `e.preventDefault()` to prevent closing.
 
 ## Source
 
@@ -11,8 +11,9 @@ Usage of basic Tag, and it could be closable and customize close button by set `
 import { CloseCircleOutlined, DeleteOutlined } from '@antdv-next/icons'
 import { shallowRef } from 'vue'
 
-function preventDefault() {
-  console.log('Clicked! Default Not Close.')
+function preventDefault(e: MouseEvent) {
+  e.preventDefault()
+  console.log('Clicked! But prevent default.')
 }
 const tag2 = shallowRef(true)
 function handleCloseTag2() {
@@ -38,7 +39,7 @@ function handleClick() {
         Link
       </a>
     </a-tag>
-    <a-tag close-icon @close="preventDefault">
+    <a-tag closable @close="preventDefault">
       Prevent Default
     </a-tag>
     <a-tag v-if="tag2" @close="handleCloseTag2">

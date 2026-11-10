@@ -2,7 +2,7 @@
 
 ## Description (en-US)
 
-The `danger` is a property of buttons after antd 4.0.
+The `danger` property renders a button with danger semantics and can be combined with any button type.
 
 ## Source
 

@@ -8,7 +8,7 @@ description: Display a set of notices; the text scrolls automatically when it ov
 - For notifying about information within the current page; a rather eye-catching kind of in-page notice.
 - Content longer than one line scrolls automatically as a marquee, or can be shown in full across multiple lines with `wrap`.
 
-`NoticeBar` is a mobile-only component with no counterpart in antdv-next (PC); for static tips with a title and description, use [Alert](../alert/docs.md).
+`NoticeBar` is a mobile-only component with no counterpart in Antdv Next (PC); for static tips with a title and description, use [Alert](../alert/docs.md).
 
 ## Examples
 

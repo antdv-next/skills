@@ -45,5 +45,5 @@ The component itself is a placeholder block whose height equals the correspondin
 
 ## Differences from PC
 
-- A mobile-only component, there is no counterpart in antdv-next.
+- A mobile-only component, there is no counterpart in Antdv Next.
 - When you only need to add safe area padding to an existing element, you can also use the utility classes `am-safe-area-top` / `am-safe-area-bottom` directly.

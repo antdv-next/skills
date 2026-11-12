@@ -8,7 +8,7 @@ description: Stick an element to the viewport.
 - When the content is long and the page has to scroll, pin a filter bar, a section title, action buttons, etc. to the top or bottom of the screen.
 - When you need to be notified as the element becomes affixed / unaffixed (the `change` event), e.g. to switch its style once it is sticky.
 
-The API is the same as `Affix` in antdv-next: `offsetTop`, `offsetBottom`, `target`, `change`. While affixed, a placeholder of the same size is kept at the original position so the page layout does not jump; the position is recalculated automatically when the container is resized or the screen is rotated.
+The API is the same as `Affix` in Antdv Next: `offsetTop`, `offsetBottom`, `target`, `change`. While affixed, a placeholder of the same size is kept at the original position so the page layout does not jump; the position is recalculated automatically when the container is resized or the screen is rotated.
 
 ## Examples
 

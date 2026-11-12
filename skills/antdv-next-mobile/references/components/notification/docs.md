@@ -11,7 +11,7 @@ To display a notification as a card banner at the top (or bottom) of the screen.
 - A notification providing feedback based on the user interaction, or offering the next steps.
 - A notification pushed by the application.
 
-The API is aligned with `notification` of antdv-next. On mobile it is styled as a full-width card banner that avoids the safe area and can be swiped away. For a short one-line feedback, use [Message](../message/docs.md) or [Toast](../toast/docs.md).
+The API is aligned with `notification` of Antdv Next. On mobile it is styled as a full-width card banner that avoids the safe area and can be swiped away. For a short one-line feedback, use [Message](../message/docs.md) or [Toast](../toast/docs.md).
 
 ## Examples
 

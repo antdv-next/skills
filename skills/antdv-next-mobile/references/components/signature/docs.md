@@ -88,7 +88,7 @@ Customize through `theme.components.Signature` of `ConfigProvider`, or override 
 
 ## Differences from PC
 
-- antdv-next (PC) has no such component. `Signature` is mobile only, with the capabilities of Vant's `Signature`.
-- Props follow the antdv-next conventions: `footer` (like `Modal`, `false` hides it), `rootClass`, `classes`, `styles`, and every render-type prop has a same-named slot.
+- Antdv Next (PC) has no such component. `Signature` is mobile only, with the capabilities of Vant's `Signature`.
+- Props follow the Antdv Next conventions: `footer` (like `Modal`, `false` hides it), `rootClass`, `classes`, `styles`, and every render-type prop has a same-named slot.
 - The canvas is scaled by `devicePixelRatio` to stay sharp on high-density screens, and it refits automatically while keeping the strokes when its size changes.
 - Besides touch, writing with the mouse is supported too, which is handy when debugging in a desktop browser.

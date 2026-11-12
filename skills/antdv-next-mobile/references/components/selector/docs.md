@@ -87,5 +87,5 @@ Customize through `theme.components.Selector` of `ConfigProvider`, or by overrid
 ## Differences from PC
 
 - There is no counterpart on PC. Functionally it is close to the flat selection form of `Checkbox.Group` / `Radio.Group` / `Tag.CheckableTagGroup`.
-- Prop names follow the conventions of antdv-next: `options`, `value` / `v-model:value`, `defaultValue`, `fieldNames`, `disabled`.
+- Prop names follow the conventions of Antdv Next: `options`, `value` / `v-model:value`, `defaultValue`, `fieldNames`, `disabled`.
 - `value` is an array in both single and multiple mode; in single mode, tapping the selected option again deselects it (resulting in `[]`). When a selection is required, use it together with the `required` rule of `Form.Item`.

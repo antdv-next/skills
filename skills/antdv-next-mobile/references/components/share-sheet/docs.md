@@ -112,7 +112,7 @@ Customize through `theme.components.ShareSheet` of `ConfigProvider`, or override
 
 ## Differences from PC
 
-- antdv-next (PC) has no such component: ShareSheet is mobile-only.
+- Antdv Next (PC) has no such component: ShareSheet is mobile-only.
 - Prop names follow the PC conventions: `open` / `v-model:open`, `defaultOpen`, `options`, `maskClosable`, `keyboard`, `destroyOnHidden`, `forceRender`, `getContainer`, `zIndex`, `rootClass`, `classes`, `styles`, `openChange`, `afterOpenChange`.
 - The layer is built on [Popup](../popup/docs.md) and slides up from the bottom. The header, cancel button and closing behaviour match [ActionSheet](../action-sheet/docs.md), and the cancel text reuses the `ActionSheet.cancelText` locale.
 - No social logos or brand colors are built in: use `@antdv-next/icons` or your own images.

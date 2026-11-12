@@ -27,7 +27,7 @@ const push = ref(true)
       Only friends can see my posts.
     </am-collapse-panel>
     <am-collapse-panel key="about" header="About" extra="v1.0.0">
-      @antdv-next/mobile is the mobile component library of the antdv-next family.
+      @antdv-next/mobile is the mobile component library of the Antdv Next family.
     </am-collapse-panel>
   </am-collapse>
 </template>

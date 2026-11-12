@@ -8,7 +8,7 @@ description: A filter menu bar that expands downwards, commonly used for sorting
 - When the top of a list page needs a row of filters (sort, category, more filters...), each of which expands a panel below the menu bar for selection.
 - The panel content can be a single-select list or any custom content (multiple selection, forms, etc.).
 
-> Note: the mobile `Dropdown` is a "filter menu bar". It is not the same interaction as the "dropdown action menu" of antdv-next on PC, which pops up on hover / click. For action menus on mobile, use [ActionSheet](../action-sheet/docs.md) or the menu mode of [Popover](../popover/docs.md).
+> Note: the mobile `Dropdown` is a "filter menu bar". It is not the same interaction as the "dropdown action menu" of Antdv Next on PC, which pops up on hover / click. For action menus on mobile, use [ActionSheet](../action-sheet/docs.md) or the menu mode of [Popover](../popover/docs.md).
 
 ## Examples
 

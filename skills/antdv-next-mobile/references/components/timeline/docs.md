@@ -8,7 +8,7 @@ description: Vertical display timeline.
 - When a series of information needs to be ordered by time (ascending or descending).
 - When you need a timeline to make a visual connection, such as logistics tracking, approval flows and operation records.
 
-The API is aligned with `Timeline` of antdv-next: nodes are configured through `items`, `title` is shown on the other side of the timeline, and `content` is the content of the node.
+The API is aligned with `Timeline` of Antdv Next: nodes are configured through `items`, `title` is shown on the other side of the timeline, and `content` is the content of the node.
 
 ## Examples
 

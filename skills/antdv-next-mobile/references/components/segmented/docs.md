@@ -8,7 +8,7 @@ description: Display multiple options and allow users to select a single one.
 - Switch between 2 ~ 5 mutually exclusive options or views, such as "Day / Week / Month".
 - When there are few options with short labels and all of them should always be visible.
 
-The API is aligned with `Segmented` of antdv-next, and the selected thumb moves with a smooth sliding animation.
+The API is aligned with `Segmented` of Antdv Next, and the selected thumb moves with a smooth sliding animation.
 
 ## Examples
 

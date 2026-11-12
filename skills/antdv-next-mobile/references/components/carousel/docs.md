@@ -8,7 +8,7 @@ description: A set of carousel areas, with swipe gestures, seamless looping and 
 - When there is a group of content on the same level that needs to be shown in turn within a limited space, such as home page banners, product galleries or onboarding pages.
 - When there is insufficient content space, it can be used to save space in the form of a revolving door, playing in a loop.
 
-The API is aligned with `Carousel` of antdv-next (`autoplay`, `dots`, `dotPlacement`, `infinite`, `effect`, `beforeChange`, `afterChange`, `goTo` / `next` / `prev`), and the gestures are re-implemented for mobile: finger-following swipe, velocity detection, direction lock (a horizontal carousel never blocks the vertical page scroll) and seamless looping. Each direct child of the default slot is one slide; `v-for` and `<template>` fragments are flattened automatically.
+The API is aligned with `Carousel` of Antdv Next (`autoplay`, `dots`, `dotPlacement`, `infinite`, `effect`, `beforeChange`, `afterChange`, `goTo` / `next` / `prev`), and the gestures are re-implemented for mobile: finger-following swipe, velocity detection, direction lock (a horizontal carousel never blocks the vertical page scroll) and seamless looping. Each direct child of the default slot is one slide; `v-for` and `<template>` fragments are flattened automatically.
 
 ## Examples
 

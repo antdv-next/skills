@@ -8,7 +8,7 @@ description: A divider line that separates content.
 - Divide sections of an article.
 - Divide inline text / links, such as the operation column of a list.
 
-The API is aligned with `Divider` of antdv-next: `orientation` controls the direction, `titlePlacement` controls the position of the title, and `variant` controls the line style.
+The API is aligned with `Divider` of Antdv Next: `orientation` controls the direction, `titlePlacement` controls the position of the title, and `variant` controls the line style.
 
 ## Examples
 
@@ -29,7 +29,7 @@ The API is aligned with `Divider` of antdv-next: `orientation` controls the dire
 | --- | --- | --- | --- |
 | orientation | Direction of the divider | `'horizontal' \| 'vertical'` | `'horizontal'` |
 | vertical | Whether vertical, equivalent to `orientation="vertical"` | `boolean` | `false` |
-| type | Alias of `orientation`, kept for compatibility with antdv-next | `'horizontal' \| 'vertical'` | - |
+| type | Alias of `orientation`, kept for compatibility with Antdv Next | `'horizontal' \| 'vertical'` | - |
 | titlePlacement | Position of the title (`left` / `right` are equivalent to `start` / `end`) | `'start' \| 'center' \| 'end'` | `'center'` |
 | variant | Line style | `'solid' \| 'dashed' \| 'dotted'` | `'solid'` |
 | dashed | Whether the line is dashed, equivalent to `variant="dashed"` | `boolean` | `false` |

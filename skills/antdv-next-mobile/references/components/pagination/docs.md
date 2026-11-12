@@ -8,7 +8,7 @@ description: A pagination control that splits a long list into pages and loads o
 - When it will take a long time to load / render all items.
 - When users should clearly know where they are and be able to jump to a given page, instead of infinite scrolling.
 
-The API is aligned with `Pagination` of antdv-next (`current`, `total`, `pageSize`, `simple`, `showTotal`, `itemRender`, etc.), and the UI is simplified for narrow screens.
+The API is aligned with `Pagination` of Antdv Next (`current`, `total`, `pageSize`, `simple`, `showTotal`, `itemRender`, etc.), and the UI is simplified for narrow screens.
 
 ## Examples
 

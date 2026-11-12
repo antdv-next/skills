@@ -9,7 +9,7 @@ description: A button that floats above the page.
 - Buttons that stay visible wherever you browse.
 - Use `BackTop` to provide a shortcut back to the top when the page is long.
 
-The API is aligned with `FloatButton` of antdv-next, with dragging and magnetic edge snapping added, which are common on mobile.
+The API is aligned with `FloatButton` of Antdv Next, with dragging and magnetic edge snapping added, which are common on mobile.
 
 ## Examples
 

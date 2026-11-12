@@ -8,7 +8,7 @@ description: A navigation bar that guides users through the steps of a task.
 - When a task is complicated or has a certain sequence, break it down into a series of steps to reduce the user's cognitive load.
 - To show the current progress of a flow such as an order, a delivery or an approval.
 
-The API is aligned with `Steps` of antdv-next (`items`, `current`, `status`, `orientation`, `titlePlacement`, `type`, etc.).
+The API is aligned with `Steps` of Antdv Next (`items`, `current`, `status`, `orientation`, `titlePlacement`, `type`, etc.).
 
 ## Examples
 

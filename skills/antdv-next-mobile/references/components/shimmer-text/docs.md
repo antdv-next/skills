@@ -51,5 +51,5 @@ Customize through `theme.components.ShimmerText` of `ConfigProvider` or by overr
 
 ## Differences from PC
 
-- A mobile-only component, antdv-next has no counterpart.
+- A mobile-only component, Antdv Next has no counterpart.
 - With "reduce motion" enabled in the system, the animation does not play and plain text is shown.

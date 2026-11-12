@@ -8,7 +8,7 @@ description: Display warning messages that require attention.
 - When you need to show alert messages to users.
 - When you need a persistent static container which is not a floating layer: it stays visible, never disappears by itself, and can be closed by the user.
 
-The API is aligned with `Alert` of antdv-next: `title` (compatible with the deprecated `message`), `description`, `showIcon`, `closable`, `action`, `banner`, `variant`. Use [NoticeBar](../notice-bar/docs.md) when you need a single-line scrolling notice.
+The API is aligned with `Alert` of Antdv Next: `title` (compatible with the deprecated `message`), `description`, `showIcon`, `closable`, `action`, `banner`, `variant`. Use [NoticeBar](../notice-bar/docs.md) when you need a single-line scrolling notice.
 
 ## Examples
 

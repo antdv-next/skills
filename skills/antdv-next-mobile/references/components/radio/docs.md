@@ -8,7 +8,7 @@ description: Used to select a single option from a set of options.
 - Used to select a single state from multiple options.
 - The difference from `Select` / `Picker` is that all options of `Radio` are visible by default, which makes it easy for users to compare and choose, so there should not be too many options.
 
-The API is aligned with `Radio` of antdv-next: `v-model:value`, `options`, `optionType` and `buttonStyle` of `Radio.Group` and the parameter structure of the `change` event are kept the same. Mobile additionally provides a list form (`block`) and custom icons.
+The API is aligned with `Radio` of Antdv Next: `v-model:value`, `options`, `optionType` and `buttonStyle` of `Radio.Group` and the parameter structure of the `change` event are kept the same. Mobile additionally provides a list form (`block`) and custom icons.
 
 ## Examples
 

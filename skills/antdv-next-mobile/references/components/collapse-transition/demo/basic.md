@@ -17,7 +17,7 @@ const open = ref(false)
   </am-button>
   <am-collapse-transition :open="open">
     <div class="demo-content">
-      Ant Design Mobile for Vue, a mobile UI library whose API follows antdv-next. The height of this
+      Ant Design Mobile for Vue, a mobile UI library whose API follows Antdv Next. The height of this
       block is animated when it shows up and when it goes away.
     </div>
   </am-collapse-transition>

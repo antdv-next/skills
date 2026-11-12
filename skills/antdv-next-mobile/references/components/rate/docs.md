@@ -8,7 +8,7 @@ description: Used for rating operation on something.
 - Show evaluation.
 - A quick rating operation on something.
 
-The API is aligned with `Rate` of antdv-next. On mobile, besides tapping, you can also press and swipe left or right across the stars to rate.
+The API is aligned with `Rate` of Antdv Next. On mobile, besides tapping, you can also press and swipe left or right across the stars to rate.
 
 ## Examples
 

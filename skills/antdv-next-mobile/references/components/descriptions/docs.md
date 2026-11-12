@@ -7,7 +7,7 @@ description: Display multiple read-only fields in a group.
 
 Commonly used to display information on detail pages, such as order details, personal profiles and bill details.
 
-The API is aligned with `Descriptions` of antdv-next: fields are configured through `items`, and `title`, `extra`, `column`, `layout`, `bordered`, `size` and `colon` are supported. On mobile, each row has one column by default.
+The API is aligned with `Descriptions` of Antdv Next: fields are configured through `items`, and `title`, `extra`, `column`, `layout`, `bordered`, `size` and `colon` are supported. On mobile, each row has one column by default.
 
 ## Examples
 

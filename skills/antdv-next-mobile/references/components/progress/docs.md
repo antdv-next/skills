@@ -10,7 +10,7 @@ If it will take a long time to complete an operation, you can use `Progress` to 
 - When an operation will interrupt the current interface, or it needs to run in the background for more than 2 seconds.
 - When you need to display the completion percentage of an operation.
 
-The API is aligned with the `Progress` of antdv-next: `type` (`line` / `circle` / `dashboard`), `percent`, `status`, `strokeColor` (solid / gradient), `success`, `steps`, `size`, `percentPosition`.
+The API is aligned with the `Progress` of Antdv Next: `type` (`line` / `circle` / `dashboard`), `percent`, `status`, `strokeColor` (solid / gradient), `success`, `steps`, `size`, `percentPosition`.
 
 ## Examples
 

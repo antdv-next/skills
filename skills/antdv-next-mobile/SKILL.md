@@ -3,13 +3,13 @@ name: antdv-next-mobile
 description: Antdv Next Mobile (@antdv-next/mobile) Vue 3 mobile UI component library with am-* components. Use when building mobile / H5 pages with it, or when locating component props/events/slots, demos, CSS variable theme tokens, or differences from the PC antdv-next API.
 metadata:
   author: Antdv Next team
-  version: "0.1.1"
+  version: "0.1.2"
   source: Generated from https://github.com/antdv-next/antdv-next-mobile, script located in this repo at scripts/generate-antdv-next-mobile-skill.ts
 ---
 
 # Antdv Next Mobile
 
-> The skill is based on the docs and demos of `@antdv-next/mobile@0.1.1` (https://m.antdv-next.com).
+> The skill is based on the docs and demos of `@antdv-next/mobile@0.1.2` (https://m.antdv-next.com).
 
 Language: en-US
 

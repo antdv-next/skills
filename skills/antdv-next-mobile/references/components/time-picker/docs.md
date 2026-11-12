@@ -7,7 +7,7 @@ description: Select a point in time with wheels.
 
 Use it when the user needs to enter a time (alarm, business hours, appointment slot). To select a date at the same time, use `showTime` of [DatePicker](../date-picker/docs.md).
 
-The API is aligned with `TimePicker` of antdv-next: `value` sends and receives dayjs objects by default, and strings once `valueFormat` is set; `format` determines both the display format and the wheel columns.
+The API is aligned with `TimePicker` of Antdv Next: `value` sends and receives dayjs objects by default, and strings once `valueFormat` is set; `format` determines both the display format and the wheel columns.
 
 ## Examples
 

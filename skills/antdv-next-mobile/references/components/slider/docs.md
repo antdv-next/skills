@@ -7,7 +7,7 @@ description: A Slider component for displaying current value and intervals in ra
 
 To input a value in a range / custom range, either continuous or discrete.
 
-The API is aligned with the `Slider` of antdv-next and optimized for touch: a larger handle and hit area, a value tooltip while dragging, and a horizontal slider that does not block the vertical scrolling of the page.
+The API is aligned with the `Slider` of Antdv Next and optimized for touch: a larger handle and hit area, a value tooltip while dragging, and a horizontal slider that does not block the vertical scrolling of the page.
 
 ## Examples
 

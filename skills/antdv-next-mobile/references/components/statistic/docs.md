@@ -9,7 +9,7 @@ description: Display statistic numbers, as well as countdown / count-up timers.
 - When you want to display statistic data with a description.
 - Use `Statistic.Timer` for scenarios that need a countdown, such as flash sales, verification codes and event starts.
 
-The API is aligned with `Statistic` / `Statistic.Timer` of antdv-next.
+The API is aligned with `Statistic` / `Statistic.Timer` of Antdv Next.
 
 ## Examples
 

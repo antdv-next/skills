@@ -8,7 +8,7 @@ description: Select multiple items from a set of options.
 - Used for selecting multiple values from a set of options.
 - Used alone, it can represent a switch between two states (such as "Agree to the terms"), similar to `Switch`. The difference is that toggling `Switch` triggers the state change directly, while `Checkbox` is generally used for marking a state and works together with a submit operation.
 
-The API is aligned with `Checkbox` of antdv-next: `v-model:checked`, `v-model:value` / `options` of `Checkbox.Group`, and the params of the `change` event keep the same structure, so handlers written for PC can be reused as is. Mobile additionally provides a list form (`block`), a round shape (`shape`) and custom icons.
+The API is aligned with `Checkbox` of Antdv Next: `v-model:checked`, `v-model:value` / `options` of `Checkbox.Group`, and the params of the `change` event keep the same structure, so handlers written for PC can be reused as is. Mobile additionally provides a list form (`block`), a round shape (`shape`) and custom icons.
 
 ## Examples
 

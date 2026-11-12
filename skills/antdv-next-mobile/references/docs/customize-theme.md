@@ -2,7 +2,7 @@
 title: Customize Theme
 ---
 
-Theming is implemented entirely with CSS variables; no styles are generated at runtime. Variable names map one-to-one to the Design Tokens of antdv-next: `colorPrimary` maps to `--am-color-primary`, `fontSizeLG` maps to `--am-font-size-lg`.
+Theming is implemented entirely with CSS variables; no styles are generated at runtime. Variable names map one-to-one to the Design Tokens of Antdv Next: `colorPrimary` maps to `--am-color-primary`, `fontSizeLG` maps to `--am-font-size-lg`.
 
 Click the palette in the top-right corner of the page to switch the primary color, border radius and algorithm in real time; the simulator on the right updates in sync.
 
@@ -31,7 +31,7 @@ import { theme } from '@antdv-next/mobile'
 | Field | Description | Type |
 | --- | --- | --- |
 | algorithm | Theme algorithm; pass an array to combine several | `theme.defaultAlgorithm \| theme.darkAlgorithm \| theme.compactAlgorithm` or `'default' \| 'dark' \| 'compact'` |
-| token | Global tokens, with the same keys as antdv-next | `AliasToken` |
+| token | Global tokens, with the same keys as Antdv Next | `AliasToken` |
 | components | Component tokens; `{ Button: { height: 44 } }` is written as `--am-button-height: 44px` | `Record<string, ComponentToken>` |
 | inherit | Whether to inherit the theme of the parent ConfigProvider | `boolean`, default `true` |
 

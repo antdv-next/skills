@@ -8,7 +8,7 @@ description: Through keyboard input content, it is the most basic form field wra
 - A user input in a form field is needed.
 - Provides the multi-line `TextArea`, the search bar `InputSearch`, the password field `InputPassword` and the verification code `InputOTP`.
 
-The API is aligned with the `Input` of antdv-next. On mobile the font size is never smaller than 16px (to avoid the iOS focus zoom), the clear button is only shown while focused by default, and IME composition is handled.
+The API is aligned with the `Input` of Antdv Next. On mobile the font size is never smaller than 16px (to avoid the iOS focus zoom), the clear button is only shown while focused by default, and IME composition is handled.
 
 ## Examples
 

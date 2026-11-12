@@ -8,7 +8,7 @@ description: A form with data collection, validation and submission, presented a
 - When you need to create an instance or collect information.
 - When you need to validate fields in certain rules.
 
-The API is aligned with `Form` of antdv-next: validation is driven by `model` + `rules`, `FormItem` is bound to a field through `name`, and instance methods such as `validate` / `resetFields` / `setFieldsValue` keep the same names. On mobile a `FormItem` is rendered as a cell row (separated by hairlines, with the error message below the control), and input components inside a form use the `borderless` variant by default.
+The API is aligned with `Form` of Antdv Next: validation is driven by `model` + `rules`, `FormItem` is bound to a field through `name`, and instance methods such as `validate` / `resetFields` / `setFieldsValue` keep the same names. On mobile a `FormItem` is rendered as a cell row (separated by hairlines, with the error message below the control), and input components inside a form use the `borderless` variant by default.
 
 ## Examples
 

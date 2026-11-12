@@ -8,7 +8,7 @@ description: Display a modal dialog box, providing a title, content area, and ac
 - When users need to handle a task without jumping to another page and interrupting their workflow, use `Modal` to open a floating layer in the center of the current page to hold the related operations.
 - When a concise confirmation dialog is needed to ask the user, use syntactic sugar methods such as `Modal.confirm()`.
 
-The API is aligned with `Modal` of antdv-next, and it looks like the iOS-style dialog that is common on mobile: rounded corners, centered title and content, and full-width buttons at the bottom.
+The API is aligned with `Modal` of Antdv Next, and it looks like the iOS-style dialog that is common on mobile: rounded corners, centered title and content, and full-width buttons at the bottom.
 
 ## Examples
 

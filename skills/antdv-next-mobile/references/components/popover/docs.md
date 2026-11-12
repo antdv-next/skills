@@ -8,7 +8,7 @@ description: The floating card or menu popped up by tapping an element.
 - When the target element has further description and related actions, they can be put into a card which is shown after the user taps it.
 - When you need a lightweight action menu next to the trigger element, use the `actions` menu mode (e.g. the "More" menu at the top-right of a navigation bar).
 
-The API is aligned with `Popover` of antdv-next and adapted to touch screens: tap to trigger, touch a blank area to close, automatic flipping and shifting to stay within the screen.
+The API is aligned with `Popover` of Antdv Next and adapted to touch screens: tap to trigger, touch a blank area to close, automatic flipping and shifting to stay within the screen.
 
 ## Examples
 

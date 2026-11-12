@@ -9,7 +9,7 @@ description: An image with configurable fit mode, lazy loading, placeholder and 
 - When you need to control the fit mode (`cover` / `contain` ...), the border radius or lazy loading of an image.
 - When tapping an image should open a full-screen preview with gesture zoom (the preview is provided by [ImagePreview](../image-preview/docs.md)).
 
-The API is aligned with `Image` in antdv-next: `src`, `alt`, `width`, `height`, `fallback`, `placeholder`, `preview`, `Image.PreviewGroup`.
+The API is aligned with `Image` in Antdv Next: `src`, `alt`, `width`, `height`, `fallback`, `placeholder`, `preview`, `Image.PreviewGroup`.
 
 ## Examples
 

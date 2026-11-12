@@ -76,5 +76,5 @@ Customize through `theme.components.Draggable` of `ConfigProvider` or by overrid
 
 ## Differences from PC
 
-- A mobile-only component, antdv-next has no counterpart.
+- A mobile-only component, Antdv Next has no counterpart.
 - Works with touch and mouse, which makes debugging in a desktop browser easy.

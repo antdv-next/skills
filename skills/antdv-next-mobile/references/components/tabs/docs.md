@@ -9,7 +9,7 @@ description: A tab switching component, used to switch between content groups at
 - When there are many tabs, the tab bar can scroll horizontally and the active tab is centered automatically.
 - When groups need to be switched by swiping the content area left and right.
 
-The API is aligned with the `Tabs` of antdv-next (`items`, `activeKey`, `type`, `size`, `centered`, `destroyOnHidden`, etc.), with mobile capabilities such as swipe switching and a sticky tab bar added.
+The API is aligned with the `Tabs` of Antdv Next (`items`, `activeKey`, `type`, `size`, `centered`, `destroyOnHidden`, etc.), with mobile capabilities such as swipe switching and a sticky tab bar added.
 
 ## Examples
 

@@ -55,5 +55,5 @@ Customize through `theme.components.CollapseTransition` of `ConfigProvider` or b
 
 ## Differences from PC
 
-- antdv-next does not export a collapse motion. This component is added for mobile.
+- Antdv Next does not export a collapse motion. This component is added for mobile.
 - The props follow the conventions of the PC popup components: `open`, `forceRender`, `destroyOnHidden`, `afterOpenChange`.

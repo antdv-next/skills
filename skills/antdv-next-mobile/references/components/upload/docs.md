@@ -11,7 +11,7 @@ Uploading is the process of publishing information (images, videos or files) to 
 - When the upload progress has to be shown, with retry after failure.
 - When the camera should be opened directly to take a photo and upload it (`capture`).
 
-The API is aligned with `Upload` in antdv-next: `fileList` (`v-model:fileList`), `action`, `customRequest`, `beforeUpload`, `maxCount`, `listType`, `showUploadList`, `Upload.LIST_IGNORE`, etc. have the same semantics. On mobile the image grid (`picture-card`) is used by default: square thumbnails, a remove badge at the corner, a mask while uploading, tap to retry after failure, and tap an image to preview it full screen.
+The API is aligned with `Upload` in Antdv Next: `fileList` (`v-model:fileList`), `action`, `customRequest`, `beforeUpload`, `maxCount`, `listType`, `showUploadList`, `Upload.LIST_IGNORE`, etc. have the same semantics. On mobile the image grid (`picture-card`) is used by default: square thumbnails, a remove badge at the corner, a mask while uploading, tap to retry after failure, and tap an image to preview it full screen.
 
 ## Examples
 

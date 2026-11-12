@@ -8,7 +8,7 @@ description: Select hierarchical data level by level in a bottom popup.
 - When you need to select from a set of associated data, such as province / city / district, company hierarchy or product categories.
 - When the hierarchy is fixed and each level has few options (two or three columns), you can also use the cascading columns of [Picker](../picker/docs.md).
 
-The API is aligned with `Cascader` of antdv-next: `options`, `fieldNames`, `value` (an array of the value path), `changeOnSelect`, `loadData`, `displayRender`. On mobile, selection happens level by level with "tabs + option list" in a bottom popup; once a leaf node is selected, the value is committed and the popup closes automatically.
+The API is aligned with `Cascader` of Antdv Next: `options`, `fieldNames`, `value` (an array of the value path), `changeOnSelect`, `loadData`, `displayRender`. On mobile, selection happens level by level with "tabs + option list" in a bottom popup; once a leaf node is selected, the value is committed and the popup closes automatically.
 
 ## Examples
 

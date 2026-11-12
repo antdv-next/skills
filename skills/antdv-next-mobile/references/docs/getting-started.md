@@ -59,6 +59,47 @@ If your build pipeline does not handle CSS imports inside packages (some SSR set
 import '@antdv-next/mobile/style.css'
 ```
 
+## Auto import
+
+With [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components) you can write `<am-button>` in templates without global registration or manual imports. The resolver ships with `@antdv-next/mobile`, so its component list always matches the installed version.
+
+```bash
+pnpm add -D unplugin-vue-components
+```
+
+```ts
+// vite.config.ts
+import { AntdvNextMobileResolver } from '@antdv-next/mobile/resolver'
+import vue from '@vitejs/plugin-vue'
+import Components from 'unplugin-vue-components/vite'
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [
+    vue(),
+    Components({
+      resolvers: [AntdvNextMobileResolver()],
+    }),
+  ],
+})
+```
+
+Webpack, Rspack, Rollup and esbuild work the same way: replace `unplugin-vue-components/vite` with the matching entry.
+
+| Option | Description | Type | Default |
+| --- | --- | --- | --- |
+| exclude | Components or icons that should not be imported automatically. Matches the tag name (`AmButton`) or the export name (`Button`) | `string \| RegExp \| (string \| RegExp)[]` | - |
+| resolveIcons | Also import the icons of `@antdv-next/icons` (`<SearchOutlined />`) | `boolean` | `false` |
+
+```ts
+AntdvNextMobileResolver({
+  resolveIcons: true,
+  exclude: ['AmButton', /^AmInput/],
+})
+```
+
+Static methods such as `message` and `Modal.confirm` are not template components and still have to be imported manually.
+
 ## Viewport and safe area
 
 Set the viewport in `index.html`; `viewport-fit=cover` enables safe area support:

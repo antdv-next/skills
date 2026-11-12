@@ -73,4 +73,4 @@ Customize through `theme.components.RollingText` of `ConfigProvider` or by overr
 
 ## Differences from PC
 
-- A mobile-only addition; antdv-next (PC) has no counterpart.
+- A mobile-only addition; Antdv Next (PC) has no counterpart.

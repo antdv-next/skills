@@ -36,7 +36,7 @@ description: Set the spacing between components.
 | size | The space size. Presets are `small`(8px) / `middle`(16px) / `large`(24px), numbers are in px; the array form is `[horizontal, vertical]` | `Size \| [Size, Size]` (`Size = 'small' \| 'middle' \| 'large' \| number \| string`) | `'small'` |
 | orientation | The space direction | `'horizontal' \| 'vertical'` | `'horizontal'` |
 | vertical | Whether vertical, equivalent to `orientation="vertical"` | `boolean` | `false` |
-| direction | Alias of `orientation`, kept for compatibility with antdv-next | `'horizontal' \| 'vertical'` | - |
+| direction | Alias of `orientation`, kept for compatibility with Antdv Next | `'horizontal' \| 'vertical'` | - |
 | align | Cross-axis alignment, defaults to `center` in the horizontal direction | `'start' \| 'end' \| 'center' \| 'baseline' \| 'stretch'` | - |
 | wrap | Whether to wrap automatically, only works in the horizontal direction | `boolean` | `false` |
 | separator | The separator between children; the same-named slot takes precedence | `VueNode` | - |
@@ -54,7 +54,7 @@ Joins multiple bordered components into one seamless whole. Components that can 
 | size | Size of the members of the group; a member's own `size` takes precedence | `'small' \| 'middle' \| 'large'` | `'middle'` |
 | orientation | Orientation | `'horizontal' \| 'vertical'` | `'horizontal'` |
 | vertical | Arrange vertically, equivalent to `orientation="vertical"` | `boolean` | `false` |
-| direction | Alias of `orientation`, for compatibility with antdv-next | `'horizontal' \| 'vertical'` | - |
+| direction | Alias of `orientation`, for compatibility with Antdv Next | `'horizontal' \| 'vertical'` | - |
 | block | Fit the width of the parent element; inputs and selection fields share the remaining space equally | `boolean` | `false` |
 | rootClass | Class name of the root node | `string` | - |
 

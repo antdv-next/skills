@@ -7,7 +7,7 @@ description: Enter a number within a certain range by tapping buttons or with th
 
 When a standard numeric value is required, such as a product quantity, a number of people or an amount.
 
-The API is aligned with `InputNumber` of antdv-next. Mobile uses `mode="spinner"` by default (a stepper with the − / + buttons on both sides), supports long press to step continuously, and brings up the numeric keyboard.
+The API is aligned with `InputNumber` of Antdv Next. Mobile uses `mode="spinner"` by default (a stepper with the − / + buttons on both sides), supports long press to step continuously, and brings up the numeric keyboard.
 
 ## Examples
 

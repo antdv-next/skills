@@ -10,7 +10,7 @@ description: 24 Grids System, plus the entry grid for mobile.
 
 - When evenly divided icon entries are needed (home page shortcuts, feature panels), use `Grid` / `GridItem`: icon, title, badge, hairlines and press feedback are built in.
 
-`Row` / `Col` are based on Flex and their API is aligned with antdv-next; `Grid` / `GridItem` are mobile-only entry grid components based on CSS Grid.
+`Row` / `Col` are based on Flex and their API is aligned with Antdv Next; `Grid` / `GridItem` are mobile-only entry grid components based on CSS Grid.
 
 ## Examples
 

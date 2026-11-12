@@ -8,7 +8,7 @@ description: Used to toggle between two states.
 - If you need to represent the switching between two states or on-off state.
 - The difference between `Switch` and `Checkbox` is that `Switch` triggers a state change directly when you toggle it, while `Checkbox` is generally used for state marking, which should work in conjunction with a submit operation.
 
-The API is aligned with `Switch` of antdv-next: `v-model:checked`, `checkedChildren` / `unCheckedChildren`, `checkedValue` / `unCheckedValue`, `loading`. Mobile additionally provides the asynchronous `beforeChange` interceptor.
+The API is aligned with `Switch` of Antdv Next: `v-model:checked`, `checkedChildren` / `unCheckedChildren`, `checkedValue` / `unCheckedValue`, `loading`. Mobile additionally provides the asynchronous `beforeChange` interceptor.
 
 ## Examples
 

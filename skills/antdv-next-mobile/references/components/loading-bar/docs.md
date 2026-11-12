@@ -73,4 +73,4 @@ Customize through `theme.components.LoadingBar` of `ConfigProvider` or by overri
 
 ## Differences from PC
 
-- A mobile-only component, antdv-next has no counterpart.
+- A mobile-only component, Antdv Next has no counterpart.

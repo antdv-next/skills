@@ -9,7 +9,7 @@ description: A multi-level structure list with expand, select, check and async l
 - When nodes have to be selected inside the hierarchy, or a batch of nodes checked with checkboxes (parents and children linked).
 - To pick a single value level by level, use [Cascader](../cascader/docs.md) instead.
 
-The API is aligned with `Tree` of antdv-next: `treeData`, `fieldNames`, `expandedKeys` / `selectedKeys` / `checkedKeys` (all with `v-model`), `checkable`, `checkStrictly`, `loadData`, `showLine`, `titleRender`, `scrollTo` ... keep the same names, types and semantics. On mobile the whole row is the touch target, rows are at least 40px tall and large data is rendered through virtual scrolling.
+The API is aligned with `Tree` of Antdv Next: `treeData`, `fieldNames`, `expandedKeys` / `selectedKeys` / `checkedKeys` (all with `v-model`), `checkable`, `checkStrictly`, `loadData`, `showLine`, `titleRender`, `scrollTo` ... keep the same names, types and semantics. On mobile the whole row is the touch target, rows are at least 40px tall and large data is rendered through virtual scrolling.
 
 ## Examples
 

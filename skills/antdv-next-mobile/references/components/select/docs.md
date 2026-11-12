@@ -8,7 +8,7 @@ description: Select one or more items from an option list in a bottom popup.
 - To select from a flat set of options, when there are many options, the text is long, or search and descriptions are needed.
 - When there are only a few options (2 ~ 6) and you want to show them directly, use [Selector](../selector/docs.md) or [Radio](../radio/docs.md); when a wheel experience is needed, use [Picker](../picker/docs.md).
 
-The API is aligned with `Select` of antdv-next: `options`, `fieldNames`, `value`, `mode="multiple"`, `labelInValue`, `showSearch`, `filterOption`, `optionRender`, `labelRender`, `maxCount`, `maxTagCount`. On mobile, a list in a bottom popup replaces the dropdown menu: in single mode a tap commits and closes, in multiple mode it is a checklist committed by tapping "OK".
+The API is aligned with `Select` of Antdv Next: `options`, `fieldNames`, `value`, `mode="multiple"`, `labelInValue`, `showSearch`, `filterOption`, `optionRender`, `labelRender`, `maxCount`, `maxTagCount`. On mobile, a list in a bottom popup replaces the dropdown menu: in single mode a tap commits and closes, in multiple mode it is a checklist committed by tapping "OK".
 
 ## Examples
 

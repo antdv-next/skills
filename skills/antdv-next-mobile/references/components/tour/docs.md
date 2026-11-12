@@ -8,7 +8,7 @@ description: A popup component for guiding users through a product.
 - Use it to guide users through a product: when a feature is released or a page is opened for the first time, highlight elements of the page one by one and explain them.
 - When a hint must not interrupt what the user is doing, use a non-modal tour (`mask` set to `false`).
 
-The API is aligned with `Tour` of antdv-next and adapted to phones: the panel width follows the screen, the position flips automatically and always stays within the screen, buttons and the close icon keep a touch target of at least 40px, and page scroll is locked while the mask is shown.
+The API is aligned with `Tour` of Antdv Next and adapted to phones: the panel width follows the screen, the position flips automatically and always stays within the screen, buttons and the close icon keep a touch target of at least 40px, and page scroll is locked while the mask is shown.
 
 ## Examples
 

@@ -9,7 +9,7 @@ description: Basic text formatting, with multi-line ellipsis, expand / collapse 
 - When you need to truncate long text and support "expand / collapse".
 - When you need one-tap copying of text (order number, invitation code).
 
-The API is aligned with `Typography` of antdv-next: `Typography.Text`, `Typography.Title` and `Typography.Paragraph` share props such as `type`, text decorations, `ellipsis` and `copyable`.
+The API is aligned with `Typography` of Antdv Next: `Typography.Text`, `Typography.Title` and `Typography.Paragraph` share props such as `type`, text decorations, `ellipsis` and `copyable`.
 
 ## Examples
 

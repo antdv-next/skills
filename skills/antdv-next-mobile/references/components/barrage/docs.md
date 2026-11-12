@@ -8,7 +8,7 @@ description: Comments flying across a video, live stream, image or any other con
 - Show the comments of other users in real time while watching a video or a live stream.
 - Interactive text that livens up a piece of content, such as a campaign or lottery page.
 
-`Barrage` is a mobile-only component with no counterpart in antdv-next (PC). The default slot holds the content covered by the bullets (video, image ...); the bullet layer ignores taps, so the content below stays interactive.
+`Barrage` is a mobile-only component with no counterpart in Antdv Next (PC). The default slot holds the content covered by the bullets (video, image ...); the bullet layer ignores taps, so the content below stays interactive.
 
 ## Examples
 
@@ -88,7 +88,7 @@ Customize through `theme.components.Barrage` of `ConfigProvider`, or by overridi
 
 ## Differences from PC
 
-- A mobile-only component with no PC counterpart; `value` / `defaultValue` / `rootClass` / `classes` / `styles` follow the antdv-next naming conventions.
+- A mobile-only component with no PC counterpart; `value` / `defaultValue` / `rootClass` / `classes` / `styles` follow the Antdv Next naming conventions.
 - Bullets are driven by pure CSS animations; the root has `overflow: hidden` and the container height comes from the default slot content or your own style.
 - RTL is supported: with `direction="rtl"` the bullets fly from left to right.
 - Playback pauses automatically while the page is in the background and resumes when it returns.

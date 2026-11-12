@@ -9,7 +9,7 @@ description: Select a year, month, day, time and other date information with whe
 - When a date range has to be selected, use `DatePicker.RangePicker`.
 - When you want to see a whole month calendar at a glance, use [Calendar](../calendar/docs.md).
 
-The API is aligned with `DatePicker` in antdv-next: `value` takes and emits [dayjs](https://day.js.org/) objects by default, and formatted strings once `valueFormat` is set; `picker` switches the granularity and `showTime` adds time columns. On mobile, bottom wheels replace the calendar panel, and the value is only committed after tapping "OK".
+The API is aligned with `DatePicker` in Antdv Next: `value` takes and emits [dayjs](https://day.js.org/) objects by default, and formatted strings once `valueFormat` is set; `picker` switches the granularity and `showTime` adds time columns. On mobile, bottom wheels replace the calendar panel, and the value is only committed after tapping "OK".
 
 ## Examples
 

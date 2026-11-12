@@ -1,6 +1,7 @@
 node_modules/
 repos/
 !repos/antdv-next
+!repos/antdv-next-mobile
 .DS_Store
 *.log
 dist/

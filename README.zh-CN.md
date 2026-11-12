@@ -32,14 +32,26 @@ Use antdv-next skill, <你的需求>
 | Skill | 适用场景 | 说明 |
 |-------|----------|------|
 | **antdv-next** | Antdv Next 组件 | 组件的属性/事件/插槽与 playground 示例用法 |
+| **antdv-next-mobile** | Antdv Next Mobile（`@antdv-next/mobile`）组件 | `am-*` 组件的属性/事件/插槽、示例、CSS 变量主题，以及与 PC 端的差异 |
 
 ## 语言
 
 生成脚本支持单语言输出，以减少 references 体积：
 
 ```bash
-pnpm run generate:en
+pnpm run generate:en          # antdv-next
 pnpm run generate:zh
+pnpm run generate:mobile      # antdv-next-mobile
+pnpm run generate:mobile:zh
+```
+
+## 自动同步
+
+`.github/workflows/sync.yml` 会让技能跟随上游发版自动更新。每 6 小时（或手动触发）运行一次 `scripts/sync.ts`：查询 `antdv-next/antdv-next`（`antdv-next@x.y.z`）和 `antdv-next/antdv-next-mobile`（`@antdv-next/mobile@x.y.z`）最新的正式版 tag；如果 `repos/` 下的子模块还不包含该版本，就把子模块切到这个 tag，重新生成英文技能并提交到 `main`。
+
+```bash
+pnpm run sync:check   # 只报告会更新什么
+pnpm run sync         # 在本地更新子模块并重新生成
 ```
 
 ## 方法

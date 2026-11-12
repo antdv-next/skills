@@ -1,3 +1,6 @@
 [submodule "repos/antdv-next"]
 	path = repos/antdv-next
 	url = https://github.com/antdv-next/antdv-next
+[submodule "repos/antdv-next-mobile"]
+	path = repos/antdv-next-mobile
+	url = https://github.com/antdv-next/antdv-next-mobile

@@ -1,6 +1,6 @@
 # Repository Guidelines
 
-This repository generates a single-language Antdv Next skill package from the upstream playground docs and demos. Outputs live under `skills/antdv-next/` and are regenerated via `esno` scripts.
+This repository generates single-language skill packages for Antdv Next (`skills/antdv-next/`) and Antdv Next Mobile (`skills/antdv-next-mobile/`) from the upstream docs and demos. Outputs are regenerated via `esno` scripts, by hand or by the `Sync skills` workflow.
 
 ## Project Structure & Module Organization
 
@@ -8,13 +8,18 @@ This repository generates a single-language Antdv Next skill package from the up
 - `skills/antdv-next/`: Generated skill output, including `SKILL.md`, `GENERATION.md`, and `references/`.
 - `skills/antdv-next/references/`: Copied docs and demo markdown (`components/**`, `docs/vue/**`).
 - `repos/antdv-next/`: Git submodule with the upstream Antdv Next source (used as input for generation).
+- `scripts/generate-antdv-next-mobile-skill.ts`: generator for `skills/antdv-next-mobile/`. Its output depends only on the source commit (no wall-clock dates), so regenerating the same commit produces no diff.
+- `repos/antdv-next-mobile/`: Git submodule with the upstream Antdv Next Mobile source.
+- `scripts/sync.ts` + `.github/workflows/sync.yml`: release-driven sync. Moves a submodule to the newest stable release tag when it does not contain that release yet, regenerates the skill and commits to `main`.
 - `package.json`: Local scripts and dev dependencies for generation.
 
 ## Build, Test, and Development Commands
 
 - `pnpm run generate:zh`: Generate Chinese references and `SKILL.md`.
 - `pnpm run generate:en`: Generate English references and `SKILL.md`.
-- `pnpm run generate`: Alias for Chinese generation.
+- `pnpm run generate`: Alias for English generation.
+- `pnpm run generate:mobile` / `generate:mobile:zh`: Generate the Antdv Next Mobile skill.
+- `pnpm run sync:check` / `pnpm run sync`: Report / apply the release-driven update of both skills.
 
 These commands read from `repos/antdv-next` and rewrite docs/demos into `skills/antdv-next/references/`.
 

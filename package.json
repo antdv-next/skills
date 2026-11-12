@@ -5,7 +5,11 @@
   "scripts": {
     "generate": "esno scripts/generate-antdv-next-skill.ts --repo repos/antdv-next --lang en",
     "generate:en": "esno scripts/generate-antdv-next-skill.ts --repo repos/antdv-next --lang en",
-    "generate:zh": "esno scripts/generate-antdv-next-skill.ts --repo repos/antdv-next --lang zh"
+    "generate:zh": "esno scripts/generate-antdv-next-skill.ts --repo repos/antdv-next --lang zh",
+    "generate:mobile": "esno scripts/generate-antdv-next-mobile-skill.ts --repo repos/antdv-next-mobile --lang en",
+    "generate:mobile:zh": "esno scripts/generate-antdv-next-mobile-skill.ts --repo repos/antdv-next-mobile --lang zh",
+    "sync": "esno scripts/sync.ts",
+    "sync:check": "esno scripts/sync.ts --check"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",

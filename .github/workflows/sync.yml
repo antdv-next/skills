@@ -1,0 +1,78 @@
+name: Sync skills
+
+# Regenerates the skills when antdv-next or antdv-next-mobile publishes a release.
+# scripts/sync.ts compares the newest stable release tag of each upstream repository with the
+# submodule in this repository; this workflow commits whatever it regenerated.
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      only:
+        description: Skill to sync
+        type: choice
+        default: all
+        options:
+          - all
+          - antdv-next
+          - antdv-next-mobile
+      force:
+        description: Regenerate from the newest release even when already up to date
+        type: boolean
+        default: false
+  # Optional: an upstream release workflow can trigger an immediate sync with
+  #   gh api repos/antdv-next/skills/dispatches -f event_type=upstream-release
+  repository_dispatch:
+    types: [upstream-release]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-skills
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.repository == 'antdv-next/skills'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # full history: the sync compares release tags with the submodule commit
+      - name: Init submodules
+        run: git submodule update --init
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Sync
+        id: sync
+        env:
+          ONLY: ${{ inputs.only || 'all' }}
+          FORCE: ${{ inputs.force && '--force' || '' }}
+        run: pnpm exec esno scripts/sync.ts --only "$ONLY" $FORCE
+
+      - name: Commit and push
+        if: steps.sync.outputs.message != ''
+        env:
+          MESSAGE: ${{ steps.sync.outputs.message }}
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Generated output is unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "$MESSAGE"
+          git push

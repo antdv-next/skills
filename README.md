@@ -30,14 +30,26 @@ This explicitly triggers the skill. Without the prefix, skill triggering may be 
 | Skill | When to use | Description |
 |-------|-------------|-------------|
 | **antdv-next** | Antdv Next components | Component props/events/slots and playground demo usage |
+| **antdv-next-mobile** | Antdv Next Mobile (`@antdv-next/mobile`) components | `am-*` component props/events/slots, demos, CSS variable tokens and differences from PC |
 
 ## Language
 
 The generator supports a single language per run to keep references small:
 
 ```bash
-pnpm run generate:en
+pnpm run generate:en          # antdv-next
 pnpm run generate:zh
+pnpm run generate:mobile      # antdv-next-mobile
+pnpm run generate:mobile:zh
+```
+
+## Automatic Sync
+
+`.github/workflows/sync.yml` keeps the skills in step with upstream releases. Every 6 hours (or when run manually) `scripts/sync.ts` looks up the newest stable release tag of `antdv-next/antdv-next` (`antdv-next@x.y.z`) and `antdv-next/antdv-next-mobile` (`@antdv-next/mobile@x.y.z`). When a submodule under `repos/` does not contain that release yet, it is moved to the tag, the skill is regenerated in English and the result is committed to `main`.
+
+```bash
+pnpm run sync:check   # report what would be updated
+pnpm run sync         # update the submodules and regenerate locally
 ```
 
 ## Methodology

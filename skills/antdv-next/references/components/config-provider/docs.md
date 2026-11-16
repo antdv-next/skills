@@ -114,6 +114,7 @@ const { componentDisabled, componentSize } = config.value
 
 The following config keys set common props for corresponding components or global effects. See the related APIs for details:
 
+- `affix`: [Affix](../affix/docs.md#api)
 - `alert`: [Alert](../alert/docs.md#api)
 - `anchor`: [Anchor](../anchor/docs.md#api)
 - `app`: [App](../app/docs.md#api)
@@ -188,6 +189,7 @@ The following config keys set common props for corresponding components or globa
 - `treeSelect`: [TreeSelect](../tree-select/docs.md#api)
 - `typography`: [Typography](../typography/docs.md#api)
 - `upload`: [Upload](../upload/docs.md#api)
+- `watermark`: [Watermark](../watermark/docs.md#api)
 - `wave`: [WaveConfig](#api)
 
 ## FAQ

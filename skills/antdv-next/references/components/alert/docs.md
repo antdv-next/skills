@@ -13,6 +13,7 @@ description: Display warning messages that require attention.
 | --- | --- |
 | Basic | demo/basic.md |
 | More types | demo/style.md |
+| Filled | demo/filled.md |
 | Closable | demo/closable.md |
 | Description | demo/description.md |
 | Icon | demo/icon.md |
@@ -32,6 +33,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | Property | Description | Type | Default | Version | [Global Config](../config-provider/docs.md#component-config) |
 | --- | --- | --- | --- | --- | --- |
 | type | Type of Alert styles, options: `success`, `info`, `warning`, `error` | 'success' \| 'info' \| 'warning' \| 'error' | `info`, in `banner` mode default is `warning` | - | × |
+| variant | Variant of Alert style | `outlined` \| `filled` | `outlined` | 1.3.0 | ✓ |
 | closable | The config of closable | ClosableType | `false` | - | ✓ |
 | title | Content of Alert | VueNode | - | - | × |
 | message | Content of Alert, please use `title` instead | VueNode | - | - | × |

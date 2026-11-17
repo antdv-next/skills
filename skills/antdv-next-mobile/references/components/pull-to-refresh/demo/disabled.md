@@ -22,16 +22,23 @@ function onRefresh() {
   <am-button size="small" style="margin-bottom: 12px" @click="disabled = !disabled">
     {{ disabled ? 'Enable pull to refresh' : 'Disable pull to refresh' }}
   </am-button>
-  <am-pull-to-refresh v-model:refreshing="refreshing" :disabled="disabled" @refresh="onRefresh">
-    <ul class="list">
-      <li v-for="i in 5" :key="i">
-        Item {{ i }}
-      </li>
-    </ul>
-  </am-pull-to-refresh>
+  <div class="scroller">
+    <am-pull-to-refresh v-model:refreshing="refreshing" :disabled="disabled" @refresh="onRefresh">
+      <ul class="list">
+        <li v-for="i in 5" :key="i">
+          Item {{ i }}
+        </li>
+      </ul>
+    </am-pull-to-refresh>
+  </div>
 </template>
 
 <style scoped>
+.scroller {
+  height: 300px;
+  overflow-y: auto;
+}
+
 .list {
   margin: 0;
   padding: 0;

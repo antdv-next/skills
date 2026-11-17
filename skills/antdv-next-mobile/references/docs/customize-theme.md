@@ -101,6 +101,7 @@ So changing just `--am-color-primary` also changes the pressed state, the light 
 | `--am-control-height` | controlHeight | `40px` |
 | `--am-border-radius` | borderRadius | `8px` |
 | `--am-padding` | padding | `16px` |
+| `--am-unit` | unit | `1px`, see [Design Adaptation](adaptation.md) |
 
 See `style/tokens.css` in the source for the full list. The variables of each component are listed in the "Design Token" section of its documentation.
 

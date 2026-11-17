@@ -20,7 +20,7 @@ import { useCountDown, useLoadMore, useRequest } from '@antdv-next/mobile'
 | Gestures & events | `useTouch`, `useSwipe`, `useLongPress`, `useDraggable`, `useClickAway`, `useEventListener`, `useLockScroll` |
 | Device & environment | `useSafeArea`, `useKeyboard`, `usePageVisibility`, `useOnline`, `useMediaQuery`, `usePreferredDark` |
 | Browser capabilities | `useClipboard`, `useStorage` |
-| Library context | `useConfig`, `useLocale`, `useToken`, `useSize`, `useDisabled`, `useFormItemInputContext` |
+| Library context | `useConfig`, `useLocale`, `useToken`, `useUnit`, `useSize`, `useDisabled`, `useFormItemInputContext` |
 
 ## State
 

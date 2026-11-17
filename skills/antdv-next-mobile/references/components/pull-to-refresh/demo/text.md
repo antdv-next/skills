@@ -18,24 +18,31 @@ function onRefresh() {
 </script>
 
 <template>
-  <am-pull-to-refresh
-    v-model:refreshing="refreshing"
-    pulling-text="Pull harder"
-    can-release-text="Let go"
-    refreshing-text="Loading hard..."
-    complete-text="All done"
-    :complete-delay="1000"
-    @refresh="onRefresh"
-  >
-    <ul class="list">
-      <li v-for="i in 6" :key="i">
-        Item {{ i }}
-      </li>
-    </ul>
-  </am-pull-to-refresh>
+  <div class="scroller">
+    <am-pull-to-refresh
+      v-model:refreshing="refreshing"
+      pulling-text="Pull harder"
+      can-release-text="Let go"
+      refreshing-text="Loading hard..."
+      complete-text="All done"
+      :complete-delay="1000"
+      @refresh="onRefresh"
+    >
+      <ul class="list">
+        <li v-for="i in 6" :key="i">
+          Item {{ i }}
+        </li>
+      </ul>
+    </am-pull-to-refresh>
+  </div>
 </template>
 
 <style scoped>
+.scroller {
+  height: 300px;
+  overflow-y: auto;
+}
+
 .list {
   margin: 0;
   padding: 0;

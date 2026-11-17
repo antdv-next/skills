@@ -111,7 +111,7 @@ Set the viewport in `index.html`; `viewport-fit=cover` enables safe area support
 />
 ```
 
-Components use `px` units by default and are drawn for a 375px design draft. When proportional scaling is needed, convert with a plugin such as `postcss-px-to-viewport`, or adjust the size variables directly (see [Customize Theme](customize-theme.md)).
+Components are drawn on a 375 wide design and every length follows `--am-unit` (`1px` by default). To scale with the viewport, or to fit a 750 design or a rem setup, change that single variable; see [Design Adaptation](adaptation.md).
 
 ## Static methods
 

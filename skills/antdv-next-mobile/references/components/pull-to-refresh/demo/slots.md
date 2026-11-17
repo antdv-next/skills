@@ -19,28 +19,35 @@ function onRefresh() {
 </script>
 
 <template>
-  <am-pull-to-refresh v-model:refreshing="refreshing" :head-height="72" :threshold="72" @refresh="onRefresh">
-    <template #pulling="{ distance }">
-      <SyncOutlined class="icon" :style="{ transform: `rotate(${distance * 4}deg) scale(${Math.min(distance / 72, 1)})` }" />
-    </template>
-    <template #canRelease>
-      <SyncOutlined class="icon icon-active" />
-    </template>
-    <template #refreshing>
-      <SyncOutlined class="icon icon-active" spin />
-    </template>
-    <template #complete>
-      <span class="done">8 new items</span>
-    </template>
-    <ul class="list">
-      <li v-for="i in 6" :key="i">
-        Item {{ i }}
-      </li>
-    </ul>
-  </am-pull-to-refresh>
+  <div class="scroller">
+    <am-pull-to-refresh v-model:refreshing="refreshing" :head-height="72" :threshold="72" @refresh="onRefresh">
+      <template #pulling="{ distance }">
+        <SyncOutlined class="icon" :style="{ transform: `rotate(${distance * 4}deg) scale(${Math.min(distance / 72, 1)})` }" />
+      </template>
+      <template #canRelease>
+        <SyncOutlined class="icon icon-active" />
+      </template>
+      <template #refreshing>
+        <SyncOutlined class="icon icon-active" spin />
+      </template>
+      <template #complete>
+        <span class="done">8 new items</span>
+      </template>
+      <ul class="list">
+        <li v-for="i in 6" :key="i">
+          Item {{ i }}
+        </li>
+      </ul>
+    </am-pull-to-refresh>
+  </div>
 </template>
 
 <style scoped>
+.scroller {
+  height: 300px;
+  overflow-y: auto;
+}
+
 .icon {
   color: var(--am-color-text-quaternary);
   font-size: 28px;

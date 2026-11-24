@@ -2,7 +2,7 @@
 
 ## Description (en-US)
 
-Synchronize with [InputNumber](../../input-number/docs.md/) component.
+Synchronize with [InputNumber](../../input-number/docs.md) component.
 
 ## Source
 

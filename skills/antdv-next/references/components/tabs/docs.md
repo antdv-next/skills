@@ -8,7 +8,7 @@ Antdv Next has 3 types of Tabs for different situations.
 
 - Card Tabs: for managing too many closeable views.
 - Normal Tabs: for functional aspects of a page.
-- [Radio.Button](../radio/docs.md/#radio-demo-radiobutton): for secondary tabs.
+- [Radio.Button](../radio/docs.md#radio-demo-radiobutton): for secondary tabs.
 
 ## Demos
 

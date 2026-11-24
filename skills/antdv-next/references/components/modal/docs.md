@@ -6,7 +6,7 @@ description: Display a modal dialog box, providing a title, content area, and ac
 ## When To Use 
 When requiring users to interact with the application, but without jumping to a new page and interrupting the user's workflow, you can use `Modal` to create a new floating layer over the current page to get user feedback or display information.
 
-Additionally, if you need to show a simple confirmation dialog, you can use [`App.useApp`](../app/docs.md/) hooks.
+Additionally, if you need to show a simple confirmation dialog, you can use [`App.useApp`](../app/docs.md) hooks.
 
 ## Demos
 

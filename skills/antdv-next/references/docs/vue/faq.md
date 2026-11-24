@@ -4,7 +4,7 @@ title: FAQ
 
 ## Components are not vertically aligned when placed in single row.
 
-Try [Space](../../components/space/docs.md/) component to make them aligned.
+Try [Space](../../components/space/docs.md) component to make them aligned.
 
 ## Why do third-party SVG icons have margin-block-end? 
 Components such as Breadcrumb, Collapse, Segmented, Tabs, and Tag apply `display: inline-block`, `vertical-align: middle`, and `margin-block-end: 0.2em` to SVGs rendered directly in the corresponding icon slots to adjust their visual alignment with text.

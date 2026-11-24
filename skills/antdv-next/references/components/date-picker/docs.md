@@ -54,7 +54,7 @@ There are five kinds of picker:
 
 ### Localization
 
-The default locale is en-US, if you need to use other languages, recommend to use internationalized components provided by us at the entrance. Look at: [ConfigProvider](../config-provider/docs.md/).
+The default locale is en-US, if you need to use other languages, recommend to use internationalized components provided by us at the entrance. Look at: [ConfigProvider](../config-provider/docs.md).
 
 If there are special needs (only modifying single component language), Please use the property: locale. Example: [default](https://github.com/ant-design/ant-design/blob/masterdocs.md/locale/example.json).
 
@@ -162,7 +162,7 @@ Fields that support global configuration use component values first, then global
 | pickerValue | Panel date. Used for controlled switching of panel date. Work with `onPanelChange` | [dayjs](https://day.js.org/) | - | - |
 | renderExtraFooter | Render extra footer in panel | (mode) => VueNode | - | - |
 | showNow | Show the fast access of current datetime | boolean | - | - |
-| showTime | To provide an additional time selection | object \| boolean | [TimePicker Options](../time-picker/docs.md/#api) | - |
+| showTime | To provide an additional time selection | object \| boolean | [TimePicker Options](../time-picker/docs.md#api) | - |
 | ~~showTime.defaultValue~~ | Use `showTime.defaultOpenValue` instead | [dayjs](https://day.js.org/) | dayjs() | - |
 | showTime.defaultOpenValue | To set default time of selected date, [demo](#date-picker-demo-disabled-date) | [dayjs](https://day.js.org/) | dayjs() | - |
 | showWeek | Show week info when in DatePicker | boolean | false | - |
@@ -226,7 +226,7 @@ Fields that support global configuration use component values first, then global
 | presets | The preset ranges for quick selection, The preset value supports callback functions. | { label: VueNode, value: (Dayjs \| (() => Dayjs))[] }[] | - | - | × |
 | renderExtraFooter | Render extra footer in panel | () => VueNode | - | - | × |
 | separator | Set separator between inputs | VueNode | `<SwapRightOutlined />` | - | ✓ |
-| showTime | To provide an additional time selection | object \| boolean | [TimePicker Options](../time-picker/docs.md/#api) | - | × |
+| showTime | To provide an additional time selection | object \| boolean | [TimePicker Options](../time-picker/docs.md#api) | - | × |
 | ~~showTime.defaultValue~~ | Use `showTime.defaultOpenValue` instead | [dayjs](https://day.js.org/)[] | [dayjs(), dayjs()] | - | × |
 | showTime.defaultOpenValue | To set default time of selected date, [demo](#date-picker-demo-disabled-date) | [dayjs](https://day.js.org/)[] | [dayjs(), dayjs()] | - | × |
 | value | To set date, support `v-model:value` | [dayjs](https://day.js.org/)[] | - | - | × |

@@ -43,6 +43,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | orientation | Orientation direction | `horizontal` \| `vertical` | `horizontal` | - | × |
 | range | Enable dual thumb mode for range selection | boolean \| [RangeConfig](#rangeconfig) | false | - | × |
 | reverse | Reverse the component | boolean | false | - | × |
+| startPoint | The start value of the highlighted track in single mode | number | `min` | - | × |
 | step | The granularity the slider can step through values. Must be greater than 0, and be divisible by (max - min). When `step` is `null` and `marks` exist, valid points will only be marks, `min` and `max` | number \| null | 1 | - | × |
 | tooltip | The tooltip related props | [TooltipConfig](#tooltipconfig) | - | - | × |
 | value | The value of slider. When `range` is false, use number, otherwise, use [number, number], support `v-model:value` | number \| [number, number] | - | - | × |
@@ -65,7 +66,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | formatter | Slider will pass its value to `formatter`, display its value in Tooltip, and hide the Tooltip when the returned value is null | (value: number) =&gt; VueNode \| null | IDENTITY | - |
 | getPopupContainer | The DOM container of the Tooltip. The default behavior is to create a div element in the body | (triggerNode: HTMLElement) =&gt; HTMLElement | () =&gt; document.body | - |
 | open | If true, Tooltip will always be visible; if false, it will never be visible, even when dragging or hovering | boolean | - | - |
-| placement | Set Tooltip display position. Ref [Tooltip](../tooltip/docs.md/) | string | - | - |
+| placement | Set Tooltip display position. Ref [Tooltip](../tooltip/docs.md) | string | - | - |
 
 ### Events 
 | Event | Description | Type | Version |

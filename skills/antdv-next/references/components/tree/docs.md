@@ -54,7 +54,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | expandedKeys | (Controlled) Specifies the keys of the expanded treeNodes, support `v-model:expanded-keys` | string[] | [] | - | × |
 | fieldNames | Customize node title, key, children field name | object | &#123; title: `title`, key: `key`, children: `children` &#125; | - | × |
 | filterAntTreeNode | Defines a function to filter (highlight) treeNodes. When the function returns `true`, the corresponding treeNode will be highlighted | function(node) | - | - | × |
-| height | Config virtual scroll height. Will not support horizontal scroll when enabled | number | - | - | × |
+| height | A positive value sets the maximum height of the Tree's vertical scroll area with either `virtual` setting. The Tree grows with its content when `height` is omitted or `0`. | number | - | - | × |
 | icon | Insert a custom icon before the title. Need to set `showIcon` to true | VueNode \| (props) =&gt; VueNode | - | - | × |
 | loadData | Load data asynchronously | function(node) | - | - | × |
 | loadedKeys | (Controlled) Set loaded tree nodes. Need to work with `loadData` | string[] | [] | - | × |
@@ -68,7 +68,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | switcherLoadingIcon | Customize loading icons for tree nodes | VueNode | - | - | × |
 | titleRender | Customize tree node title render | (nodeData) =&gt; VueNode | - | - | × |
 | treeData | The treeNodes data Array, if set it then you need not to construct children TreeNode. (key should be unique across the whole array) | array&lt;&#123; key, title, children, [disabled, selectable] &#125;&gt; | - | - | × |
-| virtual | Disable virtual scroll when set to false | boolean | true | - | × |
+| virtual | Whether to virtualize node rendering when `height` is positive | boolean | true | - | × |
 
 #### Events 
 | Event | Description | Type | Version |
@@ -142,7 +142,7 @@ const { getPath } = useTree(treeData)
 `default` prefix props only work when initializing. So `defaultExpandAll` has already been executed when ajax loads data. You can control `expandedKeys` or render the Tree when data is loaded to realize expanding all nodes.
 
 ### Virtual scroll limitation 
-Virtual scroll only render items in visible region. Thus not support auto width (like long `title` with horizontal scroll).
+With virtual scrolling, the Tree does not calculate the horizontal scroll width from node titles. Set `scrollWidth` to the content width in pixels to scroll horizontally when that width exceeds the viewport.
 
 ### What does `disabled` node work logic in the tree? 
 Tree change its data by conduction. Includes checked or auto expanded, it will conduction state to parent / children node until current node is `disabled`. So if a controlled node is `disabled`, it will only modify self state and not affect other nodes. For example, a parent node contains 3 child nodes and one of them is `disabled`. When check the parent node, it will only check rest 2 child nodes. As the same, when check these 2 child node, parent will be checked whatever checked state the `disabled` one is.

@@ -49,7 +49,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | tabBarExtraContent | Extra content in tab bar | VueNode \| &#123; [key: string]: VueNode &#125; | - | - | × |
 | activeTabKey | Current TabPane's key | string | - | - | × |
 | defaultActiveTabKey | Initial active TabPane's key, if `activeTabKey` is not set | string | `The key of first tab` | - | × |
-| tabProps | [Tabs](../tabs/docs.md/#tabs) | Record&lt;string, any&gt; | - | - | × |
+| tabProps | [Tabs](../tabs/docs.md#tabs) | Record&lt;string, any&gt; | - | - | × |
 | classes | Customize class for each semantic structure inside the component. Supports object or function. | CardClassNamesType | - | - | ✓ |
 | styles | Customize inline style for each semantic structure inside the component. Supports object or function. | CardStylesType | - | - | ✓ |
 | variant | Variants of Card | 'borderless' \| 'outlined' | `outlined` | - | ✓ |

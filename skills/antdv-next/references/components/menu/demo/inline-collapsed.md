@@ -4,7 +4,7 @@
 
 Inline menu could be collapsed.
 
-Here is [a complete demo](../../layout/docs.md/#layout-demo-side) with sider layout.
+Here is [a complete demo](../../layout/docs.md#layout-demo-side) with sider layout.
 
 ## Source
 

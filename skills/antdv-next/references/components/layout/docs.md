@@ -97,7 +97,7 @@ The sidebar.
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| breakpoint | [Breakpoints](../grid/docs.md/#col) of the responsive layout | `xs` \| `sm` \| `md` \| `lg` \| `xl` \| `xxl` \| `xxxl` | - | xxxl: 1.0.3 |
+| breakpoint | [Breakpoints](../grid/docs.md#col) of the responsive layout | `xs` \| `sm` \| `md` \| `lg` \| `xl` \| `xxl` \| `xxxl` | - | xxxl: 1.0.3 |
 | classes | Semantic structure class (`root`, `body`) for the Sider, supports object or function | Record<string, string> \| (info: { props }) => Record<string, string> | - | 1.4.0 |
 | collapsed | To set the current status | boolean | - |  |
 | collapsedWidth | Width of the collapsed sidebar, by setting to 0 a special trigger will appear | number | 80 |  |
@@ -112,7 +112,7 @@ The sidebar.
 #### Events 
 | Property | Description | Type | Default |
 | --- | --- | --- | --- |
-| breakpoint | The callback function, executed when [breakpoints](../grid/docs.md/#api) changed | (broken: boolean) => void | - |
+| breakpoint | The callback function, executed when [breakpoints](../grid/docs.md#api) changed | (broken: boolean) => void | - |
 | collapse | The callback function, executed by clicking the trigger or activating the responsive layout | (collapsed: boolean, type: string) => void | - |
 
 #### Slots 

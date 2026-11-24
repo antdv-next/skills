@@ -64,7 +64,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | popupMatchSelectWidth | Determine whether the dropdown menu and the select input are the same width. Default set `min-width` same as input. Will ignore when value less than select width. `false` will disable virtual scroll | boolean \| number | - | - |
 | popupOverflow | Select like component popup logic. Can set to show in viewport or follow window scroll | `viewport` \| `scroll` | `viewport` | - |
 | prefixCls | Set prefix className | string | `ant` | - |
-| renderEmpty | Set empty content of components. Ref [Empty](../empty/docs.md/) | (componentName?: string) => VueNode | - | - |
+| renderEmpty | Set empty content of components. Ref [Empty](../empty/docs.md) | (componentName?: string) => VueNode | - | - |
 | variant | Set variant of data entry components | `outlined` \| `filled` \| `borderless` \| `underlined` | - | - |
 | virtual | Disable virtual scroll when set to `false` | boolean | - | - |
 | warning | Config warning level, when `strict` is `false`, it will aggregate deprecated information into a single message | WarningContextProps | - | - |
@@ -73,7 +73,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 
 | Slot | Description | Type | Version |
 | --- | --- | --- | --- |
-| renderEmpty | Set empty content of components. Ref [Empty](../empty/docs.md/) | (componentName?: string) => any | - |
+| renderEmpty | Set empty content of components. Ref [Empty](../empty/docs.md) | (componentName?: string) => any | - |
 
 ### ConfigProvider.config() 
 Setting `Modal`, `Message`, `Notification` static config. Does not work on hooks.

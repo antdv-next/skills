@@ -72,7 +72,7 @@ Common props ref：[Common props](../../docs/vue/common-props.md)
 | treeExpandAction | Tree title open logic when click, optional: false \| `click` \| `doubleClick` | string \| boolean | false | - | × |
 | treeExpandedKeys | Set expanded keys | string[] | - | - | × |
 | treeIcon | Shows the icon before a TreeNode's title | boolean | false | - | × |
-| treeLine | Show the line. Ref [Tree - showLine](../tree/docs.md/#tree-demo-line) | boolean \| object | false | - | × |
+| treeLine | Show the line. Ref [Tree - showLine](../tree/docs.md#tree-demo-line) | boolean \| object | false | - | × |
 | treeLoadedKeys | (Controlled) Set loaded tree nodes, work with `loadData` only | string[] | [] | - | × |
 | treeNodeLabelProp | Will render as content of select | string | `title` | - | × |
 | value | To set the current selected treeNode(s), support `v-model:value` | string \| string[] | - | - | × |

@@ -3,13 +3,13 @@ name: antdv-next
 description: Antdv Next Vue 3 component library. Use when locating component API docs, props/events/slots, playground demos, or theme token definitions.
 metadata:
   author: Antdv Next team
-  version: "2026-11-16"
+  version: "2026-11-24"
   source: Generated from https://github.com/antdv-next/antdv-next, script located in this repo at scripts/generate-antdv-next-skill.ts
 ---
 
 # Antdv Next
 
-> The skill is based on Antdv Next docs and demos, generated at 2026-11-16.
+> The skill is based on Antdv Next docs and demos, generated at 2026-11-24.
 
 Language: en-US
 
